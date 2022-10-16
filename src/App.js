@@ -1,10 +1,16 @@
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import Router from "services/Router";
+import "App.scss";
+
+const randomeData = ["hello", "h2", "h3"];
 
 function App() {
   return (
-    <div className="App">
-      Byjus US math
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 
