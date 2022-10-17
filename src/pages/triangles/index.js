@@ -1,6 +1,12 @@
+import styled from "styled-components/macro";
 import Slide1 from "./Slide1";
 import Slide2 from "./Slide2";
 import ReactFullpage from "@fullpage/react-fullpage";
+
+const PageWrap = styled.div`
+  height: 100%;
+  width: 100%;
+`;
 
 export const Triangles = () => {
   return (
@@ -9,23 +15,26 @@ export const Triangles = () => {
     //   <Slide1 />
     //   <Slide2 />
     // </div>
-    <ReactFullpage
-      //fullpage options
-      // licenseKey={"YOUR_KEY_HERE"}
-      scrollingSpeed={1000} /* Options here */
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <div className="section">
-              <Slide1 />
-              <button onClick={() => fullpageApi.moveSectionDown()}>Click me to move down</button>
-            </div>
-            <div className="section">
-              <Slide2 />
-            </div>
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
+    // <ReactFullpage
+    //   //fullpage options
+    //   // licenseKey={"YOUR_KEY_HERE"}
+    //   scrollingSpeed={1000} /* Options here */
+    //   render={({ state, fullpageApi }) => {
+    //     return (
+    //       <ReactFullpage.Wrapper>
+    //         <div className="section">
+    //           <Slide1 />
+    //           <button onClick={() => fullpageApi.moveSectionDown()}>Click me to move down</button>
+    //         </div>
+    //         <div className="section">
+    //           <Slide2 />
+    //         </div>
+    //       </ReactFullpage.Wrapper>
+    //     );
+    //   }}
+    // />
+    <PageWrap>
+      <Slide1 />
+    </PageWrap>
   );
 };
