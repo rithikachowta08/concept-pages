@@ -5,13 +5,13 @@ import bullet from "../../assets/bullet.svg";
 
 const UnorderedList = styled.ul`
   color: ${(props) => (props.color ? props.color : "white")};
-  font-size: 100px;
+  font-size: 6rem;
   margin: 0;
   list-style-image: url(${bullet});
 `;
 
 const ListItem = styled.li`
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 40px;
   padding-left: 22px;
   &:hover {
