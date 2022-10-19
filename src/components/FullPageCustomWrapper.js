@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import ReactFullpage from "@fullpage/react-fullpage";
+import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "assets/DownArrowIcon";
 import PropTypes from "prop-types";
 import "./FullPageCustomWrapperStyles.scss";
@@ -10,38 +10,60 @@ const PageWrap = styled.div`
 `;
 
 export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) => {
+  function onSlideChange(section, origin, destination, direction, trigger) {
+    console.log(section, origin, destination, direction, trigger);
+  }
+
   return (
-    <ReactFullpage
-      //fullpage options
-      // licenseKey={"YOUR_KEY_HERE"}
-      navigation
-      navigationTooltips={slidesNamesList}
-      navigationPosition={"left"}
-      scrollingSpeed={2000} /* Options here */
-      render={({ state, fullpageApi }) => {
-        return (
-          <>
-            <ReactFullpage.Wrapper>
-              {slidesComponentList.map((itm, idx) => (
-                <div
-                  className="section"
-                  key={idx}>
-                  <PageWrap>{itm}</PageWrap>
+    <>
+      <ReactFullpage
+        //fullpage options
+        // licenseKey={"YOUR_KEY_HERE"}
+        navigation
+        navigationTooltips={slidesNamesList}
+        navigationPosition={"left"}
+        slidesNavigation={true}
+        // onSlideLeave={onSlideChange}
+        scrollingSpeed={900} /* Options here */
+        fitToSectionDelay={900}
+        render={({ state, fullpageApi }) => {
+          return (
+            <>
+              <ReactFullpage.Wrapper>
+                {slidesComponentList.map((itm, idx) => (
                   <div
-                    onClick={() => fullpageApi.moveSectionDown()}
-                    style={{ cursor: "pointer" }}>
-                    <DownArrowIcon
-                      color={idx ? "#333333" : "#ffffff"}
-                      className="down-arrow-icon"
-                    />
+                    className="section"
+                    key={idx}>
+                    <PageWrap>{itm}</PageWrap>
+                    <div
+                      onClick={() => fullpageApi.moveSectionDown()}
+                      style={{ cursor: "pointer" }}>
+                      <DownArrowIcon
+                        color={!idx ? "#ffffff" : "#333333"}
+                        className="down-arrow-icon"
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </ReactFullpage.Wrapper>
-          </>
-        );
-      }}
-    />
+                ))}
+              </ReactFullpage.Wrapper>
+            </>
+          );
+        }}
+      />
+      {/* <div
+        onClick={() => window.fullpage_api.moveSectionDown()}
+        style={{ cursor: "pointer" }}>
+        <DownArrowIcon
+          // color={
+          //   window?.fullpage_api?.getActiveSection().anchor == slidesNamesList[0]
+          //     ? "#ffffff"
+          //     : "#333333"
+          // }
+          color={"grey"}
+          className="down-arrow-icon"
+        />
+      </div> */}
+    </>
   );
 };
 
