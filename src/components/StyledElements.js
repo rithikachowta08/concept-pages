@@ -9,11 +9,13 @@ export const SlideWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: ${(props) => props.alignItems};
 `;
 
 export const LeftWrap = styled.div`
-  width: 40%;
+  width: ${(props) => props.width || "50%"};
 `;
 
 export const Flex = styled.div`
@@ -46,6 +48,7 @@ export const Icon = styled.img`
   height: 15px;
   cursor: pointer;
   margin-right: ${(props) => props.marginRight};
+  align-self: ${(props) => props.alignSelf};
 `;
 
 export const PageWrap = styled.div`

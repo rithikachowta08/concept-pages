@@ -1,7 +1,8 @@
 import styled from "styled-components/macro";
 import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
-import DownArrowIcon from "assets/DownArrowIcon";
+import DownArrowIcon from "components/DownArrowIcon.js";
 import PropTypes from "prop-types";
+import { colors } from "utils/colors";
 import "./FullPageCustomWrapperStyles.scss";
 
 const PageWrap = styled.div`
@@ -39,7 +40,7 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
                       onClick={() => fullpageApi.moveSectionDown()}
                       style={{ cursor: "pointer" }}>
                       <DownArrowIcon
-                        color={!idx ? "#ffffff" : "#333333"}
+                        color={!idx ? colors.WHITE : colors.BLACK}
                         className="down-arrow-icon"
                       />
                     </div>

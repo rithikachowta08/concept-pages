@@ -9,7 +9,7 @@ const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
@@ -47,18 +47,22 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
           justifyContent="space-between"
           alignItems="center"
           marginBottom="20px">
-          <Title
-            fontWeight={700}
-            fontSize="1.8rem"
-            color="white"
-            small>
-            {title}
-          </Title>
+          {title ? (
+            <Title
+              fontWeight={700}
+              fontSize="1.8rem"
+              color="white"
+              small>
+              {title}
+            </Title>
+          ) : null}
+          {title ? null : <div>{content}</div>}
           <Icon
+            alignSelf={title ? "center" : "start"}
             src={crossIcon}
             onClick={onDismiss}></Icon>
         </Flex>
-        <div>{content}</div>
+        {title ? <div>{content}</div> : null}
         <Button
           position="fixed"
           bottom="40px"
@@ -73,7 +77,7 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
 
 Modal.propTypes = {
   onDismiss: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   isOpen: PropTypes.bool.isRequired,
   content: PropTypes.node.isRequired
 };

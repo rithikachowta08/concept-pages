@@ -1,19 +1,56 @@
 import { useState } from "react";
-import { Icon, Flex, SlideWrap } from "components/StyledElements";
+import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { Title, Paragraph } from "components/text";
 import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import Modal from "components/layout/Modal";
 import bg from "assets/white_bg.png";
 import info from "assets/info.svg";
 import boat from "assets/boat.svg";
-import boat_correct_answer from "assets/boat_with_triangle.svg";
-import boat_wrong_answer from "assets/boat_with_triangle.svg";
+import tent_with_triangle from "assets/tent_with_triangle.svg";
+import boat_correct_answer from "assets/boat_correct_answer.svg";
+import boat_wrong_answer from "assets/boat_wrong_answer.svg";
 
 const Slide3 = () => {
+  const modalContent = (
+    <Flex direction="column">
+      <Paragraph
+        color="white"
+        marginBottom="50px"
+        fontSize="1.5rem">
+        Some of these objects have a triangular surface. Click on the card to select objects.
+      </Paragraph>
+      <Title
+        fontSize="1.8rem"
+        marginBottom="20px"
+        color="white"
+        fontWeight={700}
+        small>
+        Example
+      </Title>
+      <ImageWithYesNo
+        width="fit-content"
+        correctAnswerSrc={tent_with_triangle}
+        correctAnswerMsg="Great job!"
+        isCorrectAnswer
+      />
+    </Flex>
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const onClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+  const onDismiss = () => {
+    setIsModalOpen(false);
+  };
   return (
     <SlideWrap
       bg={bg}
       alignItems="center">
+      <Modal
+        isOpen={isModalOpen}
+        content={modalContent}
+        onDismiss={onDismiss}
+      />
       <Title
         opacity={0.5}
         small>
@@ -23,10 +60,13 @@ const Slide3 = () => {
         marginBottom="40px"
         alignItems="center">
         <Paragraph marginRight="10px">Does this object have a triangle in it?</Paragraph>
-        <Icon src={info}></Icon>
+        <Icon
+          src={info}
+          onClick={onClick}></Icon>
       </Flex>
       <ImageWithYesNo
         defaultSrc={boat}
+        correctAnswer={ANSWER_TYPES.YES}
         correctAnswerMsg="Great job!"
         wrongAnswerMsg="This object has a triangle"
         correctAnswerSrc={boat_correct_answer}

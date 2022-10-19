@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { colors } from "utils/colors";
 
-const DownArrowIcon = ({ color = "#333333", className }) => {
+const DownArrowIcon = ({ color = colors.BLACK, className }) => {
   return (
     <svg
       width="66"

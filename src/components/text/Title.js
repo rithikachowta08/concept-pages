@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { PropTypes } from "prop-types";
+import { colors } from "utils/colors";
 
 const H1 = styled.h1`
   color: ${(props) => props.color || "white"};
@@ -10,7 +11,7 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
-  color: ${(props) => (props.color ? props.color : "#333333")};
+  color: ${(props) => (props.color ? props.color : colors.BLACK)};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : "500")};
   opacity: ${(props) => (props.opacity ? props.opacity : "1")};
   font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5rem")};

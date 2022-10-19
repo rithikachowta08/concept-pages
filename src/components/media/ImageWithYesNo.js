@@ -6,11 +6,13 @@ import Pill from "components/Pill";
 import success from "assets/success.svg";
 import error from "assets/error.svg";
 import { PropTypes } from "prop-types";
+import { colors } from "utils/colors";
 
 const ImgContainer = styled.div`
   position: relative;
   background-color: white;
   border: 1px solid ${(props) => props.color};
+  width: ${(props) => props.width};
   border-radius: 24px;
   padding: 40px 60px;
 `;
@@ -22,33 +24,36 @@ export const ANSWER_TYPES = {
 
 const ImageWithYesNo = ({
   defaultSrc,
+  width,
+  isCorrectAnswer: defaultIsCorrectAnswer = null,
+  correctAnswer,
   wrongAnswerSrc,
   correctAnswerMsg,
   wrongAnswerMsg,
   correctAnswerSrc
 }) => {
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(null);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(defaultIsCorrectAnswer);
   const onClickNo = () => {
-    setIsCorrectAnswer(false);
+    setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.NO);
   };
   const onClickYes = () => {
-    setIsCorrectAnswer(true);
+    setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.YES);
   };
   let imageSrc = defaultSrc;
-  let color = "#4A33F5";
+  let color = colors.DARK_BLUE;
   let bottomActions = (
     <>
       <Button
         onClick={onClickNo}
         bgColor="white"
-        color={"#4A33F5"}
-        borderColor={"#4A33F5"}>
+        color={colors.DARK_BLUE}
+        borderColor={colors.DARK_BLUE}>
         No
       </Button>
       <Button
         onClick={onClickYes}
         color="white"
-        bgColor={"#4A33F5"}>
+        bgColor={colors.DARK_BLUE}>
         Yes
       </Button>
     </>
@@ -56,20 +61,21 @@ const ImageWithYesNo = ({
   if (isCorrectAnswer !== null) {
     if (isCorrectAnswer) {
       imageSrc = correctAnswerSrc;
-      color = "#4DCB88";
+      color = colors.GREEN;
       bottomActions = (
         <Pill
-          bgColor="#4DCB88"
+          bgColor={colors.GREEN}
           color="white"
           icon={success}>
           {correctAnswerMsg}
         </Pill>
       );
     } else {
-      color = "#EA6560";
+      color = colors.RED;
+      imageSrc = wrongAnswerSrc;
       bottomActions = (
         <Pill
-          bgColor="#EA6560"
+          bgColor={colors.RED}
           color="white"
           icon={error}>
           {wrongAnswerMsg}
@@ -78,8 +84,10 @@ const ImageWithYesNo = ({
     }
   }
   return (
-    <ImgContainer color={color}>
-      <img src={isCorrectAnswer ? correctAnswerSrc : defaultSrc} />
+    <ImgContainer
+      color={color}
+      width={width}>
+      <img src={imageSrc} />
       <Flex
         justifyContent={isCorrectAnswer !== null ? "center" : "space-between"}
         position="absolute"
@@ -94,12 +102,14 @@ const ImageWithYesNo = ({
 };
 
 ImageWithYesNo.propTypes = {
-  defaultSrc: PropTypes.string.isRequired,
+  defaultSrc: PropTypes.string,
+  correctAnswer: PropTypes.string,
   isCorrectAnswer: PropTypes.bool,
-  correctAnswerSrc: PropTypes.string.isRequired,
-  correctAnswerMsg: PropTypes.string.isRequired,
-  wrongAnswerMsg: PropTypes.string.isRequired,
-  wrongAnswerSrc: PropTypes.string.isRequired
+  correctAnswerSrc: PropTypes.string,
+  correctAnswerMsg: PropTypes.string,
+  wrongAnswerMsg: PropTypes.string,
+  wrongAnswerSrc: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default ImageWithYesNo;
