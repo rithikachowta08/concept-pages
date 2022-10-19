@@ -1,16 +1,14 @@
-import styled from "styled-components/macro";
+import { PageWrap } from "components/StyledElements";
 import Slide1 from "./Slide1";
 import Slide2 from "./Slide2";
-
-const PageWrap = styled.div`
-  height: 100%;
-  width: 100%;
-`;
+import Slide3 from "./Slide3";
 
 export const Triangles = () => {
   return (
     <PageWrap>
       <Slide1 />
+      <Slide2 />
+      <Slide3 />
     </PageWrap>
   );
 };
