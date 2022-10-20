@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 export const SlideWrap = styled.div`
   background: url(${(props) => props.bg});
+  background-color: ${(props) => props.bgColor};
   height: 100%;
   width: 100%;
   padding-left: ${(props) => props.paddingLeft};
@@ -54,4 +55,9 @@ export const Icon = styled.img`
 export const PageWrap = styled.div`
   height: 100%;
   width: 100%;
+`;
+
+export const Video = styled.video`
+  width: 100vw;
+  height: 80vh;
 `;

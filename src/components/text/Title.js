@@ -11,7 +11,7 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
-  color: ${(props) => (props.color ? props.color : colors.BLACK)};
+  color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : "500")};
   opacity: ${(props) => (props.opacity ? props.opacity : "1")};
   font-size: ${(props) => (props.fontSize ? props.fontSize : "1.5rem")};

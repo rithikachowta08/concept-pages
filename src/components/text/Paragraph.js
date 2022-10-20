@@ -4,7 +4,7 @@ import { colors } from "utils/colors";
 import { PropTypes } from "prop-types";
 
 const Para = styled.p`
-  color: ${(props) => props.color || colors.BLACK};
+  color: ${(props) => props.color || colors.DARK_GREY};
   text-align: ${(props) => props.textAlign};
   max-width: ${(props) => props.maxWidth};
   font-size: ${(props) => props.fontSize || "2.2rem"};

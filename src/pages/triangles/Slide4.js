@@ -43,7 +43,7 @@ const Slide4 = () => {
           onHoverOut={onHoverOut}
           textDecoration="underline"
           fontSize="2.2rem"
-          fontWeight="700">
+          fontWeight={700}>
           interior angles
         </TextSpan>{" "}
         which are

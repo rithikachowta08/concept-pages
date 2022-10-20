@@ -96,7 +96,7 @@ const Slide2 = () => {
                   id={index}
                   hoverColor={hoverColors[index]}
                   fontSize="2.5rem"
-                  fontWeight="700"
+                  fontWeight={700}
                   textDecoration="underline"
                   marginBottom="16px"
                   cursor={subtitle === "Vertices" ? "pointer" : null}

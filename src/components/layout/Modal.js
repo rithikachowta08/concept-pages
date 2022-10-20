@@ -18,7 +18,7 @@ const Overlay = styled.div`
 `;
 
 const ModalBody = styled.div`
-  width: 40%;
+  width: 30%;
   height: 100%;
   background: #3c3281;
   color: white;

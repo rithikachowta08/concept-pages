@@ -36,7 +36,7 @@ const Slide7 = () => {
           </Title>
           <Title
             fontSize="2.5rem"
-            fontWeight="700"
+            fontWeight={700}
             marginBottom="16px"
             small>
             Right angled triangle
@@ -48,7 +48,7 @@ const Slide7 = () => {
               onHoverOut={onHoverOut}
               textDecoration="underline"
               hoverColor={colors.DARK_BLUE}
-              fontWeight="700"
+              fontWeight={700}
               fontSize="2.2rem">
               90 degrees
             </TextSpan>
@@ -60,7 +60,7 @@ const Slide7 = () => {
               onHoverOut={onHoverOutHypotenuse}
               textDecoration="underline"
               hoverColor={colors.AQUA}
-              fontWeight="700"
+              fontWeight={700}
               fontSize="2.2rem">
               Hypotenuse
             </TextSpan>{" "}

@@ -29,7 +29,7 @@ const Slide6 = () => {
           </Title>
           <Title
             fontSize="2.5rem"
-            fontWeight="700"
+            fontWeight={700}
             marginBottom="16px"
             small>
             Obtuse angled triangle
@@ -41,7 +41,7 @@ const Slide6 = () => {
               onHoverOut={onHoverOut}
               color={colors.RED}
               hoverColor={colors.DARK_BLUE}
-              fontWeight="700"
+              fontWeight={700}
               fontSize="2.2rem">
               greater than 90°
             </TextSpan>
