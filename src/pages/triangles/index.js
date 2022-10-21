@@ -6,7 +6,8 @@ import Slide4 from "./Slide4";
 import Slide5 from "./Slide5";
 import Slide6 from "./Slide6";
 import Slide7 from "./Slide7";
-import Slide8 from "./Slide8";
+import Slide8 from "./Slide9";
+import Slide9 from "./Slide8";
 
 export const Triangles = () => {
   const SlideArray = [
@@ -17,7 +18,8 @@ export const Triangles = () => {
     <Slide5 key={4} />,
     <Slide6 key={5} />,
     <Slide7 key={6} />,
-    <Slide8 key={7} />
+    <Slide8 key={7} />,
+    <Slide9 key={8} />
   ];
   const SlideNameList = [
     "Slide 1",
@@ -27,7 +29,8 @@ export const Triangles = () => {
     "Slide 5",
     "Slide 6",
     "Slide 7",
-    "Slide 8"
+    "Slide 8",
+    "Slide 9"
   ];
 
   return (
