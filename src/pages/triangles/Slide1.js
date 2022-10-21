@@ -1,7 +1,6 @@
-import React from "react";
 import { SlideWrap } from "components/StyledElements";
 import { Title, ContentList } from "components/text";
-import bg from "../../assets/purple_bg_triangles.png";
+import bg from "assets/purple_bg_triangles.png";
 
 const Slide1 = () => {
   return (

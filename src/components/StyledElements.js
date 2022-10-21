@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 
 export const SlideWrap = styled.div`
   background: url(${(props) => props.bg});
+  background-color: ${(props) => props.bgColor};
   height: 100%;
   width: 100%;
   padding-left: ${(props) => props.paddingLeft};
@@ -9,11 +10,13 @@ export const SlideWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: ${(props) => props.alignItems};
 `;
 
 export const LeftWrap = styled.div`
-  width: 40%;
+  width: ${(props) => props.width || "50%"};
 `;
 
 export const Flex = styled.div`
@@ -46,9 +49,15 @@ export const Icon = styled.img`
   height: 15px;
   cursor: pointer;
   margin-right: ${(props) => props.marginRight};
+  align-self: ${(props) => props.alignSelf};
 `;
 
 export const PageWrap = styled.div`
   height: 100%;
   width: 100%;
+`;
+
+export const Video = styled.video`
+  width: 100vw;
+  height: 80vh;
 `;

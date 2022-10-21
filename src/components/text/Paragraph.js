@@ -1,20 +1,33 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { colors } from "utils/colors";
 import { PropTypes } from "prop-types";
 
 const Para = styled.p`
-  color: ${(props) => props.color || "#333333"};
+  color: ${(props) => props.color || colors.DARK_GREY};
+  text-align: ${(props) => props.textAlign};
+  max-width: ${(props) => props.maxWidth};
   font-size: ${(props) => props.fontSize || "2.2rem"};
   margin: 0;
   margin-bottom: ${(props) => props.marginBottom || 0};
   margin-right: ${(props) => props.marginRight || 0};
 `;
 
-const Paragraph = ({ children, fontSize, marginBottom, marginRight, color }) => {
+const Paragraph = ({
+  children,
+  fontSize,
+  marginBottom,
+  maxWidth,
+  textAlign,
+  marginRight,
+  color
+}) => {
   return (
     <Para
       marginBottom={marginBottom}
       marginRight={marginRight}
+      maxWidth={maxWidth}
+      textAlign={textAlign}
       fontSize={fontSize}
       color={color}>
       {children}
@@ -27,7 +40,9 @@ Paragraph.propTypes = {
   color: PropTypes.string,
   fontSize: PropTypes.string,
   marginBottom: PropTypes.string,
-  marginRight: PropTypes.string
+  maxWidth: PropTypes.string,
+  marginRight: PropTypes.string,
+  textAlign: PropTypes.string
 };
 
 export default Paragraph;

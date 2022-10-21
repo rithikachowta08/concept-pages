@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
 import Modal from "components/layout/Modal";
 import TransitionImage from "components/media/TransitionImage";
-import triangle_red from "../../assets/triangle_red.svg";
-import triangle_angles from "../../assets/triangle_angles.svg";
-import triangle_sides from "../../assets/triangle_sides.svg";
-import triangle_vertices from "../../assets/triangle_vertices.svg";
-import vertice from "../../assets/vertice.svg";
-import ruler from "../../assets/ruler.svg";
-import three_figure from "../../assets/three_figure.svg";
-import bg from "../../assets/white_bg.png";
+import triangle_red from "assets/triangle_red.svg";
+import triangle_angles from "assets/triangle_angles.svg";
+import triangle_sides from "assets/triangle_sides.svg";
+import triangle_vertices from "assets/triangle_vertices.svg";
+import vertice from "assets/vertice.svg";
+import ruler from "assets/ruler.svg";
+import three_figure from "assets/three_figure.svg";
+import bg from "assets/white_bg.png";
+import { colors } from "utils/colors";
 
 const Slide2 = () => {
   const subtitles = ["Sides", "Angles", "Vertices"];
-  const hoverColors = ["#67DBE8", "#4A33F5", "#4DCB88"];
+  const hoverColors = [colors.AQUA, colors.DARK_BLUE, colors.GREEN];
   const modalContent = (
     <Flex direction="column">
       <Paragraph
@@ -95,7 +96,7 @@ const Slide2 = () => {
                   id={index}
                   hoverColor={hoverColors[index]}
                   fontSize="2.5rem"
-                  fontWeight="700"
+                  fontWeight={700}
                   textDecoration="underline"
                   marginBottom="16px"
                   cursor={subtitle === "Vertices" ? "pointer" : null}
