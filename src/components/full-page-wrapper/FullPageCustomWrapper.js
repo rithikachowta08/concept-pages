@@ -16,7 +16,7 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
     console.log(section, origin, destination, direction, trigger);
   }
 
-  const darkBg = [0, 3, 8];
+  const darkBg = [0, 3, 8, 9];
 
   return (
     <>

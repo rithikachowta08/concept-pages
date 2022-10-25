@@ -10,6 +10,7 @@ const StyledSpan = styled.span`
   text-decoration: ${(props) => props.textDecoration || "none"};
   margin-bottom: ${(props) => props.marginBottom || 0};
   margin: ${(props) => props.margin};
+  transform: ${(props) => props.transform};
   cursor: ${(props) => props.cursor || "default"};
   &:hover {
     color: ${(props) => props.hoverColor};
@@ -19,6 +20,7 @@ const StyledSpan = styled.span`
 const TextSpan = ({
   children,
   fontSize,
+  transform,
   cursor,
   id,
   hoverColor,
@@ -35,6 +37,7 @@ const TextSpan = ({
     <StyledSpan
       fontSize={fontSize}
       textDecoration={textDecoration}
+      transform={transform}
       fontWeight={fontWeight}
       marginBottom={marginBottom}
       margin={margin}
@@ -54,6 +57,7 @@ TextSpan.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
   margin: PropTypes.string,
+  transform: PropTypes.string,
   id: PropTypes.any,
   hoverColor: PropTypes.string,
   cursor: PropTypes.string,

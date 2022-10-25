@@ -10,9 +10,9 @@ const Slide1 = ({ moveToSection }) => {
       paddingLeft="200px">
       <Title marginBottom="50px">Triangles</Title>
       <ContentList
-        items={["What is a triangle?", "Types of triangles"]}
+        items={["What is a triangle?", "Types of triangles", "Properties of triangles"]}
         moveTo={moveToSection}
-        anchorIdxes={[2, 4]}
+        anchorIdxes={[2, 4, 10]}
       />
     </SlideWrap>
   );

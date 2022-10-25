@@ -3,7 +3,17 @@ import { Icon, Flex } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { PropTypes } from "prop-types";
 
-const Pill = ({ children, icon, width, position, bottom, alignSelf, color, bgColor }) => {
+const Pill = ({
+  children,
+  icon,
+  width,
+  position,
+  bottom,
+  alignSelf,
+  color,
+  bgColor,
+  fontSize = "1rem"
+}) => {
   return (
     <Flex
       bgColor={bgColor}
@@ -15,12 +25,14 @@ const Pill = ({ children, icon, width, position, bottom, alignSelf, color, bgCol
       position={position}
       color={color}
       width={width}>
-      <Icon
-        src={icon}
-        marginRight="10px"></Icon>
+      {icon ? (
+        <Icon
+          src={icon}
+          marginRight="10px"></Icon>
+      ) : null}
       <TextSpan
         color={color}
-        fontSize="1rem">
+        fontSize={fontSize}>
         {children}
       </TextSpan>
     </Flex>
@@ -34,6 +46,7 @@ Pill.propTypes = {
   position: PropTypes.string,
   bottom: PropTypes.string,
   alignSelf: PropTypes.string,
+  fontSize: PropTypes.string,
   width: PropTypes.string,
   color: PropTypes.string
 };
