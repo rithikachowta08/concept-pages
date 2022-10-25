@@ -25,8 +25,8 @@ const IFrame = styled.iframe`
 `;
 
 const Slide8 = () => {
-  const triggerToast = (angleValue) => {
-    if (angleValue === 90) {
+  const triggerToast = (isRightAngled) => {
+    if (isRightAngled) {
       toast.success("That is correct! ABC is a right angled triangle", {
         icon: (
           <Icon
