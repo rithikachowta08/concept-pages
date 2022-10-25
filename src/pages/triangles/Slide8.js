@@ -1,10 +1,28 @@
 import { SlideWrap, Flex, Icon } from "components/StyledElements";
+import styled from "styled-components/macro";
 import { toast } from "react-toastify";
 import bg from "assets/white_bg.png";
 import error from "assets/error.svg";
 import success from "assets/success.svg";
 import { Paragraph } from "components/text";
 import { useEffect } from "react";
+
+const IFrame = styled.iframe`
+  width: 750px;
+  height: 700px;
+  @media (max-height: 600px) {
+    width: 500px;
+    height: 550px;
+  }
+  @media (max-height: 700px) {
+    width: 550px;
+    height: 600px;
+  }
+  @media (max-height: 900px) {
+    width: 600px;
+    height: 650px;
+  }
+`;
 
 const Slide8 = () => {
   const triggerToast = (angleValue) => {
@@ -42,10 +60,8 @@ const Slide8 = () => {
         alignItems="center"
         justifyContent="space-around">
         <Paragraph maxWidth="30%">Move the vertices to form a right angled triangle</Paragraph>
-        <iframe
-          src="./Triangle.html"
-          width="750"
-          height="700"
+        <IFrame
+          src="./triangle.html"
           allowFullScreen
           frameBorder="0"
         />

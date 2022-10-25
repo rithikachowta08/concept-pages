@@ -15,6 +15,8 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
     console.log(section, origin, destination, direction, trigger);
   }
 
+  const darkBg = [0, 3, 8];
+
   return (
     <>
       <ReactFullpage
@@ -40,7 +42,7 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
                       onClick={() => fullpageApi.moveSectionDown()}
                       style={{ cursor: "pointer" }}>
                       <DownArrowIcon
-                        color={!idx ? colors.WHITE : colors.DARK_GREY}
+                        color={darkBg.includes(idx) ? colors.WHITE : colors.DARK_GREY}
                         className="down-arrow-icon"
                       />
                     </div>

@@ -60,5 +60,5 @@ export const PageWrap = styled.div`
 
 export const Video = styled.video`
   width: 100vw;
-  height: 80vh;
+  height: 75vh;
 `;

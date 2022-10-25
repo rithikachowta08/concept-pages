@@ -1,15 +1,19 @@
-.fp-viewing-0 #fp-nav ul li a span,
-.fp-viewing-0 .fp-slidesNav ul li a span {
-  background: #fff !important;
+.fp-viewing-0,
+.fp-viewing-3,
+.fp-viewing-8 {
+  #fp-nav ul li a span,
+  .fp-slidesNav ul li a span {
+    background: #fff !important;
+  }
 }
 
-body:not(.fp-viewing-0) #fp-nav ul li a span,
-body:not(.fp-viewing-0) .fp-slidesNav ul li a span {
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8) #fp-nav ul li a span,
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8) .fp-slidesNav ul li a span {
   background: #4a33f5 !important;
 }
 
-body:not(.fp-viewing-0) #fp-nav ul li .fp-tooltip,
-body:not(.fp-viewing-0) .fp-slidesNav ul li .fp-tooltip {
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8) #fp-nav ul li .fp-tooltip,
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8) .fp-slidesNav ul li .fp-tooltip {
   color: #4a33f5 !important;
 }
 
