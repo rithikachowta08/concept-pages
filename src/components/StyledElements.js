@@ -6,6 +6,7 @@ export const SlideWrap = styled.div`
   height: 100%;
   width: 100%;
   padding-left: ${(props) => props.paddingLeft};
+  padding: ${(props) => props.padding};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,8 +46,8 @@ export const StyledImg = styled.img`
 `;
 
 export const Icon = styled.img`
-  width: 15px;
-  height: 15px;
+  width: ${(props) => props.width || "15px"};
+  height: ${(props) => props.height || props.width || "15px"};
   cursor: pointer;
   margin-right: ${(props) => props.marginRight};
   align-self: ${(props) => props.alignSelf};

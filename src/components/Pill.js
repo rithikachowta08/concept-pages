@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { Icon, Flex } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { PropTypes } from "prop-types";
