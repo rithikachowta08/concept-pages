@@ -21,11 +21,15 @@ const ListItem = styled.li`
   }
 `;
 
-const Title = ({ items }) => {
+const Title = ({ items, moveTo, anchorIdxes }) => {
   return (
     <UnorderedList>
       {items.map((item, index) => (
-        <ListItem key={index}>{item}</ListItem>
+        <ListItem
+          onClick={() => moveTo(anchorIdxes[index])}
+          key={index}>
+          {item}
+        </ListItem>
       ))}
     </UnorderedList>
   );
@@ -33,7 +37,9 @@ const Title = ({ items }) => {
 
 Title.propTypes = {
   items: PropTypes.array.isRequired,
-  color: PropTypes.string
+  color: PropTypes.string,
+  moveTo: PropTypes.func,
+  anchorIdxes: PropTypes.array
 };
 
 export default Title;

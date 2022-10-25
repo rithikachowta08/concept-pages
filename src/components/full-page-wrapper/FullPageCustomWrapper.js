@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components/macro";
 import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
@@ -30,6 +31,7 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
         scrollingSpeed={900} /* Options here */
         fitToSectionDelay={900}
         render={({ state, fullpageApi }) => {
+          const moveToSection = fullpageApi?.moveTo;
           return (
             <>
               <ReactFullpage.Wrapper>
@@ -37,7 +39,7 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
                   <div
                     className="section"
                     key={idx}>
-                    <PageWrap>{itm}</PageWrap>
+                    <PageWrap>{React.cloneElement(itm, { moveToSection })}</PageWrap>
                     <div
                       onClick={() => fullpageApi.moveSectionDown()}
                       style={{ cursor: "pointer" }}>
