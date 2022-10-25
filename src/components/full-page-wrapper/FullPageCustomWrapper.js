@@ -40,14 +40,16 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
                     className="section"
                     key={idx}>
                     <PageWrap>{React.cloneElement(itm, { moveToSection })}</PageWrap>
-                    <div
-                      onClick={() => fullpageApi.moveSectionDown()}
-                      style={{ cursor: "pointer" }}>
-                      <DownArrowIcon
-                        color={darkBg.includes(idx) ? colors.WHITE : colors.DARK_GREY}
-                        className="down-arrow-icon"
-                      />
-                    </div>
+                    {idx === slidesComponentList.length - 1 ? null : (
+                      <div
+                        onClick={() => fullpageApi.moveSectionDown()}
+                        style={{ cursor: "pointer" }}>
+                        <DownArrowIcon
+                          color={darkBg.includes(idx) ? colors.WHITE : colors.DARK_GREY}
+                          className="down-arrow-icon"
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
               </ReactFullpage.Wrapper>
