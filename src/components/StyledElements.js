@@ -34,6 +34,7 @@ export const Flex = styled.div`
   transform: ${(props) => props.transform};
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.alignItems};
+  cursor: ${(props) => props.cursor};
   margin-bottom: ${(props) => props.marginBottom || "0"};
   margin-right: ${(props) => props.marginRight || "0"};
 `;

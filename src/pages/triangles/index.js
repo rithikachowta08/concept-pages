@@ -29,26 +29,19 @@ export const Triangles = () => {
     <Slide12 key={11} />,
     <Slide13 key={12} />
   ];
-  const SlideNameList = [
-    "Slide 1",
-    "Slide 2",
-    "Slide 3",
-    "Slide 4",
-    "Slide 5",
-    "Slide 6",
-    "Slide 7",
-    "Slide 8",
-    "Slide 9",
-    "Slide 10",
-    "Slide 11",
-    "Slide 12",
-    "Slide 13"
+
+  const navigationSections = [
+    { title: "What is a triangle?", slides: [1, 2] },
+    { title: "Types of triangles", slides: [3, 4, 5, 6, 7, 8] },
+    { title: "Properties of triangles", slides: [9, 10, 11, 12] }
   ];
 
+  const darkBgIndices = [0, 3, 8, 9];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
-      slidesNamesList={SlideNameList}
+      navigationSections={navigationSections}
+      darkBgIndices={darkBgIndices}
     />
   );
 };

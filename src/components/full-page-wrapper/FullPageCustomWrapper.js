@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
+import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";
 import { colors } from "utils/colors";
 import "./FullPageCustomWrapperStyles.scss";
@@ -11,27 +12,28 @@ const PageWrap = styled.div`
   width: 100vw;
 `;
 
-export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) => {
-  function onSlideChange(section, origin, destination, direction, trigger) {
-    console.log(section, origin, destination, direction, trigger);
-  }
+let fullPage;
 
-  const darkBg = [0, 3, 8, 9];
-
+export const FullPageCustomWrapper = ({
+  slidesComponentList,
+  darkBgIndices,
+  navigationSections
+}) => {
+  const [currentPageIdx, setCurrentPageIdx] = useState(0);
   return (
     <>
       <ReactFullpage
         //fullpage options
         // licenseKey={"YOUR_KEY_HERE"}
-        navigation
-        navigationTooltips={slidesNamesList}
-        navigationPosition={"left"}
-        slidesNavigation={true}
-        // onSlideLeave={onSlideChange}
-        scrollingSpeed={900} /* Options here */
+        navigationTooltips={[]}
+        scrollingSpeed={900}
         fitToSectionDelay={900}
+        afterLoad={() => {
+          setCurrentPageIdx(fullPage?.getActiveSection().index() || 0);
+        }}
         render={({ state, fullpageApi }) => {
           const moveToSection = fullpageApi?.moveTo;
+          fullPage = fullpageApi;
           return (
             <>
               <ReactFullpage.Wrapper>
@@ -39,13 +41,22 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
                   <div
                     className="section"
                     key={idx}>
+                    {/* No navigation bar on title page */}
+                    {idx === 0 ? null : (
+                      <NavigationBar
+                        sections={navigationSections}
+                        darkTheme={darkBgIndices.includes(idx)}
+                        moveTo={moveToSection}
+                        currentPageIdx={currentPageIdx}
+                      />
+                    )}
                     <PageWrap>{React.cloneElement(itm, { moveToSection })}</PageWrap>
                     {idx === slidesComponentList.length - 1 ? null : (
                       <div
-                        onClick={() => fullpageApi.moveSectionDown()}
+                        onClick={fullpageApi?.moveSectionDown}
                         style={{ cursor: "pointer" }}>
                         <DownArrowIcon
-                          color={darkBg.includes(idx) ? colors.WHITE : colors.DARK_GREY}
+                          color={darkBgIndices.includes(idx) ? colors.WHITE : colors.DARK_GREY}
                           className="down-arrow-icon"
                         />
                       </div>
@@ -57,24 +68,12 @@ export const FullPageCustomWrapper = ({ slidesComponentList, slidesNamesList }) 
           );
         }}
       />
-      {/* <div
-        onClick={() => window.fullpage_api.moveSectionDown()}
-        style={{ cursor: "pointer" }}>
-        <DownArrowIcon
-          // color={
-          //   window?.fullpage_api?.getActiveSection().anchor == slidesNamesList[0]
-          //     ? "#ffffff"
-          //     : "#333333"
-          // }
-          color={"grey"}
-          className="down-arrow-icon"
-        />
-      </div> */}
     </>
   );
 };
 
 FullPageCustomWrapper.propTypes = {
   slidesComponentList: PropTypes.array.isRequired,
-  slidesNamesList: PropTypes.array.isRequired
+  darkBgIndices: PropTypes.array.isRequired,
+  navigationSections: PropTypes.array.isRequired
 };

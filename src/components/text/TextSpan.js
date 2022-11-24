@@ -9,6 +9,7 @@ const StyledSpan = styled.span`
   font-size: ${(props) => props.fontSize || "1.5rem"};
   text-decoration: ${(props) => props.textDecoration || "none"};
   margin-bottom: ${(props) => props.marginBottom || 0};
+  margin-left: ${(props) => props.marginLeft || 0};
   margin: ${(props) => props.margin};
   transform: ${(props) => props.transform};
   cursor: ${(props) => props.cursor || "default"};
@@ -27,6 +28,7 @@ const TextSpan = ({
   color,
   textDecoration,
   marginBottom,
+  marginLeft,
   margin,
   onHover,
   onHoverOut,
@@ -40,6 +42,7 @@ const TextSpan = ({
       transform={transform}
       fontWeight={fontWeight}
       marginBottom={marginBottom}
+      marginLeft={marginLeft}
       margin={margin}
       cursor={cursor}
       id={id}
@@ -65,6 +68,7 @@ TextSpan.propTypes = {
   fontSize: PropTypes.string,
   textDecoration: PropTypes.string,
   marginBottom: PropTypes.string,
+  marginLeft: PropTypes.string,
   onHover: PropTypes.func,
   onHoverOut: PropTypes.func,
   onClick: PropTypes.func

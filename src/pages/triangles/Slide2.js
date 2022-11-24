@@ -73,7 +73,7 @@ const Slide2 = () => {
         content={modalContent}
         onDismiss={onDismiss}
       />
-      <Flex>
+      <Flex alignItems="center">
         <LeftWrap>
           <Title
             opacity={0.5}

@@ -28,7 +28,7 @@ const Pill = ({
       {icon ? (
         <Icon
           src={icon}
-          marginRight="10px"></Icon>
+          marginRight="6px"></Icon>
       ) : null}
       <TextSpan
         color={color}
