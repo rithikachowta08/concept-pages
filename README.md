@@ -19,6 +19,7 @@ Formats the files using Prettier
 
 ## Libraries used
 
+- styled-components
 - React Router for routing each concept page using URL
 - [React Full Page](https://github.com/alvarotrigo/react-fullpage) for full page scrolling
 
