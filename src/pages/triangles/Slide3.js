@@ -17,7 +17,7 @@ const Slide3 = () => {
         color="white"
         marginBottom="50px"
         fontSize="1.5rem">
-        Some of these objects have a triangular surface. Click on the card to select objects.
+        {"If the object has a triangular surface present within itself, then choose 'Yes'"}
       </Paragraph>
       <Title
         fontSize="1.8rem"
@@ -30,7 +30,7 @@ const Slide3 = () => {
       <ImageWithYesNo
         width="fit-content"
         correctAnswerSrc={tent_with_triangle}
-        correctAnswerMsg="Great job!"
+        correctAnswerMsg="Yes"
         isCorrectAnswer
       />
     </Flex>

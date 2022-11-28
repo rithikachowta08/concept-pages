@@ -15,6 +15,27 @@ const ImgContainer = styled.div`
   width: ${(props) => props.width};
   border-radius: 24px;
   padding: 40px 60px;
+  @media (max-height: 600px) {
+    height: 100px;
+  }
+  @media (max-height: 700px) {
+    height: 150px;
+  }
+  @media (max-height: 900px) {
+    height: 200px;
+  }
+`;
+
+const StyledImg = styled.img`
+  @media (max-height: 600px) {
+    height: 100px;
+  }
+  @media (max-height: 700px) {
+    height: 150px;
+  }
+  @media (max-height: 900px) {
+    height: 200px;
+  }
 `;
 
 export const ANSWER_TYPES = {
@@ -87,7 +108,7 @@ const ImageWithYesNo = ({
     <ImgContainer
       color={color}
       width={width}>
-      <img src={imageSrc} />
+      <StyledImg src={imageSrc} />
       <Flex
         justifyContent={isCorrectAnswer !== null ? "center" : "space-between"}
         position="absolute"

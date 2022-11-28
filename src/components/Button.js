@@ -14,6 +14,9 @@ const StyledButton = styled.button`
   bottom: ${(props) => props.bottom || "0"};
   align-self: ${(props) => props.alignSelf || "center"};
   background-color: ${(props) => props.bgColor || "transparent"};
+  @media (max-height: 900px) {
+    min-width: 70px;
+  }
 `;
 
 const Button = ({

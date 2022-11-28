@@ -34,7 +34,7 @@ const Slide4 = () => {
         textAlign="center"
         maxWidth="60%"
         color="white"
-        marginBottom="20px">
+        marginBottom="40px">
         Triangles can be classified into three types with respect to their{" "}
         <TextSpan
           color="white"
