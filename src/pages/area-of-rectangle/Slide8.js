@@ -53,7 +53,7 @@ const Slide4 = () => {
             <a
               target="_blank"
               href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse."
-              style={{ color: "#FEC429" }}
+              style={{ textDecoration: "none", color: "#FEC429" }}
               rel="noreferrer">
               Pythagorean
             </a>{" "}
