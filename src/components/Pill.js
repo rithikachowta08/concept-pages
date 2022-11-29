@@ -12,7 +12,8 @@ const Pill = ({
   alignSelf,
   color,
   bgColor,
-  fontSize = "1rem"
+  fontSize = "1rem",
+  fontWeight = "400"
 }) => {
   return (
     <Flex
@@ -32,7 +33,8 @@ const Pill = ({
       ) : null}
       <TextSpan
         color={color}
-        fontSize={fontSize}>
+        fontSize={fontSize}
+        fontWeight={fontWeight}>
         {children}
       </TextSpan>
     </Flex>
@@ -48,7 +50,8 @@ Pill.propTypes = {
   alignSelf: PropTypes.string,
   fontSize: PropTypes.string,
   width: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  fontWeight: PropTypes.string
 };
 
 export default Pill;

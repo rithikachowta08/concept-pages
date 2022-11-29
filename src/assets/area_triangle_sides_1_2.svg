@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #4a33f5;
+      }
+
+      .cls-4 {
+        opacity: .2;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #333;
+      }
+
+      .cls-7, .cls-6 {
+        opacity: .1;
+      }
+
+      .cls-3 {
+        opacity: .6;
+      }
+    </style>
+  </defs>
+  <g>
+    <g class="cls-7">
+      <polygon class="cls-6" points="279.71 70.12 63.31 444.93 496.11 444.93 279.71 70.12"/>
+    </g>
+    <g>
+      <g class="cls-4">
+        <path class="cls-5" d="M279.71,74.39l211.32,366.02H68.39L279.71,74.39m0-12l-5.2,9L63.19,437.41l-5.2,9H501.42l-5.2-9L284.9,71.39l-5.2-9h0Z"/>
+      </g>
+      <path class="cls-3" d="M310.83,116.33l-31.15-53.89-31.17,54.02s31.78,30.42,62.32-.13h0Z"/>
+    </g>
+    <path class="cls-3" d="M120.68,446.4l-62.58-.06,31.15-54.04s42.61,12.38,31.43,54.1h0Z"/>
+    <path class="cls-3" d="M439.19,446.39l62.12-.08-30.93-53.63s-42.37,11.99-31.19,53.71h0Z"/>
+  </g>
+  <rect class="cls-2" x="276.71" y="428.16" width="6" height="31.28"/>
+  <rect class="cls-2" x="374.34" y="256.61" width="31.28" height="6" transform="translate(-77.56 229.76) rotate(-30)"/>
+  <rect class="cls-2" x="166.18" y="243.52" width="6" height="31.28" transform="translate(-139.85 276.09) rotate(-60)"/>
+  <text class="cls-1" transform="translate(270.43 488.08)"><tspan x="0" y="0">a</tspan></text>
+  <text class="cls-1" transform="translate(409.21 250.69)"><tspan x="0" y="0">a</tspan></text>
+  <text class="cls-1" transform="translate(126.95 250.69)"><tspan x="0" y="0">a</tspan></text>
+</svg>

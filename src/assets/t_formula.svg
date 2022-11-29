@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+      }
+
+      .cls-4 {
+        fill: #e96560;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="251.46 41.98 14.36 452.64 488.55 452.64 251.46 41.98"/>
+    <path class="cls-3" d="M251.46,41.98l237.09,410.66H14.36L251.46,41.98m0-12l-5.2,9L9.17,449.64l-5.2,9H498.95l-5.2-9L256.65,38.98l-5.2-9h0Z"/>
+    <g>
+      <rect class="cls-4" x="248.46" y="41.98" width="6" height="6"/>
+      <path class="cls-4" d="M254.46,436.13h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Zm0-24.26h-6v-12.13h6v12.13Z"/>
+      <rect class="cls-4" x="248.46" y="448.26" width="6" height="6"/>
+    </g>
+    <path class="cls-4" d="M308.11,450.61h-6v-12h6v12Zm0-24h-6v-12h6v12Zm-3.59-20.41h-12v-6h12v6Zm-24,0h-12v-6h12v6Zm-24,0h-6.54v-6h6.54v6Z"/>
+  </g>
+  <text class="cls-2" transform="translate(249.98 495.17)"><tspan x="0" y="0">b</tspan></text>
+  <text class="cls-2" transform="translate(263.36 260.86)"><tspan x="0" y="0">h</tspan></text>
+</svg>

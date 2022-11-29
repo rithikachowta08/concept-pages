@@ -13,8 +13,10 @@ const StyledSpan = styled.span`
   margin: ${(props) => props.margin};
   transform: ${(props) => props.transform};
   cursor: ${(props) => props.cursor || "default"};
+  background: ${(props) => props.bgColor || "transparent"};
   &:hover {
     color: ${(props) => props.hoverColor};
+    background: ${(props) => props.hoverBgColor || "transparent"};
   }
 `;
 
@@ -33,7 +35,9 @@ const TextSpan = ({
   onHover,
   onHoverOut,
   onClick,
-  fontWeight
+  fontWeight,
+  bgColor,
+  hoverBgColor
 }) => {
   return (
     <StyledSpan
@@ -50,7 +54,9 @@ const TextSpan = ({
       color={color}
       onClick={onClick}
       onMouseLeave={onHoverOut}
-      onMouseEnter={onHover}>
+      onMouseEnter={onHover}
+      bgColor={bgColor}
+      hoverBgColor={hoverBgColor}>
       {children}
     </StyledSpan>
   );
@@ -71,7 +77,9 @@ TextSpan.propTypes = {
   marginLeft: PropTypes.string,
   onHover: PropTypes.func,
   onHoverOut: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  bgColor: PropTypes.string,
+  hoverBgColor: PropTypes.string
 };
 
 TextSpan.defaultProps = {

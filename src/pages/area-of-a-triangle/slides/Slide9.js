@@ -1,0 +1,95 @@
+import React, { useState } from "react";
+import bg from "assets/purple_bg.png";
+import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
+import { Paragraph, TextSpan, Title } from "components/text";
+import { colors } from "utils/colors";
+import TransitionImage from "components/media/TransitionImage";
+
+import area_triangle_angles_1_1 from "assets/area_triangle_angles_1_1.svg";
+import area_triangle_angles_2_1 from "assets/area_triangle_angles_2_1.svg";
+import area_triangle_angles_3_1 from "assets/area_triangle_angles_3_1.svg";
+
+const Slide9 = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <SlideWrap
+      bg={bg}
+      alignItems="center">
+      <Title
+        marginBottom="20px"
+        fontWeight={500}
+        fontSize="1.8rem"
+        opacity={0.5}
+        color="white"
+        small>
+        Area of Different Types of Triangles
+      </Title>
+      <Title
+        marginBottom="50px"
+        fontWeight={700}
+        fontSize="2.5rem"
+        color="white">
+        Classified based on angles
+      </Title>
+      <Paragraph color={colors.WHITE}>
+        Area = 1/2 x{" "}
+        <TextSpan
+          color={colors.RED}
+          hoverColor={colors.AQUA}
+          onHover={() => setActiveIndex(1)}
+          onHoverOut={() => setActiveIndex(0)}>
+          Base (b)
+        </TextSpan>{" "}
+        x{" "}
+        <TextSpan
+          color={colors.RED}
+          hoverColor={colors.AQUA}
+          onHover={() => setActiveIndex(2)}
+          onHoverOut={() => setActiveIndex(0)}>
+          Height (h)
+        </TextSpan>
+      </Paragraph>
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        width="70%">
+        <Flex direction="column">
+          <TransitionImage
+            images={[area_triangle_angles_1_1]}
+            activeIndex={activeIndex}
+          />
+          <TextSpan
+            color="white"
+            fontWeight={400}>
+            Acute Angled Triangle
+          </TextSpan>
+        </Flex>
+        <Flex direction="column">
+          <TransitionImage
+            images={[area_triangle_angles_2_1]}
+            activeIndex={activeIndex}
+          />
+          <TextSpan
+            color="white"
+            fontWeight={400}>
+            Right Angled Triangle
+          </TextSpan>
+        </Flex>
+        <Flex direction="column">
+          <TransitionImage
+            images={[area_triangle_angles_3_1]}
+            activeIndex={activeIndex}
+          />
+          <TextSpan
+            color="white"
+            fontWeight={400}>
+            Obtuse Angled Triangle
+          </TextSpan>
+        </Flex>
+      </Flex>
+    </SlideWrap>
+  );
+};
+
+export default Slide9;
