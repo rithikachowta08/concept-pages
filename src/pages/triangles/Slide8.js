@@ -1,7 +1,7 @@
 import { SlideWrap, Flex, Icon } from "components/StyledElements";
 import styled from "styled-components/macro";
 import { toast } from "react-toastify";
-import bg from "assets/white_bg.png";
+import bg from "assets/white_bg.webp";
 import error from "assets/error.svg";
 import success from "assets/success.svg";
 import { Paragraph } from "components/text";

@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import { SlideWrap } from "components/StyledElements";
 import { Title, ContentList } from "components/text";
-import bg from "assets/purple_bg_triangles.png";
+import bg from "assets/purple_bg_triangles.webp";
 
 const Slide1 = ({ moveToSection }) => {
   return (

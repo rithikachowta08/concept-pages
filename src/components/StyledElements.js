@@ -24,6 +24,8 @@ export const Flex = styled.div`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
   width: ${(props) => props.width};
+  gap: ${(props) => props.gap};
+  flex: ${(props) => props.flex};
   padding: ${(props) => props.padding};
   color: ${(props) => props.color};
   background-color: ${(props) => props.bgColor};

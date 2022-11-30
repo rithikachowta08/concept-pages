@@ -2,16 +2,15 @@ import styled from "styled-components/macro";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
 import PropTypes from "prop-types";
+import { DEVICE_TYPES } from "hooks/useDeviceType";
+import down_caret from "assets/down_caret.svg";
 import left_caret from "assets/left_caret.svg";
-import { useEffect, useState } from "react";
+import down_caret_dark from "assets/down_caret_dark.svg";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const NavWrap = styled.div`
-  position: absolute;
-  top: 50vh;
-  left: 2vh;
   padding: 70px 30px;
-  background: rgba(231, 228, 248, 0.4);
   border: ${(props) => (props.darkTheme ? "none" : `1px solid ${colors.PURPLE}`)};
   border-radius: 20px;
   display: flex;
@@ -19,9 +18,40 @@ const NavWrap = styled.div`
   justify-content: center;
   align-items: flex-start;
   cursor: pointer;
-  z-index: 1;
-  transform: translateY(-50%);
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
+  top: ${(props) => (props.isMobile ? "0" : "50vh")};
+  left: ${(props) => (props.isMobile ? "0" : "2vh")};
+  width: ${(props) => (props.isMobile ? "100%" : "auto")};
+  transform: ${(props) => (props.isMobile ? "none" : "translateY(-50%)")};
+  background: rgba(231, 228, 248, 0.4);
   backdrop-filter: ${(props) => (props.isExpanded ? "blur(15px)" : "blur(38px)")};
+  z-index: 1;
+`;
+
+const MobileNavWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+`;
+
+const SectionBar = styled.div`
+  height: 0px;
+  flex: ${(props) => props.flex};
+  border: 2px solid
+    ${(props) => (props.darkTheme ? `rgba(255, 255, 255, 0.2)` : `rgba(74, 51, 245, 0.2)`)};
+`;
+
+const BarFill = styled.div`
+  height: 0px;
+  width: ${(props) => props.percentage}%;
+  border: ${(props) =>
+    props.percentage ? `2px solid ${props.darkTheme ? colors.WHITE : colors.PURPLE}` : "none"};
+  transform: translate(-2px, -2px);
+  transition: all 0.3s;
 `;
 
 const SectionIndicator = styled.div`
@@ -60,7 +90,7 @@ const Fill = styled.div`
   transition: all 0.3s;
 `;
 
-const NavigationBar = ({ darkTheme, moveTo, sections, currentPageIdx }) => {
+const NavigationBar = ({ darkTheme, deviceType, moveTo, sections, currentPageIdx }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const showNav = () => {
     setIsExpanded(true);
@@ -72,82 +102,128 @@ const NavigationBar = ({ darkTheme, moveTo, sections, currentPageIdx }) => {
     e.stopPropagation();
     moveTo(e.currentTarget.getAttribute("data-section-idx"));
   };
-  useEffect(() => {
-    console.log("currentPageIdx", currentPageIdx);
-  }, [currentPageIdx]);
-  console.log("sections", sections);
-
-  return (
-    <NavWrap
-      isExpanded={isExpanded}
-      onMouseEnter={showNav}
-      onMouseLeave={hideNav}
-      darkTheme={darkTheme}>
-      {isExpanded ? (
+  let content;
+  if (deviceType === DEVICE_TYPES.MOBILE) {
+    const currentSection =
+      sections.find((section) => section.slides.includes(currentPageIdx)) || sections[0];
+    content = (
+      <MobileNavWrap darkTheme={darkTheme}>
         <Flex
-          cursor="pointer"
-          onClick={hideNav}
-          alignItems="center"
-          marginBottom="40px">
-          <Icon src={left_caret}></Icon>
-          <TextSpan
-            cursor="pointer"
-            marginLeft="20px"
-            color={darkTheme ? colors.WHITE : colors.PURPLE}
-            fontSize="1rem">
-            Back to concepts
-          </TextSpan>
+          padding="10px 20px 0px 20px"
+          color={darkTheme ? colors.WHITE : colors.BLACK}
+          justifyContent="space-between">
+          {currentSection.title}
+          <Icon
+            alignSelf="center"
+            src={darkTheme ? down_caret : down_caret_dark}></Icon>
         </Flex>
-      ) : null}
-      {sections.map((section, idx) => {
-        let percentage = 0;
-        const slides = section.slides;
-        if (currentPageIdx >= slides[slides.length - 1]) {
-          percentage = 100;
-        } else if (slides.includes(currentPageIdx)) {
-          const slideIdx = slides.indexOf(currentPageIdx);
-          percentage = ((slideIdx + 1) / slides.length) * 100;
-        }
-        return (
-          <>
-            <Flex
-              alignItems="center"
-              cursor="pointer"
-              // moveTo expects slide indices to start from 1
-              data-section-idx={section.slides[0] + 1}
-              onClick={onSectionClick}>
-              <SectionIndicator
+        <Flex justifyContent="space-between">
+          {sections.map((section, idx) => {
+            let percentage = 0;
+            const slides = section.slides;
+            if (currentPageIdx >= slides[slides.length - 1]) {
+              percentage = 100;
+            } else if (slides.includes(currentPageIdx)) {
+              const slideIdx = slides.indexOf(currentPageIdx);
+              percentage = ((slideIdx + 1) / slides.length) * 100;
+            }
+            return (
+              <SectionBar
                 darkTheme={darkTheme}
-                isComplete={currentPageIdx >= section.slides[0]}></SectionIndicator>
-              {isExpanded && (
-                <TextSpan
-                  cursor="pointer"
-                  color={darkTheme ? colors.WHITE : colors.BLACK}
-                  marginLeft="20px">
-                  {section.title}
-                </TextSpan>
-              )}
-            </Flex>
-            {idx !== sections.length - 1 && (
-              <Connector darkTheme={darkTheme}>
-                <Fill
+                flex={95 / sections.length / 100}
+                key={idx}>
+                <BarFill
                   darkTheme={darkTheme}
                   percentage={percentage}
                 />
-              </Connector>
-            )}
-          </>
-        );
-      })}
-    </NavWrap>
+              </SectionBar>
+            );
+          })}
+        </Flex>
+      </MobileNavWrap>
+    );
+  } else {
+    content = (
+      <NavWrap
+        isExpanded={isExpanded}
+        onMouseEnter={showNav}
+        onMouseLeave={hideNav}
+        darkTheme={darkTheme}>
+        {isExpanded ? (
+          <Flex
+            cursor="pointer"
+            onClick={hideNav}
+            alignItems="center"
+            marginBottom="40px">
+            <Icon src={left_caret}></Icon>
+            <TextSpan
+              cursor="pointer"
+              marginLeft="20px"
+              color={darkTheme ? colors.WHITE : colors.PURPLE}
+              fontSize="1rem">
+              Back to concepts
+            </TextSpan>
+          </Flex>
+        ) : null}
+        {sections.map((section, idx) => {
+          let percentage = 0;
+          const slides = section.slides;
+          if (currentPageIdx >= slides[slides.length - 1]) {
+            percentage = 100;
+          } else if (slides.includes(currentPageIdx)) {
+            const slideIdx = slides.indexOf(currentPageIdx);
+            percentage = ((slideIdx + 1) / slides.length) * 100;
+          }
+          return (
+            <div key={idx}>
+              <Flex
+                key={section.title}
+                alignItems="center"
+                cursor="pointer"
+                // moveTo expects slide indices to start from 1
+                data-section-idx={section.slides[0] + 1}
+                onClick={onSectionClick}>
+                <SectionIndicator
+                  darkTheme={darkTheme}
+                  isComplete={currentPageIdx >= section.slides[0]}></SectionIndicator>
+                {isExpanded ? (
+                  <TextSpan
+                    cursor="pointer"
+                    color={darkTheme ? colors.WHITE : colors.BLACK}
+                    marginLeft="20px">
+                    {section.title}
+                  </TextSpan>
+                ) : null}
+              </Flex>
+              {idx !== sections.length - 1 ? (
+                <Connector darkTheme={darkTheme}>
+                  <Fill
+                    darkTheme={darkTheme}
+                    percentage={percentage}
+                  />
+                </Connector>
+              ) : null}
+            </div>
+          );
+        })}
+      </NavWrap>
+    );
+  }
+  return (
+    <Wrapper
+      isExpanded={isExpanded}
+      isMobile={deviceType === DEVICE_TYPES.MOBILE}>
+      {content}
+    </Wrapper>
   );
 };
 
 NavigationBar.propTypes = {
   darkTheme: PropTypes.bool,
   sections: PropTypes.array.isRequired,
-  moveTo: PropTypes.func.isRequired,
-  currentPageIdx: PropTypes.number
+  moveTo: PropTypes.func,
+  currentPageIdx: PropTypes.number,
+  deviceType: PropTypes.string
 };
 
 export default NavigationBar;

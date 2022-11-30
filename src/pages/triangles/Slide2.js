@@ -10,7 +10,7 @@ import triangle_vertices from "assets/triangle_vertices.svg";
 import vertice from "assets/vertice.svg";
 import ruler from "assets/ruler.svg";
 import three_figure from "assets/three_figure.svg";
-import bg from "assets/white_bg.png";
+import bg from "assets/white_bg.webp";
 import { colors } from "utils/colors";
 
 const Slide2 = () => {
@@ -112,7 +112,6 @@ const Slide2 = () => {
         <TransitionImage
           images={[triangle_red, triangle_sides, triangle_angles, triangle_vertices]}
           activeIndex={activeIndex}
-          bottomOffset="65px"
         />
       </Flex>
     </SlideWrap>
