@@ -68,14 +68,19 @@ const Slide2 = () => {
             </TextSpanBg>
             &nbsp;of the rectangle = 5 m
           </Paragraph>
-          <Paragraph>Area = l × √ d2 - l2</Paragraph>
-          {lsOfTxt.map((itm, indx) => (
-            <Paragraph
-              padding="0px 0px 0px 7px"
-              key={"rectangle" + indx}>
-              &emsp;&emsp; {itm}
-            </Paragraph>
-          ))}
+          <Paragraph>
+            <Flex>
+              <div>Area&nbsp;</div>
+              <div>
+                = l × √ d2 - l2
+                {lsOfTxt.map((itm, indx) => (
+                  <>
+                    <br /> {itm}
+                  </>
+                ))}
+              </div>
+            </Flex>
+          </Paragraph>
         </LeftWrap>
         <TransitionImage
           images={[rectangle_full, rectangle_cross, rectangle_bottom]}

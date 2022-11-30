@@ -67,8 +67,16 @@ const Slide2 = () => {
             </TextSpanBg>
             &nbsp;of the rectangle = 2 m
           </Paragraph>
-          <Paragraph>Area of the rectangle &nbsp;=&nbsp;Length&nbsp;x&nbsp;Width</Paragraph>
-          <Paragraph>&nbsp;= 3 m x 2 m = 6 sq m</Paragraph>
+          <Paragraph>
+            <Flex>
+              <div>Area of the rectangle</div>
+              <div>
+                &nbsp;=&nbsp;Length&nbsp;x&nbsp;Width
+                <br />
+                &nbsp;= 3 m x 2 m = 6 sq m
+              </div>
+            </Flex>
+          </Paragraph>
         </LeftWrap>
         <TransitionImage
           images={[rectangle_full, rectangle_cross, rectangle_bottom]}
