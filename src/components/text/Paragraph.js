@@ -11,6 +11,7 @@ const Para = styled.p`
   margin: 0;
   margin-bottom: ${(props) => props.marginBottom || 0};
   margin-right: ${(props) => props.marginRight || 0};
+  padding: ${(props) => props.padding || 0};
 `;
 
 const Paragraph = ({
@@ -20,6 +21,7 @@ const Paragraph = ({
   maxWidth,
   textAlign,
   marginRight,
+  padding,
   color
 }) => {
   return (
@@ -29,6 +31,7 @@ const Paragraph = ({
       maxWidth={maxWidth}
       textAlign={textAlign}
       fontSize={fontSize}
+      padding={padding}
       color={color}>
       {children}
     </Para>
@@ -42,7 +45,8 @@ Paragraph.propTypes = {
   marginBottom: PropTypes.string,
   maxWidth: PropTypes.string,
   marginRight: PropTypes.string,
-  textAlign: PropTypes.string
+  textAlign: PropTypes.string,
+  padding: PropTypes.string
 };
 
 export default Paragraph;
