@@ -7,9 +7,10 @@ import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
 
-import area_triangle_sides_1_1 from "assets/area_triangle_sides_1_1.svg";
-import area_triangle_sides_1_2 from "assets/area_triangle_sides_1_2.svg";
+import image_1 from "assets/area-of-triangle/slide_11.svg";
+import image_2 from "assets/area-of-triangle/slide_11_2.svg";
 
+// Equilateral triangle
 const Slide11 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -40,13 +41,14 @@ const Slide11 = () => {
             <TextSpan
               fontSize={"2.2rem"}
               fontWeight={"500"}
-              color={colors.RED}
-              hoverColor={colors.DARK_BLUE}
+              color={colors.WHITE}
+              bgColor={colors.RED}
+              hoverBgColor={colors.DARK_BLUE}
               onHover={() => {
-                setActiveIndex(0);
+                setActiveIndex(1);
               }}
               onHoverOut={() => {
-                setActiveIndex(1);
+                setActiveIndex(0);
               }}>
               equilateral triangle
             </TextSpan>
@@ -60,11 +62,12 @@ const Slide11 = () => {
             Area of an equilateral triangle = √3 / 4 x a<sup>2</sup>
           </Pill>
         </LeftWrap>
-        <TransitionImage
-          images={[area_triangle_sides_1_1, area_triangle_sides_1_2]}
-          activeIndex={activeIndex}
-          bottomOffset="65px"
-        />
+        <LeftWrap>
+          <TransitionImage
+            images={[image_1, image_2]}
+            activeIndex={activeIndex}
+          />
+        </LeftWrap>
       </Flex>
     </SlideWrap>
   );

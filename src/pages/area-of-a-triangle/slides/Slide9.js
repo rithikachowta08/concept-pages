@@ -5,13 +5,18 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 
-import area_triangle_angles_1_1 from "assets/area_triangle_angles_1_1.svg";
-import area_triangle_angles_2_1 from "assets/area_triangle_angles_2_1.svg";
-import area_triangle_angles_3_1 from "assets/area_triangle_angles_3_1.svg";
+import area_triangle_angles_1_1 from "assets/area-of-triangle/slide_9_1.svg";
+import area_triangle_angles_2_1 from "assets/area-of-triangle/slide_9_2.svg";
+import area_triangle_angles_3_1 from "assets/area-of-triangle/slide_9_3.svg";
+import area_triangle_angles_1_2 from "assets/area-of-triangle/slide_9_b_1.svg";
+import area_triangle_angles_2_2 from "assets/area-of-triangle/slide_9_b_2.svg";
+import area_triangle_angles_3_2 from "assets/area-of-triangle/slide_9_b_3.svg";
+import area_triangle_angles_1_3 from "assets/area-of-triangle/slide_9_p_1.svg";
+import area_triangle_angles_2_3 from "assets/area-of-triangle/slide_9_p_2.svg";
+import area_triangle_angles_3_3 from "assets/area-of-triangle/slide_9_p_3.svg";
 
 const Slide9 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <SlideWrap
       bg={bg}
@@ -56,7 +61,7 @@ const Slide9 = () => {
         width="70%">
         <Flex direction="column">
           <TransitionImage
-            images={[area_triangle_angles_1_1]}
+            images={[area_triangle_angles_1_1, area_triangle_angles_1_2, area_triangle_angles_1_3]}
             activeIndex={activeIndex}
           />
           <TextSpan
@@ -67,7 +72,7 @@ const Slide9 = () => {
         </Flex>
         <Flex direction="column">
           <TransitionImage
-            images={[area_triangle_angles_2_1]}
+            images={[area_triangle_angles_2_1, area_triangle_angles_2_2, area_triangle_angles_2_3]}
             activeIndex={activeIndex}
           />
           <TextSpan
@@ -78,7 +83,7 @@ const Slide9 = () => {
         </Flex>
         <Flex direction="column">
           <TransitionImage
-            images={[area_triangle_angles_3_1]}
+            images={[area_triangle_angles_3_1, area_triangle_angles_3_2, area_triangle_angles_3_3]}
             activeIndex={activeIndex}
           />
           <TextSpan

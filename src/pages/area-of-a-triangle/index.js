@@ -30,16 +30,15 @@ export const AreaOfATriangle = () => {
     <Slide11 key={10} />,
     <Slide12 key={11} />,
     <Slide13 key={12} />,
-    <Slide13 key={12} />,
     <Slide14 key={13} />
   ];
 
   const navigationSections = [
     { title: "Definition", slides: [1] },
-    { title: "General Formula", slides: [2, 3, 4] },
+    { title: "General Formula", slides: [2, 3, 4, 5] },
     { title: "Heron's Formula", slides: [6, 7] },
-    { title: "Area of different types of triangle", slides: [8] },
-    { title: "Area of a triangle given two sides and the included angle", slides: [] }
+    { title: "Area of different types of triangle", slides: [8, 9, 10, 11, 12] },
+    { title: "Area of a triangle given two sides and the included angle", slides: [13] }
   ];
 
   const darkBgIndices = [0, 2, 4, 6, 8, 9];

@@ -20,7 +20,7 @@ const Slide1 = ({ moveToSection }) => {
           "Area of a triangle given two sides and the included angle"
         ]}
         moveTo={moveToSection}
-        anchorIdxes={[2, 4, 10]}
+        anchorIdxes={[2, 3, 7, 9, 14]}
       />
     </SlideWrap>
   );

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #67dbe8;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        opacity: .2;
+      }
+
+      .cls-4 {
+        opacity: .1;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 20px;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #67dbe8;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-4" points="114.98 75.88 240.04 202.81 38.85 202.81 114.98 75.88"/>
+    <g class="cls-5">
+      <path class="cls-3" d="M114.98,75.88l125.06,126.93H38.85L114.98,75.88m-.58-4.86l-1.99,3.32L36.28,201.26l-2.73,4.54H247.21l-5.03-5.11L117.12,73.77l-2.72-2.76h0Z"/>
+    </g>
+  </g>
+  <text class="cls-2" transform="translate(134.4 233.2)"><tspan x="0" y="0">b</tspan></text>
+  <g>
+    <line class="cls-6" x1="41.77" y1="214.35" x2="240.18" y2="213.77"/>
+    <polygon class="cls-1" points="43.24 219.33 34.59 214.37 43.21 209.36 43.24 219.33"/>
+    <polygon class="cls-1" points="238.73 218.77 247.35 213.75 238.7 208.79 238.73 218.77"/>
+  </g>
+</svg>

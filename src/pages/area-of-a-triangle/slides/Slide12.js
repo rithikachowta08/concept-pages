@@ -7,9 +7,9 @@ import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
 
-import area_triangle_sides_1_1 from "assets/area_triangle_sides_1_1.svg";
-import area_triangle_sides_2_2 from "assets/area_triangle_sides_2_2.svg";
-import area_triangle_sides_2_3 from "assets/area_triangle_sides_2_3.svg";
+import image_1 from "assets/area-of-triangle/slide_12.svg";
+import image_2 from "assets/area-of-triangle/slide_12_2.svg";
+import image_3 from "assets/area-of-triangle/slide_12_3.svg";
 
 // Isosceles triangle
 const Slide12 = () => {
@@ -78,11 +78,13 @@ const Slide12 = () => {
             Area of an isosceles triangle = 1/4 b √4a<sup>2</sup> - b<sup>2</sup>
           </Pill>
         </LeftWrap>
-        <TransitionImage
-          images={[area_triangle_sides_1_1, area_triangle_sides_2_2, area_triangle_sides_2_3]}
-          activeIndex={activeIndex}
-          bottomOffset="65px"
-        />
+        <LeftWrap>
+          <TransitionImage
+            images={[image_1, image_2, image_3]}
+            activeIndex={activeIndex}
+            bottomOffset="65px"
+          />
+        </LeftWrap>
       </Flex>
     </SlideWrap>
   );

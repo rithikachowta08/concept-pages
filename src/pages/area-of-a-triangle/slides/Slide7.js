@@ -5,7 +5,7 @@ import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
-import area_triangle_heron from "assets/area_triangle_heron.svg";
+import area_triangle_heron from "assets/area-of-triangle/slide_7.svg";
 
 const Slide7 = () => {
   return (

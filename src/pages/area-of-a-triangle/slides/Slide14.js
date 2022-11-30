@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
-import bg from "assets/purple_bg_triangles.png";
+import bg from "assets/purple_bg.png";
 
 import { Flex, LeftWrap, SlideWrap, StyledImg } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
-import area_triangle_snt from "assets/area_triangle_s&t.svg";
+import area_triangle_snt from "assets/area-of-triangle/area_triangle_s&t.svg";
+import area_triangle_snt_2 from "assets/area-of-triangle/area_triangle_sna_2.svg";
+import TransitionImage from "components/media/TransitionImage";
 
-// Scalene triangle
+// Two sides and included angle
 const Slide14 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -22,24 +24,29 @@ const Slide14 = () => {
           <Title
             opacity={0.5}
             marginBottom="16px"
-            color={colors.BLACK}
+            color={colors.WHITE}
             small>
             Area of a triangle
           </Title>
           <Title
             marginBottom="70px"
-            color={colors.BLACK}
+            color={colors.WHITE}
             fontWeight={400}
             fontSize="2.5rem">
             Two sides and the included angle
           </Title>
           <Paragraph
-            color={colors.BLACK}
-            marginBottom="50px">
+            color={colors.WHITE}
+            marginBottom="50px"
+            fontSize={"2rem"}>
             Given any{" "}
             <TextSpan
-              color={colors.RED}
-              hoverColor={colors.DARK_BLUE}>
+              color={colors.WHITE}
+              bgColor={colors.RED}
+              hoverBgColor={colors.DARK_BLUE}
+              fontSize={"2rem"}
+              onHover={() => setActiveIndex(1)}
+              onHoverOut={() => setActiveIndex(0)}>
               {" "}
               two sides of the triangle and the included angle between them,
             </TextSpan>{" "}
@@ -53,10 +60,13 @@ const Slide14 = () => {
             Area = 1/2 bc Sin A = 1/2 ca Sin B = 1/2 ab Sinc C
           </Pill>
         </LeftWrap>
-        <StyledImg
-          src={area_triangle_snt}
-          bottomOffset="65px"
-        />
+        <LeftWrap>
+          <TransitionImage
+            images={[area_triangle_snt, area_triangle_snt_2]}
+            activeIndex={activeIndex}
+            bottomOffset="65px"
+          />
+        </LeftWrap>
       </Flex>
     </SlideWrap>
   );

@@ -6,7 +6,7 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
-import area_triangle_sides_3_1 from "assets/area_triangle_sides_3_1.svg";
+import area_triangle_sides_3_1 from "assets/area-of-triangle/slide_13.svg";
 
 // Scalene triangle
 const Slide13 = () => {
@@ -46,10 +46,12 @@ const Slide13 = () => {
             Area of a scalene triangle = √s (s - a)(s - b)(s - c)
           </Pill>
         </LeftWrap>
-        <StyledImg
-          src={area_triangle_sides_3_1}
-          bottomOffset="65px"
-        />
+        <LeftWrap>
+          <StyledImg
+            src={area_triangle_sides_3_1}
+            bottomOffset="65px"
+          />
+        </LeftWrap>
       </Flex>
     </SlideWrap>
   );

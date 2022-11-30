@@ -6,9 +6,9 @@ import TransitionImage from "components/media/TransitionImage";
 import { colors } from "utils/colors";
 
 import bg from "assets/purple_bg.png";
-import t_formula from "assets/t_formula.svg";
-import t_base from "assets/t_base.svg";
-import t_height from "assets/t_height.svg";
+import t_formula from "assets/area-of-triangle/slide_3_normal.svg";
+import t_base from "assets/area-of-triangle/slide_3_b.svg";
+import t_height from "assets/area-of-triangle/slide_3_p.svg";
 
 import Pill from "components/Pill";
 
@@ -47,7 +47,7 @@ const Slide3 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of the triangle = 1&frasl;2 ×{" "}
+            Area of the triangle = 1/2 ×{" "}
             <TextSpan
               fontSize="1.8rem"
               fontWeight={500}

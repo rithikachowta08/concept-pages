@@ -3,13 +3,11 @@ import bg from "assets/purple_bg.png";
 import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title } from "components/text";
 
-import area_triangle_sides_1_1 from "assets/area_triangle_sides_1_1.svg";
-import area_triangle_sides_2_1 from "assets/area_triangle_sides_2_1.svg";
-import area_triangle_sides_3_1 from "assets/area_triangle_sides_3_1.svg";
+import image_1 from "assets/area-of-triangle/slide_10_e.svg";
+import image_2 from "assets/area-of-triangle/slide_10_i.svg";
+import image_3 from "assets/area-of-triangle/slide_10_s.svg";
 
 const Slide10 = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <SlideWrap
       bg={bg}
@@ -35,10 +33,7 @@ const Slide10 = () => {
         alignItems="center"
         width="70%">
         <Flex direction="column">
-          <StyledImg
-            src={area_triangle_sides_1_1}
-            activeIndex={activeIndex}
-          />
+          <StyledImg src={image_1} />
           <TextSpan
             color="white"
             fontWeight={400}>
@@ -46,10 +41,7 @@ const Slide10 = () => {
           </TextSpan>
         </Flex>
         <Flex direction="column">
-          <StyledImg
-            src={area_triangle_sides_2_1}
-            activeIndex={activeIndex}
-          />
+          <StyledImg src={image_2} />
           <TextSpan
             color="white"
             fontWeight={400}>
@@ -57,10 +49,7 @@ const Slide10 = () => {
           </TextSpan>
         </Flex>
         <Flex direction="column">
-          <StyledImg
-            src={area_triangle_sides_3_1}
-            activeIndex={activeIndex}
-          />
+          <StyledImg src={image_3} />
           <TextSpan
             color="white"
             fontWeight={400}>

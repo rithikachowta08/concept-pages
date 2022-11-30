@@ -4,10 +4,10 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import bg from "assets/white_bg.png";
-import area_triangle_ex1_1 from "assets/area_triangle_ex1_1.svg";
-import area_triangle_ex1_2 from "assets/area_triangle_ex1_2.svg";
-import area_triangle_ex1_3 from "assets/area_triangle_ex1_3.svg";
-import area_triangle_ex1_4 from "assets/area_triangle_ex1_4.svg";
+import area_triangle_ex1_1 from "assets/area-of-triangle/slide_8_normal.svg";
+import area_triangle_ex1_2 from "assets/area-of-triangle/slide_8_1.svg";
+import area_triangle_ex1_3 from "assets/area-of-triangle/slide_8_2.svg";
+import area_triangle_ex1_4 from "assets/area-of-triangle/slide_8_3.svg";
 import TransitionImage from "components/media/TransitionImage";
 
 const Slide8 = () => {
