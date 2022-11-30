@@ -33,11 +33,13 @@ const Slide4 = () => {
       <Paragraph
         color="white"
         fontSize="1.22rem">
-        Area =
-        <div>
-          4 cm &times; 3 cm
-          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 12 sq cm
-        </div>
+        <Flex>
+          <div>Area&nbsp;</div>
+          <div>
+            = 4 cm &times; 3 cm
+            <br />= 12 sq cm
+          </div>
+        </Flex>
       </Paragraph>
     </Flex>
   );
