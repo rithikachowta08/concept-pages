@@ -8,7 +8,7 @@ import TransitionImage from "components/media/TransitionImage";
 import cube_red from "assets/volume-of-cube/slide11/cube-1.png";
 import cube_diagonal from "assets/volume-of-cube/slide11/cube-2.png";
 import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+import MathElement from "components/MathElement/index.js";
 import { fetchData } from "utils/networking";
 
 const Slide11 = () => {
@@ -21,20 +21,27 @@ const Slide11 = () => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= \\sqrt{3} \\times {\\frac{d}{9}}^2$`);
-    latex.push(`$= \\sqrt{3} \\times {\\frac{3}{9}}^2$`);
-    latex.push(`$= \\sqrt{3}\\times \\frac{27}{9}$`);
-    latex.push(`$= \\sqrt{3} \\times 3$`);
-    latex.push(`$= 3 \\sqrt{3}ft^3 $`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
+  //   latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
+  //   latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
+  //   latex.push(`= \\sqrt{3} \\times 3`);
+  //   latex.push(`= 3 \\sqrt{3}ft^3 `);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
+  latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
+  latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
+  latex.push(`= \\sqrt{3} \\times 3`);
+  latex.push(`= 3 \\sqrt{3}ft^3 `);
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -87,31 +94,31 @@ const Slide11 = () => {
           // marginTop="410px"
           // color={colors.WHITE}
           >
-            Volume <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            Volume <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
         </LeftWrap>
         <TransitionImage

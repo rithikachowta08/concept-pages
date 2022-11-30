@@ -21,19 +21,25 @@ const Slide8 = () => {
     setActiveIndex(0);
   };
 
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= (side)^3$`);
-    latex.push(`$ = (7 cm)^3$`);
-    latex.push(`$= 7cm \\times 7cm \\times 7cm$`);
-    latex.push(`$= 343 cm^3$`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= (side)^3`);
+  //   latex.push(` = (7 cm)^3`);
+  //   latex.push(`= 7cm \\times 7cm \\times 7cm`);
+  //   latex.push(`= 343 cm^3`);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= (side)^3`);
+  latex.push(` = (7 cm)^3`);
+  latex.push(`= 7cm \\times 7cm \\times 7cm`);
+  latex.push(`= 343 cm^3`);
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -72,26 +78,25 @@ const Slide8 = () => {
             marginTop="410px"
             // color={colors.WHITE}
           >
-            Volume of a cube{" "}
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
         </LeftWrap>
         <StyledImg src={cube_red} />

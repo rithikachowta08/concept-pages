@@ -9,7 +9,7 @@ import cube_red from "assets/volume-of-cube/slide13/cube-1.png";
 import cube_f from "assets/volume-of-cube/slide12/cube-2.png";
 import cube_s from "assets/volume-of-cube/slide12/cube-3.png";
 import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+import MathElement from "components/MathElement/index.js";
 import { fetchData } from "utils/networking";
 const Slide12 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,17 +27,21 @@ const Slide12 = () => {
   const onHoverOutHypotenuse = (e) => {
     setActiveIndex(0);
   };
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= \\sqrt{2} \\times {\\frac{f}{4}}^3$`);
-    latex.push(`$= \\sqrt{2}$`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= \\sqrt{2} \\times {\\frac{f}{4}}^3`);
+  //   latex.push(`= \\sqrt{2}`);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= \\sqrt{2} \\times {\\frac{f}{4}}^3`);
+  latex.push(`= \\sqrt{2}`);
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -86,15 +90,14 @@ const Slide12 = () => {
             bgColor={colors.GREEN}
             marginBottom="40px"
             color={colors.WHITE}>
-            Volume of a cube{" "}
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement> cubic
+            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic
             units
           </Pill>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            Here, f <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement> x{" "}
+            Here, f <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
             <TextSpan
               id={2}
               onHover={onHover}

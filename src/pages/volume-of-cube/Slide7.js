@@ -9,7 +9,7 @@ import { fetchData } from "utils/networking";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import cube_red from "assets/volume-of-cube/slide8/cube-1.png";
-import MathElement from "components/MathElement";
+import MathElement from "components/MathElement/index.js";
 
 import Pill from "components/Pill";
 const IFrame = styled.iframe`
@@ -39,17 +39,21 @@ const Slide7 = () => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$ = s^2$`);
-    latex.push(`$ = s^3$`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(` = s^2`);
+  //   latex.push(` = s^3`);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(` = s^2`);
+  latex.push(` = s^3`);
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -94,13 +98,13 @@ const Slide7 = () => {
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
         </LeftWrap>
         <IFrame

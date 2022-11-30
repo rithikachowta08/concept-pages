@@ -8,7 +8,7 @@ import TransitionImage from "components/media/TransitionImage";
 import cube_red from "assets/volume-of-cube/slide9/cube-1.png";
 import cube_diagonal from "assets/volume-of-cube/slide9/cube-2.png";
 import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+import MathElement from "components/MathElement/index.js";
 import { fetchData } from "utils/networking";
 
 const Slide9 = () => {
@@ -22,22 +22,31 @@ const Slide9 = () => {
     setActiveIndex(0);
   };
 
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= (side)^3$`);
-    latex.push(`$ (A)=(side)^2$`);
-    latex.push(`$ \\sqrt{A} = side$`);
-    latex.push(`$=(\\sqrt{A})^3 $`);
-    latex.push(`$=(\\sqrt {16} m^2)^3 $`);
-    latex.push(`$= (4m)^3$`);
-    latex.push(`$= {64m}^3$`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= (side)^3`);
+  //   latex.push(` (A)=(side)^2`);
+  //   latex.push(` \\sqrt{A} = side`);
+  //   latex.push(`=(\\sqrt{A})^3 `);
+  //   latex.push(`=(\\sqrt {16} m^2)^3 `);
+  //   latex.push(`= (4m)^3`);
+  //   latex.push(`= {64m}^3`);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   // setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= (side)^3`);
+  latex.push(` (A)=(side)^2`);
+  latex.push(` \\sqrt{A} = side`);
+  latex.push(`=(\\sqrt{A})^3 `);
+  latex.push(`=(\\sqrt {16} m^2)^3 `);
+  latex.push(`= (4m)^3`);
+  latex.push(`= {64m}^3`);
   let mathjaxCounter = 0;
 
   return (
@@ -90,16 +99,16 @@ const Slide9 = () => {
             // color={colors.WHITE}
           >
             Volume of a cube
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
             Area of the square face,{" "}
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             <Paragraph>
-              <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+              <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             </Paragraph>
           </Paragraph>
           <Paragraph
@@ -110,25 +119,25 @@ const Slide9 = () => {
             marginTop="410px"
             // color={colors.WHITE}
           >
-            Volume, V <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            Volume, V <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginTop="410px"
             // color={colors.WHITE}
           >
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
         </LeftWrap>
         <TransitionImage

@@ -9,7 +9,7 @@ import cube_d from "assets/volume-of-cube/slide10/cube-2.png";
 import cube_s from "assets/volume-of-cube/slide10/cube-3.png";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
-import MathElement from "components/MathElement";
+import MathElement from "components/MathElement/index.js";
 import { fetchData } from "utils/networking";
 import pythogoras_slide from "assets/pythogoras_slide.svg";
 
@@ -30,17 +30,15 @@ const Slide10 = () => {
     setActiveIndex(0);
   };
 
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= \\sqrt{3} \\times \\frac{{d}^3}{9}$`);
-    latex.push(`$= \\sqrt{3}$`);
-
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
+  //   latex.push(`= \\sqrt{3}`);
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
+  latex.push(`= \\sqrt{3}`);
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -85,14 +83,13 @@ const Slide10 = () => {
             bgColor={colors.GREEN}
             marginBottom="40px"
             color={colors.WHITE}>
-            Volume of a cube{" "}
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Pill>
           <Paragraph
             // marginTop="50px"
             // marginBottom="70px"
             color={colors.WHITE}>
-            Here, d <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement> x{" "}
+            Here, d <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
             <TextSpan
               id={2}
               onHover={onHover}

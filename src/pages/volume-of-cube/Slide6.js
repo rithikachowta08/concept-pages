@@ -11,8 +11,8 @@ import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import axios from "axios";
 import pythogoras_slide from "assets/pythogoras_slide.svg";
-import MathElement from "components/MathElement";
-import "./style.scss";
+import MathElement from "components/MathElement/index.js";
+// import "./style.scss";
 
 const Slide6 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,19 +24,26 @@ const Slide6 = () => {
     setActiveIndex(0);
   };
 
-  useEffect(() => {
-    let latex = [];
-    latex.push(`$= side \\times side \\times side$`);
-    latex.push(`$= s \\times s \\times s$`);
-    latex.push(`$= (side)^3$`);
-    latex.push(`$ = (side)^3$`);
+  // useEffect(() => {
+  //   let latex = [];
+  //   latex.push(`= side \\times side \\times side`);
+  //   latex.push(`= s \\times s \\times s`);
+  //   latex.push(`= (side)^3`);
+  //   latex.push(` = (side)^3`);
 
-    const getMathJax = async () => {
-      const resp = await fetchData(latex);
-      setMathjaxRespStrings(resp.title);
-    };
-    getMathJax();
-  }, []);
+  //   // const getMathJax = async () => {
+  //   //   const resp = await fetchData(latex);
+  //   //   setMathjaxRespStrings(resp.title);
+  //   // };
+  //   // getMathJax();
+  //   setMathjaxRespStrings(latex);
+  // }, []);
+  let latex = [];
+  latex.push(`= side \\times side \\times side`);
+  latex.push(`= s \\times s \\times s`);
+  latex.push(`= (side)^3`);
+  latex.push(` = (side)^3`);
+
   let mathjaxCounter = 0;
   return (
     <SlideWrap
@@ -70,17 +77,17 @@ const Slide6 = () => {
           <Paragraph
             marginBottom="70px"
             color={colors.WHITE}>
-            Volume <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            Volume <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginBottom="70px"
             color={colors.WHITE}>
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Paragraph
             marginBottom="70px"
             color={colors.WHITE}>
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
           </Paragraph>
           <Pill
             width="fit-content"
@@ -88,8 +95,7 @@ const Slide6 = () => {
             bgColor={colors.GREEN}
             marginBottom="400px"
             color={colors.WHITE}>
-            Volume of cube{" "}
-            <MathElement htmlString={mathjaxRespStrings[mathjaxCounter++]}></MathElement> cubic
+            Volume of cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic
             units
           </Pill>
         </LeftWrap>

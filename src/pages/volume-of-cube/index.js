@@ -15,7 +15,6 @@ import Slide13 from "./Slide13";
 
 export const VolumeOfCube = () => {
   const SlideArray = [
-    <Slide9 key={8} />,
     <Slide1 key={0} />,
     <Slide2 key={1} />,
     <Slide3 key={2} />,
@@ -24,6 +23,7 @@ export const VolumeOfCube = () => {
     <Slide6 key={5} />,
     <Slide7 key={6} />,
     <Slide8 key={7} />,
+    <Slide9 key={8} />,
     <Slide10 key={9} />,
     <Slide11 key={10} />,
     <Slide12 key={11} />,
@@ -31,7 +31,7 @@ export const VolumeOfCube = () => {
   ];
 
   const navigationSections = [
-    { title: "What is the volume of a cube?", slides: [1, 2, 3, 4] },
+    { title: "What is the volume of a cube?", slides: [1, 8] },
     { title: "Formula", slides: [5, 6, 7, 8] },
     { title: "Volume of a cube using diagonal", slides: [9, 10, 11] },
     {
