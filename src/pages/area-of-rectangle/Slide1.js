@@ -17,7 +17,7 @@ const Slide1 = ({ moveToSection }) => {
           "Area using diagonal"
         ]}
         moveTo={moveToSection}
-        anchorIdxes={[1, 2, 3, 5]}
+        anchorIdxes={[2, 3, 4, 7]}
       />
     </SlideWrap>
   );
