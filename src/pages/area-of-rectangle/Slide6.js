@@ -15,20 +15,30 @@ const Slide4 = () => {
     <Flex direction="column">
       <Paragraph
         color="white"
-        marginBottom="50px"
-        fontSize="1.5rem">
+        marginBottom="40px"
+        fontSize="1.22rem">
         The area of a rectangle is measured in square units (square centimeters, square inches,
         square feet, and so on).
       </Paragraph>
-      <Paragraph
+      <Title
         color="white"
-        fontSize="1.5rem">
-        Example
-      </Paragraph>
+        fontSize="1.22rem">
+        Example :
+      </Title>
       <StyledImg
         src={rectangle_square_units}
-        transform="scale(0.7)"
+        width="-webkit-fill-available"
+        // transform="scale(0.5)"
       />
+      <Paragraph
+        color="white"
+        fontSize="1.22rem">
+        Area =
+        <div>
+          4 cm &times; 3 cm
+          <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 12 sq cm
+        </div>
+      </Paragraph>
     </Flex>
   );
   const [activeIndex, setActiveIndex] = useState(0);
