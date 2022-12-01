@@ -21,26 +21,8 @@
 
 
 # dependencies
-nexjJs-migration/node_modules
-nexjJs-migration/.pnp
-nexjJs-migration/.pnp.js
-nexjJs-migration/.next
-nexjJs-migration/.node_repl_history
-nexjJs-migration/.npm
-
-
-# testing
-nexjJs-migration/coverage
-
-# production
-nexjJs-migration/build
-
-# misc
-nexjJs-migration/.DS_Store
-nexjJs-migration/.env.local
-nexjJs-migration/.env.development.local
-nexjJs-migration/.env.test.local
-nexjJs-migration/.env.production.local
+.next
+.npm
 
 npm-debug.log*
 yarn-debug.log*

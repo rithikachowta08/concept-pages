@@ -1,45 +1,27 @@
 {
-  "name": "byjus-us-math",
+  "name": "nextdemo",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.28",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@zeit/next-css": "^1.0.1",
-    "babel-plugin-macros": "^3.1.0",
-    "next-images": "^1.8.4",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-toastify": "^9.0.8",
-    "styled-components": "^5.3.6"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.28",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-macros": "^3.1.0",
+    "next": "^11.0.1",
+    "next-images": "^1.8.4",
+    "prop-types": "^15.8.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.8",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "eslint": "^8.25.0",
@@ -48,8 +30,6 @@
     "eslint-plugin-react": "^7.31.10",
     "next": "^11.1.4",
     "prettier": "^2.7.1",
-    "react": "latest",
-    "react-dom": "latest",
-    "sass": "^1.55.0"
+    "sass": "^1.56.1"
   }
 }
