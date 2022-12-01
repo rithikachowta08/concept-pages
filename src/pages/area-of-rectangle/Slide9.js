@@ -72,12 +72,10 @@ const Slide2 = () => {
             <Flex>
               <div>Area&nbsp;</div>
               <div>
-                = l × √ d2 - l2
-                {lsOfTxt.map((itm, indx) => (
-                  <>
-                    <br /> {itm}
-                  </>
-                ))}
+                = l × √ d<sup>2</sup> - l<sup>2</sup>
+                <br />= 4 × √ 5<sup>2</sup> - 4<sup>2</sup> sq m
+                <br />= 4 × 3 sq m
+                <br />= 12 sq m
               </div>
             </Flex>
           </Paragraph>
