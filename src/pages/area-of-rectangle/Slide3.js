@@ -3,9 +3,9 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/white_bg.png";
-import rectangle_plain from "assets/rectangle_plain.png";
-import rectangle_shaded from "assets/rectangle_shaded.png";
-import unit_square from "assets/unit_square.png";
+import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
+import rectangle_shaded from "assets/area-of-rectangle/rectangle_shaded.svg";
+import unit_square from "assets/area-of-rectangle/unit_square.svg";
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 

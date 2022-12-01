@@ -3,9 +3,9 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/white_bg.png";
-import rectangle_full from "assets/rectangle_full.png";
-import rectangle_angles from "assets/rectangle_angles.png";
-import rectangle_sides from "assets/rectangle_sides.png";
+import rectangle_full from "assets/area-of-rectangle/rectangle_full.svg";
+import rectangle_angles from "assets/area-of-rectangle/rectangle_angles.svg";
+import rectangle_sides from "assets/area-of-rectangle/rectangle_sides.svg";
 import { colors } from "utils/colors";
 
 const Slide2 = () => {

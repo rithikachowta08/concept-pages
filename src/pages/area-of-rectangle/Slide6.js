@@ -3,10 +3,10 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/purple_bg.png";
-import rectangle_plain from "assets/rectangle_plain.png";
-import rectangle_length from "assets/rectangle_length.png";
-import rectangle_width from "assets/rectangle_width.png";
-import rectangle_square_units from "assets/rectangle_square_units.png";
+import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
+import rectangle_length from "assets/area-of-rectangle/rectangle_length.svg";
+import rectangle_width from "assets/area-of-rectangle/rectangle_width.svg";
+import rectangle_square_units from "assets/area-of-rectangle/rectangle_square_units.svg";
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 
