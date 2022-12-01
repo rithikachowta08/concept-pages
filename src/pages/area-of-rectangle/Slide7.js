@@ -68,14 +68,16 @@ const Slide2 = () => {
             &nbsp;of the rectangle = 2 m
           </Paragraph>
           <Paragraph>
-            <Flex>
-              <div>Area of the rectangle</div>
-              <div>
-                &nbsp;=&nbsp;Length&nbsp;x&nbsp;Width
-                <br />
-                &nbsp;= 3 m x 2 m = 6 sq m
-              </div>
-            </Flex>
+            <table>
+              <tr>
+                <td>Area of the rectangle</td>
+                <td>&nbsp;=&nbsp;Length&nbsp;x&nbsp;Width</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>&nbsp;= 3 m x 2 m = 6 sq m</td>
+              </tr>
+            </table>
           </Paragraph>
         </LeftWrap>
         <TransitionImage
