@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
-import { Title, Paragraph } from "components/text";
-import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
-import Modal from "components/layout/Modal";
-import bg from "assets/white_bg.png";
-import info from "assets/info.svg";
-import boat from "assets/boat.svg";
-import tent_with_triangle from "assets/tent_with_triangle.svg";
-import boat_correct_answer from "assets/boat_correct_answer.svg";
-import boat_wrong_answer from "assets/boat_wrong_answer.svg";
+import { Icon, Flex, SlideWrap, StyledImg } from "../../components/StyledElements";
+import { Title, Paragraph } from "../../components/text";
+import ImageWithYesNo, { ANSWER_TYPES } from "../../components/media/ImageWithYesNo";
+import Modal from "../../components/layout/Modal";
+const bg = "assets/white_bg.png";
+const info = "assets/info.svg";
+const boat = "assets/boat.svg";
+const tent_with_triangle = "assets/tent_with_triangle.svg";
+const boat_correct_answer = "assets/boat_correct_answer.svg";
+const boat_wrong_answer = "assets/boat_wrong_answer.svg";
 
 const Slide3 = () => {
   const modalContent = (

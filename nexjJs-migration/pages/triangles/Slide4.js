@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { SlideWrap, Flex } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import { colors } from "utils/colors";
-import bg from "assets/purple_bg.png";
-import triangle_acute from "assets/triangle_acute.svg";
-import triangle_acute_yellow from "assets/triangle_acute_yellow.svg";
-import triangle_obtuse from "assets/triangle_obtuse.svg";
-import triangle_obtuse_yellow from "assets/triangle_obtuse_yellow.svg";
-import triangle_right from "assets/triangle_right.svg";
-import triangle_right_yellow from "assets/triangle_right_yellow.svg";
+import { SlideWrap, Flex } from "../../components/StyledElements";
+import { Title, Paragraph, TextSpan } from "../../components/text";
+import TransitionImage from "../../components/media/TransitionImage";
+import { colors } from "../../utils/colors";
+const bg = "assets/purple_bg.png";
+const triangle_acute = "assets/triangle_acute.svg";
+const triangle_acute_yellow = "assets/triangle_acute_yellow.svg";
+const triangle_obtuse = "assets/triangle_obtuse.svg";
+const triangle_obtuse_yellow = "assets/triangle_obtuse_yellow.svg";
+const triangle_right = "assets/triangle_right.svg";
+const triangle_right_yellow = "assets/triangle_right_yellow.svg";
 
 const Slide4 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

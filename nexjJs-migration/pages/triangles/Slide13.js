@@ -1,9 +1,9 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
-import { Title, Paragraph } from "components/text";
-import Pill from "components/Pill";
-import bg from "assets/white_bg.png";
-import { colors } from "utils/colors";
-import pythogoras_slide from "assets/pythogoras_slide.svg";
+import { SlideWrap, Flex, LeftWrap, StyledImg } from "../../components/StyledElements";
+import { Title, Paragraph } from "../../components/text";
+import Pill from "../../components/Pill";
+import { colors } from "../../utils/colors";
+const bg = "assets/white_bg.png";
+const pythogoras_slide = "assets/pythogoras_slide.svg";
 
 const Slide7 = () => {
   return (

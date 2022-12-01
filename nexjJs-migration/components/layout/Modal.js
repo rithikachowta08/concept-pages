@@ -1,9 +1,9 @@
-import { Title } from "components/text";
+import { Title } from "../text";
 import { PropTypes } from "prop-types";
-import { Flex, Icon } from "components/StyledElements";
-import styled from "styled-components/macro";
-import crossIcon from "assets/cross_icon.svg";
-import Button from "components/Button";
+import { Flex, Icon } from "../StyledElements";
+import styled from "styled-components";
+import Button from "../Button";
+const crossIcon = "assets/cross_icon.svg";
 
 const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.5);

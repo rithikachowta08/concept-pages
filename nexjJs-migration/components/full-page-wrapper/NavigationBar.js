@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import { TextSpan } from "../text";
 import { Flex, Icon } from "../StyledElements";
 import PropTypes from "prop-types";

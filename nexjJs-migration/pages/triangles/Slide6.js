@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
-import obtuse_red from "assets/obtuse_red.svg";
-import obtuse_angles_blue from "assets/obtuse_angles_blue.svg";
-import { colors } from "utils/colors";
+import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
+import { Title, Paragraph, TextSpan } from "../../components/text";
+import TransitionImage from "../../components/media/TransitionImage";
+import { colors } from "../../utils/colors";
+const bg = "assets/white_bg.png";
+const obtuse_red = "assets/obtuse_red.svg";
+const obtuse_angles_blue = "assets/obtuse_angles_blue.svg";
 
 const Slide6 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

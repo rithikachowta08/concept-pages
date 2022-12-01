@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
-import acute_red from "assets/acute_red.svg";
-import acute_angles_blue from "assets/acute_angles_blue.svg";
-import { colors } from "utils/colors";
+import { SlideWrap, Flex, StyledImg, LeftWrap } from "../../components/StyledElements";
+import { Title, Paragraph, TextSpan } from "../../components/text";
+import TransitionImage from "../../components/media/TransitionImage";
+import { colors } from "../../utils/colors";
+const bg = "assets/white_bg.png";
+const acute_red = "assets/acute_red.svg";
+const acute_angles_blue = "assets/acute_angles_blue.svg";
 
 const Slide5 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

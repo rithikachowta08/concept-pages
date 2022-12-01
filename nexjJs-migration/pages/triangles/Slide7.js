@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
-import right_red from "assets/right_red.svg";
-import right_angles_blue from "assets/right_angles_blue.svg";
-import hypotenuse from "assets/hypotenuse.svg";
-import { colors } from "utils/colors";
+import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
+import { Title, Paragraph, TextSpan } from "../../components/text";
+import TransitionImage from "../../components/media/TransitionImage";
+import { colors } from "../../utils/colors";
+const bg = "assets/white_bg.png";
+const right_red = "assets/right_red.svg";
+const right_angles_blue = "assets/right_angles_blue.svg";
+const hypotenuse = "assets/hypotenuse.svg";
 
 const Slide7 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

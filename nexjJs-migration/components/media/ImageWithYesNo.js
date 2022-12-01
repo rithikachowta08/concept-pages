@@ -1,12 +1,12 @@
 import { useState } from "react";
-import styled from "styled-components/macro";
-import { Flex } from "components/StyledElements";
-import Button from "components/Button";
-import Pill from "components/Pill";
-import success from "assets/success.svg";
-import error from "assets/error.svg";
+import styled from "styled-components";
+import { Flex } from "../StyledElements";
+import Button from "../Button";
+import Pill from "../Pill";
 import { PropTypes } from "prop-types";
-import { colors } from "utils/colors";
+import { colors } from "../../utils/colors";
+const success = "assets/success.svg";
+const error = "assets/error.svg";
 
 const ImgContainer = styled.div`
   position: relative;

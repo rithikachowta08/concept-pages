@@ -1,7 +1,7 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
-import { Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
-import inequality_slide from "assets/inequality_slide.svg";
+import { SlideWrap, Flex, LeftWrap, StyledImg } from "../../components/StyledElements";
+import { Title, Paragraph } from "../../components/text";
+const bg = "assets/white_bg.png";
+const inequality_slide = "assets/inequality_slide.svg";
 
 const Slide7 = () => {
   return (

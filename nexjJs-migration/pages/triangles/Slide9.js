@@ -1,6 +1,6 @@
-import { SlideWrap, Flex, Video } from "components/StyledElements";
-import { TextSpan } from "components/text";
-import { colors } from "utils/colors";
+import { SlideWrap, Flex, Video } from "../../components/StyledElements";
+import { TextSpan } from "../../components/text";
+import { colors } from "../../utils/colors";
 
 const Slide9 = () => {
   return (

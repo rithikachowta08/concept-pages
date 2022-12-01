@@ -1,6 +1,6 @@
 import React from "react";
-import { Icon, Flex } from "components/StyledElements";
-import { TextSpan } from "components/text";
+import { Icon, Flex } from "./StyledElements";
+import { TextSpan } from "./text";
 import { PropTypes } from "prop-types";
 
 const Pill = ({

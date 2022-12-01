@@ -1,12 +1,12 @@
 import { PropTypes } from "prop-types";
 import { SlideWrap } from "../../components/StyledElements";
 import { Title, ContentList } from "../../components/text";
-import bg from "../../public/assets/purple_bg_triangles.png";
+// import bg from "../../public/assets/purple_bg_triangles.png";
 
 const Slide1 = ({ moveToSection }) => {
   return (
     <SlideWrap
-      bg={bg}
+      bg={"/assets/purple_bg_triangles.png"}
       paddingLeft="200px">
       <Title marginBottom="50px">Triangles</Title>
       <ContentList

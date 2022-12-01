@@ -1,11 +1,11 @@
-import { SlideWrap, Flex, Icon } from "components/StyledElements";
-import styled from "styled-components/macro";
+import { SlideWrap, Flex, Icon } from "../../components/StyledElements";
+import styled from "styled-components";
 import { toast } from "react-toastify";
-import bg from "assets/white_bg.png";
-import error from "assets/error.svg";
-import success from "assets/success.svg";
-import { Paragraph } from "components/text";
+import { Paragraph } from "../../components/text";
 import { useEffect } from "react";
+const bg = "assets/white_bg.png";
+const error = "assets/error.svg";
+const success = "assets/success.svg";
 
 const IFrame = styled.iframe`
   width: 750px;

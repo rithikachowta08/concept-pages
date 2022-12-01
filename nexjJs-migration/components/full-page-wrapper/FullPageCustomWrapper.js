@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "../DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";
 import { colors } from "../../utils/colors";
-import "./FullPageCustomWrapperStyles.scss";
+import "./FullPageCustomWrapperStyles.module.scss";
 
 const PageWrap = styled.div`
   height: 100vh;

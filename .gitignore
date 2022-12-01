@@ -23,6 +23,10 @@
 nexjJs-migration/node_modules
 nexjJs-migration/.pnp
 nexjJs-migration/.pnp.js
+nexjJs-migration/.next
+nexjJs-migration/.node_repl_history
+nexjJs-migration/.npm
+
 
 # testing
 nexjJs-migration/coverage

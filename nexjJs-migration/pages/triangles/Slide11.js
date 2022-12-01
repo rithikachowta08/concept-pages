@@ -1,7 +1,7 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
-import { Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
-import angle_sum_slide from "assets/angle_sum_slide.svg";
+import { SlideWrap, Flex, LeftWrap, StyledImg } from "../../components/StyledElements";
+import { Title, Paragraph } from "../../components/text";
+const bg = "assets/white_bg.png";
+const angle_sum_slide = "assets/angle_sum_slide.svg";
 
 const Slide7 = () => {
   return (

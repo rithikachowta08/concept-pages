@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import Modal from "components/layout/Modal";
-import TransitionImage from "components/media/TransitionImage";
-import triangle_red from "assets/triangle_red.svg";
-import triangle_angles from "assets/triangle_angles.svg";
-import triangle_sides from "assets/triangle_sides.svg";
-import triangle_vertices from "assets/triangle_vertices.svg";
-import vertice from "assets/vertice.svg";
-import ruler from "assets/ruler.svg";
-import three_figure from "assets/three_figure.svg";
-import bg from "assets/white_bg.png";
-import { colors } from "utils/colors";
+import { SlideWrap, Flex, StyledImg, LeftWrap } from "../../components/StyledElements";
+import { Title, Paragraph, TextSpan } from "../../components/text";
+import Modal from "../../components/layout/Modal";
+import TransitionImage from "../../components/media/TransitionImage";
+import { colors } from "../../utils/colors";
+const triangle_red = "assets/triangle_red.svg";
+const triangle_angles = "assets/triangle_angles.svg";
+const triangle_sides = "assets/triangle_sides.svg";
+const triangle_vertices = "assets/triangle_vertices.svg";
+const vertice = "assets/vertice.svg";
+const ruler = "assets/ruler.svg";
+const three_figure = "assets/three_figure.svg";
+const bg = "assets/white_bg.png";
 
 const Slide2 = () => {
   const subtitles = ["Sides", "Angles", "Vertices"];
