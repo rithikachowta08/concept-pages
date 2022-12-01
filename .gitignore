@@ -18,6 +18,25 @@
 .env.test.local
 .env.production.local
 
+
+# dependencies
+nexjJs-migration/node_modules
+nexjJs-migration/.pnp
+nexjJs-migration/.pnp.js
+
+# testing
+nexjJs-migration/coverage
+
+# production
+nexjJs-migration/build
+
+# misc
+nexjJs-migration/.DS_Store
+nexjJs-migration/.env.local
+nexjJs-migration/.env.development.local
+nexjJs-migration/.env.test.local
+nexjJs-migration/.env.production.local
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
