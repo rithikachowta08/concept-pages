@@ -3,8 +3,8 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/purple_bg.png";
-import rectangle_full_diagonal from "assets/area-of-rectangle/s8_rectangle_full_diagonal.png";
-import rectangle_diagonal from "assets/area-of-rectangle/s8_rectangle_diagonal.png";
+import rectangle_full_diagonal from "assets/area-of-rectangle/s8_rectangle_full_diagonal.svg";
+import rectangle_diagonal from "assets/area-of-rectangle/s8_rectangle_diagonal.svg";
 import { colors } from "utils/colors";
 
 const Slide4 = () => {

@@ -3,9 +3,9 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/white_bg.png";
-import rectangle_full from "assets/area-of-rectangle/s7_rectangle_full.png";
-import rectangle_cross from "assets/area-of-rectangle/s7_rectangle_right.png";
-import rectangle_bottom from "assets/area-of-rectangle/s7_rectangle_bottom.png";
+import rectangle_full from "assets/area-of-rectangle/s7_rectangle_full.svg";
+import rectangle_cross from "assets/area-of-rectangle/s7_rectangle_right.svg";
+import rectangle_bottom from "assets/area-of-rectangle/s7_rectangle_bottom.svg";
 import { colors } from "utils/colors";
 
 const Slide2 = () => {
@@ -68,16 +68,14 @@ const Slide2 = () => {
             &nbsp;of the rectangle = 2 m
           </Paragraph>
           <Paragraph>
-            <table>
-              <tr>
-                <td>Area of the rectangle</td>
-                <td>&nbsp;=&nbsp;Length&nbsp;x&nbsp;Width</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>&nbsp;= 3 m x 2 m = 6 sq m</td>
-              </tr>
-            </table>
+            <Flex>
+              <div>Area of the rectangle</div>
+              <div>
+                &nbsp;=&nbsp;Length&nbsp;x&nbsp;Width
+                <br />
+                &nbsp;= 3 m x 2 m = 6 sq m
+              </div>
+            </Flex>
           </Paragraph>
         </LeftWrap>
         <TransitionImage
