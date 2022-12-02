@@ -22,7 +22,7 @@ const Slide7 = () => {
             Angle sum property
           </Title>
           <Paragraph marginBottom="20px">
-            As per the angle sum property, the sum of the three interior angles of a triangle is
+            As perss the angle sum property, the sum of the three interior angles of a triangle is
             always 180°.
           </Paragraph>
           <Paragraph marginBottom="10px">In the given figure,</Paragraph>
