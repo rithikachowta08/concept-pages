@@ -28,8 +28,8 @@ const SectionIndicator = styled.div`
   border-radius: 50%;
   position: relative;
   cursor: pointer;
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
   border: 4px solid ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
   background: ${(props) =>
     props.isComplete ? (props.darkTheme ? `${colors.WHITE}` : `${colors.PURPLE}`) : `none`};
