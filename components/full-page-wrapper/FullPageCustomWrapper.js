@@ -5,7 +5,7 @@ import DownArrowIcon from "../DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";
 import { colors } from "../../utils/colors";
-import "./FullPageCustomWrapperStyles.module.scss";
+import styles from "./FullPageCustomWrapperStyles.module.scss";
 
 const PageWrap = styled.div`
   height: 100vh;
@@ -20,6 +20,7 @@ export const FullPageCustomWrapper = ({
   navigationSections
 }) => {
   const [currentPageIdx, setCurrentPageIdx] = useState(0);
+  console.log(styles.downArrowIcon)
   return (
     <>
       <ReactFullpage
@@ -57,7 +58,7 @@ export const FullPageCustomWrapper = ({
                         style={{ cursor: "pointer" }}>
                         <DownArrowIcon
                           color={darkBgIndices.includes(idx) ? colors.WHITE : colors.DARK_GREY}
-                          className="down-arrow-icon"
+                          className={styles.downArrowIcon}
                         />
                       </div>
                     )}

@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { TextSpan } from "../text";
 import { Flex, Icon } from "../StyledElements";
 import PropTypes from "prop-types";
-import left_caret from "../../public/assets/left_caret.svg";
 import { useEffect, useState } from "react";
 import { colors } from "../../utils/colors";
+const left_caret = "assets/left_caret.svg";
 
 const NavWrap = styled.div`
   position: absolute;
