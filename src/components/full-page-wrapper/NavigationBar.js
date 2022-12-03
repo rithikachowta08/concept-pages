@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
+import { fontSizes } from "utils/fontStyles";
 import PropTypes from "prop-types";
 import { DEVICE_TYPES } from "hooks/useDeviceType";
 import down_caret from "assets/down_caret.svg";
@@ -202,7 +203,7 @@ const NavigationBar = ({ darkTheme, deviceType, moveTo, sections, currentPageIdx
               cursor="pointer"
               marginLeft="20px"
               color={darkTheme ? colors.WHITE : colors.PURPLE}
-              fontSize="1rem">
+              fontSize={fontSizes.SMALL}>
               Back to concepts
             </TextSpan>
           </Flex>
