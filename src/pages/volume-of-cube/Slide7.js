@@ -2,7 +2,6 @@ import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements"
 import styled from "styled-components/macro";
 
 import { TextSpan, Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
 import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { fetchData } from "utils/networking";
@@ -57,7 +56,7 @@ const Slide7 = () => {
   let mathjaxCounter = 0;
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex>
         <LeftWrap width="50%">

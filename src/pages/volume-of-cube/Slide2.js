@@ -14,7 +14,6 @@ import cube_edges from "assets/volume-of-cube/slide1/cube-4.png";
 import vertice from "assets/vertice.svg";
 import ruler from "assets/ruler.svg";
 import three_figure from "assets/three_figure.svg";
-import bg from "assets/white_bg.png";
 import { colors } from "utils/colors";
 
 const Slide2 = () => {
@@ -37,7 +36,7 @@ const Slide2 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex alignItems="center">
         <LeftWrap>

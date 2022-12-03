@@ -1,4 +1,5 @@
 import React from "react";
+import { fontSizes } from "utils/fontStyles";
 import { Icon, Flex } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { PropTypes } from "prop-types";
@@ -12,7 +13,7 @@ const Pill = ({
   alignSelf,
   color,
   bgColor,
-  fontSize = "1rem"
+  fontSize = fontSizes.SMALL
 }) => {
   return (
     <Flex

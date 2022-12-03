@@ -3,7 +3,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
-import bg from "assets/purple_bg_triangles.png";
 import cube_red from "assets/volume-of-cube/slide13/cube-1.png";
 import cube_lwh from "assets/volume-of-cube/slide13/cube-2.png";
 import cube_s from "assets/volume-of-cube/slide13/cube-3.png";
@@ -23,7 +22,7 @@ const Slide13 = () => {
 
   return (
     <SlideWrap
-      bg={bg}
+      bg="DARK"
       paddingLeft="200px">
       <Flex>
         <LeftWrap width="50%">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
@@ -19,6 +20,7 @@ export const FullPageCustomWrapper = ({
   darkBgIndices,
   navigationSections
 }) => {
+  const deviceType = useDeviceType();
   const [currentPageIdx, setCurrentPageIdx] = useState(0);
   return (
     <>
@@ -42,14 +44,15 @@ export const FullPageCustomWrapper = ({
                     className="section"
                     key={idx}>
                     {/* No navigation bar on title page */}
-                    {idx === 0 ? null : (
+                    {idx ? (
                       <NavigationBar
+                        deviceType={deviceType}
                         sections={navigationSections}
                         darkTheme={darkBgIndices.includes(idx)}
                         moveTo={moveToSection}
                         currentPageIdx={currentPageIdx}
                       />
-                    )}
+                    ) : null}
                     <PageWrap>{React.cloneElement(itm, { moveToSection })}</PageWrap>
                     {idx === slidesComponentList.length - 1 ? null : (
                       <div

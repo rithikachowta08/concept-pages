@@ -1,6 +1,5 @@
 import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
 import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
@@ -51,7 +50,7 @@ const Slide9 = () => {
 
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex>
         <LeftWrap width="50%">

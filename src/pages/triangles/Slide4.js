@@ -3,7 +3,6 @@ import { SlideWrap, Flex } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import { colors } from "utils/colors";
-import bg from "assets/purple_bg.png";
 import triangle_acute from "assets/triangle_acute.svg";
 import triangle_acute_yellow from "assets/triangle_acute_yellow.svg";
 import triangle_obtuse from "assets/triangle_obtuse.svg";
@@ -21,7 +20,7 @@ const Slide4 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="DARK"
       alignItems="center">
       <Title
         marginBottom="20px"

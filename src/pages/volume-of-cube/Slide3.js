@@ -5,7 +5,6 @@ import TransitionImage from "components/media/TransitionImage";
 
 import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import Modal from "components/layout/Modal";
-import bg from "assets/white_bg.png";
 import info from "assets/info.svg";
 import boat from "assets/boat.svg";
 import tent_with_triangle from "assets/tent_with_triangle.svg";
@@ -49,7 +48,7 @@ const Slide3 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}
