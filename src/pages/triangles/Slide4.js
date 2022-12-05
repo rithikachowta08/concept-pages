@@ -4,12 +4,12 @@ import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import { colors } from "utils/colors";
 import bg from "assets/purple_bg.webp";
-import triangle_acute from "assets/triangle_acute.svg";
-import triangle_acute_yellow from "assets/triangle_acute_yellow.svg";
-import triangle_obtuse from "assets/triangle_obtuse.svg";
-import triangle_obtuse_yellow from "assets/triangle_obtuse_yellow.svg";
-import triangle_right from "assets/triangle_right.svg";
-import triangle_right_yellow from "assets/triangle_right_yellow.svg";
+import triangle_acute from "assets/triangles/triangle_acute.svg";
+import triangle_acute_yellow from "assets/triangles/triangle_acute_yellow.svg";
+import triangle_obtuse from "assets/triangles/triangle_obtuse.svg";
+import triangle_obtuse_yellow from "assets/triangles/triangle_obtuse_yellow.svg";
+import triangle_right from "assets/triangles/triangle_right.svg";
+import triangle_right_yellow from "assets/triangles/triangle_right_yellow.svg";
 
 const Slide4 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

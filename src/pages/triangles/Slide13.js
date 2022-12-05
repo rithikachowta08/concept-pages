@@ -3,7 +3,7 @@ import { Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
 import bg from "assets/white_bg.webp";
 import { colors } from "utils/colors";
-import pythogoras_slide from "assets/pythogoras_slide.svg";
+import pythogoras_slide from "assets/triangles/pythogoras_slide.svg";
 
 const Slide7 = () => {
   return (

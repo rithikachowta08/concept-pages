@@ -5,10 +5,10 @@ import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import Modal from "components/layout/Modal";
 import bg from "assets/white_bg.webp";
 import info from "assets/info.svg";
-import boat from "assets/boat.svg";
-import tent_with_triangle from "assets/tent_with_triangle.svg";
-import boat_correct_answer from "assets/boat_correct_answer.svg";
-import boat_wrong_answer from "assets/boat_wrong_answer.svg";
+import boat from "assets/triangles/boat.svg";
+import tent_with_triangle from "assets/triangles/tent_with_triangle.svg";
+import boat_correct_answer from "assets/triangles/boat_correct_answer.svg";
+import boat_wrong_answer from "assets/triangles/boat_wrong_answer.svg";
 
 const Slide3 = () => {
   const modalContent = (

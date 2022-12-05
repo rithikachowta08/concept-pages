@@ -1,7 +1,7 @@
 import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { Title, Paragraph } from "components/text";
 import bg from "assets/white_bg.webp";
-import angle_sum_slide from "assets/angle_sum_slide.svg";
+import angle_sum_slide from "assets/triangles/angle_sum_slide.svg";
 
 const Slide7 = () => {
   return (

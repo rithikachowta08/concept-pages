@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
-import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
+import { useDeviceType } from "hooks/useDeviceType";
+import ReactFullpage from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";

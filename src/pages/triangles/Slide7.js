@@ -3,9 +3,9 @@ import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/white_bg.webp";
-import right_red from "assets/right_red.svg";
-import right_angles_blue from "assets/right_angles_blue.svg";
-import hypotenuse from "assets/hypotenuse.svg";
+import right_red from "assets/triangles/right_red.svg";
+import right_angles_blue from "assets/triangles/right_angles_blue.svg";
+import hypotenuse from "assets/triangles/hypotenuse.svg";
 import { colors } from "utils/colors";
 
 const Slide7 = () => {

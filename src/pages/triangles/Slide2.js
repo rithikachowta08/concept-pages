@@ -3,13 +3,13 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpan } from "components/text";
 import Modal from "components/layout/Modal";
 import TransitionImage from "components/media/TransitionImage";
-import triangle_red from "assets/triangle_red.svg";
-import triangle_angles from "assets/triangle_angles.svg";
-import triangle_sides from "assets/triangle_sides.svg";
-import triangle_vertices from "assets/triangle_vertices.svg";
-import vertice from "assets/vertice.svg";
-import ruler from "assets/ruler.svg";
-import three_figure from "assets/three_figure.svg";
+import triangle_red from "assets/triangles/triangle_red.svg";
+import triangle_angles from "assets/triangles/triangle_angles.svg";
+import triangle_sides from "assets/triangles/triangle_sides.svg";
+import triangle_vertices from "assets/triangles/triangle_vertices.svg";
+import vertice from "assets/triangles/vertice.svg";
+import ruler from "assets/triangles/ruler.svg";
+import three_figure from "assets/triangles/three_figure.svg";
 import bg from "assets/white_bg.webp";
 import { colors } from "utils/colors";
 

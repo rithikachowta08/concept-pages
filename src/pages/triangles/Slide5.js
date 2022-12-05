@@ -3,8 +3,8 @@ import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements"
 import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import bg from "assets/white_bg.webp";
-import acute_red from "assets/acute_red.svg";
-import acute_angles_blue from "assets/acute_angles_blue.svg";
+import acute_red from "assets/triangles/acute_red.svg";
+import acute_angles_blue from "assets/triangles/acute_angles_blue.svg";
 import { colors } from "utils/colors";
 
 const Slide5 = () => {
