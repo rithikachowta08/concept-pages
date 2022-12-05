@@ -1,5 +1,10 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "../../components/StyledElements";
+import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
 import { Title, Paragraph } from "../../components/text";
+import dynamic from "next/dynamic";
+const StyledImg = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.StyledImg)
+);
+
 const bg = "assets/white_bg.png";
 const inequality_slide = "assets/inequality_slide.svg";
 
@@ -8,22 +13,15 @@ const Slide7 = () => {
     <SlideWrap bg={bg}>
       <Flex justifyContent="space-evenly">
         <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            small>
+          <Title opacity={0.5} marginBottom="16px" small>
             Property of triangles
           </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="16px"
-            small>
+          <Title fontSize="2.5rem" fontWeight={700} marginBottom="16px" small>
             Triangle inequality property
           </Title>
           <Paragraph marginBottom="20px">
-            As per the triangle inequality theorem, the sum of the length of the two sides of a
-            triangle is greater than the third side.
+            As per the triangle inequality theorem, the sum of the length of the
+            two sides of a triangle is greater than the third side.
           </Paragraph>
           <Paragraph marginBottom="10px">In the given figure,</Paragraph>
           <Paragraph>a + b &gt; c</Paragraph>

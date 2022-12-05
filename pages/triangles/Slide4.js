@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { SlideWrap, Flex } from "../../components/StyledElements";
 import { Title, Paragraph, TextSpan } from "../../components/text";
-import TransitionImage from "../../components/media/TransitionImage";
 import { colors } from "../../utils/colors";
+import dynamic from "next/dynamic";
+const TransitionImage = dynamic(() =>
+  import("../../components/media/TransitionImage")
+);
 const bg = "assets/purple_bg.png";
 const triangle_acute = "assets/triangle_acute.svg";
 const triangle_acute_yellow = "assets/triangle_acute_yellow.svg";
@@ -20,21 +23,16 @@ const Slide4 = () => {
     setActiveIndex(0);
   };
   return (
-    <SlideWrap
-      bg={bg}
-      alignItems="center">
-      <Title
-        marginBottom="20px"
-        opacity={0.5}
-        color="white"
-        small>
+    <SlideWrap bg={bg} alignItems="center">
+      <Title marginBottom="20px" opacity={0.5} color="white" small>
         Types of triangles
       </Title>
       <Paragraph
         textAlign="center"
         maxWidth="60%"
         color="white"
-        marginBottom="40px">
+        marginBottom="40px"
+      >
         Triangles can be classified into three types with respect to their{" "}
         <TextSpan
           color="white"
@@ -43,7 +41,8 @@ const Slide4 = () => {
           onHoverOut={onHoverOut}
           textDecoration="underline"
           fontSize="2.2rem"
-          fontWeight={700}>
+          fontWeight={700}
+        >
           interior angles
         </TextSpan>{" "}
         which are

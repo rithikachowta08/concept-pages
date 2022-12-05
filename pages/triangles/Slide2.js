@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { SlideWrap, Flex, StyledImg, LeftWrap } from "../../components/StyledElements";
+import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
 import { Title, Paragraph, TextSpan } from "../../components/text";
 import Modal from "../../components/layout/Modal";
-import TransitionImage from "../../components/media/TransitionImage";
 import { colors } from "../../utils/colors";
+import dynamic from "next/dynamic";
+const StyledImg = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.StyledImg)
+);
+const TransitionImage = dynamic(() =>
+  import("../../components/media/TransitionImage")
+);
+
 const triangle_red = "assets/triangle_red.svg";
 const triangle_angles = "assets/triangle_angles.svg";
 const triangle_sides = "assets/triangle_sides.svg";
@@ -18,35 +25,24 @@ const Slide2 = () => {
   const hoverColors = [colors.AQUA, colors.DARK_BLUE, colors.GREEN];
   const modalContent = (
     <Flex direction="column">
-      <Paragraph
-        color="white"
-        marginBottom="50px"
-        fontSize="1.5rem">
-        Vertices in shapes are the points where two or more line segments or edges meet
+      <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+        Vertices in shapes are the points where two or more line segments or
+        edges meet
       </Paragraph>
-      <StyledImg
-        src={vertice}
-        alignSelf="center"
-        marginBottom="50px"
-      />
+      <StyledImg src={vertice} alignSelf="center" marginBottom="50px" />
       <Title
         fontSize="1.8rem"
         marginBottom="20px"
         color="white"
         fontWeight={700}
-        small>
+        small
+      >
         Example
       </Title>
-      <Paragraph
-        color="white"
-        fontSize="1.5rem"
-        marginBottom="50px">
+      <Paragraph color="white" fontSize="1.5rem" marginBottom="50px">
         A ruler has 4 vertices
       </Paragraph>
-      <StyledImg
-        src={ruler}
-        transform="translateX(-12px)"
-      />
+      <StyledImg src={ruler} transform="translateX(-12px)" />
     </Flex>
   );
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,9 +60,7 @@ const Slide2 = () => {
     setActiveIndex(0);
   };
   return (
-    <SlideWrap
-      bg={bg}
-      paddingLeft="200px">
+    <SlideWrap bg={bg} paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}
         title="What are vertices"
@@ -75,20 +69,14 @@ const Slide2 = () => {
       />
       <Flex alignItems="center">
         <LeftWrap>
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            small>
+          <Title opacity={0.5} marginBottom="16px" small>
             What is a triangle?
           </Title>
           <Paragraph marginBottom="70px">
             A triangle is a two dimentional geometric shape which has
           </Paragraph>
           <Flex alignItems="center">
-            <StyledImg
-              marginRight="32px"
-              src={three_figure}
-            />
+            <StyledImg marginRight="32px" src={three_figure} />
             <Flex direction="column">
               {subtitles.map((subtitle, index) => (
                 <TextSpan
@@ -102,7 +90,8 @@ const Slide2 = () => {
                   cursor={subtitle === "Vertices" ? "pointer" : null}
                   onClick={subtitle === "Vertices" ? onClick : null}
                   onHover={onHover}
-                  onHoverOut={onHoverOut}>
+                  onHoverOut={onHoverOut}
+                >
                   {subtitle}
                 </TextSpan>
               ))}
@@ -110,7 +99,12 @@ const Slide2 = () => {
           </Flex>
         </LeftWrap>
         <TransitionImage
-          images={[triangle_red, triangle_sides, triangle_angles, triangle_vertices]}
+          images={[
+            triangle_red,
+            triangle_sides,
+            triangle_angles,
+            triangle_vertices,
+          ]}
           activeIndex={activeIndex}
           bottomOffset="65px"
         />

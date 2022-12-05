@@ -1,8 +1,13 @@
-import { SlideWrap, Flex, Icon } from "../../components/StyledElements";
+import { SlideWrap, Flex } from "../../components/StyledElements";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import { Paragraph } from "../../components/text";
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
+const Icon = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Icon)
+);
+
 const bg = "assets/white_bg.png";
 const error = "assets/error.svg";
 const success = "assets/success.svg";

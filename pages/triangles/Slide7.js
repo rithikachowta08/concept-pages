@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
 import { Title, Paragraph, TextSpan } from "../../components/text";
-import TransitionImage from "../../components/media/TransitionImage";
 import { colors } from "../../utils/colors";
+import dynamic from "next/dynamic";
+const TransitionImage = dynamic(() =>
+  import("../../components/media/TransitionImage")
+);
 const bg = "assets/white_bg.png";
 const right_red = "assets/right_red.svg";
 const right_angles_blue = "assets/right_angles_blue.svg";
@@ -23,22 +26,13 @@ const Slide7 = () => {
     setActiveIndex(0);
   };
   return (
-    <SlideWrap
-      bg={bg}
-      paddingLeft="200px">
+    <SlideWrap bg={bg} paddingLeft="200px">
       <Flex>
         <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            small>
+          <Title opacity={0.5} marginBottom="16px" small>
             Types of triangles
           </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="16px"
-            small>
+          <Title fontSize="2.5rem" fontWeight={700} marginBottom="16px" small>
             Right angled triangle
           </Title>
           <Paragraph marginBottom="20px">
@@ -49,7 +43,8 @@ const Slide7 = () => {
               textDecoration="underline"
               hoverColor={colors.DARK_BLUE}
               fontWeight={700}
-              fontSize="2.2rem">
+              fontSize="2.2rem"
+            >
               90 degrees
             </TextSpan>
             .
@@ -61,7 +56,8 @@ const Slide7 = () => {
               textDecoration="underline"
               hoverColor={colors.AQUA}
               fontWeight={700}
-              fontSize="2.2rem">
+              fontSize="2.2rem"
+            >
               Hypotenuse
             </TextSpan>{" "}
             is the side opposite to the right angle and is the longest side.

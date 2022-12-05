@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { Icon, Flex, SlideWrap, StyledImg } from "../../components/StyledElements";
+import { Flex, SlideWrap } from "../../components/StyledElements";
 import { Title, Paragraph } from "../../components/text";
-import ImageWithYesNo, { ANSWER_TYPES } from "../../components/media/ImageWithYesNo";
+import ImageWithYesNo, {
+  ANSWER_TYPES,
+} from "../../components/media/ImageWithYesNo";
 import Modal from "../../components/layout/Modal";
+import dynamic from "next/dynamic";
+const Icon = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Icon)
+);
 const bg = "assets/white_bg.png";
 const info = "assets/info.svg";
 const boat = "assets/boat.svg";
@@ -13,18 +19,18 @@ const boat_wrong_answer = "assets/boat_wrong_answer.svg";
 const Slide3 = () => {
   const modalContent = (
     <Flex direction="column">
-      <Paragraph
-        color="white"
-        marginBottom="50px"
-        fontSize="1.5rem">
-        {"If the object has a triangular surface present within itself, then choose 'Yes'"}
+      <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+        {
+          "If the object has a triangular surface present within itself, then choose 'Yes'"
+        }
       </Paragraph>
       <Title
         fontSize="1.8rem"
         marginBottom="20px"
         color="white"
         fontWeight={700}
-        small>
+        small
+      >
         Example
       </Title>
       <ImageWithYesNo
@@ -43,26 +49,20 @@ const Slide3 = () => {
     setIsModalOpen(false);
   };
   return (
-    <SlideWrap
-      bg={bg}
-      alignItems="center">
+    <SlideWrap bg={bg} alignItems="center">
       <Modal
         isOpen={isModalOpen}
         content={modalContent}
         onDismiss={onDismiss}
       />
-      <Title
-        opacity={0.5}
-        small>
+      <Title opacity={0.5} small>
         Identify the triangles
       </Title>
-      <Flex
-        marginBottom="40px"
-        alignItems="center">
-        <Paragraph marginRight="10px">Does this object have a triangle in it?</Paragraph>
-        <Icon
-          src={info}
-          onClick={onClick}></Icon>
+      <Flex marginBottom="40px" alignItems="center">
+        <Paragraph marginRight="10px">
+          Does this object have a triangle in it?
+        </Paragraph>
+        <Icon src={info} onClick={onClick}></Icon>
       </Flex>
       <ImageWithYesNo
         defaultSrc={boat}
@@ -70,7 +70,8 @@ const Slide3 = () => {
         correctAnswerMsg="Great job!"
         wrongAnswerMsg="This object has a triangle"
         correctAnswerSrc={boat_correct_answer}
-        wrongAnswerSrc={boat_wrong_answer}></ImageWithYesNo>
+        wrongAnswerSrc={boat_wrong_answer}
+      ></ImageWithYesNo>
     </SlideWrap>
   );
 };

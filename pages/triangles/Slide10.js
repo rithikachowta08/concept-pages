@@ -1,5 +1,9 @@
-import { SlideWrap, Flex, StyledImg } from "../../components/StyledElements";
+import { SlideWrap, Flex } from "../../components/StyledElements";
 import { Title, TextSpan } from "../../components/text";
+import dynamic from "next/dynamic";
+const StyledImg = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.StyledImg)
+);
 const bg = "assets/purple_bg.png";
 const angle_sum = "assets/angle_sum.svg";
 const triangle_inequality = "assets/triangle_inequality.svg";
@@ -7,28 +11,20 @@ const pythogoras = "assets/pythogoras.svg";
 
 const Slide4 = () => {
   return (
-    <SlideWrap
-      bg={bg}
-      alignItems="center">
+    <SlideWrap bg={bg} alignItems="center">
       <Title
         marginBottom="50px"
         fontWeight={700}
         fontSize="2.5rem"
         color="white"
-        small>
+        small
+      >
         Properties of triangles
       </Title>
-      <Flex
-        justifyContent="space-between"
-        alignItems="center"
-        width="70%">
+      <Flex justifyContent="space-between" alignItems="center" width="70%">
         <Flex direction="column">
-          <StyledImg
-            src={angle_sum}
-            marginBottom="30px"></StyledImg>
-          <TextSpan
-            color="white"
-            fontWeight={400}>
+          <StyledImg src={angle_sum} marginBottom="30px"></StyledImg>
+          <TextSpan color="white" fontWeight={400}>
             Angle sum property
           </TextSpan>
         </Flex>
@@ -36,21 +32,19 @@ const Slide4 = () => {
           <StyledImg
             src={triangle_inequality}
             transform="translateY(-8px)"
-            marginBottom="10px"></StyledImg>
-          <TextSpan
-            color="white"
-            fontWeight={400}>
+            marginBottom="10px"
+          ></StyledImg>
+          <TextSpan color="white" fontWeight={400}>
             Triangle inequality property
           </TextSpan>
         </Flex>
         <Flex direction="column">
-          <StyledImg
-            src={pythogoras}
-            transform="translateY(-50px)"></StyledImg>
+          <StyledImg src={pythogoras} transform="translateY(-50px)"></StyledImg>
           <TextSpan
             color="white"
             transform="translateY(-20px)"
-            fontWeight={400}>
+            fontWeight={400}
+          >
             Pythogoras theorem
           </TextSpan>
         </Flex>
