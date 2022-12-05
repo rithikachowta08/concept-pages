@@ -145,12 +145,16 @@ const NavigationBar = ({ darkTheme, deviceType, moveTo, sections, currentPageIdx
                     darkTheme={darkTheme}
                     isComplete={currentPageIdx >= section.slides[0]}
                   />
-                  <TextSpan>{section.title}</TextSpan>
+                  <TextSpan color={darkTheme ? colors.WHITE : colors.BLACK}>
+                    {section.title}
+                  </TextSpan>
                 </Flex>
               ))}
             </Flex>
           ) : (
-            <TextSpan>{currentSection.title}</TextSpan>
+            <TextSpan color={darkTheme ? colors.WHITE : colors.BLACK}>
+              {currentSection.title}
+            </TextSpan>
           )}
           <Icon
             alignSelf={isExpanded ? "flex-start" : "center"}

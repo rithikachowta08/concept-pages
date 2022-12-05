@@ -1,4 +1,4 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpan, Title, Paragraph } from "components/text";
 import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
@@ -43,81 +43,63 @@ const Slide12 = () => {
   latex.push(`= \\sqrt{2}`);
   let mathjaxCounter = 0;
   return (
-    <SlideWrap
-      bg="LIGHT"
-      paddingLeft="200px">
-      <Flex>
-        <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            // color={colors.WHITE}
-            small>
-            Volume of a Cube using Diagonal
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="50px"
-            // color={colors.WHITE}
-            small>
-            Diagonal of a Face
-          </Title>
-          <Paragraph
-            marginBottom="40px"
-            // color={colors.WHITE}
-          >
-            Given the{" "}
-            <TextSpan
-              id={1}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              // textDecoration="underline"
-              color={colors.RED}
-              hoverColor={colors.DARK_BLUE}
-              fontWeight={700}
-              fontSize="2.2rem"
-              // color={colors.RED}
-            >
-              diagonal length
-            </TextSpan>{" "}
-            of a face of a cube:
-          </Paragraph>
-          <Pill
-            width="fit-content"
-            fontSize="2.2rem"
-            bgColor={colors.GREEN}
-            marginBottom="40px"
-            color={colors.WHITE}>
-            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic
-            units
-          </Pill>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Here, f <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpan
-              id={2}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              // textDecoration="underline"
-              hoverColor={colors.DARK_BLUE}
-              fontWeight={700}
-              fontSize="2.2rem"
-              color={colors.RED}>
-              s
-            </TextSpan>{" "}
-            cubic units
-          </Paragraph>
-        </LeftWrap>
+    <TextAndDiagramSlide
+      title="Diagonal of a Face"
+      secondaryTitle="Volume of a Cube using Diagonal"
+      diagram={
         <TransitionImage
           images={[cube_red, cube_f, cube_s]}
           activeIndex={activeIndex}
-          bottomOffset="65px"
         />
-      </Flex>
-    </SlideWrap>
+      }>
+      <Paragraph
+        marginBottom="2vh"
+        // color={colors.WHITE}
+      >
+        Given the{" "}
+        <TextSpan
+          id={1}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          // textDecoration="underline"
+          color={colors.RED}
+          hoverColor={colors.DARK_BLUE}
+          fontWeight={700}
+          fontSize="2.2rem"
+          // color={colors.RED}
+        >
+          diagonal length
+        </TextSpan>{" "}
+        of a face of a cube:
+      </Paragraph>
+      <Pill
+        width="fit-content"
+        fontSize="2.2rem"
+        bgColor={colors.GREEN}
+        marginBottom="2vh"
+        color={colors.WHITE}>
+        Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic
+        units
+      </Pill>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Here, f <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
+        <TextSpan
+          id={2}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          // textDecoration="underline"
+          hoverColor={colors.DARK_BLUE}
+          fontWeight={700}
+          fontSize="2.2rem"
+          color={colors.RED}>
+          s
+        </TextSpan>{" "}
+        cubic units
+      </Paragraph>
+    </TextAndDiagramSlide>
   );
 };
 export default Slide12;

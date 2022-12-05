@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Video, SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
+import VideoSlide from "components/slides/VideoSlide";
 import TransitionImage from "components/media/TransitionImage";
 import acute_red from "assets/acute_red.svg";
 import acute_angles_blue from "assets/acute_angles_blue.svg";
@@ -15,21 +16,9 @@ const Slide5 = () => {
     setActiveIndex(0);
   };
   return (
-    <SlideWrap bgColor={colors.BLACK}>
-      <Flex direction="column">
-        <Video
-          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          controls
-          muted
-          autoPlay
-        />
-        <TextSpan
-          margin="4vh 0 0 2vw"
-          color="white">
-          Classification of triangles
-        </TextSpan>
-      </Flex>
-    </SlideWrap>
+    <VideoSlide
+      title="Classification of triangles"
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></VideoSlide>
   );
 };
 

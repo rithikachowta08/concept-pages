@@ -15,12 +15,22 @@ const H2 = styled.h2`
   color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
   font-weight: ${(props) => (props.fontWeight ? props.fontWeight : fontWeights.NORMAL)};
   opacity: ${(props) => (props.opacity ? props.opacity : "1")};
+  padding: ${(props) => props.padding};
   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.MEDIUM)};
   margin: 0;
   margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
 `;
 
-const Title = ({ children, marginBottom, fontSize, fontWeight, opacity, color, small }) => {
+const Title = ({
+  children,
+  marginBottom,
+  padding,
+  fontSize,
+  fontWeight,
+  opacity,
+  color,
+  small
+}) => {
   const HeadingElement = small ? H2 : H1;
   return (
     <HeadingElement
@@ -28,6 +38,7 @@ const Title = ({ children, marginBottom, fontSize, fontWeight, opacity, color, s
       opacity={opacity}
       fontSize={fontSize}
       fontWeight={fontWeight}
+      padding={padding}
       color={color}>
       {children}
     </HeadingElement>
@@ -41,6 +52,7 @@ Title.propTypes = {
   opacity: PropTypes.number,
   fontWeight: PropTypes.number,
   marginBottom: PropTypes.string,
+  padding: PropTypes.string,
   small: PropTypes.bool
 };
 

@@ -14,7 +14,7 @@ export default function MathElement({ htmlString }) {
   } else {
     return (
       <>
-        <TeX style={{ fontSize: "30px" }}>{htmlString}</TeX>
+        <TeX style={{ fontSize: "1.8rem" }}>{htmlString}</TeX>
       </>
     );
   }

@@ -3,6 +3,7 @@ import { TextSpan, Title, Paragraph } from "components/text";
 import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
 import cube_red from "assets/volume-of-cube/slide9/cube-1.png";
 import cube_diagonal from "assets/volume-of-cube/slide9/cube-2.png";
@@ -49,103 +50,84 @@ const Slide9 = () => {
   let mathjaxCounter = 0;
 
   return (
-    <SlideWrap
-      bg="LIGHT"
-      paddingLeft="200px">
-      <Flex>
-        <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            // color={colors.WHITE}
-            small>
-            Volume of a Cube using Area
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="50px"
-            // color={colors.WHITE}
-            small>
-            Illustrative Example
-          </Title>
-          <Paragraph
-            marginBottom="40px"
-            // color={colors.WHITE}
-          >
-            What is the volume of a cube, when the{" "}
-            <TextSpan
-              id={1}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              // textDecoration="underline"
-              hoverColor={colors.DARK_BLUE}
-              fontWeight={700}
-              fontSize="2.2rem"
-              color={colors.RED}>
-              area
-            </TextSpan>{" "}
-            of one of the faces is 16 sq m?
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Solution:
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Volume of a cube
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Area of the square face,{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-            <Paragraph>
-              <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-            </Paragraph>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          ></Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Volume, V <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-        </LeftWrap>
+    <TextAndDiagramSlide
+      diagram={
         <TransitionImage
           images={[cube_red, cube_diagonal]}
           activeIndex={activeIndex}
-          bottomOffset="65px"
         />
-      </Flex>
-    </SlideWrap>
+      }
+      secondaryTitle="Volume of a Cube using Area"
+      title="Illustrative Example">
+      <Paragraph
+        marginBottom="2vh"
+        // color={colors.WHITE}
+      >
+        What is the volume of a cube, when the{" "}
+        <TextSpan
+          id={1}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          // textDecoration="underline"
+          hoverColor={colors.DARK_BLUE}
+          fontWeight={700}
+          fontSize="2.2rem"
+          color={colors.RED}>
+          area
+        </TextSpan>{" "}
+        of one of the faces is 16 sq m?
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Solution:
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Volume of a cube
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Area of the square face, <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+        <Paragraph>
+          <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+        </Paragraph>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      ></Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Volume, V <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+    </TextAndDiagramSlide>
   );
 };
 export default Slide9;

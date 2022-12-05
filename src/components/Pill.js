@@ -11,6 +11,7 @@ const Pill = ({
   position,
   bottom,
   alignSelf,
+  marginBottom,
   color,
   bgColor,
   fontSize = fontSizes.SMALL
@@ -19,8 +20,9 @@ const Pill = ({
     <Flex
       bgColor={bgColor}
       bottom={bottom}
-      padding="12px"
+      padding="0.7rem"
       alignItems="center"
+      marginBottom={marginBottom}
       alignSelf={alignSelf}
       borderRadius="8px"
       position={position}
@@ -49,7 +51,8 @@ Pill.propTypes = {
   alignSelf: PropTypes.string,
   fontSize: PropTypes.string,
   width: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  marginBottom: PropTypes.string
 };
 
 export default Pill;
