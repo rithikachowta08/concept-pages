@@ -77,3 +77,7 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 .fp-watermark {
   display: none;
 }
+:root {
+  --toastify-color-success: #4dcb88;
+  --toastify-color-error: #ea6560;
+}
