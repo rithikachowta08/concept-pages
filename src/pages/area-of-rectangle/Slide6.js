@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { Title, Paragraph } from "components/text";
-import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
+import QuestionAnswerImage from "components/media/QuestionAnswerImage";
 import Modal from "components/layout/Modal";
 import info from "assets/info.svg";
 import boat from "assets/boat.svg";
@@ -26,7 +26,7 @@ const Slide6 = () => {
         small>
         Example
       </Title>
-      <ImageWithYesNo
+      <QuestionAnswerImage
         width="fit-content"
         correctAnswerSrc={tent_with_triangle}
         correctAnswerMsg="Yes"
@@ -63,13 +63,14 @@ const Slide6 = () => {
           src={info}
           onClick={onClick}></Icon>
       </Flex>
-      <ImageWithYesNo
+      <QuestionAnswerImage
         defaultSrc={boat}
-        correctAnswer={ANSWER_TYPES.YES}
+        options={["Fig. A", "Fig. B"]}
+        correctAnswer={"Fig. A"}
         correctAnswerMsg="Great job!"
         wrongAnswerMsg="This object has a triangle"
         correctAnswerSrc={boat_correct_answer}
-        wrongAnswerSrc={boat_wrong_answer}></ImageWithYesNo>
+        wrongAnswerSrc={boat_wrong_answer}></QuestionAnswerImage>
     </SlideWrap>
   );
 };
