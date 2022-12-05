@@ -1,11 +1,10 @@
 import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
 import angle_sum_slide from "assets/angle_sum_slide.svg";
 
 const Slide7 = () => {
   return (
-    <SlideWrap bg={bg}>
+    <SlideWrap bg="LIGHT">
       <Flex justifyContent="space-evenly">
         <LeftWrap width="50%">
           <Title
@@ -22,7 +21,7 @@ const Slide7 = () => {
             Angle sum property
           </Title>
           <Paragraph marginBottom="20px">
-            As per the angle sum property, the sum of the three interior angles of a triangle is
+            As perss the angle sum property, the sum of the three interior angles of a triangle is
             always 180°.
           </Paragraph>
           <Paragraph marginBottom="10px">In the given figure,</Paragraph>

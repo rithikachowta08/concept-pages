@@ -13,7 +13,7 @@ import Slide11 from "./Slide11";
 import Slide12 from "./Slide12";
 import Slide13 from "./Slide13";
 
-export const Triangles = () => {
+const Triangles = () => {
   const SlideArray = [
     <Slide1 key={0} />,
     <Slide2 key={1} />,
@@ -45,3 +45,5 @@ export const Triangles = () => {
     />
   );
 };
+
+export default Triangles;

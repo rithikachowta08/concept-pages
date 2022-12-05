@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { PropTypes } from "prop-types";
 
 const Img = styled.img`
@@ -13,12 +14,16 @@ const ImgContainer = styled.div`
   grid-template-columns: 1fr;
   position: relative;
   bottom: ${(props) => props.bottomOffset || "0"};
+  scale: ${(props) => (props.isMobile ? 0.5 : 1)};
+  transform: ${(props) => (props.isMobile ? "translateY(-50%)" : "none")};
   margin-right: ${(props) => props.marginRight};
 `;
 
 const TransitionImage = ({ images, bottomOffset, marginRight, activeIndex }) => {
+  const deviceType = useDeviceType();
   return (
     <ImgContainer
+      isMobile={deviceType === DEVICE_TYPES.MOBILE}
       bottomOffset={bottomOffset}
       marginRight={marginRight}>
       {images.map((image, index) => (

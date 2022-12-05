@@ -1,6 +1,7 @@
 import { Title } from "components/text";
 import { PropTypes } from "prop-types";
 import { Flex, Icon } from "components/StyledElements";
+import { fontSizes, fontWeights } from "utils/fontStyles";
 import styled from "styled-components/macro";
 import crossIcon from "assets/cross_icon.svg";
 import Button from "components/Button";
@@ -20,15 +21,27 @@ const Overlay = styled.div`
 const ModalBody = styled.div`
   width: 30%;
   height: 100%;
+  position: absolute;
+  bottom: 0;
   background: #3c3281;
   color: white;
-  transform: translateX(${(props) => (props.isOpen ? "0px" : "-999px")});
+  transform: ${(props) => (props.isOpen ? "translateX(0px)" : "translateX(-999px)")};
   border-radius: 0px 20px 20px 0px;
   padding: 65px 40px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  transition: all 0.5s;
+  transition: transform 0.5s;
+
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    width: 100%;
+    height: 80%;
+    transform: ${(props) => (props.isOpen ? "translateY(0px)" : "translateY(999px)")};
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    width: 50%;
+  }
 `;
 
 const Modal = ({ onDismiss, content, title, isOpen }) => {
@@ -49,8 +62,8 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
           marginBottom="20px">
           {title ? (
             <Title
-              fontWeight={700}
-              fontSize="1.8rem"
+              fontWeight={fontWeights.BOLD}
+              fontSize={fontSizes.LARGE}
               color="white"
               small>
               {title}
