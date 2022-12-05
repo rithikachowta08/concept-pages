@@ -9,8 +9,8 @@ import { colors } from "utils/colors";
 import "./FullPageCustomWrapperStyles.scss";
 
 const PageWrap = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 `;
 
 let fullPage;
@@ -28,6 +28,7 @@ export const FullPageCustomWrapper = ({
         //fullpage options
         // licenseKey={"YOUR_KEY_HERE"}
         navigationTooltips={[]}
+        scrollBar={false}
         scrollingSpeed={900}
         fitToSectionDelay={900}
         afterLoad={() => {
