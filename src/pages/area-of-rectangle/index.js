@@ -8,7 +8,7 @@ import Slide6 from "./Slide6";
 import Slide7 from "./Slide7";
 import Slide8 from "./Slide8";
 import Slide9 from "./Slide9";
-// import Slide10 from "./Slide10";
+import Slide10 from "./Slide10";
 // import Slide11 from "./Slide11";
 // import Slide12 from "./Slide12";
 // import Slide13 from "./Slide13";
@@ -23,8 +23,8 @@ export const AreaOfRectangle = () => {
     <Slide6 key={5} />,
     <Slide7 key={6} />,
     <Slide8 key={7} />,
-    <Slide9 key={8} />
-    // <Slide10 key={9} />,
+    <Slide9 key={8} />,
+    <Slide10 key={9} />
     // <Slide11 key={10} />,
     // <Slide12 key={11} />,
     // <Slide13 key={12} />
@@ -37,7 +37,7 @@ export const AreaOfRectangle = () => {
     { title: "Area using diagonal", slides: [6, 7, 8, 9] }
   ];
 
-  const darkBgIndices = [0, 3, 5, 7];
+  const darkBgIndices = [0, 3, 6, 8];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

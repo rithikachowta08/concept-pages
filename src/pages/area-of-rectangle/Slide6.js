@@ -1,49 +1,40 @@
 import { useState } from "react";
-import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/purple_bg.png";
-import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
-import rectangle_length from "assets/area-of-rectangle/rectangle_length.svg";
-import rectangle_width from "assets/area-of-rectangle/rectangle_width.svg";
-import rectangle_square_units from "assets/area-of-rectangle/rectangle_square_units.svg";
+import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
+import { Title, Paragraph } from "components/text";
+import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import Modal from "components/layout/Modal";
-import { colors } from "utils/colors";
+import bg from "assets/white_bg.png";
+import info from "assets/info.svg";
+import boat from "assets/boat.svg";
+import tent_with_triangle from "assets/tent_with_triangle.svg";
+import boat_correct_answer from "assets/boat_correct_answer.svg";
+import boat_wrong_answer from "assets/boat_wrong_answer.svg";
 
-const Slide4 = () => {
+const Slide6 = () => {
   const modalContent = (
     <Flex direction="column">
       <Paragraph
         color="white"
-        marginBottom="40px"
-        fontSize="1.22rem">
-        The area of a rectangle is measured in square units (square centimeters, square inches,
-        square feet, and so on).
+        marginBottom="50px"
+        fontSize="1.5rem">
+        {"If the object has a triangular surface present within itself, then choose 'Yes'"}
       </Paragraph>
       <Title
+        fontSize="1.8rem"
+        marginBottom="20px"
         color="white"
-        fontSize="1.22rem">
-        Example :
+        fontWeight={700}
+        small>
+        Example
       </Title>
-      <StyledImg
-        src={rectangle_square_units}
-        width="-webkit-fill-available"
-        // transform="scale(0.5)"
+      <ImageWithYesNo
+        width="fit-content"
+        correctAnswerSrc={tent_with_triangle}
+        correctAnswerMsg="Yes"
+        isCorrectAnswer
       />
-      <Paragraph
-        color="white"
-        fontSize="1.22rem">
-        <Flex>
-          <div>Area&nbsp;</div>
-          <div>
-            = 4 cm &times; 3 cm
-            <br />= 12 sq cm
-          </div>
-        </Flex>
-      </Paragraph>
     </Flex>
   );
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const onClick = () => {
     setIsModalOpen(!isModalOpen);
@@ -51,82 +42,37 @@ const Slide4 = () => {
   const onDismiss = () => {
     setIsModalOpen(false);
   };
-  const onHover = (e) => {
-    setActiveIndex(e);
-  };
-  const onHoverOut = (e) => {
-    setActiveIndex(0);
-  };
   return (
     <SlideWrap
       bg={bg}
-      paddingLeft="200px">
+      alignItems="center">
       <Modal
         isOpen={isModalOpen}
-        title="Square Units"
         content={modalContent}
         onDismiss={onDismiss}
       />
-      <Flex>
-        <LeftWrap>
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            color="white"
-            small>
-            Area of Rectangle
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="16px"
-            color="white"
-            small>
-            Formula
-          </Title>
-          <Paragraph
-            marginBottom="50px"
-            color="white">
-            Area of a rectangle =
-            <TextSpanBg
-              onHover={() => onHover(1)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem">
-              Length
-            </TextSpanBg>
-            &times;
-            {/* ×&nbsp; */}
-            <TextSpanBg
-              onHover={() => onHover(2)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem">
-              Width
-            </TextSpanBg>
-          </Paragraph>
-          <Paragraph color="white">
-            The area obtained is measured in&nbsp;
-            <b
-              style={{ cursor: "pointer" }}
-              onClick={onClick}>
-              <u>square units</u>
-            </b>
-            .
-          </Paragraph>
-        </LeftWrap>
-        <TransitionImage
-          images={[rectangle_plain, rectangle_length, rectangle_width]}
-          activeIndex={activeIndex}
-          bottomOffset="65px"
-        />
+      <Title
+        opacity={0.5}
+        small>
+        Identify the triangles
+      </Title>
+      <Flex
+        marginBottom="40px"
+        alignItems="center">
+        <Paragraph marginRight="10px">Does this object have a triangle in it?</Paragraph>
+        <Icon
+          src={info}
+          onClick={onClick}></Icon>
       </Flex>
+      <ImageWithYesNo
+        defaultSrc={boat}
+        correctAnswer={ANSWER_TYPES.YES}
+        correctAnswerMsg="Great job!"
+        wrongAnswerMsg="This object has a triangle"
+        correctAnswerSrc={boat_correct_answer}
+        wrongAnswerSrc={boat_wrong_answer}></ImageWithYesNo>
     </SlideWrap>
   );
 };
 
-export default Slide4;
+export default Slide6;

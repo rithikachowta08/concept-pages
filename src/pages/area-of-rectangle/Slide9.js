@@ -1,87 +1,99 @@
 import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpanBg } from "components/text";
+import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
-import rectangle_full from "assets/area-of-rectangle/s9_rectangle_full.svg";
-import rectangle_cross from "assets/area-of-rectangle/s9_rectangle_cross_line.svg";
-import rectangle_bottom from "assets/area-of-rectangle/s9_rectangle_bottom.svg";
+import bg from "assets/purple_bg.png";
+import rectangle_full_diagonal from "assets/area-of-rectangle/s8_rectangle_full_diagonal.svg";
+import rectangle_diagonal from "assets/area-of-rectangle/s8_rectangle_diagonal.svg";
 import { colors } from "utils/colors";
 
-const Slide2 = () => {
+const Slide10 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(1);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  const lsOfTxt = ["= 4 × √ 52 - 42 sq m", "= 4 × 3 sq m", "= 12 sq m"];
   return (
     <SlideWrap
       bg={bg}
       paddingLeft="200px">
       <Flex>
         <LeftWrap>
-          <Title
+          {/* <Title
+            opacity={0.5}
             marginBottom="16px"
+            color="white"
+            small>
+            Finding Area
+          </Title> */}
+          <Title
             fontSize="2.5rem"
             fontWeight={700}
-            small>
-            Illustrative Example
-          </Title>
-          <Title
-            fontSize="2.2rem"
-            fontWeight={700}
             marginBottom="16px"
+            color="white"
             small>
-            Find the area of a rectangle whose length and diagonal are 4 m and 5 m, respectively.
+            Area Using Diagonal
           </Title>
-          <Title
-            fontSize="2.2rem"
-            fontWeight={700}
+          <Paragraph
             marginBottom="20px"
-            small>
-            Solution:
-          </Title>
-          <Paragraph marginBottom="16px">
+            color="white">
+            The length of a{" "}
             <TextSpanBg
-              onHover={() => onHover(1)}
+              onHover={onHover}
               onHoverOut={onHoverOut}
               color={colors.RED}
               hoverColor={colors.AQUA}
               fontWeight={700}
               fontSize="2.2rem">
-              Length
-            </TextSpanBg>
-            &nbsp;of the rectangle = 4 m
+              diagonal
+            </TextSpanBg>{" "}
+            can be calculated using the{" "}
+            <a
+              target="_blank"
+              href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse."
+              style={{ textDecoration: "none", color: "#FEC429" }}
+              rel="noreferrer">
+              Pythagorean
+            </a>{" "}
+            theorem.
           </Paragraph>
-          <Paragraph marginBottom="20px">
-            <TextSpanBg
-              onHover={() => onHover(2)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem">
-              Width
-            </TextSpanBg>
-            &nbsp;of the rectangle = 5 m
+          <Paragraph color="white">
+            <i>
+              {" "}
+              d<sup>2</sup> = l<sup>2</sup> + w<sup>2</sup>
+            </i>
           </Paragraph>
-          <Paragraph>
-            <Flex>
-              <div>Area&nbsp;</div>
-              <div>
-                = l × √ d<sup>2</sup> - l<sup>2</sup>
-                <br />= 4 × √ 5<sup>2</sup> - 4<sup>2</sup> sq m
-                <br />= 4 × 3 sq m
-                <br />= 12 sq m
-              </div>
-            </Flex>
+          <Paragraph color="white">From this,</Paragraph>
+          <Paragraph
+            color="white"
+            marginBottom="20px">
+            <i>
+              {" "}
+              w = √ d<sup>2</sup> - l<sup>2</sup>
+            </i>
+          </Paragraph>
+          <Paragraph
+            color="white"
+            marginBottom="20px">
+            Area ={" "}
+            <i>
+              l × w = l × √ d<sup>2</sup> - l<sup>2</sup>
+            </i>
+          </Paragraph>
+          <Paragraph color="white">Similarly,</Paragraph>
+          <Paragraph
+            color="white"
+            marginBottom="20px">
+            Area ={" "}
+            <i>
+              w × √ d<sup>2</sup> - l<sup>2</sup>
+            </i>
           </Paragraph>
         </LeftWrap>
         <TransitionImage
-          images={[rectangle_full, rectangle_cross, rectangle_bottom]}
+          images={[rectangle_full_diagonal, rectangle_diagonal]}
           activeIndex={activeIndex}
           bottomOffset="65px"
         />
@@ -90,4 +102,4 @@ const Slide2 = () => {
   );
 };
 
-export default Slide2;
+export default Slide10;

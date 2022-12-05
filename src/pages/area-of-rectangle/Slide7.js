@@ -1,15 +1,55 @@
 import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpanBg } from "components/text";
+import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
-import rectangle_full from "assets/area-of-rectangle/s7_rectangle_full.svg";
-import rectangle_cross from "assets/area-of-rectangle/s7_rectangle_right.svg";
-import rectangle_bottom from "assets/area-of-rectangle/s7_rectangle_bottom.svg";
+import bg from "assets/purple_bg.png";
+import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
+import rectangle_length from "assets/area-of-rectangle/rectangle_length.svg";
+import rectangle_width from "assets/area-of-rectangle/rectangle_width.svg";
+import rectangle_square_units from "assets/area-of-rectangle/rectangle_square_units.svg";
+import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 
-const Slide2 = () => {
+const Slide8 = () => {
+  const modalContent = (
+    <Flex direction="column">
+      <Paragraph
+        color="white"
+        marginBottom="40px"
+        fontSize="1.22rem">
+        The area of a rectangle is measured in square units (square centimeters, square inches,
+        square feet, and so on).
+      </Paragraph>
+      <Title
+        color="white"
+        fontSize="1.22rem">
+        Example :
+      </Title>
+      <StyledImg
+        src={rectangle_square_units}
+        width="-webkit-fill-available"
+      />
+      <Paragraph
+        color="white"
+        fontSize="1.22rem">
+        <Flex>
+          <div>Area&nbsp;</div>
+          <div>
+            = 4 cm &times; 3 cm
+            <br />= 12 sq cm
+          </div>
+        </Flex>
+      </Paragraph>
+    </Flex>
+  );
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const onClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+  const onDismiss = () => {
+    setIsModalOpen(false);
+  };
   const onHover = (e) => {
     setActiveIndex(e);
   };
@@ -20,30 +60,33 @@ const Slide2 = () => {
     <SlideWrap
       bg={bg}
       paddingLeft="200px">
+      <Modal
+        isOpen={isModalOpen}
+        title="Square Units"
+        content={modalContent}
+        onDismiss={onDismiss}
+      />
       <Flex>
         <LeftWrap>
           <Title
+            opacity={0.5}
             marginBottom="16px"
+            color="white"
+            small>
+            Area of Rectangle
+          </Title>
+          <Title
             fontSize="2.5rem"
             fontWeight={700}
+            marginBottom="40px"
+            color="white"
             small>
-            Illustrative Example
+            General Formula
           </Title>
-          <Title
-            fontSize="2.2rem"
-            fontWeight={700}
-            marginBottom="16px"
-            small>
-            Find the area of a rectangle whose length and width are 3 m and 2 m, respectively.
-          </Title>
-          <Title
-            fontSize="2.2rem"
-            fontWeight={700}
-            marginBottom="20px"
-            small>
-            Solution:
-          </Title>
-          <Paragraph marginBottom="16px">
+          <Paragraph
+            marginBottom="50px"
+            color="white">
+            Area of a rectangle =
             <TextSpanBg
               onHover={() => onHover(1)}
               onHoverOut={onHoverOut}
@@ -53,9 +96,8 @@ const Slide2 = () => {
               fontSize="2.2rem">
               Length
             </TextSpanBg>
-            &nbsp;of the rectangle = 3 m
-          </Paragraph>
-          <Paragraph marginBottom="20px">
+            &times;
+            {/* ×&nbsp; */}
             <TextSpanBg
               onHover={() => onHover(2)}
               onHoverOut={onHoverOut}
@@ -65,21 +107,19 @@ const Slide2 = () => {
               fontSize="2.2rem">
               Width
             </TextSpanBg>
-            &nbsp;of the rectangle = 2 m
           </Paragraph>
-          <Paragraph>
-            <Flex>
-              <div>Area of the rectangle</div>
-              <div>
-                &nbsp;=&nbsp;Length&nbsp;x&nbsp;Width
-                <br />
-                &nbsp;= 3 m x 2 m = 6 sq m
-              </div>
-            </Flex>
+          <Paragraph color="white">
+            The area obtained is measured in&nbsp;
+            <b
+              style={{ cursor: "pointer" }}
+              onClick={onClick}>
+              <u>square units</u>
+            </b>
+            .
           </Paragraph>
         </LeftWrap>
         <TransitionImage
-          images={[rectangle_full, rectangle_cross, rectangle_bottom]}
+          images={[rectangle_plain, rectangle_length, rectangle_width]}
           activeIndex={activeIndex}
           bottomOffset="65px"
         />
@@ -88,4 +128,4 @@ const Slide2 = () => {
   );
 };
 
-export default Slide2;
+export default Slide8;
