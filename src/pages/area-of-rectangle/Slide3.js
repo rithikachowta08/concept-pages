@@ -17,10 +17,7 @@ const Slide3 = () => {
         marginBottom="50px">
         A unit square is a square with side length equal to 1 unit.
       </Paragraph>
-      <StyledImg
-        src={unit_square}
-      // transform="translateX(-12px)"
-      />
+      <StyledImg src={unit_square} />
     </Flex>
   );
   const [activeIndex, setActiveIndex] = useState(0);
