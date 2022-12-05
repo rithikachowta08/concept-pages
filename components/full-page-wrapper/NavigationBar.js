@@ -4,6 +4,9 @@ import { Flex, Icon } from "../StyledElements";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { colors } from "../../utils/colors";
+// import dynamic from 'next/dynamic'
+
+// const left_caret = dynamic(() => import('public/assets/left_caret.svg'))
 const left_caret = "assets/left_caret.svg";
 
 const NavWrap = styled.div`
@@ -28,8 +31,8 @@ const SectionIndicator = styled.div`
   border-radius: 50%;
   position: relative;
   cursor: pointer;
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
   border: 4px solid ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
   background: ${(props) =>
     props.isComplete ? (props.darkTheme ? `${colors.WHITE}` : `${colors.PURPLE}`) : `none`};

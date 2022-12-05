@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
-import bullet from "../../public/assets/bullet.svg";
+const bullet = "assets/bullet.svg";
 
 const UnorderedList = styled.ul`
   color: ${(props) => (props.color ? props.color : "white")};
