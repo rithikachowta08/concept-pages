@@ -1,7 +1,6 @@
 import { SlideWrap, Flex, Icon, LeftWrap } from "components/StyledElements";
 import styled from "styled-components/macro";
 import { toast } from "react-toastify";
-import bg from "assets/white_bg.png";
 import error from "assets/error.svg";
 import success from "assets/success.svg";
 import { Paragraph, Title } from "components/text";
@@ -55,7 +54,7 @@ const Slide5 = () => {
 
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       padding="100px">
       <Flex
         alignItems="center"

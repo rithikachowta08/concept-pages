@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
 import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
 import rectangle_shaded from "assets/area-of-rectangle/rectangle_shaded.svg";
 import unit_square from "assets/area-of-rectangle/unit_square.svg";
@@ -20,7 +19,7 @@ const Slide3 = () => {
       </Paragraph>
       <StyledImg
         src={unit_square}
-        // transform="translateX(-12px)"
+      // transform="translateX(-12px)"
       />
     </Flex>
   );
@@ -40,7 +39,7 @@ const Slide3 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}

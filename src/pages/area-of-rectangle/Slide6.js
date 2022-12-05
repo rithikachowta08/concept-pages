@@ -3,7 +3,6 @@ import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { Title, Paragraph } from "components/text";
 import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import Modal from "components/layout/Modal";
-import bg from "assets/white_bg.png";
 import info from "assets/info.svg";
 import boat from "assets/boat.svg";
 import tent_with_triangle from "assets/tent_with_triangle.svg";
@@ -44,7 +43,7 @@ const Slide6 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       alignItems="center">
       <Modal
         isOpen={isModalOpen}

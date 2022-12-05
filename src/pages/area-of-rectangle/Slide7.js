@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/purple_bg.png";
 import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
 import rectangle_length from "assets/area-of-rectangle/rectangle_length.svg";
 import rectangle_width from "assets/area-of-rectangle/rectangle_width.svg";
@@ -58,7 +57,7 @@ const Slide8 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="DARK"
       paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}

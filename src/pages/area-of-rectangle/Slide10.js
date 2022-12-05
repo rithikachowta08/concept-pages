@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
 import rectangle_full from "assets/area-of-rectangle/s9_rectangle_full.svg";
 import rectangle_cross from "assets/area-of-rectangle/s9_rectangle_cross_line.svg";
 import rectangle_bottom from "assets/area-of-rectangle/s9_rectangle_bottom.svg";
@@ -19,7 +18,7 @@ const Slide10 = () => {
   const lsOfTxt = ["= 4 × √ 52 - 42 sq m", "= 4 × 3 sq m", "= 12 sq m"];
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex>
         <LeftWrap>
