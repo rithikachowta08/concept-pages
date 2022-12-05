@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { SlideWrap, Flex, StyledImg, LeftWrap } from "components/StyledElements";
-import { Title, Paragraph, TextSpan, TextSpanBg } from "components/text";
+import { Flex, StyledImg } from "components/StyledElements";
+import { Title, Paragraph, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import rectangle_plain from "assets/area-of-rectangle/rectangle_plain.svg";
 import rectangle_length from "assets/area-of-rectangle/rectangle_length.svg";
 import rectangle_width from "assets/area-of-rectangle/rectangle_width.svg";
 import rectangle_square_units from "assets/area-of-rectangle/rectangle_square_units.svg";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 
@@ -56,74 +57,57 @@ const Slide8 = () => {
     setActiveIndex(0);
   };
   return (
-    <SlideWrap
+    <TextAndDiagramSlide
+      diagram={
+        <TransitionImage
+          images={[rectangle_plain, rectangle_length, rectangle_width]}
+          activeIndex={activeIndex}
+        />
+      }
       bg="DARK"
-      paddingLeft="200px">
+      secondaryTitle="Area of Rectangle"
+      title="General Formula">
       <Modal
         isOpen={isModalOpen}
         title="Square Units"
         content={modalContent}
         onDismiss={onDismiss}
       />
-      <Flex>
-        <LeftWrap>
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            color="white"
-            small>
-            Area of Rectangle
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="40px"
-            color="white"
-            small>
-            General Formula
-          </Title>
-          <Paragraph
-            marginBottom="50px"
-            color="white">
-            Area of a rectangle =
-            <TextSpanBg
-              onHover={() => onHover(1)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem">
-              Length
-            </TextSpanBg>
-            &times;
-            {/* ×&nbsp; */}
-            <TextSpanBg
-              onHover={() => onHover(2)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem">
-              Width
-            </TextSpanBg>
-          </Paragraph>
-          <Paragraph color="white">
-            The area obtained is measured in&nbsp;
-            <b
-              style={{ cursor: "pointer" }}
-              onClick={onClick}>
-              <u>square units</u>
-            </b>
-            .
-          </Paragraph>
-        </LeftWrap>
-        <TransitionImage
-          images={[rectangle_plain, rectangle_length, rectangle_width]}
-          activeIndex={activeIndex}
-          bottomOffset="65px"
-        />
-      </Flex>
-    </SlideWrap>
+      <Paragraph
+        marginBottom="50px"
+        color="white">
+        Area of a rectangle =
+        <TextSpanBg
+          onHover={() => onHover(1)}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.AQUA}
+          fontWeight={700}
+          fontSize="2.2rem">
+          Length
+        </TextSpanBg>
+        &times;
+        {/* ×&nbsp; */}
+        <TextSpanBg
+          onHover={() => onHover(2)}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.AQUA}
+          fontWeight={700}
+          fontSize="2.2rem">
+          Width
+        </TextSpanBg>
+      </Paragraph>
+      <Paragraph color="white">
+        The area obtained is measured in&nbsp;
+        <b
+          style={{ cursor: "pointer" }}
+          onClick={onClick}>
+          <u>square units</u>
+        </b>
+        .
+      </Paragraph>
+    </TextAndDiagramSlide>
   );
 };
 

@@ -1,28 +1,9 @@
-import { SlideWrap, Flex, Icon, LeftWrap } from "components/StyledElements";
-import styled from "styled-components/macro";
+import { Icon } from "components/StyledElements";
 import { toast } from "react-toastify";
 import error from "assets/error.svg";
 import success from "assets/success.svg";
-import { Paragraph, Title } from "components/text";
 import { useEffect } from "react";
-import { colors } from "utils/colors";
-
-const IFrame = styled.iframe`
-  width: 750px;
-  height: 700px;
-  @media (max-height: 600px) {
-    width: 500px;
-    height: 550px;
-  }
-  @media (max-height: 700px) {
-    width: 550px;
-    height: 600px;
-  }
-  @media (max-height: 900px) {
-    width: 600px;
-    height: 650px;
-  }
-`;
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 
 const Slide5 = () => {
   const triggerToast = (isRightAngled) => {
@@ -53,30 +34,11 @@ const Slide5 = () => {
   }, []);
 
   return (
-    <SlideWrap
-      bg="LIGHT"
-      padding="100px">
-      <Flex
-        alignItems="center"
-        justifyContent="space-around">
-        <LeftWrap width="30%">
-          <Title
-            color={colors.BLACK}
-            fontSize="1.5rem"
-            marginBottom="20px">
-            Area using Unit Squares
-          </Title>
-          <Paragraph fontSize="1.5rem">
-            Move the sliders to create a rectangle occupying an area of 54 unit squares.
-          </Paragraph>
-        </LeftWrap>
-        <IFrame
-          src="./triangle.html"
-          allowFullScreen
-          frameBorder="0"
-        />
-      </Flex>
-    </SlideWrap>
+    <TextAndAppletSlide
+      title="Move the sliders to create a rectangle occupying an area of 54 unit squares."
+      secondaryTitle="Area using Unit Squares"
+      appletSrc="./triangle.html"
+    />
   );
 };
 

@@ -1,24 +1,18 @@
 import { PropTypes } from "prop-types";
-import { SlideWrap } from "components/StyledElements";
-import { Title, ContentList } from "components/text";
+import TitleSlide from "components/slides/TitleSlide";
 
 const Slide1 = ({ moveToSection }) => {
   return (
-    <SlideWrap
-      bg="DARK"
-      paddingLeft="200px">
-      <Title marginBottom="50px">Area of a Rectangle</Title>
-      <ContentList
-        items={[
-          "What is area of rectangle?",
-          "Area by counting unit squares",
-          "General formula",
-          "Area using diagonal"
-        ]}
-        moveTo={moveToSection}
-        anchorIdxes={[2, 3, 4, 7]}
-      />
-    </SlideWrap>
+    <TitleSlide
+      title="Area of a Rectangle"
+      contentListItems={[
+        "What is area of rectangle?",
+        "Area by counting unit squares",
+        "General formula",
+        "Area using diagonal"
+      ]}
+      anchorIdxes={[2, 3, 4, 7]}
+      moveToSection={moveToSection}></TitleSlide>
   );
 };
 
