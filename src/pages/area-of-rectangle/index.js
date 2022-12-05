@@ -33,7 +33,7 @@ export const AreaOfRectangle = () => {
   const navigationSections = [
     { title: "What is area of rectangle?", slides: [1] },
     { title: "Area by counting unit squares", slides: [2] },
-    { title: "Formula", slides: [3, 4, 5] },
+    { title: "General formula", slides: [3, 4, 5] },
     { title: "Area using diagonal", slides: [6, 7, 8, 9] }
   ];
 

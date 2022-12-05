@@ -13,7 +13,7 @@ const Slide1 = ({ moveToSection }) => {
         items={[
           "What is area of rectangle?",
           "Area by counting unit squares",
-          "Formula",
+          "General formula",
           "Area using diagonal"
         ]}
         moveTo={moveToSection}
