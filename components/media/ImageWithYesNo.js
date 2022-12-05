@@ -22,7 +22,7 @@ const ImgContainer = styled.div`
     height: 150px;
   }
   @media (max-height: 900px) {
-    height: 200px;
+    height: 280px;
   }
 `;
 
@@ -40,7 +40,7 @@ const StyledImg = styled.img`
 
 export const ANSWER_TYPES = {
   YES: "YES",
-  NO: "NO"
+  NO: "NO",
 };
 
 const ImageWithYesNo = ({
@@ -51,9 +51,11 @@ const ImageWithYesNo = ({
   wrongAnswerSrc,
   correctAnswerMsg,
   wrongAnswerMsg,
-  correctAnswerSrc
+  correctAnswerSrc,
 }) => {
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(defaultIsCorrectAnswer);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(
+    defaultIsCorrectAnswer
+  );
   const onClickNo = () => {
     setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.NO);
   };
@@ -68,13 +70,11 @@ const ImageWithYesNo = ({
         onClick={onClickNo}
         bgColor="white"
         color={colors.DARK_BLUE}
-        borderColor={colors.DARK_BLUE}>
+        borderColor={colors.DARK_BLUE}
+      >
         No
       </Button>
-      <Button
-        onClick={onClickYes}
-        color="white"
-        bgColor={colors.DARK_BLUE}>
+      <Button onClick={onClickYes} color="white" bgColor={colors.DARK_BLUE}>
         Yes
       </Button>
     </>
@@ -84,10 +84,7 @@ const ImageWithYesNo = ({
       imageSrc = correctAnswerSrc;
       color = colors.GREEN;
       bottomActions = (
-        <Pill
-          bgColor={colors.GREEN}
-          color="white"
-          icon={success}>
+        <Pill bgColor={colors.GREEN} color="white" icon={success}>
           {correctAnswerMsg}
         </Pill>
       );
@@ -95,19 +92,14 @@ const ImageWithYesNo = ({
       color = colors.RED;
       imageSrc = wrongAnswerSrc;
       bottomActions = (
-        <Pill
-          bgColor={colors.RED}
-          color="white"
-          icon={error}>
+        <Pill bgColor={colors.RED} color="white" icon={error}>
           {wrongAnswerMsg}
         </Pill>
       );
     }
   }
   return (
-    <ImgContainer
-      color={color}
-      width={width}>
+    <ImgContainer color={color} width={width}>
       <StyledImg src={imageSrc} />
       <Flex
         justifyContent={isCorrectAnswer !== null ? "center" : "space-between"}
@@ -115,7 +107,8 @@ const ImageWithYesNo = ({
         left="50%"
         bottom="0"
         transform="translate(-50%,50%)"
-        width={isCorrectAnswer !== null ? "70%" : "60%"}>
+        width={isCorrectAnswer !== null ? "70%" : "60%"}
+      >
         {bottomActions}
       </Flex>
     </ImgContainer>
@@ -130,7 +123,7 @@ ImageWithYesNo.propTypes = {
   correctAnswerMsg: PropTypes.string,
   wrongAnswerMsg: PropTypes.string,
   wrongAnswerSrc: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
 };
 
 export default ImageWithYesNo;
