@@ -3,27 +3,40 @@ import styled from "styled-components/macro";
 export const SlideWrap = styled.div`
   background: url(${(props) => props.bg});
   background-color: ${(props) => props.bgColor};
+  padding-left: ${(props) => props.paddingLeft || "15vw"};
   height: 100%;
   width: 100%;
-  padding-left: ${(props) => props.paddingLeft};
   padding: ${(props) => props.padding};
+  gap: ${(props) => props.gap};
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent || "center"};
   box-sizing: border-box;
   background-size: cover;
   background-repeat: no-repeat;
   align-items: ${(props) => props.alignItems};
+
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    padding-top: 7%;
+    padding-left: 0;
+  }
 `;
 
 export const LeftWrap = styled.div`
-  width: ${(props) => props.width || "50%"};
+  width: 50%;
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    width: 100%;
+    padding: 5%;
+    height: 45%;
+    box-sizing: border-box;
+  }
 `;
 
 export const Flex = styled.div`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
   width: ${(props) => props.width};
+  height: ${(props) => props.height};
   gap: ${(props) => props.gap};
   flex: ${(props) => props.flex};
   padding: ${(props) => props.padding};
@@ -46,6 +59,13 @@ export const StyledImg = styled.img`
   margin-bottom: ${(props) => props.marginBottom || "0"};
   align-self: ${(props) => props.alignSelf || "center"};
   transform: ${(props) => props.transform || "none"};
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    scale: 0.5;
+    transform: translateY(-60%);
+  }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    scale: 0.75;
+  }
 `;
 
 export const Icon = styled.img`
@@ -62,6 +82,19 @@ export const PageWrap = styled.div`
 `;
 
 export const Video = styled.video`
+  display: block;
   width: 100vw;
-  height: 75vh;
+  height: ${(props) => (props.isRotated ? "100vh" : "75vh")};
+
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    height: ${(props) => (props.isRotated ? "100vh" : "60vh")};
+  }
+  position: ${(props) => (props.isRotated ? "absolute" : "static")};
+  transform: ${(props) => (props.isRotated ? "rotate(90deg) !important" : "none")};
+  transform-origin: ${(props) => (props.isRotated ? "bottom left" : "none")};
+  margin-top: ${(props) => (props.isRotated ? "-100vw" : "none")};
+  object-fit: ${(props) => (props.isRotated ? "cover" : "none")};
+
+  z-index: 4;
+  visibility: visible;
 `;

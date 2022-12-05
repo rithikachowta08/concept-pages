@@ -16,9 +16,9 @@ export const useDeviceType = () => {
     return DEVICE_TYPES.HIGH_RES_DESKTOP;
   } else if (isDesktop) {
     return DEVICE_TYPES.DESKTOP;
-  } else if (isTablet) {
-    return DEVICE_TYPES.TABLET;
   } else if (isMobile) {
     return DEVICE_TYPES.MOBILE;
+  } else if (isTablet) {
+    return DEVICE_TYPES.TABLET;
   }
 };
