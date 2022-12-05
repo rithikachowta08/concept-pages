@@ -12,6 +12,15 @@
     <div id="ggbApplet"></div>
 
     <script>
+      let scale = 1;
+      if (window.matchMedia("(min-width: 992px) and (max-width: 1224px)").matches) {
+        scale = 0.75;
+      } else if (window.matchMedia("(min-width: 200px) and (max-width: 768px)")) {
+        scale = 0.25;
+      } else if (window.matchMedia("(min-width: 768px) and (max-width: 992px)")) {
+        scale = 0.5;
+      }
+
       var parameters = {
         id: "ggbApplet",
         width: 750,
@@ -37,9 +46,9 @@
           /* api.evalCommand('Segment((1,2),(3,4))');*/
         },
         showFullscreenButton: false,
-        scale: 1,
+        scale,
         disableAutoScale: false,
-        allowUpscale: false,
+        allowUpscale: true,
         clickToLoad: false,
         appName: "classic",
         buttonRounding: 0.7,
