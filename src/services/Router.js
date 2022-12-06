@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Triangles from "pages/triangles";
 import { AreaOfATriangle } from "pages/area-of-a-triangle";
+import { AreaOfRectangle } from "pages/area-of-rectangle";
 import { VolumeOfCube } from "pages/volume-of-cube";
 
 const Router = () => {
@@ -9,6 +10,10 @@ const Router = () => {
       <Route
         path="/triangles"
         element={<Triangles />}
+      />
+      <Route
+        path="/area-of-rectangle"
+        element={<AreaOfRectangle />}
       />
       <Route
         path="/area-of-a-triangle"

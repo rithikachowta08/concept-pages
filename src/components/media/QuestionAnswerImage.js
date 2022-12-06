@@ -38,14 +38,15 @@ const StyledImg = styled.img`
   }
 `;
 
-export const ANSWER_TYPES = {
-  YES: "YES",
-  NO: "NO"
-};
+// export const ANSWER_TYPES = {
+//   YES: "YES",
+//   NO: "NO"
+// };
 
-const ImageWithYesNo = ({
+const QuestionAnswerImage = ({
   defaultSrc,
   width,
+  options,
   isCorrectAnswer: defaultIsCorrectAnswer = null,
   correctAnswer,
   wrongAnswerSrc,
@@ -54,29 +55,38 @@ const ImageWithYesNo = ({
   correctAnswerSrc
 }) => {
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(defaultIsCorrectAnswer);
-  const onClickNo = () => {
-    setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.NO);
+
+  // const onClickNo = () => {
+  //   setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.NO);
+  // };
+  // const onClickYes = () => {
+  //   setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.YES);
+  // };
+
+  const onClickOption = (optionClicked) => {
+    setIsCorrectAnswer(correctAnswer === optionClicked);
   };
-  const onClickYes = () => {
-    setIsCorrectAnswer(correctAnswer === ANSWER_TYPES.YES);
-  };
+
   let imageSrc = defaultSrc;
   let color = colors.DARK_BLUE;
   let bottomActions = (
     <>
-      <Button
-        onClick={onClickNo}
-        bgColor="white"
-        color={colors.DARK_BLUE}
-        borderColor={colors.DARK_BLUE}>
-        No
-      </Button>
-      <Button
-        onClick={onClickYes}
+      {options?.map((itm, idx) => (
+        <Button
+          onClick={() => onClickOption(itm)}
+          bgColor="white"
+          key={idx}
+          color={colors.DARK_BLUE}
+          borderColor={colors.DARK_BLUE}>
+          {itm}
+        </Button>
+      ))}
+      {/* <Button
+        onClick={onClickOption}
         color="white"
         bgColor={colors.DARK_BLUE}>
         Yes
-      </Button>
+      </Button> */}
     </>
   );
   if (isCorrectAnswer !== null) {
@@ -122,8 +132,9 @@ const ImageWithYesNo = ({
   );
 };
 
-ImageWithYesNo.propTypes = {
+QuestionAnswerImage.propTypes = {
   defaultSrc: PropTypes.string,
+  options: PropTypes.array,
   correctAnswer: PropTypes.string,
   isCorrectAnswer: PropTypes.bool,
   correctAnswerSrc: PropTypes.string,
@@ -133,4 +144,4 @@ ImageWithYesNo.propTypes = {
   width: PropTypes.string
 };
 
-export default ImageWithYesNo;
+export default QuestionAnswerImage;

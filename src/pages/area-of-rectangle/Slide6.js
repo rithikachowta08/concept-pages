@@ -9,7 +9,7 @@ import tent_with_triangle from "assets/tent_with_triangle.svg";
 import boat_correct_answer from "assets/boat_correct_answer.svg";
 import boat_wrong_answer from "assets/boat_wrong_answer.svg";
 
-const Slide3 = () => {
+const Slide6 = () => {
   const modalContent = (
     <Flex direction="column">
       <Paragraph
@@ -65,8 +65,8 @@ const Slide3 = () => {
       </Flex>
       <QuestionAnswerImage
         defaultSrc={boat}
-        options={["No", "Yes"]}
-        correctAnswer={"Yes"}
+        options={["Fig. A", "Fig. B"]}
+        correctAnswer={"Fig. A"}
         correctAnswerMsg="Great job!"
         wrongAnswerMsg="This object has a triangle"
         correctAnswerSrc={boat_correct_answer}
@@ -75,4 +75,4 @@ const Slide3 = () => {
   );
 };
 
-export default Slide3;
+export default Slide6;

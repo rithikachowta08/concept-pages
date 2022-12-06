@@ -68,6 +68,7 @@ export const StyledImg = styled.img`
   margin-bottom: ${(props) => props.marginBottom || "0"};
   align-self: ${(props) => props.alignSelf || "center"};
   transform: ${(props) => props.transform || "none"};
+  width: ${(props) => props.width || "auto"};
   @media only screen and (min-width: 200px) and (max-width: 768px) {
     scale: 0.5;
     transform: translateY(-60%);
