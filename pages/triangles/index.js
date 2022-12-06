@@ -1,17 +1,22 @@
-import { FullPageCustomWrapper } from "../../components/full-page-wrapper/FullPageCustomWrapper.js";
-import Slide1 from "./Slide1";
-import Slide2 from "./Slide2";
-import Slide3 from "./Slide3";
-import Slide4 from "./Slide4";
-import Slide5 from "./Slide5";
-import Slide6 from "./Slide6";
-import Slide7 from "./Slide7";
-import Slide8 from "./Slide8";
-import Slide9 from "./Slide9";
-import Slide10 from "./Slide10";
-import Slide11 from "./Slide11";
-import Slide12 from "./Slide12";
-import Slide13 from "./Slide13";
+import dynamic from "next/dynamic";
+const FullPageCustomWrapper = dynamic(() =>
+  import("../../components/full-page-wrapper/FullPageCustomWrapper").then(
+    (mod) => mod.FullPageCustomWrapper
+  )
+);
+const Slide1 = dynamic(() => import("./Slide1"));
+const Slide2 = dynamic(() => import("./Slide2"));
+const Slide3 = dynamic(() => import("./Slide3"));
+const Slide4 = dynamic(() => import("./Slide4"));
+const Slide5 = dynamic(() => import("./Slide5"));
+const Slide6 = dynamic(() => import("./Slide6"));
+const Slide7 = dynamic(() => import("./Slide7"));
+const Slide8 = dynamic(() => import("./Slide8"));
+const Slide9 = dynamic(() => import("./Slide9"));
+const Slide10 = dynamic(() => import("./Slide10"));
+const Slide11 = dynamic(() => import("./Slide11"));
+const Slide12 = dynamic(() => import("./Slide12"));
+const Slide13 = dynamic(() => import("./Slide13"));
 
 const Triangles = () => {
   const SlideArray = [
@@ -27,13 +32,13 @@ const Triangles = () => {
     <Slide10 key={9} />,
     <Slide11 key={10} />,
     <Slide12 key={11} />,
-    <Slide13 key={12} />
+    <Slide13 key={12} />,
   ];
 
   const navigationSections = [
     { title: "What is a triangle?", slides: [1] },
     { title: "Types of triangles", slides: [3, 4, 5, 6, 7, 8] },
-    { title: "Properties of triangles", slides: [9, 10, 11, 12] }
+    { title: "Properties of triangles", slides: [9, 10, 11, 12] },
   ];
 
   const darkBgIndices = [0, 3, 8, 9];

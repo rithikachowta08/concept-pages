@@ -1,9 +1,20 @@
-import { SlideWrap, Flex } from "../../components/StyledElements";
-import { Title, TextSpan } from "../../components/text";
 import dynamic from "next/dynamic";
 const StyledImg = dynamic(() =>
   import("../../components/StyledElements").then((mod) => mod.StyledImg)
 );
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+const Title = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Title)
+);
+const TextSpan = dynamic(() =>
+  import("../../components/text").then((mod) => mod.TextSpan)
+);
+
 const bg = "assets/purple_bg.png";
 const angle_sum = "assets/angle_sum.svg";
 const triangle_inequality = "assets/triangle_inequality.svg";

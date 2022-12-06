@@ -1,11 +1,26 @@
 import { useState } from "react";
-import { SlideWrap, Flex } from "../../components/StyledElements";
-import { Title, Paragraph, TextSpan } from "../../components/text";
 import { colors } from "../../utils/colors";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
   import("../../components/media/TransitionImage")
 );
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+
+const Title = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Title)
+);
+const Paragraph = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Paragraph)
+);
+const TextSpan = dynamic(() =>
+  import("../../components/text").then((mod) => mod.TextSpan)
+);
+
 const bg = "assets/purple_bg.png";
 const triangle_acute = "assets/triangle_acute.svg";
 const triangle_acute_yellow = "assets/triangle_acute_yellow.svg";

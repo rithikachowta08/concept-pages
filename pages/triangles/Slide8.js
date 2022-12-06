@@ -1,11 +1,18 @@
-import { SlideWrap, Flex } from "../../components/StyledElements";
 import styled from "styled-components";
 import { toast } from "react-toastify";
-import { Paragraph } from "../../components/text";
 import { useEffect } from "react";
 import dynamic from "next/dynamic";
 const Icon = dynamic(() =>
   import("../../components/StyledElements").then((mod) => mod.Icon)
+);
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+const Paragraph = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Paragraph)
 );
 
 const bg = "assets/white_bg.png";
