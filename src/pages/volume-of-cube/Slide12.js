@@ -1,6 +1,5 @@
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpan, Title, Paragraph } from "components/text";
-import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
@@ -9,7 +8,6 @@ import cube_f from "assets/volume-of-cube/slide12/cube-2.png";
 import cube_s from "assets/volume-of-cube/slide12/cube-3.png";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
-import { fetchData } from "utils/networking";
 const Slide12 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);

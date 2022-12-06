@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { TextSpan, Title, Paragraph } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -9,8 +9,6 @@ import cube_s from "assets/volume-of-cube/slide10/cube-3.png";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
-import { fetchData } from "utils/networking";
-import pythogoras_slide from "assets/pythogoras_slide.svg";
 
 const Slide10 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

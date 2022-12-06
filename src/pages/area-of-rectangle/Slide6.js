@@ -4,10 +4,10 @@ import { Title, Paragraph } from "components/text";
 import QuestionAnswerImage from "components/media/QuestionAnswerImage";
 import Modal from "components/layout/Modal";
 import info from "assets/info.svg";
-import boat from "assets/boat.svg";
-import tent_with_triangle from "assets/tent_with_triangle.svg";
-import boat_correct_answer from "assets/boat_correct_answer.svg";
-import boat_wrong_answer from "assets/boat_wrong_answer.svg";
+import boat from "assets/triangles/boat.svg";
+import tent_with_triangle from "assets/triangles/tent_with_triangle.svg";
+import boat_correct_answer from "assets/triangles/boat_correct_answer.svg";
+import boat_wrong_answer from "assets/triangles/boat_wrong_answer.svg";
 
 const Slide6 = () => {
   const modalContent = (

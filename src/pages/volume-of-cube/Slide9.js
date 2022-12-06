@@ -1,15 +1,11 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
-import { TextSpan, Title, Paragraph } from "components/text";
-import inequality_slide from "assets/inequality_slide.svg";
-import { useState, useEffect } from "react";
+import { TextSpan, Paragraph } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
 import cube_red from "assets/volume-of-cube/slide9/cube-1.png";
 import cube_diagonal from "assets/volume-of-cube/slide9/cube-2.png";
-import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
-import { fetchData } from "utils/networking";
 
 const Slide9 = () => {
   const [activeIndex, setActiveIndex] = useState(0);

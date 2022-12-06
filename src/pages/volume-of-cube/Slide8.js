@@ -1,13 +1,8 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
-import { TextSpan, Title, Paragraph } from "components/text";
-import inequality_slide from "assets/inequality_slide.svg";
-import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
+import { StyledImg } from "components/StyledElements";
+import { Paragraph } from "components/text";
+import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import cube_red from "assets/volume-of-cube/slide8/cube-1.png";
-import Pill from "components/Pill";
-import { fetchData } from "utils/networking";
 import MathElement from "components/MathElement";
 
 const Slide8 = () => {

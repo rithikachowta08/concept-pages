@@ -1,12 +1,6 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { TextSpan, Title, Paragraph } from "components/text";
-import inequality_slide from "assets/inequality_slide.svg";
+import { Paragraph } from "components/text";
 import { useState, useEffect } from "react";
-import { fetchData } from "utils/networking";
-import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-import cube_red from "assets/volume-of-cube/slide8/cube-1.png";
 import MathElement from "components/MathElement/index.js";
 
 const Slide7 = () => {

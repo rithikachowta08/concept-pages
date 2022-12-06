@@ -8,8 +8,6 @@ import cube_s from "assets/volume-of-cube/slide13/cube-3.png";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 
-import pythogoras_slide from "assets/pythogoras_slide.svg";
-
 const Slide13 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {

@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "utils/networking";
+import { useState } from "react";
 // import {c}
-import { Flex } from "components/StyledElements";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpan, Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
@@ -9,8 +7,6 @@ import cube_red from "assets/volume-of-cube/slide6/cube-1.png";
 import cube_d from "assets/volume-of-cube/slide6/cube-2.png";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
-import axios from "axios";
-import pythogoras_slide from "assets/pythogoras_slide.svg";
 import MathElement from "components/MathElement/index.js";
 // import "./style.scss";
 
