@@ -54,7 +54,7 @@ const Connector = styled.div`
          ? `rgba(255, 255, 255, ${props.isComplete ? 1 : 0.3})`
          : `rgba(74, 51, 245, ${props.isComplete ? 1 : 0.3})`};
    transition: all 0.3s;
-   transform: translateX(9px);
+   transform: translateX(5px);
 `;
 
 const Fill = styled.div`
