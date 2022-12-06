@@ -1,14 +1,26 @@
 import { useState } from "react";
-import { Flex, SlideWrap } from "../../components/StyledElements";
-import { Title, Paragraph } from "../../components/text";
 import ImageWithYesNo, {
   ANSWER_TYPES,
 } from "../../components/media/ImageWithYesNo";
-import Modal from "../../components/layout/Modal";
 import dynamic from "next/dynamic";
 const Icon = dynamic(() =>
   import("../../components/StyledElements").then((mod) => mod.Icon)
 );
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+const Title = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Title)
+);
+const Paragraph = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Paragraph)
+);
+
+const Modal = dynamic(() => import("../../components/layout/Modal"));
+
 const bg = "assets/white_bg.png";
 const info = "assets/info.svg";
 const boat = "assets/boat.svg";

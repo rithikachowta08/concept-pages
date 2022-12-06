@@ -1,11 +1,25 @@
-import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
-import { Title, Paragraph } from "../../components/text";
-import Pill from "../../components/Pill";
 import { colors } from "../../utils/colors";
 import dynamic from "next/dynamic";
 const StyledImg = dynamic(() =>
   import("../../components/StyledElements").then((mod) => mod.StyledImg)
 );
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+const LeftWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.LeftWrap)
+);
+
+const Title = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Title)
+);
+const Paragraph = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Paragraph)
+);
+const Pill = dynamic(() => import("../../components/Pill"));
 
 const bg = "assets/white_bg.png";
 const pythogoras_slide = "assets/pythogoras_slide.svg";

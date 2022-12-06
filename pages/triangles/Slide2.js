@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { SlideWrap, Flex, LeftWrap } from "../../components/StyledElements";
-import { Title, Paragraph, TextSpan } from "../../components/text";
-import Modal from "../../components/layout/Modal";
 import { colors } from "../../utils/colors";
 import dynamic from "next/dynamic";
 const StyledImg = dynamic(() =>
@@ -10,6 +7,27 @@ const StyledImg = dynamic(() =>
 const TransitionImage = dynamic(() =>
   import("../../components/media/TransitionImage")
 );
+const SlideWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+);
+const Flex = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.Flex)
+);
+const LeftWrap = dynamic(() =>
+  import("../../components/StyledElements").then((mod) => mod.LeftWrap)
+);
+
+const Title = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Title)
+);
+const Paragraph = dynamic(() =>
+  import("../../components/text").then((mod) => mod.Paragraph)
+);
+const TextSpan = dynamic(() =>
+  import("../../components/text").then((mod) => mod.TextSpan)
+);
+
+const Modal = dynamic(() => import("../../components/layout/Modal"));
 
 const triangle_red = "assets/triangle_red.svg";
 const triangle_angles = "assets/triangle_angles.svg";
