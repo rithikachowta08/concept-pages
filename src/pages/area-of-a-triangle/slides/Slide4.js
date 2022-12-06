@@ -4,6 +4,7 @@ import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
+import MathElement from "components/MathElement";
 
 const Slide4 = () => {
   return (
@@ -46,7 +47,8 @@ const Slide4 = () => {
             color={colors.BLACK}
             marginBottom="50px"
             fontSize={"1.4rem"}>
-            Area of a triangle = 1/2 × Area of the parallelogram
+            Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> × Area of the
+            parallelogram
           </Paragraph>
           <Pill
             width="fit-content"
@@ -54,7 +56,7 @@ const Slide4 = () => {
             fontWeight="600"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of the triangle = 1&frasl;2 ×{" "}
+            Area of the triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×{" "}
             <TextSpan
               fontSize="1.8rem"
               color={colors.WHITE}

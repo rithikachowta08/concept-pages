@@ -10,6 +10,7 @@ import TransitionImage from "components/media/TransitionImage";
 import image_1 from "assets/area-of-triangle/slide_12.svg";
 import image_2 from "assets/area-of-triangle/slide_12_2.svg";
 import image_3 from "assets/area-of-triangle/slide_12_3.svg";
+import MathElement from "components/MathElement";
 
 // Isosceles triangle
 const Slide12 = () => {
@@ -75,7 +76,8 @@ const Slide12 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of an isosceles triangle = 1/4 b √4a<sup>2</sup> - b<sup>2</sup>
+            Area of an isosceles triangle =
+            <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4}a^2 - b^2 "} />
           </Pill>
         </LeftWrap>
         <LeftWrap>

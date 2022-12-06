@@ -6,6 +6,7 @@ import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
 import area_triangle_heron from "assets/area-of-triangle/slide_7.svg";
+import MathElement from "components/MathElement";
 
 const Slide7 = () => {
   return (
@@ -40,7 +41,7 @@ const Slide7 = () => {
             bgColor={colors.GREEN}
             color={colors.WHITE}
             fontSize="1.8rem">
-            Area of a triangle = √ s (s - a)(s - b)(s - c){" "}
+            Area of a triangle = <MathElement htmlString={"\\sqrt{s(s - a)(s - b)(s - c)}"} />{" "}
           </Pill>
           <Paragraph
             color={colors.WHITE}
@@ -52,7 +53,7 @@ const Slide7 = () => {
             color={colors.WHITE}
             fontSize="1.8rem"
             marginBottom={"20px"}>
-            s = a + b + c / 2
+            <MathElement htmlString={"s = \\frac{a+b+c}{2}"} />
           </Paragraph>
         </LeftWrap>
         <LeftWrap>

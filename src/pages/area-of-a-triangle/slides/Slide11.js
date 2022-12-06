@@ -9,6 +9,7 @@ import TransitionImage from "components/media/TransitionImage";
 
 import image_1 from "assets/area-of-triangle/slide_11.svg";
 import image_2 from "assets/area-of-triangle/slide_11_2.svg";
+import MathElement from "components/MathElement";
 
 // Equilateral triangle
 const Slide11 = () => {
@@ -59,7 +60,8 @@ const Slide11 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of an equilateral triangle = √3 / 4 x a<sup>2</sup>
+            Area of an equilateral triangle ={" "}
+            <MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
           </Pill>
         </LeftWrap>
         <LeftWrap>

@@ -14,6 +14,7 @@ import area_triangle_angles_3_2 from "assets/area-of-triangle/slide_9_b_3.svg";
 import area_triangle_angles_1_3 from "assets/area-of-triangle/slide_9_p_1.svg";
 import area_triangle_angles_2_3 from "assets/area-of-triangle/slide_9_p_2.svg";
 import area_triangle_angles_3_3 from "assets/area-of-triangle/slide_9_p_3.svg";
+import MathElement from "components/MathElement";
 
 const Slide9 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,7 +39,7 @@ const Slide9 = () => {
         Classified based on angles
       </Title>
       <Paragraph color={colors.WHITE}>
-        Area = 1/2 x{" "}
+        Area = <MathElement htmlString={"\\frac{1}{2}"} /> x{" "}
         <TextSpan
           color={colors.RED}
           hoverColor={colors.AQUA}

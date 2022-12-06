@@ -7,6 +7,7 @@ import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
 import area_triangle_sides_3_1 from "assets/area-of-triangle/slide_13.svg";
+import MathElement from "components/MathElement";
 
 // Scalene triangle
 const Slide13 = () => {
@@ -43,7 +44,8 @@ const Slide13 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of a scalene triangle = √s (s - a)(s - b)(s - c)
+            Area of a scalene triangle =
+            <MathElement htmlString={"\\sqrt{s (s - a)(s - b)(s - c)}"} />
           </Pill>
         </LeftWrap>
         <LeftWrap>

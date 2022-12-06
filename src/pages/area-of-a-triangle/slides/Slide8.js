@@ -9,6 +9,7 @@ import area_triangle_ex1_2 from "assets/area-of-triangle/slide_8_1.svg";
 import area_triangle_ex1_3 from "assets/area-of-triangle/slide_8_2.svg";
 import area_triangle_ex1_4 from "assets/area-of-triangle/slide_8_3.svg";
 import TransitionImage from "components/media/TransitionImage";
+import MathElement from "components/MathElement";
 
 const Slide8 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -76,13 +77,15 @@ const Slide8 = () => {
             color={colors.BLACK}
             fontSize="1.4rem"
             marginBottom={"20px"}>
-            Area of the triangle = √ s (s - a)(s - b)(s - c)
+            Area of the triangle = <MathElement htmlString={"\\sqrt{s(s - a)(s - b)(s - c)}"} />{" "}
           </Paragraph>
           <Paragraph
             color={colors.BLACK}
             fontSize="1.4rem"
             marginBottom={"20px"}>
-            s = a + b + c / 2 = 8cm + 5cm + 5cm / 2 = 9cm
+            <MathElement
+              htmlString={"s = \\frac{a+b+c}{2} = s = \\frac{8cm + 5cm + 5cm}{2} = 9cm "}
+            />{" "}
           </Paragraph>
           <Flex>
             <Paragraph fontSize="1.4rem">Area of triangle </Paragraph>
@@ -91,25 +94,25 @@ const Slide8 = () => {
                 color={colors.BLACK}
                 fontSize="1.4rem"
                 marginBottom={"20px"}>
-                = √ 9 (9 - 8)(9 - 5)(9 - 5) cm2
+                <MathElement htmlString={"= \\sqrt{9 (9 - 8)(9 - 5)(9 - 5)} \\ cm^2"} />
               </Paragraph>
               <Paragraph
                 color={colors.BLACK}
                 fontSize="1.4rem"
                 marginBottom={"20px"}>
-                = √9 (1)(4)(4) cm2
+                <MathElement htmlString={"= \\sqrt{9 (1)(4)(4)} \\  cm^2"} />
               </Paragraph>
               <Paragraph
                 color={colors.BLACK}
                 fontSize="1.4rem"
                 marginBottom={"20px"}>
-                = √144 cm2
+                <MathElement htmlString={"= \\sqrt{√144} \\  cm^2"} />
               </Paragraph>
               <Paragraph
                 color={colors.BLACK}
                 fontSize="1.4rem"
                 marginBottom={"20px"}>
-                = 12 cm2
+                <MathElement htmlString={"= 12 \\  cm^2"} />
               </Paragraph>
             </div>
           </Flex>

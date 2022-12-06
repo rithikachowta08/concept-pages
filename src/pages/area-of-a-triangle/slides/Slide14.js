@@ -10,6 +10,7 @@ import Pill from "components/Pill";
 import area_triangle_snt from "assets/area-of-triangle/area_triangle_s&t.svg";
 import area_triangle_snt_2 from "assets/area-of-triangle/area_triangle_sna_2.svg";
 import TransitionImage from "components/media/TransitionImage";
+import MathElement from "components/MathElement";
 
 // Two sides and included angle
 const Slide14 = () => {
@@ -57,7 +58,12 @@ const Slide14 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area = 1/2 bc Sin A = 1/2 ca Sin B = 1/2 ab Sinc C
+            Area =
+            <MathElement
+              htmlString={
+                "\\frac{1}{2} bc \\ Sin A = \\frac{1}{2} ca Sin B = \\frac{1}{2} ab Sinc C"
+              }
+            />
           </Pill>
         </LeftWrap>
         <LeftWrap>

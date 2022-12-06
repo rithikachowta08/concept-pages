@@ -10,6 +10,7 @@ import t_base from "assets/area-of-triangle/slide_3_b.svg";
 import t_height from "assets/area-of-triangle/slide_3_p.svg";
 
 import Pill from "components/Pill";
+import MathElement from "components/MathElement";
 
 // Basic Formula Slide
 const Slide3 = () => {
@@ -46,7 +47,7 @@ const Slide3 = () => {
             fontSize="1.8rem"
             bgColor={colors.GREEN}
             color={colors.WHITE}>
-            Area of the triangle = 1/2 ×{" "}
+            Area of the triangle = <MathElement htmlString={"\\frac{1}{2} \\times"} />{" "}
             <TextSpan
               fontSize="1.8rem"
               fontWeight={500}
@@ -57,7 +58,7 @@ const Slide3 = () => {
               hoverBgColor={colors.AQUA}>
               Base
             </TextSpan>{" "}
-            ×{" "}
+            <MathElement htmlString={"\\times"} />{" "}
             <TextSpan
               fontSize="1.8rem"
               color={colors.WHITE}
