@@ -4,11 +4,15 @@ import TitleSlide from "components/slides/TitleSlide";
 const Slide1 = ({ moveToSection }) => {
   return (
     <TitleSlide
-      moveToSection={moveToSection}
-      title="Triangles"
+      title="Volume of a cube"
+      contentListItems={[
+        "What is the volume of a cube",
+        "Formula",
+        "Volume of a cube using diagnoal",
+        "Rectangular prism vs cube"
+      ]}
       anchorIdxes={[2, 4, 10]}
-      contentListItems={["What is a triangle?", "Types of triangles", "Properties of triangles"]}
-    />
+      moveToSection={moveToSection}></TitleSlide>
   );
 };
 

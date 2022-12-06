@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.webp";
 import obtuse_red from "assets/triangles/obtuse_red.svg";
 import obtuse_angles_blue from "assets/triangles/obtuse_angles_blue.svg";
 import { colors } from "utils/colors";
@@ -17,7 +16,7 @@ const Slide6 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex>
         <LeftWrap width="60%">

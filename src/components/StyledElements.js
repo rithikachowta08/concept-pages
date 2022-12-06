@@ -1,7 +1,16 @@
 import styled from "styled-components/macro";
+import lightBg from "assets/white_bg.webp";
+import darkBg from "assets/purple_bg.webp";
+import darkWithTrianglesBg from "assets/purple_bg_triangles.webp";
+
+const bgToImageMap = {
+  LIGHT: lightBg,
+  DARK: darkBg,
+  DARK_PATTERNED: darkWithTrianglesBg
+};
 
 export const SlideWrap = styled.div`
-  background: url(${(props) => props.bg});
+  background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
   background-color: ${(props) => props.bgColor};
   padding-left: ${(props) => props.paddingLeft || "15vw"};
   height: 100%;

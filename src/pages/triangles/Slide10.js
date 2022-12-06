@@ -1,6 +1,5 @@
 import { SlideWrap, Flex, StyledImg } from "components/StyledElements";
 import { Title, TextSpan } from "components/text";
-import bg from "assets/purple_bg.webp";
 import angle_sum from "assets/triangles/angle_sum.svg";
 import triangle_inequality from "assets/triangles/triangle_inequality.svg";
 import pythogoras from "assets/triangles/pythogoras.svg";
@@ -8,7 +7,7 @@ import pythogoras from "assets/triangles/pythogoras.svg";
 const Slide4 = () => {
   return (
     <SlideWrap
-      bg={bg}
+      bg="DARK"
       alignItems="center">
       <Title
         marginBottom="50px"

@@ -10,7 +10,6 @@ import triangle_vertices from "assets/triangles/triangle_vertices.svg";
 import vertice from "assets/triangles/vertice.svg";
 import ruler from "assets/triangles/ruler.svg";
 import three_figure from "assets/triangles/three_figure.svg";
-import bg from "assets/white_bg.webp";
 import { colors } from "utils/colors";
 
 const Slide2 = () => {
@@ -65,7 +64,7 @@ const Slide2 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}
