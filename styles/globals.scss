@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap");
+
+html,
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+   html {
+      color-scheme: dark;
+   }
+   body {
+      color: white;
+      background: black;
+      height: 100%;
+      font-family: "Raleway", sans-serif;
+
+      --toastify-color-success: #4dcb88;
+      --toastify-color-error: #ea6560;
+   }
+}
+
+.fp-viewing-0,
+.fp-viewing-3,
+.fp-viewing-8,
+.fp-viewing-9 {
+   #fp-nav ul li a span,
+   .fp-slidesNav ul li a span {
+      background: #fff !important;
+   }
+}
+
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
+   #fp-nav
+   ul
+   li
+   a
+   span,
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
+   .fp-slidesNav
+   ul
+   li
+   a
+   span {
+   background: #4a33f5 !important;
+}
+
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
+   #fp-nav
+   ul
+   li
+   .fp-tooltip,
+body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
+   .fp-slidesNav
+   ul
+   li
+   .fp-tooltip {
+   color: #4a33f5 !important;
+}
+
+.section {
+   display: block;
+   flex-direction: unset;
+   justify-content: unset;
+   height: 100%;
+   width: 100%;
+}
+
+.fp-overflow {
+   height: 100%;
+}
+
+.fp-watermark {
+   display: none;
+}
+:root {
+   --toastify-color-success: #4dcb88;
+   --toastify-color-error: #ea6560;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+   html {
+      font-size: 8px;
+   }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 768px) {
+   html {
+      font-size: 10px;
+   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+   html {
+      font-size: 12px;
+   }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1224px) {
+   html {
+      font-size: 14px;
+   }
+}
