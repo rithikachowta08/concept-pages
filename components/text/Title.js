@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 
 const H1 = styled.h1`
   color: ${(props) => props.color || "white"};
@@ -19,7 +19,15 @@ const H2 = styled.h2`
   margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
 `;
 
-const Title = ({ children, marginBottom, fontSize, fontWeight, opacity, color, small }) => {
+const Title = ({
+  children,
+  marginBottom,
+  fontSize,
+  fontWeight,
+  opacity,
+  color,
+  small,
+}) => {
   const HeadingElement = small ? H2 : H1;
   return (
     <HeadingElement
@@ -27,7 +35,8 @@ const Title = ({ children, marginBottom, fontSize, fontWeight, opacity, color, s
       opacity={opacity}
       fontSize={fontSize}
       fontWeight={fontWeight}
-      color={color}>
+      color={color}
+    >
       {children}
     </HeadingElement>
   );
@@ -40,11 +49,11 @@ Title.propTypes = {
   opacity: PropTypes.number,
   fontWeight: PropTypes.number,
   marginBottom: PropTypes.string,
-  small: PropTypes.bool
+  small: PropTypes.bool,
 };
 
 Title.defaultProps = {
-  small: false
+  small: false,
 };
 
 export default Title;

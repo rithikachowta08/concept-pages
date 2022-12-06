@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 const FullPageCustomWrapper = dynamic(() =>
-  import("../../components/full-page-wrapper/FullPageCustomWrapper").then(
+  import("components/full-page-wrapper/FullPageCustomWrapper").then(
     (mod) => mod.FullPageCustomWrapper
   )
 );

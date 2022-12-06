@@ -1,27 +1,25 @@
 import { useState } from "react";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
-  import("../../components/media/TransitionImage")
+  import("components/media/TransitionImage")
 );
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
 const Flex = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Flex)
+  import("components/StyledElements").then((mod) => mod.Flex)
 );
 const LeftWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.LeftWrap)
+  import("components/StyledElements").then((mod) => mod.LeftWrap)
 );
 
-const Title = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Title)
-);
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 const Paragraph = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Paragraph)
+  import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpan = dynamic(() =>
-  import("../../components/text").then((mod) => mod.TextSpan)
+  import("components/text").then((mod) => mod.TextSpan)
 );
 
 const bg = "assets/white_bg.png";

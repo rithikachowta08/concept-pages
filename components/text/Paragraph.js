@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 import { PropTypes } from "prop-types";
 
 const Para = styled.p`
@@ -20,7 +20,7 @@ const Paragraph = ({
   maxWidth,
   textAlign,
   marginRight,
-  color
+  color,
 }) => {
   return (
     <Para
@@ -29,7 +29,8 @@ const Paragraph = ({
       maxWidth={maxWidth}
       textAlign={textAlign}
       fontSize={fontSize}
-      color={color}>
+      color={color}
+    >
       {children}
     </Para>
   );
@@ -42,7 +43,7 @@ Paragraph.propTypes = {
   marginBottom: PropTypes.string,
   maxWidth: PropTypes.string,
   marginRight: PropTypes.string,
-  textAlign: PropTypes.string
+  textAlign: PropTypes.string,
 };
 
 export default Paragraph;

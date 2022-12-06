@@ -1,18 +1,16 @@
 import dynamic from "next/dynamic";
 const StyledImg = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.StyledImg)
+  import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
 const Flex = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Flex)
+  import("components/StyledElements").then((mod) => mod.Flex)
 );
-const Title = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Title)
-);
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 const TextSpan = dynamic(() =>
-  import("../../components/text").then((mod) => mod.TextSpan)
+  import("components/text").then((mod) => mod.TextSpan)
 );
 
 const bg = "assets/purple_bg.png";

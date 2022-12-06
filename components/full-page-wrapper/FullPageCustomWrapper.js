@@ -4,7 +4,7 @@ import ReactFullpage, { fullpage_api, state } from "@fullpage/react-fullpage";
 import DownArrowIcon from "../DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 import styles from "./FullPageCustomWrapperStyles.module.scss";
 
 const PageWrap = styled.div`
@@ -17,10 +17,10 @@ let fullPage;
 export const FullPageCustomWrapper = ({
   slidesComponentList,
   darkBgIndices,
-  navigationSections
+  navigationSections,
 }) => {
   const [currentPageIdx, setCurrentPageIdx] = useState(0);
-  console.log(styles.downArrowIcon)
+  console.log(styles.downArrowIcon);
   return (
     <>
       <ReactFullpage
@@ -39,9 +39,7 @@ export const FullPageCustomWrapper = ({
             <>
               <ReactFullpage.Wrapper>
                 {slidesComponentList.map((itm, idx) => (
-                  <div
-                    className="section"
-                    key={idx}>
+                  <div className="section" key={idx}>
                     {/* No navigation bar on title page */}
                     {idx === 0 ? null : (
                       <NavigationBar
@@ -51,13 +49,20 @@ export const FullPageCustomWrapper = ({
                         currentPageIdx={currentPageIdx}
                       />
                     )}
-                    <PageWrap>{React.cloneElement(itm, { moveToSection })}</PageWrap>
+                    <PageWrap>
+                      {React.cloneElement(itm, { moveToSection })}
+                    </PageWrap>
                     {idx === slidesComponentList.length - 1 ? null : (
                       <div
                         onClick={fullpageApi?.moveSectionDown}
-                        style={{ cursor: "pointer" }}>
+                        style={{ cursor: "pointer" }}
+                      >
                         <DownArrowIcon
-                          color={darkBgIndices.includes(idx) ? colors.WHITE : colors.DARK_GREY}
+                          color={
+                            darkBgIndices.includes(idx)
+                              ? colors.WHITE
+                              : colors.DARK_GREY
+                          }
                           className={styles.downArrowIcon}
                         />
                       </div>
@@ -76,5 +81,5 @@ export const FullPageCustomWrapper = ({
 FullPageCustomWrapper.propTypes = {
   slidesComponentList: PropTypes.array.isRequired,
   darkBgIndices: PropTypes.array.isRequired,
-  navigationSections: PropTypes.array.isRequired
+  navigationSections: PropTypes.array.isRequired,
 };

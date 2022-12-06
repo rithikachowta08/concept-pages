@@ -4,7 +4,7 @@ import { Flex } from "../StyledElements";
 import Button from "../Button";
 import Pill from "../Pill";
 import { PropTypes } from "prop-types";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 const success = "assets/success.svg";
 const error = "assets/error.svg";
 

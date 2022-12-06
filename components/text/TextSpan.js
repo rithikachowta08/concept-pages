@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 
 const StyledSpan = styled.span`
   color: ${(props) => props.color || colors.DARK_GREY};
@@ -33,7 +33,7 @@ const TextSpan = ({
   onHover,
   onHoverOut,
   onClick,
-  fontWeight
+  fontWeight,
 }) => {
   return (
     <StyledSpan
@@ -50,7 +50,8 @@ const TextSpan = ({
       color={color}
       onClick={onClick}
       onMouseLeave={onHoverOut}
-      onMouseEnter={onHover}>
+      onMouseEnter={onHover}
+    >
       {children}
     </StyledSpan>
   );
@@ -71,7 +72,7 @@ TextSpan.propTypes = {
   marginLeft: PropTypes.string,
   onHover: PropTypes.func,
   onHoverOut: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 TextSpan.defaultProps = {
@@ -81,7 +82,7 @@ TextSpan.defaultProps = {
   cursor: "default",
   onHover: () => {},
   onHoverOut: () => {},
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default TextSpan;
