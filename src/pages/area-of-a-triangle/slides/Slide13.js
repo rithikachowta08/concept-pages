@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import bg from "assets/white_bg.png";
+import bg from "assets/white_bg.webp";
 import { Flex, LeftWrap, SlideWrap, StyledImg } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
@@ -15,7 +15,7 @@ const Slide13 = () => {
   return (
     <SlideWrap
       paddingLeft={"160px"}
-      bg={bg}>
+      bg={"LIGHT"}>
       <Flex alignItems="center">
         <LeftWrap>
           <Title

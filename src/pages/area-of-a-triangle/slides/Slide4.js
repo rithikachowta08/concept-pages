@@ -1,6 +1,5 @@
 import React from "react";
 
-import bg from "assets/white_bg.png";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
@@ -9,7 +8,7 @@ import Pill from "components/Pill";
 const Slide4 = () => {
   return (
     <SlideWrap
-      bg={bg}
+      bg={"LIGHT"}
       paddingLeft="200px">
       <Flex alignItems="center">
         <LeftWrap>

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Triangles } from "pages/triangles";
+import Triangles from "pages/triangles";
 import { AreaOfATriangle } from "pages/area-of-a-triangle";
 import { VolumeOfCube } from "pages/volume-of-cube";
 

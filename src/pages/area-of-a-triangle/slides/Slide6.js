@@ -2,13 +2,12 @@ import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
 import { Title } from "components/text";
 import React from "react";
 import { colors } from "utils/colors";
-import bg from "assets/white_bg.png";
 
 const Slide6 = () => {
   return (
     <SlideWrap
       paddingLeft={"200px"}
-      bg={bg}>
+      bg={"LIGHT"}>
       <Flex alignItems="center">
         <LeftWrap>
           <Title

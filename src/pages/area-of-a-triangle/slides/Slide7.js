@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, LeftWrap, SlideWrap, StyledImg } from "components/StyledElements";
-import bg from "assets/purple_bg.png";
+import bg from "assets/purple_bg.webp";
 import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
@@ -10,7 +10,7 @@ import area_triangle_heron from "assets/area-of-triangle/slide_7.svg";
 const Slide7 = () => {
   return (
     <SlideWrap
-      bg={bg}
+      bg={"DARK"}
       paddingLeft="200px">
       <Flex alignItems="center">
         <LeftWrap>

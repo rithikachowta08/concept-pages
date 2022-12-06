@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bg from "assets/purple_bg.png";
+import bg from "assets/purple_bg.webp";
 import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title } from "components/text";
 
@@ -10,7 +10,7 @@ import image_3 from "assets/area-of-triangle/slide_10_s.svg";
 const Slide10 = () => {
   return (
     <SlideWrap
-      bg={bg}
+      bg={"DARK"}
       alignItems="center">
       <Title
         marginBottom="20px"

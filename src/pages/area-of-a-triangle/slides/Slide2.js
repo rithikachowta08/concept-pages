@@ -5,7 +5,6 @@ import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 import { Paragraph, TextSpan, Title } from "components/text";
 
-import bg from "assets/white_bg.png";
 import area_triangle_modal from "assets/area-of-triangle/slide_2_modal.svg";
 import area_triangle from "assets/area-of-triangle/slide_2_normal.svg";
 import area_triangle_shaded from "assets/area-of-triangle/slide_2_shaded.svg";
@@ -42,7 +41,7 @@ const Slide2 = () => {
 
   return (
     <SlideWrap
-      bg={bg}
+      bg={"LIGHT"}
       paddingLeft="200px">
       <Modal
         isOpen={isModalOpen}

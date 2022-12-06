@@ -35,8 +35,7 @@ const Pill = ({
       ) : null}
       <TextSpan
         color={color}
-        fontSize={fontSize}
-        fontWeight={fontWeight}>
+        fontSize={fontSize}>
         {children}
       </TextSpan>
     </Flex>

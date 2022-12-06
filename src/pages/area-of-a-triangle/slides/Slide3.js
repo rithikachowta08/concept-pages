@@ -5,7 +5,6 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import { colors } from "utils/colors";
 
-import bg from "assets/purple_bg.png";
 import t_formula from "assets/area-of-triangle/slide_3_normal.svg";
 import t_base from "assets/area-of-triangle/slide_3_b.svg";
 import t_height from "assets/area-of-triangle/slide_3_p.svg";
@@ -18,7 +17,7 @@ const Slide3 = () => {
 
   return (
     <SlideWrap
-      bg={bg}
+      bg={"DARK"}
       paddingLeft="200px">
       <Flex alignItems="center">
         <LeftWrap>

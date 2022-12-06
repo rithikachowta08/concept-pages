@@ -3,7 +3,7 @@ import { Flex, LeftWrap, SlideWrap, StyledImg } from "components/StyledElements"
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
-import bg from "assets/white_bg.png";
+import bg from "assets/white_bg.webp";
 import area_triangle_ex1_1 from "assets/area-of-triangle/slide_8_normal.svg";
 import area_triangle_ex1_2 from "assets/area-of-triangle/slide_8_1.svg";
 import area_triangle_ex1_3 from "assets/area-of-triangle/slide_8_2.svg";
@@ -16,7 +16,7 @@ const Slide8 = () => {
   return (
     <SlideWrap
       paddingLeft="160px"
-      bg={bg}>
+      bg={"LIGHT"}>
       <Flex alignItems="center">
         <LeftWrap>
           <Title

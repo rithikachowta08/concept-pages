@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import bg from "assets/purple_bg.png";
+import bg from "assets/purple_bg.webp";
 import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
@@ -19,7 +19,7 @@ const Slide9 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <SlideWrap
-      bg={bg}
+      bg={"DARK"}
       alignItems="center">
       <Title
         marginBottom="20px"
