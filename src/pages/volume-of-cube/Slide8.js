@@ -1,10 +1,10 @@
 import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title, Paragraph } from "components/text";
-import bg from "assets/white_bg.png";
 import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import cube_red from "assets/volume-of-cube/slide8/cube-1.png";
 import Pill from "components/Pill";
 import { fetchData } from "utils/networking";
@@ -42,66 +42,47 @@ const Slide8 = () => {
   latex.push(`= 343 cm^3`);
   let mathjaxCounter = 0;
   return (
-    <SlideWrap
-      bg={bg}
-      paddingLeft="200px">
-      <Flex>
-        <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            // color={colors.WHITE}
-            small>
-            Volume of a Cube Formula
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="50px"
-            // color={colors.WHITE}
-            small>
-            Illustrative Example
-          </Title>
-          <Paragraph
-            marginBottom="40px"
-            // color={colors.WHITE}
-          >
-            What is the volume of a cube of side length 7 cm?
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Solution:
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-          >
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-        </LeftWrap>
-        <StyledImg src={cube_red} />
-      </Flex>
-    </SlideWrap>
+    <TextAndDiagramSlide
+      secondaryTitle="Volume of a Cube Formula"
+      title="Illustrative Example"
+      diagram={<StyledImg src={cube_red} />}>
+      <Paragraph
+        marginBottom="2vh"
+        // color={colors.WHITE}
+      >
+        What is the volume of a cube of side length 7 cm?
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Solution:
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginTop="410px"
+        // color={colors.WHITE}
+      >
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+    </TextAndDiagramSlide>
   );
 };
 export default Slide8;

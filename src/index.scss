@@ -9,3 +9,27 @@ body,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media only screen and (min-width: 200px) and (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1224px) {
+  html {
+    font-size: 14px;
+  }
+}

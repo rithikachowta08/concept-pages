@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title, Paragraph } from "components/text";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Pill from "components/Pill";
-import bg from "assets/purple_bg_triangles.png";
 import cube_red from "assets/volume-of-cube/slide10/cube-1.png";
 import cube_d from "assets/volume-of-cube/slide10/cube-2.png";
 import cube_s from "assets/volume-of-cube/slide10/cube-3.png";
@@ -41,76 +40,60 @@ const Slide10 = () => {
   latex.push(`= \\sqrt{3}`);
   let mathjaxCounter = 0;
   return (
-    <SlideWrap
-      bg={bg}
-      paddingLeft="200px">
-      <Flex>
-        <LeftWrap width="50%">
-          <Title
-            opacity={0.5}
-            marginBottom="16px"
-            color={colors.WHITE}
-            small>
-            Volume of a cube using diagonal
-          </Title>
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="16px"
-            color={colors.WHITE}>
-            Diagonal of a Cube
-          </Title>
-          <Paragraph
-            marginBottom="20px"
-            color={colors.WHITE}>
-            Given the{" "}
-            <TextSpan
-              id={1}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              // textDecoration="underline"
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem"
-              color={colors.RED}>
-              diagonal length
-            </TextSpan>{" "}
-            of a cube:
-          </Paragraph>
-          <Pill
-            width="fit-content"
-            fontSize="2.2rem"
-            bgColor={colors.GREEN}
-            marginBottom="40px"
-            color={colors.WHITE}>
-            Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Pill>
-          <Paragraph
-            // marginTop="50px"
-            // marginBottom="70px"
-            color={colors.WHITE}>
-            Here, d <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpan
-              id={2}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              textDecoration="underline"
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem"
-              color={colors.RED}>
-              {" "}
-              s
-            </TextSpan>
-          </Paragraph>
-        </LeftWrap>
+    <TextAndDiagramSlide
+      diagram={
         <TransitionImage
           images={[cube_red, cube_d, cube_s]}
           activeIndex={activeIndex}
-          bottomOffset="65px"
         />
-      </Flex>
-    </SlideWrap>
+      }
+      bg="DARK"
+      secondaryTitle="Volume of a cube using diagonal"
+      title="Diagonal of a Cube">
+      <Paragraph
+        marginBottom="1vh"
+        color={colors.WHITE}>
+        Given the{" "}
+        <TextSpan
+          id={1}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          // textDecoration="underline"
+          hoverColor={colors.AQUA}
+          fontWeight={700}
+          fontSize="2.2rem"
+          color={colors.RED}>
+          diagonal length
+        </TextSpan>{" "}
+        of a cube:
+      </Paragraph>
+      <Pill
+        width="fit-content"
+        fontSize="2.2rem"
+        bgColor={colors.GREEN}
+        marginBottom="2vh"
+        color={colors.WHITE}>
+        Volume of a cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Pill>
+      <Paragraph
+        // marginTop="50px"
+        // marginBottom="70px"
+        color={colors.WHITE}>
+        Here, d <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
+        <TextSpan
+          id={2}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          textDecoration="underline"
+          hoverColor={colors.AQUA}
+          fontWeight={700}
+          fontSize="2.2rem"
+          color={colors.RED}>
+          {" "}
+          s
+        </TextSpan>
+      </Paragraph>
+    </TextAndDiagramSlide>
   );
 };
 

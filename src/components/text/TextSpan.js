@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { fontWeights, fontSizes } from "utils/fontStyles";
 import { PropTypes } from "prop-types";
 import { colors } from "utils/colors";
 
 const StyledSpan = styled.span`
   color: ${(props) => props.color || colors.DARK_GREY};
-  font-weight: ${(props) => props.fontWeight || "500"};
-  font-size: ${(props) => props.fontSize || "1.5rem"};
+  font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
+  font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
   text-decoration: ${(props) => props.textDecoration || "none"};
   margin-bottom: ${(props) => props.marginBottom || 0};
   margin-left: ${(props) => props.marginLeft || 0};
@@ -83,8 +84,8 @@ TextSpan.propTypes = {
 };
 
 TextSpan.defaultProps = {
-  fontWeight: 500,
-  fontSize: "1.5rem",
+  fontWeight: fontWeights.NORMAL,
+  fontSize: fontSizes.MEDIUM,
   textDecoration: "none",
   cursor: "default",
   onHover: () => {},

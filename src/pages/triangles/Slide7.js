@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
 import { Title, Paragraph, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
-import bg from "assets/white_bg.png";
 import right_red from "assets/right_red.svg";
 import right_angles_blue from "assets/right_angles_blue.svg";
 import hypotenuse from "assets/hypotenuse.svg";
@@ -24,7 +23,7 @@ const Slide7 = () => {
   };
   return (
     <SlideWrap
-      bg={bg}
+      bg="LIGHT"
       paddingLeft="200px">
       <Flex>
         <LeftWrap width="50%">

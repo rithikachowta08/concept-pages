@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "utils/networking";
 // import {c}
-import { SlideWrap, Flex, LeftWrap, StyledImg } from "components/StyledElements";
+import { Flex } from "components/StyledElements";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpan, Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
-import bg from "assets/purple_bg_triangles.png";
 import cube_red from "assets/volume-of-cube/slide6/cube-1.png";
 import cube_d from "assets/volume-of-cube/slide6/cube-2.png";
 import { colors } from "utils/colors";
@@ -46,66 +46,56 @@ const Slide6 = () => {
 
   let mathjaxCounter = 0;
   return (
-    <SlideWrap
-      bg={bg}
-      paddingLeft="200px">
-      <Flex>
-        <LeftWrap width="50%">
-          <Title
-            fontSize="2.5rem"
-            fontWeight={700}
-            marginBottom="16px"
-            color={colors.WHITE}>
-            Formula
-          </Title>
-          <Paragraph
-            marginBottom="20px"
-            color={colors.WHITE}>
-            For a cube with{" "}
-            <TextSpan
-              id={1}
-              onHover={onHover}
-              onHoverOut={onHoverOut}
-              // textDecoration="underline"
-              hoverColor={colors.AQUA}
-              fontWeight={700}
-              fontSize="2.2rem"
-              color={colors.RED}>
-              side length ‘s’
-            </TextSpan>{" "}
-          </Paragraph>
-          <Paragraph
-            marginBottom="70px"
-            color={colors.WHITE}>
-            Volume <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginBottom="70px"
-            color={colors.WHITE}>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Paragraph
-            marginBottom="70px"
-            color={colors.WHITE}>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-          </Paragraph>
-          <Pill
-            width="fit-content"
-            fontSize="2.2rem"
-            bgColor={colors.GREEN}
-            marginBottom="400px"
-            color={colors.WHITE}>
-            Volume of cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic
-            units
-          </Pill>
-        </LeftWrap>
+    <TextAndDiagramSlide
+      bg="DARK"
+      gap="2vh"
+      diagram={
         <TransitionImage
           images={[cube_red, cube_d]}
           activeIndex={activeIndex}
           bottomOffset="65px"
         />
-      </Flex>
-    </SlideWrap>
+      }
+      title="Formula">
+      <Paragraph
+        marginBottom="2vh"
+        color={colors.WHITE}>
+        For a cube with{" "}
+        <TextSpan
+          id={1}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          // textDecoration="underline"
+          hoverColor={colors.AQUA}
+          fontWeight={700}
+          fontSize="2.2rem"
+          color={colors.RED}>
+          side length ‘s’
+        </TextSpan>{" "}
+      </Paragraph>
+      <Paragraph
+        marginBottom="1vh"
+        color={colors.WHITE}>
+        Volume <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginBottom="1vh"
+        color={colors.WHITE}>
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Paragraph
+        marginBottom="1vh"
+        color={colors.WHITE}>
+        <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+      </Paragraph>
+      <Pill
+        width="fit-content"
+        fontSize="2.2rem"
+        bgColor={colors.GREEN}
+        color={colors.WHITE}>
+        Volume of cube <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> cubic units
+      </Pill>
+    </TextAndDiagramSlide>
   );
 };
 

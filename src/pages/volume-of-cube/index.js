@@ -40,7 +40,7 @@ export const VolumeOfCube = () => {
     }
   ];
 
-  const darkBgIndices = [0, 3, 8, 9];
+  const darkBgIndices = [0, 4, 5, 9, 12];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
