@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #67dbe8;
+      }
+
+      .cls-3 {
+        opacity: .7;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-5, .cls-7 {
+        opacity: .2;
+      }
+
+      .cls-5, .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+      }
+
+      .cls-6 {
+        opacity: .1;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(249.98 518.15)"><tspan x="0" y="0">b</tspan></text>
+  <g>
+    <polygon class="cls-6" points="251.46 41.98 14.36 452.64 488.55 452.64 251.46 41.98"/>
+    <g class="cls-7">
+      <path class="cls-4" d="M251.46,41.98l237.09,410.66H14.36L251.46,41.98m0-12l-5.2,9L9.17,449.64l-5.2,9H498.95l-5.2-9L256.65,38.98l-5.2-9h0Z"/>
+    </g>
+    <g class="cls-7">
+      <rect class="cls-4" x="248.46" y="38.67" width="6" height="6"/>
+      <path class="cls-4" d="M254.46,434.46h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Zm0-24.36h-6v-12.18h6v12.18Z"/>
+      <rect class="cls-4" x="248.46" y="446.64" width="6" height="6"/>
+    </g>
+    <g class="cls-7">
+      <path class="cls-4" d="M306.4,450.61h-6v-12h6v12Zm0-24h-6v-12h6v12Zm-3-23.08h-9.92v-6h12.92v5.08h-3v.92Zm-21.92,0h-12v-6h12v6Zm-24,0h-9.21v-6h9.21v6Z"/>
+    </g>
+  </g>
+  <text class="cls-5" transform="translate(263.41 260.86)"><tspan x="0" y="0">h</tspan></text>
+  <g class="cls-3">
+    <rect class="cls-1" x="33.38" y="480.25" width="437.23" height="4"/>
+    <polygon class="cls-1" points="39.21 502.2 4.67 482.25 39.21 462.31 39.21 502.2"/>
+    <polygon class="cls-1" points="464.77 502.2 499.31 482.25 464.77 462.31 464.77 502.2"/>
+  </g>
+</svg>

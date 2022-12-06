@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #4a33f5;
+      }
+
+      .cls-1, .cls-3 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+      }
+
+      .cls-4 {
+        opacity: .2;
+      }
+
+      .cls-5, .cls-3, .cls-6 {
+        fill: #333;
+      }
+
+      .cls-6 {
+        opacity: .1;
+      }
+    </style>
+  </defs>
+  <g class="cls-4">
+    <path class="cls-5" d="M280.47,154.36l232.41,256.49H48.05L280.47,154.36m0-8.94l-4.45,4.91L43.61,406.82l-9.09,10.03h491.89l-9.09-10.03L284.91,150.33l-4.45-4.91h0Z"/>
+  </g>
+  <polygon class="cls-6" points="280.47 154.36 48.05 410.85 512.88 410.85 280.47 154.36"/>
+  <g>
+    <rect class="cls-2" x="63.79" y="437.11" width="434.25" height="4"/>
+    <polygon class="cls-2" points="492.2 419.17 526.74 439.11 492.2 459.06 492.2 419.17"/>
+    <polygon class="cls-2" points="69.62 419.17 35.08 439.11 69.62 459.06 69.62 419.17"/>
+  </g>
+  <text class="cls-1" transform="translate(239.85 473.73)"><tspan x="0" y="0">8 cm</tspan></text>
+  <g>
+    <g class="cls-4">
+      <text class="cls-3" transform="translate(429.93 259.94)"><tspan x="0" y="0">5 cm</tspan></text>
+    </g>
+    <g class="cls-4">
+      <text class="cls-3" transform="translate(48.02 259.94)"><tspan x="0" y="0">5 cm</tspan></text>
+    </g>
+  </g>
+</svg>

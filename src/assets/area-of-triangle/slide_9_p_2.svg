@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #67dbe8;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        opacity: .2;
+      }
+
+      .cls-4 {
+        opacity: .1;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 20px;
+      }
+
+      .cls-6 {
+        stroke: #67dbe8;
+        stroke-width: 2px;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7 {
+        stroke-dasharray: 0 0 0 0 1.89 1.89 1.89 1.89;
+      }
+
+      .cls-7, .cls-8 {
+        stroke: #333;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon class="cls-4" points="61.4 78.43 234.73 202.81 60.92 202.81 61.4 78.43"/>
+      <g class="cls-5">
+        <path class="cls-3" d="M61.4,78.43l173.33,124.38H60.92l.48-124.38m-2.98-5.83l-.02,5.82-.48,124.38v3.01s3,0,3,0H244.05l-7.58-5.44L63.15,75.99l-4.73-3.39h0Z"/>
+      </g>
+    </g>
+    <text class="cls-2" transform="translate(28.61 147.72)"><tspan x="0" y="0">h</tspan></text>
+    <g>
+      <line class="cls-6" x1="45.29" y1="198.44" x2="45.29" y2="79.68"/>
+      <polygon class="cls-1" points="50.28 196.98 45.29 205.61 40.3 196.98 50.28 196.98"/>
+      <polygon class="cls-1" points="50.28 81.13 45.29 72.5 40.3 81.13 50.28 81.13"/>
+    </g>
+  </g>
+  <g class="cls-5">
+    <g>
+      <line class="cls-8" x1="58.17" y1="188.16" x2="62.17" y2="188.16"/>
+      <line class="cls-7" x1="64.06" y1="188.16" x2="70.67" y2="188.16"/>
+      <polyline class="cls-8" points="71.62 188.16 75.62 188.16 75.62 192.16"/>
+      <line class="cls-7" x1="75.62" y1="194.05" x2="75.62" y2="200.66"/>
+      <line class="cls-8" x1="75.62" y1="201.61" x2="75.62" y2="205.61"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 20px;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-5 {
+        fill: #e96560;
+        opacity: .7;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(135.75 251.7)"><tspan x="0" y="0">b</tspan></text>
+  <g>
+    <text class="cls-2" transform="translate(188.95 141.55)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-2" transform="translate(79.97 141.55)"><tspan x="0" y="0">a</tspan></text>
+  </g>
+  <g>
+    <g>
+      <polygon class="cls-1" points="140.17 50.72 68.83 227.02 211.51 227.02 140.17 50.72"/>
+      <path class="cls-3" d="M140.17,50.72l71.34,176.3H68.83L140.17,50.72m0-8l-2.78,6.87L66.05,225.9l-1.67,4.13H215.96l-1.67-4.13L142.95,49.6l-2.78-6.87h0Z"/>
+    </g>
+    <line class="cls-4" x1="93.56" y1="141" x2="107.42" y2="146.61"/>
+    <line class="cls-4" x1="185.32" y1="141" x2="171.46" y2="146.61"/>
+  </g>
+  <path class="cls-5" d="M76.02,201.82s16.92,6.91,16.92,28.03c-11.8,0-28.3,.09-28.3,.09l11.38-28.12Z"/>
+  <path class="cls-5" d="M204.35,201.82s-16.92,6.91-16.92,28.03c11.8,0,28.3,.09,28.3,.09l-11.38-28.12Z"/>
+</svg>
