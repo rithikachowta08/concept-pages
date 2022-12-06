@@ -3,7 +3,7 @@ import { TextSpan } from "../text";
 import { Flex, Icon } from "../StyledElements";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 // import dynamic from 'next/dynamic'
 
 // const left_caret = dynamic(() => import('public/assets/left_caret.svg'))
@@ -15,7 +15,8 @@ const NavWrap = styled.div`
   left: 2vh;
   padding: 70px 30px;
   background: rgba(231, 228, 248, 0.4);
-  border: ${(props) => (props.darkTheme ? "none" : `1px solid ${colors.PURPLE}`)};
+  border: ${(props) =>
+    props.darkTheme ? "none" : `1px solid ${colors.PURPLE}`};
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -24,7 +25,8 @@ const NavWrap = styled.div`
   cursor: pointer;
   z-index: 1;
   transform: translateY(-50%);
-  backdrop-filter: ${(props) => (props.isExpanded ? "blur(15px)" : "blur(38px)")};
+  backdrop-filter: ${(props) =>
+    props.isExpanded ? "blur(15px)" : "blur(38px)"};
 `;
 
 const SectionIndicator = styled.div`
@@ -33,9 +35,14 @@ const SectionIndicator = styled.div`
   cursor: pointer;
   width: 22px;
   height: 22px;
-  border: 4px solid ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
+  border: 4px solid
+    ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
   background: ${(props) =>
-    props.isComplete ? (props.darkTheme ? `${colors.WHITE}` : `${colors.PURPLE}`) : `none`};
+    props.isComplete
+      ? props.darkTheme
+        ? `${colors.WHITE}`
+        : `${colors.PURPLE}`
+      : `none`};
   box-shadow: ${(props) =>
     props.isComplete
       ? props.darkTheme
@@ -59,7 +66,8 @@ const Connector = styled.div`
 const Fill = styled.div`
   width: 4px;
   height: ${(props) => props.percentage}%;
-  background: ${(props) => (props.darkTheme ? `${colors.WHITE}` : `${colors.PURPLE}`)};
+  background: ${(props) =>
+    props.darkTheme ? `${colors.WHITE}` : `${colors.PURPLE}`};
   transition: all 0.3s;
 `;
 
@@ -85,19 +93,22 @@ const NavigationBar = ({ darkTheme, moveTo, sections, currentPageIdx }) => {
       isExpanded={isExpanded}
       onMouseEnter={showNav}
       onMouseLeave={hideNav}
-      darkTheme={darkTheme}>
+      darkTheme={darkTheme}
+    >
       {isExpanded ? (
         <Flex
           cursor="pointer"
           onClick={hideNav}
           alignItems="center"
-          marginBottom="40px">
+          marginBottom="40px"
+        >
           <Icon src={left_caret}></Icon>
           <TextSpan
             cursor="pointer"
             marginLeft="20px"
             color={darkTheme ? colors.WHITE : colors.PURPLE}
-            fontSize="1rem">
+            fontSize="1rem"
+          >
             Back to concepts
           </TextSpan>
         </Flex>
@@ -118,25 +129,25 @@ const NavigationBar = ({ darkTheme, moveTo, sections, currentPageIdx }) => {
               cursor="pointer"
               // moveTo expects slide indices to start from 1
               data-section-idx={section.slides[0] + 1}
-              onClick={onSectionClick}>
+              onClick={onSectionClick}
+            >
               <SectionIndicator
                 darkTheme={darkTheme}
-                isComplete={currentPageIdx >= section.slides[0]}></SectionIndicator>
+                isComplete={currentPageIdx >= section.slides[0]}
+              ></SectionIndicator>
               {isExpanded && (
                 <TextSpan
                   cursor="pointer"
                   color={darkTheme ? colors.WHITE : colors.BLACK}
-                  marginLeft="20px">
+                  marginLeft="20px"
+                >
                   {section.title}
                 </TextSpan>
               )}
             </Flex>
             {idx !== sections.length - 1 && (
               <Connector darkTheme={darkTheme}>
-                <Fill
-                  darkTheme={darkTheme}
-                  percentage={percentage}
-                />
+                <Fill darkTheme={darkTheme} percentage={percentage} />
               </Connector>
             )}
           </>
@@ -150,7 +161,7 @@ NavigationBar.propTypes = {
   darkTheme: PropTypes.bool,
   sections: PropTypes.array.isRequired,
   moveTo: PropTypes.func.isRequired,
-  currentPageIdx: PropTypes.number
+  currentPageIdx: PropTypes.number,
 };
 
 export default NavigationBar;

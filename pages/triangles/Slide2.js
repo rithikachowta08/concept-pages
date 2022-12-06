@@ -1,33 +1,31 @@
 import { useState } from "react";
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 const StyledImg = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.StyledImg)
+  import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const TransitionImage = dynamic(() =>
-  import("../../components/media/TransitionImage")
+  import("components/media/TransitionImage")
 );
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
 const Flex = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Flex)
+  import("components/StyledElements").then((mod) => mod.Flex)
 );
 const LeftWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.LeftWrap)
+  import("components/StyledElements").then((mod) => mod.LeftWrap)
 );
 
-const Title = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Title)
-);
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 const Paragraph = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Paragraph)
+  import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpan = dynamic(() =>
-  import("../../components/text").then((mod) => mod.TextSpan)
+  import("components/text").then((mod) => mod.TextSpan)
 );
 
-const Modal = dynamic(() => import("../../components/layout/Modal"));
+const Modal = dynamic(() => import("components/layout/Modal"));
 
 const triangle_red = "assets/triangle_red.svg";
 const triangle_angles = "assets/triangle_angles.svg";

@@ -1,16 +1,16 @@
-import { colors } from "../../utils/colors";
+import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 const Video = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Video)
+  import("components/StyledElements").then((mod) => mod.Video)
 );
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
 const Flex = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Flex)
+  import("components/StyledElements").then((mod) => mod.Flex)
 );
 const TextSpan = dynamic(() =>
-  import("../../components/text").then((mod) => mod.TextSpan)
+  import("components/text").then((mod) => mod.TextSpan)
 );
 
 const Slide9 = () => {

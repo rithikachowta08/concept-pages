@@ -1,25 +1,21 @@
 import { useState } from "react";
-import ImageWithYesNo, {
-  ANSWER_TYPES,
-} from "../../components/media/ImageWithYesNo";
+import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
 import dynamic from "next/dynamic";
 const Icon = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Icon)
+  import("components/StyledElements").then((mod) => mod.Icon)
 );
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
 const Flex = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.Flex)
+  import("components/StyledElements").then((mod) => mod.Flex)
 );
-const Title = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Title)
-);
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 const Paragraph = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Paragraph)
+  import("components/text").then((mod) => mod.Paragraph)
 );
 
-const Modal = dynamic(() => import("../../components/layout/Modal"));
+const Modal = dynamic(() => import("components/layout/Modal"));
 
 const bg = "assets/white_bg.png";
 const info = "assets/info.svg";

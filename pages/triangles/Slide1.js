@@ -1,13 +1,11 @@
 import { PropTypes } from "prop-types";
 import dynamic from "next/dynamic";
 const SlideWrap = dynamic(() =>
-  import("../../components/StyledElements").then((mod) => mod.SlideWrap)
+  import("components/StyledElements").then((mod) => mod.SlideWrap)
 );
-const Title = dynamic(() =>
-  import("../../components/text").then((mod) => mod.Title)
-);
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 const ContentList = dynamic(() =>
-  import("../../components/text").then((mod) => mod.ContentList)
+  import("components/text").then((mod) => mod.ContentList)
 );
 
 const Slide1 = ({ moveToSection }) => {
