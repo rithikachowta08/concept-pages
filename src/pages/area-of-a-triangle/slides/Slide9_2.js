@@ -10,7 +10,7 @@ import area_triangle_sides_3_1 from "assets/area-of-triangle/slide_13.svg";
 import MathElement from "components/MathElement";
 
 // Scalene triangle
-const Slide13 = () => {
+const Slide9_2 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -59,4 +59,4 @@ const Slide13 = () => {
   );
 };
 
-export default Slide13;
+export default Slide9_2;

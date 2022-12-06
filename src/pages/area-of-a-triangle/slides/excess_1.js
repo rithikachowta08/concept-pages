@@ -11,7 +11,7 @@ import area_triangle_ex1_4 from "assets/area-of-triangle/slide_8_3.svg";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement";
 
-const Slide8 = () => {
+const excess_1 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -134,4 +134,4 @@ const Slide8 = () => {
   );
 };
 
-export default Slide8;
+export default excess_1;

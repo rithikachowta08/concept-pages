@@ -1,31 +1,37 @@
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import React from "react";
 import Slide1 from "./slides/Slide1";
-import Slide10 from "./slides/Slide10";
+import Slide9_0 from "./slides/Slide9_0";
 import Slide11 from "./slides/Slide11";
 import Slide12 from "./slides/Slide12";
-import Slide13 from "./slides/Slide13";
+import Slide13 from "./slides/Slide9_2";
 import Slide14 from "./slides/Slide14";
 import Slide2 from "./slides/Slide2";
 import Slide3 from "./slides/Slide3";
+import Slide3_0 from "./slides/Slide3_0";
+import Slide3_1 from "./slides/Slide3_1";
+import Slide3_2 from "./slides/Slide3_2";
 import Slide4 from "./slides/Slide4";
-import Slide5 from "./slides/Slide5";
 import Slide6 from "./slides/Slide6";
 import Slide7 from "./slides/Slide7";
-import Slide8 from "./slides/Slide8";
-import Slide9 from "./slides/Slide9";
+import Slide10 from "./slides/Slide10";
+import Slide9_2 from "./slides/Slide9_2";
+import Slide9_3 from "./slides/Slide9_3";
 
 export const AreaOfATriangle = () => {
   const SlideArray = [
     <Slide1 key={0} />,
     <Slide2 key={1} />,
-    <Slide3 key={2} />,
+    <Slide3 key={"2"} />,
+    <Slide3_0 key={3} />,
+    <Slide3_1 key={"3_1"} />,
+    <Slide3_2 key={"3_2"} />,
     <Slide4 key={3} />,
-    <Slide5 key={4} />,
     <Slide6 key={5} />,
     <Slide7 key={6} />,
-    <Slide8 key={7} />,
-    <Slide9 key={8} />,
+    <Slide9_0 key={8} />,
+    <Slide9_2 key={9.2} />,
+    <Slide9_3 key={9.3} />,
     <Slide10 key={9} />,
     <Slide11 key={10} />,
     <Slide12 key={11} />,
