@@ -21,19 +21,18 @@ a {
    box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-   html {
-      color-scheme: dark;
-   }
-   body {
-      color: white;
-      background: black;
-      height: 100%;
-      font-family: "Raleway", sans-serif;
+html {
+   color-scheme: dark;
+}
 
-      --toastify-color-success: #4dcb88;
-      --toastify-color-error: #ea6560;
-   }
+body {
+   color: white;
+   background: black;
+   height: 100%;
+   font-family: "Raleway", sans-serif;
+
+   --toastify-color-success: #4dcb88;
+   --toastify-color-error: #ea6560;
 }
 
 .fp-viewing-0,
@@ -89,6 +88,12 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 .fp-watermark {
    display: none;
 }
+
+.katex .mathdefault {
+   font-family: "Raleway" !important;
+   font-style: normal;
+}
+
 :root {
    --toastify-color-success: #4dcb88;
    --toastify-color-error: #ea6560;

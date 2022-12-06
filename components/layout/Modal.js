@@ -2,7 +2,7 @@ import { Title } from "../text";
 import { PropTypes } from "prop-types";
 import { Flex, Icon } from "components/StyledElements";
 import { fontSizes, fontWeights } from "utils/fontStyles";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 const crossIcon = "assets/cross_icon.svg";
 import Button from "components/Button";
 

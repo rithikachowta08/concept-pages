@@ -62,7 +62,11 @@ const Slide8 = () => {
             <Paragraph maxWidth="30%">
                Move the vertices to form a right angled triangle
             </Paragraph>
-            <IFrame src="./triangle.html" allowFullScreen frameBorder="0" />
+            <IFrame
+               src="./applets/triangle.html"
+               allowFullScreen
+               frameBorder="0"
+            />
          </Flex>
       </SlideWrap>
    );
