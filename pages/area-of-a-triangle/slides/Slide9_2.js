@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
-import bg from "assets/white_bg.webp";
 import {
   Flex,
   LeftWrap,
   SlideWrap,
   StyledImg,
 } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
-import area_triangle_sides_3_1 from "assets/area-of-triangle/slide_13.svg";
+const area_triangle_sides_3_1 = "assets/area-of-triangle/slide_13.svg";
 import MathElement from "components/MathElement";
 
 // Scalene triangle

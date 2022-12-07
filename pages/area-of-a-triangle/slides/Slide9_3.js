@@ -2,7 +2,7 @@ import { LeftWrap, SlideWrap, StyledImg } from "components/StyledElements";
 import { Paragraph, Title } from "components/text";
 import React from "react";
 
-import image_1 from "assets/area-of-triangle/ex_1.svg";
+const image_1 = "assets/area-of-triangle/ex_1.svg";
 import { colors } from "utils/colors";
 
 const Slide9_3 = () => {

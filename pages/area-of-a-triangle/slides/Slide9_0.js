@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import bg from "assets/purple_bg.webp";
 import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
 import { TextSpan, Title } from "components/text";
-
-import image_1 from "assets/area-of-triangle/slide_10_e.svg";
-import image_2 from "assets/area-of-triangle/slide_10_i.svg";
-import image_3 from "assets/area-of-triangle/slide_10_s.svg";
 import { colors } from "utils/colors";
+
+const image_1 = "assets/area-of-triangle/slide_10_e.svg";
+const image_2 = "assets/area-of-triangle/slide_10_i.svg";
+const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
 const Slide9_0 = () => {
   return (

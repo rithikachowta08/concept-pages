@@ -5,15 +5,15 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
-import area_triangle_angles_1_1 from "assets/area-of-triangle/slide_9_1.svg";
-import area_triangle_angles_2_1 from "assets/area-of-triangle/slide_9_2.svg";
-import area_triangle_angles_3_1 from "assets/area-of-triangle/slide_9_3.svg";
-import area_triangle_angles_1_2 from "assets/area-of-triangle/slide_9_b_1.svg";
-import area_triangle_angles_2_2 from "assets/area-of-triangle/slide_9_b_2.svg";
-import area_triangle_angles_3_2 from "assets/area-of-triangle/slide_9_b_3.svg";
-import area_triangle_angles_1_3 from "assets/area-of-triangle/slide_9_p_1.svg";
-import area_triangle_angles_2_3 from "assets/area-of-triangle/slide_9_p_2.svg";
-import area_triangle_angles_3_3 from "assets/area-of-triangle/slide_9_p_3.svg";
+const area_triangle_angles_1_1 = "assets/area-of-triangle/slide_9_1.svg";
+const area_triangle_angles_2_1 = "assets/area-of-triangle/slide_9_2.svg";
+const area_triangle_angles_3_1 = "assets/area-of-triangle/slide_9_3.svg";
+const area_triangle_angles_1_2 = "assets/area-of-triangle/slide_9_b_1.svg";
+const area_triangle_angles_2_2 = "assets/area-of-triangle/slide_9_b_2.svg";
+const area_triangle_angles_3_2 = "assets/area-of-triangle/slide_9_b_3.svg";
+const area_triangle_angles_1_3 = "assets/area-of-triangle/slide_9_p_1.svg";
+const area_triangle_angles_2_3 = "assets/area-of-triangle/slide_9_p_2.svg";
+const area_triangle_angles_3_3 = "assets/area-of-triangle/slide_9_p_3.svg";
 
 const Slide3_1 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
