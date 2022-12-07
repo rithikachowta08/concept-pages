@@ -12,7 +12,7 @@ const bgToImageMap = {
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => props.bgColor};
-   padding-left: ${(props) => props.paddingLeft || "15vw"};
+   padding-left: ${(props) => props.paddingLeft || "10%"};
    height: 100%;
    width: 100%;
    padding: ${(props) => props.padding};
@@ -27,7 +27,24 @@ export const SlideWrap = styled.div`
 
    @media only screen and (min-width: 200px) and (max-width: 768px) {
       padding-top: 7%;
-      padding-left: 0;
+   }
+`;
+
+export const TitleSlideWrap = styled.div`
+   background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+   padding-left: 10%;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: ${(props) => props.justifyContent || "center"};
+   box-sizing: border-box;
+   background-size: cover;
+   background-repeat: no-repeat;
+   align-items: ${(props) => props.alignItems};
+
+   @media only screen and (min-width: 200px) and (max-width: 768px) {
+      padding-left: 5%;
    }
 `;
 

@@ -123,32 +123,27 @@ const MobileNavBar = ({
                onClick={toggleNav}
             />
          </Flex>
-         {isExpanded ? null : (
-            <Flex justifyContent="space-between">
-               {sections.map((section, idx) => {
-                  let percentage = 0;
-                  const slides = section.slides;
-                  if (currentPageIdx >= slides[slides.length - 1]) {
-                     percentage = 100;
-                  } else if (slides.includes(currentPageIdx)) {
-                     const slideIdx = slides.indexOf(currentPageIdx);
-                     percentage = ((slideIdx + 1) / slides.length) * 100;
-                  }
-                  return (
-                     <SectionBar
-                        darkTheme={darkTheme}
-                        flex={95 / sections.length / 100}
-                        key={idx}
-                     >
-                        <BarFill
-                           darkTheme={darkTheme}
-                           percentage={percentage}
-                        />
-                     </SectionBar>
-                  );
-               })}
-            </Flex>
-         )}
+         <Flex justifyContent="space-between">
+            {sections.map((section, idx) => {
+               let percentage = 0;
+               const slides = section.slides;
+               if (currentPageIdx >= slides[slides.length - 1]) {
+                  percentage = 100;
+               } else if (slides.includes(currentPageIdx)) {
+                  const slideIdx = slides.indexOf(currentPageIdx);
+                  percentage = ((slideIdx + 1) / slides.length) * 100;
+               }
+               return (
+                  <SectionBar
+                     darkTheme={darkTheme}
+                     flex={95 / sections.length / 100}
+                     key={idx}
+                  >
+                     <BarFill darkTheme={darkTheme} percentage={percentage} />
+                  </SectionBar>
+               );
+            })}
+         </Flex>
       </MobileNavWrap>
    );
 };

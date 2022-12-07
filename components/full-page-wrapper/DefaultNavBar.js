@@ -8,6 +8,9 @@ const left_caret_dark = "assets/left_caret.svg";
 const left_caret_light = "assets/left_caret_light.svg";
 
 const NavWrap = styled.div`
+   background: rgba(231, 228, 248, 0.4);
+   backdrop-filter: ${(props) =>
+      props.isExpanded ? "blur(15px)" : "blur(38px)"};
    padding: 70px 30px;
    border: ${(props) =>
       props.darkTheme ? "none" : `1px solid ${colors.PURPLE}`};

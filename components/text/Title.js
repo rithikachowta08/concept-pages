@@ -9,6 +9,11 @@ const H1 = styled.h1`
    font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.H1)};
    margin: 0;
    margin-bottom: ${(props) => props.marginBottom || 0};
+
+   @media (min-width: 200px) and (max-width: 768px) {
+      font-size: ${(props) =>
+         props.fontSize ? props.fontSize : fontSizes.SMALLSCREEN_H1};
+   }
 `;
 
 const H2 = styled.h2`

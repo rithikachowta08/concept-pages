@@ -11,9 +11,6 @@ const Wrapper = styled.div`
    left: ${(props) => (props.isMobile ? "0" : "2vh")};
    width: ${(props) => (props.isMobile ? "100%" : "auto")};
    transform: ${(props) => (props.isMobile ? "none" : "translateY(-50%)")};
-   background: rgba(231, 228, 248, 0.4);
-   backdrop-filter: ${(props) =>
-      props.isExpanded ? "blur(15px)" : "blur(38px)"};
    z-index: 1;
 `;
 
