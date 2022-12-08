@@ -1,87 +1,43 @@
 import React, { useState } from "react";
-
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
+import { TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
-import Pill from "components/Pill";
-import TransitionImage from "components/media/TransitionImage";
 
-const image_1 = "assets/area-of-triangle/slide_12.svg";
-const image_2 = "assets/area-of-triangle/slide_12_2.svg";
-const image_3 = "assets/area-of-triangle/slide_12_3.svg";
-import MathElement from "components/MathElement";
+const image_1 = "assets/area-of-triangle/slide_10_e.svg";
+const image_2 = "assets/area-of-triangle/slide_10_i.svg";
+const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
-// Isosceles triangle
+// Types of triangle
 const Slide10 = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
-    <SlideWrap paddingLeft={"160px"} bg={"LIGHT"}>
-      <Flex alignItems="center">
-        <LeftWrap>
-          <Title opacity={0.5} marginBottom="16px" color={colors.BLACK} small>
-            Area of different types of triangle
-          </Title>
-          <Title
-            marginBottom="70px"
-            color={colors.BLACK}
-            fontWeight={400}
-            fontSize="2.5rem"
-          >
-            Isosceles triangle
-          </Title>
-          <Paragraph color={colors.BLACK} marginBottom="50px">
-            Given the length of the{" "}
-            <TextSpan
-              fontSize={"2.2rem"}
-              fontWeight={"500"}
-              color={colors.WHITE}
-              bgColor={colors.RED}
-              hoverBgColor={colors.DARK_BLUE}
-              onHover={() => {
-                setActiveIndex(1);
-              }}
-              onHoverOut={() => {
-                setActiveIndex(0);
-              }}
-            >
-              base &apos;b&apos;
-            </TextSpan>{" "}
-            and the{" "}
-            <TextSpan
-              fontSize={"2.2rem"}
-              fontWeight={"500"}
-              color={colors.WHITE}
-              bgColor={colors.RED}
-              hoverBgColor={colors.DARK_BLUE}
-              onHover={() => {
-                setActiveIndex(2);
-              }}
-              onHoverOut={() => {
-                setActiveIndex(0);
-              }}
-            >
-              equal sides &apos;a&apos;
-            </TextSpan>{" "}
-            , its area can be calculated as:
-          </Paragraph>
-          <Pill
-            width="fit-content"
-            fontSize="1.8rem"
-            bgColor={colors.GREEN}
-            color={colors.WHITE}
-          >
-            Area of an isosceles triangle =
-            <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
-          </Pill>
-        </LeftWrap>
-        <LeftWrap>
-          <TransitionImage
-            images={[image_1, image_2, image_3]}
-            activeIndex={activeIndex}
-            bottomOffset="65px"
-          />
-        </LeftWrap>
+    <SlideWrap bg={"DARK"} alignItems="center">
+      <Title
+        marginBottom="50px"
+        fontWeight={700}
+        fontSize="2.5rem"
+        color="white"
+      >
+        Area of Different Types of Triangles
+      </Title>
+      <Flex justifyContent="space-between" alignItems="center" width="70%">
+        <Flex direction="column">
+          <StyledImg src={image_1} />
+          <TextSpan color={colors.AQUA} fontWeight={400}>
+            Equilateral Triangle
+          </TextSpan>
+        </Flex>
+        <Flex direction="column">
+          <StyledImg src={image_2} />
+          <TextSpan color={colors.AQUA} fontWeight={400}>
+            Isosceles Triangle
+          </TextSpan>
+        </Flex>
+        <Flex direction="column">
+          <StyledImg src={image_3} />
+          <TextSpan color={colors.AQUA} fontWeight={400}>
+            Scalene Triangle
+          </TextSpan>
+        </Flex>
       </Flex>
     </SlideWrap>
   );

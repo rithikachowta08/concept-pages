@@ -1,10 +1,9 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import { SlideWrap } from "components/StyledElements";
-import { ContentList, Title } from "components/text";
 import TitleSlide from "components/slides/TitleSlide";
 
+// Title Slide
 const Slide1 = ({ moveToSection }) => {
   return (
     <TitleSlide

@@ -1,50 +1,48 @@
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import React from "react";
 import Slide1 from "./slides/Slide1";
-import Slide9_0 from "./slides/Slide9_0";
-import Slide11 from "./slides/Slide11";
-import Slide10 from "./slides/Slide10";
-import Slide13 from "./slides/Slide9_2";
-import Slide14 from "./slides/Slide14";
 import Slide2 from "./slides/Slide2";
 import Slide3 from "./slides/Slide3";
-import Slide3_0 from "./slides/Slide3_0";
-import Slide3_1 from "./slides/Slide3_1";
-import Slide3_2 from "./slides/Slide3_2";
 import Slide4 from "./slides/Slide4";
+import Slide5 from "./slides/Slide5";
 import Slide6 from "./slides/Slide6";
 import Slide7 from "./slides/Slide7";
-import Slide10_2 from "./slides/Slide10_2";
-import Slide9_2 from "./slides/Slide9_2";
-import Slide9_3 from "./slides/Slide9_3";
-import Slide10_3 from "./slides/Slide10_3";
+import Slide8 from "./slides/Slide8";
+import Slide9 from "./slides/Slide9";
+import Slide10 from "./slides/Slide10";
+import Slide11 from "./slides/Slide11";
 import Slide12 from "./slides/Slide12";
-import Slide12_1 from "./slides/Sldie12_1";
+import Slide13 from "./slides/Slide13";
+import Slide14 from "./slides/Slide14";
 import Slide15 from "./slides/Slide15";
+import Slide16 from "./slides/Slide16";
+import Slide17 from "./slides/Slide17";
+import Slide18 from "./slides/Slide18";
+import Slide19 from "./slides/Slide19";
+import Slide20 from "./slides/Slide20";
 
 const AreaOfATriangle = () => {
   const SlideArray = [
     <Slide1 key={0} />,
     <Slide2 key={1} />,
-    <Slide3 key={"2"} />,
-    <Slide3_0 key={3} />,
-    <Slide3_1 key={"3_1"} />,
-    <Slide3_2 key={"3_2"} />,
+    <Slide3 key={2} />,
     <Slide4 key={3} />,
+    <Slide5 key={4} />,
     <Slide6 key={5} />,
     <Slide7 key={6} />,
-    <Slide9_0 key={8} />,
-    <Slide9_2 key={9.2} />,
-    <Slide9_3 key={9.3} />,
+    <Slide8 key={7} />,
+    <Slide9 key={8} />,
     <Slide10 key={9} />,
-    <Slide10_2 key={"11.1"} />,
-    <Slide10_3 key={"11.2"} />,
     <Slide11 key={10} />,
     <Slide12 key={11} />,
-    <Slide12_1 key={"11.3"} />,
-    // <Slide13 key={12} />,
+    <Slide13 key={12} />,
     <Slide14 key={13} />,
     <Slide15 key={14} />,
+    <Slide16 key={15} />,
+    <Slide17 key={16} />,
+    <Slide18 key={17} />,
+    <Slide19 key={18} />,
+    <Slide20 key={19} />,
   ];
 
   const navigationSections = [

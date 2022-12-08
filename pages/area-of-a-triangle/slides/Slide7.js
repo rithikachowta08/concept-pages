@@ -1,68 +1,65 @@
 import React from "react";
-import {
-  Flex,
-  LeftWrap,
-  SlideWrap,
-  StyledImg,
-} from "components/StyledElements";
-import { Paragraph, Title } from "components/text";
+
+import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
+import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
-
-const area_triangle_heron = "assets/area-of-triangle/slide_7.svg";
 import MathElement from "components/MathElement";
 
+// General formula derivation
 const Slide7 = () => {
   return (
-    <SlideWrap bg={"DARK"} paddingLeft="200px">
+    <SlideWrap bg={"LIGHT"} paddingLeft="200px">
       <Flex alignItems="center">
         <LeftWrap>
-          <Title opacity={0.5} marginBottom="16px" color={colors.WHITE} small>
-            Area of a Triangle
+          <Title opacity={0.5} marginBottom="16px" color={colors.BLACK} small>
+            Area of a triangle
           </Title>
           <Title
-            opacity={1}
-            marginBottom="16px"
-            fontSize={"2.2rem"}
-            fontWeight="600"
-            color={colors.WHITE}
+            marginBottom="70px"
+            color={colors.BLACK}
+            fontWeight={400}
+            fontSize="2.5rem"
           >
-            Heron&apos;s formula
+            Derivation
           </Title>
+          <Paragraph color={colors.BLACK} marginBottom="50px">
+            Two identical triangles combine to form a parallelogram.
+          </Paragraph>
           <Paragraph
-            color={colors.WHITE}
-            fontSize="1.8rem"
-            marginBottom={"20px"}
+            color={colors.BLACK}
+            marginBottom="50px"
+            fontSize={"1.4rem"}
           >
-            Given the lengths (a, b, c) of three sides of any triangle, area can
-            be calculated as:
+            <TextSpan fontSize={"1.4rem"} color={colors.DARK_BLUE}>
+              Area of a parallelogram
+            </TextSpan>{" "}
+            = Base (b) × Height (h)
+          </Paragraph>
+          <Paragraph
+            color={colors.BLACK}
+            marginBottom="50px"
+            fontSize={"1.4rem"}
+          >
+            Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×
+            Area of the parallelogram
           </Paragraph>
           <Pill
             width="fit-content"
+            fontSize="1.8rem"
+            fontWeight="600"
             bgColor={colors.GREEN}
             color={colors.WHITE}
-            fontSize="1.8rem"
           >
-            Area of a triangle ={" "}
-            <MathElement htmlString={"\\sqrt{s(s - a)(s - b)(s - c)}"} />{" "}
+            Area of the triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×{" "}
+            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+              Base (b)
+            </TextSpan>{" "}
+            ×{" "}
+            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+              Height (h)
+            </TextSpan>
           </Pill>
-          <Paragraph
-            color={colors.WHITE}
-            fontSize="1.8rem"
-            marginBottom={"20px"}
-          >
-            Here, s is the semiperimeter of the triangle.
-          </Paragraph>
-          <Paragraph
-            color={colors.WHITE}
-            fontSize="1.8rem"
-            marginBottom={"20px"}
-          >
-            <MathElement htmlString={"s = \\frac{a+b+c}{2}"} />
-          </Paragraph>
-        </LeftWrap>
-        <LeftWrap>
-          <StyledImg src={area_triangle_heron} bottomOffset="65px" />
         </LeftWrap>
       </Flex>
     </SlideWrap>

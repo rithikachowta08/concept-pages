@@ -6,11 +6,11 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
-const image_1 = "assets/area-of-triangle/isos_ex_1.svg";
-const image_2 = "assets/area-of-triangle/isos_ex_2.svg";
-const image_3 = "assets/area-of-triangle/isos_ex_3.svg";
+const image_1 = "assets/area-of-triangle/equi_ex_1.svg";
+const image_2 = "assets/area-of-triangle/equi_ex_2.svg";
 
-const Slide10_3 = () => {
+// Example of equilateral triangle
+const Slide18 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <SlideWrap paddingLeft={"160px"} bg={"LIGHT"}>
@@ -41,60 +41,33 @@ const Slide10_3 = () => {
             >
               a
             </TextSpan>{" "}
-            = 5 cm
-            <br />
-            <TextSpan
-              color={colors.WHITE}
-              bgColor={colors.RED}
-              hoverBgColor={colors.DARK_BLUE}
-              onHover={() => {
-                setActiveIndex(2);
-              }}
-              onHoverOut={() => {
-                setActiveIndex(0);
-              }}
-            >
-              b
-            </TextSpan>{" "}
-            = 8 cm
+            = 4 in
           </Paragraph>
           <Flex>
-            <Paragraph>Area of triangle </Paragraph>
+            <Paragraph>Area of the triangle </Paragraph>
             <Flex direction="column">
               <Paragraph marginBottom={"10px"}>
                 <MathElement
-                  htmlString={"\\ = \\frac{1}{4}b \\sqrt{4a^2 - b^2}"}
+                  htmlString={"\\ = \\frac{\\sqrt{3}}{4} \\times a^2"}
                 />
               </Paragraph>
               <Paragraph marginBottom={"10px"}>
                 <MathElement
-                  htmlString={
-                    "\\ = \\frac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}"
-                  }
+                  htmlString={"\\ = \\frac{\\sqrt{3}}{4} \\times 4^2"}
                 />
               </Paragraph>
               <Paragraph marginBottom={"10px"}>
-                <MathElement
-                  htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{100 - 64}"}
-                />
+                <MathElement htmlString={"\\ = \\frac{16 \\ \\sqrt{3}}{4}"} />
               </Paragraph>
               <Paragraph marginBottom={"10px"}>
-                <MathElement
-                  htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{36}"}
-                />
-              </Paragraph>
-              <Paragraph marginBottom={"10px"}>
-                <MathElement htmlString={"\\ = \\frac{8 \\times 6}{4}"} />
-              </Paragraph>
-              <Paragraph marginBottom={"10px"}>
-                <MathElement htmlString={"\\ = 12 \\ cm^2"} />
+                <MathElement htmlString={"\\ = 4 \\sqrt{3} in^2"} />
               </Paragraph>
             </Flex>
           </Flex>
         </LeftWrap>
         <LeftWrap>
           <TransitionImage
-            images={[image_1, image_2, image_3]}
+            images={[image_1, image_2]}
             activeIndex={activeIndex}
             bottomOffset="65px"
           />
@@ -104,4 +77,4 @@ const Slide10_3 = () => {
   );
 };
 
-export default Slide10_3;
+export default Slide18;

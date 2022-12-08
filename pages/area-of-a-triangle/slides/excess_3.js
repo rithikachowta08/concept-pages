@@ -6,15 +6,14 @@ import {
   SlideWrap,
   StyledImg,
 } from "components/StyledElements";
-import { Paragraph, Title } from "components/text";
+import { Paragraph, TextSpan, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
 const area_triangle_sides_3_1 = "assets/area-of-triangle/slide_13.svg";
-import MathElement from "components/MathElement";
 
 // Scalene triangle
-const Slide9_2 = () => {
+const Slide13 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -42,8 +41,7 @@ const Slide9_2 = () => {
             bgColor={colors.GREEN}
             color={colors.WHITE}
           >
-            Area of a scalene triangle =
-            <MathElement htmlString={"\\sqrt{s (s - a)(s - b)(s - c)}"} />
+            Area of a scalene triangle = √s (s - a)(s - b)(s - c)
           </Pill>
         </LeftWrap>
         <LeftWrap>
@@ -54,4 +52,4 @@ const Slide9_2 = () => {
   );
 };
 
-export default Slide9_2;
+export default Slide13;

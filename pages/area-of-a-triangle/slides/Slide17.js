@@ -6,17 +6,18 @@ import { Paragraph, TextSpan, Title } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
-const image_1 = "assets/area-of-triangle/isos_deri_1.svg";
-const image_2 = "assets/area-of-triangle/isos_deri_2.svg";
+const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
+const image_2 = "assets/area-of-triangle/equi_deri_2.svg";
 
-const Slide10_2 = () => {
+// Derivation of equilateral triangle
+const Slide17 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <SlideWrap paddingLeft={"160px"} bg={"LIGHT"}>
       <Flex alignItems="center">
         <LeftWrap>
           <Title opacity={0.5} marginBottom="16px" color={colors.BLACK} small>
-            Area of an Isosceles triangle
+            Area of an Equilateral triangle
           </Title>
           <Title
             marginBottom="70px"
@@ -43,15 +44,15 @@ const Slide10_2 = () => {
             </TextSpan>
             .
             <TextSpan>
-              <MathElement htmlString={"a^2 = h^2 + (\\frac{b}{2})^2"} />
+              <MathElement htmlString={"a^2 = h^2 + (\\frac{a}{2})^2"} />
             </TextSpan>
             <br />
             <TextSpan>
-              <MathElement htmlString={"h^2 = a^2 - (\\frac{b^2}{4})"} />
+              <MathElement htmlString={"h^2 = a^2 - (\\frac{a^2}{4})"} />
             </TextSpan>
             <br />
             <TextSpan>
-              <MathElement htmlString={"h = \\sqrt{a^2 - (\\frac{b}{2})^2}"} />
+              <MathElement htmlString={"h = \\frac{1}{2} (\\sqrt{3} a)"} />
             </TextSpan>
           </Paragraph>
           <Paragraph>
@@ -60,10 +61,10 @@ const Slide10_2 = () => {
               htmlString={"\\frac{1}{2} \\times Base \\times Height"}
             />
           </Paragraph>
-          <Paragraph>
+          <Paragraph marginBottom={"20px"}>
             <MathElement
               htmlString={
-                "A = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
+                "A = \\frac{1}{2} \\times a \\times \\frac{1}{2} (\\sqrt{3} a)"
               }
             />
           </Paragraph>
@@ -74,7 +75,7 @@ const Slide10_2 = () => {
             color={colors.WHITE}
           >
             Area of an isosceles triangle =
-            <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+            <MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
           </Pill>
         </LeftWrap>
         <LeftWrap>
@@ -89,4 +90,4 @@ const Slide10_2 = () => {
   );
 };
 
-export default Slide10_2;
+export default Slide17;
