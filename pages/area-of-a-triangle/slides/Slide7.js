@@ -27,7 +27,7 @@ const Slide7 = () => {
             fontWeight="600"
             color={colors.WHITE}
           >
-            Heron&apos;s formula 7
+            Heron&apos;s formula
           </Title>
           <Paragraph
             color={colors.WHITE}
