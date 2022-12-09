@@ -1,69 +1,55 @@
 import React from "react";
 
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import { fontSizes } from "utils/fontStyles";
+
+const applet = "applets/triangle.html";
 
 // General formula derivation
 const Slide7 = () => {
-  return (
-    <SlideWrap bg={"LIGHT"} paddingLeft="200px">
-      <Flex alignItems="center">
-        <LeftWrap>
-          <Title opacity={0.5} marginBottom="16px" color={colors.BLACK} small>
-            Area of a triangle
-          </Title>
-          <Title
-            marginBottom="70px"
-            color={colors.BLACK}
-            fontWeight={400}
-            fontSize="2.5rem"
-          >
-            Derivation
-          </Title>
-          <Paragraph color={colors.BLACK} marginBottom="50px">
-            Two identical triangles combine to form a parallelogram.
-          </Paragraph>
-          <Paragraph
-            color={colors.BLACK}
-            marginBottom="50px"
-            fontSize={"1.4rem"}
-          >
-            <TextSpan fontSize={"1.4rem"} color={colors.DARK_BLUE}>
-              Area of a parallelogram
-            </TextSpan>{" "}
-            = Base (b) × Height (h)
-          </Paragraph>
-          <Paragraph
-            color={colors.BLACK}
-            marginBottom="50px"
-            fontSize={"1.4rem"}
-          >
-            Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×
-            Area of the parallelogram
-          </Paragraph>
-          <Pill
-            width="fit-content"
-            fontSize="1.8rem"
-            fontWeight="600"
-            bgColor={colors.GREEN}
-            color={colors.WHITE}
-          >
-            Area of the triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×{" "}
-            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
-              Base (b)
-            </TextSpan>{" "}
-            ×{" "}
-            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
-              Height (h)
-            </TextSpan>
-          </Pill>
-        </LeftWrap>
-      </Flex>
-    </SlideWrap>
-  );
+	return (
+		<TextAndAppletSlide
+			title={"Derivation"}
+			secondaryTitle={"Area of a triangle"}
+			bg={"LIGHT"}
+			paddingLeft="200px"
+			appletSrc={applet}
+		>
+			<Paragraph
+				color={colors.BLACK}
+				marginBottom="40px"
+				fontSize={fontSizes.MEDIUM}
+			>
+				Two identical triangles combine to form a parallelogram.
+			</Paragraph>
+			<Paragraph color={colors.BLACK} marginBottom="10px" fontSize={"1.4rem"}>
+				{/* <TextSpan fontSize={"1.4rem"} color={colors.DARK_BLUE}> */}
+				Area of a parallelogram
+				{/* </TextSpan>{" "} */}= Base (b) × Height (h)
+			</Paragraph>
+			<Paragraph color={colors.BLACK} marginBottom="50px" fontSize={"1.4rem"}>
+				Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> × Area
+				of the parallelogram
+			</Paragraph>
+			<Pill width="fit-content" bgColor={colors.GREEN}>
+				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+					Area of the triangle ={" "}
+					<MathElement htmlString={"\\frac{1}{2}\\ \\times\\ "} />{" "}
+				</TextSpan>
+				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+					Base (b)
+				</TextSpan>
+				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+					<MathElement htmlString={"\\ \\times\\ "} />
+					Height (h)
+				</TextSpan>
+			</Pill>
+		</TextAndAppletSlide>
+	);
 };
 
 export default Slide7;

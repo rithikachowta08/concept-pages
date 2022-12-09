@@ -1,3 +1,4 @@
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 import { LeftWrap, SlideWrap, StyledImg } from "components/StyledElements";
 import { Paragraph, Title } from "components/text";
 import React from "react";
@@ -7,16 +8,16 @@ import { colors } from "utils/colors";
 
 // Area of triangle exercise
 const Slide12 = () => {
-  return (
-    <SlideWrap bg={"LIGHT"}>
-      <LeftWrap>
-        <Paragraph color={colors.BLACK} fontSize="2rem" fontWeight={"400"}>
-          Find the area of a triangle with the given dimensions.
-        </Paragraph>
-        <StyledImg src={image_1} bottomOffset="65px" />
-      </LeftWrap>
-    </SlideWrap>
-  );
+	return (
+		<TextAndAppletSlide
+			secondaryTitle={"Find the area of a triangle with the given dimensions."}
+			bg={"LIGHT"}
+		>
+			<LeftWrap>
+				<StyledImg src={image_1} bottomOffset="65px" />
+			</LeftWrap>
+		</TextAndAppletSlide>
+	);
 };
 
 export default Slide12;

@@ -12,60 +12,67 @@ const t_height = "assets/area-of-triangle/slide_3_p.svg";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import { fontSizes } from "utils/fontStyles";
 
 // General Formula Slide
 const Slide4 = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(0);
 
-  return (
-    <TextAndDiagramSlide
-      bg="DARK"
-      title={"General Formula"}
-      secondaryTitle={"Area of a triangle"}
-      diagram={
-        <TransitionImage
-          images={[t_formula, t_base, t_height]}
-          activeIndex={activeIndex}
-        />
-      }
-    >
-      <Paragraph color={colors.WHITE} marginBottom="50px">
-        The area &apos;A&apos; of a triangle is one-half of the product of its
-        base &apos;b&apos; and height &apos;h&apos;.
-      </Paragraph>
-      <Pill
-        width="fit-content"
-        fontSize="1.8rem"
-        bgColor={colors.GREEN}
-        color={colors.WHITE}
-      >
-        Area of the triangle ={" "}
-        <MathElement htmlString={"\\frac{1}{2} \\times"} />{" "}
-        <TextSpan
-          fontSize="1.8rem"
-          fontWeight={500}
-          color={colors.WHITE}
-          onHover={() => setActiveIndex(1)}
-          onHoverOut={() => setActiveIndex(0)}
-          bgColor={colors.RED}
-          hoverBgColor={colors.AQUA}
-        >
-          Base
-        </TextSpan>{" "}
-        <MathElement htmlString={"\\times"} />{" "}
-        <TextSpan
-          fontSize="1.8rem"
-          color={colors.WHITE}
-          onHover={() => setActiveIndex(2)}
-          onHoverOut={() => setActiveIndex(0)}
-          bgColor={colors.RED}
-          hoverBgColor={colors.AQUA}
-        >
-          Perpendicular height
-        </TextSpan>
-      </Pill>
-    </TextAndDiagramSlide>
-  );
+	return (
+		<TextAndDiagramSlide
+			bg="DARK"
+			title={"General Formula"}
+			secondaryTitle={"Area of a triangle"}
+			diagram={
+				<LeftWrap>
+					<TransitionImage
+						images={[t_formula, t_base, t_height]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
+			}
+		>
+			<Paragraph
+				color={colors.WHITE}
+				marginBottom="50px"
+				fontSize={fontSizes.MEDIUM}
+			>
+				The area &apos;A&apos; of a triangle is one-half of the product of its
+				base &apos;b&apos; and height &apos;h&apos;.
+			</Paragraph>
+			<Pill
+				width="fit-content"
+				fontSize="1.8rem"
+				bgColor={colors.GREEN}
+				color={colors.WHITE}
+			>
+				Area of the triangle ={" "}
+				<MathElement htmlString={"\\frac{1}{2} \\times\\ "} />{" "}
+				<TextSpan
+					fontSize="1.8rem"
+					fontWeight={500}
+					color={colors.WHITE}
+					onHover={() => setActiveIndex(1)}
+					onHoverOut={() => setActiveIndex(0)}
+					bgColor={colors.RED}
+					hoverBgColor={colors.AQUA}
+				>
+					Base
+				</TextSpan>{" "}
+				<MathElement htmlString={"\\times\\ "} />{" "}
+				<TextSpan
+					fontSize="1.8rem"
+					color={colors.WHITE}
+					onHover={() => setActiveIndex(2)}
+					onHoverOut={() => setActiveIndex(0)}
+					bgColor={colors.RED}
+					hoverBgColor={colors.AQUA}
+				>
+					Perpendicular height
+				</TextSpan>
+			</Pill>
+		</TextAndDiagramSlide>
+	);
 };
 
 export default Slide4;

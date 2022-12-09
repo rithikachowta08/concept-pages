@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Bold, Raleway;
+        font-size: 16px;
+      }
+
+      .cls-4 {
+        fill: #e96560;
+        opacity: .7;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="56.77 80.19 238.02 202.81 114.45 202.81 56.77 80.19"/>
+    <path class="cls-3" d="M56.77,80.19l181.25,122.61H114.45L56.77,80.19m-7.36-8.6l4.65,9.88,57.68,122.61,.81,1.72H247.81l-8.11-5.48L58.45,77.71l-9.04-6.12h0Z"/>
+  </g>
+  <path class="cls-4" d="M108.34,191.08l5.4,13.49,15.56-.03s.67-10.69-9.22-13.86c-8.63-2.77-11.75,.4-11.75,.4Z"/>
+  <text class="cls-2" transform="translate(124.78 193.19)"><tspan x="0" y="0">&gt;90</tspan></text>
+  <text class="cls-2" transform="translate(152.27 187.87) scale(.58)"><tspan x="0" y="0">º</tspan></text>
+</svg>
