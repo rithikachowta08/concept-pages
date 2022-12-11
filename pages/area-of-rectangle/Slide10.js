@@ -8,7 +8,7 @@ const rectangle_cross = "assets/area-of-rectangle/s9_rectangle_cross_line.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s9_rectangle_bottom.svg";
 import { colors } from "utils/colors";
 
-const Slide10 = () => {
+const Slide10 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(e);
@@ -25,6 +25,9 @@ const Slide10 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
+         isLastSlide
       >
          <Title fontSize="2.2rem" fontWeight={700} marginBottom="16px" small>
             Find the area of a rectangle whose length and diagonal are 4 m and 5

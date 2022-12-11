@@ -1,26 +1,16 @@
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Title } from "components/text";
+import VideoSlide from "components/slides/VideoSlide";
 import React from "react";
-import { colors } from "utils/colors";
 
-const Slide6 = () => {
-  return (
-    <SlideWrap
-      paddingLeft={"200px"}
-      bg={"LIGHT"}>
-      <Flex alignItems="center">
-        <LeftWrap>
-          <Title
-            opacity={1}
-            marginBottom="16px"
-            color={colors.BLACK}
-            small>
-            Move the slider to create a triangle of area 15 unit2.
-          </Title>
-        </LeftWrap>
-      </Flex>
-    </SlideWrap>
-  );
+// Classification of triangles
+const Slide6 = ({ downIcon, navBar }) => {
+   return (
+      <VideoSlide
+         downIcon={downIcon}
+         navBar={navBar}
+         title="Classification of triangles"
+         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      />
+   );
 };
 
 export default Slide6;

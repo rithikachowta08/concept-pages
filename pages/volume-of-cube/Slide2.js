@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Paragraph, TextSpan } from "components/text";
+import { Paragraph, TextSpanBg } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide1/cube-1.png";
@@ -8,20 +8,10 @@ const cube_vertices = "assets/volume-of-cube/slide1/cube-3.png";
 const cube_edges = "assets/volume-of-cube/slide1/cube-4.png";
 import { colors } from "utils/colors";
 
-const Slide2 = () => {
+const Slide2 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
-   };
-   const onHover2 = (e) => {
-      setActiveIndex(2);
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
@@ -35,10 +25,12 @@ const Slide2 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Paragraph>
             A cube is a three-dimensional shape that has 6{" "}
-            <TextSpan
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -48,9 +40,9 @@ const Slide2 = () => {
                fontSize="2.2rem"
             >
                square faces
-            </TextSpan>
+            </TextSpanBg>
             , 8{" "}
-            <TextSpan
+            <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -60,9 +52,9 @@ const Slide2 = () => {
                fontSize="2.2rem"
             >
                vertices
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             and 12{" "}
-            <TextSpan
+            <TextSpanBg
                id={3}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -72,7 +64,7 @@ const Slide2 = () => {
                fontSize="2.2rem"
             >
                edges
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             of equal length
          </Paragraph>
       </TextAndDiagramSlide>

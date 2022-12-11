@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
   <defs>
     <style>
       .cls-1, .cls-2 {
@@ -10,40 +10,51 @@
         opacity: .7;
       }
 
-      .cls-4, .cls-5 {
-        fill: #fff;
-      }
-
-      .cls-6 {
+      .cls-4 {
         opacity: .2;
       }
 
-      .cls-5 {
-        opacity: .1;
+      .cls-5, .cls-6 {
+        fill: #333;
       }
 
-      .cls-7, .cls-8, .cls-9 {
+      .cls-7, .cls-8, .cls-9, .cls-10 {
         fill: none;
         stroke-miterlimit: 10;
       }
 
-      .cls-7, .cls-9 {
+      .cls-7, .cls-10 {
         stroke: #fff;
         stroke-width: 3px;
       }
 
-      .cls-2 {
+      .cls-11, .cls-12 {
+        fill: #4a33f5;
+      }
+
+      .cls-2, .cls-12 {
         font-family: Raleway-Medium, Raleway;
         font-size: 20px;
       }
 
       .cls-8 {
         stroke: #67dbe8;
+      }
+
+      .cls-8, .cls-9 {
         stroke-width: 2px;
       }
 
       .cls-9 {
+        stroke: #4a33f5;
+      }
+
+      .cls-10 {
         stroke-dasharray: 0 0 0 0 1.89 1.89 1.89 1.89;
+      }
+
+      .cls-6 {
+        opacity: .1;
       }
     </style>
   </defs>
@@ -51,18 +62,18 @@
     <g>
       <text class="cls-2" transform="translate(141.25 233.2)"><tspan x="0" y="0">b</tspan></text>
       <g>
-        <polygon class="cls-5" points="61.4 78.43 234.73 202.81 60.92 202.81 61.4 78.43"/>
-        <g class="cls-6">
-          <path class="cls-4" d="M61.4,78.43l173.33,124.38H60.92l.48-124.38m-2.98-5.83l-.02,5.82-.48,124.38v3.01s3,0,3,0H244.05l-7.58-5.44L63.15,75.99l-4.73-3.39h0Z"/>
+        <polygon class="cls-6" points="61.4 78.43 234.73 202.81 60.92 202.81 61.4 78.43"/>
+        <g class="cls-4">
+          <path class="cls-5" d="M61.4,78.43l173.33,124.38H60.92l.48-124.38m-2.98-5.83l-.02,5.82-.48,124.38v3.01s3,0,3,0H244.05l-7.58-5.44L63.15,75.99l-4.73-3.39h0Z"/>
         </g>
       </g>
     </g>
-    <g class="cls-6">
+    <g class="cls-4">
       <g>
         <line class="cls-7" x1="58.17" y1="188.16" x2="62.17" y2="188.16"/>
-        <line class="cls-9" x1="64.06" y1="188.16" x2="70.67" y2="188.16"/>
+        <line class="cls-10" x1="64.06" y1="188.16" x2="70.67" y2="188.16"/>
         <polyline class="cls-7" points="71.62 188.16 75.62 188.16 75.62 192.16"/>
-        <line class="cls-9" x1="75.62" y1="194.05" x2="75.62" y2="200.66"/>
+        <line class="cls-10" x1="75.62" y1="194.05" x2="75.62" y2="200.66"/>
         <line class="cls-7" x1="75.62" y1="201.61" x2="75.62" y2="205.61"/>
       </g>
     </g>
@@ -74,10 +85,10 @@
       <polygon class="cls-1" points="234.81 218.77 243.43 213.75 234.77 208.8 234.81 218.77"/>
     </g>
   </g>
-  <text class="cls-2" transform="translate(141.25 233.2)"><tspan x="0" y="0">b</tspan></text>
+  <text class="cls-12" transform="translate(141.25 233.2)"><tspan x="0" y="0">b</tspan></text>
   <g>
-    <line class="cls-8" x1="65.55" y1="214.35" x2="236.25" y2="213.78"/>
-    <polygon class="cls-1" points="67.02 219.33 58.37 214.37 66.99 209.36 67.02 219.33"/>
-    <polygon class="cls-1" points="234.81 218.77 243.43 213.75 234.77 208.8 234.81 218.77"/>
+    <line class="cls-9" x1="65.55" y1="214.35" x2="236.25" y2="213.78"/>
+    <polygon class="cls-11" points="67.02 219.33 58.37 214.37 66.99 209.36 67.02 219.33"/>
+    <polygon class="cls-11" points="234.81 218.77 243.43 213.75 234.77 208.8 234.81 218.77"/>
   </g>
 </svg>

@@ -13,7 +13,7 @@ const rectangle_cross = "assets/area-of-rectangle/s7_rectangle_right.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s7_rectangle_bottom.svg";
 import { colors } from "utils/colors";
 
-const Slide8 = () => {
+const Slide8 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(e);
@@ -30,6 +30,8 @@ const Slide8 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Title fontSize="2.2rem" fontWeight={700} marginBottom="16px" small>
             Find the area of a rectangle whose length and width are 3 m and 2 m,

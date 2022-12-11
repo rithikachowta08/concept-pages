@@ -9,6 +9,12 @@ const H1 = styled.h1`
    font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.H1)};
    margin: 0;
    margin-bottom: ${(props) => props.marginBottom || 0};
+   text-align: ${(props) => props.textAlign};
+
+   @media (min-width: 200px) and (max-width: 768px) {
+      font-size: ${(props) =>
+         props.fontSize ? props.fontSize : fontSizes.SMALLSCREEN_H1};
+   }
 `;
 
 const H2 = styled.h2`
@@ -20,6 +26,7 @@ const H2 = styled.h2`
    font-size: ${(props) =>
       props.fontSize ? props.fontSize : fontSizes.MEDIUM};
    margin: 0;
+   text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
 `;
 
@@ -32,6 +39,7 @@ const Title = ({
    opacity,
    color,
    small,
+   textAlign,
 }) => {
    const HeadingElement = small ? H2 : H1;
    return (
@@ -41,6 +49,7 @@ const Title = ({
          fontSize={fontSize}
          fontWeight={fontWeight}
          padding={padding}
+         textAlign={textAlign}
          color={color}
       >
          {children}

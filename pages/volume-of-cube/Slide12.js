@@ -1,6 +1,6 @@
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpan, Title, Paragraph } from "components/text";
-import { useState, useEffect } from "react";
+import { TextSpanBg, Paragraph } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide13/cube-1.png";
@@ -8,34 +8,15 @@ const cube_f = "assets/volume-of-cube/slide12/cube-2.png";
 const cube_s = "assets/volume-of-cube/slide12/cube-3.png";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
-const Slide12 = () => {
-   const [activeIndex, setActiveIndex] = useState(0);
-   const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);
 
+const Slide12 = ({ downIcon, navBar }) => {
+   const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   const onHoverHypotenuse = (e) => {
-      setActiveIndex(2);
-   };
-   const onHoverOutHypotenuse = (e) => {
-      setActiveIndex(0);
-   };
-   // useEffect(() => {
-   //   let latex = [];
-   //   latex.push(`= \\sqrt{2} \\times {\\frac{f}{4}}^3`);
-   //   latex.push(`= \\sqrt{2}`);
-
-   //   // const getMathJax = async () => {
-   //   //   const resp = await fetchData(latex);
-   //   //   setMathjaxRespStrings(resp.title);
-   //   // };
-   //   // getMathJax();
-   //   setMathjaxRespStrings(latex);
-   // }, []);
    let latex = [];
    latex.push(`= \\sqrt{2} \\times {\\frac{f}{4}}^3`);
    latex.push(`= \\sqrt{2}`);
@@ -44,6 +25,8 @@ const Slide12 = () => {
       <TextAndDiagramSlide
          title="Diagonal of a Face"
          secondaryTitle="Volume of a Cube using Diagonal"
+         downIcon={downIcon}
+         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_f, cube_s]}
@@ -51,24 +34,19 @@ const Slide12 = () => {
             />
          }
       >
-         <Paragraph
-            marginBottom="2vh"
-            // color={colors.WHITE}
-         >
+         <Paragraph marginBottom="2vh">
             Given the{" "}
-            <TextSpan
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               // textDecoration="underline"
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
                fontSize="2.2rem"
-               // color={colors.RED}
             >
                diagonal length
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             of a face of a cube:
          </Paragraph>
          <Pill
@@ -82,24 +60,20 @@ const Slide12 = () => {
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
             cubic units
          </Pill>
-         <Paragraph
-            marginTop="410px"
-            // color={colors.WHITE}
-         >
+         <Paragraph>
             Here, f{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpan
+            <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               // textDecoration="underline"
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
                fontSize="2.2rem"
                color={colors.RED}
             >
                s
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             cubic units
          </Paragraph>
       </TextAndDiagramSlide>

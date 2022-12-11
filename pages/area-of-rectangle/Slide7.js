@@ -11,7 +11,7 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 
-const Slide8 = () => {
+const Slide8 = ({ downIcon, navBar }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="40px" fontSize="1.22rem">
@@ -58,6 +58,8 @@ const Slide8 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
          bg="DARK"
          secondaryTitle="Area of Rectangle"
          title="General Formula"

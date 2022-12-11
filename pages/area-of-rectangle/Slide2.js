@@ -7,7 +7,7 @@ const rectangle_sides = "assets/area-of-rectangle/rectangle_sides.svg";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { colors } from "utils/colors";
 
-const Slide2 = () => {
+const Slide2 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(e);
@@ -24,6 +24,8 @@ const Slide2 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Paragraph>
             A rectangle is a four-sided polygon with&nbsp;

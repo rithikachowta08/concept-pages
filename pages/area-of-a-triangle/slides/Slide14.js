@@ -1,81 +1,129 @@
-import React, { useState } from "react";
-
-import {
-   Flex,
-   LeftWrap,
-   SlideWrap,
-   StyledImg,
-} from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
-import { colors } from "utils/colors";
-import Pill from "components/Pill";
-
-const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
-const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
+import MathElement from "components/MathElement";
 import TransitionImage from "components/media/TransitionImage";
+import Pill from "components/Pill";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
+import { Paragraph, TextSpan, Title } from "components/text";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import React, { useState } from "react";
+import { colors } from "utils/colors";
+import { fontSizes } from "utils/fontStyles";
 
-// Two sides and included angle
-const Slide14 = () => {
+const image_1 = "assets/area-of-triangle/isos_deri_1.svg";
+const image_2 = "assets/area-of-triangle/isos_deri_2.svg";
+
+// Derivation of isosceles triangle
+const Slide14 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <SlideWrap paddingLeft={"160px"} bg={"DARK"}>
-         <Flex alignItems="center">
-            <LeftWrap>
-               <Title
-                  opacity={0.5}
-                  marginBottom="16px"
-                  color={colors.WHITE}
-                  small
-               >
-                  Area of a triangle
-               </Title>
-               <Title
-                  marginBottom="70px"
-                  color={colors.WHITE}
-                  fontWeight={400}
-                  fontSize="2.5rem"
-               >
-                  Two sides and the included angle
-               </Title>
-               <Paragraph
-                  color={colors.WHITE}
-                  marginBottom="50px"
-                  fontSize={"2rem"}
-               >
-                  Given any{" "}
-                  <TextSpan
-                     color={colors.WHITE}
-                     bgColor={colors.RED}
-                     hoverBgColor={colors.DARK_BLUE}
-                     fontSize={"2rem"}
-                     onHover={() => setActiveIndex(1)}
-                     onHoverOut={() => setActiveIndex(0)}
-                  >
-                     {" "}
-                     two sides of the triangle and the included angle between
-                     them,
-                  </TextSpan>{" "}
-                  its area can be calculated as:
-               </Paragraph>
-               <Pill
-                  width="fit-content"
-                  fontSize="1.8rem"
-                  bgColor={colors.GREEN}
-                  color={colors.WHITE}
-               >
-                  Area = 1/2 bc Sin A = 1/2 ca Sin B = 1/2 ab Sinc C
-               </Pill>
-            </LeftWrap>
+      <TextAndDiagramSlide
+         title={"Derivation"}
+         secondaryTitle={"Area of an Isosceles triangle"}
+         bg={"LIGHT"}
+         diagram={
             <LeftWrap>
                <TransitionImage
-                  images={[area_triangle_snt, area_triangle_snt_2]}
+                  images={[image_1, image_2]}
                   activeIndex={activeIndex}
-                  bottomOffset="65px"
                />
             </LeftWrap>
+         }
+         mobileLayoutGap="0px"
+         downIcon={downIcon}
+         navBar={navBar}
+      >
+         <Paragraph
+            color={colors.BLACK}
+            marginBottom={isMobile ? "0px" : "20px"}
+            margin="0px"
+            fontSize={fontSizes.MEDIUM}
+         >
+            <Paragraph
+               marginBottom={"5px"}
+               margin="0px"
+               fontSize={fontSizes.MEDIUM}
+            >
+               Apply the Pythagoras Theorem in the{" "}
+               <TextSpan
+                  bgColor={colors.RED}
+                  color={colors.WHITE}
+                  hoverBgColor={colors.DARK_BLUE}
+                  onHover={() => {
+                     setActiveIndex(1);
+                  }}
+                  onHoverOut={() => {
+                     setActiveIndex(0);
+                  }}
+               >
+                  triangle
+               </TextSpan>
+               .
+            </Paragraph>
+            <Flex direction="column" height="fit-content" padding="0 0 0 2rem">
+               <TextSpan marginBottom={"10px"} fontSize={fontSizes.MEDIUM}>
+                  <MathElement htmlString={"a^2 = h^2 + (\\frac{b}{2})^2"} />
+               </TextSpan>
+               <TextSpan marginBottom={"10px"} fontSize={fontSizes.MEDIUM}>
+                  <MathElement htmlString={"h^2 = a^2 - (\\frac{b^2}{4})"} />
+               </TextSpan>
+               <TextSpan marginBottom={"10px"}>
+                  <MathElement
+                     htmlString={"h = \\sqrt{a^2 - (\\frac{b}{2})^2}"}
+                  />
+               </TextSpan>
+            </Flex>
+         </Paragraph>
+         <Flex>
+            <Paragraph margin={"0"}>
+               <Paragraph
+                  fontSize={fontSizes.MEDIUM}
+                  marginBottom={isMobile ? "16px" : "25px"}
+               >
+                  Area of triangle{" "}
+               </Paragraph>
+               <Paragraph textAlign={"right"} fontSize={fontSizes.MEDIUM}>
+                  A
+               </Paragraph>
+            </Paragraph>
+            <Paragraph margin={"0"}>
+               <Paragraph fontSize={fontSizes.MEDIUM}>
+                  <MathElement
+                     htmlString={
+                        "\\ = \\frac{1}{2} \\times Base \\times Height"
+                     }
+                  />
+               </Paragraph>
+               <Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
+                  <MathElement
+                     htmlString={
+                        "\\ = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
+                     }
+                  />
+               </Paragraph>
+            </Paragraph>
          </Flex>
-      </SlideWrap>
+         {/* <Paragraph fontSize={fontSizes.MEDIUM}>
+				Area of triangle ={" "}
+				<MathElement htmlString={"\\frac{1}{2} \\times Base \\times Height"} />
+			</Paragraph>
+			<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
+				<MathElement
+					htmlString={
+						"A = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
+					}
+				/>
+			</Paragraph> */}
+         <Pill
+            width="fit-content"
+            fontSize="1.8rem"
+            bgColor={colors.GREEN}
+            color={colors.WHITE}
+         >
+            Area of an isosceles triangle =
+            <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+         </Pill>
+      </TextAndDiagramSlide>
    );
 };
 

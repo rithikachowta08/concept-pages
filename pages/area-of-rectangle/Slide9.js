@@ -13,7 +13,7 @@ const rectangle_diagonal = "assets/area-of-rectangle/s8_rectangle_diagonal.svg";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { colors } from "utils/colors";
 
-const Slide10 = () => {
+const Slide10 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(1);
@@ -31,6 +31,8 @@ const Slide10 = () => {
          }
          bg="DARK"
          title="Area Using Diagonal"
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Paragraph marginBottom="20px" color="white">
             The length of a{" "}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Bold, Raleway;
+        font-size: 16px;
+      }
+
+      .cls-4 {
+        fill: #e96560;
+        opacity: .7;
+      }
+    </style>
+  </defs>
+  <path class="cls-3" d="M-180.8,32.5L-7.47,156.88H-181.27l.48-124.38m-2.98-5.83l-.02,5.82-.48,124.38v3.01s3,0,3,0H1.86l-7.58-5.44L-179.05,30.06l-4.73-3.39h0Z"/>
+  <g>
+    <g>
+      <g>
+        <polygon class="cls-1" points="61.4 78.43 234.73 202.81 60.92 202.81 61.4 78.43"/>
+        <path class="cls-3" d="M61.4,78.43l173.33,124.38H60.92l.48-124.38m-2.98-5.83l-.02,5.82-.48,124.38v3.01s3,0,3,0H244.05l-7.58-5.44L63.15,75.99l-4.73-3.39h0Z"/>
+      </g>
+      <polygon class="cls-4" points="58.17 188.16 75.62 188.16 75.62 205.61 59.9 205.61 58.17 188.16"/>
+    </g>
+    <text class="cls-2" transform="translate(80.34 190.69)"><tspan x="0" y="0">90º</tspan></text>
+  </g>
+</svg>

@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useDeviceType } from "hooks/useDeviceType";
 import ReactFullpage from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
 import PropTypes from "prop-types";
 import { colors } from "utils/colors";
-import styles from "./FullPageCustomWrapperStyles.module.scss";
-
-const PageWrap = styled.div`
-   height: 100%;
-   width: 100%;
-`;
 
 let fullPage;
 
@@ -22,7 +15,6 @@ export const FullPageCustomWrapper = ({
 }) => {
    const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
-   console.log(styles.downArrowIcon);
    return (
       <>
          <ReactFullpage
@@ -41,38 +33,38 @@ export const FullPageCustomWrapper = ({
                return (
                   <>
                      <ReactFullpage.Wrapper>
-                        {slidesComponentList.map((itm, idx) => (
-                           <div className="section" key={idx}>
-                              {/* No navigation bar on title page */}
-                              {idx ? (
-                                 <NavigationBar
-                                    deviceType={deviceType}
-                                    sections={navigationSections}
-                                    darkTheme={darkBgIndices.includes(idx)}
-                                    moveTo={moveToSection}
-                                    currentPageIdx={currentPageIdx}
-                                 />
-                              ) : null}
-                              <PageWrap>
-                                 {React.cloneElement(itm, { moveToSection })}
-                              </PageWrap>
-                              {idx === slidesComponentList.length - 1 ? null : (
-                                 <div
+                        {slidesComponentList.map((itm, idx) => {
+                           const navBar = idx ? (
+                              <NavigationBar
+                                 deviceType={deviceType}
+                                 sections={navigationSections}
+                                 darkTheme={darkBgIndices.includes(idx)}
+                                 moveTo={moveToSection}
+                                 currentPageIdx={currentPageIdx}
+                              />
+                           ) : null;
+                           const downIcon =
+                              idx === slidesComponentList.length - 1 ? null : (
+                                 <DownArrowIcon
                                     onClick={fullpageApi?.moveSectionDown}
-                                    style={{ cursor: "pointer" }}
-                                 >
-                                    <DownArrowIcon
-                                       color={
-                                          darkBgIndices.includes(idx)
-                                             ? colors.WHITE
-                                             : colors.DARK_GREY
-                                       }
-                                       className={styles.downArrowIcon}
-                                    />
-                                 </div>
-                              )}
-                           </div>
-                        ))}
+                                    color={
+                                       darkBgIndices.includes(idx)
+                                          ? colors.WHITE
+                                          : colors.DARK_GREY
+                                    }
+                                 />
+                              );
+                           return (
+                              <div className="section" key={idx}>
+                                 {/* No navigation bar on title page */}
+                                 {React.cloneElement(itm, {
+                                    downIcon,
+                                    navBar,
+                                    moveToSection,
+                                 })}
+                              </div>
+                           );
+                        })}
                      </ReactFullpage.Wrapper>
                   </>
                );

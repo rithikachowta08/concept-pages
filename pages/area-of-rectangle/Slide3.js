@@ -9,10 +9,10 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
 
-const Slide3 = () => {
+const Slide3 = ({ downIcon, navBar }) => {
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" fontSize="1.5rem" marginBottom="50px">
+         <Paragraph color="white" fontSize="1.5rem">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
          <StyledImg src={unit_square} />
@@ -41,6 +41,8 @@ const Slide3 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Modal
             isOpen={isModalOpen}

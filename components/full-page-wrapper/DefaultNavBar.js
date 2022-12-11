@@ -8,6 +8,9 @@ const left_caret_dark = "assets/left_caret.svg";
 const left_caret_light = "assets/left_caret_light.svg";
 
 const NavWrap = styled.div`
+   background: rgba(231, 228, 248, 0.4);
+   backdrop-filter: ${(props) =>
+      props.isExpanded ? "blur(15px)" : "blur(38px)"};
    padding: 70px 30px;
    border: ${(props) =>
       props.darkTheme ? "none" : `1px solid ${colors.PURPLE}`};
@@ -17,6 +20,9 @@ const NavWrap = styled.div`
    justify-content: center;
    align-items: flex-start;
    cursor: pointer;
+   grid-row-start: 1;
+   grid-column-start: 1;
+   width: ${(props) => (props.isExpanded ? "400px" : "100%")};
 `;
 
 const SectionIndicator = styled.div`
@@ -48,7 +54,7 @@ const SectionIndicator = styled.div`
 
 const Connector = styled.div`
    width: 4px;
-   height: 50px;
+   height: 60px;
    background: ${(props) =>
       props.darkTheme
          ? `rgba(255, 255, 255, ${props.isComplete ? 1 : 0.3})`
@@ -116,6 +122,7 @@ const DefaultNavBar = ({
                      key={section.title}
                      alignItems="center"
                      cursor="pointer"
+                     height="14px"
                      // moveTo expects slide indices to start from 1
                      data-section-idx={section.slides[0] + 1}
                      onClick={onSectionClick}

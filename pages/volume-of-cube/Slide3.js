@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Icon, Flex, StyledImg } from "components/StyledElements";
-import { Title, Paragraph, TextSpan } from "components/text";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import { Flex, StyledImg } from "components/StyledElements";
+import { Paragraph, TextSpanBg, TextSpan } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
@@ -10,10 +9,9 @@ const cube_spaces = "assets/volume-of-cube/slide2/cube-2.png";
 const cube_unit = "assets/volume-of-cube/slide2/cube-3.png";
 import { colors } from "utils/colors";
 
-const Slide3 = () => {
+const Slide3 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
@@ -37,12 +35,13 @@ const Slide3 = () => {
    };
    return (
       <TextAndDiagramSlide
-         title=" What is the volume of a cube?"
+         downIcon={downIcon}
+         navBar={navBar}
+         title="What is the volume of a cube?"
          diagram={
             <TransitionImage
                images={[cube_red, cube_spaces]}
                activeIndex={activeIndex}
-               bottomOffset="65px"
             />
          }
       >
@@ -54,7 +53,7 @@ const Slide3 = () => {
          />
          <Paragraph marginBottom="70px">
             The volume of a cube is the{" "}
-            <TextSpan
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -64,11 +63,10 @@ const Slide3 = () => {
                fontSize="2.2rem"
             >
                space
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             occupied by it. It is also the total number of{" "}
             <TextSpan
                id={2}
-               // onHover={onHover}
                onHoverOut={onHoverOut}
                color={colors.BLACK}
                hoverColor={colors.DARK_BLUE}

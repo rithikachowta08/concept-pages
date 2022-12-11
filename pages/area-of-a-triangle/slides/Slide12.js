@@ -1,93 +1,22 @@
-import React, { useState } from "react";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import { StyledImg } from "components/StyledElements";
+import React from "react";
 
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
-import { colors } from "utils/colors";
-import Pill from "components/Pill";
-import TransitionImage from "components/media/TransitionImage";
+const image_1 = "assets/area-of-triangle/ex_1.svg";
 
-const image_1 = "assets/area-of-triangle/slide_12.svg";
-const image_2 = "assets/area-of-triangle/slide_12_2.svg";
-const image_3 = "assets/area-of-triangle/slide_12_3.svg";
-
-// Isosceles triangle
-const Slide12 = () => {
-   const [activeIndex, setActiveIndex] = useState(0);
-
+// Area of triangle exercise
+const Slide12 = ({ downIcon, navBar }) => {
    return (
-      <SlideWrap paddingLeft={"160px"} bg={"LIGHT"}>
-         <Flex alignItems="center">
-            <LeftWrap>
-               <Title
-                  opacity={0.5}
-                  marginBottom="16px"
-                  color={colors.BLACK}
-                  small
-               >
-                  Area of different types of triangle
-               </Title>
-               <Title
-                  marginBottom="70px"
-                  color={colors.BLACK}
-                  fontWeight={400}
-                  fontSize="2.5rem"
-               >
-                  Isosceles triangle
-               </Title>
-               <Paragraph color={colors.BLACK} marginBottom="50px">
-                  Given the length of the
-                  <TextSpan
-                     fontSize={"2.2rem"}
-                     fontWeight={"500"}
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => {
-                        setActiveIndex(1);
-                     }}
-                     onHoverOut={() => {
-                        setActiveIndex(0);
-                     }}
-                  >
-                     {" "}
-                     base &apos;b&apos;{" "}
-                  </TextSpan>
-                  and the
-                  <TextSpan
-                     fontSize={"2.2rem"}
-                     fontWeight={"500"}
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => {
-                        setActiveIndex(2);
-                     }}
-                     onHoverOut={() => {
-                        setActiveIndex(0);
-                     }}
-                  >
-                     {" "}
-                     equal sides &apos;a&apos;{" "}
-                  </TextSpan>
-                  , its area can be calculated as:
-               </Paragraph>
-               <Pill
-                  width="fit-content"
-                  fontSize="1.8rem"
-                  bgColor={colors.GREEN}
-                  color={colors.WHITE}
-               >
-                  Area of an isosceles triangle = 1/4 b √4a<sup>2</sup> - b
-                  <sup>2</sup>
-               </Pill>
-            </LeftWrap>
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2, image_3]}
-                  activeIndex={activeIndex}
-                  bottomOffset="65px"
-               />
-            </LeftWrap>
-         </Flex>
-      </SlideWrap>
+      <TextAndAppletSlide
+         secondaryTitle={
+            "Find the area of a triangle with the given dimensions."
+         }
+         bg={"LIGHT"}
+         downIcon={downIcon}
+         navBar={navBar}
+      >
+         <StyledImg src={image_1} />
+      </TextAndAppletSlide>
    );
 };
 

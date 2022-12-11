@@ -5,49 +5,105 @@ import { Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
-const TextAndDiagramSlide = ({ title, bg = "LIGHT", gap, secondaryTitle, children, diagram }) => {
-  const deviceType = useDeviceType();
-  return (
-    <SlideWrap bg={bg}>
+const TextAndDiagramSlide = ({
+   title,
+   bg = "LIGHT",
+   mobileLayoutGap = "30px",
+   isLastSlide,
+   secondaryTitle,
+   children,
+   downIcon,
+   navBar,
+   diagram,
+}) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const secondaryTitleElem = secondaryTitle ? (
+      <Title
+         opacity={0.5}
+         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+         textAlign={isMobile ? "center" : "left"}
+         marginBottom="1vh"
+         small
+      >
+         {secondaryTitle}
+      </Title>
+   ) : null;
+   const titleElem = (
+      <Title
+         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+         fontSize={fontSizes.H2}
+         fontWeight={fontWeights.BOLD}
+         textAlign={isMobile ? "center" : "left"}
+         marginBottom="1vh"
+         small
+      >
+         {title}
+      </Title>
+   );
+   const content = isMobile ? (
       <Flex
-        height="100%"
-        direction={deviceType === DEVICE_TYPES.MOBILE ? "column" : "row"}
-        gap={deviceType === DEVICE_TYPES.MOBILE ? gap : "none"}
-        justifyContent={"space-between"}
-        alignItems="center">
-        <LeftWrap>
-          {secondaryTitle ? (
-            <Title
-              opacity={0.5}
-              color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-              marginBottom="1vh"
-              small>
-              {secondaryTitle}
-            </Title>
-          ) : null}
-          <Title
-            color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-            fontSize={fontSizes.H2}
-            fontWeight={fontWeights.BOLD}
-            marginBottom="1vh"
-            small>
-            {title}
-          </Title>
-          {children}
-        </LeftWrap>
-        {diagram}
+         width="100%"
+         alignItems="center"
+         direction={isMobile ? "column-reverse" : "row"}
+      >
+         <div>{children}</div>
+         {diagram}
       </Flex>
-    </SlideWrap>
-  );
+   ) : (
+      <>
+         <LeftWrap>
+            {secondaryTitleElem}
+            {titleElem}
+            {children}
+         </LeftWrap>
+         {diagram}
+      </>
+   );
+   return (
+      <SlideWrap
+         bg={bg}
+         padding={isMobile ? "0 0 20px 0" : "20px"}
+         isLastSlide={isLastSlide}
+      >
+         <Flex
+            alignItems="center"
+            justifyContent={isMobile ? "flex-start" : "center"}
+            height={isMobile ? "70%" : "auto"}
+            width="100%"
+            gap={isMobile ? "10px" : "60px"}
+            direction={isMobile ? "column" : "row"}
+         >
+            {navBar}
+            <Flex
+               padding="0 20px"
+               direction={isMobile ? "column" : "row"}
+               gap={isMobile ? mobileLayoutGap : "10px"}
+               margin={isMobile ? "auto 0" : "0"}
+               justifyContent="space-evenly"
+               flex={2}
+               width="100%"
+               alignItems="center"
+            >
+               {isMobile ? (
+                  <Flex direction="column" alignItems="center">
+                     {secondaryTitleElem}
+                     {titleElem}
+                  </Flex>
+               ) : null}
+               {content}
+            </Flex>
+         </Flex>
+         {downIcon}
+      </SlideWrap>
+   );
 };
 
 TextAndDiagramSlide.propTypes = {
-  title: PropTypes.string.isRequired,
-  bg: PropTypes.string,
-  secondaryTitle: PropTypes.string,
-  gap: PropTypes.string,
-  diagram: PropTypes.node.isRequired,
-  children: PropTypes.node.isRequired
+   title: PropTypes.string.isRequired,
+   bg: PropTypes.string,
+   secondaryTitle: PropTypes.string,
+   diagram: PropTypes.node.isRequired,
+   children: PropTypes.node.isRequired,
 };
 
 export default TextAndDiagramSlide;

@@ -13,8 +13,13 @@ const MobileNavWrap = styled.div`
    flex-direction: column;
    gap: 10px;
    justify-content: center;
+   background: rgba(231, 228, 248, 0.4);
+   backdrop-filter: ${(props) =>
+      props.isExpanded ? "blur(15px)" : "blur(38px)"};
    border-radius: ${(props) =>
       props.isExpanded ? "0px 0px 15px 15px" : "0px"};
+   grid-row-start: 1;
+   grid-column-start: 1;
 `;
 
 const SectionBar = styled.div`
@@ -56,7 +61,7 @@ const SectionIndicator = styled.div`
 
 const BarFill = styled.div`
    height: 0px;
-   width: ${(props) => props.percentage}%;
+   width: ${(props) => (props.percentage === 100 ? 105 : props.percentage)}%;
    border: ${(props) =>
       props.percentage
          ? `2px solid ${props.darkTheme ? colors.WHITE : colors.PURPLE}`
@@ -123,32 +128,27 @@ const MobileNavBar = ({
                onClick={toggleNav}
             />
          </Flex>
-         {isExpanded ? null : (
-            <Flex justifyContent="space-between">
-               {sections.map((section, idx) => {
-                  let percentage = 0;
-                  const slides = section.slides;
-                  if (currentPageIdx >= slides[slides.length - 1]) {
-                     percentage = 100;
-                  } else if (slides.includes(currentPageIdx)) {
-                     const slideIdx = slides.indexOf(currentPageIdx);
-                     percentage = ((slideIdx + 1) / slides.length) * 100;
-                  }
-                  return (
-                     <SectionBar
-                        darkTheme={darkTheme}
-                        flex={95 / sections.length / 100}
-                        key={idx}
-                     >
-                        <BarFill
-                           darkTheme={darkTheme}
-                           percentage={percentage}
-                        />
-                     </SectionBar>
-                  );
-               })}
-            </Flex>
-         )}
+         <Flex justifyContent="space-between">
+            {sections.map((section, idx) => {
+               let percentage = 0;
+               const slides = section.slides;
+               if (currentPageIdx >= slides[slides.length - 1]) {
+                  percentage = 100;
+               } else if (slides.includes(currentPageIdx)) {
+                  const slideIdx = slides.indexOf(currentPageIdx);
+                  percentage = ((slideIdx + 1) / slides.length) * 100;
+               }
+               return (
+                  <SectionBar
+                     darkTheme={darkTheme}
+                     flex={95 / sections.length / 100}
+                     key={idx}
+                  >
+                     <BarFill darkTheme={darkTheme} percentage={percentage} />
+                  </SectionBar>
+               );
+            })}
+         </Flex>
       </MobileNavWrap>
    );
 };

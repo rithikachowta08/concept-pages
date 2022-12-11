@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { PropTypes } from "prop-types";
 
 const Img = styled.img`
@@ -7,6 +6,25 @@ const Img = styled.img`
    grid-row-start: 1;
    grid-column-start: 1;
    transition: opacity 0.2s;
+   width: ${(props) => props.width || "550px"};
+   height: ${(props) => props.width || "550px"};
+
+   @media only screen and (min-width: 200px) and (max-width: 768px) {
+      width: ${(props) => props.mobileSize || "250px"};
+      height: ${(props) => props.mobileSize || "250px"};
+   }
+   @media only screen and (min-width: 768px) and (max-width: 992px) {
+      width: ${(props) => props.tabletSize || "350px"};
+      height: ${(props) => props.tabletSize || "350px"};
+   }
+   @media only screen and (min-height: 300px) and (max-height: 600px) and (min-width: 700px) {
+      width: ${(props) => props.mobileSize || "250px"};
+      height: ${(props) => props.mobileSize || "250px"};
+   }
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+      width: ${(props) => props.tabletSize || "350px"};
+      height: ${(props) => props.tabletSize || "350px"};
+   }
 `;
 
 const ImgContainer = styled.div`
@@ -14,30 +32,31 @@ const ImgContainer = styled.div`
    grid-template-columns: 1fr;
    position: relative;
    bottom: ${(props) => props.bottomOffset || "0"};
-   scale: ${(props) => (props.isMobile ? 0.5 : 1)};
-   transform: ${(props) => (props.isMobile ? "translateY(-50%)" : "none")};
    margin-right: ${(props) => props.marginRight};
+   justify-items: center;
 `;
 
 const TransitionImage = ({
    images,
-   bottomOffset,
    marginRight,
    activeIndex,
+   width,
+   defaultSize,
+   tabletSize,
+   mobileSize,
 }) => {
-   const deviceType = useDeviceType();
    return (
-      <ImgContainer
-         isMobile={deviceType === DEVICE_TYPES.MOBILE}
-         bottomOffset={bottomOffset}
-         marginRight={marginRight}
-      >
+      <ImgContainer marginRight={marginRight}>
          {images.map((image, index) => (
             <Img
                key={index}
                src={image}
                index={index}
+               width={width}
                activeIndex={activeIndex}
+               mobileSize={mobileSize}
+               defaultSize={defaultSize}
+               tabletSize={tabletSize}
                alt="image"
             ></Img>
          ))}
@@ -48,7 +67,7 @@ const TransitionImage = ({
 TransitionImage.propTypes = {
    images: PropTypes.array.isRequired,
    activeIndex: PropTypes.number,
-   bottomOffset: PropTypes.string,
+   mobileSize: PropTypes.string,
    marginRight: PropTypes.string,
 };
 

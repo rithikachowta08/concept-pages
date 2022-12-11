@@ -15,11 +15,11 @@ const Overlay = styled.div`
    left: 0;
    visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
    transition: all 0.5s;
-   z-index: 1;
+   z-index: 7;
 `;
 
 const ModalBody = styled.div`
-   width: 30%;
+   width: 40vw;
    height: 100%;
    position: absolute;
    bottom: 0;
@@ -41,8 +41,8 @@ const ModalBody = styled.div`
          props.isOpen ? "translateY(0px)" : "translateY(999px)"};
    }
 
-   @media only screen and (min-width: 768px) and (max-width: 992px) {
-      width: 50%;
+   @media only screen and (min-width: 768px) and (max-width: 1284px) {
+      width: 50vw;
    }
 `;
 

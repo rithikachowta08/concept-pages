@@ -1,74 +1,66 @@
 import React from "react";
-import {
-   Flex,
-   LeftWrap,
-   SlideWrap,
-   StyledImg,
-} from "components/StyledElements";
-import { Paragraph, Title } from "components/text";
+
+import { Paragraph, TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
+import MathElement from "components/MathElement";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import { fontSizes } from "utils/fontStyles";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
-const area_triangle_heron = "assets/area-of-triangle/slide_7.svg";
+const applet = "applets/triangle.html";
 
-const Slide7 = () => {
+// General formula derivation
+const Slide7 = ({ downIcon, navBar }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <SlideWrap bg={"DARK"} paddingLeft="200px">
-         <Flex alignItems="center">
-            <LeftWrap>
-               <Title
-                  opacity={0.5}
-                  marginBottom="16px"
-                  color={colors.WHITE}
-                  small
-               >
-                  Area of a Triangle
-               </Title>
-               <Title
-                  opacity={1}
-                  marginBottom="16px"
-                  fontSize={"2.2rem"}
-                  fontWeight="600"
-                  color={colors.WHITE}
-               >
-                  Heron&apos;s formula
-               </Title>
-               <Paragraph
-                  color={colors.WHITE}
-                  fontSize="1.8rem"
-                  marginBottom={"20px"}
-               >
-                  Given the lengths (a, b, c) of three sides of any triangle,
-                  area can be calculated as:
-               </Paragraph>
-               <Pill
-                  width="fit-content"
-                  bgColor={colors.GREEN}
-                  color={colors.WHITE}
-                  fontSize="1.8rem"
-               >
-                  Area of a triangle = √ s (s - a)(s - b)(s - c){" "}
-               </Pill>
-               <Paragraph
-                  color={colors.WHITE}
-                  fontSize="1.8rem"
-                  marginBottom={"20px"}
-               >
-                  Here, s is the semiperimeter of the triangle.
-               </Paragraph>
-               <Paragraph
-                  color={colors.WHITE}
-                  fontSize="1.8rem"
-                  marginBottom={"20px"}
-               >
-                  s = a + b + c / 2
-               </Paragraph>
-            </LeftWrap>
-            <LeftWrap>
-               <StyledImg src={area_triangle_heron} bottomOffset="65px" />
-            </LeftWrap>
-         </Flex>
-      </SlideWrap>
+      <TextAndAppletSlide
+         title={"Derivation"}
+         secondaryTitle={"Area of a triangle"}
+         bg={"LIGHT"}
+         paddingLeft="200px"
+         appletSrc={applet}
+         downIcon={downIcon}
+         navBar={navBar}
+      >
+         <Paragraph
+            color={colors.BLACK}
+            marginBottom={isMobile ? "20px" : "40px"}
+            fontSize={fontSizes.MEDIUM}
+         >
+            Two identical triangles combine to form a parallelogram.
+         </Paragraph>
+         <Paragraph
+            color={colors.BLACK}
+            marginBottom="10px"
+            fontSize={"1.4rem"}
+         >
+            {/* <TextSpan fontSize={"1.4rem"} color={colors.DARK_BLUE}> */}
+            Area of a parallelogram
+            {/* </TextSpan>{" "} */}= Base (b) × Height (h)
+         </Paragraph>
+         <Paragraph
+            color={colors.BLACK}
+            marginBottom={isMobile ? "30px" : "50px"}
+            fontSize={"1.4rem"}
+         >
+            Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> ×
+            Area of the parallelogram
+         </Paragraph>
+         <Pill width="fit-content" bgColor={colors.GREEN}>
+            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+               Area of the triangle ={" "}
+               <MathElement htmlString={"\\frac{1}{2}\\ \\times\\ "} />{" "}
+            </TextSpan>
+            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+               Base (b)
+            </TextSpan>
+            <TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
+               <MathElement htmlString={"\\ \\times\\ "} />
+               Height (h)
+            </TextSpan>
+         </Pill>
+      </TextAndAppletSlide>
    );
 };
 

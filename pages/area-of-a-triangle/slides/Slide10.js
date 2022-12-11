@@ -1,53 +1,37 @@
 import React, { useState } from "react";
 import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
-import { TextSpan, Title } from "components/text";
+import { Paragraph, Title } from "components/text";
+import { colors } from "utils/colors";
+import { fontSizes } from "utils/fontStyles";
+import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
 
 const image_1 = "assets/area-of-triangle/slide_10_e.svg";
 const image_2 = "assets/area-of-triangle/slide_10_i.svg";
 const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
-const Slide10 = () => {
+// Types of triangle
+const Slide10 = ({ downIcon, navBar }) => {
    return (
-      <SlideWrap bg={"DARK"} alignItems="center">
-         <Title
-            marginBottom="20px"
-            fontWeight={500}
-            fontSize="1.8rem"
-            opacity={0.5}
-            color="white"
-            small
-         >
-            Area of Different Types of Triangles
-         </Title>
-         <Title
-            marginBottom="50px"
-            fontWeight={700}
-            fontSize="2.5rem"
-            color="white"
-         >
-            Classified based on sides
-         </Title>
-         <Flex justifyContent="space-between" alignItems="center" width="70%">
-            <Flex direction="column">
-               <StyledImg src={image_1} />
-               <TextSpan color="white" fontWeight={400}>
-                  Equilateral Triangle
-               </TextSpan>
-            </Flex>
-            <Flex direction="column">
-               <StyledImg src={image_2} />
-               <TextSpan color="white" fontWeight={400}>
-                  Isosceles Triangle
-               </TextSpan>
-            </Flex>
-            <Flex direction="column">
-               <StyledImg src={image_3} />
-               <TextSpan color="white" fontWeight={400}>
-                  Scalene Triangle
-               </TextSpan>
-            </Flex>
-         </Flex>
-      </SlideWrap>
+      <MultipleDiagramSlide
+         bg={"DARK"}
+         title="Area of different types of triangles"
+         images={[
+            {
+               diagram: <StyledImg src={image_1} />,
+               caption: "Equilateral Triangle",
+            },
+            {
+               diagram: <StyledImg src={image_2} />,
+               caption: "Isosceles Triangle",
+            },
+            {
+               diagram: <StyledImg src={image_3} />,
+               caption: "Scalene Triangle",
+            },
+         ]}
+         downIcon={downIcon}
+         navBar={navBar}
+      ></MultipleDiagramSlide>
    );
 };
 

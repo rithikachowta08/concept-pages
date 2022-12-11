@@ -1,103 +1,64 @@
-import React, { useState } from "react";
-import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import React from "react";
+import {
+   Flex,
+   LeftWrap,
+   SlideWrap,
+   StyledImg,
+} from "components/StyledElements";
+import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
+import Pill from "components/Pill";
 
-const area_triangle_angles_1_1 = "assets/area-of-triangle/slide_9_1.svg";
-const area_triangle_angles_2_1 = "assets/area-of-triangle/slide_9_2.svg";
-const area_triangle_angles_3_1 = "assets/area-of-triangle/slide_9_3.svg";
-const area_triangle_angles_1_2 = "assets/area-of-triangle/slide_9_b_1.svg";
-const area_triangle_angles_2_2 = "assets/area-of-triangle/slide_9_b_2.svg";
-const area_triangle_angles_3_2 = "assets/area-of-triangle/slide_9_b_3.svg";
-const area_triangle_angles_1_3 = "assets/area-of-triangle/slide_9_p_1.svg";
-const area_triangle_angles_2_3 = "assets/area-of-triangle/slide_9_p_2.svg";
-const area_triangle_angles_3_3 = "assets/area-of-triangle/slide_9_p_3.svg";
+const area_triangle_heron = "assets/area-of-triangle/slide_7.svg";
+import MathElement from "components/MathElement";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import { fontSizes, fontWeights } from "utils/fontStyles";
 
-const Slide9 = () => {
-   const [activeIndex, setActiveIndex] = useState(0);
+// Heron's Formula
+const Slide9 = ({ downIcon, navBar }) => {
    return (
-      <SlideWrap bg={"DARK"} alignItems="center">
-         <Title
-            marginBottom="20px"
-            fontWeight={500}
-            fontSize="1.8rem"
-            opacity={0.5}
-            color="white"
-            small
+      <TextAndDiagramSlide
+         title={"Heron's formula"}
+         secondaryTitle={"Area of a Triangle"}
+         bg={"DARK"}
+         paddingLeft="200px"
+         diagram={<StyledImg src={area_triangle_heron} />}
+         downIcon={downIcon}
+         navBar={navBar}
+      >
+         <Paragraph
+            color={colors.WHITE}
+            fontSize={fontSizes.MEDIUM}
+            marginBottom={"20px"}
          >
-            Area of Different Types of Triangles
-         </Title>
-         <Title
-            marginBottom="50px"
-            fontWeight={700}
-            fontSize="2.5rem"
-            color="white"
-         >
-            Classified based on angles
-         </Title>
-         <Paragraph color={colors.WHITE}>
-            Area = 1/2 x{" "}
-            <TextSpan
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(1)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Base (b)
-            </TextSpan>{" "}
-            x{" "}
-            <TextSpan
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(2)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Height (h)
-            </TextSpan>
+            Given the lengths (a, b, c) of three sides of any triangle, area can
+            be calculated as:
          </Paragraph>
-         <Flex justifyContent="space-between" alignItems="center" width="70%">
-            <Flex direction="column">
-               <TransitionImage
-                  images={[
-                     area_triangle_angles_1_1,
-                     area_triangle_angles_1_2,
-                     area_triangle_angles_1_3,
-                  ]}
-                  activeIndex={activeIndex}
-               />
-               <TextSpan color="white" fontWeight={400}>
-                  Acute Angled Triangle
-               </TextSpan>
-            </Flex>
-            <Flex direction="column">
-               <TransitionImage
-                  images={[
-                     area_triangle_angles_2_1,
-                     area_triangle_angles_2_2,
-                     area_triangle_angles_2_3,
-                  ]}
-                  activeIndex={activeIndex}
-               />
-               <TextSpan color="white" fontWeight={400}>
-                  Right Angled Triangle
-               </TextSpan>
-            </Flex>
-            <Flex direction="column">
-               <TransitionImage
-                  images={[
-                     area_triangle_angles_3_1,
-                     area_triangle_angles_3_2,
-                     area_triangle_angles_3_3,
-                  ]}
-                  activeIndex={activeIndex}
-               />
-               <TextSpan color="white" fontWeight={400}>
-                  Obtuse Angled Triangle
-               </TextSpan>
-            </Flex>
-         </Flex>
-      </SlideWrap>
+         <Pill
+            width="fit-content"
+            bgColor={colors.GREEN}
+            color={colors.WHITE}
+            fontSize="1.8rem"
+         >
+            Area of a triangle ={" "}
+            <MathElement htmlString={"\\sqrt{s(s - a)(s - b)(s - c)}"} />{" "}
+         </Pill>
+         <Paragraph
+            color={colors.WHITE}
+            fontSize={fontSizes.MEDIUM}
+            marginBottom={"20px"}
+         >
+            Here, s is the semiperimeter of the triangle.
+         </Paragraph>
+         <Paragraph
+            color={colors.WHITE}
+            fontSize={fontSizes.LARGE}
+            fontWeight={fontWeights.BOLD}
+            marginBottom={"20px"}
+         >
+            <MathElement htmlString={"s = \\frac{a\\ +\\ b\\ + c}{2}"} />
+         </Paragraph>
+      </TextAndDiagramSlide>
    );
 };
 
