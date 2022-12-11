@@ -1,0 +1,320 @@
+{
+  "triangles/Slide1.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide1.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/1155.660de3913a172a34393a.js"
+    ]
+  },
+  "triangles/Slide10.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide10.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/1155.660de3913a172a34393a.js"
+    ]
+  },
+  "triangles/Slide11.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide11.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/1155.660de3913a172a34393a.js"
+    ]
+  },
+  "triangles/Slide12.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide12.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/1155.660de3913a172a34393a.js"
+    ]
+  },
+  "triangles/Slide13.js -> components/Pill": {
+    "id": 9627,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/9627.4e2f46d4125a428a657c.js"
+    ]
+  },
+  "triangles/Slide13.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide13.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide2.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide2.js -> components/layout/Modal": {
+    "id": 5758,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5758.c240549eb53945840be1.js"
+    ]
+  },
+  "triangles/Slide2.js -> components/media/TransitionImage": {
+    "id": 7916,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8164.3f548c283605d28f70b2.js"
+    ]
+  },
+  "triangles/Slide2.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide3.js -> components/StyledElements": {
+    "id": 6937,
+    "files": []
+  },
+  "triangles/Slide3.js -> components/layout/Modal": {
+    "id": 5758,
+    "files": [
+      "static/chunks/1918.3da9e0536adb9231c9c8.js"
+    ]
+  },
+  "triangles/Slide3.js -> components/text": {
+    "id": 5592,
+    "files": []
+  },
+  "triangles/Slide4.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide4.js -> components/media/TransitionImage": {
+    "id": 7916,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8164.3f548c283605d28f70b2.js"
+    ]
+  },
+  "triangles/Slide4.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide5.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide5.js -> components/media/TransitionImage": {
+    "id": 7916,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8164.3f548c283605d28f70b2.js"
+    ]
+  },
+  "triangles/Slide5.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide6.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide6.js -> components/media/TransitionImage": {
+    "id": 7916,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8164.3f548c283605d28f70b2.js"
+    ]
+  },
+  "triangles/Slide6.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide7.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide7.js -> components/media/TransitionImage": {
+    "id": 7916,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8164.3f548c283605d28f70b2.js"
+    ]
+  },
+  "triangles/Slide7.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/Slide8.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/8728.e97577a9cc6d82cae575.js"
+    ]
+  },
+  "triangles/Slide8.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/4931.c4909438708c600839af.js"
+    ]
+  },
+  "triangles/Slide9.js -> components/StyledElements": {
+    "id": 6937,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6937.d333f5d662f98d223347.js"
+    ]
+  },
+  "triangles/Slide9.js -> components/text": {
+    "id": 5592,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/5592.1b8817d7b5eb5cc8d947.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide1": {
+    "id": 2163,
+    "files": [
+      "static/chunks/2163.748e9deb2bf51f54b51b.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide10": {
+    "id": 6400,
+    "files": [
+      "static/chunks/6400.f787792164518058bd4b.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide11": {
+    "id": 8421,
+    "files": [
+      "static/chunks/8421.52a36388fa2cb21c02b7.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide12": {
+    "id": 5464,
+    "files": [
+      "static/chunks/5464.25b822294888b7c30aac.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide13": {
+    "id": 4189,
+    "files": [
+      "static/chunks/4189.67770647bdf8867dfbe7.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide2": {
+    "id": 7241,
+    "files": [
+      "static/chunks/7241.4960b27d9356ccb710e3.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide3": {
+    "id": 2150,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/2150.55da1abe70aeee23a014.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide4": {
+    "id": 4872,
+    "files": [
+      "static/chunks/4872.e64354bf158732ec2a1f.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide5": {
+    "id": 2675,
+    "files": [
+      "static/chunks/2675.26c98ca8adc991aac3dc.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide6": {
+    "id": 7004,
+    "files": [
+      "static/chunks/7004.1b19aeca5682d424e341.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide7": {
+    "id": 3878,
+    "files": [
+      "static/chunks/3878.fd1a6506b57d437080f6.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide8": {
+    "id": 8818,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/8818.b52ee04b10ce1f4e70d5.js"
+    ]
+  },
+  "triangles/index.js -> ./Slide9": {
+    "id": 8049,
+    "files": [
+      "static/chunks/8049.088ffec765c34f09afbd.js"
+    ]
+  },
+  "triangles/index.js -> components/full-page-wrapper/FullPageCustomWrapper": {
+    "id": 6204,
+    "files": [
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/7536-5d04033056f256982771.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/6204.ac58a4ae5178eddb4054.js"
+    ]
+  }
+}

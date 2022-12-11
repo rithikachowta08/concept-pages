@@ -1,0 +1,579 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/KjmHZMwLhl-8SzHCnO4eX/_buildManifest.js",
+    "static/KjmHZMwLhl-8SzHCnO4eX/_ssgManifest.js"
+  ],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/css/50d7462efd6b7a0a1194.css",
+      "static/chunks/pages/index-befa79a3d0ff7467ebdd.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/css/650ecbdb83bf990ccc66.css",
+      "static/chunks/pages/_app-0126ef79a6a94777b370.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/_error-03b271b409748e0f7dc7.js"
+    ],
+    "/area-of-a-triangle": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/7536-5d04033056f256982771.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle-98536dea2abc0eea7681.js"
+    ],
+    "/area-of-a-triangle/slides/Slide1": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide1-64ac35243ef7745c3870.js"
+    ],
+    "/area-of-a-triangle/slides/Slide10": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide10-88d3029d9b6d4eb16c80.js"
+    ],
+    "/area-of-a-triangle/slides/Slide11": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide11-7a31c53c1254cb2cb35f.js"
+    ],
+    "/area-of-a-triangle/slides/Slide12": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide12-340777663a3ab805b739.js"
+    ],
+    "/area-of-a-triangle/slides/Slide13": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide13-70a887e1c5f51e113f66.js"
+    ],
+    "/area-of-a-triangle/slides/Slide14": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide14-407d67c30ff1908a7926.js"
+    ],
+    "/area-of-a-triangle/slides/Slide15": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide15-c97f6cd91d74b29b479c.js"
+    ],
+    "/area-of-a-triangle/slides/Slide16": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide16-a169202a1a177a4510ca.js"
+    ],
+    "/area-of-a-triangle/slides/Slide17": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide17-9425e27047b53a1afddc.js"
+    ],
+    "/area-of-a-triangle/slides/Slide18": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide18-ddf16145f72ee916f433.js"
+    ],
+    "/area-of-a-triangle/slides/Slide19": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide19-b2db3e7dd5943359ead9.js"
+    ],
+    "/area-of-a-triangle/slides/Slide2": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide2-db9bde6d04b2d9d39263.js"
+    ],
+    "/area-of-a-triangle/slides/Slide20": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide20-0cc368a3e97e3801b5df.js"
+    ],
+    "/area-of-a-triangle/slides/Slide3": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide3-e79727b94e1974241730.js"
+    ],
+    "/area-of-a-triangle/slides/Slide4": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide4-920acace88745926d5f6.js"
+    ],
+    "/area-of-a-triangle/slides/Slide5": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide5-5d738c2a5cb06436d9d7.js"
+    ],
+    "/area-of-a-triangle/slides/Slide6": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide6-24ef19189230d13bf24d.js"
+    ],
+    "/area-of-a-triangle/slides/Slide7": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide7-cf0cb1016cdb4a215156.js"
+    ],
+    "/area-of-a-triangle/slides/Slide8": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide8-9cc7a37d91d7198bb04c.js"
+    ],
+    "/area-of-a-triangle/slides/Slide9": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-a-triangle/slides/Slide9-ecb393b533136c7fdb6a.js"
+    ],
+    "/area-of-a-triangle/slides/excess_1": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_1-c61cfbb08d9af9ac0c22.js"
+    ],
+    "/area-of-a-triangle/slides/excess_2": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_2-8fda342a446eee1557a4.js"
+    ],
+    "/area-of-a-triangle/slides/excess_3": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_3-9055ffc0b044e3e6aaf6.js"
+    ],
+    "/area-of-a-triangle/slides/excess_4": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_4-e947b659b40d558cd736.js"
+    ],
+    "/area-of-a-triangle/slides/excess_5": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_5-cbad55c7d12dfc450680.js"
+    ],
+    "/area-of-a-triangle/slides/excess_6": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-a-triangle/slides/excess_6-a196ea42e034ac88a6b9.js"
+    ],
+    "/area-of-rectangle": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/7536-5d04033056f256982771.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle-9b3088210f41f881085e.js"
+    ],
+    "/area-of-rectangle/Slide1": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/area-of-rectangle/Slide1-bfcd4f22b3e016364322.js"
+    ],
+    "/area-of-rectangle/Slide10": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide10-795a59d5c572a250f5e4.js"
+    ],
+    "/area-of-rectangle/Slide2": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide2-6f6e3ea868a2179fd2e3.js"
+    ],
+    "/area-of-rectangle/Slide3": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide3-b03d16e9b3932f36ff4e.js"
+    ],
+    "/area-of-rectangle/Slide4": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide4-1539cafc087d5a367043.js"
+    ],
+    "/area-of-rectangle/Slide5": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide5-5a353b91b2c1ede43a05.js"
+    ],
+    "/area-of-rectangle/Slide6": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide6-415348da0eeed8caf029.js"
+    ],
+    "/area-of-rectangle/Slide7": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide7-c951be7a2bdef8336b72.js"
+    ],
+    "/area-of-rectangle/Slide8": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide8-763906a8f432a2a8c499.js"
+    ],
+    "/area-of-rectangle/Slide9": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/area-of-rectangle/Slide9-2f6ebb9d6841c3640469.js"
+    ],
+    "/triangles": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles-40a36d9b53e5c6e256e2.js"
+    ],
+    "/triangles/Slide1": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide1-a7ff3ccc4d6bd45c9044.js"
+    ],
+    "/triangles/Slide10": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide10-1bfaf043ee2a5aa7d221.js"
+    ],
+    "/triangles/Slide11": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide11-2f799818647f41a2e182.js"
+    ],
+    "/triangles/Slide12": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide12-cfcf92e776cf14ff2a6b.js"
+    ],
+    "/triangles/Slide13": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide13-e8111a95aefd7c3826c0.js"
+    ],
+    "/triangles/Slide2": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide2-1173e8feab49ccc4bae4.js"
+    ],
+    "/triangles/Slide3": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/triangles/Slide3-2c3911ee5529a0263fb1.js"
+    ],
+    "/triangles/Slide4": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide4-93a25004ce3aa31b1919.js"
+    ],
+    "/triangles/Slide5": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide5-e49144b8eaeddfdd699b.js"
+    ],
+    "/triangles/Slide6": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide6-de446562e046228caa26.js"
+    ],
+    "/triangles/Slide7": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide7-97e4a58f546e883d36e3.js"
+    ],
+    "/triangles/Slide8": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/triangles/Slide8-16467a95cd1502bd11d2.js"
+    ],
+    "/triangles/Slide9": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/pages/triangles/Slide9-c49a29458246878239df.js"
+    ],
+    "/volume-of-cube": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/7536-5d04033056f256982771.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube-d06499b1098a7c6f5818.js"
+    ],
+    "/volume-of-cube/Slide1": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/pages/volume-of-cube/Slide1-df6a737d3b73593a91e6.js"
+    ],
+    "/volume-of-cube/Slide10": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide10-c96d861a09a1e7e7a546.js"
+    ],
+    "/volume-of-cube/Slide11": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide11-5d36ac6ef88164a46a12.js"
+    ],
+    "/volume-of-cube/Slide12": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide12-2e79d1f5e27395a1acff.js"
+    ],
+    "/volume-of-cube/Slide13": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide13-013106d835a381d85016.js"
+    ],
+    "/volume-of-cube/Slide2": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide2-99c5fb7456064e61fb14.js"
+    ],
+    "/volume-of-cube/Slide3": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide3-5cf0278d85e60c3b207d.js"
+    ],
+    "/volume-of-cube/Slide4": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide4-4fd04e128c06c614e926.js"
+    ],
+    "/volume-of-cube/Slide5": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide5-a897365adf46e8c8ee15.js"
+    ],
+    "/volume-of-cube/Slide6": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide6-357cb2d4638881ec80b7.js"
+    ],
+    "/volume-of-cube/Slide7": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide7-d540281c4db68f57f53d.js"
+    ],
+    "/volume-of-cube/Slide8": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide8-111e754822779a816146.js"
+    ],
+    "/volume-of-cube/Slide9": [
+      "static/chunks/webpack-eef172c761df884f88b7.js",
+      "static/chunks/framework-d21808c4bb3e426cfe16.js",
+      "static/chunks/main-74d27e89fda824f4cb8b.js",
+      "static/chunks/b5f2ed29-4f1ecd0a64c7c4e1fc22.js",
+      "static/chunks/3573-e44a4a2248ea2f65e5a0.js",
+      "static/css/53db25600cc774937e53.css",
+      "static/chunks/6211-68856f70a3b35f15727e.js",
+      "static/chunks/pages/volume-of-cube/Slide9-ed92ca6c960f603d8674.js"
+    ]
+  },
+  "ampFirstPages": []
+}
