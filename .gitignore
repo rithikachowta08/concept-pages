@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-# /.next
+/.next
 /.vscode
 
 # testing
@@ -22,7 +22,7 @@
 
 
 # dependencies
-# .next
+.next
 .npm
 
 npm-debug.log*
