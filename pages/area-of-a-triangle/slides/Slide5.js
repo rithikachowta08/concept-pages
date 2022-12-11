@@ -68,7 +68,6 @@ const Slide5 = ({ downIcon, navBar }) => {
                caption: "Obtuse Angled Triangle",
             },
          ]}
-         hideFiller
       >
          <Paragraph fontSize={fontSizes.MEDIUM}>
             Let’s observe the base and height of different types of triangles.

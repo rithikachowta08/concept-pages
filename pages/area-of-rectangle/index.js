@@ -30,14 +30,22 @@ const AreaOfRectangle = () => {
       // <Slide13 key={12} />
    ];
 
+   // const navigationSections = [
+   //    { title: "What is area of rectangle?", slides: [1] },
+   //    { title: "Area by counting unit squares", slides: [2] },
+   //    { title: "General formula", slides: [3, 4, 5] },
+   //    { title: "Area using diagonal", slides: [6, 7, 8, 9] },
+   // ];
+
    const navigationSections = [
       { title: "What is area of rectangle?", slides: [1] },
       { title: "Area by counting unit squares", slides: [2] },
-      { title: "General formula", slides: [3, 4, 5] },
-      { title: "Area using diagonal", slides: [6, 7, 8, 9] },
+      { title: "General formula", slides: [3, 4] },
+      { title: "Area using diagonal", slides: [5, 6, 7] },
    ];
 
-   const darkBgIndices = [0, 3, 5, 7];
+   // const darkBgIndices = [0, 3, 5, 7];
+   const darkBgIndices = [0, 4, 6];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
