@@ -1,5 +1,4 @@
 import VideoSlide from "components/slides/VideoSlide";
-import React from "react";
 
 // Classification of triangles
 const Slide6 = ({ downIcon, navBar }) => {
