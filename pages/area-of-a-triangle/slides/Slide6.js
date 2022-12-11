@@ -2,14 +2,7 @@ import VideoSlide from "components/slides/VideoSlide";
 
 // Classification of triangles
 const Slide6 = ({ downIcon, navBar }) => {
-   return (
-      <VideoSlide
-         downIcon={downIcon}
-         navBar={navBar}
-         title="Classification of triangles"
-         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-      />
-   );
+   return <div>video</div>;
 };
 
 export default Slide6;

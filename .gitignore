@@ -22,7 +22,7 @@
 
 
 # dependencies
-.next
+# .next
 .npm
 
 npm-debug.log*
