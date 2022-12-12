@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import { Flex, SlideWrap, StyledImg } from "components/StyledElements";
-import { Paragraph, Title } from "components/text";
-import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
+import React from "react";
+import { StyledImg } from "components/StyledElements";
 import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
 
 const image_1 = "assets/area-of-triangle/slide_10_e.svg";

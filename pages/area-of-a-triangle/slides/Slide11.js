@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-import {
-	Flex,
-	LeftWrap,
-	SlideWrap,
-	StyledImg,
-} from "components/StyledElements";
+import { StyledImg } from "components/StyledElements";
 import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";

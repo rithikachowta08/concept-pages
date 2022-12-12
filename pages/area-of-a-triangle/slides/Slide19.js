@@ -22,10 +22,12 @@ const Slide19 = ({ downIcon, navBar }) => {
 			secondaryTitle={"Area of a triangle"}
 			bg={"DARK"}
 			diagram={
-				<TransitionImage
-					images={[area_triangle_snt, area_triangle_snt_2]}
-					activeIndex={activeIndex}
-				/>
+				<LeftWrap>
+					<TransitionImage
+						images={[area_triangle_snt, area_triangle_snt_2]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
 			}
 			downIcon={downIcon}
 			navBar={navBar}

@@ -21,7 +21,6 @@ const Slide9 = ({ downIcon, navBar }) => {
 			title={"Heron's formula"}
 			secondaryTitle={"Area of a Triangle"}
 			bg={"DARK"}
-			paddingLeft="200px"
 			diagram={<StyledImg src={area_triangle_heron} />}
 			downIcon={downIcon}
 			navBar={navBar}

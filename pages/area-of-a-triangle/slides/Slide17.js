@@ -22,10 +22,12 @@ const Slide17 = ({ downIcon, navBar }) => {
 			secondaryTitle={"Area of an Equilateral triangle"}
 			bg={"LIGHT"}
 			diagram={
-				<TransitionImage
-					images={[image_1, image_2]}
-					activeIndex={activeIndex}
-				/>
+				<LeftWrap>
+					<TransitionImage
+						images={[image_1, image_2]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
 			}
 			downIcon={downIcon}
 			navBar={navBar}

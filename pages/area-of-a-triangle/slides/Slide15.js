@@ -23,10 +23,12 @@ const Slide15 = ({ downIcon, navBar }) => {
 			title={"Find the area of a triangle with the given dimensions."}
 			secondaryTitle={"Illustrative Example"}
 			diagram={
-				<TransitionImage
-					images={[image_1, image_2, image_3]}
-					activeIndex={activeIndex}
-				/>
+				<LeftWrap>
+					<TransitionImage
+						images={[image_1, image_2, image_3]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
 			}
 			mobileLayoutGap="0px"
 			downIcon={downIcon}

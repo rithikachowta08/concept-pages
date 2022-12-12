@@ -20,10 +20,12 @@ const Slide18 = ({ downIcon, navBar }) => {
 			secondaryTitle={"Illustrative Example"}
 			bg={"LIGHT"}
 			diagram={
-				<TransitionImage
-					images={[image_1, image_2]}
-					activeIndex={activeIndex}
-				/>
+				<LeftWrap>
+					<TransitionImage
+						images={[image_1, image_2]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
 			}
 			downIcon={downIcon}
 			navBar={navBar}

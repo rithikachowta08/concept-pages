@@ -72,7 +72,11 @@ const Slide5 = ({ downIcon, navBar }) => {
 			<Paragraph fontSize={fontSizes.MEDIUM}>
 				Let’s observe the base and height of different types of triangles.
 			</Paragraph>
-			<Paragraph color={colors.BLACK} fontSize={fontSizes.MEDIUM}>
+			<Paragraph
+				color={colors.BLACK}
+				fontSize={fontSizes.MEDIUM}
+				textAlign="center"
+			>
 				Area = <MathElement htmlString={"\\frac{1}{2}\\ \\times\\ "} />
 				<TextSpan
 					color={colors.WHITE}

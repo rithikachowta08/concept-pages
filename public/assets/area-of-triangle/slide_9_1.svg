@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Bold, Raleway;
+        font-size: 16px;
+      }
+
+      .cls-4 {
+        fill: #e96560;
+        opacity: .7;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="114.98 75.88 240.04 202.81 38.85 202.81 114.98 75.88"/>
+    <path class="cls-3" d="M114.98,75.88l125.06,126.93H38.85L114.98,75.88m-.58-4.86l-1.99,3.32L36.28,201.26l-2.73,4.54H247.21l-5.03-5.11L117.12,73.77l-2.72-2.76h0Z"/>
+  </g>
+  <path class="cls-4" d="M224.17,205.39l16.65-1.98-10.02-13.49s-11.02,4.44-6.63,15.47h0Z"/>
+  <path class="cls-4" d="M126.28,85.02l-11.82-11.89-8.55,14.62s11.13,7.4,20.37-2.73h0Z"/>
+  <path class="cls-4" d="M45.5,189.54l-10.37,13.18,16.62,2.45s4.65-10.94-6.25-15.63h0Z"/>
+  <text class="cls-2" transform="translate(53.24 194.02)"><tspan x="0" y="0">&lt;90</tspan></text>
+  <text class="cls-2" transform="translate(80.73 188.7) scale(.58)"><tspan x="0" y="0">º</tspan></text>
+  <text class="cls-2" transform="translate(189.05 197.66)"><tspan x="0" y="0">&lt;90</tspan></text>
+  <text class="cls-2" transform="translate(216.54 192.33) scale(.58)"><tspan x="0" y="0">º</tspan></text>
+  <text class="cls-2" transform="translate(100.99 106.4)"><tspan x="0" y="0">&lt;90</tspan></text>
+  <text class="cls-2" transform="translate(128.48 101.07) scale(.58)"><tspan x="0" y="0">º</tspan></text>
+</svg>

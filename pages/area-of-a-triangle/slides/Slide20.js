@@ -61,7 +61,7 @@ const Slide20 = ({ downIcon, navBar }) => {
 					<MathElement htmlString={"h = b.Sin \\ A"} />
 				</TextSpan>
 			</Paragraph>
-			<Flex>
+			<Flex marginBottom="40px">
 				<Flex direction="column">
 					<Paragraph fontSize={fontSizes.MEDIUM}>
 						Area of triangle (<MathElement htmlString={"\\Delta"} />

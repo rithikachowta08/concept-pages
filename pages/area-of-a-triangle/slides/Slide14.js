@@ -72,8 +72,8 @@ const Slide14 = ({ downIcon, navBar }) => {
 					</TextSpan>
 				</Flex>
 			</Paragraph>
-			<Flex>
-				<Paragraph margin={"0"}>
+			<Flex direction="row" height="fit-content" padding="0 0 0 2rem">
+				<Flex direction="column">
 					<Paragraph
 						fontSize={fontSizes.MEDIUM}
 						marginBottom={isMobile ? "16px" : "25px"}
@@ -83,8 +83,8 @@ const Slide14 = ({ downIcon, navBar }) => {
 					<Paragraph textAlign={"right"} fontSize={fontSizes.MEDIUM}>
 						A
 					</Paragraph>
-				</Paragraph>
-				<Paragraph margin={"0"}>
+				</Flex>
+				<Flex direction="column">
 					<Paragraph fontSize={fontSizes.MEDIUM}>
 						<MathElement
 							htmlString={"\\ = \\frac{1}{2} \\times Base \\times Height"}
@@ -97,7 +97,7 @@ const Slide14 = ({ downIcon, navBar }) => {
 							}
 						/>
 					</Paragraph>
-				</Paragraph>
+				</Flex>
 			</Flex>
 			{/* <Paragraph fontSize={fontSizes.MEDIUM}>
 				Area of triangle ={" "}
