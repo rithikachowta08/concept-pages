@@ -4,8 +4,9 @@ const error = "assets/error.svg";
 const success = "assets/success.svg";
 import { useEffect } from "react";
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import { Paragraph } from "components/text";
 
-const Slide5 = () => {
+const Slide5 = ({ downIcon, navBar }) => {
    const triggerToast = (isRightAngled) => {
       if (isRightAngled) {
          toast.success("That is correct! ABC is a right angled triangle", {
@@ -27,10 +28,16 @@ const Slide5 = () => {
 
    return (
       <TextAndAppletSlide
-         title="Move the sliders to create a rectangle occupying an area of 54 unit squares."
-         secondaryTitle="Area using Unit Squares"
+         title="Area using Unit Squares"
          appletSrc="./applets/triangle.html"
-      />
+         downIcon={downIcon}
+         navBar={navBar}
+      >
+         <Paragraph>
+            Move the sliders to create a rectangle occupying an area of 54 unit
+            squares.
+         </Paragraph>
+      </TextAndAppletSlide>
    );
 };
 

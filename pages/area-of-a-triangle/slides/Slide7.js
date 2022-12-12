@@ -6,11 +6,13 @@ import Pill from "components/Pill";
 import MathElement from "components/MathElement";
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 import { fontSizes } from "utils/fontStyles";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
 const applet = "applets/triangle.html";
 
 // General formula derivation
-const Slide7 = () => {
+const Slide7 = ({ downIcon, navBar }) => {
+	const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
 	return (
 		<TextAndAppletSlide
 			title={"Derivation"}
@@ -18,10 +20,12 @@ const Slide7 = () => {
 			bg={"LIGHT"}
 			paddingLeft="200px"
 			appletSrc={applet}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.BLACK}
-				marginBottom="40px"
+				marginBottom={isMobile ? "20px" : "40px"}
 				fontSize={fontSizes.MEDIUM}
 			>
 				Two identical triangles combine to form a parallelogram.
@@ -31,7 +35,11 @@ const Slide7 = () => {
 				Area of a parallelogram
 				{/* </TextSpan>{" "} */}= Base (b) × Height (h)
 			</Paragraph>
-			<Paragraph color={colors.BLACK} marginBottom="50px" fontSize={"1.4rem"}>
+			<Paragraph
+				color={colors.BLACK}
+				marginBottom={isMobile ? "30px" : "50px"}
+				fontSize={"1.4rem"}
+			>
 				Area of a triangle = <MathElement htmlString={"\\frac{1}{2}"} /> × Area
 				of the parallelogram
 			</Paragraph>

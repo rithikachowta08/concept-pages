@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { LeftWrap } from "components/StyledElements";
+import { Paragraph, TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
@@ -14,24 +14,24 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // Isosceles triangle
-const Slide13 = () => {
+const Slide13 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
 		<TextAndDiagramSlide
 			title={"Isosceles triangle"}
 			secondaryTitle="Area of Different types of Triangle"
-			paddingLeft={"160px"}
 			bg={"LIGHT"}
 			diagram={
 				<LeftWrap>
 					<TransitionImage
 						images={[image_1, image_2, image_3]}
 						activeIndex={activeIndex}
-						bottomOffset="65px"
 					/>
 				</LeftWrap>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.BLACK}

@@ -13,14 +13,13 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // Equilateral triangle
-const Slide16 = () => {
+const Slide16 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
 		<TextAndDiagramSlide
 			title={"Equilateral triangle"}
 			secondaryTitle={"Area of different types of triangle"}
-			paddingLeft={"160px"}
 			bg={"LIGHT"}
 			diagram={
 				<LeftWrap>
@@ -30,6 +29,8 @@ const Slide16 = () => {
 					/>
 				</LeftWrap>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.BLACK}

@@ -21,6 +21,7 @@ const Paragraph = ({
 	fontSize,
 	fontWeight,
 	marginBottom,
+	marginTop,
 	maxWidth,
 	textAlign,
 	marginRight,
@@ -31,6 +32,7 @@ const Paragraph = ({
 	return (
 		<Para
 			marginBottom={marginBottom}
+			marginTop={marginTop}
 			marginRight={marginRight}
 			maxWidth={maxWidth}
 			textAlign={textAlign}

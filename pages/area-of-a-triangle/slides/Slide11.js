@@ -16,20 +16,16 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Scalene triangle
-const Slide11 = () => {
-	const [activeIndex, setActiveIndex] = useState(0);
-
+const Slide11 = ({ downIcon, navBar }) => {
 	return (
 		<TextAndDiagramSlide
 			title={"Scalene triangle"}
 			secondaryTitle={"Area of Different types of Triangles"}
 			paddingLeft={"160px"}
 			bg={"LIGHT"}
-			diagram={
-				<Flex width="50%">
-					<StyledImg src={area_triangle_sides_3_1} bottomOffset="65px" />
-				</Flex>
-			}
+			diagram={<StyledImg src={area_triangle_sides_3_1} />}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.BLACK}

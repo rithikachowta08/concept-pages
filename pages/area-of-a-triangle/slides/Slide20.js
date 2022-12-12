@@ -11,7 +11,7 @@ import { fontSizes } from "utils/fontStyles";
 const image_1 = "assets/area-of-triangle/sidesAngles_deri_1.svg";
 const image_2 = "assets/area-of-triangle/sidesAngles_deri_2.svg";
 
-const Slide20 = () => {
+const Slide20 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	return (
 		<TextAndDiagramSlide
@@ -23,10 +23,12 @@ const Slide20 = () => {
 					<TransitionImage
 						images={[image_1, image_2]}
 						activeIndex={activeIndex}
-						bottomOffset="65px"
 					/>
 				</LeftWrap>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
+			isLastSlide
 		>
 			<Paragraph
 				color={colors.BLACK}

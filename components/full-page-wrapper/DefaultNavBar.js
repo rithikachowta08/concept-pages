@@ -20,6 +20,9 @@ const NavWrap = styled.div`
    justify-content: center;
    align-items: flex-start;
    cursor: pointer;
+   grid-row-start: 1;
+   grid-column-start: 1;
+   width: ${(props) => (props.isExpanded ? "400px" : "100%")};
 `;
 
 const SectionIndicator = styled.div`
@@ -51,7 +54,7 @@ const SectionIndicator = styled.div`
 
 const Connector = styled.div`
    width: 4px;
-   height: 50px;
+   height: 60px;
    background: ${(props) =>
       props.darkTheme
          ? `rgba(255, 255, 255, ${props.isComplete ? 1 : 0.3})`
@@ -119,6 +122,7 @@ const DefaultNavBar = ({
                      key={section.title}
                      alignItems="center"
                      cursor="pointer"
+                     height="14px"
                      // moveTo expects slide indices to start from 1
                      data-section-idx={section.slides[0] + 1}
                      onClick={onSectionClick}

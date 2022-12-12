@@ -12,8 +12,9 @@ const rectangle_full_diagonal =
 const rectangle_diagonal = "assets/area-of-rectangle/s8_rectangle_diagonal.svg";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { colors } from "utils/colors";
+import HyperLink from "components/text/HyperLink";
 
-const Slide10 = () => {
+const Slide10 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(1);
@@ -31,6 +32,8 @@ const Slide10 = () => {
          }
          bg="DARK"
          title="Area Using Diagonal"
+         downIcon={downIcon}
+         navBar={navBar}
       >
          <Paragraph marginBottom="20px" color="white">
             The length of a{" "}
@@ -45,14 +48,9 @@ const Slide10 = () => {
                diagonal
             </TextSpanBg>{" "}
             can be calculated using the{" "}
-            <a
-               target="_blank"
-               href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse."
-               style={{ textDecoration: "none", color: "#FEC429" }}
-               rel="noreferrer"
-            >
+            <HyperLink href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse.">
                Pythagorean
-            </a>{" "}
+            </HyperLink>{" "}
             theorem.
          </Paragraph>
          <Paragraph color="white">

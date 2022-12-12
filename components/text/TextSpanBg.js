@@ -11,7 +11,8 @@ const StyledSpan = styled.span`
    text-decoration: ${(props) => props.textDecoration || "none"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-left: ${(props) => props.marginLeft || 0};
-   margin: ${(props) => props.margin};
+   margin: ${(props) => props.margin || "3px 0"};
+   display: inline-block;
    transform: ${(props) => props.transform};
    cursor: ${(props) => props.cursor || "default"};
    border-radius: 25px;

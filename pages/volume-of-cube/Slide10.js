@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { TextSpan, Title, Paragraph } from "components/text";
+import { TextSpanBg, Paragraph } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide10/cube-1.png";
@@ -10,29 +10,15 @@ import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
 
-const Slide10 = () => {
+const Slide10 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);
-
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   const onHoverHypotenuse = (e) => {
-      setActiveIndex(2);
-   };
-   const onHoverOutHypotenuse = (e) => {
-      setActiveIndex(0);
-   };
 
-   // useEffect(() => {
-   //   let latex = [];
-   //   latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
-   //   latex.push(`= \\sqrt{3}`);
-   //   setMathjaxRespStrings(latex);
-   // }, []);
    let latex = [];
    latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
    latex.push(`= \\sqrt{3}`);
@@ -45,24 +31,25 @@ const Slide10 = () => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
+         navBar={navBar}
          bg="DARK"
          secondaryTitle="Volume of a cube using diagonal"
          title="Diagonal of a Cube"
       >
-         <Paragraph marginBottom="1vh" color={colors.WHITE}>
+         <Paragraph marginBottom="2vh" color={colors.WHITE}>
             Given the{" "}
-            <TextSpan
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               // textDecoration="underline"
                hoverColor={colors.AQUA}
                fontWeight={700}
                fontSize="2.2rem"
                color={colors.RED}
             >
                diagonal length
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             of a cube:
          </Paragraph>
          <Pill
@@ -75,14 +62,10 @@ const Slide10 = () => {
             Volume of a cube{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
          </Pill>
-         <Paragraph
-            // marginTop="50px"
-            // marginBottom="70px"
-            color={colors.WHITE}
-         >
+         <Paragraph color={colors.WHITE}>
             Here, d{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpan
+            <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -94,7 +77,7 @@ const Slide10 = () => {
             >
                {" "}
                s
-            </TextSpan>
+            </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
    );

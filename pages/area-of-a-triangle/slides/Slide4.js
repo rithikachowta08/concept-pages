@@ -15,7 +15,7 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // General Formula Slide
-const Slide4 = () => {
+const Slide4 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
@@ -23,6 +23,8 @@ const Slide4 = () => {
 			bg="DARK"
 			title={"General Formula"}
 			secondaryTitle={"Area of a triangle"}
+			downIcon={downIcon}
+			navBar={navBar}
 			diagram={
 				<LeftWrap>
 					<TransitionImage

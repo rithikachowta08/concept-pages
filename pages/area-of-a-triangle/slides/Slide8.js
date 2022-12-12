@@ -6,9 +6,15 @@ import { colors } from "utils/colors";
 
 const applet = "applets/triangle.html";
 
-const Slide8 = () => {
+const Slide8 = ({ downIcon, navBar }) => {
 	return (
-		<TextAndAppletSlide paddingLeft={"200px"} bg={"LIGHT"} appletSrc={applet}>
+		<TextAndAppletSlide
+			paddingLeft={"200px"}
+			bg={"LIGHT"}
+			appletSrc={applet}
+			downIcon={downIcon}
+			navBar={navBar}
+		>
 			<Paragraph
 				opacity={1}
 				marginBottom="16px"

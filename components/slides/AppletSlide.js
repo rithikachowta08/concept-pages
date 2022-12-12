@@ -2,54 +2,100 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { Title } from "components/text";
+import { Paragraph, Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
 const IFrame = styled.iframe`
-   width: 750px;
+   width: 700px;
    height: 700px;
-   @media (max-height: 600px) {
-      width: 100px;
+
+   @media only screen and (min-width: 200px) and (max-width: 399px) {
+      width: 150px;
       height: 150px;
    }
-   @media (max-height: 700px) {
-      width: 200px;
+
+   @media only screen and (min-width: 200px) and (max-width: 768px) {
+      width: 350px;
+      height: 350px;
+   }
+
+   @media only screen and (min-width: 768px) and (max-width: 992px) {
+      width: 350px;
+      height: 350px;
+   }
+
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+      width: 250px;
       height: 250px;
    }
-   @media (max-height: 900px) {
-      width: 300px;
+
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+      width: 350px;
       height: 350px;
    }
 `;
 
 const AppletSlide = ({
    title,
+   navBar,
+   downIcon,
+   description,
+   isLastSlide,
    bg = "LIGHT",
-   gap,
    appletSrc = "./applets/triangle.html",
 }) => {
-   const deviceType = useDeviceType();
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <SlideWrap bg={bg}>
+      <SlideWrap
+         bg={bg}
+         isLastSlide={isLastSlide}
+         padding={isMobile ? "0 0 20px 0" : "20px"}
+      >
          <Flex
-            height="100%"
-            direction={deviceType === DEVICE_TYPES.MOBILE ? "column" : "row"}
-            gap={deviceType === DEVICE_TYPES.MOBILE ? "2vh" : "none"}
-            justifyContent={"flex-start"}
             alignItems="center"
+            width="100%"
+            height={isMobile ? "70%" : "auto"}
+            justifyContent={isMobile ? "flex-start" : "center"}
+            gap={isMobile ? "30px" : "60px"}
+            direction={isMobile ? "column" : "row"}
          >
-            <Title
-               color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-               fontSize={fontSizes.H2}
-               fontWeight={fontWeights.BOLD}
-               padding="5%"
-               small
+            {navBar}
+            <Flex
+               gap={isMobile ? "30px" : "0"}
+               margin={isMobile ? "auto 0" : "0"}
+               justifyContent={isMobile ? "flex-start" : "space-evenly"}
+               flex="2"
+               alignItems="center"
             >
-               {title}
-            </Title>
-            <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+               {title && (
+                  <Title
+                     color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+                     fontSize={fontSizes.H2}
+                     fontWeight={fontWeights.BOLD}
+                     padding="5%"
+                     small
+                  >
+                     {title}
+                  </Title>
+               )}
+               <Flex
+                  direction={isMobile ? "column-reverse" : "row"}
+                  gap="30px"
+                  alignItems="center"
+               >
+                  {description && (
+                     <Paragraph
+                        color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+                     >
+                        {description}
+                     </Paragraph>
+                  )}
+                  <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+               </Flex>
+            </Flex>
          </Flex>
+         {downIcon}
       </SlideWrap>
    );
 };
@@ -57,7 +103,6 @@ const AppletSlide = ({
 AppletSlide.propTypes = {
    title: PropTypes.string,
    bg: PropTypes.string,
-   gap: PropTypes.string,
    appletSrc: PropTypes.string.isRequired,
 };
 

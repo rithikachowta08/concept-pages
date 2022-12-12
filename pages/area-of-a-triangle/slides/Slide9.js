@@ -15,18 +15,16 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Heron's Formula
-const Slide9 = () => {
+const Slide9 = ({ downIcon, navBar }) => {
 	return (
 		<TextAndDiagramSlide
 			title={"Heron's formula"}
 			secondaryTitle={"Area of a Triangle"}
 			bg={"DARK"}
 			paddingLeft="200px"
-			diagram={
-				<Flex width="50%">
-					<StyledImg src={area_triangle_heron} />
-				</Flex>
-			}
+			diagram={<StyledImg src={area_triangle_heron} />}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.WHITE}

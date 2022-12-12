@@ -1,24 +1,26 @@
 import { PropTypes } from "prop-types";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Video, Flex } from "components/StyledElements";
+import { Flex, Video } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import Button from "components/Button";
-import { useEffect, useState } from "react";
 
 const VideoSlideWrap = styled.div`
-   background-color: ${(props) => props.bgColor};
+   background-color: ${colors.BLACK};
    height: 100%;
    width: 100%;
+   padding: 20px;
+   gap: 20px;
+   position: relative;
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   gap: 2vh;
+   justify-content: space-around;
    box-sizing: border-box;
 `;
 
-const VideoSlide = ({ title, src }) => {
+const VideoSlide = ({ title, downIcon, navBar, src }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [isRotated, setIsRotated] = useState(false);
    function onFullScreen() {
@@ -59,23 +61,19 @@ const VideoSlide = ({ title, src }) => {
       }
    };
    return (
-      <VideoSlideWrap justifyContent="space-between" bgColor={colors.BLACK}>
-         <div>
-            <Video
-               id="video-element"
-               src={src}
-               isRotated={isRotated}
-               controls
-               muted
-               autoPlay
-            />
-         </div>
-         {title && (
-            <TextSpan marginLeft="4%" color={colors.WHITE}>
-               {title}
-            </TextSpan>
-         )}
+      <VideoSlideWrap>
+         {React.cloneElement(navBar, { isAbsolute: true })}
+         <Video
+            id="video-element"
+            src={src}
+            isRotated={isRotated}
+            controls
+            muted
+            autoPlay
+         />
+         {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
          {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>}
+         {React.cloneElement(downIcon, { isVideoSlide: true })}
       </VideoSlideWrap>
    );
 };

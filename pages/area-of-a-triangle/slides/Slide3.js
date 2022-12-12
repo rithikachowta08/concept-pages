@@ -4,9 +4,15 @@ import { Paragraph } from "components/text";
 import React from "react";
 
 // Definition applet
-const Slide3 = () => {
+const Slide3 = ({ downIcon, navBar }) => {
 	return (
-		<SlideWrap bg={"LIGHT"} alignItems="center" padding="40px">
+		<SlideWrap
+			downIcon={downIcon}
+			navBar={navBar}
+			bg={"LIGHT"}
+			alignItems="center"
+			padding="40px"
+		>
 			<Paragraph marginBottom="70px" textAlign={"center"} fontSize="1.6rem">
 				Select the color that covers the entire area of the triangular park.
 			</Paragraph>

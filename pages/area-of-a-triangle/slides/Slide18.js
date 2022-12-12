@@ -12,23 +12,21 @@ const image_1 = "assets/area-of-triangle/equi_ex_1.svg";
 const image_2 = "assets/area-of-triangle/equi_ex_2.svg";
 
 // Example of equilateral triangle
-const Slide18 = () => {
+const Slide18 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	return (
 		<TextAndDiagramSlide
 			title={"Find the area of a triangle with the given dimensions."}
 			secondaryTitle={"Illustrative Example"}
-			paddingLeft={"160px"}
 			bg={"LIGHT"}
 			diagram={
-				<LeftWrap>
-					<TransitionImage
-						images={[image_1, image_2]}
-						activeIndex={activeIndex}
-						bottomOffset="65px"
-					/>
-				</LeftWrap>
+				<TransitionImage
+					images={[image_1, image_2]}
+					activeIndex={activeIndex}
+				/>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.BLACK}

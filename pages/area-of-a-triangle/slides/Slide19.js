@@ -13,24 +13,22 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // Two sides and included angle
-const Slide19 = () => {
+const Slide19 = ({ downIcon, navBar }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
 		<TextAndDiagramSlide
 			title={"Two sides and the included angle"}
 			secondaryTitle={"Area of a triangle"}
-			paddingLeft={"160px"}
 			bg={"DARK"}
 			diagram={
-				<LeftWrap>
-					<TransitionImage
-						images={[area_triangle_snt, area_triangle_snt_2]}
-						activeIndex={activeIndex}
-						bottomOffset="65px"
-					/>
-				</LeftWrap>
+				<TransitionImage
+					images={[area_triangle_snt, area_triangle_snt_2]}
+					activeIndex={activeIndex}
+				/>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
 		>
 			<Paragraph
 				color={colors.WHITE}

@@ -13,7 +13,7 @@ const area_triangle = "assets/area-of-triangle/slide_2_normal.svg";
 const area_triangle_shaded = "assets/area-of-triangle/slide_2_shaded.svg";
 
 // Definition
-const Slide2 = () => {
+const Slide2 = ({ downIcon, navBar }) => {
 	const modalContent = (
 		<Flex direction="column">
 			<Paragraph color="white" marginBottom="50px" fontSize={fontSizes.MEDIUM}>
@@ -41,6 +41,8 @@ const Slide2 = () => {
 		<TextAndDiagramSlide
 			title="Definition"
 			secondaryTitle={"Area of a triangle"}
+			downIcon={downIcon}
+			navBar={navBar}
 			diagram={
 				<LeftWrap padding="40px">
 					<TransitionImage

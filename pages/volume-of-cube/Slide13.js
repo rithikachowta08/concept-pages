@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpan, Title, Paragraph } from "components/text";
+import { TextSpanBg, Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide13/cube-1.png";
 const cube_lwh = "assets/volume-of-cube/slide13/cube-2.png";
@@ -8,7 +8,7 @@ const cube_s = "assets/volume-of-cube/slide13/cube-3.png";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 
-const Slide13 = () => {
+const Slide13 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -22,12 +22,15 @@ const Slide13 = () => {
          bg="DARK"
          title="Rectangular Prism vs. Cube"
          secondaryTitle="Volume of a cube"
+         downIcon={downIcon}
+         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_lwh, cube_s]}
                activeIndex={activeIndex}
             />
          }
+         isLastSlide
       >
          <Paragraph marginBottom="1vh" color={colors.WHITE}>
             If the length, width, and height of a rectangular prism are equal,
@@ -35,7 +38,7 @@ const Slide13 = () => {
          </Paragraph>
          <Paragraph marginBottom="3vh" color={colors.WHITE}>
             Volume of a rectangular prism ={" "}
-            <TextSpan
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -46,13 +49,13 @@ const Slide13 = () => {
                color={colors.RED}
             >
                l x w x h
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             cubic units
          </Paragraph>
          <Paragraph color={colors.WHITE}>For l = w = h = s,</Paragraph>
          <Paragraph color={colors.WHITE}>
             Volume of a cube ={" "}
-            <TextSpan
+            <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -63,7 +66,7 @@ const Slide13 = () => {
                color={colors.RED}
             >
                s<sup>3</sup>
-            </TextSpan>{" "}
+            </TextSpanBg>{" "}
             cubic units
          </Paragraph>
       </TextAndDiagramSlide>

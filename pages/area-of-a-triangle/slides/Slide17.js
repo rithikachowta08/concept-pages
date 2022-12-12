@@ -4,6 +4,7 @@ import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 import { fontSizes } from "utils/fontStyles";
@@ -12,13 +13,13 @@ const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
 const image_2 = "assets/area-of-triangle/equi_deri_2.svg";
 
 // Derivation of equilateral triangle
-const Slide17 = () => {
+const Slide17 = ({ downIcon, navBar }) => {
+	const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
 	const [activeIndex, setActiveIndex] = useState(0);
 	return (
 		<TextAndDiagramSlide
 			title={"Derivation"}
 			secondaryTitle={"Area of an Equilateral triangle"}
-			paddingLeft={"160px"}
 			bg={"LIGHT"}
 			diagram={
 				<TransitionImage
@@ -26,9 +27,12 @@ const Slide17 = () => {
 					activeIndex={activeIndex}
 				/>
 			}
+			downIcon={downIcon}
+			navBar={navBar}
+			mobileLayoutGap="0px"
 		>
-			<Paragraph color={colors.BLACK} marginBottom="50px">
-				<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="20px">
+			<Paragraph color={colors.BLACK} marginBottom={isMobile ? "15px" : "50px"}>
+				<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
 					Apply the Pythagoras Theorem in the{" "}
 					<TextSpan
 						bgColor={colors.RED}
@@ -45,40 +49,49 @@ const Slide17 = () => {
 					</TextSpan>
 					.<br />
 				</Paragraph>
-				<Paragraph fontSize={fontSizes.MEDIUM} margin="10px 0">
+				<Paragraph
+					fontSize={fontSizes.MEDIUM}
+					margin={isMobile ? "5px 0" : "10px 0"}
+				>
 					<MathElement htmlString={"a^2 = h^2 + (\\frac{a}{2})^2"} />
 				</Paragraph>
-				<Paragraph fontSize={fontSizes.MEDIUM} margin="10px 0">
+				<Paragraph
+					fontSize={fontSizes.MEDIUM}
+					margin={isMobile ? "5px 0" : "10px 0"}
+				>
 					<MathElement htmlString={"h^2 = a^2 - (\\frac{a^2}{4})"} />
 				</Paragraph>
-				<Paragraph fontSize={fontSizes.MEDIUM} margin="10px 0">
+				<Paragraph
+					fontSize={fontSizes.MEDIUM}
+					margin={isMobile ? "5px 0" : "10px 0"}
+				>
 					<MathElement htmlString={"h = \\frac{1}{2} (\\sqrt{3} a)"} />
 				</Paragraph>
 			</Paragraph>
-			<Flex marginBottom="40px">
+			<Flex marginBottom={isMobile ? "10px" : "40px"}>
 				<Flex direction="column">
 					<TextSpan
 						fontSize={fontSizes.MEDIUM}
-						margin="10px 0"
+						margin={isMobile ? "5px 0" : "10px 0"}
 						textAlign={"right"}
 					>
 						Area of triangle =
 					</TextSpan>
 					<TextSpan
 						fontSize={fontSizes.MEDIUM}
-						margin="10px 0"
+						margin={isMobile ? "5px 0" : "10px 0"}
 						textAlign={"right"}
 					>
 						A =
 					</TextSpan>
 				</Flex>
 				<Flex direction="column">
-					<TextSpan margin="10px 0">
+					<TextSpan margin={isMobile ? "5px 0" : "10px 0"}>
 						<MathElement
 							htmlString={"\\ \\frac{1}{2} \\times Base \\times Height"}
 						/>
 					</TextSpan>
-					<TextSpan margin="10px 0">
+					<TextSpan margin={isMobile ? "5px 0" : "10px 0"}>
 						{" "}
 						<MathElement
 							htmlString={
