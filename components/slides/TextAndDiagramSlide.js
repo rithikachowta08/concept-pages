@@ -75,7 +75,7 @@ const TextAndDiagramSlide = ({
          >
             {navBar}
             <Flex
-               padding="0 20px"
+               padding={isMobile ? "0 20px" : "0"}
                direction={isMobile ? "column" : "row"}
                gap={isMobile ? mobileLayoutGap : "10px"}
                margin={isMobile ? "auto 0" : "0"}

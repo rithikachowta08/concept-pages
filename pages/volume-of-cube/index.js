@@ -13,7 +13,7 @@ import Slide11 from "./Slide11";
 import Slide12 from "./Slide12";
 import Slide13 from "./Slide13";
 
-const VolumeOfCube = () => {
+const VolumeOfCube = ({}) => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,

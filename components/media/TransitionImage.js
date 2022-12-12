@@ -17,13 +17,17 @@ const Img = styled.img`
       width: ${(props) => props.tabletSize || "350px"};
       height: ${(props) => props.tabletSize || "350px"};
    }
-   @media only screen and (min-height: 300px) and (max-height: 600px) and (min-width: 700px) {
+   @media only screen and (max-height: 399px) and (min-width: 700px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+      width: ${(props) => props.mobileSize || "350px"};
+      height: ${(props) => props.mobileSize || "350px"};
+   }
    @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
-      width: ${(props) => props.tabletSize || "350px"};
-      height: ${(props) => props.tabletSize || "350px"};
+      width: ${(props) => props.tabletSize || "450px"};
+      height: ${(props) => props.tabletSize || "450px"};
    }
 `;
 

@@ -5,7 +5,18 @@ import { colors } from "utils/colors";
 
 const IconWrap = styled.div`
    cursor: pointer;
+   align-self: center;
    margin: ${(props) => (props.isVideoSlide ? "0 auto" : "auto 0 0 0")};
+
+   @media (min-width: 200px) and (max-width: 399px) {
+      scale: 0.6;
+   }
+   @media (min-width: 400px) and (max-width: 768px) {
+      scale: 0.75;
+   }
+   @media (min-height: 400px) and (max-height: 700px) and (min-width: 768px) {
+      scale: 0.75;
+   }
 `;
 
 const DownArrowIcon = ({
