@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Flex, Video } from "components/StyledElements";
+import { Video } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
