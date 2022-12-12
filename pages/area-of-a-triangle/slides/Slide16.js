@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
@@ -14,58 +14,57 @@ import { fontSizes } from "utils/fontStyles";
 
 // Equilateral triangle
 const Slide16 = ({ downIcon, navBar }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(0);
 
-   return (
-      <TextAndDiagramSlide
-         title={"Equilateral triangle"}
-         secondaryTitle={"Area of different types of triangle"}
-         bg={"LIGHT"}
-         diagram={
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2]}
-                  activeIndex={activeIndex}
-               />
-            </LeftWrap>
-         }
-         downIcon={downIcon}
-         navBar={navBar}
-      >
-         <Paragraph
-            color={colors.BLACK}
-            marginBottom="50px"
-            fontSize={fontSizes.MEDIUM}
-         >
-            Given the length &apos;a&apos; of a side of an{" "}
-            <TextSpan
-               fontSize={fontSizes.MEDIUM}
-               fontWeight={"500"}
-               color={colors.WHITE}
-               bgColor={colors.RED}
-               hoverBgColor={colors.DARK_BLUE}
-               onHover={() => {
-                  setActiveIndex(1);
-               }}
-               onHoverOut={() => {
-                  setActiveIndex(0);
-               }}
-            >
-               equilateral triangle
-            </TextSpan>
-            , its area can be calculated as:
-         </Paragraph>
-         <Pill
-            width="fit-content"
-            fontSize="1.8rem"
-            bgColor={colors.GREEN}
-            color={colors.WHITE}
-         >
-            Area of an equilateral triangle ={" "}
-            <MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
-         </Pill>
-      </TextAndDiagramSlide>
-   );
+	return (
+		<TextAndDiagramSlide
+			title={"Equilateral triangle"}
+			secondaryTitle={"Area of different types of triangle"}
+			bg={"LIGHT"}
+			diagram={
+				<LeftWrap>
+					<TransitionImage
+						images={[image_1, image_2]}
+						activeIndex={activeIndex}
+					/>
+				</LeftWrap>
+			}
+			downIcon={downIcon}
+			navBar={navBar}
+		>
+			<Paragraph
+				color={colors.BLACK}
+				marginBottom="50px"
+				fontSize={fontSizes.MEDIUM}
+			>
+				Given the length &apos;a&apos; of a side of an{" "}
+				<TextSpanBg
+					fontSize={fontSizes.MEDIUM}
+					fontWeight={"500"}
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
+					onHover={() => {
+						setActiveIndex(1);
+					}}
+					onHoverOut={() => {
+						setActiveIndex(0);
+					}}
+				>
+					equilateral triangle
+				</TextSpanBg>
+				, its area can be calculated as:
+			</Paragraph>
+			<Pill
+				width="fit-content"
+				fontSize="1.8rem"
+				bgColor={colors.GREEN}
+				color={colors.WHITE}
+			>
+				Area of an equilateral triangle ={" "}
+				<MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
+			</Pill>
+		</TextAndDiagramSlide>
+	);
 };
 
 export default Slide16;
