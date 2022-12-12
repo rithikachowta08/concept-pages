@@ -40,8 +40,8 @@ const Slide14 = ({ downIcon, navBar }) => {
             fontSize={fontSizes.MEDIUM}
          >
             <Paragraph
-               marginBottom={"5px"}
                margin="0px"
+               marginBottom={"10px"}
                fontSize={fontSizes.MEDIUM}
             >
                Apply the Pythagoras Theorem in the{" "}
