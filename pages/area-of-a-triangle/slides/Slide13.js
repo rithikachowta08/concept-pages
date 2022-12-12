@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { LeftWrap } from "components/StyledElements";
-import { Paragraph, TextSpan } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
@@ -39,12 +39,11 @@ const Slide13 = ({ downIcon, navBar }) => {
 				fontSize={fontSizes.MEDIUM}
 			>
 				Given the length of the{" "}
-				<TextSpan
+				<TextSpanBg
 					fontSize={fontSizes.MEDIUM}
 					fontWeight={"500"}
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(1);
 					}}
@@ -53,14 +52,13 @@ const Slide13 = ({ downIcon, navBar }) => {
 					}}
 				>
 					base &apos;b&apos;
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				and the{" "}
-				<TextSpan
+				<TextSpanBg
 					fontSize={fontSizes.MEDIUM}
 					fontWeight={"500"}
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(2);
 					}}
@@ -69,7 +67,7 @@ const Slide13 = ({ downIcon, navBar }) => {
 					}}
 				>
 					equal sides &apos;a&apos;
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				, its area can be calculated as:
 			</Paragraph>
 			<Pill

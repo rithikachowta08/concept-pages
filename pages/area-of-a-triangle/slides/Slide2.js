@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import Modal from "components/layout/Modal";
 import { colors } from "utils/colors";
-import { Paragraph, TextSpan } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
@@ -72,18 +72,17 @@ const Slide2 = ({ downIcon, navBar }) => {
 					triangle
 				</TextSpan>{" "}
 				is the{" "}
-				<TextSpan
-					color={colors.WHITE}
+				<TextSpanBg
+					color={colors.RED}
 					fontSize={fontSizes.MEDIUM}
 					fontWeight={400}
 					marginBottom="16px"
 					onHover={() => setActiveIndex(1)}
 					onHoverOut={() => setActiveIndex(0)}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+					hoverColor={colors.DARK_BLUE}
 				>
 					region enclosed
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				within its three sides.
 			</Paragraph>
 		</TextAndDiagramSlide>

@@ -3,7 +3,7 @@ import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
@@ -36,10 +36,9 @@ const Slide17 = ({ downIcon, navBar }) => {
 			<Paragraph color={colors.BLACK} marginBottom={isMobile ? "15px" : "50px"}>
 				<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
 					Apply the Pythagoras Theorem in the{" "}
-					<TextSpan
-						bgColor={colors.RED}
-						color={colors.WHITE}
-						hoverBgColor={colors.DARK_BLUE}
+					<TextSpanBg
+						color={colors.RED}
+						hoverColor={colors.DARK_BLUE}
 						onHover={() => {
 							setActiveIndex(1);
 						}}
@@ -48,7 +47,7 @@ const Slide17 = ({ downIcon, navBar }) => {
 						}}
 					>
 						triangle
-					</TextSpan>
+					</TextSpanBg>
 					.<br />
 				</Paragraph>
 				<Paragraph

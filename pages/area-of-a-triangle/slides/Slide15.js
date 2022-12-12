@@ -3,7 +3,7 @@ import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useDebugValue, useState } from "react";
 import { colors } from "utils/colors";
@@ -35,10 +35,9 @@ const Slide15 = ({ downIcon, navBar }) => {
 			navBar={navBar}
 		>
 			<Paragraph color={colors.BLACK} fontSize={fontSizes.MEDIUM}>
-				<TextSpan
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(1);
 					}}
@@ -47,13 +46,12 @@ const Slide15 = ({ downIcon, navBar }) => {
 					}}
 				>
 					a
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				= 5 cm
 				<br />
-				<TextSpan
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(2);
 					}}
@@ -62,7 +60,7 @@ const Slide15 = ({ downIcon, navBar }) => {
 					}}
 				>
 					b
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				= 8 cm
 			</Paragraph>
 			<Flex>

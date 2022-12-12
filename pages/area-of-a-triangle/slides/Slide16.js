@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import TransitionImage from "components/media/TransitionImage";
@@ -38,12 +38,11 @@ const Slide16 = ({ downIcon, navBar }) => {
 				fontSize={fontSizes.MEDIUM}
 			>
 				Given the length &apos;a&apos; of a side of an{" "}
-				<TextSpan
+				<TextSpanBg
 					fontSize={fontSizes.MEDIUM}
 					fontWeight={"500"}
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(1);
 					}}
@@ -52,7 +51,7 @@ const Slide16 = ({ downIcon, navBar }) => {
 					}}
 				>
 					equilateral triangle
-				</TextSpan>
+				</TextSpanBg>
 				, its area can be calculated as:
 			</Paragraph>
 			<Pill

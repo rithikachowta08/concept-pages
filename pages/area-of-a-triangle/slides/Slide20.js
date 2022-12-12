@@ -3,7 +3,7 @@ import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap } from "components/StyledElements";
-import { Paragraph, TextSpan } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 import { fontSizes } from "utils/fontStyles";
@@ -36,10 +36,9 @@ const Slide20 = ({ downIcon, navBar }) => {
 				fontSize={fontSizes.MEDIUM}
 			>
 				Apply the "Sine" formula in the{" "}
-				<TextSpan
-					bgColor={colors.RED}
-					color={colors.WHITE}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(1);
 					}}
@@ -48,7 +47,7 @@ const Slide20 = ({ downIcon, navBar }) => {
 					}}
 				>
 					triangle
-				</TextSpan>
+				</TextSpanBg>
 				.
 				<br />
 			</Paragraph>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import { colors } from "utils/colors";
 
@@ -50,28 +50,26 @@ const Slide4 = ({ downIcon, navBar }) => {
 			>
 				Area of the triangle ={" "}
 				<MathElement htmlString={"\\frac{1}{2} \\times\\ "} />{" "}
-				<TextSpan
+				<TextSpanBg
 					fontSize="1.8rem"
 					fontWeight={500}
-					color={colors.WHITE}
+					color={colors.RED}
 					onHover={() => setActiveIndex(1)}
 					onHoverOut={() => setActiveIndex(0)}
-					bgColor={colors.RED}
-					hoverBgColor={colors.AQUA}
+					hoverColor={colors.AQUA}
 				>
 					Base
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				<MathElement htmlString={"\\times\\ "} />{" "}
-				<TextSpan
+				<TextSpanBg
 					fontSize="1.8rem"
-					color={colors.WHITE}
+					color={colors.RED}
 					onHover={() => setActiveIndex(2)}
 					onHoverOut={() => setActiveIndex(0)}
-					bgColor={colors.RED}
-					hoverBgColor={colors.AQUA}
+					hoverColor={colors.AQUA}
 				>
 					Perpendicular height
-				</TextSpan>
+				</TextSpanBg>
 			</Pill>
 		</TextAndDiagramSlide>
 	);

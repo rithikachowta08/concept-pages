@@ -2,7 +2,7 @@ import MathElement from "components/MathElement";
 import TransitionImage from "components/media/TransitionImage";
 import { Flex, SlideWrap } from "components/StyledElements";
 import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 import { fontSizes } from "utils/fontStyles";
@@ -78,25 +78,23 @@ const Slide5 = ({ downIcon, navBar }) => {
 				textAlign="center"
 			>
 				Area = <MathElement htmlString={"\\frac{1}{2}\\ \\times\\ "} />
-				<TextSpan
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => setActiveIndex(1)}
 					onHoverOut={() => setActiveIndex(0)}
 				>
 					Base (b)
-				</TextSpan>
+				</TextSpanBg>
 				<MathElement htmlString={"\\ \\times\\ "} />
-				<TextSpan
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => setActiveIndex(2)}
 					onHoverOut={() => setActiveIndex(0)}
 				>
 					Height (h)
-				</TextSpan>
+				</TextSpanBg>
 			</Paragraph>
 		</MultipleDiagramSlide>
 	);

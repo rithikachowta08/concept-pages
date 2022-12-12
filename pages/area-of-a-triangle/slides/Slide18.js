@@ -3,7 +3,7 @@ import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 import { fontSizes } from "utils/fontStyles";
@@ -35,10 +35,9 @@ const Slide18 = ({ downIcon, navBar }) => {
 				marginBottom="30px"
 				fontSize={fontSizes.MEDIUM}
 			>
-				<TextSpan
-					color={colors.WHITE}
-					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+				<TextSpanBg
+					color={colors.RED}
+					hoverColor={colors.DARK_BLUE}
 					onHover={() => {
 						setActiveIndex(1);
 					}}
@@ -47,7 +46,7 @@ const Slide18 = ({ downIcon, navBar }) => {
 					}}
 				>
 					a
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				= 4 in
 			</Paragraph>
 			<Flex>

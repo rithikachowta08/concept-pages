@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
@@ -38,17 +38,17 @@ const Slide19 = ({ downIcon, navBar }) => {
 				fontSize={fontSizes.MEDIUM}
 			>
 				Given any{" "}
-				<TextSpan
-					color={colors.WHITE}
+				<TextSpanBg
+					color={colors.RED}
 					bgColor={colors.RED}
-					hoverBgColor={colors.DARK_BLUE}
+					hoverColor={colors.DARK_BLUE}
 					fontSize={fontSizes.MEDIUM}
 					onHover={() => setActiveIndex(1)}
 					onHoverOut={() => setActiveIndex(0)}
 				>
 					{" "}
 					two sides of the triangle and the included angle between them,
-				</TextSpan>{" "}
+				</TextSpanBg>{" "}
 				its area can be calculated as:
 			</Paragraph>
 			<Pill
