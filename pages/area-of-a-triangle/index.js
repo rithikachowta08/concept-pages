@@ -65,7 +65,7 @@ const AreaOfATriangle = () => {
 		},
 	];
 
-	const darkBgIndices = [0, 3, 7, 8, 17];
+	const darkBgIndices = [0, 3, 5, 8, 9, 18];
 	return (
 		<FullPageCustomWrapper
 			slidesComponentList={SlideArray}

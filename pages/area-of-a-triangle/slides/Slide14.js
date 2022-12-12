@@ -71,53 +71,45 @@ const Slide14 = ({ downIcon, navBar }) => {
 					</TextSpan>
 				</Flex>
 			</Paragraph>
-			<Flex direction="row" height="fit-content" padding="0 0 0 2rem">
-				<Flex direction="column">
-					<Paragraph
-						fontSize={fontSizes.MEDIUM}
-						marginBottom={isMobile ? "16px" : "25px"}
-					>
-						Area of triangle{" "}
-					</Paragraph>
-					<Paragraph textAlign={"right"} fontSize={fontSizes.MEDIUM}>
-						A
-					</Paragraph>
+			<span>
+				<Flex key={"flex-1"} id="flex-1">
+					<div>
+						<Paragraph fontSize={fontSizes.MEDIUM} marginBottom={"2.2rem"}>
+							Area of triangle{" "}
+						</Paragraph>
+						<Paragraph textAlign={"right"} fontSize={fontSizes.MEDIUM}>
+							A
+						</Paragraph>
+					</div>
+					<div>
+						<Paragraph fontSize={fontSizes.MEDIUM}>
+							<MathElement
+								htmlString={"\\ = \\frac{1}{2} \\times Base \\times Height"}
+							/>
+						</Paragraph>
+						<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
+							<MathElement
+								htmlString={
+									"\\ = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
+								}
+							/>
+						</Paragraph>
+					</div>
 				</Flex>
-				<Flex direction="column">
-					<Paragraph fontSize={fontSizes.MEDIUM}>
-						<MathElement
-							htmlString={"\\ = \\frac{1}{2} \\times Base \\times Height"}
-						/>
-					</Paragraph>
-					<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
-						<MathElement
-							htmlString={
-								"\\ = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
-							}
-						/>
-					</Paragraph>
-				</Flex>
-			</Flex>
-			{/* <Paragraph fontSize={fontSizes.MEDIUM}>
-				Area of triangle ={" "}
-				<MathElement htmlString={"\\frac{1}{2} \\times Base \\times Height"} />
-			</Paragraph>
-			<Paragraph fontSize={fontSizes.MEDIUM} marginBottom="10px">
-				<MathElement
-					htmlString={
-						"A = \\frac{1}{2} \\times b \\times \\sqrt{a^2 - (\\frac{b^2}{4})}"
-					}
-				/>
-			</Paragraph> */}
-			<Pill
-				width="fit-content"
-				fontSize="1.8rem"
-				bgColor={colors.GREEN}
-				color={colors.WHITE}
-			>
-				Area of an isosceles triangle =
-				<MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
-			</Pill>
+			</span>
+			<span>
+				<Pill
+					id="pill-1"
+					key={"pill-1"}
+					width="fit-content"
+					fontSize="1.8rem"
+					bgColor={colors.GREEN}
+					color={colors.WHITE}
+				>
+					Area of an isosceles triangle =
+					<MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+				</Pill>
+			</span>
 		</TextAndDiagramSlide>
 	);
 };
