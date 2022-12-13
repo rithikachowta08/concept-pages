@@ -1,16 +1,30 @@
 import { useState } from "react";
-import { Icon, Flex, SlideWrap, StyledImg } from "components/StyledElements";
-import { Title, Paragraph } from "components/text";
-import QuestionAnswerImage from "components/media/QuestionAnswerImage";
-import Modal from "components/layout/Modal";
-import ActivitySlide from "components/slides/ActivitySlide";
+import dynamic from "next/dynamic";
+
+const ActivitySlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
+const QuestionAnswerImage = dynamic(() =>
+   import("components/media/QuestionAnswerImage")
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+import { Icon } from "components/StyledElements";
 const info = "assets/info.svg";
 const boat = "assets/boat.svg";
 const tent_with_triangle = "assets/tent_with_triangle.svg";
 const boat_correct_answer = "assets/boat_correct_answer.svg";
 const boat_wrong_answer = "assets/boat_wrong_answer.svg";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const Slide6 = ({ downIcon, navBar }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">

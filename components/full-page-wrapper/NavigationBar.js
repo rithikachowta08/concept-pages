@@ -23,13 +23,13 @@ const Wrapper = styled.div`
 	@media (min-width: 768px) and (max-width: 992px) {
 		scale: 0.8;
 		transform: ${(props) =>
-			props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+		props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
 	}
 
 	@media (min-height: 500px) and (max-height: 800px) and (min-width: 769px) {
 		scale: 0.8;
 		transform: ${(props) =>
-			props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+		props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
 	}
 `;
 

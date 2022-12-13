@@ -35,10 +35,11 @@ const ModalBody = styled.div`
    transition: transform 0.5s;
 
    @media only screen and (min-width: 200px) and (max-width: 768px) {
+      border-radius: 20px 20px 0px 0px;
       width: 100%;
       height: 80%;
       transform: ${(props) =>
-         props.isOpen ? "translateY(0px)" : "translateY(999px)"};
+      props.isOpen ? "translateY(0px)" : "translateY(999px)"};
    }
 
    @media only screen and (min-width: 768px) and (max-width: 1284px) {

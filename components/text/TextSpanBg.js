@@ -20,7 +20,6 @@ const StyledSpan = styled.span`
 		background-color: ${(props) => props.hoverColor};
 	}
 `;
-// line-height: ${(props) => props.lineHeight}
 
 const TextSpanBg = ({
 	children,
@@ -84,9 +83,9 @@ TextSpanBg.defaultProps = {
 	fontSize: "1.5rem",
 	textDecoration: "none",
 	cursor: "default",
-	onHover: () => {},
-	onHoverOut: () => {},
-	onClick: () => {},
+	onHover: () => { },
+	onHoverOut: () => { },
+	onClick: () => { },
 };
 
 export default TextSpanBg;

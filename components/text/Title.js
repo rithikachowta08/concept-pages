@@ -13,7 +13,7 @@ const H1 = styled.h1`
 
 	@media (min-width: 200px) and (max-width: 768px) {
 		font-size: ${(props) =>
-			props.fontSize ? props.fontSize : fontSizes.SMALLSCREEN_H1};
+		props.fontSize ? props.fontSize : fontSizes.SMALLSCREEN_H1};
 	}
 `;
 
