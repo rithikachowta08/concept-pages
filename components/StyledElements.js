@@ -40,7 +40,7 @@ export const SlideWrap = styled.div`
       display: none;
     }
     justify-content: ${(props) =>
-      props.isLastSlide ? "flex-start" : "center"};
+    props.isLastSlide ? "flex-start" : "center"};
   }
 `;
 

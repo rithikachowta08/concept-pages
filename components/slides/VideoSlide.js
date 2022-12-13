@@ -62,7 +62,7 @@ const VideoSlide = ({ title, downIcon, navBar, src }) => {
    };
    return (
       <VideoSlideWrap>
-         {React.cloneElement(navBar, { isAbsolute: true })}
+         {navBar ? React.cloneElement(navBar, { isAbsolute: true }) : null}
          <Video
             id="video-element"
             src={src}
@@ -73,7 +73,7 @@ const VideoSlide = ({ title, downIcon, navBar, src }) => {
          />
          {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
          {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>}
-         {React.cloneElement(downIcon, { isVideoSlide: true })}
+         {downIcon ? React.cloneElement(downIcon, { isVideoSlide: true }) : null}
       </VideoSlideWrap>
    );
 };
