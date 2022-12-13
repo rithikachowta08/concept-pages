@@ -27,6 +27,7 @@ const ImgContainer = styled.div`
 `;
 
 const StyledImg = styled.img`
+   width: -webkit-fill-available;
    @media (max-height: 600px) {
       height: 100px;
    }

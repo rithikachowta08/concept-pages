@@ -1,13 +1,33 @@
 import { useState } from "react";
-import { Flex, StyledImg } from "components/StyledElements";
-import { Paragraph, TextSpanBg } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
+import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+   import("components/text").then((mod) => mod.TextSpanBg)
+);
+const StyledImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.StyledImg)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+// const ModalTriggerText = dynamic(() =>
+//    import("components/text").then((mod) => mod.ModalTriggerText)
+// );
+import { ModalTriggerText } from "components/text";
 const rectangle_plain = "assets/area-of-rectangle/rectangle_plain.svg";
 const rectangle_shaded = "assets/area-of-rectangle/rectangle_shaded.svg";
 const unit_square = "assets/area-of-rectangle/unit_square.svg";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import Modal from "components/layout/Modal";
-import { colors } from "utils/colors";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const Slide3 = ({ downIcon, navBar }) => {
    const modalContent = (
@@ -15,7 +35,11 @@ const Slide3 = ({ downIcon, navBar }) => {
          <Paragraph color="white" fontSize="1.5rem">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
-         <StyledImg src={unit_square} />
+         <StyledImg
+            src={unit_square}
+            width="-webkit-fill-available"
+            style={{ scale: "1", transform: "none" }}
+         />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -50,7 +74,7 @@ const Slide3 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph marginBottom="50px">
+         <Paragraph marginBottom="4rem">
             The area of a rectangle is the&nbsp;
             <TextSpanBg
                onHover={onHover}
@@ -66,9 +90,9 @@ const Slide3 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Paragraph>
             It is also the number of&nbsp;
-            <b style={{ cursor: "pointer" }} onClick={onClick}>
-               <u>unit squares</u>
-            </b>
+            <ModalTriggerText onClick={onClick}>
+               unit squares
+            </ModalTriggerText>
             &nbsp;that can fit into a rectangle.
          </Paragraph>
       </TextAndDiagramSlide>

@@ -1,7 +1,15 @@
-import VideoSlide from "components/slides/VideoSlide";
+import dynamic from "next/dynamic";
+const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
 
 const Slide4 = ({ downIcon, navBar }) => {
-   return <div>Video</div>;
+  return (
+    <VideoSlide
+      downIcon={downIcon}
+      navBar={navBar}
+      title="Classification of triangles"
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    />
+  );
 };
 
 export default Slide4;

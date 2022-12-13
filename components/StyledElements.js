@@ -4,9 +4,9 @@ const darkBg = "assets/purple_bg.webp";
 const darkWithTrianglesBg = "assets/purple_bg_triangles.webp";
 
 const bgToImageMap = {
-   LIGHT: lightBg,
-   DARK: darkBg,
-   DARK_PATTERNED: darkWithTrianglesBg,
+  LIGHT: lightBg,
+  DARK: darkBg,
+  DARK_PATTERNED: darkWithTrianglesBg,
 };
 
 export const SlideWrap = styled.div`
@@ -25,9 +25,9 @@ export const SlideWrap = styled.div`
    align-items: center;
 
    ${(props) =>
-      props.isLastSlide || props.hideFiller
-         ? ""
-         : `&::before {
+    props.isLastSlide || props.hideFiller
+      ? ""
+      : `&::before {
       content: "D";
       margin: 1px 1px auto 1px;
       visibility: hidden;
@@ -40,7 +40,7 @@ export const SlideWrap = styled.div`
          display: none;
       }
       justify-content: ${(props) =>
-         props.isLastSlide ? "flex-start" : "center"};
+    props.isLastSlide ? "flex-start" : "center"};
    }
 `;
 
@@ -128,16 +128,16 @@ export const StyledImg = styled.img`
 `;
 
 export const Icon = styled.img`
-   width: ${(props) => props.width || "15px"};
-   height: ${(props) => props.height || props.width || "15px"};
-   cursor: pointer;
-   margin-right: ${(props) => props.marginRight};
-   align-self: ${(props) => props.alignSelf};
+  width: ${(props) => props.width || "15px"};
+  height: ${(props) => props.height || props.width || "15px"};
+  cursor: pointer;
+  margin-right: ${(props) => props.marginRight};
+  align-self: ${(props) => props.alignSelf};
 `;
 
 export const PageWrap = styled.div`
-   height: 100%;
-   width: 100%;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Video = styled.video`
@@ -145,16 +145,16 @@ export const Video = styled.video`
    width: 100%;
    height: ${(props) => (props.isRotated ? "100vh" : "75vh")};
 
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
-      height: ${(props) => (props.isRotated ? "100vh" : "60vh")};
-   }
-   position: ${(props) => (props.isRotated ? "absolute" : "static")};
-   transform: ${(props) =>
-      props.isRotated ? "rotate(90deg) !important" : "none"};
-   transform-origin: ${(props) => (props.isRotated ? "bottom left" : "none")};
-   margin-top: ${(props) => (props.isRotated ? "-100vw" : "none")};
-   object-fit: ${(props) => (props.isRotated ? "cover" : "none")};
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    height: ${(props) => (props.isRotated ? "100vh" : "60vh")};
+  }
+  position: ${(props) => (props.isRotated ? "absolute" : "static")};
+  transform: ${(props) =>
+    props.isRotated ? "rotate(90deg) !important" : "none"};
+  transform-origin: ${(props) => (props.isRotated ? "bottom left" : "none")};
+  margin-top: ${(props) => (props.isRotated ? "-100vw" : "none")};
+  object-fit: ${(props) => (props.isRotated ? "cover" : "none")};
 
-   z-index: 4;
-   visibility: visible;
+  z-index: 4;
+  visibility: visible;
 `;
