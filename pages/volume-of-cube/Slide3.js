@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Flex, StyledImg } from "components/StyledElements";
-import { Paragraph, TextSpanBg, TextSpan } from "components/text";
+import { Paragraph, TextSpanBg, ModalTriggerText } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
@@ -65,19 +65,9 @@ const Slide3 = ({ downIcon, navBar }) => {
                space
             </TextSpanBg>{" "}
             occupied by it. It is also the total number of{" "}
-            <TextSpan
-               id={2}
-               onHoverOut={onHoverOut}
-               color={colors.BLACK}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               textDecoration="underline"
-               cursor="pointer"
-               onClick={onClick}
-               fontSize="2.2rem"
-            >
+            <ModalTriggerText id={2} onClick={onClick}>
                unit cubes
-            </TextSpan>{" "}
+            </ModalTriggerText>{" "}
             that the cube can accomodate.
          </Paragraph>
       </TextAndDiagramSlide>

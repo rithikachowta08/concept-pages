@@ -46,7 +46,7 @@ export const SlideWrap = styled.div`
 
 export const TitleSlideWrap = styled.div`
 	background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-	padding-left: 10%;
+	padding-bottom: 5vh;
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -57,8 +57,12 @@ export const TitleSlideWrap = styled.div`
 	background-repeat: no-repeat;
 	align-items: ${(props) => props.alignItems};
 
-	@media only screen and (min-width: 200px) and (max-width: 768px) {
-		padding-left: 5%;
+	&::before {
+		content: "D";
+		margin: 1px 1px auto 1px;
+		visibility: hidden;
+		padding: 5px;
+		background: #ddd;
 	}
 `;
 
@@ -109,13 +113,17 @@ export const StyledImg = styled.img`
 		width: ${(props) => props.tabletSize || "350px"};
 		height: ${(props) => props.tabletSize || "350px"};
 	}
-	@media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+	@media only screen and (max-height: 399px) and (min-width: 700px) {
 		width: ${(props) => props.mobileSize || "250px"};
 		height: ${(props) => props.mobileSize || "250px"};
 	}
+	@media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+		width: ${(props) => props.mobileSize || "350px"};
+		height: ${(props) => props.mobileSize || "350px"};
+	}
 	@media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
-		width: ${(props) => props.tabletSize || "350px"};
-		height: ${(props) => props.tabletSize || "350px"};
+		width: ${(props) => props.tabletSize || "450px"};
+		height: ${(props) => props.tabletSize || "450px"};
 	}
 `;
 

@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import TitleSlide from "components/slides/TitleSlide";
 
-const Slide1 = ({ moveToSection }) => {
+const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
          title="Volume of a cube"
@@ -13,6 +13,7 @@ const Slide1 = ({ moveToSection }) => {
          ]}
          anchorIdxes={[2, 6, 10, 13]}
          moveToSection={moveToSection}
+         downIcon={downIcon}
       ></TitleSlide>
    );
 };
