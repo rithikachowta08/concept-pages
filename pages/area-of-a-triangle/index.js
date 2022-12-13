@@ -34,7 +34,7 @@ const AreaOfATriangle = () => {
 		<Slide9 key={8} />,
 		<Slide10 key={9} />,
 		<Slide11 key={10} />,
-		<Slide12 key={11} />,
+		// <Slide12 key={11} />, // hidden until approved from content team
 		<Slide13 key={12} />,
 		<Slide14 key={13} />,
 		<Slide15 key={14} />,
@@ -58,14 +58,14 @@ const AreaOfATriangle = () => {
 	const navigationSections = [
 		{ title: "Definition", slides: [1, 2] },
 		{ title: "General Formula", slides: [3, 4, 5, 6] },
-		{ title: "Heron's Formula", slides: [7] },
+		{ title: "Heron's Formula", slides: [8] },
 		{
 			title: "Area of different types of triangle",
-			slides: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+			slides: [9, 10, 11, 12, 13, 14, 15, 16, 17],
 		},
 	];
 
-	const darkBgIndices = [0, 3, 5, 8, 9, 18];
+	const darkBgIndices = [0, 3, 5, 8, 9, 17];
 	return (
 		<FullPageCustomWrapper
 			slidesComponentList={SlideArray}

@@ -39,7 +39,7 @@ const Slide5 = ({ downIcon, navBar }) => {
 							activeIndex={activeIndex}
 						/>
 					),
-					caption: "Acute Angled Triangle",
+					caption: "Acute Triangle",
 				},
 				{
 					diagram: (
@@ -52,7 +52,7 @@ const Slide5 = ({ downIcon, navBar }) => {
 							activeIndex={activeIndex}
 						/>
 					),
-					caption: "Right Angled Triangle",
+					caption: "Right Triangle",
 				},
 				{
 					diagram: (
@@ -65,7 +65,7 @@ const Slide5 = ({ downIcon, navBar }) => {
 							activeIndex={activeIndex}
 						/>
 					),
-					caption: "Obtuse Angled Triangle",
+					caption: "Obtuse Triangle",
 				},
 			]}
 		>

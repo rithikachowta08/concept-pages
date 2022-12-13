@@ -7,6 +7,7 @@ import MathElement from "components/MathElement";
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 import { fontSizes } from "utils/fontStyles";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import HyperLink from "components/text/HyperLink";
 
 const applet = "applets/triangle.html";
 
@@ -31,9 +32,13 @@ const Slide7 = ({ downIcon, navBar }) => {
 				Two identical triangles combine to form a parallelogram.
 			</Paragraph>
 			<Paragraph color={colors.BLACK} marginBottom="10px" fontSize={"1.4rem"}>
-				{/* <TextSpan fontSize={"1.4rem"} color={colors.DARK_BLUE}> */}
-				Area of a parallelogram
-				{/* </TextSpan>{" "} */}= Base (b) × Height (h)
+				<HyperLink
+					color={colors.PURPLE}
+					href={"https://byjus.com/us/math/area-of-parallelogram/"}
+				>
+					Area of a parallelogram
+				</HyperLink>{" "}
+				= Base (b) × Height (h)
 			</Paragraph>
 			<Paragraph
 				color={colors.BLACK}
@@ -46,13 +51,13 @@ const Slide7 = ({ downIcon, navBar }) => {
 			<Pill width="fit-content" bgColor={colors.GREEN}>
 				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
 					Area of the triangle ={" "}
-					<MathElement htmlString={"\\frac{1}{2}\\ \\times\\ "} />{" "}
+					<MathElement htmlString={"\\frac{1}{2}\\times"} />{" "}
 				</TextSpan>
 				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
-					Base (b)
+					Base (b){" "}
 				</TextSpan>
 				<TextSpan fontSize="1.8rem" color={colors.WHITE} fontWeight="600">
-					<MathElement htmlString={"\\ \\times\\ "} />
+					<MathElement htmlString={"\\times\\ "} />
 					Height (h)
 				</TextSpan>
 			</Pill>
