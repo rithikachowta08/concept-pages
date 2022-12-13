@@ -49,7 +49,7 @@ const Slide4 = ({ downIcon, navBar }) => {
 				color={colors.WHITE}
 			>
 				Area of the triangle ={" "}
-				<MathElement htmlString={"\\frac{1}{2} \\times\\ "} />{" "}
+				<MathElement htmlString={"\\frac{1}{2} \\times"} />{" "}
 				<TextSpanBg
 					fontSize="1.8rem"
 					fontWeight={500}
@@ -60,7 +60,7 @@ const Slide4 = ({ downIcon, navBar }) => {
 				>
 					Base
 				</TextSpanBg>{" "}
-				<MathElement htmlString={"\\times\\ "} />{" "}
+				<MathElement htmlString={"\\times"} />{" "}
 				<TextSpanBg
 					fontSize="1.8rem"
 					color={colors.RED}

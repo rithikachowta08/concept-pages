@@ -4,6 +4,7 @@ import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
+import HyperLink from "components/text/HyperLink";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
@@ -44,7 +45,14 @@ const Slide14 = ({ downIcon, navBar }) => {
 					marginBottom={"10px"}
 					fontSize={fontSizes.MEDIUM}
 				>
-					Apply the Pythagoras Theorem in the{" "}
+					Apply the{" "}
+					<HyperLink
+						href={"https://byjus.com/us/math/pythagorean-theorem-formulas/"}
+						color={colors.PURPLE}
+					>
+						Pythagoras Theorem
+					</HyperLink>{" "}
+					in the{" "}
 					<TextSpanBg
 						color={colors.RED}
 						hoverColor={colors.DARK_BLUE}
@@ -66,7 +74,7 @@ const Slide14 = ({ downIcon, navBar }) => {
 					<TextSpan marginBottom={"10px"} fontSize={fontSizes.MEDIUM}>
 						<MathElement htmlString={"h^2 = a^2 - (\\frac{b^2}{4})"} />
 					</TextSpan>
-					<TextSpan marginBottom={"10px"}>
+					<TextSpan marginBottom={"10px"} fontSize={fontSizes.MEDIUM}>
 						<MathElement htmlString={"h = \\sqrt{a^2 - (\\frac{b}{2})^2}"} />
 					</TextSpan>
 				</Flex>

@@ -10,21 +10,21 @@ const bgToImageMap = {
 };
 
 export const SlideWrap = styled.div`
-   background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => props.bgColor};
-   height: 100%;
-   width: 100%;
-   padding: ${(props) => props.padding};
-   gap: ${(props) => props.gap};
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   box-sizing: border-box;
-   background-size: cover;
-   background-repeat: no-repeat;
-   align-items: center;
+  background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+  background-color: ${(props) => props.bgColor};
+  height: 100%;
+  width: 100%;
+  padding: ${(props) => props.padding};
+  gap: ${(props) => props.gap};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
 
-   ${(props) =>
+  ${(props) =>
     props.isLastSlide || props.hideFiller
       ? ""
       : `&::before {
@@ -35,96 +35,96 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
-      &::before {
-         display: none;
-      }
-      justify-content: ${(props) =>
-    props.isLastSlide ? "flex-start" : "center"};
-   }
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    &::before {
+      display: none;
+    }
+    justify-content: ${(props) =>
+      props.isLastSlide ? "flex-start" : "center"};
+  }
 `;
 
 export const TitleSlideWrap = styled.div`
-   background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   padding-bottom: 5vh;
-   height: 100%;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: ${(props) => props.justifyContent || "center"};
-   box-sizing: border-box;
-   background-size: cover;
-   background-repeat: no-repeat;
-   align-items: ${(props) => props.alignItems};
+  background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+  padding-bottom: 5vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props) => props.justifyContent || "center"};
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: ${(props) => props.alignItems};
 
-   &::before {
-      content: "D";
-      margin: 1px 1px auto 1px;
-      visibility: hidden;
-      padding: 5px;
-      background: #ddd;
-   }
+  &::before {
+    content: "D";
+    margin: 1px 1px auto 1px;
+    visibility: hidden;
+    padding: 5px;
+    background: #ddd;
+  }
 `;
 
 export const LeftWrap = styled.div`
-   width: 50%;
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
-      width: 90%;
-   }
+  width: 50%;
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const Flex = styled.div`
-   display: flex;
-   flex-direction: ${(props) => props.direction || "row"};
-   width: ${(props) => props.width};
-   height: ${(props) => props.height};
-   gap: ${(props) => props.gap};
-   flex: ${(props) => props.flex};
-   padding: ${(props) => props.padding};
-   color: ${(props) => props.color};
-   background-color: ${(props) => props.bgColor};
-   border-radius: ${(props) => props.borderRadius};
-   position: ${(props) => props.position};
-   left: ${(props) => props.left};
-   bottom: ${(props) => props.bottom};
-   transform: ${(props) => props.transform};
-   justify-content: ${(props) => props.justifyContent};
-   align-items: ${(props) => props.alignItems};
-   align-self: ${(props) => props.alignSelf};
-   flex-flow: ${(props) => props.flexFlow};
-   cursor: ${(props) => props.cursor};
-   margin: ${(props) => props.margin};
-   margin-bottom: ${(props) => props.marginBottom};
-   margin-right: ${(props) => props.marginRight};
+  display: flex;
+  flex-direction: ${(props) => props.direction || "row"};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  gap: ${(props) => props.gap};
+  flex: ${(props) => props.flex};
+  padding: ${(props) => props.padding};
+  color: ${(props) => props.color};
+  background-color: ${(props) => props.bgColor};
+  border-radius: ${(props) => props.borderRadius};
+  position: ${(props) => props.position};
+  left: ${(props) => props.left};
+  bottom: ${(props) => props.bottom};
+  transform: ${(props) => props.transform};
+  justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems};
+  align-self: ${(props) => props.alignSelf};
+  flex-flow: ${(props) => props.flexFlow};
+  cursor: ${(props) => props.cursor};
+  margin: ${(props) => props.margin};
+  margin-bottom: ${(props) => props.marginBottom};
+  margin-right: ${(props) => props.marginRight};
 `;
 
 export const StyledImg = styled.img`
-   margin-right: ${(props) => props.marginRight || "0"};
-   margin-bottom: ${(props) => props.marginBottom || "0"};
-   align-self: ${(props) => props.alignSelf || "center"};
-   transform: ${(props) => props.transform || "none"};
-   width: ${(props) => props.width || "550px"};
-   height: ${(props) => props.width || "550px"};
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
-      width: ${(props) => props.mobileSize || "250px"};
-      height: ${(props) => props.mobileSize || "250px"};
-   }
-   @media only screen and (min-width: 768px) and (max-width: 992px) {
-      width: ${(props) => props.tabletSize || "350px"};
-      height: ${(props) => props.tabletSize || "350px"};
-   }
-   @media only screen and (max-height: 399px) and (min-width: 700px) {
-      width: ${(props) => props.mobileSize || "250px"};
-      height: ${(props) => props.mobileSize || "250px"};
-   }
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
-      width: ${(props) => props.mobileSize || "350px"};
-      height: ${(props) => props.mobileSize || "350px"};
-   }
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
-      width: ${(props) => props.tabletSize || "450px"};
-      height: ${(props) => props.tabletSize || "450px"};
-   }
+  margin-right: ${(props) => props.marginRight || "0"};
+  margin-bottom: ${(props) => props.marginBottom || "0"};
+  align-self: ${(props) => props.alignSelf || "center"};
+  transform: ${(props) => props.transform || "none"};
+  width: ${(props) => props.width || "550px"};
+  height: ${(props) => props.width || "550px"};
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    width: ${(props) => props.mobileSize || "250px"};
+    height: ${(props) => props.mobileSize || "250px"};
+  }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    width: ${(props) => props.tabletSize || "350px"};
+    height: ${(props) => props.tabletSize || "350px"};
+  }
+  @media only screen and (max-height: 399px) and (min-width: 700px) {
+    width: ${(props) => props.mobileSize || "250px"};
+    height: ${(props) => props.mobileSize || "250px"};
+  }
+  @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+    width: ${(props) => props.mobileSize || "350px"};
+    height: ${(props) => props.mobileSize || "350px"};
+  }
+  @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+    width: ${(props) => props.tabletSize || "450px"};
+    height: ${(props) => props.tabletSize || "450px"};
+  }
 `;
 
 export const Icon = styled.img`
@@ -141,9 +141,9 @@ export const PageWrap = styled.div`
 `;
 
 export const Video = styled.video`
-   display: block;
-   width: 100%;
-   height: ${(props) => (props.isRotated ? "100vh" : "75vh")};
+  display: block;
+  width: 100%;
+  height: ${(props) => (props.isRotated ? "100vh" : "75vh")};
 
   @media only screen and (min-width: 200px) and (max-width: 768px) {
     height: ${(props) => (props.isRotated ? "100vh" : "60vh")};
