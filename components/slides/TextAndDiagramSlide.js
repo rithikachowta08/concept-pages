@@ -8,7 +8,7 @@ import { colors } from "utils/colors";
 const TextAndDiagramSlide = ({
    title,
    bg = "LIGHT",
-   mobileLayoutGap = "30px",
+   mobileLayoutGap = "0px",
    isLastSlide,
    secondaryTitle,
    children,

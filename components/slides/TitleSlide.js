@@ -20,7 +20,7 @@ const TitleSlide = ({
             />
          </Flex>
          {downIcon}
-      </TitleSlideWrap >
+      </TitleSlideWrap>
    );
 };
 
