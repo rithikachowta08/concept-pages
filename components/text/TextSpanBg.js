@@ -15,7 +15,7 @@ const StyledSpan = styled.span`
    transform: ${(props) => props.transform};
    cursor: ${(props) => props.cursor || "default"};
    line-height: ${(props) => props.lineHeight || "3.5rem"};
-   border-radius: 25px;
+   border-radius: ${(props) => props.borderRadius || "25px"};
    padding: 0 10px;
    &:hover {
       background-color: ${(props) => props.hoverColor};
@@ -38,6 +38,7 @@ const TextSpanBg = ({
    onHoverOut,
    onClick,
    fontWeight,
+   borderRadius,
 }) => {
    return (
       <StyledSpan
@@ -55,6 +56,7 @@ const TextSpanBg = ({
          onClick={onClick}
          onMouseLeave={onHoverOut}
          onMouseEnter={onHover}
+         borderRadius={borderRadius}
       >
          {children}
       </StyledSpan>

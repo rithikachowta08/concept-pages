@@ -15,7 +15,7 @@ const IFrame = styled.iframe`
       height: 250px;
    }
 
-   @media only screen and (min-width: 400px) and (max-width: 768px) {
+   @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: 350px;
       height: 350px;
    }
@@ -25,12 +25,12 @@ const IFrame = styled.iframe`
       height: 350px;
    }
 
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
       width: 250px;
       height: 250px;
    }
 
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
       width: 350px;
       height: 350px;
    }

@@ -35,7 +35,7 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
+   @media only screen and (min-width: 200px) and (max-width: 767px) {
       &::before {
          display: none;
       }
@@ -68,7 +68,7 @@ export const TitleSlideWrap = styled.div`
 
 export const LeftWrap = styled.div`
    width: 50%;
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
+   @media only screen and (min-width: 200px) and (max-width: 767px) {
       width: 90%;
    }
 `;
@@ -105,7 +105,7 @@ export const StyledImg = styled.img`
    transform: ${(props) => props.transform || "none"};
    width: ${(props) => props.width || "550px"};
    height: ${(props) => props.width || "550px"};
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
+   @media only screen and (min-width: 200px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
@@ -113,15 +113,15 @@ export const StyledImg = styled.img`
       width: ${(props) => props.tabletSize || "350px"};
       height: ${(props) => props.tabletSize || "350px"};
    }
-   @media only screen and (max-height: 399px) and (min-width: 700px) {
+   @media only screen and (max-height: 399px) and (min-width: 768px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
       width: ${(props) => props.mobileSize || "350px"};
       height: ${(props) => props.mobileSize || "350px"};
    }
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
       width: ${(props) => props.tabletSize || "450px"};
       height: ${(props) => props.tabletSize || "450px"};
    }
@@ -145,7 +145,7 @@ export const Video = styled.video`
    width: 100%;
    height: ${(props) => (props.isRotated ? "100vh" : "75vh")};
 
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
+   @media only screen and (min-width: 200px) and (max-width: 767px) {
       height: ${(props) => (props.isRotated ? "100vh" : "60vh")};
    }
    position: ${(props) => (props.isRotated ? "absolute" : "static")};

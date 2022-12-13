@@ -68,7 +68,7 @@ const TextAndDiagramSlide = ({
          <Flex
             alignItems="center"
             justifyContent={isMobile ? "flex-start" : "center"}
-            height={isMobile ? "70%" : "auto"}
+            height={isMobile ? "100%" : "auto"}
             width="100%"
             gap={isMobile ? "10px" : "60px"}
             direction={isMobile ? "column" : "row"}

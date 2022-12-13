@@ -42,7 +42,7 @@ const MultipleDiagramSlide = ({
             justifyContent={isMobile ? "flex-start" : "center"}
             height={isMobile ? "70%" : "auto"}
             width="100%"
-            gap={isMobile ? "10px" : "60px"}
+            gap={isMobile ? "10px" : "0px"}
          >
             {navBar}
             <Flex
@@ -74,7 +74,7 @@ const MultipleDiagramSlide = ({
                   direction={isMobile ? "column-reverse" : "column"}
                   alignItems="center"
                   width="100%"
-                  padding="0 10px"
+                  padding={isMobile ? "0 10px" : "0"}
                >
                   <Paragraph
                      color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
@@ -83,9 +83,9 @@ const MultipleDiagramSlide = ({
                      {children}
                   </Paragraph>
                   <Flex
-                     flexFlow={isMobile ? "wrap" : "none"}
+                     flexFlow={"wrap"}
                      width="100%"
-                     justifyContent="space-between"
+                     justifyContent="space-evenly"
                      alignItems="center"
                      alignSelf="flex-start"
                   >
@@ -93,11 +93,11 @@ const MultipleDiagramSlide = ({
                         <Flex
                            justifyContent="flex-start"
                            direction="column"
-                           margin="0 auto"
+                           margin={isMobile ? "0 auto" : "0"}
                         >
                            {React.cloneElement(image.diagram, {
                               mobileSize: "150px",
-                              tabletSize: "250px",
+                              tabletSize: "350px",
                               width: "450px",
                            })}
                            <Paragraph
