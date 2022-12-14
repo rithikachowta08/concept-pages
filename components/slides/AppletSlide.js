@@ -15,24 +15,24 @@ const IFrame = styled.iframe`
       height: 150px;
    }
 
-   @media only screen and (min-width: 200px) and (max-width: 768px) {
+   @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: 350px;
       height: 350px;
    }
 
    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      width: 450px;
+      height: 450px;
+   }
+
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
       width: 350px;
       height: 350px;
    }
 
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 700px) {
-      width: 250px;
-      height: 250px;
-   }
-
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
-      width: 350px;
-      height: 350px;
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
+      width: 450px;
+      height: 450px;
    }
 `;
 
@@ -55,7 +55,7 @@ const AppletSlide = ({
          <Flex
             alignItems="center"
             width="100%"
-            height={isMobile ? "70%" : "auto"}
+            height="100%"
             justifyContent={isMobile ? "flex-start" : "center"}
             gap={isMobile ? "30px" : "60px"}
             direction={isMobile ? "column" : "row"}
@@ -68,7 +68,7 @@ const AppletSlide = ({
                flex="2"
                alignItems="center"
             >
-               {title && (
+               {title ? (
                   <Title
                      color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
                      fontSize={fontSizes.H2}
@@ -78,10 +78,12 @@ const AppletSlide = ({
                   >
                      {title}
                   </Title>
-               )}
+               ) : null}
                <Flex
                   direction={isMobile ? "column-reverse" : "row"}
-                  gap="30px"
+                  width="100%"
+                  height="100%"
+                  justifyContent="space-evenly"
                   alignItems="center"
                >
                   {description && (

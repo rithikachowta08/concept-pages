@@ -1,57 +1,50 @@
 import React from "react";
 import styled from "styled-components";
+import { Icon } from "components/StyledElements";
 import { PropTypes } from "prop-types";
 import { fontSizes } from "utils/fontStyles";
+import { colors } from "utils/colors";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 const bullet = "assets/bullet.svg";
 
-const UnorderedList = styled.ul`
+const Flex = styled.div`
+   display: flex;
+   flex-direction: column;
    color: ${(props) => (props.color ? props.color : "white")};
    font-size: ${fontSizes.H1};
-   margin: 0;
-   padding-inline-start: 3%;
-   list-style-image: url(${bullet});
-
-   @media (min-width: 200px) and (max-width: 400px) {
-      padding-inline-start: 6%;
-   }
-
-   @media (min-width: 401px) and (max-width: 768px) {
-      padding-inline-start: 4%;
+   gap: 40px;
+   @media (min-width: 200px) and (max-width: 767px) {
+      gap: 10px;
    }
 
    @media (min-width: 768px) and (max-width: 992px) {
-      padding-inline-start: 4%;
+      gap: 15px;
    }
 `;
 
-const ListItem = styled.li`
-   font-size: ${fontSizes.MEDIUM};
-   margin-bottom: 4%;
-   padding-left: 1%;
+const ListItem = styled.div`
+   display: flex;
+   align-items: center;
+   font-size: ${fontSizes.LARGE};
+   gap: 10px;
    &:hover {
-      color: #fec429;
+      color: ${colors.YELLOW};
       text-decoration: underline;
       cursor: pointer;
-   }
-
-   @media (min-width: 200px) and (max-width: 768px) {
-      margin-bottom: 8%;
-   }
-
-   @media (min-width: 768px) and (max-width: 992px) {
-      margin-bottom: 6%;
    }
 `;
 
 const Title = ({ items, moveTo, anchorIdxes }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <UnorderedList>
+      <Flex>
          {items.map((item, index) => (
             <ListItem onClick={() => moveTo(anchorIdxes[index])} key={index}>
+               <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>
                {item}
             </ListItem>
          ))}
-      </UnorderedList>
+      </Flex>
    );
 };
 

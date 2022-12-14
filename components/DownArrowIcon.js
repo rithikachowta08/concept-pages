@@ -10,12 +10,15 @@ const IconWrap = styled.div`
 
    @media (min-width: 200px) and (max-width: 399px) {
       scale: 0.6;
+      transform: translateY(60%);
    }
-   @media (min-width: 400px) and (max-width: 768px) {
+   @media (min-width: 400px) and (max-width: 767px) {
       scale: 0.75;
+      transform: translateY(50%);
    }
-   @media (min-height: 400px) and (max-height: 700px) and (min-width: 768px) {
+   @media (min-height: 400px) and (max-height: 700px) and (min-width: 767px) {
       scale: 0.75;
+      transform: translateY(50%);
    }
 `;
 

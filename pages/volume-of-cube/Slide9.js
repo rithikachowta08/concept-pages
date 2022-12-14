@@ -36,7 +36,6 @@ const Slide9 = ({ downIcon, navBar }) => {
          }
          downIcon={downIcon}
          navBar={navBar}
-         mobileLayoutGap="0px"
          secondaryTitle="Volume of a Cube using Area"
          title="Illustrative Example"
       >
