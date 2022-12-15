@@ -8,7 +8,7 @@ import { colors } from "utils/colors";
 const Pill = ({
    children,
    icon,
-   width,
+   width = "fit-content",
    position,
    bottom,
    alignSelf,
