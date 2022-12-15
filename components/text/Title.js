@@ -23,8 +23,7 @@ const H2 = styled.h2`
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
-   font-size: ${(props) =>
-      props.fontSize ? props.fontSize : fontSizes.MEDIUM};
+   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.LARGE)};
    margin: 0;
    text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};

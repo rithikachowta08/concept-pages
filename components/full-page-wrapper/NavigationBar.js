@@ -6,7 +6,7 @@ import { useState } from "react";
 import DefaultNavBar from "./DefaultNavBar";
 
 const Wrapper = styled.div`
-   width: ${(props) => (props.isMobile ? "100%" : "60px")};
+   width: ${(props) => (props.isMobile ? "100%" : "80px")};
    z-index: 6;
    position: ${(props) => (props.isAbsolute ? "absolute" : "static")};
    top: ${(props) => (props.isMobile ? "0" : "50%")};

@@ -43,17 +43,21 @@ export const FullPageCustomWrapper = ({
                                  currentPageIdx={currentPageIdx}
                               />
                            ) : null;
-                           const downIcon =
-                              idx === slidesComponentList.length - 1 ? null : (
-                                 <DownArrowIcon
-                                    onClick={fullpageApi?.moveSectionDown}
-                                    color={
-                                       darkBgIndices.includes(idx)
-                                          ? colors.WHITE
-                                          : colors.DARK_GREY
-                                    }
-                                 />
-                              );
+                           const downIcon = (
+                              <DownArrowIcon
+                                 visibility={
+                                    idx === slidesComponentList.length - 1
+                                       ? "hidden"
+                                       : "visible"
+                                 }
+                                 onClick={fullpageApi?.moveSectionDown}
+                                 color={
+                                    darkBgIndices.includes(idx)
+                                       ? colors.WHITE
+                                       : colors.DARK_GREY
+                                 }
+                              />
+                           );
                            return (
                               <div className="section" key={idx}>
                                  {/* No navigation bar on title page */}

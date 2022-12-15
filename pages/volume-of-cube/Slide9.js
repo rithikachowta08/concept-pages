@@ -39,7 +39,7 @@ const Slide9 = ({ downIcon, navBar }) => {
          secondaryTitle="Volume of a Cube using Area"
          title="Illustrative Example"
       >
-         <Paragraph marginBottom="2vh">
+         <Paragraph>
             What is the volume of a cube, when the{" "}
             <TextSpanBg
                id={1}

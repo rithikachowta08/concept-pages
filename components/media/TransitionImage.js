@@ -9,7 +9,11 @@ const Img = styled.img`
    width: ${(props) => props.width || "550px"};
    height: ${(props) => props.width || "550px"};
 
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 399px) {
+      width: ${(props) => props.smallMobileSize || "200px"};
+      height: ${(props) => props.smallMobileSize || "200px"};
+   }
+   @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }

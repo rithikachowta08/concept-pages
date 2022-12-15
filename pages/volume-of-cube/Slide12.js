@@ -52,9 +52,9 @@ const Slide12 = ({ downIcon, navBar }) => {
          <Pill
             width="fit-content"
             fontSize="2.2rem"
-            bgColor={colors.GREEN}
+            bgColor={colors.OCEAN_GREEN}
             marginBottom="2vh"
-            color={colors.WHITE}
+            color={colors.BLACK}
          >
             Volume of a cube{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}

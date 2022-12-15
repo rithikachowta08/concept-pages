@@ -2,34 +2,41 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { colors } from "utils/colors";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
 const IconWrap = styled.div`
    cursor: pointer;
    align-self: center;
-   margin: ${(props) => (props.isVideoSlide ? "0 auto" : "auto 0 0 0")};
+   visibility: ${(props) => props.visibility};
+   margin: ${(props) =>
+      props.noMargin ? "0" : props.isVideoSlide ? "0 auto" : "auto 0 0 0"};
 
    @media (min-width: 200px) and (max-width: 399px) {
       scale: 0.6;
-      transform: translateY(60%);
    }
    @media (min-width: 400px) and (max-width: 767px) {
       scale: 0.75;
-      transform: translateY(50%);
    }
    @media (min-height: 400px) and (max-height: 700px) and (min-width: 767px) {
       scale: 0.75;
-      transform: translateY(50%);
    }
 `;
 
 const DownArrowIcon = ({
    color = colors.DARK_GREY,
+   visibility,
+   noMargin,
    isVideoSlide,
    className,
    onClick,
 }) => {
    return (
-      <IconWrap onClick={onClick} isVideoSlide={isVideoSlide}>
+      <IconWrap
+         onClick={onClick}
+         noMargin={noMargin}
+         isVideoSlide={isVideoSlide}
+         visibility={visibility}
+      >
          <svg
             width="66"
             height="66"

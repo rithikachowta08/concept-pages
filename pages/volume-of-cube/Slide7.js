@@ -15,7 +15,7 @@ const Slide7 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          navBar={navBar}
       >
-         <Paragraph marginBottom="2vh">
+         <Paragraph>
             If we stack square sheets of side length ‘s’ one over the other, a
             cube is formed.
          </Paragraph>

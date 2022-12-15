@@ -19,7 +19,7 @@ const Overlay = styled.div`
 `;
 
 const ModalBody = styled.div`
-   width: 40vw;
+   width: 35vw;
    height: 100%;
    position: absolute;
    bottom: 0;

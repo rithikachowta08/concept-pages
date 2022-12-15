@@ -29,8 +29,8 @@ const SectionIndicator = styled.div`
    border-radius: 50%;
    position: relative;
    cursor: pointer;
-   width: ${(props) => (props.isMobile ? "6px" : "14px")};
-   height: ${(props) => (props.isMobile ? "6px" : "14px")};
+   min-width: ${(props) => (props.isMobile ? "6px" : "14px")};
+   min-height: ${(props) => (props.isMobile ? "6px" : "14px")};
    border: ${(props) => (props.isMobile ? "2px" : "4px")} solid
       ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
    background: ${(props) =>
@@ -136,6 +136,7 @@ const DefaultNavBar = ({
                            cursor="pointer"
                            color={darkTheme ? colors.WHITE : colors.BLACK}
                            marginLeft="20px"
+                           fontSize={fontSizes.MEDIUM}
                         >
                            {section.title}
                         </TextSpan>

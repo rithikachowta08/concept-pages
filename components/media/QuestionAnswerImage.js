@@ -96,17 +96,17 @@ const QuestionAnswerImage = ({
    if (isCorrectAnswer !== null) {
       if (isCorrectAnswer) {
          imageSrc = correctAnswerSrc;
-         color = colors.GREEN;
+         color = colors.OCEAN_GREEN;
          bottomActions = (
-            <Pill bgColor={colors.GREEN} color="white" icon={success}>
+            <Pill bgColor={colors.OCEAN_GREEN} color="white" icon={success}>
                {correctAnswerMsg}
             </Pill>
          );
       } else {
-         color = colors.RED;
+         color = colors.LIGHT_RED;
          imageSrc = wrongAnswerSrc;
          bottomActions = (
-            <Pill bgColor={colors.RED} color="white" icon={error}>
+            <Pill bgColor={colors.LIGHT_RED} color="white" icon={error}>
                {wrongAnswerMsg}
             </Pill>
          );

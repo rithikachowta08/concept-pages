@@ -7,6 +7,7 @@ const cube_faces = "assets/volume-of-cube/slide1/cube-2.png";
 const cube_vertices = "assets/volume-of-cube/slide1/cube-3.png";
 const cube_edges = "assets/volume-of-cube/slide1/cube-4.png";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -28,7 +29,7 @@ const Slide2 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          navBar={navBar}
       >
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             A cube is a three-dimensional shape that has 6{" "}
             <TextSpanBg
                id={1}
@@ -36,8 +37,6 @@ const Slide2 = ({ downIcon, navBar }) => {
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
             >
                square faces
             </TextSpanBg>
@@ -48,8 +47,6 @@ const Slide2 = ({ downIcon, navBar }) => {
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
             >
                vertices
             </TextSpanBg>{" "}
@@ -60,8 +57,6 @@ const Slide2 = ({ downIcon, navBar }) => {
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
             >
                edges
             </TextSpanBg>{" "}

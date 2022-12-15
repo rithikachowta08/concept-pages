@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Title, Paragraph } from "components/text";
+import { TextSpanBg, TextLine, Paragraph } from "components/text";
 import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide13/cube-1.png";
 const cube_lwh = "assets/volume-of-cube/slide13/cube-2.png";
@@ -32,42 +32,38 @@ const Slide13 = ({ downIcon, navBar }) => {
          }
          isLastSlide
       >
-         <Paragraph marginBottom="1vh" color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             If the length, width, and height of a rectangular prism are equal,
             it forms a cube
          </Paragraph>
-         <Paragraph marginBottom="3vh" color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             Volume of a rectangular prism ={" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               textDecoration="underline"
                hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
                color={colors.RED}
             >
                l x w x h
             </TextSpanBg>{" "}
             cubic units
          </Paragraph>
-         <Paragraph color={colors.WHITE}>For l = w = h = s,</Paragraph>
          <Paragraph color={colors.WHITE}>
-            Volume of a cube ={" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               textDecoration="underline"
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
-               color={colors.RED}
-            >
-               s<sup>3</sup>
-            </TextSpanBg>{" "}
-            cubic units
+            <TextLine>For l = w = h = s,</TextLine>
+            <TextLine>
+               Volume of a cube ={" "}
+               <TextSpanBg
+                  id={2}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.AQUA}
+                  color={colors.RED}
+               >
+                  s<sup>3</sup>
+               </TextSpanBg>{" "}
+               cubic units
+            </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );

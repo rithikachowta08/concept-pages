@@ -18,14 +18,14 @@ export const SlideWrap = styled.div`
    gap: ${(props) => props.gap};
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: ${(props) => props.justifyContent || "center"};
    box-sizing: border-box;
    background-size: cover;
    background-repeat: no-repeat;
    align-items: center;
 
    ${(props) =>
-      props.isLastSlide || props.hideFiller
+      props.hideFiller
          ? ""
          : `&::before {
       content: "D";
@@ -39,8 +39,6 @@ export const SlideWrap = styled.div`
       &::before {
          display: none;
       }
-      justify-content: ${(props) =>
-         props.isLastSlide ? "flex-start" : "center"};
    }
 `;
 
@@ -67,10 +65,14 @@ export const TitleSlideWrap = styled.div`
 `;
 
 export const LeftWrap = styled.div`
-   width: 50%;
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
-      width: 90%;
-   }
+   min-width: 20%;
+   margin-left: 60px;
+   margin-right: ${(props) => props.marginRight};
+`;
+
+export const RightWrap = styled.div`
+   flex: 1;
+   text-align: center;
 `;
 
 export const Flex = styled.div`
@@ -95,6 +97,7 @@ export const Flex = styled.div`
    cursor: ${(props) => props.cursor};
    margin: ${(props) => props.margin};
    margin-bottom: ${(props) => props.marginBottom};
+   margin-top: ${(props) => props.marginTop};
    margin-right: ${(props) => props.marginRight};
 `;
 
@@ -105,7 +108,11 @@ export const StyledImg = styled.img`
    transform: ${(props) => props.transform || "none"};
    width: ${(props) => props.width || "550px"};
    height: ${(props) => props.width || "550px"};
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 399px) {
+      width: ${(props) => props.smallMobileSize || "200px"};
+      height: ${(props) => props.smallMobileSize || "200px"};
+   }
+   @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }

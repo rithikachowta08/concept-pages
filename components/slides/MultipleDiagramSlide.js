@@ -89,11 +89,12 @@ const MultipleDiagramSlide = ({
                      alignItems="center"
                      alignSelf="flex-start"
                   >
-                     {images.map((image) => (
+                     {images.map((image, idx) => (
                         <Flex
                            justifyContent="flex-start"
                            direction="column"
                            margin={isMobile ? "0 auto" : "0"}
+                           key={idx}
                         >
                            {React.cloneElement(image.diagram, {
                               mobileSize: "150px",
@@ -106,7 +107,7 @@ const MultipleDiagramSlide = ({
                               }
                               fontWeight={400}
                               textAlign="center"
-                              fontSize="1.4rem"
+                              fontSize={fontSizes.LARGE}
                            >
                               {image.caption}
                            </Paragraph>
