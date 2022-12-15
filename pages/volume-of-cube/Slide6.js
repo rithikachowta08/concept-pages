@@ -3,11 +3,13 @@ import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpanBg, Title, Paragraph } from "components/text";
 import Pill from "components/Pill";
-const cube_red = "assets/volume-of-cube/slide6/cube-1.png";
-const cube_d = "assets/volume-of-cube/slide6/cube-2.png";
+const cube_red = "assets/volume-of-cube/slide6/1.svg";
+const cube_d = "assets/volume-of-cube/slide6/2.svg";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
+import { TextLine } from "components/text";
 
 const Slide6 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -18,11 +20,30 @@ const Slide6 = ({ downIcon, navBar }) => {
       setActiveIndex(0);
    };
    let latex = [];
-   latex.push(`= side \\times side \\times side`);
-   latex.push(`= s \\times s \\times s`);
-   latex.push(`= (side)^3`);
+   // latex.push(`= side \\times side \\times side`);
+   // latex.push(`= s \\times s \\times s`);
+   // latex.push(`= (side)^3`);
    latex.push(` = (side)^3`);
 
+   let EquationLatex=[
+      {
+        lhsLatex:[`{Volume}`,"","",""],
+        rhsLatex:[
+          {
+            eqLatex:"Side \\times Side \\times Side",
+          hint:''
+        },
+        {
+          eqLatex:"s \\times s \\times s",
+        hint:''
+      },
+      {
+        eqLatex:"s^3",
+      hint:''
+    },
+      ]
+      },
+    ]
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -38,7 +59,7 @@ const Slide6 = ({ downIcon, navBar }) => {
          title="Formula"
       >
          <Paragraph color={colors.WHITE}>
-            For a cube with{" "}
+           <TextLine> For a cube with{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
@@ -48,16 +69,8 @@ const Slide6 = ({ downIcon, navBar }) => {
             >
                side length ‘s’
             </TextSpanBg>{" "}
-         </Paragraph>
-         <Paragraph marginBottom="1vh" color={colors.WHITE}>
-            Volume{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph marginBottom="1vh" color={colors.WHITE}>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph marginBottom="2vh" color={colors.WHITE}>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+            </TextLine>
+         <MultiLhsEquationContainer color={colors.WHITE} equationLatex={EquationLatex[0]}></MultiLhsEquationContainer>
          </Paragraph>
          <Pill
             width="fit-content"

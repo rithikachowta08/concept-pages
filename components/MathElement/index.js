@@ -5,7 +5,7 @@ import TeX from "@matejmazur/react-katex";
 
 export default function MathElement({ htmlString }) {
    if (htmlString == "" || htmlString == "undefined") {
-      return <span>EMPTY</span>;
+      return <div style={{color:"transparent"}}>'</div>;
    } else {
       return (
          <>

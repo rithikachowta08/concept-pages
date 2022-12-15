@@ -99,6 +99,7 @@ export const Flex = styled.div`
    margin-bottom: ${(props) => props.marginBottom};
    margin-top: ${(props) => props.marginTop};
    margin-right: ${(props) => props.marginRight};
+   line-height:${(props) => props.lineHeight};
 `;
 
 export const StyledImg = styled.img`

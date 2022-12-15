@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Paragraph, TextSpanBg } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
-const cube_red = "assets/volume-of-cube/slide1/cube-1.png";
-const cube_faces = "assets/volume-of-cube/slide1/cube-2.png";
-const cube_vertices = "assets/volume-of-cube/slide1/cube-3.png";
-const cube_edges = "assets/volume-of-cube/slide1/cube-4.png";
+const cube_red = "assets/volume-of-cube/slide2/1.svg";
+const cube_faces = "assets/volume-of-cube/slide2/2.svg";
+const cube_vertices = "assets/volume-of-cube/slide2/3.svg";
+const cube_edges = "assets/volume-of-cube/slide2/4.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 
