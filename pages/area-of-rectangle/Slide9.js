@@ -10,6 +10,9 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
+const TextLine = dynamic(() =>
+  import("components/text").then((mod) => mod.TextLine)
+);
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
@@ -20,6 +23,7 @@ const rectangle_full_diagonal =
   "assets/area-of-rectangle/s8_rectangle_full_diagonal.svg";
 const rectangle_diagonal = "assets/area-of-rectangle/s8_rectangle_diagonal.svg";
 import HyperLink from "components/text/HyperLink";
+import { fontSizes } from "utils/fontStyles";
 
 const Slide9 = ({ downIcon, navBar }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +46,7 @@ const Slide9 = ({ downIcon, navBar }) => {
       downIcon={downIcon}
       navBar={navBar}
     >
-      <Paragraph marginBottom="20px" color="white">
+      <Paragraph color="white">
         The length of a{" "}
         <TextSpanBg
           onHover={onHover}
@@ -59,33 +63,39 @@ const Slide9 = ({ downIcon, navBar }) => {
           Pythagorean
         </HyperLink>{" "}
         theorem.
+        <TextLine>
+          <i>
+            {" "}
+            d<sup>2</sup> = l<sup>2</sup> + w<sup>2</sup>
+          </i>
+        </TextLine>
       </Paragraph>
-      <Paragraph color="white">
-        <i>
-          {" "}
-          d<sup>2</sup> = l<sup>2</sup> + w<sup>2</sup>
-        </i>
-      </Paragraph>
-      <Paragraph color="white">From this,</Paragraph>
-      <Paragraph color="white" marginBottom="20px">
-        <i>
-          {" "}
-          w = √ d<sup>2</sup> - l<sup>2</sup>
-        </i>
-      </Paragraph>
-      <Paragraph color="white" marginBottom="20px">
-        Area ={" "}
-        <i>
-          l × w = l × √ d<sup>2</sup> - l<sup>2</sup>
-        </i>
-      </Paragraph>
-      <Paragraph color="white">Similarly,</Paragraph>
-      <Paragraph color="white" marginBottom="20px">
-        Area ={" "}
-        <i>
-          w × √ d<sup>2</sup> - l<sup>2</sup>
-        </i>
-      </Paragraph>
+      <div>
+        <Paragraph color="white">
+          From this,
+          <TextLine>
+            <i>
+              {" "}
+              w = √ d<sup>2</sup> - l<sup>2</sup>
+            </i>
+          </TextLine>
+          <TextLine>
+            Area ={" "}
+            <i>
+              l × w = l × √ d<sup>2</sup> - l<sup>2</sup>
+            </i>
+          </TextLine>
+        </Paragraph>
+        <Paragraph color="white">
+          <TextLine>Similarly,</TextLine>
+          <TextLine>
+            Area ={" "}
+            <i>
+              w × √ d<sup>2</sup> - w<sup>2</sup>
+            </i>
+          </TextLine>
+        </Paragraph>
+      </div>
     </TextAndDiagramSlide>
   );
 };

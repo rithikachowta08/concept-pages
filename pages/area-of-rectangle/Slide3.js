@@ -32,7 +32,7 @@ import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 const Slide3 = ({ downIcon, navBar }) => {
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" fontSize="1.5rem">
+         <Paragraph color="white">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
          <StyledImg
@@ -74,7 +74,7 @@ const Slide3 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph marginBottom="4rem">
+         <Paragraph>
             The area of a rectangle is the&nbsp;
             <TextSpanBg
                onHover={onHover}

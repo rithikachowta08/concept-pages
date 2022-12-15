@@ -7,13 +7,13 @@ import { PropTypes } from "prop-types";
 const Line = styled.div`
    color: ${(props) => props.color || "inherit"};
    text-align: ${(props) => props.textAlign};
-   font-weight: ${fontWeights.NORMAL}
+   font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    font-size: ${(props) => props.fontSize || fontSizes.LARGE};
 `;
 
-const TextLine = ({ children, fontSize, textAlign, color }) => {
+const TextLine = ({ children, fontSize, textAlign, fontWeight, color }) => {
    return (
-      <Line textAlign={textAlign} fontSize={fontSize} color={color}>
+      <Line textAlign={textAlign} fontSize={fontSize} fontWeight={fontWeight} color={color}>
          {children}
       </Line>
    );
