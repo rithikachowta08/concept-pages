@@ -25,25 +25,25 @@ const Slide6 = ({ downIcon, navBar }) => {
    // latex.push(`= (side)^3`);
    latex.push(` = (side)^3`);
 
-   let EquationLatex=[
+   let EquationLatex = [
       {
-        lhsLatex:[`{Volume}`,"","",""],
-        rhsLatex:[
-          {
-            eqLatex:"Side \\times Side \\times Side",
-          hint:''
-        },
-        {
-          eqLatex:"s \\times s \\times s",
-        hint:''
+         lhsLatex: [`{Volume}`, "", "", ""],
+         rhsLatex: [
+            {
+               eqLatex: "Side \\times Side \\times Side",
+               hint: "",
+            },
+            {
+               eqLatex: "s \\times s \\times s",
+               hint: "",
+            },
+            {
+               eqLatex: "s^3",
+               hint: "",
+            },
+         ],
       },
-      {
-        eqLatex:"s^3",
-      hint:''
-    },
-      ]
-      },
-    ]
+   ];
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -59,18 +59,23 @@ const Slide6 = ({ downIcon, navBar }) => {
          title="Formula"
       >
          <Paragraph color={colors.WHITE}>
-           <TextLine> For a cube with{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
-            >
-               side length ‘s’
-            </TextSpanBg>{" "}
+            <TextLine>
+               {" "}
+               For a cube with{" "}
+               <TextSpanBg
+                  id={1}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.AQUA}
+                  color={colors.RED}
+               >
+                  side length ‘s’
+               </TextSpanBg>{" "}
             </TextLine>
-         <MultiLhsEquationContainer color={colors.WHITE} equationLatex={EquationLatex[0]}></MultiLhsEquationContainer>
+            <MultiLhsEquationContainer
+               color={colors.WHITE}
+               equationLatex={EquationLatex[0]}
+            ></MultiLhsEquationContainer>
          </Paragraph>
          <Pill
             width="fit-content"

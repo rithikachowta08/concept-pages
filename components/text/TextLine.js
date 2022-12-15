@@ -13,7 +13,12 @@ const Line = styled.div`
 
 const TextLine = ({ children, fontSize, textAlign, fontWeight, color }) => {
    return (
-      <Line textAlign={textAlign} fontSize={fontSize} fontWeight={fontWeight} color={color}>
+      <Line
+         textAlign={textAlign}
+         fontSize={fontSize}
+         fontWeight={fontWeight}
+         color={color}
+      >
          {children}
       </Line>
    );

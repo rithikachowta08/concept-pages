@@ -23,33 +23,33 @@ const Slide13 = ({ downIcon, navBar }) => {
    latex.push(`= \\sqrt{3} \\times 3`);
    latex.push(`= 3 \\sqrt{3}ft^3 `);
    let mathjaxCounter = 0;
-   let EquationLatex=[
+   let EquationLatex = [
       {
-        lhsLatex:[`Volume`,"","",""],
-        rhsLatex:[
-          {
-            eqLatex:"\\sqrt{3} \\times {\\frac{d}{9}}^2",
-          hint:''
-        },
-        {
-          eqLatex:"\\sqrt{3} \\times {\\frac{3}{9}}^2",
-        hint:''
+         lhsLatex: [`Volume`, "", "", ""],
+         rhsLatex: [
+            {
+               eqLatex: "\\sqrt{3} \\times {\\frac{d}{9}}^2",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3} \\times {\\frac{3}{9}}^2",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3}\\times \\frac{27}{9}",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3} \\times 3",
+               hint: "",
+            },
+            {
+               eqLatex: "3 \\sqrt{3}ft^3 ",
+               hint: "",
+            },
+         ],
       },
-      {
-        eqLatex:"\\sqrt{3}\\times \\frac{27}{9}",
-      hint:''
-    },
-    {
-      eqLatex:"\\sqrt{3} \\times 3",
-    hint:''
-  },
-  {
-   eqLatex:"3 \\sqrt{3}ft^3 ",
- hint:''
-},
-      ]
-      },
-    ]
+   ];
    return (
       <TextAndDiagramSlide
          diagram={
@@ -70,14 +70,18 @@ const Slide13 = ({ downIcon, navBar }) => {
                onHover={onHover}
                onHoverOut={onHoverOut}
                color={colors.RED}
-               hoverColor={colors.DARK_BLUE}>
+               hoverColor={colors.DARK_BLUE}
+            >
                diagonal
             </TextSpanBg>{" "}
             is 3 feet long.
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
-            <MultiLhsEquationContainer lineHeight="2" equationLatex={EquationLatex[0]}></MultiLhsEquationContainer>
+            <MultiLhsEquationContainer
+               lineHeight="2"
+               equationLatex={EquationLatex[0]}
+            ></MultiLhsEquationContainer>
          </Paragraph>
       </TextAndDiagramSlide>
    );

@@ -54,7 +54,7 @@ const SectionIndicator = styled.div`
 
 const Connector = styled.div`
    width: 4px;
-   height: 60px;
+   height: 70px;
    background: ${(props) =>
       props.darkTheme
          ? `rgba(255, 255, 255, ${props.isComplete ? 1 : 0.3})`

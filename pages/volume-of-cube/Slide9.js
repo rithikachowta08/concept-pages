@@ -1,4 +1,10 @@
-import { SlideWrap, Flex, LeftWrap, StyledImg, Icon } from "components/StyledElements";
+import {
+   SlideWrap,
+   Flex,
+   LeftWrap,
+   StyledImg,
+   Icon,
+} from "components/StyledElements";
 import { TextSpanBg, Title, Paragraph } from "components/text";
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
@@ -18,33 +24,32 @@ const boat_correct_answer = "assets/boat_correct_answer.svg";
 const boat_wrong_answer = "assets/boat_wrong_answer.svg";
 const boat = "assets/boat.svg";
 
-const Slide9 = ({navBar,downIcon}) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const onDismiss = () => {
-    setIsModalOpen(false);
-  };
-  const onClick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  //   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-  const modalContent = (
-    <Flex direction="column">
-      <Paragraph
-        color="white">
-        The dimensions of the given Rubik&apos;scube
-      </Paragraph>
-      <StyledImg
-        src={cube_diagonal}
-        alignSelf="center"
-        marginBottom="50px"
-      />
-    </Flex>
-  );
+const Slide9 = ({ navBar, downIcon }) => {
+   const [activeIndex, setActiveIndex] = useState(0);
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const onDismiss = () => {
+      setIsModalOpen(false);
+   };
+   const onClick = () => {
+      setIsModalOpen(!isModalOpen);
+   };
+   //   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const modalContent = (
+      <Flex direction="column">
+         <Paragraph color="white">
+            The dimensions of the given Rubik&apos;scube
+         </Paragraph>
+         <StyledImg
+            src={cube_diagonal}
+            alignSelf="center"
+            marginBottom="50px"
+         />
+      </Flex>
+   );
 
-  return (
-    <TextAndAppletSlide
-    title="Area using Unit Squares"
+   return (
+      <TextAndAppletSlide
+         title="Area using Unit Squares"
          appletSrc="./applets/triangle.html"
          downIcon={downIcon}
          navBar={navBar}
@@ -53,8 +58,7 @@ const Slide9 = ({navBar,downIcon}) => {
             Move the sliders to create a rectangle occupying an area of 54 unit
             squares.
          </Paragraph>
-
-    </TextAndAppletSlide>
-  );
+      </TextAndAppletSlide>
+   );
 };
 export default Slide9;

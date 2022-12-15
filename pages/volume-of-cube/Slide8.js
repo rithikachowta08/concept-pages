@@ -13,29 +13,29 @@ const Slide8 = ({ downIcon, navBar }) => {
    latex.push(`= 7cm \\times 7cm \\times 7cm`);
    latex.push(`= 343 cm^3`);
    let latexCounter = 0;
-   let EquationLatex=[
+   let EquationLatex = [
       {
-         lhsLatex:[`{Volume} \\: of cube`],
-         rhsLatex:[
-           {
-             eqLatex:"(side)^3",
-             hint:''
-         },
-         {
-            eqLatex:"(7cm)^3",
-            hint:''
-        },
-        {
-         eqLatex:"7cm \\times 7cm \\times 7cm",
-         hint:''
-     },
-     {
-      eqLatex:"343cm^3",
-      hint:''
-  },
-       ]
-       }
-    ]
+         lhsLatex: [`{Volume} \\: of cube`],
+         rhsLatex: [
+            {
+               eqLatex: "(side)^3",
+               hint: "",
+            },
+            {
+               eqLatex: "(7cm)^3",
+               hint: "",
+            },
+            {
+               eqLatex: "7cm \\times 7cm \\times 7cm",
+               hint: "",
+            },
+            {
+               eqLatex: "343cm^3",
+               hint: "",
+            },
+         ],
+      },
+   ];
    return (
       <TextAndDiagramSlide
          secondaryTitle="Volume of a Cube Formula"
@@ -48,12 +48,11 @@ const Slide8 = ({ downIcon, navBar }) => {
             What is the volume of a cube of side length 7 cm?
          </Paragraph>
          <Paragraph>
-            <TextLine>
-            Solution:
-            </TextLine>
-<MultiLhsEquationContainer equationLatex={EquationLatex[latexCounter++]}></MultiLhsEquationContainer>
+            <TextLine>Solution:</TextLine>
+            <MultiLhsEquationContainer
+               equationLatex={EquationLatex[latexCounter++]}
+            ></MultiLhsEquationContainer>
          </Paragraph>
-
       </TextAndDiagramSlide>
    );
 };

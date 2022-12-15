@@ -94,12 +94,13 @@ export const Flex = styled.div`
    align-items: ${(props) => props.alignItems};
    align-self: ${(props) => props.alignSelf};
    flex-flow: ${(props) => props.flexFlow};
+   flex-grow: ${(props) => props.flexGrow};
    cursor: ${(props) => props.cursor};
    margin: ${(props) => props.margin};
    margin-bottom: ${(props) => props.marginBottom};
    margin-top: ${(props) => props.marginTop};
    margin-right: ${(props) => props.marginRight};
-   line-height:${(props) => props.lineHeight};
+   line-height: ${(props) => props.lineHeight};
 `;
 
 export const StyledImg = styled.img`
@@ -121,17 +122,52 @@ export const StyledImg = styled.img`
       width: ${(props) => props.tabletSize || "350px"};
       height: ${(props) => props.tabletSize || "350px"};
    }
+   @media only screen and (min-width: 993px) and (max-width: 1442px) {
+      width: ${(props) => props.smallDesktopSize || "350px"};
+      height: ${(props) => props.smallDesktopSize || "350px"};
+   }
    @media only screen and (max-height: 399px) and (min-width: 768px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
    @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
-      width: ${(props) => props.mobileSize || "350px"};
-      height: ${(props) => props.mobileSize || "350px"};
+      width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
+      height: ${(props) => props.tabletSize || props.mobileSize || "350px"};
    }
    @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
-      width: ${(props) => props.tabletSize || "450px"};
-      height: ${(props) => props.tabletSize || "450px"};
+      width: ${(props) =>
+         props.smallDesktopSize || props.tabletSize || "450px"};
+      height: ${(props) =>
+         props.smallDesktopSize || props.tabletSize || "450px"};
+   }
+`;
+export const ModalImg = styled.img`
+   align-self: ${(props) => props.alignSelf || "center"};
+   width: 350px;
+   height: 350px;
+   @media only screen and (min-width: 200px) and (max-width: 399px) {
+      width: 200px;
+      height: 200px;
+   }
+   @media only screen and (min-width: 400px) and (max-width: 767px) {
+      width: 250px;
+      height: 250px;
+   }
+   @media only screen and (min-width: 768px) and (max-width: 992px) {
+      width: 300px;
+      height: 300px;
+   }
+   @media only screen and (max-height: 399px) and (min-width: 768px) {
+      width: 200px;
+      height: 200px;
+   }
+   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
+      width: 250px;
+      height: 250px;
+   }
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
+      width: 300px;
+      height: 300px;
    }
 `;
 
@@ -146,6 +182,10 @@ export const Icon = styled.img`
 export const PageWrap = styled.div`
    height: 100%;
    width: 100%;
+`;
+
+export const LeftAlignDiv = styled.div`
+   align-self: flex-start;
 `;
 
 export const Video = styled.video`
