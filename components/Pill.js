@@ -3,6 +3,7 @@ import { fontSizes } from "utils/fontStyles";
 import { Icon, Flex } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { PropTypes } from "prop-types";
+import { colors } from "utils/colors";
 
 const Pill = ({
    children,
@@ -12,9 +13,9 @@ const Pill = ({
    bottom,
    alignSelf,
    marginBottom,
-   color,
-   bgColor,
-   fontSize = fontSizes.SMALL,
+   color = colors.DARK_GREY,
+   bgColor = colors.OCEAN_GREEN,
+   fontSize = fontSizes.LARGE,
 }) => {
    return (
       <Flex
@@ -23,6 +24,7 @@ const Pill = ({
          padding="0.7rem"
          alignItems="center"
          marginBottom={marginBottom}
+         marginTop="1rem"
          alignSelf={alignSelf}
          borderRadius="8px"
          position={position}

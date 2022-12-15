@@ -1,10 +1,14 @@
+import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
+import {
+   SlideWrap,
+   Flex,
+   LeftWrap,
+   RightWrap,
+} from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { Title } from "components/text";
-import { fontSizes, fontWeights } from "utils/fontStyles";
-import { colors } from "utils/colors";
+import { SlideSecondaryTitle, SlideTitle } from "./common";
 
 const IFrame = styled.iframe`
    width: 700px;
@@ -40,7 +44,6 @@ const TextAndAppletSlide = ({
    title,
    bg = "LIGHT",
    isLastSlide,
-   mobileLayoutGap = "30px",
    downIcon,
    navBar,
    secondaryTitle,
@@ -48,80 +51,59 @@ const TextAndAppletSlide = ({
    appletSrc,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   const titleElem = (
-      <Title
-         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         fontSize={fontSizes.H2}
-         fontWeight={fontWeights.BOLD}
-         textAlign={isMobile ? "center" : "left"}
-         marginBottom="1vh"
-         small
-      >
-         {title}
-      </Title>
-   );
-   const secondaryTitleElem = secondaryTitle ? (
-      <Title
-         opacity={0.5}
-         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         textAlign={isMobile ? "center" : "left"}
-         marginBottom="1vh"
-         small
-      >
-         {secondaryTitle}
-      </Title>
-   ) : null;
-   const content = isMobile ? (
-      <Flex
-         width="100%"
-         alignItems="center"
-         direction={isMobile ? "column-reverse" : "row"}
-      >
-         <div>{children}</div>
-         <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
-      </Flex>
-   ) : (
-      <>
-         <LeftWrap>
-            {secondaryTitleElem}
-            {titleElem}
-            {children}
-         </LeftWrap>
-         <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
-      </>
-   );
-   return (
-      <SlideWrap
-         bg={bg}
-         isLastSlide={isLastSlide}
-         padding={isMobile ? "0 0 20px 0" : "20px"}
-      >
-         <Flex
-            alignItems="center"
-            justifyContent={isMobile ? "flex-start" : "center"}
-            height={isMobile ? "70%" : "auto"}
-            width="100%"
-            gap={isMobile ? "30px" : "60px"}
-            direction={isMobile ? "column" : "row"}
+   if (isMobile) {
+      return (
+         <SlideWrap
+            bg={bg}
+            padding="0 0 10px 0"
+            gap="10px"
+            justifyContent="space-between"
+            isLastSlide={isLastSlide}
          >
+            {/* NavBar */}
             {navBar}
+            {/* Body */}
             <Flex
-               height="100%"
+               direction="column"
                padding="0 20px"
-               direction={isMobile ? "column" : "row"}
-               gap={isMobile ? mobileLayoutGap : "10px"}
-               justifyContent={isMobile ? "flex-start" : "space-evenly"}
-               flex={2}
+               justifyContent="space-between"
                alignItems="center"
             >
-               {isMobile ? (
-                  <Flex direction="column" alignItems="center">
-                     {secondaryTitleElem}
-                     {titleElem}
-                  </Flex>
-               ) : null}
-               {content}
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                     isMobile
+                  />
+                  <SlideTitle bg={bg} isMobile>
+                     {title}
+                  </SlideTitle>
+               </div>
+               <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+               {children}
             </Flex>
+            {/* DownIcon */}
+            {React.cloneElement(downIcon, { noMargin: true })}
+         </SlideWrap>
+      );
+   }
+   return (
+      <SlideWrap bg={bg} padding={"20px 30px"}>
+         <Flex alignItems="center" justifyContent="flex-start" width="100%">
+            {navBar}
+            <LeftWrap marginRight="20px">
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                  />
+                  <SlideTitle bg={bg}>{title}</SlideTitle>
+               </div>
+               {children}
+            </LeftWrap>
+            <RightWrap>
+               <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+            </RightWrap>
          </Flex>
          {downIcon}
       </SlideWrap>

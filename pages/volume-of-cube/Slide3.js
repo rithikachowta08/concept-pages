@@ -8,6 +8,7 @@ const cube_red = "assets/volume-of-cube/slide2/cube-1.png";
 const cube_spaces = "assets/volume-of-cube/slide2/cube-2.png";
 const cube_unit = "assets/volume-of-cube/slide2/cube-3.png";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide3 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +18,12 @@ const Slide3 = ({ downIcon, navBar }) => {
          <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
             Unit cube is a cube whose sides are 1 unit long
          </Paragraph>
-         <StyledImg src={cube_unit} alignSelf="center" marginBottom="50px" />
+         <StyledImg
+            src={cube_unit}
+            alignSelf="center"
+            width="400px"
+            marginBottom="50px"
+         />
       </Flex>
    );
    const onClick = () => {
@@ -51,7 +57,7 @@ const Slide3 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph marginBottom="70px">
+         <Paragraph lineHeight={lineHeightProp}>
             The volume of a cube is the{" "}
             <TextSpanBg
                id={1}
@@ -59,8 +65,6 @@ const Slide3 = ({ downIcon, navBar }) => {
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
             >
                space
             </TextSpanBg>{" "}

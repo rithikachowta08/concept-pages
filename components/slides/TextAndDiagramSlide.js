@@ -1,14 +1,17 @@
+import React from "react";
 import { PropTypes } from "prop-types";
-import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
+import { SlideSecondaryTitle, SlideTitle } from "./common";
+import {
+   SlideWrap,
+   Flex,
+   LeftWrap,
+   RightWrap,
+} from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { Title } from "components/text";
-import { fontSizes, fontWeights } from "utils/fontStyles";
-import { colors } from "utils/colors";
 
 const TextAndDiagramSlide = ({
    title,
    bg = "LIGHT",
-   mobileLayoutGap = "0px",
    isLastSlide,
    secondaryTitle,
    children,
@@ -17,81 +20,57 @@ const TextAndDiagramSlide = ({
    diagram,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   const secondaryTitleElem = secondaryTitle ? (
-      <Title
-         opacity={0.5}
-         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         textAlign={isMobile ? "center" : "left"}
-         marginBottom="1vh"
-         small
-      >
-         {secondaryTitle}
-      </Title>
-   ) : null;
-   const titleElem = (
-      <Title
-         color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         fontSize={fontSizes.H2}
-         fontWeight={fontWeights.BOLD}
-         textAlign={isMobile ? "center" : "left"}
-         marginBottom="1vh"
-         small
-      >
-         {title}
-      </Title>
-   );
-   const content = isMobile ? (
-      <Flex
-         width="100%"
-         alignItems="center"
-         direction={isMobile ? "column-reverse" : "row"}
-      >
-         <div>{children}</div>
-         {diagram}
-      </Flex>
-   ) : (
-      <>
-         <LeftWrap>
-            {secondaryTitleElem}
-            {titleElem}
-            {children}
-         </LeftWrap>
-         {diagram}
-      </>
-   );
-   return (
-      <SlideWrap
-         bg={bg}
-         padding={isMobile ? "0 0 20px 0" : "20px"}
-         isLastSlide={isLastSlide}
-      >
-         <Flex
-            alignItems="center"
-            justifyContent={isMobile ? "flex-start" : "center"}
-            height={isMobile ? "100%" : "auto"}
-            width="100%"
-            gap={isMobile ? "10px" : "60px"}
-            direction={isMobile ? "column" : "row"}
+   if (isMobile) {
+      return (
+         <SlideWrap
+            bg={bg}
+            padding="0 0 10px 0"
+            gap="10px"
+            justifyContent="space-between"
+            isLastSlide={isLastSlide}
          >
+            {/* NavBar */}
             {navBar}
+            {/* Body */}
             <Flex
-               padding={isMobile ? "0 20px" : "0"}
-               direction={isMobile ? "column" : "row"}
-               gap={isMobile ? mobileLayoutGap : "10px"}
-               margin={isMobile ? "auto 0" : "0"}
-               justifyContent="space-evenly"
-               flex={2}
-               width="100%"
+               direction="column"
+               padding="0 20px"
+               justifyContent="space-between"
                alignItems="center"
             >
-               {isMobile ? (
-                  <Flex direction="column" alignItems="center">
-                     {secondaryTitleElem}
-                     {titleElem}
-                  </Flex>
-               ) : null}
-               {content}
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                     isMobile
+                  />
+                  <SlideTitle bg={bg} isMobile>
+                     {title}
+                  </SlideTitle>
+               </div>
+               {diagram}
+               {children}
             </Flex>
+            {/* DownIcon */}
+            {React.cloneElement(downIcon, { noMargin: true })}
+         </SlideWrap>
+      );
+   }
+   return (
+      <SlideWrap bg={bg} padding={"20px 30px"}>
+         <Flex alignItems="center" justifyContent="flex-start" width="100%">
+            {navBar}
+            <LeftWrap>
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                  />
+                  <SlideTitle bg={bg}>{title}</SlideTitle>
+               </div>
+               {children}
+            </LeftWrap>
+            <RightWrap>{diagram}</RightWrap>
          </Flex>
          {downIcon}
       </SlideWrap>

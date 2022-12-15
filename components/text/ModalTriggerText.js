@@ -1,7 +1,7 @@
 import React from "react";
 import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
-import { fontWeights } from "utils/fontStyles";
+import { fontSizes, fontWeights } from "utils/fontStyles";
 
 const ModalTriggerText = ({ children, onClick, color }) => {
    return (
@@ -11,7 +11,7 @@ const ModalTriggerText = ({ children, onClick, color }) => {
          textDecoration="underline"
          cursor="pointer"
          onClick={onClick}
-         fontSize="2.2rem"
+         fontSize={fontSizes.LARGE}
       >
          {children}
       </TextSpan>

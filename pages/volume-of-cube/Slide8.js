@@ -1,4 +1,4 @@
-import { StyledImg } from "components/StyledElements";
+import { Flex, StyledImg } from "components/StyledElements";
 import { Paragraph } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 const cube_red = "assets/volume-of-cube/slide8/cube-1.png";
@@ -19,12 +19,12 @@ const Slide8 = ({ downIcon, navBar }) => {
          navBar={navBar}
          diagram={<StyledImg src={cube_red} />}
       >
-         <Paragraph marginBottom="2vh">
+         <Paragraph>
             What is the volume of a cube of side length 7 cm?
          </Paragraph>
          <Paragraph>Solution:</Paragraph>
+         <Paragraph>Volume of a cube </Paragraph>
          <Paragraph>
-            Volume of a cube{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
          </Paragraph>
          <Paragraph>

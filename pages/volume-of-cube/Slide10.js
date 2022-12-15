@@ -37,7 +37,7 @@ const Slide10 = ({ downIcon, navBar }) => {
          secondaryTitle="Volume of a cube using diagonal"
          title="Diagonal of a Cube"
       >
-         <Paragraph marginBottom="2vh" color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             Given the{" "}
             <TextSpanBg
                id={1}
@@ -54,10 +54,8 @@ const Slide10 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Pill
             width="fit-content"
-            fontSize="2.2rem"
-            bgColor={colors.GREEN}
-            marginBottom="2vh"
-            color={colors.WHITE}
+            bgColor={colors.OCEAN_GREEN}
+            color={colors.BLACK}
          >
             Volume of a cube{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>

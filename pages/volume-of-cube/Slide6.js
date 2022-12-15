@@ -37,15 +37,13 @@ const Slide6 = ({ downIcon, navBar }) => {
          }
          title="Formula"
       >
-         <Paragraph marginBottom="2vh" color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             For a cube with{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
                color={colors.RED}
             >
                side length ‘s’
@@ -63,9 +61,8 @@ const Slide6 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Pill
             width="fit-content"
-            fontSize="2.2rem"
-            bgColor={colors.GREEN}
-            color={colors.WHITE}
+            bgColor={colors.OCEAN_GREEN}
+            color={colors.BLACK}
          >
             Volume of cube{" "}
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}

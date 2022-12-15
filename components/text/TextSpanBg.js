@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 import { colors } from "utils/colors";
+import { fontSizes } from "utils/fontStyles";
 
 const StyledSpan = styled.span`
    color: white;
@@ -14,9 +15,11 @@ const StyledSpan = styled.span`
    margin: ${(props) => props.margin || "3px 0"};
    transform: ${(props) => props.transform};
    cursor: ${(props) => props.cursor || "default"};
-   line-height: ${(props) => props.lineHeight || "3.5rem"};
    border-radius: ${(props) => props.borderRadius || "25px"};
    padding: 0 10px;
+   -webkit-box-decoration-break: clone;
+   -o-box-decoration-break: clone;
+   box-decoration-break: clone;
    &:hover {
       background-color: ${(props) => props.hoverColor};
    }
@@ -83,7 +86,7 @@ TextSpanBg.propTypes = {
 
 TextSpanBg.defaultProps = {
    fontWeight: 500,
-   fontSize: "1.5rem",
+   fontSize: fontSizes.LARGE,
    textDecoration: "none",
    cursor: "default",
    onHover: () => {},
