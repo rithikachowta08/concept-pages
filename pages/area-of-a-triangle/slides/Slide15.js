@@ -1,13 +1,11 @@
 import MathElement from "components/MathElement";
 import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
+import { Flex } from "components/StyledElements";
+import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import React, { useDebugValue, useState } from "react";
+import React, { useState } from "react";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const image_1 = "assets/area-of-triangle/isos_ex_1.svg";
 const image_2 = "assets/area-of-triangle/isos_ex_2.svg";
@@ -23,93 +21,87 @@ const Slide15 = ({ downIcon, navBar }) => {
          title={"Find the area of a triangle with the given dimensions."}
          secondaryTitle={"Illustrative Example"}
          diagram={
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2, image_3]}
-                  activeIndex={activeIndex}
-               />
-            </LeftWrap>
+            <TransitionImage
+               images={[image_1, image_2, image_3]}
+               activeIndex={activeIndex}
+            />
          }
          downIcon={downIcon}
          navBar={navBar}
       >
-         <Paragraph color={colors.BLACK} fontSize={fontSizes.MEDIUM}>
-            <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               onHover={() => {
-                  setActiveIndex(1);
-               }}
-               onHoverOut={() => {
-                  setActiveIndex(0);
-               }}
-            >
-               a
-            </TextSpanBg>{" "}
-            = 5 cm
-            <br />
-            <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               onHover={() => {
-                  setActiveIndex(2);
-               }}
-               onHoverOut={() => {
-                  setActiveIndex(0);
-               }}
-            >
-               b
-            </TextSpanBg>{" "}
-            = 8 cm
+         <Paragraph>
+            <TextLine>
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => {
+                     setActiveIndex(1);
+                  }}
+                  onHoverOut={() => {
+                     setActiveIndex(0);
+                  }}
+               >
+                  a
+               </TextSpanBg>{" "}
+               = 5 cm
+            </TextLine>
+            <TextLine>
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => {
+                     setActiveIndex(2);
+                  }}
+                  onHoverOut={() => {
+                     setActiveIndex(0);
+                  }}
+               >
+                  b
+               </TextSpanBg>{" "}
+               = 8 cm
+            </TextLine>
          </Paragraph>
-         <Flex>
-            <Paragraph fontSize={fontSizes.MEDIUM}>Area of triangle </Paragraph>
-            <Flex direction="column">
-               <Paragraph fontSize={fontSizes.MEDIUM}>
-                  <MathElement
-                     htmlString={"\\ = \\frac{1}{4}b \\sqrt{4a^2 - b^2}"}
-                  />
+         <span>
+            <Flex>
+               <Paragraph>
+                  <TextLine>Area of triangle</TextLine>
                </Paragraph>
-               <Paragraph
-                  fontSize={fontSizes.MEDIUM}
-                  margin={isMobile ? "5px 0" : "10px 0"}
-               >
-                  <MathElement
-                     htmlString={
-                        "\\ = \\frac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}"
-                     }
-                  />
-               </Paragraph>
-               <Paragraph
-                  fontSize={fontSizes.MEDIUM}
-                  margin={isMobile ? "5px 0" : "10px 0"}
-               >
-                  <MathElement
-                     htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{100 - 64}"}
-                  />
-               </Paragraph>
-               <Paragraph
-                  fontSize={fontSizes.MEDIUM}
-                  margin={isMobile ? "5px 0" : "10px 0"}
-               >
-                  <MathElement
-                     htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{36}"}
-                  />
-               </Paragraph>
-               <Paragraph
-                  fontSize={fontSizes.MEDIUM}
-                  margin={isMobile ? "5px 0" : "10px 0"}
-               >
-                  <MathElement htmlString={"\\ = \\frac{8\\ \\times\\ 6}{4}"} />
-               </Paragraph>
-               <Paragraph
-                  fontSize={fontSizes.MEDIUM}
-                  margin={isMobile ? "5px 0" : "10px 0"}
-               >
-                  <MathElement htmlString={"\\ = 12 \\ cm^2"} />
+               <Paragraph>
+                  <TextLine>
+                     <MathElement
+                        htmlString={"\\ = \\frac{1}{4}b \\sqrt{4a^2 - b^2}"}
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement
+                        htmlString={
+                           "\\ = \\frac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}"
+                        }
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement
+                        htmlString={
+                           "\\ = \\frac{1}{4}\\times 8 \\sqrt{100 - 64}"
+                        }
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement
+                        htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{36}"}
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement
+                        htmlString={"\\ = \\frac{8\\ \\times\\ 6}{4}"}
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement htmlString={"\\ = 12 \\ cm^2"} />
+                  </TextLine>
                </Paragraph>
             </Flex>
-         </Flex>
+         </span>
       </TextAndDiagramSlide>
    );
 };

@@ -10,49 +10,51 @@ const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
 // Types of triangle
 const Slide10 = ({ downIcon, navBar }) => {
-	return (
-		<MultipleDiagramSlide
-			bg={"DARK"}
-			title="Area of different types of triangles"
-			images={[
-				{
-					diagram: <StyledImg src={image_3} />,
-					caption: (
-						<HyperLink
-							href={"https://byjus.com/us/math/scalene-triangle/"}
-							color={colors.AQUA}
-						>
-							Scalene Triangle
-						</HyperLink>
-					),
-				},
-				{
-					diagram: <StyledImg src={image_2} />,
-					caption: (
-						<HyperLink
-							href={"https://byjus.com/us/math/area-of-isosceles-triangle/"}
-							color={colors.AQUA}
-						>
-							Isosceles Triangle
-						</HyperLink>
-					),
-				},
-				{
-					diagram: <StyledImg src={image_1} />,
-					caption: (
-						<HyperLink
-							href={"https://byjus.com/us/math/equilateral-triangle/"}
-							color={colors.AQUA}
-						>
-							Equilateral Triangle
-						</HyperLink>
-					),
-				},
-			]}
-			downIcon={downIcon}
-			navBar={navBar}
-		></MultipleDiagramSlide>
-	);
+   return (
+      <MultipleDiagramSlide
+         bg={"DARK"}
+         title="Area of different types of triangles"
+         images={[
+            {
+               diagram: <StyledImg src={image_3} />,
+               caption: (
+                  <HyperLink
+                     href={"https://byjus.com/us/math/scalene-triangle/"}
+                     color={colors.AQUA}
+                  >
+                     Scalene Triangle
+                  </HyperLink>
+               ),
+            },
+            {
+               diagram: <StyledImg src={image_2} />,
+               caption: (
+                  <HyperLink
+                     href={
+                        "https://byjus.com/us/math/area-of-isosceles-triangle/"
+                     }
+                     color={colors.AQUA}
+                  >
+                     Isosceles Triangle
+                  </HyperLink>
+               ),
+            },
+            {
+               diagram: <StyledImg src={image_1} />,
+               caption: (
+                  <HyperLink
+                     href={"https://byjus.com/us/math/equilateral-triangle/"}
+                     color={colors.AQUA}
+                  >
+                     Equilateral Triangle
+                  </HyperLink>
+               ),
+            },
+         ]}
+         downIcon={downIcon}
+         navBar={navBar}
+      />
+   );
 };
 
 export default Slide10;
