@@ -37,18 +37,17 @@ const MultipleDiagramSlide = ({
                alignItems="center"
                width="100%"
             >
-               <div>
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     isMobile
-                  />
-                  <SlideTitle bg={bg} isMobile>
-                     {title}
-                  </SlideTitle>
-                  {children}
-               </div>
+               <SlideSecondaryTitle
+                  bg={bg}
+                  secondaryTitle={secondaryTitle}
+                  isMobile
+               />
+               <SlideTitle bg={bg} isMobile>
+                  {title}
+               </SlideTitle>
+               {children}
                <Flex
+                  direction="row"
                   flexFlow={"wrap"}
                   width="100%"
                   justifyContent="space-evenly"

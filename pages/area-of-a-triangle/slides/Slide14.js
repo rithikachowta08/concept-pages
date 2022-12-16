@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -41,6 +42,7 @@ const Slide14 = ({ downIcon, navBar }) => {
             Apply the{" "}
             <HyperLink
                href={"https://byjus.com/us/math/pythagorean-theorem-formulas/"}
+               color={colors.DARK_BLUE}
             >
                Pythagoras Theorem
             </HyperLink>{" "}
@@ -62,19 +64,23 @@ const Slide14 = ({ downIcon, navBar }) => {
          <Paragraph>
             <Flex direction="column">
                <TextSpan>
-                  <MathElement htmlString={"a^2 = h^2 + (\\frac{b}{2})^2"} />
+                  <MathElement
+                     htmlString={"a^2 = h^2 + \\Big( \\dfrac{b}{2}\\Big)^2"}
+                  />
                </TextSpan>
                <TextSpan>
-                  <MathElement htmlString={"h^2 = a^2 - (\\frac{b^2}{4})"} />
+                  <MathElement htmlString={"h^2 = a^2 - \\dfrac{b^2}{4}"} />
                </TextSpan>
                <TextSpan>
                   <MathElement
-                     htmlString={"h = \\sqrt{a^2 - (\\frac{b}{2})^2}"}
+                     htmlString={
+                        "h = \\sqrt{a^2 - \\Big(\\dfrac{b}{2}\\Big)^2}"
+                     }
                   />
                </TextSpan>
             </Flex>
          </Paragraph>
-         <span>
+         {/* <span>
             <Flex>
                <Paragraph>
                   <TextLine>Area of triangle </TextLine>
@@ -97,11 +103,29 @@ const Slide14 = ({ downIcon, navBar }) => {
                   </TextLine>
                </Paragraph>
             </Flex>
-         </span>
+         </span> */}
+         <Paragraph>
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: [`Area\\ of\\ triangle`, "A"],
+                  rhsLatex: [
+                     {
+                        eqLatex: "\\dfrac{1}{2} \\times Base \\times Height",
+                        hint: "",
+                     },
+                     {
+                        eqLatex:
+                           "\\dfrac{1}{2} \\times b \\times \\sqrt{a^2 - \\Big(\\dfrac{b^2}{4}\\Big)}",
+                        hint: "",
+                     },
+                  ],
+               }}
+            />
+         </Paragraph>
          <Paragraph>
             <Pill>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+               <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

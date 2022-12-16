@@ -1,4 +1,4 @@
-import { Flex, LeftWrap, StyledImg } from "components/StyledElements";
+import { Flex, LeftWrap, ModalImg, StyledImg } from "components/StyledElements";
 import React, { useEffect, useState } from "react";
 
 import Modal from "components/layout/Modal";
@@ -25,7 +25,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             A triangle is a closed shape that has three sides, three angles, and
             three vertices.
          </Paragraph>
-         <StyledImg src={area_triangle_modal} />
+         <ModalImg src={area_triangle_modal} />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);

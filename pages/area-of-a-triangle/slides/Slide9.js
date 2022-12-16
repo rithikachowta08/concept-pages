@@ -40,9 +40,11 @@ const Slide9 = ({ downIcon, navBar }) => {
                Here, s is the semiperimeter of the triangle.
             </Paragraph>
          </span>
-         <Paragraph color={colors.WHITE}>
-            <MathElement htmlString={"s = \\frac{a\\ +\\ b\\ + c}{2}"} />
-         </Paragraph>
+         <span>
+            <Paragraph color={colors.WHITE}>
+               <MathElement htmlString={"s = \\dfrac{a+b+c}{2}"} />
+            </Paragraph>
+         </span>
       </TextAndDiagramSlide>
    );
 };

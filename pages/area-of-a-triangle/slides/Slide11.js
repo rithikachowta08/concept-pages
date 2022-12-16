@@ -31,10 +31,14 @@ const Slide11 = ({ downIcon, navBar }) => {
                <MathElement htmlString={"\\sqrt{s (s - a)(s - b)(s - c)}"} />
             </Pill>
          </Paragraph>
-         <Paragraph>Here, s is the semiperimeter of the triangle.</Paragraph>
-         <Paragraph>
-            <MathElement htmlString={"s = \\frac{a\\ +\\ b\\ + c}{2}"} />
-         </Paragraph>
+         <span>
+            <Paragraph>Here, s is the semiperimeter of the triangle.</Paragraph>
+         </span>
+         <span>
+            <Paragraph>
+               <MathElement htmlString={"s = \\dfrac{a+b+c}{2}"} />
+            </Paragraph>
+         </span>
       </TextAndDiagramSlide>
    );
 };
