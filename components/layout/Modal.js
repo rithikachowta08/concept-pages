@@ -28,7 +28,7 @@ const ModalBody = styled.div`
    transform: ${(props) =>
       props.isOpen ? "translateX(0px)" : "translateX(-999px)"};
    border-radius: 0px 20px 20px 0px;
-   padding: 65px 40px;
+   padding: 50px 25px;
    display: flex;
    flex-direction: column;
    box-sizing: border-box;
@@ -36,6 +36,7 @@ const ModalBody = styled.div`
 
    @media only screen and (min-width: 200px) and (max-width: 767px) {
       border-radius: 20px 20px 0px 0px;
+      padding: 40px 20px;
       width: 100%;
       height: 80%;
       transform: ${(props) =>
@@ -59,7 +60,7 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
             <Flex
                justifyContent="space-between"
                alignItems="center"
-               marginBottom="20px"
+               marginBottom="10px"
             >
                {title ? (
                   <Title

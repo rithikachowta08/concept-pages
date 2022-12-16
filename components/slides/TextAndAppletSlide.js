@@ -6,6 +6,7 @@ import {
    Flex,
    LeftWrap,
    RightWrap,
+   LeftAlignDiv,
 } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { SlideSecondaryTitle, SlideTitle } from "./common";
@@ -68,6 +69,7 @@ const TextAndAppletSlide = ({
                padding="0 20px"
                justifyContent="space-between"
                alignItems="center"
+               width="100%"
             >
                <div>
                   <SlideSecondaryTitle
@@ -80,7 +82,7 @@ const TextAndAppletSlide = ({
                   </SlideTitle>
                </div>
                <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
-               {children}
+               <LeftAlignDiv>{children}</LeftAlignDiv>
             </Flex>
             {/* DownIcon */}
             {React.cloneElement(downIcon, { noMargin: true })}

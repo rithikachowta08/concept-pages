@@ -21,17 +21,23 @@ const Img = styled.img`
       width: ${(props) => props.tabletSize || "350px"};
       height: ${(props) => props.tabletSize || "350px"};
    }
+   @media only screen and (min-width: 993px) and (max-width: 1442px) {
+      width: ${(props) => props.smallDesktopSize || "350px"};
+      height: ${(props) => props.smallDesktopSize || "350px"};
+   }
    @media only screen and (max-height: 399px) and (min-width: 768px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
    @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
-      width: ${(props) => props.mobileSize || "350px"};
-      height: ${(props) => props.mobileSize || "350px"};
+      width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
+      height: ${(props) => props.tabletSize || props.mobileSize || "350px"};
    }
    @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
-      width: ${(props) => props.tabletSize || "450px"};
-      height: ${(props) => props.tabletSize || "450px"};
+      width: ${(props) =>
+         props.smallDesktopSize || props.tabletSize || "450px"};
+      height: ${(props) =>
+         props.smallDesktopSize || props.tabletSize || "450px"};
    }
 `;
 
@@ -52,6 +58,8 @@ const TransitionImage = ({
    defaultSize,
    tabletSize,
    mobileSize,
+   smallDesktopSize,
+   smallMobileSize,
 }) => {
    return (
       <ImgContainer marginRight={marginRight}>
@@ -65,6 +73,8 @@ const TransitionImage = ({
                mobileSize={mobileSize}
                defaultSize={defaultSize}
                tabletSize={tabletSize}
+               smallDesktopSize={smallDesktopSize}
+               smallMobileSize={smallMobileSize}
                alt="image"
             ></Img>
          ))}

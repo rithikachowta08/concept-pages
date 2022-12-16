@@ -107,7 +107,13 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    font: unset !important;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 400px) {
+@media only screen and (max-width: 359px) {
+   html {
+      font-size: 7px;
+   }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 400px) {
    html {
       font-size: 8px;
    }

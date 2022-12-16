@@ -11,7 +11,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Volume of a cube using diagnoal",
             "Rectangular prism vs cube",
          ]}
-         anchorIdxes={[2, 6, 10, 13]}
+         anchorIdxes={[2, 6, 11,17]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
