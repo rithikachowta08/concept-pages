@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { LeftWrap } from "components/StyledElements";
 import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
@@ -47,7 +46,7 @@ const Slide19 = ({ downIcon, navBar }) => {
                Area =
                <MathElement
                   htmlString={
-                     "\\frac{1}{2} bc \\ Sin A = \\frac{1}{2} ca\\ Sin B = \\frac{1}{2} ab\\ Sin C"
+                     "\\dfrac{1}{2} bc \\ Sin A = \\dfrac{1}{2} ca\\ Sin B = \\dfrac{1}{2} ab\\ Sin C"
                   }
                />
             </Pill>

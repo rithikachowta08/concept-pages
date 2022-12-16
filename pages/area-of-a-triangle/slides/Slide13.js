@@ -63,7 +63,7 @@ const Slide13 = ({ downIcon, navBar }) => {
          <Paragraph>
             <Pill>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+               <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

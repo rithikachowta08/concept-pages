@@ -20,7 +20,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/scalene-triangle/"}
-                     color={colors.AQUA}
                   >
                      Scalene Triangle
                   </HyperLink>
@@ -33,7 +32,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                      href={
                         "https://byjus.com/us/math/area-of-isosceles-triangle/"
                      }
-                     color={colors.AQUA}
                   >
                      Isosceles Triangle
                   </HyperLink>
@@ -44,7 +42,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/equilateral-triangle/"}
-                     color={colors.AQUA}
                   >
                      Equilateral Triangle
                   </HyperLink>

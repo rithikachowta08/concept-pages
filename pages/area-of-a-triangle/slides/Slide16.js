@@ -46,7 +46,7 @@ const Slide16 = ({ downIcon, navBar }) => {
          <Paragraph>
             <Pill>
                Area of an equilateral triangle ={" "}
-               <MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
+               <MathElement htmlString={"\\dfrac{\\sqrt{3}}{4} \\times a^2"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>
