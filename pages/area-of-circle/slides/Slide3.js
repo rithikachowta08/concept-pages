@@ -71,7 +71,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             >
                pi
             </ModalTriggerText>{" "}
-            <MathElement htmlString={"(\\pi = \\frac{22}{7}"} /> or 3.14) and
+            <MathElement htmlString={"(\\pi = \\dfrac{22}{7}"} /> or 3.14) and
             the square of the{" "}
             <TextSpanBg
                color={colors.RED}

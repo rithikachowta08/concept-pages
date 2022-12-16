@@ -11,6 +11,7 @@ const image_1 = "assets/area-of-circle/slide_8.svg";
 const image_2 = "assets/area-of-circle/slide_8_2.svg";
 const image_3 = "assets/area-of-circle/slide_6_r.svg";
 
+// Area of a Circle Using the Circumference slide
 const Slide8 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
@@ -46,7 +47,7 @@ const Slide8 = ({ navBar, downIcon }) => {
             </TextSpanBg>
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            Radius (r) = <MathElement htmlString={"\\frac{C}{2\\pi}"} />
+            Radius (r) = <MathElement htmlString={"\\dfrac{C}{2\\pi}"} />
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             <Flex>
@@ -54,7 +55,7 @@ const Slide8 = ({ navBar, downIcon }) => {
                <Flex direction="column">
                   <MathElement htmlString={"\\ =\\ \\pi r^2"} />
                   <MathElement
-                     htmlString={"\\ =\\ \\pi (\\frac{C}{2\\pi})^2"}
+                     htmlString={"\\ =\\ \\pi \\Big(\\dfrac{C}{2\\pi}\\Big)^2"}
                   />
                </Flex>
             </Flex>
@@ -62,7 +63,7 @@ const Slide8 = ({ navBar, downIcon }) => {
          <Paragraph>
             <Pill>
                Area of a circle
-               <MathElement htmlString={"\\ =\\ \\frac{C^2}{4\\pi }"} />
+               <MathElement htmlString={"\\ =\\ \\dfrac{C^2}{4\\pi }"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

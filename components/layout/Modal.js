@@ -82,6 +82,9 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                ) : null}
                {title ? null : <div>{content}</div>}
                <Icon
+                  style={{
+                     filter: bg === "LIGHT" ? "invert(100%)" : "invert(0%)",
+                  }}
                   alignSelf={title ? "center" : "start"}
                   src={crossIcon}
                   onClick={onDismiss}

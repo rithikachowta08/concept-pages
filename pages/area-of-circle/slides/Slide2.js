@@ -10,6 +10,7 @@ const image_1 = "assets/area-of-circle/slide_2.svg";
 const image_2 = "assets/area-of-circle/slide_2_shaded.svg";
 const image_modal = "assets/area-of-circle/slide_2_modal.svg";
 
+// What is the area of a circle slide
 const Slide2 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);

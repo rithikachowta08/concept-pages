@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, StyledImg } from "components/StyledElements";
 import { Paragraph, TextLine } from "components/text";
@@ -6,6 +7,7 @@ import React from "react";
 
 const image_1 = "assets/area-of-circle/slide_7.svg";
 
+// Find the area of the circle whose diameter is 12 cm slide
 const Slide7 = ({ navBar, downIcon }) => {
    return (
       <TextAndDiagramSlide
@@ -21,23 +23,34 @@ const Slide7 = ({ navBar, downIcon }) => {
             <TextLine>Diameter (d) = 12 cm</TextLine>
          </Paragraph>
          <Paragraph>
-            <Flex>
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: ["Area of circle"],
+                  rhsLatex: [
+                     { eqLatex: "\\dfrac{\\pi d^2}{4}", hint: "" },
+                     { eqLatex: "\\dfrac{\\pi (12)^2}{4}", hint: "" },
+                     { eqLatex: "\\dfrac{144 \\pi}{4}", hint: "" },
+                     { eqLatex: "\\ = 36 \\pi cm^2", hint: "" },
+                  ],
+               }}
+            />
+            {/* <Flex>
                <TextLine>Area of circle</TextLine>
                <Flex direction="column">
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\frac{\\pi d^2}{4}"} />
+                     <MathElement htmlString={"\\ = \\dfrac{\\pi d^2}{4}"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\frac{\\pi (12)^2}{4}"} />
+                     <MathElement htmlString={"\\ = \\dfrac{\\pi (12)^2}{4}"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\frac{144 \\pi}{4}"} />
+                     <MathElement htmlString={"\\ = \\dfrac{144 \\pi}{4}"} />
                   </TextLine>
                   <TextLine>
                      <MathElement htmlString={"\\ = 36 \\pi cm^2"} />
                   </TextLine>
                </Flex>
-            </Flex>
+            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );

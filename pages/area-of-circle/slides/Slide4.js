@@ -3,6 +3,7 @@ import React from "react";
 
 const applet = "applets/triangle.html";
 
+// Applet slide
 const Slide4 = ({ navBar, downIcon }) => {
    return (
       <TextAndAppletSlide

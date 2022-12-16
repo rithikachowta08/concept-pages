@@ -9,6 +9,7 @@ import { colors } from "utils/colors";
 const image_1 = "assets/area-of-circle/slide_5.svg";
 const image_2 = "assets/area-of-circle/slide_5_2.svg";
 
+// Find the area of the circle with the given dimension slide
 const Slide5 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 

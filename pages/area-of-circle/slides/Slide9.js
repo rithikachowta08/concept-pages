@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex } from "components/StyledElements";
@@ -9,6 +10,7 @@ import { colors } from "utils/colors";
 const image_1 = "assets/area-of-circle/slide_8.svg";
 const image_2 = "assets/area-of-circle/slide_9_2.svg";
 
+// Find the area of the circle whose circumference is 10 m slide
 const Slide9 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
@@ -41,23 +43,36 @@ const Slide9 = ({ navBar, downIcon }) => {
             </TextLine>
          </Paragraph>
          <Paragraph>
-            <Flex>
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: ["Area of circle"],
+                  rhsLatex: [
+                     { eqLatex: "\\dfrac{C^2}{4\\pi}", hint: "" },
+                     { eqLatex: "\\dfrac{(10)^2}{4\\pi}", hint: "" },
+                     { eqLatex: "\\dfrac{100}{4\\pi}", hint: "" },
+                     { eqLatex: "\\dfrac{25}{\\pi} m^2", hint: "" },
+                  ],
+               }}
+            />
+            {/* <Flex>
                <TextLine>Area of the circle</TextLine>
                <Flex direction="column">
                   <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\frac{C^2}{4\\pi}"} />
+                     <MathElement htmlString={"\\ =\\ \\dfrac{C^2}{4\\pi}"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\frac{(10)^2}{4\\pi}"} />
+                     <MathElement
+                        htmlString={"\\ =\\ \\dfrac{(10)^2}{4\\pi}"}
+                     />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\frac{100}{4\\pi}"} />
+                     <MathElement htmlString={"\\ =\\ \\dfrac{100}{4\\pi}"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\frac{25}{\\pi} m^2"} />
+                     <MathElement htmlString={"\\ =\\ \\dfrac{25}{\\pi} m^2"} />
                   </TextLine>
                </Flex>
-            </Flex>
+            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );

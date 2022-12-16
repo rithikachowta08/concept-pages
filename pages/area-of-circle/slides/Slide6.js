@@ -12,6 +12,7 @@ const image_1 = "assets/area-of-circle/slide_6.svg";
 const image_2 = "assets/area-of-circle/slide_6_r.svg";
 const image_3 = "assets/area-of-circle/slide_6_d.svg";
 
+// Area of a Circle Using the Diameter slide
 const Slide6 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
@@ -60,7 +61,9 @@ const Slide6 = ({ navBar, downIcon }) => {
                      <MathElement htmlString={"\\ = \\pi r^2"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi ( \\frac{d}{2} )^2"} />
+                     <MathElement
+                        htmlString={"\\ = \\pi \\Big( \\dfrac{d}{2}\\Big)^2"}
+                     />
                   </TextLine>
                </Flex>
             </Flex>
@@ -68,7 +71,7 @@ const Slide6 = ({ navBar, downIcon }) => {
          <Paragraph>
             <Pill>
                Area of a Circle ={" "}
-               <MathElement htmlString={"\\frac{\\pi d^2}{4}"} />
+               <MathElement htmlString={"\\dfrac{\\pi d^2}{4}"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

@@ -1,6 +1,7 @@
 import VideoSlide from "components/slides/VideoSlide";
 import React from "react";
 
+// video slide
 const Slide10 = ({ navBar, downIcon }) => {
    return (
       <VideoSlide
