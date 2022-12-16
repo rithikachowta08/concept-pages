@@ -68,6 +68,7 @@ export const LeftWrap = styled.div`
    min-width: 20%;
    margin-left: 60px;
    margin-right: ${(props) => props.marginRight};
+   width: 40%;
 `;
 
 export const RightWrap = styled.div`
@@ -136,9 +137,9 @@ export const StyledImg = styled.img`
    }
    @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
       width: ${(props) =>
-         props.smallDesktopSize || props.tabletSize || "450px"};
+      props.smallDesktopSize || props.tabletSize || "450px"};
       height: ${(props) =>
-         props.smallDesktopSize || props.tabletSize || "450px"};
+      props.smallDesktopSize || props.tabletSize || "450px"};
    }
 `;
 export const ModalImg = styled.img`

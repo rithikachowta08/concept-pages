@@ -14,8 +14,8 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.StyledImg)
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
@@ -35,10 +35,10 @@ const Slide3 = ({ downIcon, navBar }) => {
          <Paragraph color="white">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
-         <StyledImg
+         <ModalImg
             src={unit_square}
-            width="-webkit-fill-available"
-            style={{ scale: "1", transform: "none" }}
+         // width="-webkit-fill-available"
+         // style={{ scale: "1", transform: "none" }}
          />
       </Flex>
    );

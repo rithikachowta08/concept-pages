@@ -24,6 +24,7 @@ const rectangle_full = "assets/area-of-rectangle/s9_rectangle_full.svg";
 const rectangle_cross = "assets/area-of-rectangle/s9_rectangle_cross_line.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s9_rectangle_bottom.svg";
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide10 = ({ downIcon, navBar }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,6 +34,29 @@ const Slide10 = ({ downIcon, navBar }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
+  let EquationLatex = [
+    {
+      lhsLatex: [`{Area}`, "", "", ""],
+      rhsLatex: [
+        {
+          eqLatex: "{\\it \\ l \\times \\sqrt{d^2 - l^2}\}",
+          hint: "",
+        },
+        {
+          eqLatex: "4 \\times \\sqrt{5^2 - 4^2} \\ sq \\ m",
+          hint: "",
+        },
+        {
+          eqLatex: "4 \\times 3 \\ sq \\ m",
+          hint: "",
+        },
+        {
+          eqLatex: "12 \\ sq \\ m",
+          hint: "",
+        }
+      ],
+    },
+  ];
   return (
     <TextAndDiagramSlide
       title="Illustrative Example"
@@ -85,7 +109,10 @@ const Slide10 = ({ downIcon, navBar }) => {
           </TextLine>
         </Paragraph>
         <Paragraph>
-          <Flex>
+          <MultiLhsEquationContainer
+            equationLatex={EquationLatex[0]}
+          ></MultiLhsEquationContainer>
+          {/* <Flex>
             <div>Area&nbsp;</div>
             <div>
               = l × √ d<sup>2</sup> - l<sup>2</sup>
@@ -93,7 +120,7 @@ const Slide10 = ({ downIcon, navBar }) => {
               <br />= 4 × 3 sq m
               <br />= 12 sq m
             </div>
-          </Flex>
+          </Flex> */}
         </Paragraph>
       </div>
     </TextAndDiagramSlide>

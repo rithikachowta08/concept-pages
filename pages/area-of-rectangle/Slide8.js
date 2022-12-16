@@ -24,6 +24,7 @@ const rectangle_full = "assets/area-of-rectangle/s7_rectangle_full.svg";
 const rectangle_right = "assets/area-of-rectangle/s7_rectangle_right.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s7_rectangle_bottom.svg";
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide8 = ({ downIcon, navBar }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,6 +34,21 @@ const Slide8 = ({ downIcon, navBar }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
+  let EquationLatex = [
+    {
+      lhsLatex: [`\\text{Area of the rectangle}`, ""],
+      rhsLatex: [
+        {
+          eqLatex: "Length \\times Width",
+          hint: "",
+        },
+        {
+          eqLatex: "3 \\ m \\times 2 \\ m \\ = 6 \\ sq \\ m",
+          hint: "",
+        }
+      ],
+    },
+  ];
   return (
     <TextAndDiagramSlide
       title="Illustrative Example"
@@ -84,15 +100,9 @@ const Slide8 = ({ downIcon, navBar }) => {
           </TextLine>
         </Paragraph>
         <Paragraph>
-          <TextLine>
-            <Flex>
-              <div>Area of the rectangle&nbsp;</div>
-              <div>
-                = Length &times; Width
-                <br />= 3 m x 2 m = 6 sq m
-              </div>
-            </Flex>
-          </TextLine>
+          <MultiLhsEquationContainer
+            equationLatex={EquationLatex[0]}
+          ></MultiLhsEquationContainer>
         </Paragraph>
       </div>
     </TextAndDiagramSlide>
