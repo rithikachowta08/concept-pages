@@ -6,6 +6,7 @@ import {
    Flex,
    LeftWrap,
    RightWrap,
+   LeftAlignDiv,
 } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
@@ -37,6 +38,7 @@ const TextAndDiagramSlide = ({
                padding="0 20px"
                justifyContent="space-between"
                alignItems="center"
+               width="100%"
             >
                <div>
                   <SlideSecondaryTitle
@@ -49,7 +51,7 @@ const TextAndDiagramSlide = ({
                   </SlideTitle>
                </div>
                {diagram}
-               {children}
+               <LeftAlignDiv>{children}</LeftAlignDiv>
             </Flex>
             {/* DownIcon */}
             {React.cloneElement(downIcon, { noMargin: true })}

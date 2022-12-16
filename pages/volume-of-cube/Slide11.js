@@ -1,10 +1,13 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph } from "components/text";
 import { useState } from "react";
+
+import { TextSpanBg, Paragraph } from "components/text";
+import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import Pill from "components/Pill";
+const cube_red = "assets/volume-of-cube/slide11/1.svg";
+const cube_d = "assets/volume-of-cube/slide11/2.svg";
+const cube_s = "assets/volume-of-cube/slide11/3.svg";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
-const cube_red = "assets/volume-of-cube/slide11/cube-1.png";
-const cube_diagonal = "assets/volume-of-cube/slide11/cube-2.png";
 import MathElement from "components/MathElement/index.js";
 
 const Slide11 = ({ downIcon, navBar }) => {
@@ -15,59 +18,60 @@ const Slide11 = ({ downIcon, navBar }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
+
    let latex = [];
-   latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
-   latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
-   latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
-   latex.push(`= \\sqrt{3} \\times 3`);
-   latex.push(`= 3 \\sqrt{3}ft^3 `);
+   latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
+   latex.push(`= \\sqrt{3}`);
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          diagram={
             <TransitionImage
-               images={[cube_red, cube_diagonal]}
+               images={[cube_red, cube_d, cube_s]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
          navBar={navBar}
-         title="Illustrative Example"
-         secondaryTitle="Volume of a Cube using Diagonal"
+         bg="DARK"
+         secondaryTitle="Volume of a cube using diagonal"
+         title="Diagonal of a Cube"
       >
-         <Paragraph marginBottom="2vh">
-            Find the volume of a cube whose diagonal{" "}
-            <TextSpanBg
+         <Paragraph color={colors.WHITE}>
+            Given the{" "} diagonal length of a cube:
+         </Paragraph>
+         <Pill
+            width="fit-content"
+            bgColor={colors.OCEAN_GREEN}
+            color={colors.BLACK}
+         >
+            Volume of a cube{" "}
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+         </Pill>
+         <Paragraph color={colors.WHITE}>
+            Here,<TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
+               hoverColor={colors.AQUA}
                color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
             >
                diagonal
             </TextSpanBg>{" "}
-            is 3 feet long.
-         </Paragraph>
-         <Paragraph>Solution:</Paragraph>
-         <Paragraph>
-            Volume{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
+            <TextSpanBg
+               id={2}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.AQUA}
+               color={colors.RED}
+            >
+               {" "}
+               side
+            </TextSpanBg> {" "}units
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
+
 export default Slide11;

@@ -4,9 +4,9 @@ import { Paragraph, TextSpanBg, ModalTriggerText } from "components/text";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import Modal from "components/layout/Modal";
-const cube_red = "assets/volume-of-cube/slide2/cube-1.png";
-const cube_spaces = "assets/volume-of-cube/slide2/cube-2.png";
-const cube_unit = "assets/volume-of-cube/slide2/cube-3.png";
+const cube_red = "assets/volume-of-cube/slide3/1.svg";
+const cube_spaces = "assets/volume-of-cube/slide3/2.svg";
+const cube_unit = "assets/volume-of-cube/slide3/3.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 

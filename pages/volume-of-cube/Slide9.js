@@ -1,85 +1,64 @@
-import { TextSpanBg, Paragraph } from "components/text";
-import { useState } from "react";
+import {
+   SlideWrap,
+   Flex,
+   LeftWrap,
+   StyledImg,
+   Icon,
+} from "components/StyledElements";
+import { TextSpanBg, Title, Paragraph } from "components/text";
+// import inequality_slide from "assets/inequality_slide.svg";
+import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
-const cube_red = "assets/volume-of-cube/slide9/cube-1.png";
-const cube_diagonal = "assets/volume-of-cube/slide9/cube-2.png";
+// const  cube_red = "assets/volume-of-cube/slide9/cube_1.svg";
+const cube_diagonal = "assets/volume-of-cube/slide9/cube_2.svg";
+import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
+import { fetchData } from "utils/networking";
+import Modal from "components/layout/Modal";
+const info = "assets/info.svg";
+import ImageWithYesNo, { ANSWER_TYPES } from "components/media/ImageWithYesNo";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+const boat_correct_answer = "assets/boat_correct_answer.svg";
+const boat_wrong_answer = "assets/boat_wrong_answer.svg";
+const boat = "assets/boat.svg";
 
-const Slide9 = ({ downIcon, navBar }) => {
+const Slide9 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const onHover = (e) => {
-      setActiveIndex(Number(e.target.id));
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const onDismiss = () => {
+      setIsModalOpen(false);
    };
-   const onHoverOut = (e) => {
-      setActiveIndex(0);
+   const onClick = () => {
+      setIsModalOpen(!isModalOpen);
    };
-
-   let latex = [];
-   latex.push(`= (side)^3`);
-   latex.push(` (A)=(side)^2`);
-   latex.push(` \\sqrt{A} = side`);
-   latex.push(`=(\\sqrt{A})^3 `);
-   latex.push(`=(\\sqrt {16} m^2)^3 `);
-   latex.push(`= (4m)^3`);
-   latex.push(`= {64m}^3`);
-   let mathjaxCounter = 0;
+   //   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const modalContent = (
+      <Flex direction="column">
+         <Paragraph color="white">
+            The dimensions of the given Rubik&apos;scube
+         </Paragraph>
+         <StyledImg
+            src={cube_diagonal}
+            alignSelf="center"
+            marginBottom="50px"
+         />
+      </Flex>
+   );
 
    return (
-      <TextAndDiagramSlide
-         diagram={
-            <TransitionImage
-               images={[cube_red, cube_diagonal]}
-               activeIndex={activeIndex}
-            />
-         }
+      <TextAndAppletSlide
+         title="Area using Unit Squares"
+         appletSrc="./applets/triangle.html"
          downIcon={downIcon}
          navBar={navBar}
-         secondaryTitle="Volume of a Cube using Area"
-         title="Illustrative Example"
       >
          <Paragraph>
-            What is the volume of a cube, when the{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
-               color={colors.RED}
-            >
-               area
-            </TextSpanBg>{" "}
-            of one of the faces is 16 sq m?
+            Move the sliders to create a rectangle occupying an area of 54 unit
+            squares.
          </Paragraph>
-         <Paragraph>Solution:</Paragraph>
-         <Paragraph>
-            Volume of a cube
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            Area of the square face,{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-            <Paragraph>
-               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-            </Paragraph>
-         </Paragraph>
-         <Paragraph>
-            Volume, V{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph color={colors.BLACK}>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-         <Paragraph>
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
-         </Paragraph>
-      </TextAndDiagramSlide>
+      </TextAndAppletSlide>
    );
 };
 export default Slide9;

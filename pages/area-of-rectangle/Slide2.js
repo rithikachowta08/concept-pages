@@ -17,6 +17,7 @@ const TextSpanBg = dynamic(() =>
 const rectangle_full = "assets/area-of-rectangle/rectangle_full.svg";
 const rectangle_angles = "assets/area-of-rectangle/rectangle_angles.svg";
 const rectangle_sides = "assets/area-of-rectangle/rectangle_sides.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,7 +39,7 @@ const Slide2 = ({ downIcon, navBar }) => {
       downIcon={downIcon}
       navBar={navBar}
     >
-      <Paragraph>
+      <Paragraph lineHeight={lineHeightProp}>
         A rectangle is a four-sided polygon with&nbsp;
         <TextSpanBg
           onHover={() => onHover(1)}

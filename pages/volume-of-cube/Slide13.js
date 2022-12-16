@@ -1,12 +1,12 @@
-import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, TextLine, Paragraph } from "components/text";
-import Pill from "components/Pill";
-const cube_red = "assets/volume-of-cube/slide13/cube-1.png";
-const cube_lwh = "assets/volume-of-cube/slide13/cube-2.png";
-const cube_s = "assets/volume-of-cube/slide13/cube-3.png";
+import { TextSpanBg, Paragraph, TextLine } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
+const cube_red = "assets/volume-of-cube/slide13/1.svg";
+const cube_diagonal = "assets/volume-of-cube/slide13/2.svg";
+import MathElement from "components/MathElement/index.js";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide13 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -16,57 +16,74 @@ const Slide13 = ({ downIcon, navBar }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-
+   let latex = [];
+   latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
+   latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
+   latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
+   latex.push(`= \\sqrt{3} \\times 3`);
+   latex.push(`= 3 \\sqrt{3}ft^3 `);
+   let mathjaxCounter = 0;
+   let EquationLatex = [
+      {
+         lhsLatex: [`Volume`, "", "", ""],
+         rhsLatex: [
+            {
+               eqLatex: "\\sqrt{3} \\times {\\frac{d}{9}}^2",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3} \\times {\\frac{3}{9}}^2",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3}\\times \\frac{27}{9}",
+               hint: "",
+            },
+            {
+               eqLatex: "\\sqrt{3} \\times 3",
+               hint: "",
+            },
+            {
+               eqLatex: "3 \\sqrt{3}ft^3 ",
+               hint: "",
+            },
+         ],
+      },
+   ];
    return (
       <TextAndDiagramSlide
-         bg="DARK"
-         title="Rectangular Prism vs. Cube"
-         secondaryTitle="Volume of a cube"
-         downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
-               images={[cube_red, cube_lwh, cube_s]}
+               images={[cube_red, cube_diagonal]}
                activeIndex={activeIndex}
             />
          }
-         isLastSlide
+         downIcon={downIcon}
+         navBar={navBar}
+         title="Illustrative Example"
+         secondaryTitle="Volume of a Cube using Diagonal"
       >
-         <Paragraph color={colors.WHITE}>
-            If the length, width, and height of a rectangular prism are equal,
-            it forms a cube
-         </Paragraph>
-         <Paragraph color={colors.WHITE}>
-            Volume of a rectangular prism ={" "}
+         <Paragraph>
+            Find the volume of a cube whose diagonal{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
                color={colors.RED}
+               hoverColor={colors.DARK_BLUE}
             >
-               l x w x h
+               diagonal
             </TextSpanBg>{" "}
-            cubic units
+            is 3 feet long.
          </Paragraph>
-         <Paragraph color={colors.WHITE}>
-            <TextLine>For l = w = h = s,</TextLine>
-            <TextLine>
-               Volume of a cube ={" "}
-               <TextSpanBg
-                  id={2}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.AQUA}
-                  color={colors.RED}
-               >
-                  s<sup>3</sup>
-               </TextSpanBg>{" "}
-               cubic units
-            </TextLine>
+         <Paragraph>
+            <TextLine>Solution:</TextLine>
+            <MultiLhsEquationContainer
+               lineHeight="2"
+               equationLatex={EquationLatex[0]}
+            ></MultiLhsEquationContainer>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
-
 export default Slide13;

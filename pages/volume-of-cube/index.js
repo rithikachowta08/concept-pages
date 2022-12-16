@@ -12,6 +12,10 @@ import Slide10 from "./Slide10";
 import Slide11 from "./Slide11";
 import Slide12 from "./Slide12";
 import Slide13 from "./Slide13";
+import Slide14 from "./Slide14";
+import Slide15 from "./Slide15";
+import Slide16 from "./Slide16";
+import Slide17 from "./Slide17";
 
 const VolumeOfCube = ({}) => {
    const SlideArray = [
@@ -19,7 +23,7 @@ const VolumeOfCube = ({}) => {
       <Slide2 key={1} />,
       <Slide3 key={2} />,
       <Slide4 key={3} />,
-      // <Slide5 key={4} />,
+      <Slide5 key={4} />,
       <Slide6 key={5} />,
       <Slide7 key={6} />,
       <Slide8 key={7} />,
@@ -28,6 +32,10 @@ const VolumeOfCube = ({}) => {
       <Slide11 key={10} />,
       <Slide12 key={11} />,
       <Slide13 key={12} />,
+      <Slide14 key={13} />,
+      <Slide15 key={14} />,
+      <Slide16 key={15} />,
+      <Slide17 key={16} />,
    ];
 
    // const navigationSections = [
@@ -41,17 +49,17 @@ const VolumeOfCube = ({}) => {
    // ];
 
    const navigationSections = [
-      { title: "What is the volume of a cube?", slides: [1, 2, 3] },
-      { title: "Formula", slides: [4, 5, 6, 7] },
-      { title: "Volume of a cube using diagonal", slides: [8, 9, 10] },
+      { title: "What is the volume of a cube?", slides: [1, 2, 3,4] },
+      { title: "Formula", slides: [5,6,7,8,9] },
+      { title: "Volume of a cube using diagonal", slides: [10, 11,12,13,14,15] },
       {
          title: "Rectangular prism vs cube",
-         slides: [11],
+         slides: [16],
       },
    ];
 
    // const darkBgIndices = [0, 4, 5, 7, 10];
-   const darkBgIndices = [0, 4, 8, 11];
+   const darkBgIndices = [0, 5, 10, 16];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

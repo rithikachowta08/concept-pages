@@ -1,22 +1,11 @@
-import TransitionImage from "components/media/TransitionImage";
 import { Flex, SlideWrap } from "components/StyledElements";
-import { Paragraph, Title } from "components/text";
+import { Paragraph, TextSpan, Title } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import { SlideTitle, SlideSecondaryTitle } from "./common";
 import React from "react";
 import { colors } from "utils/colors";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 
-const area_triangle_angles_1_1 = "assets/area-of-triangle/16.a.svg";
-const area_triangle_angles_2_1 = "assets/area-of-triangle/16.b.svg";
-const area_triangle_angles_3_1 = "assets/area-of-triangle/16.c.svg";
-const area_triangle_angles_1_2 = "assets/area-of-triangle/17.a.svg";
-const area_triangle_angles_2_2 = "assets/area-of-triangle/17.b.svg";
-const area_triangle_angles_3_2 = "assets/area-of-triangle/17.c.svg";
-const area_triangle_angles_1_3 = "assets/area-of-triangle/18.a.svg";
-const area_triangle_angles_2_3 = "assets/area-of-triangle/18.b.svg";
-const area_triangle_angles_3_3 = "assets/area-of-triangle/18.c.svg";
-
-// General Formula base and height slide
 const MultipleDiagramSlide = ({
    title,
    secondaryTitle,
@@ -29,91 +18,117 @@ const MultipleDiagramSlide = ({
    hideFiller = false,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   return (
-      <SlideWrap
-         bg={bg}
-         padding={isMobile ? "0 0 20px 0" : "20px"}
-         isLastSlide={isLastSlide}
-         hideFiller={hideFiller}
-      >
-         <Flex
-            direction={isMobile ? "column" : "row"}
-            alignItems="center"
-            justifyContent={isMobile ? "flex-start" : "center"}
-            height={isMobile ? "70%" : "auto"}
-            width="100%"
-            gap={isMobile ? "10px" : "0px"}
+   if (isMobile) {
+      return (
+         <SlideWrap
+            bg={bg}
+            padding="0 0 10px 0"
+            gap="10px"
+            justifyContent="space-between"
+            isLastSlide={isLastSlide}
          >
+            {/* NavBar */}
+            {navBar}
+            {/* Body */}
+            <Flex
+               direction="column"
+               padding="0 20px"
+               justifyContent="space-between"
+               alignItems="center"
+               width="100%"
+            >
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                     isMobile
+                  />
+                  <SlideTitle bg={bg} isMobile>
+                     {title}
+                  </SlideTitle>
+                  {children}
+               </div>
+               <Flex
+                  flexFlow={"wrap"}
+                  width="100%"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  alignSelf="flex-start"
+               >
+                  {images.map((image, idx) => (
+                     <Flex
+                        justifyContent="flex-start"
+                        direction="column"
+                        margin={isMobile ? "0 auto" : "0"}
+                        key={idx}
+                     >
+                        {React.cloneElement(image.diagram, {
+                           smallMobileSize: "130px",
+                           mobileSize: "150px",
+                           tabletSize: "400px",
+                        })}
+                        <Paragraph
+                           color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+                           fontWeight={400}
+                           textAlign="center"
+                           fontSize={fontSizes.LARGE}
+                        >
+                           {image.caption}
+                        </Paragraph>
+                     </Flex>
+                  ))}
+               </Flex>
+            </Flex>
+            {/* DownIcon */}
+            {React.cloneElement(downIcon, { noMargin: true })}
+         </SlideWrap>
+      );
+   }
+   return (
+      <SlideWrap bg={bg} padding={"20px 30px"}>
+         <Flex alignItems="center" justifyContent="flex-start" width="100%">
             {navBar}
             <Flex
                direction="column"
+               justifyContent="space-between"
                alignItems="center"
-               justifyContent={isMobile ? "center" : "space-between"}
-               flex={2}
+               flexGrow={1}
             >
-               {secondaryTitle ? (
-                  <Title
-                     opacity={0.5}
-                     color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                     marginBottom="1vh"
-                     small
-                  >
-                     {secondaryTitle}
-                  </Title>
-               ) : null}
-               <Title
-                  color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                  fontSize={fontSizes.H2}
-                  fontWeight={fontWeights.BOLD}
-                  marginBottom="1vh"
-                  small
-               >
-                  {title}
-               </Title>
+               <div>
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                  />
+                  <SlideTitle bg={bg}>{title}</SlideTitle>
+               </div>
+               {children}
                <Flex
-                  direction={isMobile ? "column-reverse" : "column"}
-                  alignItems="center"
+                  flexFlow={"wrap"}
                   width="100%"
-                  padding={isMobile ? "0 10px" : "0"}
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  alignSelf="flex-start"
                >
-                  <Paragraph
-                     color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                     fontSize={fontSizes.MEDIUM}
-                  >
-                     {children}
-                  </Paragraph>
-                  <Flex
-                     flexFlow={"wrap"}
-                     width="100%"
-                     justifyContent="space-evenly"
-                     alignItems="center"
-                     alignSelf="flex-start"
-                  >
-                     {images.map((image, idx) => (
-                        <Flex
-                           justifyContent="flex-start"
-                           direction="column"
-                           margin={isMobile ? "0 auto" : "0"}
-                           key={idx}
+                  {images.map((image, idx) => (
+                     <Flex
+                        justifyContent="flex-start"
+                        direction="column"
+                        margin={isMobile ? "0 auto" : "0"}
+                        key={idx}
+                     >
+                        {React.cloneElement(image.diagram, {
+                           tabletSize: "250px",
+                           smallDesktopSize: "300px",
+                           width: "400px",
+                        })}
+                        <TextSpan
+                           color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+                           textAlign="center"
                         >
-                           {React.cloneElement(image.diagram, {
-                              mobileSize: "150px",
-                              tabletSize: "350px",
-                              width: "450px",
-                           })}
-                           <Paragraph
-                              color={
-                                 bg === "LIGHT" ? colors.BLACK : colors.WHITE
-                              }
-                              fontWeight={400}
-                              textAlign="center"
-                              fontSize={fontSizes.LARGE}
-                           >
-                              {image.caption}
-                           </Paragraph>
-                        </Flex>
-                     ))}
-                  </Flex>
+                           {image.caption}
+                        </TextSpan>
+                     </Flex>
+                  ))}
                </Flex>
             </Flex>
          </Flex>
