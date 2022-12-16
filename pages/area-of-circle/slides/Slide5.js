@@ -46,10 +46,10 @@ const Slide5 = ({ navBar, downIcon }) => {
                      <MathElement htmlString={"^2"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi\\ (5)^2"} />
+                     <MathElement htmlString={"\\ = \\pi\\ (5\\ in)^2"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi\\ 25"} />
+                     <MathElement htmlString={"\\ = \\pi\\ 25\\ in^2"} />
                   </TextLine>
                   <TextLine>
                      <MathElement htmlString={"\\ = 25 \\pi\\ in^2"} />

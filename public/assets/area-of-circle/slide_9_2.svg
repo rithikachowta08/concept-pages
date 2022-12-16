@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .2;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #333;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #2b2bf0;
+        stroke-dasharray: 0 0 12 12;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #2b2bf0;
+      }
+
+      .cls-6 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 30px;
+      }
+
+      .cls-3 {
+        opacity: .1;
+      }
+    </style>
+  </defs>
+  <circle class="cls-3" cx="281.18" cy="294.38" r="179.66"/>
+  <text class="cls-6" transform="translate(125.95 145.95) rotate(-44.75)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-6" transform="translate(140.37 131.95) rotate(-40.89)"><tspan x="0" y="0">i</tspan></text>
+  <text class="cls-6" transform="translate(145.39 127.54) rotate(-38.38)"><tspan x="0" y="0">r</tspan></text>
+  <text class="cls-6" transform="translate(153.31 121.13) rotate(-34.62)"><tspan x="0" y="0">c</tspan></text>
+  <text class="cls-6" transform="translate(166.6 111.89) rotate(-29.81)"><tspan x="0" y="0">u</tspan></text>
+  <text class="cls-6" transform="translate(181.65 102.93) rotate(-23.54)"><tspan x="0" y="0">m</tspan></text>
+  <text class="cls-6" transform="translate(206.64 92.44) rotate(-18.46)"><tspan x="0" y="0">f</tspan></text>
+  <text class="cls-6" transform="translate(215.72 89.27) rotate(-14.83)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-6" transform="translate(232.55 84.92) rotate(-11.07)"><tspan x="0" y="0">r</tspan></text>
+  <text class="cls-6" transform="translate(242.54 82.83) rotate(-7.45)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-6" transform="translate(259.74 80.57) rotate(-2.9)"><tspan x="0" y="0">n</tspan></text>
+  <text class="cls-6" transform="translate(277.02 79.7) rotate(1.45)"><tspan x="0" y="0">c</tspan></text>
+  <text class="cls-6" transform="translate(293.11 80.07) rotate(5.72)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-6" transform="translate(310.46 81.94) rotate(8.85)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-6" transform="translate(317.78 83.07) rotate(10.83)"><tspan x="0" y="0">(</tspan></text>
+  <text class="cls-6" transform="translate(325.27 84.29) rotate(14.21)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-6" transform="translate(344.76 89.41) rotate(17.7)"><tspan x="0" y="0">)</tspan></text>
+  <text class="cls-6" transform="translate(352.63 91.9) rotate(20.36)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-6" transform="translate(359.46 94.33) rotate(24.18)"><tspan x="0" y="0">=</tspan></text>
+  <text class="cls-6" transform="translate(371.17 99.68) rotate(27.43)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-6" transform="translate(377.71 102.99) rotate(30.26)"><tspan x="0" y="0">1</tspan></text>
+  <text class="cls-6" transform="translate(389.12 109.56) rotate(33.9)"><tspan x="0" y="0">0</tspan></text>
+  <text class="cls-6" transform="translate(404.16 119.82) rotate(36.45)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-6" transform="translate(410.21 123.94) rotate(39.57)"><tspan x="0" y="0">m</tspan></text>
+  <text class="cls-6" transform="translate(431.19 141.62) rotate(42.65)"><tspan x="0" y="0"> </tspan></text>
+  <g>
+    <path class="cls-4" d="M277.86,93.24c31.88,.82,75.8,16.57,98.69,29.27,94.92,52.67,129.17,172.32,76.5,267.24-52.67,94.92-172.32,129.17-267.24,76.5-94.92-52.67-129.17-172.32-76.5-267.24,25.6-46.14,73.4-88.73,140.08-102.49"/>
+    <polygon class="cls-5" points="281.21 103.3 263.53 94.08 280.36 83.37 281.21 103.3"/>
+    <polygon class="cls-5" points="248.32 106.98 263.53 94.08 244.76 87.36 248.32 106.98"/>
+  </g>
+  <g class="cls-1">
+    <path class="cls-2" d="M281.18,114.72c99.22,0,179.66,80.44,179.66,179.66s-80.44,179.66-179.66,179.66-179.66-80.44-179.66-179.66S181.96,114.72,281.18,114.72m0-6c-25.06,0-49.38,4.91-72.27,14.59-22.11,9.35-41.96,22.74-59.01,39.79-17.05,17.05-30.43,36.9-39.79,59.01-9.68,22.89-14.59,47.21-14.59,72.27s4.91,49.38,14.59,72.27c9.35,22.11,22.74,41.96,39.79,59.01,17.05,17.05,36.9,30.43,59.01,39.79,22.89,9.68,47.21,14.59,72.27,14.59s49.38-4.91,72.27-14.59c22.11-9.35,41.96-22.74,59.01-39.79,17.05-17.05,30.43-36.9,39.79-59.01,9.68-22.89,14.59-47.21,14.59-72.27s-4.91-49.38-14.59-72.27c-9.35-22.11-22.74-41.96-39.79-59.01-17.05-17.05-36.9-30.43-59.01-39.79-22.89-9.68-47.21-14.59-72.27-14.59h0Z"/>
+  </g>
+</svg>

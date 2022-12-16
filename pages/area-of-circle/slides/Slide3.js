@@ -3,13 +3,14 @@ import MathElement from "components/MathElement";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-circle/slide_3.svg";
 const image_2 = "assets/area-of-circle/slide_3_shaded.svg";
+const image_3 = "assets/area-of-circle/slide_3_modal.svg";
 
 // General Formula
 const Slide3 = ({ navBar, downIcon }) => {
@@ -22,22 +23,22 @@ const Slide3 = ({ navBar, downIcon }) => {
 
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color={colors.WHITE}>
+         <Paragraph>
             For any circle, the ratio of its circumference and diameter is
             always constant. This constant is expressed using a Greek letter π
             (pi).
          </Paragraph>
-         <Paragraph color={colors.WHITE}>
+         <Paragraph>
             <MathElement htmlString={"\\pi = 3.14159"} /> (approximately)
          </Paragraph>
-
-         <Paragraph color={colors.WHITE}>
+         <ModalImg src={image_3} />
+         {/* <Paragraph color={colors.WHITE}>
             <MathElement
                htmlString={
                   "\\frac{Circumference}{Diameter} = \\pi = 3.14159..."
                }
             />
-         </Paragraph>
+         </Paragraph> */}
       </Flex>
    );
    return (
@@ -55,6 +56,8 @@ const Slide3 = ({ navBar, downIcon }) => {
          }
       >
          <Modal
+            bg={"LIGHT"}
+            color={colors.BLACK}
             title={<MathElement htmlString={"Pi (\\pi)"} />}
             isOpen={isModalOpen}
             content={modalContent}
