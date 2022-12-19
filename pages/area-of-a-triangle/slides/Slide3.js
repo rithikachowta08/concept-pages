@@ -7,9 +7,9 @@ import React from "react";
 import { colors } from "utils/colors";
 
 // Definition applet
-const Slide3 = ({ downIcon, navBar }) => {
+const Slide3 = ({ downIcon }) => {
    return (
-      <TextAndDiagramSlide downIcon={downIcon} navBar={navBar} bg={"LIGHT"}>
+      <TextAndDiagramSlide downIcon={downIcon} bg={"LIGHT"}>
          <Paragraph textAlign={"center"}>
             The sandwich kept on the wooden platter is in __________ shape.
          </Paragraph>

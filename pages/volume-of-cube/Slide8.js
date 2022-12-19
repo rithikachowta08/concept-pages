@@ -7,7 +7,7 @@ import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationCo
 import { TextLine } from "components/text";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide8 = ({ downIcon, navBar }) => {
+const Slide8 = ({ downIcon}) => {
    let EquationLatex0=[
       {
          lhsLatex:{
@@ -78,7 +78,6 @@ const Slide8 = ({ downIcon, navBar }) => {
          secondaryTitle="Volume of a Cube Formula"
          title="Illustrative Example"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={<StyledImg src={cube_red} />}
       >
          <Paragraph>

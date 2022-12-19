@@ -11,7 +11,7 @@ import { colors } from "utils/colors";
 const image_1 = "assets/area-of-triangle/sidesAngles_deri_1.svg";
 const image_2 = "assets/area-of-triangle/sidesAngles_deri_2.svg";
 
-const Slide20 = ({ downIcon, navBar }) => {
+const Slide20 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
@@ -24,7 +24,6 @@ const Slide20 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          isLastSlide
       >
          <Paragraph>

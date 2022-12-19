@@ -9,7 +9,7 @@ const cube_3 = "assets/volume-of-cube/slide12/3.svg";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide11 = ({ navBar, downIcon }) => {
+const Slide11 = ({ downIcon }) => {
    let EquationLatex0=[
       {
          lhsLatex:{
@@ -135,7 +135,6 @@ const Slide11 = ({ navBar, downIcon }) => {
          title="Proof"
          secondaryTitle="Volume of a Cube using Diagonal"
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>

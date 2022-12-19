@@ -14,7 +14,7 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // Isosceles triangle
-const Slide13 = ({ downIcon, navBar }) => {
+const Slide13 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -29,7 +29,6 @@ const Slide13 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Given the length of the{" "}

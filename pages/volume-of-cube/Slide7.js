@@ -75,9 +75,8 @@ const Slide7 = ({ downIcon, navBar }) => {
       <TextAndAppletSlide
          secondaryTitle="Volume of a Cube Formula"
          title="Derivation"
-         appletSrc="./applets/triangle.html"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             If we stack square sheets of side length ‘s’ one over the other, a

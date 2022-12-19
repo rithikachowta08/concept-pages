@@ -9,7 +9,7 @@ import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide13 = ({ downIcon, navBar }) => {
+const Slide13 = ({ downIcon }) => {
    let EquationLatex0=[
       {
          lhsLatex:{
@@ -108,7 +108,6 @@ const Slide13 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          title="Illustrative Example"
          secondaryTitle="Volume of a Cube using Diagonal"
       >

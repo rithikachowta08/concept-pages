@@ -10,7 +10,7 @@ import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide14 = ({ downIcon, navBar }) => {
+const Slide14 = ({ downIcon }) => {
    const trans=[]
    let EquationLatex0=[
       {
@@ -74,7 +74,6 @@ const Slide14 = ({ downIcon, navBar }) => {
          title="Diagonal of a Face"
          secondaryTitle="Volume of a Cube using Diagonal"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_f, cube_s]}
@@ -83,17 +82,19 @@ const Slide14 = ({ downIcon, navBar }) => {
          }
       >
          <Paragraph>
-           
-           <TextLine> Given the{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}>
-               diagonal length
-            </TextSpanBg>{" "}
-            of a face of a cube:
+            <TextLine>
+               {" "}
+               Given the{" "}
+               <TextSpanBg
+                  id={1}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+               >
+                  diagonal length
+               </TextSpanBg>{" "}
+               of a face of a cube:
             </TextLine>
          </Paragraph>
          <Pill

@@ -1,5 +1,11 @@
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpan, Title, Paragraph, TextSpanBg, TextLine } from "components/text";
+import {
+   TextSpan,
+   Title,
+   Paragraph,
+   TextSpanBg,
+   TextLine,
+} from "components/text";
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";

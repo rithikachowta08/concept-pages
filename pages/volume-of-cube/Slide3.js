@@ -10,7 +10,7 @@ const cube_unit = "assets/volume-of-cube/slide3/3.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 
-const Slide3 = ({ downIcon, navBar }) => {
+const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const modalContent = (
@@ -42,7 +42,6 @@ const Slide3 = ({ downIcon, navBar }) => {
    return (
       <TextAndDiagramSlide
          downIcon={downIcon}
-         navBar={navBar}
          title="What is the volume of a cube?"
          diagram={
             <TransitionImage

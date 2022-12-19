@@ -11,7 +11,7 @@ import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide11 = ({ downIcon, navBar }) => {
+const Slide11 = ({ downIcon }) => {
    let EquationLatex0=[
       {
          lhsLatex:{
@@ -55,13 +55,12 @@ const Slide11 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          bg="DARK"
          secondaryTitle="Volume of a cube using diagonal"
          title="Diagonal of a Cube"
       >
          <Paragraph color={colors.WHITE}>
-            Given the{" "} diagonal length of a cube:
+            Given the diagonal length of a cube:
          </Paragraph>
          <Pill
             width="fit-content"

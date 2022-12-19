@@ -9,11 +9,12 @@ import {
    LeftAlignDiv,
 } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { SlideSecondaryTitle, SlideTitle } from "./common";
+import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
 
 const IFrame = styled.iframe`
    width: 700px;
    height: 700px;
+   border-radius: 20px;
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
       width: 250px;
@@ -61,8 +62,7 @@ const TextAndAppletSlide = ({
             justifyContent="space-between"
             isLastSlide={isLastSlide}
          >
-            {/* NavBar */}
-            {navBar}
+            <FillerNavBar isMobile />
             {/* Body */}
             <Flex
                direction="column"
@@ -92,7 +92,7 @@ const TextAndAppletSlide = ({
    return (
       <SlideWrap bg={bg} padding={"20px 30px"}>
          <Flex alignItems="center" justifyContent="flex-start" width="100%">
-            {navBar}
+            <FillerNavBar />
             <LeftWrap marginRight="20px">
                <div>
                   <SlideSecondaryTitle

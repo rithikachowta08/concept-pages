@@ -9,7 +9,7 @@ const cube_edges = "assets/volume-of-cube/slide2/4.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 
-const Slide2 = ({ downIcon, navBar }) => {
+const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -28,7 +28,6 @@ const Slide2 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph lineHeight={lineHeightProp}>
             A cube is a three-dimensional shape that has 6{" "}

@@ -5,10 +5,12 @@ import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { Paragraph, Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import { FillerNavBar } from "./common";
 
 const IFrame = styled.iframe`
    width: 700px;
    height: 700px;
+   border-radius: 20px;
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
       width: 150px;
@@ -38,7 +40,6 @@ const IFrame = styled.iframe`
 
 const AppletSlide = ({
    title,
-   navBar,
    downIcon,
    description,
    isLastSlide,
@@ -60,7 +61,7 @@ const AppletSlide = ({
             gap={isMobile ? "30px" : "60px"}
             direction={isMobile ? "column" : "row"}
          >
-            {navBar}
+            <FillerNavBar isMobile={isMobile} />
             <Flex
                gap={isMobile ? "30px" : "0"}
                margin={isMobile ? "auto 0" : "0"}

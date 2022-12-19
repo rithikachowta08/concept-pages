@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { SlideSecondaryTitle, SlideTitle } from "./common";
+import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import {
    SlideWrap,
    Flex,
@@ -30,8 +30,7 @@ const TextAndDiagramSlide = ({
             justifyContent="space-between"
             isLastSlide={isLastSlide}
          >
-            {/* NavBar */}
-            {navBar}
+            <FillerNavBar />
             {/* Body */}
             <Flex
                direction="column"
@@ -61,7 +60,7 @@ const TextAndDiagramSlide = ({
    return (
       <SlideWrap bg={bg} padding={"20px 30px"}>
          <Flex alignItems="center" justifyContent="flex-start" width="100%">
-            {navBar}
+            <FillerNavBar />
             <LeftWrap>
                <div>
                   <SlideSecondaryTitle

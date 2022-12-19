@@ -1,5 +1,11 @@
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpan, Title, Paragraph, TextSpanBg, TextLine } from "components/text";
+import {
+   TextSpan,
+   Title,
+   Paragraph,
+   TextSpanBg,
+   TextLine,
+} from "components/text";
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
@@ -11,7 +17,10 @@ import MathElement from "components/MathElement/index.js";
 import { fetchData } from "utils/networking";
 import { Flex } from "components/StyledElements";
 import SingleLHSMathEquationContainer from "components/MathElement/SingleLHSMathEquationContainer";
-import { LHSContainer, RHSContainer } from "components/MathElement/LHSContainer";
+import {
+   LHSContainer,
+   RHSContainer,
+} from "components/MathElement/LHSContainer";
 import MathEquationLine from "components/MathElement/MathEquationLine";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import EquationTable from "components/MathElement/EquationTable";

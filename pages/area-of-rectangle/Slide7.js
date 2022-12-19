@@ -20,7 +20,8 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 import { ModalTriggerText, TextLine } from "components/text";
-const rectangle_plain_dimensions = "assets/area-of-rectangle/rectangle_plain_dimensions.svg";
+const rectangle_plain_dimensions =
+   "assets/area-of-rectangle/rectangle_plain_dimensions.svg";
 const rectangle_length = "assets/area-of-rectangle/rectangle_length.svg";
 const rectangle_width = "assets/area-of-rectangle/rectangle_width.svg";
 const rectangle_square_units =
@@ -28,7 +29,7 @@ const rectangle_square_units =
 import { colors } from "utils/colors";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
-const Slide7 = ({ downIcon, navBar }) => {
+const Slide7 = ({ downIcon }) => {
    let EquationLatex = [
       {
          lhsLatex: [`{Area}`, ""],
@@ -40,7 +41,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             {
                eqLatex: "12 \\ sq \\ cm",
                hint: "",
-            }
+            },
          ],
       },
    ];
@@ -51,14 +52,8 @@ const Slide7 = ({ downIcon, navBar }) => {
             centimeters, square inches, square feet, and so on).
          </Paragraph>
          <Paragraph>
-            <TextLine color="white">
-               Example :
-            </TextLine>
-            <ModalImg
-               src={rectangle_square_units}
-               width="-webkit-fill-available"
-               style={{ scale: "1", transform: "none" }}
-            />
+            <TextLine color="white">Example :</TextLine>
+            <ModalImg src={rectangle_square_units} />
             <MultiLhsEquationContainer
                color={colors.WHITE}
                equationLatex={EquationLatex[0]}
@@ -84,12 +79,15 @@ const Slide7 = ({ downIcon, navBar }) => {
       <TextAndDiagramSlide
          diagram={
             <TransitionImage
-               images={[rectangle_plain_dimensions, rectangle_length, rectangle_width]}
+               images={[
+                  rectangle_plain_dimensions,
+                  rectangle_length,
+                  rectangle_width,
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          bg="DARK"
          secondaryTitle="Area of Rectangle"
          title="General Formula"

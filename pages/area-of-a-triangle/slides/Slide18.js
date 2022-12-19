@@ -11,7 +11,7 @@ const image_1 = "assets/area-of-triangle/equi_ex_1.svg";
 const image_2 = "assets/area-of-triangle/equi_ex_2.svg";
 
 // Example of equilateral triangle
-const Slide18 = ({ downIcon, navBar }) => {
+const Slide18 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
@@ -25,7 +25,6 @@ const Slide18 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextSpanBg

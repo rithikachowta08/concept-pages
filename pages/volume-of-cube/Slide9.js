@@ -24,7 +24,7 @@ const boat_correct_answer = "assets/boat_correct_answer.svg";
 const boat_wrong_answer = "assets/boat_wrong_answer.svg";
 const boat = "assets/boat.svg";
 
-const Slide9 = ({ navBar, downIcon }) => {
+const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const onDismiss = () => {
@@ -52,7 +52,6 @@ const Slide9 = ({ navBar, downIcon }) => {
          title="Area using Unit Squares"
          appletSrc="./applets/triangle.html"
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Move the sliders to create a rectangle occupying an area of 54 unit

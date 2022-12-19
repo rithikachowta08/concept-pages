@@ -77,7 +77,6 @@ const Slide6 = ({ downIcon, navBar }) => {
       <TextAndDiagramSlide
          bg="DARK"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_d]}

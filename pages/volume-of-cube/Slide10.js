@@ -9,7 +9,7 @@ import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    let EquationLatex0=[
       {
          lhsLatex:{
@@ -112,7 +112,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          secondaryTitle="Volume of a Cube using Area"
          title="Illustrative Example"
       >

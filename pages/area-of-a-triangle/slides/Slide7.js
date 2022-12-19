@@ -12,7 +12,7 @@ import HyperLink from "components/text/HyperLink";
 const applet = "applets/triangle.html";
 
 // General formula derivation
-const Slide7 = ({ downIcon, navBar }) => {
+const Slide7 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndAppletSlide
@@ -21,7 +21,6 @@ const Slide7 = ({ downIcon, navBar }) => {
          bg={"LIGHT"}
          appletSrc={applet}
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Two identical triangles combine to form a parallelogram.

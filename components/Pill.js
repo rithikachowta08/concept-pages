@@ -27,6 +27,7 @@ const Pill = ({
          marginTop="1rem"
          alignSelf={alignSelf}
          borderRadius="8px"
+         maxWidth="90%"
          position={position}
          color={color}
          width={width}
