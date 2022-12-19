@@ -15,8 +15,19 @@ export const FullPageCustomWrapper = ({
 }) => {
    const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
+   const navBar =
+      currentPageIdx === 0 ? null : (
+         <NavigationBar
+            deviceType={deviceType}
+            sections={navigationSections}
+            darkTheme={darkBgIndices.includes(currentPageIdx)}
+            moveTo={fullPage?.moveTo}
+            currentPageIdx={currentPageIdx}
+         />
+      );
    return (
-      <>
+      <div id="custom-wrap">
+         {navBar}
          <ReactFullpage
             //fullpage options
             // licenseKey={"YOUR_KEY_HERE"}
@@ -24,8 +35,8 @@ export const FullPageCustomWrapper = ({
             scrollBar={false}
             scrollingSpeed={900}
             fitToSectionDelay={900}
-            afterLoad={() => {
-               setCurrentPageIdx(fullPage?.getActiveSection().index() || 0);
+            onLeave={function (origin, destination) {
+               setCurrentPageIdx(destination.index);
             }}
             render={({ state, fullpageApi }) => {
                const moveToSection = fullpageApi?.moveTo;
@@ -34,15 +45,6 @@ export const FullPageCustomWrapper = ({
                   <>
                      <ReactFullpage.Wrapper>
                         {slidesComponentList.map((itm, idx) => {
-                           const navBar = idx ? (
-                              <NavigationBar
-                                 deviceType={deviceType}
-                                 sections={navigationSections}
-                                 darkTheme={darkBgIndices.includes(idx)}
-                                 moveTo={moveToSection}
-                                 currentPageIdx={currentPageIdx}
-                              />
-                           ) : null;
                            const downIcon = (
                               <DownArrowIcon
                                  visibility={
@@ -74,7 +76,7 @@ export const FullPageCustomWrapper = ({
                );
             }}
          />
-      </>
+      </div>
    );
 };
 

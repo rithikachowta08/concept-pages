@@ -13,7 +13,7 @@ const image_2 = "assets/area-of-triangle/isos_ex_2.svg";
 const image_3 = "assets/area-of-triangle/isos_ex_3.svg";
 
 // Example of isosceles triangle
-const Slide15 = ({ downIcon, navBar }) => {
+const Slide15 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
@@ -28,7 +28,6 @@ const Slide15 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>

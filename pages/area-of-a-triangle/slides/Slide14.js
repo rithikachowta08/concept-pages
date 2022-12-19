@@ -21,7 +21,7 @@ const image_1 = "assets/area-of-triangle/isos_deri_1.svg";
 const image_2 = "assets/area-of-triangle/isos_deri_2.svg";
 
 // Derivation of isosceles triangle
-const Slide14 = ({ downIcon, navBar }) => {
+const Slide14 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
@@ -36,7 +36,6 @@ const Slide14 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Apply the{" "}

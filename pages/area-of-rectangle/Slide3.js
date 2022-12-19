@@ -29,7 +29,7 @@ const rectangle_shaded = "assets/area-of-rectangle/rectangle_shaded.svg";
 const unit_square = "assets/area-of-rectangle/unit_square.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
-const Slide3 = ({ downIcon, navBar }) => {
+const Slide3 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
@@ -64,7 +64,6 @@ const Slide3 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Modal
             isOpen={isModalOpen}
@@ -88,9 +87,7 @@ const Slide3 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Paragraph>
             It is also the number of&nbsp;
-            <ModalTriggerText onClick={onClick}>
-               unit squares
-            </ModalTriggerText>
+            <ModalTriggerText onClick={onClick}>unit squares</ModalTriggerText>
             &nbsp;that can fit into a rectangle.
          </Paragraph>
       </TextAndDiagramSlide>

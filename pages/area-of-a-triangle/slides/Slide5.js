@@ -23,7 +23,7 @@ const area_triangle_angles_2_3 = "assets/area-of-triangle/18.b.svg";
 const area_triangle_angles_3_3 = "assets/area-of-triangle/18.c.svg";
 
 // General Formula base and height slide
-const Slide5 = ({ downIcon, navBar }) => {
+const Slide5 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -31,7 +31,6 @@ const Slide5 = ({ downIcon, navBar }) => {
          bg="LIGHT"
          title="General formula"
          downIcon={downIcon}
-         navBar={navBar}
          images={[
             {
                diagram: (

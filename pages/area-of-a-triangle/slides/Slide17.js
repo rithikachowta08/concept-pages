@@ -14,7 +14,7 @@ const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
 const image_2 = "assets/area-of-triangle/equi_deri_2.svg";
 
 // Derivation of equilateral triangle
-const Slide17 = ({ downIcon, navBar }) => {
+const Slide17 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
    return (
@@ -31,7 +31,6 @@ const Slide17 = ({ downIcon, navBar }) => {
             </LeftWrap>
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>

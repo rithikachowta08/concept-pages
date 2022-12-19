@@ -8,7 +8,7 @@ const cube_diagonal = "assets/volume-of-cube/slide12/2.svg";
 const cube_3 = "assets/volume-of-cube/slide12/3.svg";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
-const Slide11 = ({ navBar, downIcon }) => {
+const Slide11 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);
 
@@ -75,7 +75,6 @@ const Slide11 = ({ navBar, downIcon }) => {
          title="Proof"
          secondaryTitle="Volume of a Cube using Diagonal"
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>

@@ -9,7 +9,7 @@ const image_2 = "assets/area-of-triangle/slide_10_i.svg";
 const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
 // Types of triangle
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg={"DARK"}
@@ -49,7 +49,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             },
          ]}
          downIcon={downIcon}
-         navBar={navBar}
       />
    );
 };

@@ -8,7 +8,7 @@ const cube_diagonal = "assets/volume-of-cube/slide10/2.svg";
 import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -75,7 +75,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          secondaryTitle="Volume of a Cube using Area"
          title="Illustrative Example"
       >

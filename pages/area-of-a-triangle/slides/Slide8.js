@@ -6,14 +6,9 @@ import { colors } from "utils/colors";
 
 const applet = "applets/triangle.html";
 
-const Slide8 = ({ downIcon, navBar }) => {
+const Slide8 = ({ downIcon }) => {
    return (
-      <TextAndAppletSlide
-         bg={"LIGHT"}
-         appletSrc={applet}
-         downIcon={downIcon}
-         navBar={navBar}
-      >
+      <TextAndAppletSlide bg={"LIGHT"} appletSrc={applet} downIcon={downIcon}>
          <Paragraph>
             Move the slider to create a triangle of area 15 unit<sup>2</sup>.
          </Paragraph>

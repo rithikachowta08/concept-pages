@@ -1,5 +1,7 @@
 import { Title } from "../text";
 import { PropTypes } from "prop-types";
+import { useRef, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Flex, Icon } from "components/StyledElements";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import styled from "styled-components";
@@ -98,11 +100,23 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
    );
 };
 
+const ModalPortal = ({ ...props }) => {
+   const ref = useRef(null);
+   const [mounted, setMounted] = useState(false);
+   useEffect(() => {
+      ref.current = document.querySelector("#modal-container");
+      setMounted(true);
+   }, []);
+   return mounted && ref.current
+      ? createPortal(<Modal {...props} />, ref.current)
+      : null;
+};
+
+export default ModalPortal;
+
 Modal.propTypes = {
    onDismiss: PropTypes.func.isRequired,
    title: PropTypes.string,
    isOpen: PropTypes.bool.isRequired,
    content: PropTypes.node.isRequired,
 };
-
-export default Modal;
