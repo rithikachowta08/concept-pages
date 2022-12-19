@@ -11,7 +11,7 @@ import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { TextLine } from "components/text";
 
-const Slide6 = ({ downIcon, navBar }) => {
+const Slide6 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -49,7 +49,6 @@ const Slide6 = ({ downIcon, navBar }) => {
       <TextAndDiagramSlide
          bg="DARK"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_d]}

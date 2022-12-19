@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex } from "components/StyledElements";
@@ -12,7 +13,7 @@ const image_2 = "assets/area-of-triangle/isos_ex_2.svg";
 const image_3 = "assets/area-of-triangle/isos_ex_3.svg";
 
 // Example of isosceles triangle
-const Slide15 = ({ downIcon, navBar }) => {
+const Slide15 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
@@ -27,7 +28,6 @@ const Slide15 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>
@@ -62,7 +62,7 @@ const Slide15 = ({ downIcon, navBar }) => {
             </TextLine>
          </Paragraph>
          <span>
-            <Flex>
+            {/* <Flex>
                <Paragraph>
                   <TextLine>Area of triangle</TextLine>
                </Paragraph>
@@ -100,7 +100,41 @@ const Slide15 = ({ downIcon, navBar }) => {
                      <MathElement htmlString={"\\ = 12 \\ cm^2"} />
                   </TextLine>
                </Paragraph>
-            </Flex>
+            </Flex> */}
+            <Paragraph>
+               <MultiLhsEquationContainer
+                  equationLatex={{
+                     lhsLatex: [`Area\\ of\\ triangle`],
+                     rhsLatex: [
+                        {
+                           eqLatex: "\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}",
+                           hint: "",
+                        },
+                        {
+                           eqLatex:
+                              "\\dfrac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}",
+                           hint: "",
+                        },
+                        {
+                           eqLatex: "\\dfrac{1}{4}\\times 8 \\sqrt{100 - 64}",
+                           hint: "",
+                        },
+                        {
+                           eqLatex: "\\dfrac{1}{4}\\times 8 \\sqrt{36}",
+                           hint: "",
+                        },
+                        {
+                           eqLatex: "\\dfrac{8\\ \\times\\ 6}{4}",
+                           hint: "",
+                        },
+                        {
+                           eqLatex: "12 \\ cm^2",
+                           hint: "",
+                        },
+                     ],
+                  }}
+               />
+            </Paragraph>
          </span>
       </TextAndDiagramSlide>
    );

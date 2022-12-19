@@ -10,7 +10,7 @@ import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
 
-const Slide11 = ({ downIcon, navBar }) => {
+const Slide11 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -32,13 +32,12 @@ const Slide11 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          bg="DARK"
          secondaryTitle="Volume of a cube using diagonal"
          title="Diagonal of a Cube"
       >
          <Paragraph color={colors.WHITE}>
-            Given the{" "} diagonal length of a cube:
+            Given the diagonal length of a cube:
          </Paragraph>
          <Pill
             width="fit-content"
@@ -49,7 +48,8 @@ const Slide11 = ({ downIcon, navBar }) => {
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
          </Pill>
          <Paragraph color={colors.WHITE}>
-            Here,<TextSpanBg
+            Here,
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
@@ -68,7 +68,8 @@ const Slide11 = ({ downIcon, navBar }) => {
             >
                {" "}
                side
-            </TextSpanBg> {" "}units
+            </TextSpanBg>{" "}
+            units
          </Paragraph>
       </TextAndDiagramSlide>
    );

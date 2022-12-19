@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -13,7 +14,7 @@ const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
 const image_2 = "assets/area-of-triangle/equi_deri_2.svg";
 
 // Derivation of equilateral triangle
-const Slide17 = ({ downIcon, navBar }) => {
+const Slide17 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
    return (
@@ -30,7 +31,6 @@ const Slide17 = ({ downIcon, navBar }) => {
             </LeftWrap>
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextLine>
@@ -39,6 +39,7 @@ const Slide17 = ({ downIcon, navBar }) => {
                   href={
                      "https://byjus.com/us/math/pythagorean-theorem-formulas/"
                   }
+                  color={colors.DARK_BLUE}
                >
                   Pythagoras Theorem
                </HyperLink>{" "}
@@ -62,21 +63,25 @@ const Slide17 = ({ downIcon, navBar }) => {
             <Paragraph>
                <Flex direction="column">
                   <TextLine>
-                     <MathElement htmlString={"a^2 = h^2 + (\\frac{a}{2})^2"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"h^2 = a^2 - (\\frac{a^2}{4})"} />
+                     <MathElement
+                        htmlString={"a^2 = h^2 + \\Big(\\dfrac{a}{2}\\Big)^2"}
+                     />
                   </TextLine>
                   <TextLine>
                      <MathElement
-                        htmlString={"h = \\frac{1}{2} (\\sqrt{3} a)"}
+                        htmlString={"h^2 = a^2 - \\Big(\\dfrac{a^2}{4}\\Big)"}
+                     />
+                  </TextLine>
+                  <TextLine>
+                     <MathElement
+                        htmlString={"h = \\dfrac{1}{2} (\\sqrt{3} a)"}
                      />
                   </TextLine>
                </Flex>
             </Paragraph>
          </span>
-         <span>
-            <Flex>
+         <Paragraph>
+            {/* <Flex>
                <Paragraph>
                   <TextLine textAlign={"right"}>Area of triangle =</TextLine>
                   <TextLine textAlign={"right"}>A =</TextLine>
@@ -98,12 +103,28 @@ const Slide17 = ({ downIcon, navBar }) => {
                      />
                   </TextLine>
                </Paragraph>
-            </Flex>
-         </span>
+            </Flex> */}
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: [`Area\\ of\\ triangle`, "A"],
+                  rhsLatex: [
+                     {
+                        eqLatex: "\\dfrac{1}{2} \\times Base \\times Height",
+                        hint: "",
+                     },
+                     {
+                        eqLatex:
+                           "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
+                        hint: "",
+                     },
+                  ],
+               }}
+            />
+         </Paragraph>
          <Paragraph>
             <Pill>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\frac{\\sqrt{3}}{4} \\times a^2"} />
+               <MathElement htmlString={"\\dfrac{\\sqrt{3}}{4} \\times a^2"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

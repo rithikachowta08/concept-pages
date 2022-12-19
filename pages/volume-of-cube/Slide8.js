@@ -6,7 +6,7 @@ import MathElement from "components/MathElement";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { TextLine } from "components/text";
 
-const Slide8 = ({ downIcon, navBar }) => {
+const Slide8 = ({ downIcon }) => {
    let latex = [];
    latex.push(`= (side)^3`);
    latex.push(` = (7 cm)^3`);
@@ -41,7 +41,6 @@ const Slide8 = ({ downIcon, navBar }) => {
          secondaryTitle="Volume of a Cube Formula"
          title="Illustrative Example"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={<StyledImg src={cube_red} />}
       >
          <Paragraph>

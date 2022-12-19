@@ -1,11 +1,11 @@
 import AppletSlide from "components/slides/AppletSlide";
 
-const Slide4 = ({ downIcon, navBar }) => {
+const Slide4 = ({ downIcon }) => {
    return (
       <AppletSlide
          downIcon={downIcon}
-         navBar={navBar}
          description="Applet description here"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
       ></AppletSlide>
    );
 };

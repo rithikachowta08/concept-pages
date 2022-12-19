@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap } from "components/StyledElements";
@@ -10,7 +11,7 @@ const image_1 = "assets/area-of-triangle/equi_ex_1.svg";
 const image_2 = "assets/area-of-triangle/equi_ex_2.svg";
 
 // Example of equilateral triangle
-const Slide18 = ({ downIcon, navBar }) => {
+const Slide18 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
@@ -24,7 +25,6 @@ const Slide18 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             <TextSpanBg
@@ -42,7 +42,30 @@ const Slide18 = ({ downIcon, navBar }) => {
             = 4 in
          </Paragraph>
          <Paragraph>
-            <Flex>
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: ["Area\\ of\\ triangle"],
+                  rhsLatex: [
+                     {
+                        eqLatex: "\\dfrac{\\sqrt{3}}{4} \\times a^2",
+                        hint: "",
+                     },
+                     {
+                        eqLatex: "\\dfrac{\\sqrt{3}}{4} \\times 4^2",
+                        hint: "",
+                     },
+                     {
+                        eqLatex: "\\dfrac{16 \\ \\sqrt{3}}{4}",
+                        hint: "",
+                     },
+                     {
+                        eqLatex: "4 \\sqrt{3}\\ in^2",
+                        hint: "",
+                     },
+                  ],
+               }}
+            />
+            {/* <Flex>
                <TextLine>Area of the triangle </TextLine>
                <div>
                   <TextLine>
@@ -64,7 +87,7 @@ const Slide18 = ({ downIcon, navBar }) => {
                      <MathElement htmlString={"\\ = 4 \\sqrt{3}\\ in^2"} />
                   </TextLine>
                </div>
-            </Flex>
+            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );

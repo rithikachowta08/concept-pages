@@ -15,7 +15,7 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Heron's Formula
-const Slide9 = ({ downIcon, navBar }) => {
+const Slide9 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Heron's formula"}
@@ -23,7 +23,6 @@ const Slide9 = ({ downIcon, navBar }) => {
          bg={"DARK"}
          diagram={<StyledImg src={area_triangle_heron} />}
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph color={colors.WHITE}>
             Given the lengths (a, b, c) of three sides of any triangle, the area
@@ -40,9 +39,11 @@ const Slide9 = ({ downIcon, navBar }) => {
                Here, s is the semiperimeter of the triangle.
             </Paragraph>
          </span>
-         <Paragraph color={colors.WHITE}>
-            <MathElement htmlString={"s = \\frac{a\\ +\\ b\\ + c}{2}"} />
-         </Paragraph>
+         <span>
+            <Paragraph color={colors.WHITE}>
+               <MathElement htmlString={"s = \\dfrac{a+b+c}{2}"} />
+            </Paragraph>
+         </span>
       </TextAndDiagramSlide>
    );
 };

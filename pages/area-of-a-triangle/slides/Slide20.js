@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -10,7 +11,7 @@ import { colors } from "utils/colors";
 const image_1 = "assets/area-of-triangle/sidesAngles_deri_1.svg";
 const image_2 = "assets/area-of-triangle/sidesAngles_deri_2.svg";
 
-const Slide20 = ({ downIcon, navBar }) => {
+const Slide20 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
@@ -23,7 +24,6 @@ const Slide20 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          isLastSlide
       >
          <Paragraph>
@@ -45,14 +45,33 @@ const Slide20 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Paragraph>
             <TextLine>
-               <MathElement htmlString={"Sin\\ A = \\frac{h}{b}"} />
+               <MathElement htmlString={"Sin\\ A = \\dfrac{h}{b}"} />
             </TextLine>
             <TextLine>
                <MathElement htmlString={"h = b.Sin \\ A"} />
             </TextLine>
          </Paragraph>
          <Paragraph>
-            <Flex>
+            <MultiLhsEquationContainer
+               equationLatex={{
+                  lhsLatex: ["Area\\ of\\ triangle\\ (\\Delta ABC)"],
+                  rhsLatex: [
+                     {
+                        eqLatex: " \\dfrac{1}{2} \\times Base \\times Height",
+                        hint: "",
+                     },
+                     {
+                        eqLatex: "\\dfrac{1}{2}\\times c\\times h",
+                        hint: "",
+                     },
+                     {
+                        eqLatex: "\\dfrac{1}{2}\\times c\\times b\\ Sin A",
+                        hint: "",
+                     },
+                  ],
+               }}
+            />
+            {/* <Flex>
                <TextLine>
                   Area of triangle (<MathElement htmlString={"\\Delta"} />
                   ABC)
@@ -78,12 +97,12 @@ const Slide20 = ({ downIcon, navBar }) => {
                      />
                   </TextLine>
                </Flex>
-            </Flex>
+            </Flex> */}
          </Paragraph>
          <Paragraph>
             <Pill>
                Area =
-               <MathElement htmlString={"\\frac{1}{2}\\ bc\\ Sin\\ A"} />
+               <MathElement htmlString={"\\dfrac{1}{2}\\ bc\\ Sin\\ A"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

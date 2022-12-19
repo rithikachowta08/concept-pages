@@ -1,7 +1,7 @@
 import { Flex, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan, Title } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { SlideTitle, SlideSecondaryTitle } from "./common";
+import { SlideTitle, SlideSecondaryTitle, FillerNavBar } from "./common";
 import React from "react";
 import { colors } from "utils/colors";
 import { fontSizes, fontWeights } from "utils/fontStyles";
@@ -28,7 +28,7 @@ const MultipleDiagramSlide = ({
             isLastSlide={isLastSlide}
          >
             {/* NavBar */}
-            {navBar}
+            <FillerNavBar isMobile />
             {/* Body */}
             <Flex
                direction="column"
@@ -37,18 +37,17 @@ const MultipleDiagramSlide = ({
                alignItems="center"
                width="100%"
             >
-               <div>
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     isMobile
-                  />
-                  <SlideTitle bg={bg} isMobile>
-                     {title}
-                  </SlideTitle>
-                  {children}
-               </div>
+               <SlideSecondaryTitle
+                  bg={bg}
+                  secondaryTitle={secondaryTitle}
+                  isMobile
+               />
+               <SlideTitle bg={bg} isMobile>
+                  {title}
+               </SlideTitle>
+               {children}
                <Flex
+                  direction="row"
                   flexFlow={"wrap"}
                   width="100%"
                   justifyContent="space-evenly"
@@ -87,7 +86,7 @@ const MultipleDiagramSlide = ({
    return (
       <SlideWrap bg={bg} padding={"20px 30px"}>
          <Flex alignItems="center" justifyContent="flex-start" width="100%">
-            {navBar}
+            <FillerNavBar />
             <Flex
                direction="column"
                justifyContent="space-between"

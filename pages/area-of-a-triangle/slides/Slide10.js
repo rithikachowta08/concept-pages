@@ -9,7 +9,7 @@ const image_2 = "assets/area-of-triangle/slide_10_i.svg";
 const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
 // Types of triangle
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg={"DARK"}
@@ -20,7 +20,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/scalene-triangle/"}
-                     color={colors.AQUA}
                   >
                      Scalene Triangle
                   </HyperLink>
@@ -33,7 +32,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                      href={
                         "https://byjus.com/us/math/area-of-isosceles-triangle/"
                      }
-                     color={colors.AQUA}
                   >
                      Isosceles Triangle
                   </HyperLink>
@@ -44,7 +42,6 @@ const Slide10 = ({ downIcon, navBar }) => {
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/equilateral-triangle/"}
-                     color={colors.AQUA}
                   >
                      Equilateral Triangle
                   </HyperLink>
@@ -52,7 +49,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             },
          ]}
          downIcon={downIcon}
-         navBar={navBar}
       />
    );
 };

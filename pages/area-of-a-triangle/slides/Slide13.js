@@ -14,7 +14,7 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes } from "utils/fontStyles";
 
 // Isosceles triangle
-const Slide13 = ({ downIcon, navBar }) => {
+const Slide13 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -29,7 +29,6 @@ const Slide13 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Given the length of the{" "}
@@ -63,7 +62,7 @@ const Slide13 = ({ downIcon, navBar }) => {
          <Paragraph>
             <Pill>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\frac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+               <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

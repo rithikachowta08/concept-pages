@@ -8,7 +8,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
          title={"Area of a Triangle"}
-         anchorIdxes={[2, 4, 9, 10, 18]}
+         anchorIdxes={[2, 3, 8, 9, 17]}
          contentListItems={[
             "Definition",
             "General Formula",

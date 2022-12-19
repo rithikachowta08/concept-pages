@@ -12,7 +12,7 @@ import HyperLink from "components/text/HyperLink";
 const applet = "applets/triangle.html";
 
 // General formula derivation
-const Slide7 = ({ downIcon, navBar }) => {
+const Slide7 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndAppletSlide
@@ -21,7 +21,6 @@ const Slide7 = ({ downIcon, navBar }) => {
          bg={"LIGHT"}
          appletSrc={applet}
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Two identical triangles combine to form a parallelogram.
@@ -30,21 +29,26 @@ const Slide7 = ({ downIcon, navBar }) => {
             <TextLine>
                <HyperLink
                   href={"https://byjus.com/us/math/area-of-parallelogram/"}
+                  color={colors.DARK_BLUE}
                >
                   Area of a parallelogram
                </HyperLink>{" "}
                = Base (b) <MathElement htmlString={"\\times"} /> Height (h)
             </TextLine>
-            <TextLine>
-               Area of a triangle =
-               <MathElement htmlString={"\\frac{1}{2}\\times"} /> Area of the
-               parallelogram
-            </TextLine>
          </Paragraph>
+         <span>
+            <Paragraph>
+               <TextLine>
+                  Area of a triangle =
+                  <MathElement htmlString={"\\dfrac{1}{2}\\times"} /> Area of
+                  the parallelogram
+               </TextLine>
+            </Paragraph>
+         </span>
          <Paragraph>
             <Pill>
                Area of the triangle ={" "}
-               <MathElement htmlString={"\\frac{1}{2}\\times"} /> Base (b){" "}
+               <MathElement htmlString={"\\dfrac{1}{2}\\times"} /> Base (b){" "}
                <MathElement htmlString={"\\times\\ "} />
                Height (h)
             </Pill>

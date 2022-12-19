@@ -9,7 +9,7 @@ const cube_s = "assets/volume-of-cube/slide14/3.svg";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement/index.js";
 
-const Slide14 = ({ downIcon, navBar }) => {
+const Slide14 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -26,7 +26,6 @@ const Slide14 = ({ downIcon, navBar }) => {
          title="Diagonal of a Face"
          secondaryTitle="Volume of a Cube using Diagonal"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_f, cube_s]}
@@ -35,17 +34,19 @@ const Slide14 = ({ downIcon, navBar }) => {
          }
       >
          <Paragraph>
-           
-           <TextLine> Given the{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}>
-               diagonal length
-            </TextSpanBg>{" "}
-            of a face of a cube:
+            <TextLine>
+               {" "}
+               Given the{" "}
+               <TextSpanBg
+                  id={1}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+               >
+                  diagonal length
+               </TextSpanBg>{" "}
+               of a face of a cube:
             </TextLine>
          </Paragraph>
          <Pill
@@ -58,17 +59,22 @@ const Slide14 = ({ downIcon, navBar }) => {
             cubic units
          </Pill>
          <Paragraph>
-           <TextLine> Here, length of diagonal (f){" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_BLUE}
-               color={colors.RED}
-            >
-              length of sides(s)
-            </TextSpanBg>{" "}
+            <TextLine>
+               {" "}
+               Here, length of diagonal (f){" "}
+               <MathElement
+                  htmlString={latex[mathjaxCounter++]}
+               ></MathElement>{" "}
+               x{" "}
+               <TextSpanBg
+                  id={2}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_BLUE}
+                  color={colors.RED}
+               >
+                  length of sides(s)
+               </TextSpanBg>{" "}
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

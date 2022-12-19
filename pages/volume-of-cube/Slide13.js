@@ -8,7 +8,7 @@ const cube_diagonal = "assets/volume-of-cube/slide13/2.svg";
 import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
-const Slide13 = ({ downIcon, navBar }) => {
+const Slide13 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -59,7 +59,6 @@ const Slide13 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          title="Illustrative Example"
          secondaryTitle="Volume of a Cube using Diagonal"
       >

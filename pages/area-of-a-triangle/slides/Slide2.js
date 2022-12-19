@@ -1,4 +1,4 @@
-import { Flex, LeftWrap, StyledImg } from "components/StyledElements";
+import { Flex, LeftWrap, ModalImg, StyledImg } from "components/StyledElements";
 import React, { useEffect, useState } from "react";
 
 import Modal from "components/layout/Modal";
@@ -18,14 +18,14 @@ const area_triangle = "assets/area-of-triangle/slide_2_normal.svg";
 const area_triangle_shaded = "assets/area-of-triangle/slide_2_shaded.svg";
 
 // Definition
-const Slide2 = ({ downIcon, navBar }) => {
+const Slide2 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color={colors.WHITE}>
             A triangle is a closed shape that has three sides, three angles, and
             three vertices.
          </Paragraph>
-         <StyledImg src={area_triangle_modal} />
+         <ModalImg src={area_triangle_modal} />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -43,7 +43,6 @@ const Slide2 = ({ downIcon, navBar }) => {
          title="Definition"
          secondaryTitle={"Area of a triangle"}
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[area_triangle, area_triangle_shaded]}

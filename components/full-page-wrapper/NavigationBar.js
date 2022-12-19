@@ -8,11 +8,10 @@ import DefaultNavBar from "./DefaultNavBar";
 const Wrapper = styled.div`
    width: ${(props) => (props.isMobile ? "100%" : "80px")};
    z-index: 6;
-   position: ${(props) => (props.isAbsolute ? "absolute" : "static")};
-   top: ${(props) => (props.isMobile ? "0" : "50%")};
-   left: 0;
-   transform: ${(props) =>
-      props.isAbsolute && !props.isMobile ? "translateY(-50%)" : "none"};
+   position: fixed;
+   top: ${(props) => (props.isMobile ? "0" : "50vh")};
+   left: ${(props) => (props.isMobile ? "0" : "30px")};
+   transform: ${(props) => (!props.isMobile ? "translateY(-50%)" : "none")};
    display: grid;
    grid-template-columns: 1fr;
 
@@ -22,14 +21,12 @@ const Wrapper = styled.div`
 
    @media (min-width: 768px) and (max-width: 992px) {
       scale: 0.8;
-      transform: ${(props) =>
-         props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+      transform: ${(props) => (!props.isMobile ? "translateY(-80%)" : "none")};
    }
 
    @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
       scale: 0.8;
-      transform: ${(props) =>
-         props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+      transform: ${(props) => (!props.isMobile ? "translateY(-80%)" : "none")};
    }
 `;
 

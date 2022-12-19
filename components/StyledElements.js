@@ -9,9 +9,14 @@ const bgToImageMap = {
    DARK_PATTERNED: darkWithTrianglesBg,
 };
 
+const bgToBgColorMap = {
+   LIGHT: "#FCFCFC",
+   DARK: "#3E3283",
+};
+
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => props.bgColor};
+   background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
    height: 100%;
    width: 100%;
    padding: ${(props) => props.padding};
@@ -44,6 +49,7 @@ export const SlideWrap = styled.div`
 
 export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+   background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
    height: 100%;
    width: 100%;
@@ -68,6 +74,7 @@ export const LeftWrap = styled.div`
    min-width: 20%;
    margin-left: 60px;
    margin-right: ${(props) => props.marginRight};
+   width: 40%;
 `;
 
 export const RightWrap = styled.div`
@@ -79,6 +86,7 @@ export const Flex = styled.div`
    display: flex;
    flex-direction: ${(props) => props.direction || "row"};
    width: ${(props) => props.width};
+   max-width: ${(props) => props.maxWidth};
    height: ${(props) => props.height};
    gap: ${(props) => props.gap};
    flex: ${(props) => props.flex};

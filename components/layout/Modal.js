@@ -1,11 +1,13 @@
 import { Title } from "../text";
 import { PropTypes } from "prop-types";
+import { useRef, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Flex, Icon } from "components/StyledElements";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import styled from "styled-components";
 const crossIcon = "assets/cross_icon.svg";
 import Button from "components/Button";
-import { colors } from "utils/colors";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
 const Overlay = styled.div`
    background: rgba(0, 0, 0, 0.5);
@@ -44,9 +46,10 @@ const ModalBody = styled.div`
 
    @media only screen and (min-width: 200px) and (max-width: 767px) {
       border-radius: 20px 20px 0px 0px;
-      padding: 40px 20px;
+      padding: 36px 20px;
       width: 100%;
-      height: 80%;
+      max-height: 80%;
+      height: unset;
       transform: ${(props) =>
          props.isOpen ? "translateY(0px)" : "translateY(999px)"};
    }
@@ -56,7 +59,8 @@ const ModalBody = styled.div`
    }
 `;
 
-const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
+const Modal = ({ onDismiss, content, title, isOpen }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const onClick = (e) => {
       if (e.target.id === "overlay") {
          onDismiss();
@@ -91,19 +95,34 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                ></Icon>
             </Flex>
             {title ? <div>{content}</div> : null}
-            <Button
-               color={color}
-               position="fixed"
-               bottom="40px"
-               width="130px"
-               onClick={onDismiss}
-            >
-               Got it!
-            </Button>
+            {!isMobile ? (
+               <Button
+                  position="fixed"
+                  bottom="40px"
+                  width="130px"
+                  onClick={onDismiss}
+               >
+                  Got it!
+               </Button>
+            ) : null}
          </ModalBody>
       </Overlay>
    );
 };
+
+const ModalPortal = ({ ...props }) => {
+   const ref = useRef(null);
+   const [mounted, setMounted] = useState(false);
+   useEffect(() => {
+      ref.current = document.querySelector("#modal-container");
+      setMounted(true);
+   }, []);
+   return mounted && ref.current
+      ? createPortal(<Modal {...props} />, ref.current)
+      : null;
+};
+
+export default ModalPortal;
 
 Modal.propTypes = {
    onDismiss: PropTypes.func.isRequired,
@@ -111,5 +130,3 @@ Modal.propTypes = {
    isOpen: PropTypes.bool.isRequired,
    content: PropTypes.node.isRequired,
 };
-
-export default Modal;
