@@ -8,6 +8,7 @@ import styled from "styled-components";
 const crossIcon = "assets/cross_icon.svg";
 import Button from "components/Button";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import { colors } from "utils/colors";
 
 const Overlay = styled.div`
    background: rgba(0, 0, 0, 0.5);
@@ -59,7 +60,7 @@ const ModalBody = styled.div`
    }
 `;
 
-const Modal = ({ onDismiss, content, title, isOpen }) => {
+const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const onClick = (e) => {
       if (e.target.id === "overlay") {
