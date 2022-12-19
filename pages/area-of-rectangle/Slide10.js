@@ -39,7 +39,7 @@ const Slide10 = ({ downIcon, navBar }) => {
       lhsLatex: [`{Area}`, "", "", ""],
       rhsLatex: [
         {
-          eqLatex: "{\\it \\ l \\times \\sqrt{d^2 - l^2}\}",
+          eqLatex: "l \\times \\sqrt{d^2 - l^2}",
           hint: "",
         },
         {

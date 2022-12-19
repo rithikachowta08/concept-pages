@@ -56,8 +56,6 @@ const Slide7 = ({ downIcon, navBar }) => {
             </TextLine>
             <ModalImg
                src={rectangle_square_units}
-               width="-webkit-fill-available"
-               style={{ scale: "1", transform: "none" }}
             />
             <MultiLhsEquationContainer
                color={colors.WHITE}

@@ -37,8 +37,6 @@ const Slide3 = ({ downIcon, navBar }) => {
          </Paragraph>
          <ModalImg
             src={unit_square}
-         // width="-webkit-fill-available"
-         // style={{ scale: "1", transform: "none" }}
          />
       </Flex>
    );
