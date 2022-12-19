@@ -9,8 +9,31 @@ const cube_s = "assets/volume-of-cube/slide11/3.svg";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
+import EquationTable from "components/MathElement/EquationTable";
 
 const Slide11 = ({ downIcon, navBar }) => {
+   let EquationLatex0=[
+      {
+         lhsLatex:{
+           value: ["Here, \\htmlClass{textSpanBg hoverTransition}{diagonal}"],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["\\sqrt{3} \\times \\htmlClass{textSpanBg hoverTransition}{side} units"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+   
+      ]
+      
+      let latexEquationContainer=[]
+      latexEquationContainer.push(EquationLatex0)
+      let latexEquationCounter=0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -49,26 +72,7 @@ const Slide11 = ({ downIcon, navBar }) => {
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
          </Pill>
          <Paragraph color={colors.WHITE}>
-            Here,<TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
-            >
-               diagonal
-            </TextSpanBg>{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
-            >
-               {" "}
-               side
-            </TextSpanBg> {" "}units
+         <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
          </Paragraph>
       </TextAndDiagramSlide>
    );

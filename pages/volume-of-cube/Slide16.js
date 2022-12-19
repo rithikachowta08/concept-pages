@@ -6,16 +6,89 @@ import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide16/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide16/2.svg";
-import Pill from "components/Pill";
-import MathElement from "components/MathElement/index.js";
-import { fetchData } from "utils/networking";
-import { Flex } from "components/StyledElements";
-import MathEquationLine from "components/MathElement/MathEquationLine";
-import SingleLHSMathEquationContainer from "components/MathElement/SingleLHSMathEquationContainer";
-import {LHSContainer,RHSContainer} from "components/MathElement/LHSContainer";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
+import EquationTable from "components/MathElement/EquationTable";
 
 const Slide16 = ({navBar,downIcon}) => {
+  let EquationLatex0=[
+    {
+       lhsLatex:{
+         value: ["\\text{Volume of Cube}"],
+         type:'latex' 
+       },
+       rhsLatex:{
+          value:["\\sqrt{2} \\times {\\dfrac{f^3}{4}}"],
+          type:'latex'
+       },
+       rhsHint:
+       {
+        value:[''],
+        type:'text'
+       }
+    },
+    {
+       lhsLatex:{
+         value: [""],
+         type:'latex' 
+       },
+       rhsLatex:{
+          value:["\\sqrt{2} \\times \\dfrac{4^3}{4}"],
+          type:'latex'
+       },
+       rhsHint:
+       {
+        value:[''],
+        type:'text'
+       }
+    },
+    {
+       lhsLatex:{
+         value: [""],
+         type:'latex' 
+       },
+       rhsLatex:{
+          value:["\\sqrt{2}\\times \\dfrac{64}{4}"],
+          type:'latex'
+       },
+       rhsHint:
+       {
+        value:[''],
+        type:'text'
+       }
+    },
+    {
+       lhsLatex:{
+         value: [""],
+         type:'latex' 
+       },
+       rhsLatex:{
+          value:["\\sqrt{2} \\times 16"],
+          type:'latex'
+       },
+       rhsHint:
+       {
+        value:[''],
+        type:'text'
+       }
+    },
+    {
+       lhsLatex:{
+         value: [""],
+         type:'latex' 
+       },
+       rhsLatex:{
+          value:["16 \\sqrt{2}ft^3"],
+          type:'latex'
+       },
+       rhsHint:
+       {
+        value:[''],
+        type:'text'
+       }
+    }
+    ]
+          let latexEquationContainer=[]
+      latexEquationContainer.push(EquationLatex0)
+      let latexEquationCounter=0;
   const [activeIndex, setActiveIndex] = useState(0);
   const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);
 
@@ -25,50 +98,7 @@ const Slide16 = ({navBar,downIcon}) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  // useEffect(() => {
-  //   let latex = [];
-  //   latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
-  //   latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
-  //   latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
-  //   latex.push(`= \\sqrt{3} \\times 3`);
-  //   latex.push(`= 3 \\sqrt{3}ft^3 `);
-
-  //   // const getMathJax = async () => {
-  //   //   const resp = await fetchData(latex);
-  //   //   setMathjaxRespStrings(resp.title);
-  //   // };
-  //   // getMathJax();
-  //   setMathjaxRespStrings(latex);
-  // }, []);
-  let latex = [];
-  latex.push(`= \\sqrt{2} \\times {\\frac{f^3}{4}}`);
-  latex.push(`= \\sqrt{2} \\times \\frac{4^3}{4}`);
-  latex.push(`= \\sqrt{2}\\times \\frac{64}{4}`);
-  latex.push(`= \\sqrt{2} \\times 16`);
-  latex.push(`= 16 \\sqrt{2}ft^3 `);
-  let EquationLatex=[
-    {
-      lhsLatex:[`{Volume} \\: of \\: the \\: cube`,"","",""],
-      rhsLatex:[
-        {
-          eqLatex:"\\sqrt{2} \\times {\\frac{f^3}{4}}",
-        hint:''
-      },
-      {
-        eqLatex:"\\sqrt{2} \\times \\frac{4^3}{4}",
-      hint:''
-    },
-    {
-      eqLatex:"\\sqrt{2}\\times \\frac{64}{4}",
-    hint:''
-  },
-  {
-    eqLatex:"16 \\sqrt{2}ft^3",
-  hint:''
-},
-    ]
-    },
-  ]
+  
   return (
     <TextAndDiagramSlide
     navBar={navBar}
@@ -100,7 +130,7 @@ const Slide16 = ({navBar,downIcon}) => {
         <TextLine>
         Solution:
         </TextLine>
-        <MultiLhsEquationContainer lineHeight="1.8" equationLatex={EquationLatex[0]}></MultiLhsEquationContainer>
+        <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
       </Paragraph>
     </TextAndDiagramSlide>
   );
