@@ -9,9 +9,14 @@ const bgToImageMap = {
    DARK_PATTERNED: darkWithTrianglesBg,
 };
 
+const bgToBgColorMap = {
+   LIGHT: "#FCFCFC",
+   DARK: "#3E3283",
+};
+
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => props.bgColor};
+   background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
    height: 100%;
    width: 100%;
    padding: ${(props) => props.padding};
@@ -44,6 +49,7 @@ export const SlideWrap = styled.div`
 
 export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+   background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
    height: 100%;
    width: 100%;
