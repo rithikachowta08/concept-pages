@@ -8,6 +8,7 @@ import styled from "styled-components";
 const crossIcon = "assets/cross_icon.svg";
 import Button from "components/Button";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import { colors } from "utils/colors";
 
 const Overlay = styled.div`
    background: rgba(0, 0, 0, 0.5);
@@ -21,13 +22,20 @@ const Overlay = styled.div`
    z-index: 7;
 `;
 
+// background: #3c3281;
+
+const bgMapping = {
+   LIGHT: "#ffffee",
+   DARK: "#3c3281",
+};
+
 const ModalBody = styled.div`
    width: 35vw;
    height: 100%;
    position: absolute;
    bottom: 0;
-   background: #3c3281;
-   color: white;
+   background: ${(props) => bgMapping[props.bg] || bgMapping.DARK};
+   color: ${(props) => props.color || colors.WHITE};
    transform: ${(props) =>
       props.isOpen ? "translateX(0px)" : "translateX(-999px)"};
    border-radius: 0px 20px 20px 0px;
@@ -52,7 +60,7 @@ const ModalBody = styled.div`
    }
 `;
 
-const Modal = ({ onDismiss, content, title, isOpen }) => {
+const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const onClick = (e) => {
       if (e.target.id === "overlay") {
@@ -61,7 +69,7 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
    };
    return (
       <Overlay isOpen={isOpen} id="overlay" onClick={onClick}>
-         <ModalBody isOpen={isOpen}>
+         <ModalBody isOpen={isOpen} bg={bg} color={color}>
             <Flex
                justifyContent="space-between"
                alignItems="center"
@@ -71,7 +79,7 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
                   <Title
                      fontWeight={fontWeights.BOLD}
                      fontSize={fontSizes.LARGE}
-                     color="white"
+                     color={color || "white"}
                      small
                   >
                      {title}
@@ -79,6 +87,9 @@ const Modal = ({ onDismiss, content, title, isOpen }) => {
                ) : null}
                {title ? null : <div>{content}</div>}
                <Icon
+                  style={{
+                     filter: bg === "LIGHT" ? "invert(100%)" : "invert(0%)",
+                  }}
                   alignSelf={title ? "center" : "start"}
                   src={crossIcon}
                   onClick={onDismiss}
