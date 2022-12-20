@@ -77,13 +77,13 @@ const Slide6 = ({ navBar, downIcon }) => {
                   {
                      lhsLatex: {
                         value: [
-                           `\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 lightBg}{Radius\\ (r)}}`,
+                           `\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{Radius\\ (r)}}`,
                         ],
                         type: "latex",
                      },
                      rhsLatex: {
                         value: [
-                           "\\dfrac{\\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 lightBg}{Diameter (d)}}}{2}",
+                           "\\dfrac{\\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{Diameter (d)}}}{2}",
                         ],
                         type: "latex",
                      },
