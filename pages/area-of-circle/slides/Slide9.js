@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -43,7 +44,7 @@ const Slide9 = ({ navBar, downIcon }) => {
             </TextLine>
          </Paragraph>
          <Paragraph>
-            <MultiLhsEquationContainer
+            {/* <MultiLhsEquationContainer
                equationLatex={{
                   lhsLatex: ["Area of circle"],
                   rhsLatex: [
@@ -53,6 +54,66 @@ const Slide9 = ({ navBar, downIcon }) => {
                      { eqLatex: "\\dfrac{25}{\\pi} m^2", hint: "" },
                   ],
                }}
+            /> */}
+            <EquationTable
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["Area of circle"],
+                        type: "text",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{C^2}{4\\pi}"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "text",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{(10)^2}{4\\pi}"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "text",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{100}{4\\pi}"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "text",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{25}{\\pi} m^2"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+               ]}
             />
             {/* <Flex>
                <TextLine>Area of the circle</TextLine>
