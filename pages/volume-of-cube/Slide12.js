@@ -7,8 +7,112 @@ const cube_red = "assets/volume-of-cube/slide12/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide12/2.svg";
 const cube_3 = "assets/volume-of-cube/slide12/3.svg";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
+import EquationTable from "components/MathElement/EquationTable";
 
 const Slide11 = ({ downIcon }) => {
+   let EquationLatex0=[
+      {
+         lhsLatex:{
+           value: ["{BD^2}"],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["s^2 + s^2 = 2s^2"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:['(Pythagoras Theorem)'],
+          type:'text'
+         }
+      },
+      {
+         lhsLatex:{
+           value: ["BD"],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["s\\sqrt{2}"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:['(Neglect -ve Value)'],
+          type:'text'
+         }
+      },
+   
+      ]
+
+   let EquationLatex1=[
+         {
+            lhsLatex:{
+              value: ["{AD^2}"],
+              type:'latex' 
+            },
+            rhsLatex:{
+               value:["s^2 + (s\\sqrt{2})^2 =3S^2"],
+               type:'latex'
+            },
+            rhsHint:
+            {
+             value:['(Pythagoras Theorem)'],
+             type:'text'
+            }
+         },
+         {
+            lhsLatex:{
+              value: ["AD"],
+              type:'latex' 
+            },
+            rhsLatex:{
+               value:["\\sqrt{3}s^2 = s\\sqrt{3}"],
+               type:'latex'
+            },
+            rhsHint:
+            {
+             value:[''],
+             type:'text'
+            }
+         },
+            {
+            lhsLatex:{
+              value: ["s"],
+              type:'latex' 
+            },
+            rhsLatex:{
+               value:["\\dfrac{AD}{\\sqrt{3}} = \\dfrac{d}{\\sqrt{3}}"],
+               type:'latex'
+            },
+            rhsHint:
+            {
+             value:['(Neglect -ve Value)'],
+             type:'text'
+            }
+         },
+      
+      ]
+   let EquationLatex2=[
+            {
+               lhsLatex:{
+                 value: ["\\text{Volume of Cube}"],
+                 type:'latex' 
+               },
+               rhsLatex:{
+                  value:["s^3= \\dfrac{d^3}{3\\sqrt{3}} = \\dfrac{\\sqrt{3} d^3}{9}"],
+                  type:'latex'
+               },
+               rhsHint:
+               {
+                value:[''],
+                type:'text'
+               }
+            },
+      ]
+
+   let latexEquationContainer=[]
+   latexEquationContainer.push(EquationLatex0,EquationLatex1,EquationLatex2)
+   let latexEquationCounter=0;
    const [activeIndex, setActiveIndex] = useState(0);
    const [mathjaxRespStrings, setMathjaxRespStrings] = useState([]);
 
@@ -18,51 +122,7 @@ const Slide11 = ({ downIcon }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   let EquationLatex = [
-      {
-         lhsLatex: [`{BD^2}`, "BD"],
-         rhsLatex: [
-            {
-               eqLatex: "s^2 + s^2 = 2s^2",
-               hint: "(Pythagoras Theorem)",
-            },
-            {
-               eqLatex: "s\\sqrt{2}",
-               hint: "(Neglect -ve Value)",
-            },
-         ],
-      },
-      {
-         lhsLatex: [`{AD^2}`, "AD", "s"],
-         rhsLatex: [
-            {
-               eqLatex: "s^2 + (s\\sqrt{2})^2 =3S^2 ",
-               hint: "(Pythagoras Theorem)",
-            },
-            {
-               eqLatex: "\\sqrt{3}s^2 = s\\sqrt{3} ",
-               hint: "",
-            },
-            {
-               eqLatex: "\\frac{AD}{\\sqrt{3}} = \\frac{d}{\\sqrt{3}} ",
-               hint: "(Neglect -ve Value)",
-            },
-         ],
-      },
-      {
-         lhsLatex: [`Volume \\: of \\: Cube`],
-         rhsLatex: [
-            {
-               eqLatex:
-                  "s^3= \\frac{d^3}{3\\sqrt{3}} = \\frac{\\sqrt{3} d^3}{9}",
-               hint: "",
-            },
-         ],
-      },
-   ];
-   let eq1Latex = EquationLatex[0];
-   let eq2Latex = EquationLatex[1];
-   let eq3Latex = EquationLatex[2];
+
    return (
       <TextAndDiagramSlide
          diagram={
@@ -90,12 +150,8 @@ const Slide11 = ({ downIcon }) => {
                   △BCD
                </TextSpanBg>
             </TextLine>
+            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
 
-            <MultiLhsEquationContainer
-               lineHeight="1.5"
-               color={colors.BLACK}
-               equationLatex={eq1Latex}
-            ></MultiLhsEquationContainer>
          </Paragraph>
          <Paragraph>
             <TextLine>
@@ -110,14 +166,12 @@ const Slide11 = ({ downIcon }) => {
                   △ABD
                </TextSpanBg>
             </TextLine>
-            <MultiLhsEquationContainer
-               equationLatex={eq2Latex}
-            ></MultiLhsEquationContainer>
+            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
+
          </Paragraph>
          <Paragraph>
-            <MultiLhsEquationContainer
-               equationLatex={eq3Latex}
-            ></MultiLhsEquationContainer>
+         <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
+
          </Paragraph>
       </TextAndDiagramSlide>
    );

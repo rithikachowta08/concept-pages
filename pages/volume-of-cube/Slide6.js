@@ -10,8 +10,56 @@ import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { TextLine } from "components/text";
+import EquationTable from "components/MathElement/EquationTable";
 
-const Slide6 = ({ downIcon }) => {
+const Slide6 = ({ downIcon, navBar }) => {
+   let EquationLatex0 = [
+      {
+         lhsLatex: {
+            value: ["\\text{Volume}"],
+            type: "latex",
+         },
+         rhsLatex: {
+            value: ["Side \\times Side \\times Side"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["s \\times s \\times s"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["s^3"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -20,30 +68,7 @@ const Slide6 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-   // latex.push(`= side \\times side \\times side`);
-   // latex.push(`= s \\times s \\times s`);
-   // latex.push(`= (side)^3`);
    latex.push(` = (side)^3`);
-
-   let EquationLatex = [
-      {
-         lhsLatex: [`{Volume}`, "", "", ""],
-         rhsLatex: [
-            {
-               eqLatex: "Side \\times Side \\times Side",
-               hint: "",
-            },
-            {
-               eqLatex: "s \\times s \\times s",
-               hint: "",
-            },
-            {
-               eqLatex: "s^3",
-               hint: "",
-            },
-         ],
-      },
-   ];
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -71,10 +96,9 @@ const Slide6 = ({ downIcon }) => {
                   side length ‘s’
                </TextSpanBg>{" "}
             </TextLine>
-            <MultiLhsEquationContainer
-               color={colors.WHITE}
-               equationLatex={EquationLatex[0]}
-            ></MultiLhsEquationContainer>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
          <div>
             <Pill

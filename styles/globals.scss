@@ -111,6 +111,34 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 .katex {
    font: unset !important;
 }
+.katex .katex-html {
+   overflow-wrap: normal;
+}
+.katex .mord {
+   display: inline-block;
+   font-family: "Nunito", sans-serif !important;
+   font-style: normal !important;
+}
+.textSpanBg {
+   background-color: #ea6560;
+   padding: 0 10px;
+   border-radius: 25px;
+   margin: 0 5px;
+   color: white;
+   cursor: default;
+}
+
+.lightBg {
+   &:hover {
+      background-color: #4a33f5;
+   }
+}
+
+.darkBg {
+   &:hover {
+      background-color: #67dbe8;
+   }
+}
 
 @media only screen and (max-width: 359px) {
    html {
