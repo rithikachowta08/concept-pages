@@ -1,9 +1,12 @@
-const domParser = new DOMParser();
-
-export function elementFromString(htmlString) {
-  console.log("htmlString in domutils", htmlString);
-  const doc = domParser.parseFromString(htmlString, "text/html");
-  const element = doc.body.firstElementChild;
-  element.removeAttribute("id");
-  return element;
+export function addTransitionToKatex(selector, onHover, onHoverOut) {
+   return () =>
+      setTimeout(() => {
+         let transitionElements = Array.from(
+            document.querySelectorAll(selector)
+         );
+         transitionElements.forEach((element) => {
+            element.addEventListener("mouseenter", onHover);
+            element.addEventListener("mouseleave", onHoverOut);
+         });
+      }, 100);
 }
