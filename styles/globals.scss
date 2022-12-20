@@ -128,6 +128,18 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    cursor: default;
 }
 
+.lightBg {
+   &:hover {
+      background-color: #4a33f5;
+   }
+}
+
+.darkBg {
+   &:hover {
+      background-color: #67dbe8;
+   }
+}
+
 @media only screen and (max-width: 359px) {
    html {
       font-size: 7px;
