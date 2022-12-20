@@ -7,8 +7,90 @@ const cube_red = "assets/volume-of-cube/slide13/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide13/2.svg";
 import MathElement from "components/MathElement/index.js";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
+import EquationTable from "components/MathElement/EquationTable";
 
 const Slide13 = ({ downIcon }) => {
+   let EquationLatex0=[
+      {
+         lhsLatex:{
+           value: ["\\text{Volume of Cube}"],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["\\sqrt{3} \\times {\\dfrac{d}{9}}^2"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+      {
+         lhsLatex:{
+           value: [""],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["\\sqrt{3} \\times {\\dfrac{3}{9}}^2"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+         {
+         lhsLatex:{
+           value: [""],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["\\sqrt{3}\\times \\dfrac{27}{9}"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+      {
+         lhsLatex:{
+           value: [""],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["\\sqrt{3} \\times 3"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+      {
+         lhsLatex:{
+           value: [""],
+           type:'latex' 
+         },
+         rhsLatex:{
+            value:["3 \\sqrt{3}ft^3"],
+            type:'latex'
+         },
+         rhsHint:
+         {
+          value:[''],
+          type:'text'
+         }
+      },
+      ]
+      
+      let latexEquationContainer=[]
+      latexEquationContainer.push(EquationLatex0)
+      let latexEquationCounter=0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -16,40 +98,7 @@ const Slide13 = ({ downIcon }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   let latex = [];
-   latex.push(`= \\sqrt{3} \\times {\\frac{d}{9}}^2`);
-   latex.push(`= \\sqrt{3} \\times {\\frac{3}{9}}^2`);
-   latex.push(`= \\sqrt{3}\\times \\frac{27}{9}`);
-   latex.push(`= \\sqrt{3} \\times 3`);
-   latex.push(`= 3 \\sqrt{3}ft^3 `);
-   let mathjaxCounter = 0;
-   let EquationLatex = [
-      {
-         lhsLatex: [`Volume`, "", "", ""],
-         rhsLatex: [
-            {
-               eqLatex: "\\sqrt{3} \\times {\\frac{d}{9}}^2",
-               hint: "",
-            },
-            {
-               eqLatex: "\\sqrt{3} \\times {\\frac{3}{9}}^2",
-               hint: "",
-            },
-            {
-               eqLatex: "\\sqrt{3}\\times \\frac{27}{9}",
-               hint: "",
-            },
-            {
-               eqLatex: "\\sqrt{3} \\times 3",
-               hint: "",
-            },
-            {
-               eqLatex: "3 \\sqrt{3}ft^3 ",
-               hint: "",
-            },
-         ],
-      },
-   ];
+
    return (
       <TextAndDiagramSlide
          diagram={
@@ -77,10 +126,8 @@ const Slide13 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
-            <MultiLhsEquationContainer
-               lineHeight="2"
-               equationLatex={EquationLatex[0]}
-            ></MultiLhsEquationContainer>
+            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
+
          </Paragraph>
       </TextAndDiagramSlide>
    );
