@@ -1,10 +1,11 @@
+import { useEffect, useRef } from "react";
 import { Flex, SlideWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, Title } from "components/text";
+import { Paragraph, TextSpan } from "components/text";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { SlideTitle, SlideSecondaryTitle, FillerNavBar } from "./common";
 import React from "react";
 import { colors } from "utils/colors";
-import { fontSizes, fontWeights } from "utils/fontStyles";
+import { fontSizes } from "utils/fontStyles";
 
 const MultipleDiagramSlide = ({
    title,
@@ -14,14 +15,19 @@ const MultipleDiagramSlide = ({
    images,
    bg,
    downIcon,
-   navBar,
-   hideFiller = false,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    if (isMobile) {
       return (
          <SlideWrap
             bg={bg}
+            ref={ref}
             padding="0 0 10px 0"
             gap="10px"
             justifyContent="space-between"
@@ -64,7 +70,7 @@ const MultipleDiagramSlide = ({
                         {React.cloneElement(image.diagram, {
                            smallMobileSize: "130px",
                            mobileSize: "150px",
-                           tabletSize: "400px",
+                           tabletSize: "250px",
                         })}
                         <Paragraph
                            color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}

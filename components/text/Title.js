@@ -28,6 +28,17 @@ const H2 = styled.h2`
    text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
 `;
+const H3 = styled.h3`
+   color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
+   font-weight: ${(props) =>
+      props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   opacity: ${(props) => (props.opacity ? props.opacity : "1")};
+   padding: ${(props) => props.padding};
+   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.LARGE)};
+   margin: 0;
+   text-align: ${(props) => props.textAlign};
+   margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
+`;
 
 const Title = ({
    children,
@@ -38,9 +49,16 @@ const Title = ({
    opacity,
    color,
    small,
+   extraSmall,
    textAlign,
 }) => {
-   const HeadingElement = small ? H2 : H1;
+   let HeadingElement = H1;
+   if (small) {
+      HeadingElement = H2;
+   }
+   if (extraSmall) {
+      HeadingElement = H3;
+   }
    return (
       <HeadingElement
          marginBottom={marginBottom}

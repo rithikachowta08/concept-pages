@@ -76,15 +76,17 @@ const Slide6 = ({ downIcon }) => {
                equationLatex={EquationLatex[0]}
             ></MultiLhsEquationContainer>
          </Paragraph>
-         <Pill
-            width="fit-content"
-            bgColor={colors.OCEAN_GREEN}
-            color={colors.BLACK}
-         >
-            Volume of cube{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-            cubic units
-         </Pill>
+         <div>
+            <Pill
+               width="fit-content"
+               bgColor={colors.OCEAN_GREEN}
+               color={colors.BLACK}
+            >
+               Volume of cube{" "}
+               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
+               cubic units
+            </Pill>
+         </div>
       </TextAndDiagramSlide>
    );
 };

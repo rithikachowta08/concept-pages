@@ -15,19 +15,16 @@ export const FullPageCustomWrapper = ({
 }) => {
    const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
-   const navBar =
-      currentPageIdx === 0 ? null : (
+   return (
+      <>
          <NavigationBar
+            opacity={currentPageIdx === 0 ? 0 : 1}
             deviceType={deviceType}
             sections={navigationSections}
             darkTheme={darkBgIndices.includes(currentPageIdx)}
             moveTo={fullPage?.moveTo}
             currentPageIdx={currentPageIdx}
          />
-      );
-   return (
-      <div id="custom-wrap">
-         {navBar}
          <ReactFullpage
             //fullpage options
             // licenseKey={"YOUR_KEY_HERE"}
@@ -65,7 +62,6 @@ export const FullPageCustomWrapper = ({
                                  {/* No navigation bar on title page */}
                                  {React.cloneElement(itm, {
                                     downIcon,
-                                    navBar,
                                     moveToSection,
                                  })}
                               </div>
@@ -76,7 +72,7 @@ export const FullPageCustomWrapper = ({
                );
             }}
          />
-      </div>
+      </>
    );
 };
 

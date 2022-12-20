@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { PropTypes } from "prop-types";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import {
@@ -17,28 +17,27 @@ const TextAndDiagramSlide = ({
    secondaryTitle,
    children,
    downIcon,
-   navBar,
    diagram,
 }) => {
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    if (isMobile) {
       return (
          <SlideWrap
             bg={bg}
+            ref={ref}
             padding="0 0 10px 0"
             gap="10px"
             justifyContent="space-between"
             isLastSlide={isLastSlide}
          >
-            <FillerNavBar />
-            {/* Body */}
-            <Flex
-               direction="column"
-               padding="0 20px"
-               justifyContent="space-between"
-               alignItems="center"
-               width="100%"
-            >
+            <Flex direction="column" gap="2vh">
+               <FillerNavBar />
                <div>
                   <SlideSecondaryTitle
                      bg={bg}
@@ -49,6 +48,15 @@ const TextAndDiagramSlide = ({
                      {title}
                   </SlideTitle>
                </div>
+            </Flex>
+            {/* Body */}
+            <Flex
+               direction="column"
+               padding="0 20px"
+               justifyContent="space-between"
+               alignItems="center"
+               width="100%"
+            >
                {diagram}
                <LeftAlignDiv>{children}</LeftAlignDiv>
             </Flex>
