@@ -13,56 +13,53 @@ import { TextLine } from "components/text";
 import EquationTable from "components/MathElement/EquationTable";
 
 const Slide6 = ({ downIcon, navBar }) => {
-   let EquationLatex0=[
+   let EquationLatex0 = [
       {
-         lhsLatex:{
-           value: ["\\text{Volume}"],
-           type:'latex' 
+         lhsLatex: {
+            value: ["\\text{Volume}"],
+            type: "latex",
          },
-         rhsLatex:{
-            value:["Side \\times Side \\times Side"],
-            type:'latex'
+         rhsLatex: {
+            value: ["Side \\times Side \\times Side"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [''],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["s \\times s \\times s"],
-            type:'latex'
+         rhsLatex: {
+            value: ["s \\times s \\times s"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [""],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["s^3"],
-            type:'latex'
+         rhsLatex: {
+            value: ["s^3"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
-      ]
-      let latexEquationContainer=[]
-      latexEquationContainer.push(EquationLatex0)
-      let latexEquationCounter=0;
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -99,18 +96,20 @@ const Slide6 = ({ downIcon, navBar }) => {
                   side length ‘s’
                </TextSpanBg>{" "}
             </TextLine>
-            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
-         
-         <div><Pill
-            width="fit-content"
-            bgColor={colors.OCEAN_GREEN}
-            color={colors.BLACK}
-         >
-            Volume of cube{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-            cubic units
-         </Pill>
+         <div>
+            <Pill
+               width="fit-content"
+               bgColor={colors.OCEAN_GREEN}
+               color={colors.BLACK}
+            >
+               Volume of cube{" "}
+               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
+               cubic units
+            </Pill>
          </div>
       </TextAndDiagramSlide>
    );

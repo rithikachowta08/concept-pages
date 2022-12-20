@@ -83,6 +83,11 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .fp-overflow {
    height: 100%;
+   background: url(../public/assets/white_bg.webp);
+
+   &.dark {
+      background: url(../public/assets/purple_bg.webp);
+   }
 }
 
 .fp-watermark {

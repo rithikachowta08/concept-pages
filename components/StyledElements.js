@@ -1,12 +1,15 @@
 import styled from "styled-components";
 const lightBg = "assets/white_bg.webp";
 const darkBg = "assets/purple_bg.webp";
-const darkWithTrianglesBg = "assets/purple_bg_triangles.webp";
 
 const bgToImageMap = {
    LIGHT: lightBg,
    DARK: darkBg,
-   DARK_PATTERNED: darkWithTrianglesBg,
+};
+
+const bgToBgColorMap = {
+   LIGHT: "#FCFCFC",
+   DARK: "#3E3283",
 };
 
 const bgToBgColorMap = {
@@ -40,7 +43,7 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 810px) {
       &::before {
          display: none;
       }
@@ -194,6 +197,7 @@ export const PageWrap = styled.div`
 
 export const LeftAlignDiv = styled.div`
    align-self: flex-start;
+   width: 100%;
 `;
 
 export const Video = styled.video`

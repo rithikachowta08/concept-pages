@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import {
@@ -47,16 +47,22 @@ const TextAndAppletSlide = ({
    bg = "LIGHT",
    isLastSlide,
    downIcon,
-   navBar,
    secondaryTitle,
    children,
    appletSrc,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    if (isMobile) {
       return (
          <SlideWrap
             bg={bg}
+            ref={ref}
             padding="0 0 10px 0"
             gap="10px"
             justifyContent="space-between"

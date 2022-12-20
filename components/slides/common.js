@@ -10,7 +10,7 @@ export const SlideSecondaryTitle = ({ isMobile, bg, secondaryTitle }) =>
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={isMobile ? "center" : "left"}
          marginBottom="1vh"
-         small
+         extraSmall
       >
          {secondaryTitle}
       </Title>
@@ -34,12 +34,12 @@ export const SlideTitle = ({ children, bg, isMobile }) => {
 export const FillerNavBar = styled.div`
    min-width: ${(props) => (props.isMobile ? "100%" : "80px")};
    height: 400px;
-   @media (min-width: 200px) and (max-width: 767px) {
+   @media (min-width: 200px) and (max-width: 810px) {
       min-height: 45px;
       height: unset;
    }
 
-   @media (min-width: 768px) and (max-width: 992px) {
+   @media (min-width: 811px) and (max-width: 992px) {
       scale: 0.8;
    }
 

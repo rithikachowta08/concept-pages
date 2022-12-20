@@ -10,7 +10,7 @@ import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // Equilateral triangle
-const Slide16 = ({ downIcon, navBar }) => {
+const Slide16 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -25,7 +25,6 @@ const Slide16 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Given the length &apos;a&apos; of a side of an{" "}

@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
@@ -46,10 +47,17 @@ const AppletSlide = ({
    bg = "LIGHT",
    appletSrc = "./applets/triangle.html",
 }) => {
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <SlideWrap
          bg={bg}
+         ref={ref}
          isLastSlide={isLastSlide}
          padding={isMobile ? "0 0 20px 0" : "20px"}
       >
