@@ -12,11 +12,6 @@ const bgToBgColorMap = {
    DARK: "#3E3283",
 };
 
-const bgToBgColorMap = {
-   LIGHT: "#FCFCFC",
-   DARK: "#3E3283",
-};
-
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
