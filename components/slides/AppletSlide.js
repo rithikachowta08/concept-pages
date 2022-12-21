@@ -1,14 +1,17 @@
 import { PropTypes } from "prop-types";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { Paragraph, Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import { FillerNavBar } from "./common";
 
 const IFrame = styled.iframe`
    width: 700px;
    height: 700px;
+   border-radius: 20px;
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
       width: 150px;
@@ -38,17 +41,23 @@ const IFrame = styled.iframe`
 
 const AppletSlide = ({
    title,
-   navBar,
    downIcon,
    description,
    isLastSlide,
    bg = "LIGHT",
    appletSrc = "./applets/triangle.html",
 }) => {
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <SlideWrap
          bg={bg}
+         ref={ref}
          isLastSlide={isLastSlide}
          padding={isMobile ? "0 0 20px 0" : "20px"}
       >
@@ -60,7 +69,7 @@ const AppletSlide = ({
             gap={isMobile ? "30px" : "60px"}
             direction={isMobile ? "column" : "row"}
          >
-            {navBar}
+            <FillerNavBar isMobile={isMobile} />
             <Flex
                gap={isMobile ? "30px" : "0"}
                margin={isMobile ? "auto 0" : "0"}

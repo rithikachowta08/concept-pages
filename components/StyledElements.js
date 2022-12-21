@@ -1,17 +1,20 @@
 import styled from "styled-components";
 const lightBg = "assets/white_bg.webp";
 const darkBg = "assets/purple_bg.webp";
-const darkWithTrianglesBg = "assets/purple_bg_triangles.webp";
 
 const bgToImageMap = {
    LIGHT: lightBg,
    DARK: darkBg,
-   DARK_PATTERNED: darkWithTrianglesBg,
+};
+
+const bgToBgColorMap = {
+   LIGHT: "#FCFCFC",
+   DARK: "#3E3283",
 };
 
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => props.bgColor};
+   background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
    height: 100%;
    width: 100%;
    padding: ${(props) => props.padding};
@@ -35,7 +38,7 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 810px) {
       &::before {
          display: none;
       }
@@ -44,6 +47,7 @@ export const SlideWrap = styled.div`
 
 export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
+   background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
    height: 100%;
    width: 100%;
@@ -68,6 +72,7 @@ export const LeftWrap = styled.div`
    min-width: 20%;
    margin-left: 60px;
    margin-right: ${(props) => props.marginRight};
+   width: 50%;
 `;
 
 export const RightWrap = styled.div`
@@ -79,6 +84,7 @@ export const Flex = styled.div`
    display: flex;
    flex-direction: ${(props) => props.direction || "row"};
    width: ${(props) => props.width};
+   max-width: ${(props) => props.maxWidth};
    height: ${(props) => props.height};
    gap: ${(props) => props.gap};
    flex: ${(props) => props.flex};
@@ -186,6 +192,7 @@ export const PageWrap = styled.div`
 
 export const LeftAlignDiv = styled.div`
    align-self: flex-start;
+   width: 100%;
 `;
 
 export const Video = styled.video`

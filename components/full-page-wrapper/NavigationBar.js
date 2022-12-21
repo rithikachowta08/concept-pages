@@ -8,28 +8,27 @@ import DefaultNavBar from "./DefaultNavBar";
 const Wrapper = styled.div`
    width: ${(props) => (props.isMobile ? "100%" : "80px")};
    z-index: 6;
-   position: ${(props) => (props.isAbsolute ? "absolute" : "static")};
-   top: ${(props) => (props.isMobile ? "0" : "50%")};
-   left: 0;
-   transform: ${(props) =>
-      props.isAbsolute && !props.isMobile ? "translateY(-50%)" : "none"};
+   position: fixed;
+   opacity: ${(props) => props.opacity};
+   top: ${(props) => (props.isMobile ? "0" : "50vh")};
+   left: ${(props) => (props.isMobile ? "0" : "30px")};
+   transform: ${(props) => (!props.isMobile ? "translateY(-50%)" : "none")};
+   transition: opacity 0.3s;
    display: grid;
    grid-template-columns: 1fr;
 
-   @media (min-width: 200px) and (max-width: 767px) {
+   @media (min-width: 200px) and (max-width: 810px) {
       height: 45px;
    }
 
-   @media (min-width: 768px) and (max-width: 992px) {
+   @media (min-width: 811px) and (max-width: 992px) {
       scale: 0.8;
-      transform: ${(props) =>
-         props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 
    @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
       scale: 0.8;
-      transform: ${(props) =>
-         props.isAbsolute && !props.isMobile ? "translateY(-80%)" : "none"};
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 `;
 
@@ -38,7 +37,7 @@ const NavigationBar = ({
    deviceType,
    moveTo,
    sections,
-   isAbsolute,
+   opacity,
    currentPageIdx,
 }) => {
    const [isExpanded, setIsExpanded] = useState(false);
@@ -84,7 +83,7 @@ const NavigationBar = ({
    return (
       <Wrapper
          isExpanded={isExpanded}
-         isAbsolute={isAbsolute}
+         opacity={opacity}
          isMobile={deviceType === DEVICE_TYPES.MOBILE}
       >
          {content}

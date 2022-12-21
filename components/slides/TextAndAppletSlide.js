@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import {
@@ -9,11 +9,12 @@ import {
    LeftAlignDiv,
 } from "components/StyledElements";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { SlideSecondaryTitle, SlideTitle } from "./common";
+import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
 
 const IFrame = styled.iframe`
    width: 700px;
    height: 700px;
+   border-radius: 20px;
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
       width: 250px;
@@ -46,23 +47,28 @@ const TextAndAppletSlide = ({
    bg = "LIGHT",
    isLastSlide,
    downIcon,
-   navBar,
    secondaryTitle,
    children,
    appletSrc,
 }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current && bg === "DARK") {
+         ref.current.parentNode.classList.add("dark");
+      }
+   }, [bg, ref.current]);
    if (isMobile) {
       return (
          <SlideWrap
             bg={bg}
+            ref={ref}
             padding="0 0 10px 0"
             gap="10px"
             justifyContent="space-between"
             isLastSlide={isLastSlide}
          >
-            {/* NavBar */}
-            {navBar}
+            <FillerNavBar isMobile />
             {/* Body */}
             <Flex
                direction="column"
@@ -92,7 +98,7 @@ const TextAndAppletSlide = ({
    return (
       <SlideWrap bg={bg} padding={"20px 30px"}>
          <Flex alignItems="center" justifyContent="flex-start" width="100%">
-            {navBar}
+            <FillerNavBar />
             <LeftWrap marginRight="20px">
                <div>
                   <SlideSecondaryTitle

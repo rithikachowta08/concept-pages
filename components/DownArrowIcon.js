@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { colors } from "utils/colors";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
 const IconWrap = styled.div`
    cursor: pointer;

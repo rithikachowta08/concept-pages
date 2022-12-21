@@ -14,7 +14,12 @@ const Para = styled.p`
    line-height: ${(props) => props.lineHeight};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};
+   margin-block-start: 1rem;
    padding: ${(props) => props.padding || 0};
+
+   @media (min-width: 200px) and (max-width: 810px) {
+      margin-block-start: 0.5rem;
+   }
 `;
 
 const Paragraph = ({

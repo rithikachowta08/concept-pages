@@ -77,19 +77,25 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    display: block;
    flex-direction: unset;
    justify-content: unset;
-   height: 100%;
-   width: 100%;
+   height: 100vh;
+   width: 100vw;
 }
 
 .fp-overflow {
    height: 100%;
+   background: url(../public/assets/white_bg.webp);
+
+   &.dark {
+      background: url(../public/assets/purple_bg.webp);
+   }
 }
 
 .fp-watermark {
    display: none;
 }
 
-.katex .mathdefault {
+.katex .mathdefault,
+.katex .mathnormal {
    font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
@@ -105,6 +111,33 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .katex {
    font: unset !important;
+}
+.katex .katex-html {
+   overflow-wrap: normal;
+}
+.katex .mord {
+   display: inline-block;
+   font-family: "Nunito", sans-serif !important;
+   font-style: normal !important;
+}
+.textSpanBg {
+   background-color: #ea6560;
+   padding: 0 10px;
+   border-radius: 25px;
+   color: white;
+   cursor: default;
+}
+
+.lightBg {
+   &:hover {
+      background-color: #4a33f5;
+   }
+}
+
+.darkBg {
+   &:hover {
+      background-color: #67dbe8;
+   }
 }
 
 @media only screen and (max-width: 359px) {

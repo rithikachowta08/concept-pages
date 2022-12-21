@@ -16,42 +16,48 @@ const TextSpanBg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.StyledImg)
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 import { ModalTriggerText, TextLine } from "components/text";
-const rectangle_plain_dimensions = "assets/area-of-rectangle/rectangle_plain_dimensions.svg";
+const rectangle_plain_dimensions =
+   "assets/area-of-rectangle/rectangle_plain_dimensions.svg";
 const rectangle_length = "assets/area-of-rectangle/rectangle_length.svg";
 const rectangle_width = "assets/area-of-rectangle/rectangle_width.svg";
 const rectangle_square_units =
    "assets/area-of-rectangle/rectangle_square_units.svg";
 import { colors } from "utils/colors";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
-const Slide7 = ({ downIcon, navBar }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+const Slide7 = ({ downIcon }) => {
+   let EquationLatex = [
+      {
+         lhsLatex: [`{Area}`, ""],
+         rhsLatex: [
+            {
+               eqLatex: "4 \\ cm \\times 3 \\ cm",
+               hint: "",
+            },
+            {
+               eqLatex: "12 \\ sq \\ cm",
+               hint: "",
+            },
+         ],
+      },
+   ];
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" /* marginBottom="2.5rem" fontSize={isMobile ? "1.5rem" : "1.26rem"} lineHeight={isMobile ? "1.6rem" : "1.34rem"} */>
+         <Paragraph color="white">
             The area of a rectangle is measured in square units (square
             centimeters, square inches, square feet, and so on).
          </Paragraph>
          <Paragraph>
-            <TextLine color="white"/*  fontSize={isMobile ? "1.7rem" : "1.28rem"} */>
-               Example :
-            </TextLine>
-            <StyledImg
-               src={rectangle_square_units}
-               width="-webkit-fill-available"
-               style={{ scale: "1", transform: "none" }}
-            />
-            <Flex color={colors.WHITE}>
-               <div>Area&nbsp;</div>
-               <div>
-                  = 4 cm &times; 3 cm
-                  <br />= 12 sq cm
-               </div>
-            </Flex>
+            <TextLine color="white">Example :</TextLine>
+            <ModalImg src={rectangle_square_units} />
+            <MultiLhsEquationContainer
+               color={colors.WHITE}
+               equationLatex={EquationLatex[0]}
+            ></MultiLhsEquationContainer>
          </Paragraph>
       </Flex>
    );
@@ -73,12 +79,15 @@ const Slide7 = ({ downIcon, navBar }) => {
       <TextAndDiagramSlide
          diagram={
             <TransitionImage
-               images={[rectangle_plain_dimensions, rectangle_length, rectangle_width]}
+               images={[
+                  rectangle_plain_dimensions,
+                  rectangle_length,
+                  rectangle_width,
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          bg="DARK"
          secondaryTitle="Area of Rectangle"
          title="General Formula"
@@ -90,7 +99,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             onDismiss={onDismiss}
          />
          <Paragraph color="white" textAlign="left">
-            Area of a rectangle =
+            Area of a rectangle =&nbsp;
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
@@ -101,8 +110,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             >
                Length
             </TextSpanBg>
-            &times;
-            {/* ×&nbsp; */}
+            &nbsp;&times;&nbsp;
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}

@@ -8,7 +8,7 @@ const cube_s = "assets/volume-of-cube/slide17/3.svg";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 
-const Slide17 = ({ downIcon, navBar }) => {
+const Slide17 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -23,7 +23,6 @@ const Slide17 = ({ downIcon, navBar }) => {
          title="Rectangular Prism vs. Cube"
          secondaryTitle="Volume of a cube"
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[cube_red, cube_lwh, cube_s]}
