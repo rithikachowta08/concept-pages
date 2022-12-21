@@ -23,12 +23,12 @@ const Wrapper = styled.div`
 
    @media (min-width: 811px) and (max-width: 992px) {
       scale: 0.8;
-      transform: ${(props) => (!props.isMobile ? "translateY(-80%)" : "none")};
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 
    @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
       scale: 0.8;
-      transform: ${(props) => (!props.isMobile ? "translateY(-80%)" : "none")};
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 `;
 

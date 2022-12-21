@@ -72,7 +72,7 @@ export const LeftWrap = styled.div`
    min-width: 20%;
    margin-left: 60px;
    margin-right: ${(props) => props.marginRight};
-   width: 40%;
+   width: 50%;
 `;
 
 export const RightWrap = styled.div`

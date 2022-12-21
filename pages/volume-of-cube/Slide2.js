@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { Paragraph, TextSpanBg } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
@@ -62,7 +62,6 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>{" "}
             of equal length
          </Paragraph>
-
       </TextAndDiagramSlide>
    );
 };
