@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #2b2bf0;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-9 {
+        stroke: #2b2bf0;
+        stroke-linecap: round;
+        stroke-width: 4px;
+      }
+
+      .cls-9, .cls-10 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-11 {
+        fill: #333;
+        opacity: .1;
+      }
+
+      .cls-10 {
+        stroke: #b7b6b6;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-11" cx="280" cy="280" r="201.7"/>
+  <circle class="cls-10" cx="280" cy="280" r="201.7"/>
+  <g>
+    <line class="cls-9" x1="92.65" y1="280" x2="467.35" y2="280"/>
+    <polygon class="cls-4" points="95.57 289.97 78.3 280 95.57 270.03 95.57 289.97"/>
+    <polygon class="cls-4" points="464.43 289.97 481.7 280 464.43 270.03 464.43 289.97"/>
+  </g>
+  <text class="cls-3" transform="translate(178.84 269.38)"><tspan x="0" y="0">diam</tspan><tspan class="cls-6" x="84.13" y="0">e</tspan><tspan class="cls-5" x="105.23" y="0">t</tspan><tspan class="cls-7" x="117.65" y="0">e</tspan><tspan class="cls-2" x="138.92" y="0">r</tspan><tspan class="cls-1" x="151.16" y="0"> </tspan><tspan class="cls-8" x="160.27" y="0">(</tspan><tspan x="169.67" y="0">d)</tspan></text>
+  <circle class="cls-4" cx="280" cy="280" r="7.2"/>
+</svg>

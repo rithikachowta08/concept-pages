@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { TextSpanBg, Paragraph } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -9,16 +9,46 @@ const cube_s = "assets/volume-of-cube/slide11/3.svg";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement/index.js";
+import EquationTable from "components/MathElement/EquationTable";
+import { addTransitionToKatex } from "utils/domutils";
 
 const Slide11 = ({ downIcon }) => {
+   let EquationLatex0 = [
+      {
+         lhsLatex: {
+            value: [
+               "Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-11 darkBg}{diagonal}} \\medspace",
+            ],
+            type: "latex",
+         },
+         rhsLatex: {
+            value: [
+               "\\sqrt{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-11 darkBg}{side}} \\medspace units",
+            ],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+   ];
+
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
-      setActiveIndex(Number(e.target.id));
+      setActiveIndex(Number(e.currentTarget.parentNode.id));
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   useEffect(
+      addTransitionToKatex(".slide-11.textSpanBg", onHover, onHoverOut),
+      []
+   );
    let latex = [];
    latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
    latex.push(`= \\sqrt{3}`);
@@ -48,28 +78,9 @@ const Slide11 = ({ downIcon }) => {
             <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
          </Pill>
          <Paragraph color={colors.WHITE}>
-            Here,
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
-            >
-               diagonal
-            </TextSpanBg>{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement> x{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
-            >
-               {" "}
-               side
-            </TextSpanBg>{" "}
-            units
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
       </TextAndDiagramSlide>
    );

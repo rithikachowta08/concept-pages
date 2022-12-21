@@ -17,6 +17,7 @@ const Slide2 = ({ downIcon }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
+
    return (
       <TextAndDiagramSlide
          title="What is a cube?"

@@ -9,7 +9,7 @@ export default function MathElement({ htmlString }) {
    } else {
       return (
          <>
-            <TeX>{htmlString}</TeX>
+            <TeX trust={true}>{htmlString}</TeX>
          </>
       );
    }

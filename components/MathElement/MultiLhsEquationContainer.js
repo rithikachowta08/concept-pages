@@ -34,7 +34,6 @@ flex-direction:row;
 justify-content:space-between`
 
 function MultiLhsEquationContainer(props) {
-
 if(!props.equationLatex){
     return <></>
 }

@@ -3,7 +3,6 @@ import { ServerStyleSheet } from "styled-components";
 
 const lightBg = "assets/white_bg.webp";
 const darkBg = "assets/purple_bg.webp";
-const darkWithTrianglesBg = "assets/purple_bg_triangles.webp";
 
 export default class MyDocument extends Document {
    render() {
@@ -13,7 +12,6 @@ export default class MyDocument extends Document {
             <body>
                <img src={lightBg} style={{ display: "none" }} />
                <img src={darkBg} style={{ display: "none" }} />
-               <img src={darkWithTrianglesBg} style={{ display: "none" }} />
                <Main />
                <div id="modal-container"></div>
                <NextScript />
