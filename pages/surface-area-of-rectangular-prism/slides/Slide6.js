@@ -1,10 +1,13 @@
 import Modal from "components/layout/Modal";
 import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
+
+const image_modal =
+   "assets/surface-area-of-rectangular-prism/slide_6_modal.svg";
 
 const Slide6 = ({ downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +22,8 @@ const Slide6 = ({ downIcon }) => {
             The lateral faces of a three-dimensional object are all the side
             faces excluding the base and the top.
          </Paragraph>
+         <Paragraph>Example:</Paragraph>
+         <ModalImg src={image_modal} />
          <Paragraph color={colors.BLACK}>
             The faces numbered 1, 2, 3, and 4 are the lateral faces of the
             rectangular prism.
@@ -27,7 +32,7 @@ const Slide6 = ({ downIcon }) => {
    );
 
    return (
-      <TextAndDiagramSlide
+      <TextAndAppletSlide
          bg="DARK"
          title={"Lateral Surface Area"}
          secondaryTitle={"Surface Area"}
@@ -55,7 +60,7 @@ const Slide6 = ({ downIcon }) => {
          <Paragraph>
             <Pill>Total surface area = 2(lw + wh + lh)</Pill>
          </Paragraph>
-      </TextAndDiagramSlide>
+      </TextAndAppletSlide>
    );
 };
 

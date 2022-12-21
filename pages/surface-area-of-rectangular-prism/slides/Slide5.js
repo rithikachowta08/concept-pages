@@ -1,12 +1,12 @@
 import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 import { Paragraph } from "components/text";
 import React from "react";
 import { colors } from "utils/colors";
 
 const Slide5 = ({ downIcon }) => {
    return (
-      <TextAndDiagramSlide
+      <TextAndAppletSlide
          bg="DARK"
          title={"Total Surface Area"}
          secondaryTitle={"Surface Area"}
@@ -19,7 +19,7 @@ const Slide5 = ({ downIcon }) => {
          <Paragraph>
             <Pill>Total surface area = 2(lw + wh + lh)</Pill>
          </Paragraph>
-      </TextAndDiagramSlide>
+      </TextAndAppletSlide>
    );
 };
 

@@ -1,9 +1,14 @@
 import Modal from "components/layout/Modal";
+import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import { Flex, ModalImg, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
+
+const image_1 = "assets/surface-area-of-rectangular-prism/slide_2.svg";
+const image_modal =
+   "assets/surface-area-of-rectangular-prism/slide_4_modal.svg";
 
 const Slide4 = ({ downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,10 +19,21 @@ const Slide4 = ({ downIcon }) => {
 
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color={colors.BLACK}>
+         <Paragraph>
             The area is measured in square units (square centimeters, square
             inches, square feet, and so on).
          </Paragraph>
+         <Paragraph>Example:</Paragraph>
+         <ModalImg src={image_modal} />
+         <MultiLhsEquationContainer
+            equationLatex={{
+               lhsLatex: ["\\text{Area}"],
+               rhsLatex: [
+                  { eqLatex: "\\text{4cm}\\ \\times\\ \\text{3cm}", hint: "" },
+                  { eqLatex: "\\text{12\\ sq\\ cm}", hint: "" },
+               ],
+            }}
+         />
       </Flex>
    );
 
@@ -26,6 +42,7 @@ const Slide4 = ({ downIcon }) => {
          bg="DARK"
          title={"Surface Area of Rectangular Prism"}
          downIcon={downIcon}
+         diagram={<StyledImg src={image_1} />}
       >
          <Modal
             bg="LIGHT"
