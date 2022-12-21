@@ -49,29 +49,6 @@ const Slide6 = ({ navBar, downIcon }) => {
          }
       >
          <Paragraph color={colors.WHITE}>
-            {/* <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(1)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Radius (r)
-            </TextSpanBg>{" "}
-            = */}
-            {/* <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(2)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Diameter (d)
-            </TextSpanBg> */}
-            {/* <MathElement
-               htmlString={
-                  // "\\ \\dfrac{\\htmlId{1}{\\htmlClass{textSpanBg slide-6}{Diameter (d)}}}{2}"
-                  "\\htmlId{1}{\\htmlClass{textSpanBg}{\\dfrac{Diameter (d)}{2}}}"
-               }
-            /> */}
             <EquationTable
                equationLatex={[
                   {

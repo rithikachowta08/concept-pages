@@ -32,13 +32,6 @@ const Slide3 = ({ navBar, downIcon }) => {
             <MathElement htmlString={"\\pi = 3.14159"} /> (approximately)
          </Paragraph>
          <ModalImg src={image_3} />
-         {/* <Paragraph color={colors.WHITE}>
-            <MathElement
-               htmlString={
-                  "\\frac{Circumference}{Diameter} = \\pi = 3.14159..."
-               }
-            />
-         </Paragraph> */}
       </Flex>
    );
    return (

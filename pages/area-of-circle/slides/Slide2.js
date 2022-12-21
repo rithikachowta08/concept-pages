@@ -23,8 +23,8 @@ const Slide2 = ({ downIcon, navBar }) => {
       <Flex direction="column">
          <Paragraph color={colors.WHITE}>
             A circle is a path traced by a moving point, which is always
-            equidistant from a fixed point. The fixed point is the center "O"
-            and the fixed distance is the radius "r".
+            equidistant from a fixed point. The fixed point is the center
+            &quot;O&quot; and the fixed distance is the radius &quot;r&quot;.
          </Paragraph>
          <StyledImg src={image_modal} width="400px" />
       </Flex>

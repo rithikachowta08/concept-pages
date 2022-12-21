@@ -24,17 +24,6 @@ const Slide7 = ({ navBar, downIcon }) => {
             <TextLine>Diameter (d) = 12 cm</TextLine>
          </Paragraph>
          <Paragraph>
-            {/* <MultiLhsEquationContainer
-               equationLatex={{
-                  lhsLatex: ["Area of circle"],
-                  rhsLatex: [
-                     { eqLatex: "\\dfrac{\\pi d^2}{4}", hint: "" },
-                     { eqLatex: "\\dfrac{\\pi (12)^2}{4}", hint: "" },
-                     { eqLatex: "\\dfrac{144 \\pi}{4}", hint: "" },
-                     { eqLatex: "\\ = 36 \\pi cm^2", hint: "" },
-                  ],
-               }}
-            /> */}
             <EquationTable
                equationLatex={[
                   {
@@ -95,23 +84,6 @@ const Slide7 = ({ navBar, downIcon }) => {
                   },
                ]}
             />
-            {/* <Flex>
-               <TextLine>Area of circle</TextLine>
-               <Flex direction="column">
-                  <TextLine>
-                     <MathElement htmlString={"\\ = \\dfrac{\\pi d^2}{4}"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ = \\dfrac{\\pi (12)^2}{4}"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ = \\dfrac{144 \\pi}{4}"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ = 36 \\pi cm^2"} />
-                  </TextLine>
-               </Flex>
-            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );
