@@ -1,5 +1,6 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, StyledImg } from "components/StyledElements";

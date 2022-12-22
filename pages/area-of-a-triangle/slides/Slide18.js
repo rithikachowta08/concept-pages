@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -42,52 +43,50 @@ const Slide18 = ({ downIcon }) => {
             = 4 in
          </Paragraph>
          <Paragraph>
-            <MultiLhsEquationContainer
-               equationLatex={{
-                  lhsLatex: ["Area\\ of\\ triangle"],
-                  rhsLatex: [
-                     {
-                        eqLatex: "\\dfrac{\\sqrt{3}}{4} \\times a^2",
-                        hint: "",
+            <EquationTable
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["Area\\ of\\ triangle"],
+                        type: "latex",
                      },
-                     {
-                        eqLatex: "\\dfrac{\\sqrt{3}}{4} \\times 4^2",
-                        hint: "",
+                     rhsLatex: {
+                        value: ["\\dfrac{\\sqrt{3}}{4} \\times a^2"],
+                        type: "latex",
                      },
-                     {
-                        eqLatex: "\\dfrac{16 \\ \\sqrt{3}}{4}",
-                        hint: "",
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
                      },
-                     {
-                        eqLatex: "4 \\sqrt{3}\\ in^2",
-                        hint: "",
+                     rhsLatex: {
+                        value: ["\\dfrac{\\sqrt{3}}{4} \\times 4^2"],
+                        type: "latex",
                      },
-                  ],
-               }}
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{16 \\ \\sqrt{3}}{4}"],
+                        type: "latex",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["4 \\sqrt{3}\\ in^2"],
+                        type: "latex",
+                     },
+                  },
+               ]}
             />
-            {/* <Flex>
-               <TextLine>Area of the triangle </TextLine>
-               <div>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{\\sqrt{3}}{4} \\times a^2"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{\\sqrt{3}}{4} \\times 4^2"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{16 \\ \\sqrt{3}}{4}"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ = 4 \\sqrt{3}\\ in^2"} />
-                  </TextLine>
-               </div>
-            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );

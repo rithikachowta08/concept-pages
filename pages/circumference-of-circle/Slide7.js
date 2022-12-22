@@ -26,7 +26,7 @@ const Slide8 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `\\htmlId{1}{\\htmlClass{textSpanBg lightBg slide-7}{\\text{Circumference}}} \\text{of the given circle}`,
+               `\\htmlId{1}{\\htmlClass{textSpanBg lightBg slide-7}{\\text{Circumference}}}\\ \\text{of the given circle}`,
             ],
             type: "latex",
          },

@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { Paragraph, TextSpanBg } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
@@ -24,6 +24,12 @@ const Slide2 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_faces, cube_vertices, cube_edges]}
+               altTexts={[
+                  "Diagram of a cube",
+                  "Diagram of a cube highlighting faces",
+                  "Diagram of a cube highlighting vertices",
+                  "Diagram of a cube highlighting sides",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -62,7 +68,6 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>{" "}
             of equal length
          </Paragraph>
-
       </TextAndDiagramSlide>
    );
 };

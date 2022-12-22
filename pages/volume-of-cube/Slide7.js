@@ -1,75 +1,69 @@
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
 import { Paragraph } from "components/text";
-import MathElement from "components/MathElement/index.js";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import EquationTable from "components/MathElement/EquationTable";
 
 const Slide7 = ({ downIcon, navBar }) => {
-   let EquationLatex0=[
+   let EquationLatex0 = [
       {
-         lhsLatex:{
-           value: ["Volume of Cube"],
-           type:'text' 
+         lhsLatex: {
+            value: ["Volume of cube"],
+            type: "text",
          },
-         rhsLatex:{
-            value:["(Area \\: of \\: Base) \\times Height"],
-            type:'latex'
+         rhsLatex: {
+            value: ["(area of base) x height"],
+            type: "text",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [''],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["(Area \\: of \\: Square \\: sheet) \\times Height"],
-            type:'latex'
+         rhsLatex: {
+            value: ["(area of square sheet) x height"],
+            type: "text",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [""],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["s^2 \\times s"],
-            type:'latex'
+         rhsLatex: {
+            value: ["s^2 \\times s"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [""],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["s^3"],
-            type:'latex'
+         rhsLatex: {
+            value: ["s^3"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
-      ]
-      let latexEquationContainer=[]
-      latexEquationContainer.push(EquationLatex0)
-      let latexEquationCounter=0;
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
 
    return (
       <TextAndAppletSlide
@@ -83,7 +77,9 @@ const Slide7 = ({ downIcon, navBar }) => {
             cube is formed.
          </Paragraph>
          <Paragraph>
-            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
       </TextAndAppletSlide>
    );

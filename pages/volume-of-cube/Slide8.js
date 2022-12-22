@@ -1,78 +1,72 @@
-import { Flex, StyledImg } from "components/StyledElements";
+import { StyledImg } from "components/StyledElements";
 import { Paragraph } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 const cube_red = "assets/volume-of-cube/slide8/1.svg";
-import MathElement from "components/MathElement";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { TextLine } from "components/text";
 import EquationTable from "components/MathElement/EquationTable";
 
-const Slide8 = ({ downIcon}) => {
-   let EquationLatex0=[
+const Slide8 = ({ downIcon }) => {
+   let EquationLatex0 = [
       {
-         lhsLatex:{
-           value: ["Volume of Cube"],
-           type:'text' 
+         lhsLatex: {
+            value: ["Volume of cube"],
+            type: "text",
          },
-         rhsLatex:{
-            value:["(side)^3"],
-            type:'latex'
+         rhsLatex: {
+            value: ["(side)^3"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [''],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["(7cm)^3"],
-            type:'latex'
+         rhsLatex: {
+            value: ["(7cm)^3"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [""],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["7cm \\times 7cm \\times 7cm"],
-            type:'latex'
+         rhsLatex: {
+            value: ["7cm \\times 7cm \\times 7cm"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
       {
-         lhsLatex:{
-           value: [""],
-           type:'text' 
+         lhsLatex: {
+            value: [""],
+            type: "text",
          },
-         rhsLatex:{
-            value:["343cm^3"],
-            type:'latex'
+         rhsLatex: {
+            value: ["343cm^3"],
+            type: "latex",
          },
-         rhsHint:
-         {
-          value:[''],
-          type:'text'
-         }
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
-      ]
-      let latexEquationContainer=[]
-      latexEquationContainer.push(EquationLatex0)
-      let latexEquationCounter=0;
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
    return (
       <TextAndDiagramSlide
          secondaryTitle="Volume of a Cube Formula"
@@ -85,8 +79,9 @@ const Slide8 = ({ downIcon}) => {
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
-            <EquationTable equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
-            
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
       </TextAndDiagramSlide>
    );

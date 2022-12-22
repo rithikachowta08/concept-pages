@@ -1,6 +1,6 @@
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { TextSpanBg, Paragraph, TextLine } from "components/text";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide14/1.svg";
@@ -16,13 +16,13 @@ const Slide14 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-14}{\\text{length of diagonal(f)}}}`,
+               `Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of diagonal(f)}}}`,
             ],
             type: "latex",
          },
          rhsLatex: {
             value: [
-               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14}{\\text{length of side(s)}}}",
+               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of side(s)}}}",
             ],
             type: "latex",
          },

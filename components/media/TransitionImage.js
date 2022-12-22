@@ -52,6 +52,7 @@ const ImgContainer = styled.div`
 
 const TransitionImage = ({
    images,
+   altTexts,
    marginRight,
    activeIndex,
    width,
@@ -75,7 +76,7 @@ const TransitionImage = ({
                tabletSize={tabletSize}
                smallDesktopSize={smallDesktopSize}
                smallMobileSize={smallMobileSize}
-               alt="image"
+               alt={altTexts[index] || "image"}
             ></Img>
          ))}
       </ImgContainer>
@@ -91,7 +92,7 @@ TransitionImage.propTypes = {
 
 TransitionImage.defaultProps = {
    activeIndex: 0,
-   bottomOffset: "0px",
+   altTexts: [],
 };
 
 export default TransitionImage;

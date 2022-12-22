@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -62,77 +63,96 @@ const Slide15 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <span>
-            {/* <Flex>
-               <Paragraph>
-                  <TextLine>Area of triangle</TextLine>
-               </Paragraph>
-               <Paragraph>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{1}{4}b \\sqrt{4a^2 - b^2}"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={
-                           "\\ = \\frac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}"
-                        }
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={
-                           "\\ = \\frac{1}{4}\\times 8 \\sqrt{100 - 64}"
-                        }
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{1}{4}\\times 8 \\sqrt{36}"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{8\\ \\times\\ 6}{4}"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ = 12 \\ cm^2"} />
-                  </TextLine>
-               </Paragraph>
-            </Flex> */}
             <Paragraph>
-               <MultiLhsEquationContainer
-                  equationLatex={{
-                     lhsLatex: [`Area\\ of\\ triangle`],
-                     rhsLatex: [
-                        {
-                           eqLatex: "\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}",
-                           hint: "",
+               <EquationTable
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: [`Area\\ of\\ triangle`],
+                           type: "latex",
                         },
-                        {
-                           eqLatex:
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [
                               "\\dfrac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}",
-                           hint: "",
+                           ],
+                           type: "latex",
                         },
-                        {
-                           eqLatex: "\\dfrac{1}{4}\\times 8 \\sqrt{100 - 64}",
-                           hint: "",
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
                         },
-                        {
-                           eqLatex: "\\dfrac{1}{4}\\times 8 \\sqrt{36}",
-                           hint: "",
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
                         },
-                        {
-                           eqLatex: "\\dfrac{8\\ \\times\\ 6}{4}",
-                           hint: "",
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{4}\\times 8 \\sqrt{100 - 64}"],
+                           type: "latex",
                         },
-                        {
-                           eqLatex: "12 \\ cm^2",
-                           hint: "",
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
                         },
-                     ],
-                  }}
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{4}\\times 8 \\sqrt{36}"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{8\\ \\times\\ 6}{4}"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["12 \\ cm^2"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                  ]}
                />
             </Paragraph>
          </span>
