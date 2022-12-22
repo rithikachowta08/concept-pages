@@ -34,7 +34,7 @@ const Slide6 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\htmlId{2}{\\htmlClass{textSpanBg lightBg slide-6}{\\text{Diameter (d)}}} \\div 2",
+               "\\htmlId{2}{\\htmlClass{textSpanBg lightBg slide-6}{\\text{Diameter (d)}}}\\ \\div 2",
             ],
             type: "latex",
          },

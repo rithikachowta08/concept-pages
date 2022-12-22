@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke-width: 3px;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: #ea6560;
+      }
+
+      .cls-6, .cls-7 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 0 11.29 11.29;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 11.34 11.34;
+      }
+
+      .cls-7 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-8 {
+        opacity: .3;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-8" cx="280" cy="280" r="201.7"/>
+    <path class="cls-8" d="M311.27,248.73c-17.27-17.27-45.27-17.27-62.54,0l31.27,31.27,31.27-31.27Z"/>
+    <g>
+      <path class="cls-5" d="M280,78.3c111.4,0,201.7,90.31,201.7,201.7s-90.3,201.7-201.7,201.7-201.7-90.31-201.7-201.7S168.6,78.3,280,78.3m0-6c-28.04,0-55.24,5.49-80.85,16.32-24.73,10.46-46.95,25.44-66.02,44.51-19.07,19.07-34.05,41.28-44.51,66.02-10.83,25.61-16.32,52.81-16.32,80.85s5.49,55.24,16.32,80.85c10.46,24.73,25.44,46.95,44.51,66.02,19.07,19.07,41.29,34.05,66.02,44.51,25.61,10.83,52.81,16.32,80.85,16.32s55.24-5.49,80.85-16.32c24.73-10.46,46.95-25.44,66.02-44.51,19.07-19.07,34.05-41.28,44.51-66.02,10.83-25.61,16.32-52.81,16.32-80.85s-5.49-55.24-16.32-80.85c-10.46-24.73-25.44-46.95-44.51-66.02-19.07-19.07-41.28-34.05-66.02-44.51-25.61-10.83-52.81-16.32-80.85-16.32h0Z"/>
+      <text class="cls-7" transform="translate(103.33 130)"><tspan x="0" y="0">A</tspan></text>
+      <text class="cls-6" transform="translate(431.26 130)"><tspan x="0" y="0">B</tspan></text>
+    </g>
+  </g>
+  <g>
+    <line class="cls-1" x1="425.62" y1="135.92" x2="421.36" y2="140.14"/>
+    <line class="cls-4" x1="413.29" y1="148.12" x2="288.3" y2="271.79"/>
+    <polyline class="cls-1" points="284.27 275.78 280 280 275.72 275.8"/>
+    <line class="cls-2" x1="267.65" y1="267.89" x2="142.65" y2="145.32"/>
+    <line class="cls-1" x1="138.61" y1="141.37" x2="134.33" y2="137.17"/>
+  </g>
+  <circle class="cls-5" cx="134.33" cy="137.17" r="7.2"/>
+  <circle class="cls-5" cx="425.62" cy="137.17" r="7.2"/>
+  <text class="cls-6" transform="translate(268.8 312.08)"><tspan x="0" y="0">O</tspan></text>
+  <circle class="cls-5" cx="280" cy="280" r="7.2"/>
+  <path class="cls-3" d="M248.73,248.73c17.27-17.27,45.27-17.27,62.54,0"/>
+</svg>

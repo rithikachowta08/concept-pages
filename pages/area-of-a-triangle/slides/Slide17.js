@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
@@ -59,66 +60,88 @@ const Slide17 = ({ downIcon }) => {
                .<br />
             </TextLine>
          </Paragraph>
-         <span>
-            <Paragraph>
-               <Flex direction="column">
-                  <TextLine>
-                     <MathElement
-                        htmlString={"a^2 = h^2 + \\Big(\\dfrac{a}{2}\\Big)^2"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"h^2 = a^2 - \\Big(\\dfrac{a^2}{4}\\Big)"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"h = \\dfrac{1}{2} (\\sqrt{3} a)"}
-                     />
-                  </TextLine>
-               </Flex>
-            </Paragraph>
-         </span>
          <Paragraph>
-            {/* <Flex>
-               <Paragraph>
-                  <TextLine textAlign={"right"}>Area of triangle =</TextLine>
-                  <TextLine textAlign={"right"}>A =</TextLine>
-               </Paragraph>
-               <Paragraph>
-                  <TextLine>
-                     <MathElement
-                        htmlString={
-                           "\\ \\frac{1}{2} \\times Base \\times Height"
-                        }
-                     />
-                  </TextLine>
-                  <TextLine>
-                     {" "}
-                     <MathElement
-                        htmlString={
-                           "\\ \\frac{1}{2} \\times a \\times \\frac{1}{2} (\\sqrt{3} a)"
-                        }
-                     />
-                  </TextLine>
-               </Paragraph>
-            </Flex> */}
-            <MultiLhsEquationContainer
-               equationLatex={{
-                  lhsLatex: [`Area\\ of\\ triangle`, "A"],
-                  rhsLatex: [
-                     {
-                        eqLatex: "\\dfrac{1}{2} \\times Base \\times Height",
-                        hint: "",
+            <EquationTable
+               align="middle"
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["a^2"],
+                        type: "latex",
                      },
-                     {
-                        eqLatex:
+                     rhsLatex: {
+                        value: ["h^2 + \\Big(\\dfrac{a}{2}\\Big)^2"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: ["h^2"],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["a^2 - \\Big(\\dfrac{a^2}{4}\\Big)"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: ["h"],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{1}{2} (\\sqrt{3} a)"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+               ]}
+            />
+            <EquationTable
+               align="middle"
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["Area\\ of\\ triangle"],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: ["A"],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: [
                            "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
-                        hint: "",
+                        ],
+                        type: "latex",
                      },
-                  ],
-               }}
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+               ]}
             />
          </Paragraph>
          <Paragraph>
