@@ -25,46 +25,52 @@ const Slide4 = ({ downIcon }) => {
 
    const modalContent = (
       <Flex direction="column">
-         <Paragraph>
+         <Paragraph color={colors.WHITE}>
             The area is measured in square units (square centimeters, square
             inches, square feet, and so on).
          </Paragraph>
-         <Paragraph>Example:</Paragraph>
-         <ModalImg src={image_modal} />
-         <MultiLhsEquationContainer
-            equationLatex={{
-               lhsLatex: ["\\text{Area}"],
-               rhsLatex: [
-                  { eqLatex: "\\text{4cm}\\ \\times\\ \\text{3cm}", hint: "" },
-                  { eqLatex: "\\text{12\\ sq\\ cm}", hint: "" },
-               ],
-            }}
+         <Paragraph color={colors.WHITE}>Example:</Paragraph>
+         <ModalImg
+            src={image_modal}
+            alt="Diagram of a rectangle with 4 cm length and 3 cm width"
          />
+         <Paragraph color={colors.WHITE}>
+            <MultiLhsEquationContainer
+               color={colors.WHITE}
+               equationLatex={{
+                  lhsLatex: ["\\text{Area}"],
+                  rhsLatex: [
+                     {
+                        eqLatex: "\\text{4cm}\\ \\times\\ \\text{3cm}",
+                        hint: "",
+                     },
+                     { eqLatex: "\\text{12\\ sq\\ cm}", hint: "" },
+                  ],
+               }}
+            />
+         </Paragraph>
       </Flex>
    );
 
    return (
       <TextAndDiagramSlide
-         bg="DARK"
-         title={"Surface Area of Rectangular Prism"}
+         bg="LIGHT"
+         title={"What is the surface area of rectangular prism?"}
          downIcon={downIcon}
-         diagram={<StyledImg src={image_1} />}
+         diagram={
+            <StyledImg src={image_1} alt="Diagram of a rectangular prism" />
+         }
       >
          <Modal
-            bg="LIGHT"
-            color={colors.BLACK}
             title={"Square Units"}
             content={modalContent}
             isOpen={isModalOpen}
             onDismiss={onModalDismiss}
          />
-         <Paragraph color={colors.WHITE}>
+         <Paragraph>
             The surface area of a rectangular prism can be defined as the total
             area covered by its six faces. It is measured in{" "}
-            <ModalTriggerText
-               color={colors.WHITE}
-               onClick={() => setIsModalOpen(true)}
-            >
+            <ModalTriggerText onClick={() => setIsModalOpen(true)}>
                square units
             </ModalTriggerText>{" "}
             .

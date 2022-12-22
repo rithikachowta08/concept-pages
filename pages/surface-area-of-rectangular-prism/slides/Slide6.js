@@ -27,7 +27,10 @@ const Slide6 = ({ downIcon }) => {
             faces excluding the base and the top.
          </Paragraph>
          <Paragraph>Example:</Paragraph>
-         <ModalImg src={image_modal} />
+         <ModalImg
+            src={image_modal}
+            alt="Diagram of a rectangular prism representing the lateral faces."
+         />
          <Paragraph color={colors.BLACK}>
             The faces numbered 1, 2, 3, and 4 are the lateral faces of the
             rectangular prism.
