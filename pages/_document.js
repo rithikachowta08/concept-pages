@@ -8,10 +8,14 @@ export default class MyDocument extends Document {
    render() {
       return (
          <Html lang="en">
-            <Head></Head>
+            <Head>
+            <link rel="preload" as="image" href="assets/white_bg.webp"/>
+            <link rel="preload" as="image" href="assets/purple_bg.webp"/>
+            </Head>
             <body>
-               <img src={lightBg} style={{ display: "none" }} />
+               {/* <img src={lightBg} style={{ display: "none" }} />
                <img src={darkBg} style={{ display: "none" }} />
+               <img src={darkWithTrianglesBg} style={{ display: "none" }} /> */}
                <Main />
                <div id="modal-container"></div>
                <NextScript />
