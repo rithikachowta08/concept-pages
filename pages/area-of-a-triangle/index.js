@@ -80,4 +80,9 @@ const AreaOfATriangle = () => {
    );
 };
 
+AreaOfATriangle.title =
+   "Area of Triangle: Definition, Formula, Examples - BYJU'S";
+AreaOfATriangle.meta =
+   "Enhance your understanding of the area of triangle with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
+
 export default AreaOfATriangle;

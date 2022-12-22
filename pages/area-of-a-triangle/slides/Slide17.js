@@ -60,90 +60,92 @@ const Slide17 = ({ downIcon }) => {
                .<br />
             </TextLine>
          </Paragraph>
-         <Paragraph>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["a^2"],
-                        type: "latex",
+         <span>
+            <Paragraph>
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["a^2"],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["h^2 + \\Big(\\dfrac{a}{2}\\Big)^2"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["h^2 + \\Big(\\dfrac{a}{2}\\Big)^2"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: ["h^2"],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["a^2 - \\Big(\\dfrac{a^2}{4}\\Big)"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
+                     {
+                        lhsLatex: {
+                           value: ["h"],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} (\\sqrt{3} a)"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                  },
-                  {
-                     lhsLatex: {
-                        value: ["h^2"],
-                        type: "latex",
+                  ]}
+               />
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["Area\\ of\\ triangle"],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["a^2 - \\Big(\\dfrac{a^2}{4}\\Big)"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: ["A"],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-                  {
-                     lhsLatex: {
-                        value: ["h"],
-                        type: "latex",
-                     },
-                     rhsLatex: {
-                        value: ["\\dfrac{1}{2} (\\sqrt{3} a)"],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-               ]}
-            />
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Area\\ of\\ triangle"],
-                        type: "latex",
-                     },
-                     rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-                  {
-                     lhsLatex: {
-                        value: ["A"],
-                        type: "latex",
-                     },
-                     rhsLatex: {
-                        value: [
-                           "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
-                        ],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-               ]}
-            />
-         </Paragraph>
+                  ]}
+               />
+            </Paragraph>
+         </span>
          <Paragraph>
             <Pill>
                Area of an isosceles triangle =
