@@ -22,6 +22,10 @@ const Slide20 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a scalene triangle of height h",
+                  "Diagram of a scalene triangle highlighting one of its part including height",
+               ]}
             />
          }
          downIcon={downIcon}

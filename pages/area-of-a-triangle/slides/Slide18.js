@@ -23,6 +23,10 @@ const Slide18 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle of side length 4in",
+                  "Diagram of an equilateral triangle highlighting side length of 4 in",
+               ]}
             />
          }
          downIcon={downIcon}
