@@ -26,6 +26,11 @@ const Slide15 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2, image_3]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an isosceles triangle with equal sides of 5cm",
+                  "Diagram of an isosceles triangle highlighting two equal sides of 5cm length",
+                  "Diagram of an isosceles triangle highlighting base length as 8cm",
+               ]}
             />
          }
          downIcon={downIcon}

@@ -21,7 +21,12 @@ const Slide9 = ({ downIcon }) => {
          title={"Heron's formula"}
          secondaryTitle={"Area of a Triangle"}
          bg={"DARK"}
-         diagram={<StyledImg src={area_triangle_heron} />}
+         diagram={
+            <StyledImg
+               src={area_triangle_heron}
+               alt="Diagram of a scalene triangle"
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph color={colors.WHITE}>

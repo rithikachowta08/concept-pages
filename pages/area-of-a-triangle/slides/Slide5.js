@@ -41,6 +41,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_1_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an acute angled triangle",
+                        "Diagram of an acute angled triangle highlighting base",
+                        "Diagram of an acute angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Acute Triangle",
@@ -54,6 +59,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_2_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a right angled triangle",
+                        "Diagram of a right angled triangle highlighting base",
+                        "Diagram of a right angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Right Triangle",
@@ -67,6 +77,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_3_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an obtuse angled triangle",
+                        "Diagram of an obtuse angled triangle highlighting base",
+                        "Diagram of an obtuse angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Obtuse Triangle",

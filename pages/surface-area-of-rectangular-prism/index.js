@@ -9,7 +9,7 @@ const Slide5 = dynamic(() => import("./slides/Slide5.js"));
 const Slide6 = dynamic(() => import("./slides/Slide6.js"));
 const Slide7 = dynamic(() => import("./slides/Slide7.js"));
 
-const AreaOfCircle = () => {
+const SurfaceAreaOfRectangularPrism = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
@@ -28,7 +28,7 @@ const AreaOfCircle = () => {
       { title: "Lateral surface area", slides: [5] },
    ];
 
-   const darkBgIndices = [0, 2, 3, 4, 5];
+   const darkBgIndices = [0, 2, 4, 5];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -38,4 +38,9 @@ const AreaOfCircle = () => {
    );
 };
 
-export default AreaOfCircle;
+SurfaceAreaOfRectangularPrism.title =
+   "Surface Area of Rectangular Prism: Definition, Formula, Examples - BYJU'S";
+SurfaceAreaOfRectangularPrism.meta =
+   "Gain a deep understanding of surface area of rectangular prism with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
+
+export default SurfaceAreaOfRectangularPrism;

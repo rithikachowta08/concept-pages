@@ -26,6 +26,11 @@ const Slide4 = ({ downIcon }) => {
             <TransitionImage
                images={[t_formula, t_base, t_height]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a triangle including base and height",
+                  "Diagram of a triangle highlighting base",
+                  "Diagram of a triangle highlighting height",
+               ]}
             />
          }
       >

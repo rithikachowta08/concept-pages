@@ -1,6 +1,5 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import { MathEquationWrapper } from "components/MathElement/MathEquationWrapper";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
@@ -35,6 +34,7 @@ const Slide6 = ({ navBar, downIcon }) => {
       ),
       []
    );
+
    return (
       <TextAndDiagramSlide
          title={"Area of a Circle Using the Diameter"}
@@ -45,33 +45,15 @@ const Slide6 = ({ navBar, downIcon }) => {
             <TransitionImage
                images={[image_1, image_2, image_3]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle of radius r",
+                  "Diagram of a circle showing highlighted radius r",
+                  "Diagram of a circle with highlighted diameter d",
+               ]}
             />
          }
       >
          <Paragraph color={colors.WHITE}>
-            {/* <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(1)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Radius (r)
-            </TextSpanBg>{" "}
-            = */}
-            {/* <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               onHover={() => setActiveIndex(2)}
-               onHoverOut={() => setActiveIndex(0)}
-            >
-               Diameter (d)
-            </TextSpanBg> */}
-            {/* <MathElement
-               htmlString={
-                  // "\\ \\dfrac{\\htmlId{1}{\\htmlClass{textSpanBg slide-6}{Diameter (d)}}}{2}"
-                  "\\htmlId{1}{\\htmlClass{textSpanBg}{\\dfrac{Diameter (d)}{2}}}"
-               }
-            /> */}
             <EquationTable
                equationLatex={[
                   {
