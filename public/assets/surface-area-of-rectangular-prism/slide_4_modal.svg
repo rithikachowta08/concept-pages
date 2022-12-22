@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e96560;
+      }
+
+      .cls-2 {
+        fill: #d16b6b;
+      }
+
+      .cls-3 {
+        fill: #ea6560;
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        stroke: #e96560;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-5 {
+        stroke: #ffa4a4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-2" x="117.58" y="157.58" width="324.83" height="244.83"/>
+    <rect class="cls-5" x="117.58" y="157.58" width="324.83" height="244.83"/>
+  </g>
+  <g>
+    <line class="cls-4" x1="428.35" y1="422.6" x2="131.65" y2="422.6"/>
+    <polygon class="cls-1" points="425.49 412.83 442.42 422.6 425.49 432.37 425.49 412.83"/>
+    <polygon class="cls-1" points="134.51 412.83 117.58 422.6 134.51 432.37 134.51 412.83"/>
+  </g>
+  <text class="cls-3" transform="translate(251.4 454.74)"><tspan x="0" y="0">4 in</tspan></text>
+  <g>
+    <line class="cls-4" x1="461.57" y1="390.84" x2="461.57" y2="171.14"/>
+    <polygon class="cls-1" points="471.34 387.98 461.57 404.9 451.8 387.98 471.34 387.98"/>
+    <polygon class="cls-1" points="471.34 174 461.57 157.08 451.8 174 471.34 174"/>
+  </g>
+  <text class="cls-3" transform="translate(471.17 290.85)"><tspan x="0" y="0">3 in</tspan></text>
+</svg>
