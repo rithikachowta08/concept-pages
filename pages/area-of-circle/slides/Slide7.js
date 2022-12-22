@@ -1,9 +1,7 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, StyledImg } from "components/StyledElements";
+import { StyledImg } from "components/StyledElements";
 import { Paragraph, TextLine } from "components/text";
 import React from "react";
 
@@ -18,7 +16,12 @@ const Slide7 = ({ navBar, downIcon }) => {
          secondaryTitle={"Solved Examples"}
          navBar={navBar}
          downIcon={downIcon}
-         diagram={<StyledImg src={image_1} />}
+         diagram={
+            <StyledImg
+               src={image_1}
+               alt="Diagram of a circle of diameter 12 cm"
+            />
+         }
       >
          <Paragraph>
             <TextLine>In the given figure,</TextLine>

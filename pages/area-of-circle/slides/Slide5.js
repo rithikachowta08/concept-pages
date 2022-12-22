@@ -23,6 +23,10 @@ const Slide5 = ({ navBar, downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle of radius 5 in",
+                  "Diagram of a circle of radius 5 in",
+               ]}
             />
          }
       >

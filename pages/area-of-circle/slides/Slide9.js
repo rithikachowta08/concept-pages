@@ -23,6 +23,10 @@ const Slide9 = ({ navBar, downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle of radius r",
+                  "Diagram of a circle with highlighted circumference of 10 m",
+               ]}
             />
          }
       >

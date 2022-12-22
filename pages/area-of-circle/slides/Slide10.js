@@ -7,7 +7,7 @@ const Slide10 = ({ navBar, downIcon }) => {
       <VideoSlide
          downIcon={downIcon}
          navBar={navBar}
-         title="Area of a circle"
+         title="Area of a Circle"
          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
    );

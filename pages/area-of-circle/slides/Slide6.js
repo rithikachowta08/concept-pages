@@ -1,16 +1,12 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import EquationTable from "components/MathElement/EquationTable";
-import { MathEquationWrapper } from "components/MathElement/MathEquationWrapper";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import React, { useEffect, useState } from "react";
-import React, { useEffect, useState } from "react";
 import { colors } from "utils/colors";
-import { addTransitionToKatex } from "utils/domutils";
 import { addTransitionToKatex } from "utils/domutils";
 
 const image_1 = "assets/area-of-circle/slide_6.svg";
@@ -39,23 +35,6 @@ const Slide6 = ({ navBar, downIcon }) => {
       []
    );
 
-   const onHoverKatex = (e) => {
-      setActiveIndex(Number(e.currentTarget.parentNode.id));
-   };
-
-   const onHoverOutKatex = () => {
-      setActiveIndex(0);
-   };
-
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   useEffect(
-      addTransitionToKatex(
-         ".textSpanBg.aoc-slide-6",
-         onHoverKatex,
-         onHoverOutKatex
-      ),
-      []
-   );
    return (
       <TextAndDiagramSlide
          title={"Area of a Circle Using the Diameter"}
@@ -66,6 +45,11 @@ const Slide6 = ({ navBar, downIcon }) => {
             <TransitionImage
                images={[image_1, image_2, image_3]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle of radius r",
+                  "Diagram of a circle showing highlighted radius r",
+                  "Diagram of a circle with highlighted diameter d",
+               ]}
             />
          }
       >

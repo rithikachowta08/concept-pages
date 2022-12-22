@@ -26,7 +26,11 @@ const Slide2 = ({ downIcon, navBar }) => {
             equidistant from a fixed point. The fixed point is the center
             &quot;O&quot; and the fixed distance is the radius &quot;r&quot;.
          </Paragraph>
-         <StyledImg src={image_modal} width="400px" />
+         <StyledImg
+            src={image_modal}
+            width="400px"
+            alt="Diagram of a circle of radius r"
+         />
       </Flex>
    );
    return (
@@ -39,6 +43,10 @@ const Slide2 = ({ downIcon, navBar }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle with given radius",
+                  "Diagram of a circle with area highlighted in it",
+               ]}
             />
          }
       >

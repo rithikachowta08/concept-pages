@@ -31,7 +31,10 @@ const Slide3 = ({ navBar, downIcon }) => {
          <Paragraph>
             <MathElement htmlString={"\\pi = 3.14159"} /> (approximately)
          </Paragraph>
-         <ModalImg src={image_3} />
+         <ModalImg
+            src={image_3}
+            alt="Diagram of a circle with highlighted circumference and diameter ratio"
+         />
       </Flex>
    );
    return (
@@ -45,13 +48,17 @@ const Slide3 = ({ navBar, downIcon }) => {
             <TransitionImage
                activeIndex={activeIndex}
                images={[image_1, image_2]}
+               altTexts={[
+                  "Diagram of a circle of radius r",
+                  "Diagram of a circle with highlighted radius r",
+               ]}
             />
          }
       >
          <Modal
             bg={"LIGHT"}
             color={colors.BLACK}
-            title={<MathElement htmlString={"Pi (\\pi)"} />}
+            title={<MathElement htmlString={"Pi\\ (\\pi)"} />}
             isOpen={isModalOpen}
             content={modalContent}
             onDismiss={onModalDismiss}
