@@ -14,7 +14,7 @@ const Slide12 = ({ downIcon }) => {
          bg={"LIGHT"}
          downIcon={downIcon}
       >
-         <StyledImg src={image_1} />
+         <StyledImg src={image_1} alt="Diagram of a scalene triangle" />
       </TextAndAppletSlide>
    );
 };

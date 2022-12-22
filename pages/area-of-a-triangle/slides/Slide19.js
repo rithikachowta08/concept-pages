@@ -23,6 +23,10 @@ const Slide19 = ({ downIcon }) => {
             <TransitionImage
                images={[area_triangle_snt, area_triangle_snt_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a scalene triangle",
+                  "Diagram of a scalene triangle highlighting two sides and the included angle",
+               ]}
             />
          }
          downIcon={downIcon}

@@ -1,22 +1,12 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, LeftWrap, SlideWrap } from "components/StyledElements";
-import {
-   Paragraph,
-   TextLine,
-   TextSpan,
-   TextSpanBg,
-   Title,
-} from "components/text";
+import { Paragraph, TextSpanBg } from "components/text";
 import HyperLink from "components/text/HyperLink";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const image_1 = "assets/area-of-triangle/isos_deri_1.svg";
 const image_2 = "assets/area-of-triangle/isos_deri_2.svg";
@@ -24,7 +14,6 @@ const image_2 = "assets/area-of-triangle/isos_deri_2.svg";
 // Derivation of isosceles triangle
 const Slide14 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndDiagramSlide
          title={"Derivation"}
@@ -34,6 +23,10 @@ const Slide14 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an isosceles triangle showing equal sides, base and height",
+                  "Diagram of an isosceles triangle highlighting height, half base, half triangle and equal sides",
+               ]}
             />
          }
          downIcon={downIcon}

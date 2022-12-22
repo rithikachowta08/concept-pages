@@ -22,6 +22,10 @@ const Slide16 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+               ]}
             />
          }
          downIcon={downIcon}
