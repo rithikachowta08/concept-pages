@@ -1,12 +1,13 @@
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
-import React from "react";
-import Slide1 from "./slides/Slide1";
-import Slide2 from "./slides/Slide2";
-import Slide3 from "./slides/Slide3";
-import Slide4 from "./slides/Slide4";
-import Slide5 from "./slides/Slide5";
-import Slide6 from "./slides/Slide6";
-import Slide7 from "./slides/Slide7";
+import dynamic from "next/dynamic";
+
+const Slide1 = dynamic(() => import("./slides/Slide1.js"));
+const Slide2 = dynamic(() => import("./slides/Slide2.js"));
+const Slide3 = dynamic(() => import("./slides/Slide3.js"));
+const Slide4 = dynamic(() => import("./slides/Slide4.js"));
+const Slide5 = dynamic(() => import("./slides/Slide5.js"));
+const Slide6 = dynamic(() => import("./slides/Slide6.js"));
+const Slide7 = dynamic(() => import("./slides/Slide7.js"));
 
 const AreaOfCircle = () => {
    const SlideArray = [
