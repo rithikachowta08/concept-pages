@@ -1,6 +1,10 @@
-import Modal from "components/layout/Modal";
-import Pill from "components/Pill";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("components/layout/Modal"));
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import React, { useState } from "react";

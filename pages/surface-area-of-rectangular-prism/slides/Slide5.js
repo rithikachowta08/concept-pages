@@ -1,7 +1,10 @@
-import Pill from "components/Pill";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import dynamic from "next/dynamic";
+
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
 import { Paragraph } from "components/text";
-import React from "react";
 import { colors } from "utils/colors";
 
 const Slide5 = ({ downIcon }) => {

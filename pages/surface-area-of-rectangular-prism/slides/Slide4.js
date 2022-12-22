@@ -1,9 +1,15 @@
-import Modal from "components/layout/Modal";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("components/layout/Modal"));
+const MultiLhsEquationContainer = dynamic(() =>
+   import("components/MathElement/MultiLhsEquationContainer")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+import { useState } from "react";
 import { Flex, ModalImg, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
-import React, { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/surface-area-of-rectangular-prism/slide_2.svg";

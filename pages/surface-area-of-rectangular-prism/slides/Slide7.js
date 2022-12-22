@@ -1,6 +1,9 @@
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import dynamic from "next/dynamic";
+
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
 import { Paragraph } from "components/text";
-import React from "react";
 
 const Slide7 = () => {
    return (
