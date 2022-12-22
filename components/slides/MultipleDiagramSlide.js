@@ -47,7 +47,10 @@ const MultipleDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                {/* NavBar */}
-               <FillerNavBar isMobile />
+               <FillerNavBar
+                  mobileNavBarHeight={global.mobileNavBarHeight}
+                  isMobile
+               />
                {/* Body */}
                <Flex
                   direction="column"
