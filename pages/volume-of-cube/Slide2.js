@@ -24,6 +24,12 @@ const Slide2 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_faces, cube_vertices, cube_edges]}
+               altTexts={[
+                  "Diagram of a cube",
+                  "Diagram of a cube highlighting faces",
+                  "Diagram of a cube highlighting vertices",
+                  "Diagram of a cube highlighting sides",
+               ]}
                activeIndex={activeIndex}
             />
          }
