@@ -68,15 +68,11 @@ const TextAndAppletSlide = ({
             justifyContent="space-between"
             isLastSlide={isLastSlide}
          >
-            <FillerNavBar isMobile />
-            {/* Body */}
-            <Flex
-               direction="column"
-               padding="0 20px"
-               justifyContent="space-between"
-               alignItems="center"
-               width="100%"
-            >
+            <Flex direction="column" gap="2vh">
+               <FillerNavBar
+                  isMobile
+                  mobileNavBarHeight={window.mobileNavBarHeight}
+               />
                <div>
                   <SlideSecondaryTitle
                      bg={bg}
@@ -87,6 +83,15 @@ const TextAndAppletSlide = ({
                      {title}
                   </SlideTitle>
                </div>
+            </Flex>
+            {/* Body */}
+            <Flex
+               direction="column"
+               padding="0 20px"
+               justifyContent="space-between"
+               alignItems="center"
+               width="100%"
+            >
                <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                <LeftAlignDiv>{children}</LeftAlignDiv>
             </Flex>

@@ -1,19 +1,16 @@
 import React from "react";
 
-import { Paragraph, TextLine, TextSpan } from "components/text";
+import { Paragraph, TextLine } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement";
 import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { fontSizes } from "utils/fontStyles";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import HyperLink from "components/text/HyperLink";
 
 const applet = "applets/triangle.html";
 
 // General formula derivation
 const Slide7 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndAppletSlide
          title={"Derivation"}
