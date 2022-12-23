@@ -183,6 +183,10 @@ export const Icon = styled.img`
    cursor: pointer;
    margin-right: ${(props) => props.marginRight};
    align-self: ${(props) => props.alignSelf};
+
+   @media only screen and (min-width: 200px) and (max-width: 810px) {
+      width: ${(props) => props.width || "10px"};
+   }
 `;
 
 export const PageWrap = styled.div`

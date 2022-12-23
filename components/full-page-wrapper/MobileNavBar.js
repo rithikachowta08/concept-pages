@@ -89,7 +89,7 @@ const MobileNavBar = ({
    }
    useEffect(() => {
       if (ref.current) {
-         window.mobileNavBarHeight = ref.current.getBoundingClientRect().height;
+         global.mobileNavBarHeight = ref.current.getBoundingClientRect().height;
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [ref.current, currentPageIdx]);
