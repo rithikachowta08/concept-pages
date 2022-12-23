@@ -74,11 +74,13 @@ const MultipleDiagramSlide = ({
                         margin={isMobile ? "0 auto" : "0"}
                         key={idx}
                      >
-                        {React.cloneElement(image.diagram, {
-                           smallMobileSize: "130px",
-                           mobileSize: "150px",
-                           tabletSize: "250px",
-                        })}
+                        {image.diagram
+                           ? React.cloneElement(image.diagram, {
+                                smallMobileSize: "130px",
+                                mobileSize: "150px",
+                                tabletSize: "250px",
+                             })
+                           : image.diagram}
                         <Paragraph
                            color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
                            fontWeight={400}
@@ -92,7 +94,9 @@ const MultipleDiagramSlide = ({
                </Flex>
             </Flex>
             {/* DownIcon */}
-            {React.cloneElement(downIcon, { noMargin: true })}
+            {downIcon
+               ? React.cloneElement(downIcon, { noMargin: true })
+               : downIcon}
          </SlideWrap>
       );
    }
@@ -128,11 +132,13 @@ const MultipleDiagramSlide = ({
                         margin={isMobile ? "0 auto" : "0"}
                         key={idx}
                      >
-                        {React.cloneElement(image.diagram, {
-                           tabletSize: "250px",
-                           smallDesktopSize: "300px",
-                           width: "400px",
-                        })}
+                        {image.diagram
+                           ? React.cloneElement(image.diagram, {
+                                tabletSize: "250px",
+                                smallDesktopSize: "300px",
+                                width: "400px",
+                             })
+                           : image.diagram}
                         <TextSpan
                            color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
                            textAlign="center"

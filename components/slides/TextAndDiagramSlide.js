@@ -64,7 +64,9 @@ const TextAndDiagramSlide = ({
                   <LeftAlignDiv>{children}</LeftAlignDiv>
                </Flex>
                {/* DownIcon */}
-               {React.cloneElement(downIcon, { noMargin: true })}
+               {downIcon
+                  ? React.cloneElement(downIcon, { noMargin: true })
+                  : downIcon}
             </SlideWrap>
          </Media>
          <Media greaterThanOrEqual="md">

@@ -37,6 +37,7 @@ const length_of_the_arc =
    "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
 // const unit_square = "assets/area-of-rectangle/unit_square.svg";
 import { Icon } from "components/StyledElements";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const Slide3 = ({ downIcon }) => {
    const modalContent = (
@@ -49,6 +50,7 @@ const Slide3 = ({ downIcon }) => {
          /> */}
       </Flex>
    );
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const onClick = () => {
