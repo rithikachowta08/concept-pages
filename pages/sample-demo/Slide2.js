@@ -3,9 +3,6 @@ import { Paragraph, TextSpanBg } from "components/text";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide2/1.svg";
-const cube_faces = "assets/volume-of-cube/slide2/2.svg";
-const cube_vertices = "assets/volume-of-cube/slide2/3.svg";
-const cube_edges = "assets/volume-of-cube/slide2/4.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 
@@ -23,13 +20,8 @@ const Slide2 = ({ downIcon }) => {
          title="What is a cube?"
          diagram={
             <TransitionImage
-               images={[cube_red, cube_faces, cube_vertices, cube_edges]}
-               altTexts={[
-                  "Diagram of a cube",
-                  "Diagram of a cube highlighting faces",
-                  "Diagram of a cube highlighting vertices",
-                  "Diagram of a cube highlighting sides",
-               ]}
+               images={[cube_red]}
+               altTexts={["Diagram of a cube"]}
                activeIndex={activeIndex}
             />
          }
