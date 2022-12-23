@@ -36,7 +36,10 @@ const Slide3 = ({ downIcon }) => {
             always constant. This constant is expressed using a Greek letter
             &pi; (pi).
          </Paragraph>
-         <ModalImg src={pi} />
+         <ModalImg
+            src={pi}
+            alt="Image of a circle with circumference, diameter and value of pi shown"
+         />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -58,6 +61,11 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain, diameter_formula, circumference_dark_bg]}
+               altTexts={[
+                  "Image of a circle",
+                  "Image of a circle with diameter highlighted",
+                  "Image of a circle with circumference highlighted",
+               ]}
                activeIndex={activeIndex}
             />
          }

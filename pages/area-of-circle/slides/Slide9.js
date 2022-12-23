@@ -1,9 +1,6 @@
-import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
@@ -26,6 +23,10 @@ const Slide9 = ({ navBar, downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a circle of radius r",
+                  "Diagram of a circle with highlighted circumference of 10 m",
+               ]}
             />
          }
       >
@@ -44,17 +45,6 @@ const Slide9 = ({ navBar, downIcon }) => {
             </TextLine>
          </Paragraph>
          <Paragraph>
-            {/* <MultiLhsEquationContainer
-               equationLatex={{
-                  lhsLatex: ["Area of circle"],
-                  rhsLatex: [
-                     { eqLatex: "\\dfrac{C^2}{4\\pi}", hint: "" },
-                     { eqLatex: "\\dfrac{(10)^2}{4\\pi}", hint: "" },
-                     { eqLatex: "\\dfrac{100}{4\\pi}", hint: "" },
-                     { eqLatex: "\\dfrac{25}{\\pi} m^2", hint: "" },
-                  ],
-               }}
-            /> */}
             <EquationTable
                equationLatex={[
                   {
@@ -105,7 +95,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{25}{\\pi} m^2"],
+                        value: ["\\dfrac{25}{\\pi}\\ m^2"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -115,25 +105,6 @@ const Slide9 = ({ navBar, downIcon }) => {
                   },
                ]}
             />
-            {/* <Flex>
-               <TextLine>Area of the circle</TextLine>
-               <Flex direction="column">
-                  <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\dfrac{C^2}{4\\pi}"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ =\\ \\dfrac{(10)^2}{4\\pi}"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\dfrac{100}{4\\pi}"} />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement htmlString={"\\ =\\ \\dfrac{25}{\\pi} m^2"} />
-                  </TextLine>
-               </Flex>
-            </Flex> */}
          </Paragraph>
       </TextAndDiagramSlide>
    );

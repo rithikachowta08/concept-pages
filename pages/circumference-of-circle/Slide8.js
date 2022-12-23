@@ -15,10 +15,7 @@ const Slide8 = ({ downIcon }) => {
          downIcon={downIcon}
          bg="DARK"
       >
-         <Paragraph color={colors.WHITE}>
-            Move the sliders to create a rectangle occupying an area of 54 unit
-            squares.
-         </Paragraph>
+         <Paragraph color={colors.WHITE}></Paragraph>
       </TextAndAppletSlide>
    );
 };

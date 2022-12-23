@@ -29,15 +29,17 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const circle_showing_the_sector = "assets/length-of-arc-of-a-circle/circle_showing_the_sector.svg";
-const central_angle_of_the_arc = "assets/length-of-arc-of-a-circle/central_angle_of_the_arc.svg";
-const length_of_the_arc = "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
+const circle_showing_the_sector =
+   "assets/length-of-arc-of-a-circle/circle_showing_the_sector.svg";
+const central_angle_of_the_arc =
+   "assets/length-of-arc-of-a-circle/central_angle_of_the_arc.svg";
+const length_of_the_arc =
+   "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
 // const unit_square = "assets/area-of-rectangle/unit_square.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const Slide3 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
@@ -48,6 +50,7 @@ const Slide3 = ({ downIcon }) => {
          /> */}
       </Flex>
    );
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const onClick = () => {
@@ -68,7 +71,11 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle="Arc of a Circle"
          diagram={
             <TransitionImage
-               images={[circle_showing_the_sector, central_angle_of_the_arc, length_of_the_arc]}
+               images={[
+                  circle_showing_the_sector,
+                  central_angle_of_the_arc,
+                  length_of_the_arc,
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -84,28 +91,28 @@ const Slide3 = ({ downIcon }) => {
             An arc can be measured using two different ways:&nbsp;
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
-                  Central angle of the arc (𝜃)
+                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>
+                  &nbsp;&nbsp; Central angle of the arc (𝜃)
                </TextSpanBg>
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
-                  The length of the arc (l)
+                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>
+                  &nbsp;&nbsp; The length of the arc (l)
                </TextSpanBg>
             </TextLine>
          </Paragraph>

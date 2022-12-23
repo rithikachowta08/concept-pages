@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDeviceType } from "hooks/useDeviceType";
 import ReactFullpage from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
@@ -13,13 +12,11 @@ export const FullPageCustomWrapper = ({
    darkBgIndices,
    navigationSections,
 }) => {
-   const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
    return (
       <>
          <NavigationBar
             opacity={currentPageIdx === 0 ? 0 : 1}
-            deviceType={deviceType}
             sections={navigationSections}
             darkTheme={darkBgIndices.includes(currentPageIdx)}
             moveTo={fullPage?.moveTo}

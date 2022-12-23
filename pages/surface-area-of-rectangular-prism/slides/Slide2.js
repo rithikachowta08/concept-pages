@@ -25,6 +25,12 @@ const Slide2 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2, image_3, image_4]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a rectangular prism",
+                  "Diagram of a rectangular prism with highlighted faces",
+                  "Diagram of a rectangular prism with highlighted vertices",
+                  "Diagram of a rectangular prism with highlighted edges.",
+               ]}
             />
          }
          downIcon={downIcon}

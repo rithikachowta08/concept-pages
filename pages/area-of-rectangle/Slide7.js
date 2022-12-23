@@ -53,7 +53,10 @@ const Slide7 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextLine color="white">Example :</TextLine>
-            <ModalImg src={rectangle_square_units} />
+            <ModalImg
+               src={rectangle_square_units}
+               alt="Diagram of a rectangle with length 4 cm and width 3 cm"
+            />
             <MultiLhsEquationContainer
                color={colors.WHITE}
                equationLatex={EquationLatex[0]}
@@ -83,6 +86,11 @@ const Slide7 = ({ downIcon }) => {
                   rectangle_plain_dimensions,
                   rectangle_length,
                   rectangle_width,
+               ]}
+               altTexts={[
+                  "Diagram of a rectangle",
+                  "Diagram of a rectangle with highlighted length",
+                  "Diagram of a rectangle with highlighted width",
                ]}
                activeIndex={activeIndex}
             />

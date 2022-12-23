@@ -45,4 +45,8 @@ const AreaOfCircle = () => {
    );
 };
 
+AreaOfCircle.title = "Area of Circle: Definition, Formula, Examples - BYJU'S";
+AreaOfCircle.meta =
+   "Learn about the area of circle, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities.";
+
 export default AreaOfCircle;

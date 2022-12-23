@@ -90,6 +90,11 @@ const Slide6 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[diameter_value, radius, diameter_formula_value]}
+               altTexts={[
+                  "Image of a circle with diameter 12 cm",
+                  "Image of a circle with radius highlighted",
+                  "Image of a circle with diameter 12 cm highlighted",
+               ]}
                activeIndex={activeIndex}
             />
          }

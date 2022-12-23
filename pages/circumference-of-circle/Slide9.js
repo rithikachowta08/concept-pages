@@ -110,6 +110,11 @@ const Slide8 = ({ downIcon }) => {
                   tyre_circumference,
                   tyre_diameter_blue,
                ]}
+               altTexts={[
+                  "Image of a wheel with diameter 1 m",
+                  "Image of a wheel with circumference pi*d highlighted",
+                  "Image of a wheel with diameter 1 m highlighted",
+               ]}
                activeIndex={activeIndex}
             />
          }
