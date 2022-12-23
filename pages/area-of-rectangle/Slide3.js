@@ -35,9 +35,7 @@ const Slide3 = ({ downIcon }) => {
          <Paragraph color="white">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
-         <ModalImg
-            src={unit_square}
-         />
+         <ModalImg src={unit_square} alt="Diagram of a unit rectangle" />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -60,6 +58,10 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[rectangle_plain, rectangle_shaded]}
+               altTexts={[
+                  "Diagram of a rectangle",
+                  "Diagram of a area of a rectangle.",
+               ]}
                activeIndex={activeIndex}
             />
          }

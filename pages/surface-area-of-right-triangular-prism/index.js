@@ -13,7 +13,6 @@ const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
-const Slide10 = dynamic(() => import("./Slide10"));
 
 const AreaOfRectangle = () => {
    const SlideArray = [
@@ -26,20 +25,18 @@ const AreaOfRectangle = () => {
       <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
-      <Slide10 key={9} />,
-      // <Slide11 key={10} />,
-      // <Slide12 key={11} />,
-      // <Slide13 key={12} />
    ];
 
    const navigationSections = [
-      { title: "What is area of rectangle?", slides: [1, 2] },
-      { title: "Area by counting unit squares", slides: [3, 4, 5] },
-      { title: "General formula", slides: [6, 7] },
-      { title: "Area using diagonal", slides: [8, 9] },
+      {
+         title: "What is the surface area of a right triangular prism?",
+         slides: [1, 2, 3],
+      },
+      { title: "Lateral surface area", slides: [4, 5, 6] },
+      { title: "Total surface area", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 6, 8];
+   const darkBgIndices = [0, 3, 4, 7];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -48,11 +45,5 @@ const AreaOfRectangle = () => {
       />
    );
 };
-
-AreaOfRectangle.title =
-   "Area of Rectangle: Definition, Formula, Examples - BYJU'S";
-
-AreaOfRectangle.meta =
-   "Discover the concept of area of rectangle, including its definition, formula, and examples. Enhance your understanding with BYJU'S interactive activities and examples.";
 
 export default AreaOfRectangle;
