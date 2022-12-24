@@ -67,7 +67,7 @@ const TransitionImage = ({
          {images.map((image, index) => (
             <Img
                key={index}
-               src={image}
+               data-src={image}
                index={index}
                width={width}
                activeIndex={activeIndex}

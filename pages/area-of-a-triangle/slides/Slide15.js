@@ -5,7 +5,6 @@ import TransitionImage from "components/media/TransitionImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
@@ -16,7 +15,6 @@ const image_3 = "assets/area-of-triangle/isos_ex_3.svg";
 // Example of isosceles triangle
 const Slide15 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndDiagramSlide
          bg={"LIGHT"}

@@ -8,7 +8,8 @@ import {
    RightWrap,
    LeftAlignDiv,
 } from "components/StyledElements";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 
 const TextAndDiagramSlide = ({
    title,
@@ -25,64 +26,71 @@ const TextAndDiagramSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   if (isMobile) {
-      return (
-         <SlideWrap
-            bg={bg}
-            ref={ref}
-            padding="0 0 10px 0"
-            gap="10px"
-            justifyContent="space-between"
-            isLastSlide={isLastSlide}
-         >
-            <Flex direction="column" gap="2vh">
-               <FillerNavBar />
-               <div>
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     isMobile
-                  />
-                  <SlideTitle bg={bg} isMobile>
-                     {title}
-                  </SlideTitle>
-               </div>
-            </Flex>
-            {/* Body */}
-            <Flex
-               direction="column"
-               padding="0 20px"
-               justifyContent="space-between"
-               alignItems="center"
-               width="100%"
-            >
-               {diagram}
-               <LeftAlignDiv>{children}</LeftAlignDiv>
-            </Flex>
-            {/* DownIcon */}
-            {React.cloneElement(downIcon, { noMargin: true })}
-         </SlideWrap>
-      );
-   }
    return (
-      <SlideWrap bg={bg} padding={"20px 30px"}>
-         <Flex alignItems="center" justifyContent="flex-start" width="100%">
-            <FillerNavBar />
-            <LeftWrap>
-               <div>
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                  />
-                  <SlideTitle bg={bg}>{title}</SlideTitle>
-               </div>
-               {children}
-            </LeftWrap>
-            <RightWrap>{diagram}</RightWrap>
-         </Flex>
-         {downIcon}
-      </SlideWrap>
+      <>
+         <DesktopComponent>
+            <SlideWrap bg={bg} padding={"20px 30px"}>
+               <Flex
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  width="100%"
+               >
+                  <FillerNavBar />
+                  <LeftWrap>
+                     <div>
+                        <SlideSecondaryTitle
+                           bg={bg}
+                           secondaryTitle={secondaryTitle}
+                        />
+                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                     </div>
+                     {children}
+                  </LeftWrap>
+                  <RightWrap>{diagram}</RightWrap>
+               </Flex>
+               {downIcon ? React.cloneElement(downIcon) : downIcon}
+            </SlideWrap>
+         </DesktopComponent>
+         <MobileComponent>
+            <SlideWrap
+               bg={bg}
+               ref={ref}
+               padding="0 0 10px 0"
+               gap="10px"
+               justifyContent="space-between"
+               isLastSlide={isLastSlide}
+            >
+               <Flex direction="column" gap="2vh">
+                  <FillerNavBar />
+                  <div>
+                     <SlideSecondaryTitle
+                        bg={bg}
+                        secondaryTitle={secondaryTitle}
+                        isMobile
+                     />
+                     <SlideTitle bg={bg} isMobile>
+                        {title}
+                     </SlideTitle>
+                  </div>
+               </Flex>
+               {/* Body */}
+               <Flex
+                  direction="column"
+                  padding="0 20px"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  width="100%"
+               >
+                  {diagram}
+                  <LeftAlignDiv>{children}</LeftAlignDiv>
+               </Flex>
+               {/* DownIcon */}
+               {downIcon
+                  ? React.cloneElement(downIcon, { noMargin: true })
+                  : downIcon}
+            </SlideWrap>
+         </MobileComponent>
+      </>
    );
 };
 

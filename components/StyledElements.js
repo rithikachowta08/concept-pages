@@ -15,8 +15,8 @@ const bgToBgColorMap = {
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
-   height: 100%;
-   width: 100%;
+   height: 100vh;
+   width: 100vw;
    padding: ${(props) => props.padding};
    gap: ${(props) => props.gap};
    display: flex;
@@ -183,6 +183,10 @@ export const Icon = styled.img`
    cursor: pointer;
    margin-right: ${(props) => props.marginRight};
    align-self: ${(props) => props.alignSelf};
+
+   @media (min-width: 200px) and (max-width: 810px) {
+      width: ${(props) => props.width || "10px"};
+   }
 `;
 
 export const PageWrap = styled.div`
