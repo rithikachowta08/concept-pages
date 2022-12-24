@@ -96,7 +96,7 @@ const TextAndAppletSlide = ({
                <LeftAlignDiv>{children}</LeftAlignDiv>
             </Flex>
             {/* DownIcon */}
-            {downIcon ? React.cloneElement(downIcon, { noMargin: true }) : null}
+            {React.cloneElement(downIcon, { noMargin: true })}
          </SlideWrap>
       );
    }
