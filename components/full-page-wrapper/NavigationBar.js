@@ -1,43 +1,40 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import MobileNavBar from "./MobileNavBar";
-import { Media } from "utils/media";
+import { DEVICE_TYPES } from "hooks/useDeviceType";
 import { useState } from "react";
 import DefaultNavBar from "./DefaultNavBar";
 
 const Wrapper = styled.div`
-   width: 80px;
+   width: ${(props) => (props.isMobile ? "100%" : "80px")};
    z-index: 6;
    position: fixed;
    opacity: ${(props) => props.opacity};
-   top: 50vh;
-   left: 30px;
+   top: ${(props) => (props.isMobile ? "0" : "50vh")};
+   left: ${(props) => (props.isMobile ? "0" : "30px")};
+   transform: ${(props) => (!props.isMobile ? "translateY(-50%)" : "none")};
    transition: opacity 0.3s;
    display: grid;
    grid-template-columns: 1fr;
-   transform: translateY(-50%);
 
    @media (min-width: 200px) and (max-width: 810px) {
       height: 45px;
-      width: 100%;
-      top: 0;
-      left: 0;
-      transform: none;
    }
 
    @media (min-width: 811px) and (max-width: 992px) {
       scale: 0.8;
-      transform: translateY(-70%);
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 
-   @media (min-height: 500px) and (max-height: 800px) and (min-width: 811px) {
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
       scale: 0.8;
-      transform: translateY(-70%);
+      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
    }
 `;
 
 const NavigationBar = ({
    darkTheme,
+   deviceType,
    moveTo,
    sections,
    opacity,
@@ -58,29 +55,38 @@ const NavigationBar = ({
       setIsExpanded(false);
       moveTo(e.currentTarget.getAttribute("data-section-idx"));
    };
+   let content;
+   if (deviceType === DEVICE_TYPES.MOBILE) {
+      content = (
+         <MobileNavBar
+            toggleNav={toggleNav}
+            sections={sections}
+            isExpanded={isExpanded}
+            darkTheme={darkTheme}
+            onSectionClick={onSectionClick}
+            currentPageIdx={currentPageIdx}
+         />
+      );
+   } else {
+      content = (
+         <DefaultNavBar
+            showNav={showNav}
+            hideNav={hideNav}
+            sections={sections}
+            isExpanded={isExpanded}
+            darkTheme={darkTheme}
+            onSectionClick={onSectionClick}
+            currentPageIdx={currentPageIdx}
+         />
+      );
+   }
    return (
-      <Wrapper isExpanded={isExpanded} opacity={opacity}>
-         <Media lessThan="md">
-            <MobileNavBar
-               toggleNav={toggleNav}
-               sections={sections}
-               isExpanded={isExpanded}
-               darkTheme={darkTheme}
-               onSectionClick={onSectionClick}
-               currentPageIdx={currentPageIdx}
-            />
-         </Media>
-         <Media greaterThanOrEqual="md">
-            <DefaultNavBar
-               showNav={showNav}
-               hideNav={hideNav}
-               sections={sections}
-               isExpanded={isExpanded}
-               darkTheme={darkTheme}
-               onSectionClick={onSectionClick}
-               currentPageIdx={currentPageIdx}
-            />
-         </Media>
+      <Wrapper
+         isExpanded={isExpanded}
+         opacity={opacity}
+         isMobile={deviceType === DEVICE_TYPES.MOBILE}
+      >
+         {content}
       </Wrapper>
    );
 };

@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
-import { Media } from "utils/media";
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { Paragraph, Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
@@ -53,134 +53,61 @@ const AppletSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <>
-         <Media lessThan="md">
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               isLastSlide={isLastSlide}
-               padding={"0 0 20px 0"}
+      <SlideWrap
+         bg={bg}
+         ref={ref}
+         isLastSlide={isLastSlide}
+         padding={isMobile ? "0 0 20px 0" : "20px"}
+      >
+         <Flex
+            alignItems="center"
+            width="100%"
+            height="100%"
+            justifyContent={isMobile ? "flex-start" : "center"}
+            gap={isMobile ? "30px" : "60px"}
+            direction={isMobile ? "column" : "row"}
+         >
+            <FillerNavBar isMobile={isMobile} />
+            <Flex
+               gap={isMobile ? "30px" : "0"}
+               margin={isMobile ? "auto 0" : "0"}
+               justifyContent={isMobile ? "flex-start" : "space-evenly"}
+               flex="2"
+               alignItems="center"
             >
+               {title ? (
+                  <Title
+                     color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
+                     fontSize={fontSizes.H2}
+                     fontWeight={fontWeights.BOLD}
+                     padding="5%"
+                     small
+                  >
+                     {title}
+                  </Title>
+               ) : null}
                <Flex
-                  alignItems="center"
+                  direction={isMobile ? "column-reverse" : "row"}
                   width="100%"
                   height="100%"
-                  justifyContent={"flex-start"}
-                  gap={"30px"}
-                  direction={"column"}
-               >
-                  <FillerNavBar
-                     mobileNavBarHeight={global.mobileNavBarHeight}
-                     isMobile
-                  />
-                  <Flex
-                     gap={"30px"}
-                     margin={"auto 0"}
-                     justifyContent={"flex-start"}
-                     flex="2"
-                     alignItems="center"
-                  >
-                     {title ? (
-                        <Title
-                           color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                           fontSize={fontSizes.H2}
-                           fontWeight={fontWeights.BOLD}
-                           padding="5%"
-                           small
-                        >
-                           {title}
-                        </Title>
-                     ) : null}
-                     <Flex
-                        direction={"column-reverse"}
-                        width="100%"
-                        height="100%"
-                        justifyContent="space-evenly"
-                        alignItems="center"
-                     >
-                        {description && (
-                           <Paragraph
-                              color={
-                                 bg === "LIGHT" ? colors.BLACK : colors.WHITE
-                              }
-                           >
-                              {description}
-                           </Paragraph>
-                        )}
-                        <IFrame
-                           src={appletSrc}
-                           allowFullScreen
-                           frameBorder="0"
-                        />
-                     </Flex>
-                  </Flex>
-               </Flex>
-               {downIcon}
-            </SlideWrap>
-         </Media>
-         <Media greaterThanOrEqual="md">
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               isLastSlide={isLastSlide}
-               padding={"20px"}
-            >
-               <Flex
+                  justifyContent="space-evenly"
                   alignItems="center"
-                  width="100%"
-                  height="100%"
-                  justifyContent={"center"}
-                  gap={"60px"}
-                  direction={"row"}
                >
-                  <FillerNavBar isMobile />
-                  <Flex
-                     gap={"0"}
-                     margin={"0"}
-                     justifyContent={"space-evenly"}
-                     flex="2"
-                     alignItems="center"
-                  >
-                     {title ? (
-                        <Title
-                           color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                           fontSize={fontSizes.H2}
-                           fontWeight={fontWeights.BOLD}
-                           padding="5%"
-                           small
-                        >
-                           {title}
-                        </Title>
-                     ) : null}
-                     <Flex
-                        direction={"row"}
-                        width="100%"
-                        height="100%"
-                        justifyContent="space-evenly"
-                        alignItems="center"
+                  {description && (
+                     <Paragraph
+                        color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
                      >
-                        {description && (
-                           <Paragraph
-                              color={
-                                 bg === "LIGHT" ? colors.BLACK : colors.WHITE
-                              }
-                           >
-                              {description}
-                           </Paragraph>
-                        )}
-                        <IFrame
-                           src={appletSrc}
-                           allowFullScreen
-                           frameBorder="0"
-                        />
-                     </Flex>
-                  </Flex>
+                        {description}
+                     </Paragraph>
+                  )}
+                  <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                </Flex>
-               {downIcon}
-            </SlideWrap>
-         </Media>
-      </>
+            </Flex>
+         </Flex>
+         {downIcon}
+      </SlideWrap>
    );
 };
 

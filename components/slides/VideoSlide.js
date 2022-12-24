@@ -20,7 +20,7 @@ const VideoSlideWrap = styled.div`
    box-sizing: border-box;
 `;
 
-const VideoSlide = ({ title, downIcon, src }) => {
+const VideoSlide = ({ title, downIcon, navBar, src }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [isRotated, setIsRotated] = useState(false);
    function onFullScreen() {
