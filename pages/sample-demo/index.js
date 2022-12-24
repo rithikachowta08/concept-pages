@@ -18,7 +18,13 @@ const VolumeOfCube = ({}) => {
    ];
 
    const darkBgIndices = [0, 4, 5, 10, 16];
-   return <Slide2></Slide2>;
+   return (
+      <FullPageCustomWrapper
+         slidesComponentList={SlideArray}
+         navigationSections={navigationSections}
+         darkBgIndices={darkBgIndices}
+      />
+   );
 };
 
 VolumeOfCube.title = "Volume of a Cube: Definition, Formula, Examples - BYJU'S";
