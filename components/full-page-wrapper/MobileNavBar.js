@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Flex, Icon } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
-import { useEffect, useRef } from "react";
 const down_caret_light = "assets/down_caret.svg";
 const up_caret_light = "assets/up_caret_light.svg";
 const down_caret_dark = "assets/down_caret_dark.svg";
@@ -79,7 +78,6 @@ const MobileNavBar = ({
    sections,
    isExpanded,
 }) => {
-   const ref = useRef(null);
    const currentSection =
       sections.find((section) => section.slides.includes(currentPageIdx)) ||
       sections[0];
@@ -87,14 +85,8 @@ const MobileNavBar = ({
    if (isExpanded) {
       icon = darkTheme ? up_caret_light : up_caret_dark;
    }
-   useEffect(() => {
-      if (ref.current) {
-         window.mobileNavBarHeight = ref.current.getBoundingClientRect().height;
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [ref.current, currentPageIdx]);
    return (
-      <MobileNavWrap ref={ref} isExpanded={isExpanded} darkTheme={darkTheme}>
+      <MobileNavWrap isExpanded={isExpanded} darkTheme={darkTheme}>
          <Flex
             padding={isExpanded ? "20px" : "10px 20px 0px 20px"}
             color={darkTheme ? colors.WHITE : colors.BLACK}

@@ -34,22 +34,7 @@ const MultipleDiagramSlide = ({
             isLastSlide={isLastSlide}
          >
             {/* NavBar */}
-            <Flex direction="column" gap="2vh">
-               <FillerNavBar
-                  isMobile
-                  mobileNavBarHeight={window.mobileNavBarHeight}
-               />
-               <div>
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     isMobile
-                  />
-                  <SlideTitle bg={bg} isMobile>
-                     {title}
-                  </SlideTitle>
-               </div>
-            </Flex>
+            <FillerNavBar isMobile />
             {/* Body */}
             <Flex
                direction="column"
@@ -58,6 +43,14 @@ const MultipleDiagramSlide = ({
                alignItems="center"
                width="100%"
             >
+               <SlideSecondaryTitle
+                  bg={bg}
+                  secondaryTitle={secondaryTitle}
+                  isMobile
+               />
+               <SlideTitle bg={bg} isMobile>
+                  {title}
+               </SlideTitle>
                {children}
                <Flex
                   direction="row"

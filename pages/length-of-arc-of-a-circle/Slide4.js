@@ -24,19 +24,23 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() => import("components/MathElement"));
+const MathElement = dynamic(() => 
+  import("components/MathElement")
+)
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
-const diagram_of_a_circle =
-   "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
+import { ModalTriggerText } from "components/text";
+const diagram_of_a_circle = "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
 const minor_arc = "assets/length-of-arc-of-a-circle/minor_arc.svg";
 const major_arc = "assets/length-of-arc-of-a-circle/major_arc.svg";
-const semicircular_arc =
-   "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+const semicircular_arc= "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
+import { Icon } from "components/StyledElements";
 
 const Slide3 = ({ downIcon }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
@@ -64,12 +68,7 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle="Arc of a Circle"
          diagram={
             <TransitionImage
-               images={[
-                  diagram_of_a_circle,
-                  minor_arc,
-                  major_arc,
-                  semicircular_arc,
-               ]}
+               images={[diagram_of_a_circle,minor_arc, major_arc, semicircular_arc]}
                activeIndex={activeIndex}
             />
          }
@@ -82,13 +81,12 @@ const Slide3 = ({ downIcon }) => {
             onDismiss={onDismiss}
          />
          <Paragraph>
-            The arc of a circle is classified based on the degree measure of the
-            arc.
+         The arc of a circle is classified based on the degree measure of the arc.
          </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
                <TextSpanBg
-                  onHover={() => onHover(1)}
+                  onHover={()=>onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -97,12 +95,11 @@ const Slide3 = ({ downIcon }) => {
                >
                   Minor arc
                </TextSpanBg>
-               (<MathElement htmlString={"\\overgroup{ACB}"} />
-               ): An arc of a circle measuring less than 180∘.
+               (<MathElement htmlString={'\\overgroup{ACB}'} />): An arc of a circle measuring less than 180∘.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={() => onHover(2)}
+                  onHover={()=>onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -111,12 +108,11 @@ const Slide3 = ({ downIcon }) => {
                >
                   Major arc
                </TextSpanBg>
-               (<MathElement htmlString={"\\overgroup{ADB}"} />
-               ): An arc of a circle measuring greater than 180∘.
+               (<MathElement htmlString={'\\overgroup{ADB}'} />): An arc of a circle measuring greater than 180∘.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={() => onHover(3)}
+                  onHover={()=>onHover(3)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -125,8 +121,7 @@ const Slide3 = ({ downIcon }) => {
                >
                   Semicircular arc
                </TextSpanBg>
-               (<MathElement htmlString={"\\overgroup{PDR}"} />
-               ): An arc of a circle measuring 180∘.
+               (<MathElement htmlString={'\\overgroup{PDR}'} />): An arc of a circle measuring 180∘.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
