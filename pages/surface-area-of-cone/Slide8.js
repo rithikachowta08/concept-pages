@@ -174,7 +174,7 @@ const Slide8 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           Volume
         </TextSpanBg>
@@ -184,7 +184,7 @@ const Slide8 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           Base area
         </TextSpanBg>
@@ -194,7 +194,7 @@ const Slide8 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           Perpendicular height
         </TextSpanBg>
