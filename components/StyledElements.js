@@ -141,7 +141,7 @@ export const StyledImg = styled.img`
       width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
       height: ${(props) => props.tabletSize || props.mobileSize || "350px"};
    }
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 900px) {
       width: ${(props) =>
          props.smallDesktopSize || props.tabletSize || "450px"};
       height: ${(props) =>
