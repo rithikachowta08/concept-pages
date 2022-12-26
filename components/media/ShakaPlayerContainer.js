@@ -203,24 +203,6 @@ const ShakaPlayerContainer = (props) => {
       }
    }
 
-   function loginButton() {
-      localStorage.setItem("loginSource", "qna_videoSolution");
-
-      var currentPage = window.location.href.split("/")[4];
-      if (currentPage == "search") {
-         currentPage =
-            currentPage + "/" + window.location.href.split("/")[5] + "/";
-      }
-      currentPage += "/";
-      localStorage.setItem("previousPage", currentPage);
-
-      if (isSafariOrIOSDevice() || isMobileDevice()) {
-         window.location.href = "/question-answer/login/";
-      } else {
-         props.setlogin(true);
-      }
-   }
-
    function playvideo() {
       setVideoOpened(true);
       watchVideo();
@@ -245,49 +227,6 @@ const ShakaPlayerContainer = (props) => {
    return (
       <>
          <div className={styles.videoMainContainer}>
-            {videosViewedbyUser.length >= videoBlockerLimit &&
-               !props.videosViewedbyUser.includes(props.videoContent.id) &&
-               loggedIn == false && (
-                  <div className={styles.joinForFree}>
-                     <div>
-                        <div className={styles.joinForFreeTitle}>
-                           Download BYJU&apos;S The Learning App
-                           {/* Hey! Enjoy learning and solving doubts? */}
-                        </div>
-                        <div className={styles.joinForFreeSubTitle}>
-                           Download the app to view unlimited solutions on app.
-                           {/* <div>Sign up to watch it for free!</div> */}
-                        </div>
-                        <button
-                           className={styles.joinForFreeButton}
-                           onClick={() => {
-                              loginButton();
-                              pushDataLayer({
-                                 event: "qa_join_click",
-                                 question_name: limitTo100(
-                                    props.question_title
-                                 ),
-                                 video_name: props.videoContent.video_title,
-                              });
-                           }}
-                        >
-                           Watch Now in App
-                           {/* Signup to unlock */}
-                        </button>
-                        {/* <div className={styles.joinForFreeSubTitleBottom}>
-                <span >Already have an account? </span>
-                <u style={{cursor:'pointer'}} onClick={()=>{loginButton(); pushDataLayer({
-                'event':'qa_login_click',
-                'question_name': limitTo100(props.question_title),
-                'video_name': props.videoContent.video_title,
-                'source':'qna_videoSolution'
-              });
-              }} >Login</u>
-              </div> */}
-                     </div>
-                  </div>
-               )}
-
             {!videoOpened && (
                <div
                   className={styles.videoContainer}
@@ -344,74 +283,6 @@ const ShakaPlayerContainer = (props) => {
                   />
                </div>
             )}
-            {/* <div className={styles.metaContainer}>
-               <div className={styles.videoMeta}>
-                  <div className={styles.videoTitle}>
-                     {props.videoContent["video_title"]}
-                  </div>
-                  <div className={styles.subjectDurationContainer}>
-                     <div className={styles.subjectTitle}>{props.subject}</div>
-                     <div className={styles.durationViewsContainer}>
-                        {duration} Min | {videoViews} Views
-                     </div>
-                  </div>
-               </div>
-               <div
-                  className={styles.videoSettings}
-                  onClick={() => {
-                     setOpenRatePopup(true);
-                     pushDataLayer({
-                        event: "qa_rating_click",
-                        question_name: limitTo100(props.question_title),
-                        video_name: props.videoContent.video_title,
-                        user_id: localStorage.getItem("backendUuid")
-                           ? String(localStorage.getItem("backendUuid"))
-                           : undefined,
-                     });
-                  }}
-               >
-                  <div>
-                     <Image
-                        loading="lazy"
-                        src={assetURL + "/rateIcon.png"}
-                        height={22.51}
-                        width={23.3}
-                        alt="feedback-image"
-                     ></Image>
-                     <div className={styles.rateTitle}>Rate</div>
-                  </div>
-               </div>
-            </div> */}
-
-            {/* <Popup
-               open={openRatePopup}
-               lockScroll={true}
-               closeOnDocumentClick
-               className="rateVideo-popup"
-               onClose={() => setOpenRatePopup(false)}
-            >
-               <RateVideoPopup
-                  setRateVideoPopupOpen={(el) => setOpenRatePopup(el)}
-                  setFeedbackSubmitted={(el) => setFeedbackSubmitted(el)}
-                  videoContent={props.videoContent}
-                  video_title={props.videoContent.video_title}
-                  question_title={props.question_title}
-                  setRating={(el) => props.setRating(el)}
-                  videoRating={props.videoRating}
-               />
-            </Popup> */}
-
-            {/* <Popup
-               open={feedbackSubmitted}
-               closeOnDocumentClick
-               lockScroll={true}
-               className="thank-popup"
-               onClose={() => setFeedbackSubmitted(false)}
-            >
-               <ThankyouPopup
-                  setOpen={(el) => setFeedbackSubmitted(el)}
-               ></ThankyouPopup>
-            </Popup> */}
          </div>
       </>
    );
