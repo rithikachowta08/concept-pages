@@ -16,9 +16,10 @@ const TextSpanBg = dynamic(() =>
 );
 
 const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide4/2.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide4/3.svg";
+const surfaceCone_rightlslide = "assets/surface-area-of-cone/slide4/4.svg";
+const surfaceCone_height = "assets/surface-area-of-cone/slide4/5.svg";
 
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,15 +36,16 @@ const Slide4 = ({ downIcon }) => {
         <TransitionImage
           images={[
             surfaceCone_full,
+            surfaceCone_top,
             surfaceCone_right,
+            surfaceCone_rightlslide,
             surfaceCone_height,
-            surfaceCone_rightslide,
           ]}
           altTexts={[
             "Diagram of a cone",
-            "Diagram of a cone with highlighted radius.",
-            "Diagram of a cone with highlighted height.",
-            "Diagram of a cone with highlighted slant height.",
+            "Diagram of a cone with highlighted apex or vertex",
+            "Diagram of a cone with highlighted slant height",
+            "Diagram of a cone with highlighted height",
           ]}
           activeIndex={activeIndex}
         />
@@ -66,7 +68,7 @@ const Slide4 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         The radius of circular base is the&nbsp;
         <TextSpanBg
-          id={1}
+          id={2}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
@@ -80,7 +82,7 @@ const Slide4 = ({ downIcon }) => {
         The length of the cone from the vertex to any point on the circumference
         of the base is the&nbsp;
         <TextSpanBg
-          id={1}
+          id={3}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
@@ -93,7 +95,7 @@ const Slide4 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         The distance from the vertex of the cone to the base is the&nbsp;
         <TextSpanBg
-          id={1}
+          id={4}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}

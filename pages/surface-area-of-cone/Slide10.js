@@ -20,12 +20,13 @@ const EquationTable = dynamic(() =>
 import Pill from "components/Pill";
 import MathElement from "components/MathElement";
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
+const surfaceCone_full = "assets/surface-area-of-cone/slide10/1.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide10/2.svg";
+const surfaceCone_bottom = "assets/surface-area-of-cone/slide10/3.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide10/4.svg";
+const surfaceCone_rightslide = "assets/surface-area-of-cone/slide10/5.svg";
 
-const Slide8 = ({ downIcon }) => {
+const Slide10 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
@@ -78,15 +79,17 @@ const Slide8 = ({ downIcon }) => {
         <TransitionImage
           images={[
             surfaceCone_full,
+            surfaceCone_top,
+            surfaceCone_bottom,
             surfaceCone_right,
-            surfaceCone_height,
             surfaceCone_rightslide,
           ]}
           altTexts={[
-            "Diagram of a cone",
-            "Diagram of a cone with highlighted radius.",
-            "Diagram of a cone with highlighted height.",
-            "Diagram of a cone with highlighted slant height.",
+            "Diagram of a cone with radius and slant height labelled",
+            "Diagram of a cone with highlighted area of curved surface",
+            "Diagram of a cone with highlighted area of circular base",
+            "Diagram of a cone with radius highlighted",
+            "Diagram of a cone with slant height highlighted",
           ]}
           activeIndex={activeIndex}
         />
@@ -101,17 +104,17 @@ const Slide8 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           curved surface area
         </TextSpanBg>
         &nbsp;and its{" "}
         <TextSpanBg
-          id={1}
+          id={2}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           base area
         </TextSpanBg>
@@ -134,22 +137,22 @@ const Slide8 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         Here, (r) is the&nbsp;
         <TextSpanBg
-          id={1}
+          id={3}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           radius
         </TextSpanBg>
         &nbsp;of the circular base of a cone, and{" "}
         <MathElement htmlString={latex[mathjaxCounter++]} /> is the&nbsp;
         <TextSpanBg
-          id={1}
+          id={4}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.AQUA}
         >
           slant height
         </TextSpanBg>
@@ -159,4 +162,4 @@ const Slide8 = ({ downIcon }) => {
   );
 };
 
-export default Slide8;
+export default Slide10;

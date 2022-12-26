@@ -18,7 +18,7 @@ const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const cube_unit = "assets/surface-area-of-cone/slide2/1.svg";
+const cube_unit = "assets/surface-area-of-cone/slide3/1.svg";
 const Slide3 = ({ downIcon }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalContent = (
@@ -32,7 +32,7 @@ const Slide3 = ({ downIcon }) => {
         alignSelf="center"
         width="400px"
         marginBottom="50px"
-        alt="Diagram of right angle triangle"
+        alt="Diagram of a right angle triangle"
       />
     </Flex>
   );
@@ -46,7 +46,6 @@ const Slide3 = ({ downIcon }) => {
     <TextAndAppletSlide
       downIcon={downIcon}
       title="Formation of a Cone"
-      secondaryTitle="Introduction to a Cone"
       appletSrc="./applets/triangle.html"
     >
       <Modal

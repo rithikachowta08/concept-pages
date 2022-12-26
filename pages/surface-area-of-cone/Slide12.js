@@ -20,12 +20,11 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const rhombus_full = "assets/area-of-rhombus/slide14/1.svg";
-const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
-const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
-const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
+const surfaceCone_full = "assets/surface-area-of-cone/slide12/1.svg";
+const surfaceCone_rightslide = "assets/surface-area-of-cone/slide12/2.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide12/3.svg";
 
-const Slide11 = ({ downIcon }) => {
+const Slide12 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
@@ -110,12 +109,11 @@ const Slide11 = ({ downIcon }) => {
       title="Illustrative Example"
       diagram={
         <TransitionImage
-          images={[rhombus_full, rhombus_angles, rhombus_degree, rhombus_lines]}
+          images={[surfaceCone_full, surfaceCone_rightslide, surfaceCone_right]}
           altTexts={[
-            "Diagram of rhombus with side length 4 in and included angle 30 degree shown",
-            "Diagram of rhombus with side length 4 in highlighted",
-            "Diagram of rhombus with included angle 30 degree highlighted",
-            "Diagram of rhombus with bounded region highlighted",
+            "Diagram of a cone with radius 3 cm and height 10 cm.",
+            "Diagram of a cone with slant height 10 cm highlighted",
+            "Diagram of a cone with radius 3 cm highlighted",
           ]}
           activeIndex={activeIndex}
         />
@@ -149,7 +147,7 @@ const Slide11 = ({ downIcon }) => {
         >
           Radius (r)
         </TextSpanBg>
-        &nbsp;= 3 cm &nbsp;
+        &nbsp;= 3 cm&nbsp;
       </Paragraph>
       <Paragraph>
         <EquationTable
@@ -160,4 +158,4 @@ const Slide11 = ({ downIcon }) => {
   );
 };
 
-export default Slide11;
+export default Slide12;

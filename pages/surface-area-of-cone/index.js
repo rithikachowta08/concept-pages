@@ -35,15 +35,18 @@ const SurfaceAreaofCone = () => {
     <Slide13 key={12} />,
   ];
   const navigationSections = [
-    { title: "What is the surface area of a cone?", slides: [1, 2, 3, 4] },
-    { title: "Curved surface area", slides: [5, 6] },
+    {
+      title: "What is the surface area of a cone?",
+      slides: [1, 2, 3, 4, 5, 6],
+    },
+    { title: "Curved surface area", slides: [7, 8] },
     {
       title: "Total surface area",
-      slides: [7, 8, 9, 10, 11, 12],
+      slides: [9, 10, 11],
     },
   ];
 
-  const darkBgIndices = [0, 4, 5, 7, 9];
+  const darkBgIndices = [0, 5, 7, 9, 12];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

@@ -16,9 +16,9 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide3/1.svg";
-const surfaceCone_bottom = "assets/surface-area-of-cone/slide3/2.svg";
-const surfaceCone_top = "assets/surface-area-of-cone/slide3/3.svg";
+const surfaceCone_full = "assets/surface-area-of-cone/slide2/1.svg";
+const surfaceCone_bottom = "assets/surface-area-of-cone/slide2/2.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide2/3.svg";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -30,7 +30,6 @@ const Slide2 = ({ downIcon }) => {
   };
   return (
     <TextAndDiagramSlide
-      secondaryTitle="What is a cone?"
       title="What is a Cone?"
       diagram={
         <TransitionImage
@@ -46,14 +45,14 @@ const Slide2 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        A cone is a &nbsp;
+        A cone is a&nbsp;
         <HyperLink
           href={"https://byjus.com/us/math/area-of-parallelogram/"}
           color={colors.DARK_BLUE}
         >
           three-dimensional
         </HyperLink>{" "}
-        &nbsp;shape that narrows smoothly from a &nbsp;
+        &nbsp;shape that narrows smoothly from a&nbsp;
         <TextSpanBg
           id={1}
           onHover={onHover}

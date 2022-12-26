@@ -17,15 +17,11 @@ const TextSpanBg = dynamic(() =>
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+const surfaceCone_full = "assets/surface-area-of-cone/slide11/1.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide11/2.svg";
+const surfaceCone_bottom = "assets/surface-area-of-cone/slide11/3.svg";
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
-
-const Slide8 = ({ downIcon }) => {
+const Slide11 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
@@ -90,17 +86,11 @@ const Slide8 = ({ downIcon }) => {
       secondaryTitle="Total Surface Area"
       diagram={
         <TransitionImage
-          images={[
-            surfaceCone_full,
-            surfaceCone_right,
-            surfaceCone_height,
-            surfaceCone_rightslide,
-          ]}
+          images={[surfaceCone_full, surfaceCone_top, surfaceCone_bottom]}
           altTexts={[
-            "Diagram of a cone",
-            "Diagram of a cone with highlighted radius.",
-            "Diagram of a cone with highlighted height.",
-            "Diagram of a cone with highlighted slant height.",
+            "Diagram of a cone with radius and slant height labelled",
+            "Diagram of a cone with curved surface area highlighted",
+            "Diagram of a cone with circular base highlighted.",
           ]}
           activeIndex={activeIndex}
         />
@@ -120,7 +110,7 @@ const Slide8 = ({ downIcon }) => {
         </TextSpanBg>
         &nbsp;and its{" "}
         <TextSpanBg
-          id={1}
+          id={2}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
@@ -140,4 +130,4 @@ const Slide8 = ({ downIcon }) => {
   );
 };
 
-export default Slide8;
+export default Slide11;
