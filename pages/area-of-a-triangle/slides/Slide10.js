@@ -13,7 +13,7 @@ const Slide10 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg={"DARK"}
-         title="Area of different types of triangles"
+         title="Area of Different Types of Triangles"
          images={[
             {
                diagram: (

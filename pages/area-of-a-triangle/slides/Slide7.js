@@ -14,12 +14,12 @@ const Slide7 = ({ downIcon }) => {
    return (
       <TextAndAppletSlide
          title={"Derivation"}
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          bg={"LIGHT"}
          appletSrc={applet}
          downIcon={downIcon}
       >
-         <Paragraph>
+         <Paragraph marginBottom={"40px"}>
             Two identical triangles combine to form a parallelogram.
          </Paragraph>
          <Paragraph>
