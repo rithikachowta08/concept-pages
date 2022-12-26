@@ -51,7 +51,7 @@ const Slide6 = ({ downIcon }) => {
         >
           space occupied
         </TextSpanBg>{" "}
-        &nbsp;within the boundaries of the cone in a three- dimensional space.
+        &nbsp;within the boundaries of the cone in a three-dimensional space.
       </Paragraph>
     </TextAndDiagramSlide>
   );

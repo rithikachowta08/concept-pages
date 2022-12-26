@@ -88,6 +88,7 @@ const Slide8 = ({ downIcon }) => {
   let latex = [];
   latex.push(`(cm^3)`);
   latex.push(`(m^3)`);
+  latex.push(`({\\pi}r^2)`);
   latex.push(`= \\dfrac{1}{3}`);
   latex.push(`V = \\dfrac{1}{3}{\\pi}r^2h`);
 
@@ -162,8 +163,9 @@ const Slide8 = ({ downIcon }) => {
         color={colors.DARK_GREY}
       />
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        The volume, (V), of a cone is one-third of the product of the area of
-        the base (πr2) and height (h).
+        The volume, ‘V’, of a cone is one-third of the product of the area of
+        the base &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} />
+        &nbsp; and height (h).
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         &nbsp;
