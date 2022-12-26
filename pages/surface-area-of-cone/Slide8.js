@@ -164,8 +164,9 @@ const Slide8 = ({ downIcon }) => {
       />
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         The volume, ‘V’, of a cone is one-third of the product of the area of
-        the base &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} />
-        &nbsp; and height (h).
+        the base &nbsp;
+        <MathElement htmlString={latex[mathjaxCounter++]} />
+        &nbsp;and height (h).
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         &nbsp;
