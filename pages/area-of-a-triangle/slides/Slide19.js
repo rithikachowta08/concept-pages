@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
-
-const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
-const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
 import TransitionImage from "components/media/TransitionImage";
 import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+
+const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
+const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
 
 // Two sides and included angle
 const Slide19 = ({ downIcon }) => {
@@ -17,7 +17,19 @@ const Slide19 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Two sides and the included angle"}
-         secondaryTitle={"Area of a Triangle"}
+         // secondaryTitle={"Area of a Triangle"}
+         secondaryTitle={
+            <p
+               style={{
+                  color: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  marginTop: "30px",
+               }}
+            >
+               Area of a triangle
+            </p>
+         }
          bg={"DARK"}
          diagram={
             <TransitionImage
