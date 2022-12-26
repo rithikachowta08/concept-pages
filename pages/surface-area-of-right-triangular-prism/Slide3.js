@@ -34,6 +34,11 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain, sides_shaded, all_sides_shaded]}
+               altTexts={[
+                  "Diagram of a right triangular prism",
+                  "Diagram of a right triangular prism with highlighted lateral surface area.",
+                  "Diagram of a right triangular prism with highlighted total surface area.",
+               ]}
                activeIndex={activeIndex}
             />
          }

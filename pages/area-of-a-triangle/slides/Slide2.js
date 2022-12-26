@@ -41,7 +41,7 @@ const Slide2 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title="Definition"
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
             <TransitionImage

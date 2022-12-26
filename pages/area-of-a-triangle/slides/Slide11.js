@@ -15,7 +15,7 @@ const Slide11 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Scalene triangle"}
-         secondaryTitle={"Area of Different types of Triangles"}
+         secondaryTitle={"Area of Different Types of Triangles"}
          bg={"LIGHT"}
          diagram={
             <StyledImg

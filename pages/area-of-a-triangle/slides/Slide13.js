@@ -47,7 +47,7 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               base &apos;b&apos;
+               base &quot;b&quot;
             </TextSpanBg>{" "}
             and the{" "}
             <TextSpanBg
@@ -60,7 +60,7 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               equal sides &apos;a&apos;
+               equal sides &quot;a&quot;
             </TextSpanBg>{" "}
             , its area can be calculated as:
          </Paragraph>
