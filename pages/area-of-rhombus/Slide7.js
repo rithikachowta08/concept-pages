@@ -43,7 +43,7 @@ const Slide7 = ({ downIcon }) => {
         Here, the length and width of the rectangle are the base and height of
         the rhombus.
       </Paragraph>
-      <Pill>
+      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
         Area of the rhombus = Base(b){" "}
         <MathElement htmlString={latex[mathjaxCounter++]} /> Height(h)
       </Pill>

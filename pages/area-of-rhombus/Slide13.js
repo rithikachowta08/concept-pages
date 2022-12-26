@@ -138,7 +138,7 @@ const Slide13 = ({ downIcon }) => {
         />
       </Paragraph>
       <Paragraph>
-        <Pill>
+        <Pill color={colors.WHITE} bgColor={colors.GREEN}>
           Area of a rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
         </Pill>
       </Paragraph>

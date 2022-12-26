@@ -72,7 +72,7 @@ const Slide6 = ({ downIcon }) => {
         </TextSpanBg>{" "}
         .
       </Paragraph>
-      <Pill>
+      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
         Area of the rhombus = Base{" "}
         <MathElement htmlString={latex[mathjaxCounter++]} /> Perpendicular
         height

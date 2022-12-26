@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { colors } from "utils/colors";
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
 );
@@ -22,12 +23,14 @@ const Slide7 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: ["Volume of Cube"],
+        value: ["Area of Rhombus ABCD"],
         type: "text",
       },
       rhsLatex: {
-        value: ["Area of Rectangle AO,O,,B"],
-        type: "text",
+        value: [
+          "Area\\ of\\ Rectangle\\ AO{\\scriptsize\\raisebox{0.45em}{$,$}}O{\\scriptsize\\raisebox{0.45em}{$,$}}{\\scriptsize\\raisebox{0.45em}{$,$}}B",
+        ],
+        type: "latex",
       },
       // ﹐﹐
       rhsHint: {
@@ -78,7 +81,7 @@ const Slide7 = ({ downIcon }) => {
           <MathElement htmlString={latex[mathjaxCounter++]} />.
         </Paragraph>
       </div>
-      <Pill>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN}>
         Area of the rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndAppletSlide>
