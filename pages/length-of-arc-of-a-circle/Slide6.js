@@ -29,25 +29,15 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const circle_showing_the_sector = "assets/length-of-arc-of-a-circle/circle_showing_the_sector.svg";
-const central_angle_of_the_arc = "assets/length-of-arc-of-a-circle/central_angle_of_the_arc.svg";
-const length_of_the_arc = "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
-// const unit_square = "assets/area-of-rectangle/unit_square.svg";
+const typeofsector_circle = "assets/length-of-arc-of-a-circle/typeofsector_circle.svg";
+const typeofsector_minor = "assets/length-of-arc-of-a-circle/typeofsector_minor.svg";
+const typeofsector_major = "assets/length-of-arc-of-a-circle/typeofsector_major.svg";
+const typeofsector_semicircular= "assets/length-of-arc-of-a-circle/typeofsector_semicircular.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
-const Slide3 = ({ downIcon }) => {
+const Slide6 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph color="white">
-            A unit square is a square with side length equal to 1 unit.
-         </Paragraph>
-         {/* <ModalImg
-            src={unit_square}
-         /> */}
-      </Flex>
-   );
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const onClick = () => {
@@ -64,34 +54,26 @@ const Slide3 = ({ downIcon }) => {
    };
    return (
       <TextAndDiagramSlide
-         title="Measure of an Arc"
-         secondaryTitle="Arc of a Circle"
+         title="Types of Sector"
+         secondaryTitle="Sector of a Circle"
          diagram={
             <TransitionImage
-               images={[
-                  circle_showing_the_sector,
-                  central_angle_of_the_arc,
-                  length_of_the_arc,
-               ]}
+               images={[typeofsector_circle,typeofsector_minor, typeofsector_major, typeofsector_semicircular]}
                altTexts={[
-               "Diagram of a circle showing the sector",
-               "Diagram of a circle highlighting central angle of the arc",
-               "Diagram of a circle highlighting length of the arc"
-               ]}
-
+                  "Diagram of a circle",
+                  "Diagram of a circle highlighting the minor sector",
+                  "Diagram of a circle highlighting the major sector",
+                  "Diagram of a circle highlighting the semicircular sector"
+                  ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         {/* <Modal
-            isOpen={isModalOpen}
-            title="Unit Square"
-            content={modalContent}
-            onDismiss={onDismiss}
-         /> */}
+         <Paragraph>
+         The sectors of a circle are classified based on the degree measure of the sector.
+         </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
-            An arc can be measured using two different ways:&nbsp;
             <TextLine>
                <TextSpanBg
                   onHover={()=>onHover(1)}
@@ -101,9 +83,9 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
-                  Central angle of the arc (𝜃)
-               </TextSpanBg>
+                  Minor sector
+               </TextSpanBg>&nbsp;
+               (OACB): A sector of a circle measuring less than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
@@ -114,13 +96,26 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
-                  The length of the arc (l)
-               </TextSpanBg>
+                  Major sector
+               </TextSpanBg>&nbsp;
+               (OADB): A sector of a circle measuring greater than 180°.
+            </TextLine>
+            <TextLine>
+               <TextSpanBg
+                  onHover={()=>onHover(3)}
+                  onHoverOut={onHoverOut}
+                  color={colors.RED}
+                  hoverColor={colors.PURPLE}
+                  fontWeight={700}
+                  fontSize="2.2rem"
+               >
+                  Semicircular sector
+               </TextSpanBg>&nbsp;
+               (OPDR): A sector of a circle measuring 180°.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide3;
+export default Slide6;
