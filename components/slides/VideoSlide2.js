@@ -16,7 +16,6 @@ const VideoSlideWrap = styled.div`
    background-color: ${colors.BLACK};
    height: 100%;
    width: 100%;
-   padding: 20px;
    gap: 20px;
    position: relative;
    display: flex;
@@ -64,11 +63,11 @@ const VideoSlide = ({ title, downIcon, isMobile }) => {
                questionid: 441130,
             }}
          />
-         {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
+         {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
          {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>}
          {downIcon
             ? React.cloneElement(downIcon, { isVideoSlide: true })
-            : null}
+            : null} */}
       </VideoSlideWrap>
    );
 };

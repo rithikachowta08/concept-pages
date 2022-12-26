@@ -244,7 +244,6 @@ const ShakaPlayerContainer = (props) => {
 
    return (
       <>
-         <div className={styles.videoSolutionHeader}>Video Solution</div>
          <div className={styles.videoMainContainer}>
             {videosViewedbyUser.length >= videoBlockerLimit &&
                !props.videosViewedbyUser.includes(props.videoContent.id) &&
