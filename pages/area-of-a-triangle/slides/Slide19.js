@@ -17,7 +17,7 @@ const Slide19 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Two sides and the included angle"}
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          bg={"DARK"}
          diagram={
             <TransitionImage
@@ -32,7 +32,7 @@ const Slide19 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph color={colors.WHITE}>
-            Given any{" "}
+            In a triangle, given any{" "}
             <TextSpanBg
                color={colors.RED}
                hoverColor={colors.AQUA}
@@ -40,9 +40,9 @@ const Slide19 = ({ downIcon }) => {
                onHoverOut={() => setActiveIndex(0)}
             >
                {" "}
-               two sides of the triangle and the included angle between them,
+               two sides and the included angle
             </TextSpanBg>{" "}
-            its area can be calculated as:
+            between them, the area can be calculated as:
          </Paragraph>
          <Paragraph>
             <Pill>
