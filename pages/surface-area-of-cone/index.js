@@ -14,6 +14,9 @@ const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
+const Slide11 = dynamic(() => import("./Slide11"));
+const Slide12 = dynamic(() => import("./Slide12"));
+const Slide13 = dynamic(() => import("./Slide13"));
 
 const SurfaceAreaofCone = () => {
   const SlideArray = [
@@ -27,17 +30,16 @@ const SurfaceAreaofCone = () => {
     <Slide8 key={7} />,
     <Slide9 key={8} />,
     <Slide10 key={9} />,
+    <Slide11 key={10} />,
+    <Slide12 key={11} />,
+    <Slide13 key={12} />,
   ];
   const navigationSections = [
-    { title: "Introduction to a cone", slides: [1, 2, 3, 4] },
-    { title: "Volume of a cone", slides: [5, 6] },
+    { title: "What is the surface area of a cone?", slides: [1, 2, 3, 4] },
+    { title: "Curved surface area", slides: [5, 6] },
     {
-      title: "General formula",
-      slides: [7, 8],
-    },
-    {
-      title: "Relation between volume of cone and cylinder",
-      slides: [9],
+      title: "Total surface area",
+      slides: [7, 8, 9, 10, 11, 12],
     },
   ];
 

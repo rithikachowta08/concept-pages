@@ -14,13 +14,65 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+import Pill from "components/Pill";
+import MathElement from "components/MathElement";
 
 const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
 const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
 const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
 const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
 
-const Slide4 = ({ downIcon }) => {
+const Slide8 = ({ downIcon }) => {
+  let EquationLatex0 = [
+    {
+      lhsLatex: {
+        value: [`Total surface area `],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["Curved surface area + Base area"],
+        type: "text",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["{\\pi}rl + {\\pi}r^2"],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["{\\pi}r(l+r)\\ square\\ units"],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+  ];
+  let latexEquationContainer = [];
+  latexEquationContainer.push(EquationLatex0);
+  let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
     setActiveIndex(Number(e.target.id));
@@ -28,9 +80,14 @@ const Slide4 = ({ downIcon }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
+  let latex = [];
+  latex.push(`= {\\pi}r(l+r)`);
+  latex.push(`(\\ell)`);
+  let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
-      title="Parts of a Cone"
+      title="Derivation"
+      secondaryTitle="Total Surface Area"
       diagram={
         <TransitionImage
           images={[
@@ -51,7 +108,7 @@ const Slide4 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        The pointed end of a cone is called the&nbsp;
+        The total surface area of a cone is the sum of its&nbsp;
         <TextSpanBg
           id={1}
           onHover={onHover}
@@ -59,12 +116,9 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          vertex
+          curved surface area
         </TextSpanBg>
-        &nbsp;or apex.
-      </Paragraph>
-      <Paragraph lineHeight={lineHeightProp}>
-        The radius of circular base is the&nbsp;
+        &nbsp;and its{" "}
         <TextSpanBg
           id={1}
           onHover={onHover}
@@ -72,39 +126,18 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          radius
-        </TextSpanBg>
-        &nbsp;of the cone.
-      </Paragraph>
-      <Paragraph lineHeight={lineHeightProp}>
-        The length of the cone from the vertex to any point on the circumference
-        of the base is the&nbsp;
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
-        >
-          slant height
+          base area
         </TextSpanBg>
         .
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp}>
-        The distance from the vertex of the cone to the base is the&nbsp;
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
-        >
-          height
-        </TextSpanBg>
-        &nbsp;of the cone.
+
+      <Paragraph>
+        <EquationTable
+          equationLatex={latexEquationContainer[latexEquationCounter++]}
+        ></EquationTable>
       </Paragraph>
     </TextAndDiagramSlide>
   );
 };
 
-export default Slide4;
+export default Slide8;
