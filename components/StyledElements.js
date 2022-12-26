@@ -38,7 +38,7 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 810px) {
+   @media only screen and (min-width: 200px) and (max-width: 810px) and (min-height: 600px) {
       &::before {
          display: none;
       }
@@ -85,6 +85,7 @@ export const Flex = styled.div`
    flex-direction: ${(props) => props.direction || "row"};
    width: ${(props) => props.width};
    max-width: ${(props) => props.maxWidth};
+   max-height: ${(props) => props.maxHeight};
    height: ${(props) => props.height};
    gap: ${(props) => props.gap};
    flex: ${(props) => props.flex};

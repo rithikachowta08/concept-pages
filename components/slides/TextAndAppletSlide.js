@@ -103,6 +103,7 @@ const TextAndAppletSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="50%"
                >
                   <FillerNavBar />
                   <LeftWrap marginRight="20px">
