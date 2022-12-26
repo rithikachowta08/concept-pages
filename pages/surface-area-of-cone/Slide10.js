@@ -24,7 +24,7 @@ const Slide10 = ({ downIcon }) => {
         Reference 1: &nbsp;
         <HyperLink
           href="https://www.geogebra.org/m/pfn6znft"
-          color={colors.AQUA}
+          color={colors.DARK_BLUE}
         >
           https://www.geogebra.org/m/pfn6znft
         </HyperLink>{" "}
@@ -33,7 +33,7 @@ const Slide10 = ({ downIcon }) => {
         Reference 2: &nbsp;
         <HyperLink
           href="https://www.geogebra.org/m/x54hJsVG"
-          color={colors.AQUA}
+          color={colors.DARK_BLUE}
         >
           https://www.geogebra.org/m/x54hJsVG
         </HyperLink>{" "}

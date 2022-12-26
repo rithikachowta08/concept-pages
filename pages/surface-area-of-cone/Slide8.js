@@ -103,15 +103,23 @@ const Slide8 = ({ downIcon }) => {
         &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} />, cubic feet,
         and so on.
       </Paragraph>
-      <Paragraph>Example:</Paragraph>
+      <Paragraph
+        marginBottom="1vh"
+        fontSize="1.5rem"
+        marginBottom="0px"
+        marginTop="10px"
+        padding="0px 15px"
+      >
+        Example:
+      </Paragraph>
       <StyledImg
         src={surfaceCone_height_right}
         alignSelf="center"
         width="400px"
-        marginBottom="50px"
+        marginBottom="0px"
         alt="Diagram of a cone with radius 1 cm and height 3 cm."
       />
-      <Paragraph>
+      <Paragraph marginBottom="1vh" fontSize="1.5rem">
         <EquationTable
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         />
