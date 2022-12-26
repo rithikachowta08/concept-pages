@@ -17,20 +17,29 @@ const TextSpanBg = dynamic(() =>
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+const surfaceCone_full = "assets/surface-area-of-cone/slide11/1.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide11/2.svg";
+const surfaceCone_bottom = "assets/surface-area-of-cone/slide11/3.svg";
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide10/1.svg";
-const surfaceCone_top = "assets/surface-area-of-cone/slide10/2.svg";
-const surfaceCone_bottom = "assets/surface-area-of-cone/slide10/3.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide10/4.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide10/5.svg";
-
-const Slide10 = ({ downIcon }) => {
+const Slide11 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: [`Total surface area`],
+        value: [`Total surface area `],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["Curved surface area + Base area"],
+        type: "text",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
         type: "text",
       },
       rhsLatex: {
@@ -48,7 +57,7 @@ const Slide10 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(l+r)"],
+        value: ["{\\pi}r(l+r)\\ square\\ units"],
         type: "latex",
       },
       rhsHint: {
@@ -73,38 +82,29 @@ const Slide10 = ({ downIcon }) => {
   let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
-      title="Total Surface Area"
-      secondaryTitle="Surface Area of Cone"
+      title="Derivation"
+      secondaryTitle="Total Surface Area"
       diagram={
         <TransitionImage
-          images={[
-            surfaceCone_full,
-            surfaceCone_top,
-            surfaceCone_bottom,
-            surfaceCone_right,
-            surfaceCone_rightslide,
-          ]}
+          images={[surfaceCone_full, surfaceCone_top, surfaceCone_bottom]}
           altTexts={[
             "Diagram of a cone with radius and slant height labelled",
-            "Diagram of a cone with highlighted area of curved surface",
-            "Diagram of a cone with highlighted area of circular base",
-            "Diagram of a cone with radius highlighted",
-            "Diagram of a cone with slant height highlighted",
+            "Diagram of a cone with curved surface area highlighted",
+            "Diagram of a cone with circular base highlighted.",
           ]}
           activeIndex={activeIndex}
         />
       }
-      bg="DARK"
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+      <Paragraph lineHeight={lineHeightProp}>
         The total surface area of a cone is the sum of its&nbsp;
         <TextSpanBg
           id={1}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.DARK_BLUE}
         >
           curved surface area
         </TextSpanBg>
@@ -114,52 +114,20 @@ const Slide10 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.DARK_BLUE}
         >
           base area
         </TextSpanBg>
         .
       </Paragraph>
 
-      <Paragraph color={colors.WHITE}>
+      <Paragraph>
         <EquationTable
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
-      </Paragraph>
-
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        <Pill bgColor={colors.GREEN} color={colors.WHITE}>
-          Total surface area{" "}
-          <MathElement htmlString={latex[mathjaxCounter++]} /> square units
-        </Pill>
-      </Paragraph>
-
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        Here, (r) is the&nbsp;
-        <TextSpanBg
-          id={3}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.AQUA}
-        >
-          radius
-        </TextSpanBg>
-        &nbsp;of the circular base of a cone, and{" "}
-        <MathElement htmlString={latex[mathjaxCounter++]} /> is the&nbsp;
-        <TextSpanBg
-          id={4}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.AQUA}
-        >
-          slant height
-        </TextSpanBg>
-        &nbsp;of a cone.
       </Paragraph>
     </TextAndDiagramSlide>
   );
 };
 
-export default Slide10;
+export default Slide11;

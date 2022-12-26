@@ -20,36 +20,19 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const rhombus_full = "assets/area-of-rhombus/slide14/1.svg";
-const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
-const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
-const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
+const surfaceCone_full = "assets/surface-area-of-cone/slide12/1.svg";
+const surfaceCone_rightslide = "assets/surface-area-of-cone/slide12/2.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide12/3.svg";
 
-const Slide14 = ({ downIcon }) => {
+const Slide12 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: [
-          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area}}}\\ of\\ the\\ rhombus`,
-        ],
-        type: "latex",
-      },
-      rhsLatex: {
-        value: ["a^2\\sin \\theta "],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
+        value: [`Surface area of a cone`],
         type: "text",
       },
       rhsLatex: {
-        value: ["4^2 \\sin 30\\degree"],
+        value: ["{\\pi}r(r+\\ell)"],
         type: "latex",
       },
       rhsHint: {
@@ -63,7 +46,7 @@ const Slide14 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["16 \\times \\dfrac{1}{2}"],
+        value: ["{\\pi} \\times 3\\:(3+10)\\ cm^2"],
         type: "latex",
       },
       rhsHint: {
@@ -77,7 +60,21 @@ const Slide14 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["8 \\  in^2"],
+        value: ["{\\pi} \\times 3\\times 13\\ cm^2"],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["39{\\pi}\\ cm^2"],
         type: "latex",
       },
       rhsHint: {
@@ -100,8 +97,7 @@ const Slide14 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`\\theta`);
-  latex.push(`= 30\\degree`);
+  latex.push(`(\\ell)`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
@@ -109,22 +105,26 @@ const Slide14 = ({ downIcon }) => {
   );
   return (
     <TextAndDiagramSlide
-      secondaryTitle="Illustrative Example"
-      title="Find the area of the rhombus whose dimensions are given below."
+      secondaryTitle="Total Surface Area"
+      title="Illustrative Example"
       diagram={
         <TransitionImage
-          images={[rhombus_full, rhombus_angles, rhombus_degree, rhombus_lines]}
+          images={[surfaceCone_full, surfaceCone_rightslide, surfaceCone_right]}
           altTexts={[
-            "Diagram of rhombus with side length 4 in and included angle 30 degree shown",
-            "Diagram of rhombus with side length 4 in highlighted",
-            "Diagram of rhombus with included angle 30 degree highlighted",
-            "Diagram of rhombus with bounded region highlighted",
+            "Diagram of a cone with radius 3 cm and height 10 cm.",
+            "Diagram of a cone with slant height 10 cm highlighted",
+            "Diagram of a cone with radius 3 cm highlighted",
           ]}
           activeIndex={activeIndex}
         />
       }
       downIcon={downIcon}
     >
+      <Paragraph>
+        Determine the surface area of the cone if the radius is 3 cm and the
+        slant height is 10 cm.
+      </Paragraph>
+      <Paragraph>Solution:</Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={1}
@@ -133,9 +133,9 @@ const Slide14 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          Side (a)
+          Slant height <MathElement htmlString={latex[mathjaxCounter++]} />
         </TextSpanBg>
-        &nbsp;= 4 in&nbsp;
+        &nbsp;= 10 cm&nbsp;
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
@@ -145,15 +145,12 @@ const Slide14 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          Angle (<MathElement htmlString={latex[mathjaxCounter++]} />)
+          Radius (r)
         </TextSpanBg>
-        &nbsp;
-        <MathElement htmlString={latex[mathjaxCounter++]} />
-        &nbsp;
+        &nbsp;= 3 cm&nbsp;
       </Paragraph>
       <Paragraph>
         <EquationTable
-          align="middle"
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
@@ -161,4 +158,4 @@ const Slide14 = ({ downIcon }) => {
   );
 };
 
-export default Slide14;
+export default Slide12;

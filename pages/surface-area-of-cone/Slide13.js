@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
 
-const Slide6 = ({ downIcon }) => {
+const Slide13 = ({ downIcon }) => {
   return (
     <VideoSlide
       downIcon={downIcon}
@@ -11,4 +11,4 @@ const Slide6 = ({ downIcon }) => {
   );
 };
 
-export default Slide6;
+export default Slide13;
