@@ -11,8 +11,8 @@ const Paragraph = dynamic(() =>
 const ModalTriggerText = dynamic(() =>
   import("components/text").then((mod) => mod.ModalTriggerText)
 );
-const StyledImg = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.StyledImg)
+const ModalImg = dynamic(() =>
+  import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
@@ -27,7 +27,7 @@ const Slide2 = ({ downIcon }) => {
         A right-angled triangle is a triangle in which one of its interior
         angles equal to 90 degrees.
       </Paragraph>
-      <StyledImg
+      <ModalImg
         src={cube_unit}
         alignSelf="center"
         width="400px"

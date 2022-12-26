@@ -22,11 +22,11 @@ const Paragraph = dynamic(() =>
 const ModalTriggerText = dynamic(() =>
   import("components/text").then((mod) => mod.ModalTriggerText)
 );
-const StyledImg = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.StyledImg)
-);
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const ModalImg = dynamic(() =>
+  import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
 const surfaceCone_full = "assets/surface-area-of-cone/slide8/1.svg";
@@ -112,7 +112,7 @@ const Slide8 = ({ downIcon }) => {
       >
         Example:
       </Paragraph>
-      <StyledImg
+      <ModalImg
         src={surfaceCone_height_right}
         alignSelf="center"
         width="400px"
