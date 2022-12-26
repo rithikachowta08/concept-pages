@@ -44,7 +44,7 @@ const Slide19 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph color={colors.WHITE}>
-            In a triangle, given any{" "}
+            In a triangle, given any In a triangle, given any{" "}
             <TextSpanBg
                color={colors.RED}
                hoverColor={colors.AQUA}
@@ -52,9 +52,10 @@ const Slide19 = ({ downIcon }) => {
                onHoverOut={() => setActiveIndex(0)}
             >
                {" "}
-               two sides and the included angle
+               two sides and the included angle two sides and the included angle
             </TextSpanBg>{" "}
-            between them, the area can be calculated as:
+            between them, the area can be calculated as: between them, the area
+            can be calculated as:
          </Paragraph>
          <Paragraph>
             <Pill>
