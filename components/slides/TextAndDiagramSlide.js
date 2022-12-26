@@ -34,6 +34,7 @@ const TextAndDiagramSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="30%"
                >
                   <FillerNavBar />
                   <LeftWrap>

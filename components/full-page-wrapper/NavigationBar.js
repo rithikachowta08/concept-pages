@@ -18,7 +18,7 @@ const Wrapper = styled.div`
    display: grid;
    grid-template-columns: 1fr;
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 810px) and (min-height: 600px) {
       height: 45px;
       width: 100%;
       top: 0;
@@ -35,11 +35,15 @@ const Wrapper = styled.div`
       scale: 0.8;
       transform: translateY(-70%);
    }
+
+   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
+      scale: 0.5;
+      transform: translateY(-100%);
+   }
 `;
 
 const NavigationBar = ({
    darkTheme,
-   deviceType,
    moveTo,
    sections,
    opacity,
