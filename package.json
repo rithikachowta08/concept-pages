@@ -1,40 +1,39 @@
 {
-  "name": "byjus-us-math",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@artsy/fresnel": "^6.1.0",
-    "@fullpage/react-fullpage": "^0.1.28",
-    "@matejmazur/react-katex": "^3.1.3",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/user-event": "^13.5.0",
-    "@zeit/next-css": "^1.0.1",
-    "axios": "^1.2.0",
-    "i": "^0.3.7",
-    "next": "^11.0.1",
-    "next-images": "^1.8.4",
-    "npm": "^9.1.3",
-    "prop-types": "^15.8.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-katex": "^3.0.1",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.6"
-  },
-  "devDependencies": {
-    "eslint": "^8.25.0",
-    "eslint-config-next": "^13.0.6",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.10",
-    "next": "^11.0.1",
-    "prettier": "^2.7.1",
-    "sass": "^1.56.1"
-  }
+   "name": "byjus-us-math",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+   },
+   "dependencies": {
+      "@fullpage/react-fullpage": "^0.1.28",
+      "@matejmazur/react-katex": "^3.1.3",
+      "@testing-library/jest-dom": "^5.16.5",
+      "@testing-library/user-event": "^13.5.0",
+      "@zeit/next-css": "^1.0.1",
+      "axios": "^1.2.0",
+      "i": "^0.3.7",
+      "next": "^11.0.1",
+      "next-images": "^1.8.4",
+      "npm": "^9.1.3",
+      "prop-types": "^15.8.1",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "react-katex": "^3.0.1",
+      "react-scripts": "5.0.1",
+      "styled-components": "^5.3.6"
+   },
+   "devDependencies": {
+      "eslint": "^8.25.0",
+      "eslint-config-next": "^13.0.6",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "eslint-plugin-react": "^7.31.10",
+      "next": "^11.0.1",
+      "prettier": "^2.7.1",
+      "sass": "^1.56.1"
+   }
 }

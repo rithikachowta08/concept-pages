@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { SlideWrap, Flex } from "components/StyledElements";
+import { Flex, SlideWrap } from "components/StyledElements";
 import { Paragraph, TextSpan } from "components/text";
-import { Media } from "utils/media";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideTitle, SlideSecondaryTitle, FillerNavBar } from "./common";
 import React from "react";
 import { colors } from "utils/colors";
@@ -36,7 +37,7 @@ const MultipleDiagramSlide = ({
    }, [bg, ref.current]);
    return (
       <>
-         <Media lessThan="md">
+         <MobileComponent>
             <SlideWrap
                bg={bg}
                ref={ref}
@@ -46,22 +47,7 @@ const MultipleDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                {/* NavBar */}
-               <Flex direction="column" gap="2vh">
-                  <FillerNavBar
-                     isMobile
-                     mobileNavBarHeight={global.mobileNavBarHeight}
-                  />
-                  <div>
-                     <SlideSecondaryTitle
-                        bg={bg}
-                        secondaryTitle={secondaryTitle}
-                        isMobile
-                     />
-                     <SlideTitle bg={bg} isMobile>
-                        {title}
-                     </SlideTitle>
-                  </div>
-               </Flex>
+               <FillerNavBar isMobile />
                {/* Body */}
                <Flex
                   direction="column"
@@ -70,6 +56,14 @@ const MultipleDiagramSlide = ({
                   alignItems="center"
                   width="100%"
                >
+                  <SlideSecondaryTitle
+                     bg={bg}
+                     secondaryTitle={secondaryTitle}
+                     isMobile
+                  />
+                  <SlideTitle bg={bg} isMobile>
+                     {title}
+                  </SlideTitle>
                   {children}
                   <Flex
                      direction="row"
@@ -81,13 +75,11 @@ const MultipleDiagramSlide = ({
                   >
                      {images.map((image, idx) => (
                         <ImageWrap key={idx}>
-                           {image.diagram
-                              ? React.cloneElement(image.diagram, {
-                                   smallMobileSize: "130px",
-                                   mobileSize: "150px",
-                                   tabletSize: "250px",
-                                })
-                              : image.diagram}
+                           {React.cloneElement(image.diagram, {
+                              smallMobileSize: "130px",
+                              mobileSize: "150px",
+                              tabletSize: "250px",
+                           })}
                            <Paragraph
                               color={
                                  bg === "LIGHT" ? colors.BLACK : colors.WHITE
@@ -105,10 +97,10 @@ const MultipleDiagramSlide = ({
                {/* DownIcon */}
                {downIcon
                   ? React.cloneElement(downIcon, { noMargin: true })
-                  : downIcon}
+                  : null}
             </SlideWrap>
-         </Media>
-         <Media greaterThanOrEqual="md">
+         </MobileComponent>
+         <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"}>
                <Flex
                   alignItems="center"
@@ -139,13 +131,11 @@ const MultipleDiagramSlide = ({
                      >
                         {images.map((image, idx) => (
                            <ImageWrap key={idx}>
-                              {image.diagram
-                                 ? React.cloneElement(image.diagram, {
-                                      tabletSize: "250px",
-                                      smallDesktopSize: "300px",
-                                      width: "400px",
-                                   })
-                                 : image.diagram}
+                              {React.cloneElement(image.diagram, {
+                                 tabletSize: "250px",
+                                 smallDesktopSize: "300px",
+                                 width: "400px",
+                              })}
                               <TextSpan
                                  color={
                                     bg === "LIGHT" ? colors.BLACK : colors.WHITE
@@ -161,7 +151,7 @@ const MultipleDiagramSlide = ({
                </Flex>
                {downIcon}
             </SlideWrap>
-         </Media>
+         </DesktopComponent>
       </>
    );
 };

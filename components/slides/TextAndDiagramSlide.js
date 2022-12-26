@@ -8,7 +8,8 @@ import {
    RightWrap,
    LeftAlignDiv,
 } from "components/StyledElements";
-import { Media } from "utils/media";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 
 const TextAndDiagramSlide = ({
    title,
@@ -27,7 +28,30 @@ const TextAndDiagramSlide = ({
    }, [bg, ref.current]);
    return (
       <>
-         <Media lessThan="md">
+         <DesktopComponent>
+            <SlideWrap bg={bg} padding={"20px 30px"}>
+               <Flex
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  width="100%"
+               >
+                  <FillerNavBar />
+                  <LeftWrap>
+                     <div>
+                        <SlideSecondaryTitle
+                           bg={bg}
+                           secondaryTitle={secondaryTitle}
+                        />
+                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                     </div>
+                     {children}
+                  </LeftWrap>
+                  <RightWrap>{diagram}</RightWrap>
+               </Flex>
+               {downIcon ? React.cloneElement(downIcon) : downIcon}
+            </SlideWrap>
+         </DesktopComponent>
+         <MobileComponent>
             <SlideWrap
                bg={bg}
                ref={ref}
@@ -37,10 +61,7 @@ const TextAndDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                <Flex direction="column" gap="2vh">
-                  <FillerNavBar
-                     isMobile
-                     mobileNavBarHeight={global && global.mobileNavBarHeight}
-                  />
+                  <FillerNavBar />
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
@@ -68,30 +89,7 @@ const TextAndDiagramSlide = ({
                   ? React.cloneElement(downIcon, { noMargin: true })
                   : downIcon}
             </SlideWrap>
-         </Media>
-         <Media greaterThanOrEqual="md">
-            <SlideWrap bg={bg} padding={"20px 30px"}>
-               <Flex
-                  alignItems="center"
-                  justifyContent="flex-start"
-                  width="100%"
-               >
-                  <FillerNavBar />
-                  <LeftWrap>
-                     <div>
-                        <SlideSecondaryTitle
-                           bg={bg}
-                           secondaryTitle={secondaryTitle}
-                        />
-                        <SlideTitle bg={bg}>{title}</SlideTitle>
-                     </div>
-                     {children}
-                  </LeftWrap>
-                  <RightWrap>{diagram}</RightWrap>
-               </Flex>
-               {downIcon}
-            </SlideWrap>
-         </Media>
+         </MobileComponent>
       </>
    );
 };

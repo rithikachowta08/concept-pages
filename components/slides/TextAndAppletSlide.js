@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import { Media } from "utils/media";
 import {
    SlideWrap,
    Flex,
@@ -9,6 +8,8 @@ import {
    RightWrap,
    LeftAlignDiv,
 } from "components/StyledElements";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
 
 const IFrame = styled.iframe`
@@ -59,7 +60,7 @@ const TextAndAppletSlide = ({
    }, [bg, ref.current]);
    return (
       <>
-         <Media lessThan="md">
+         <MobileComponent>
             <SlideWrap
                bg={bg}
                ref={ref}
@@ -68,11 +69,15 @@ const TextAndAppletSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               <Flex direction="column" gap="2vh">
-                  <FillerNavBar
-                     isMobile
-                     mobileNavBarHeight={global.mobileNavBarHeight}
-                  />
+               <FillerNavBar isMobile />
+               {/* Body */}
+               <Flex
+                  direction="column"
+                  padding="0 20px"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  width="100%"
+               >
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
@@ -83,25 +88,16 @@ const TextAndAppletSlide = ({
                         {title}
                      </SlideTitle>
                   </div>
-               </Flex>
-               {/* Body */}
-               <Flex
-                  direction="column"
-                  padding="0 20px"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  width="100%"
-               >
                   <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                   <LeftAlignDiv>{children}</LeftAlignDiv>
                </Flex>
                {/* DownIcon */}
                {downIcon
                   ? React.cloneElement(downIcon, { noMargin: true })
-                  : null}
+                  : downIcon}
             </SlideWrap>
-         </Media>
-         <Media greaterThanOrEqual="md">
+         </MobileComponent>
+         <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"}>
                <Flex
                   alignItems="center"
@@ -125,7 +121,7 @@ const TextAndAppletSlide = ({
                </Flex>
                {downIcon}
             </SlideWrap>
-         </Media>
+         </DesktopComponent>
       </>
    );
 };

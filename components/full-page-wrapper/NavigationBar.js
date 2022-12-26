@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import MobileNavBar from "./MobileNavBar";
-import { Media } from "utils/media";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 import { useState } from "react";
 import DefaultNavBar from "./DefaultNavBar";
 
@@ -12,10 +13,10 @@ const Wrapper = styled.div`
    opacity: ${(props) => props.opacity};
    top: 50vh;
    left: 30px;
+   transform: translateY(-50%);
    transition: opacity 0.3s;
    display: grid;
    grid-template-columns: 1fr;
-   transform: translateY(-50%);
 
    @media (min-width: 200px) and (max-width: 810px) {
       height: 45px;
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
       transform: translateY(-70%);
    }
 
-   @media (min-height: 500px) and (max-height: 800px) and (min-width: 811px) {
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
       scale: 0.8;
       transform: translateY(-70%);
    }
@@ -38,6 +39,7 @@ const Wrapper = styled.div`
 
 const NavigationBar = ({
    darkTheme,
+   deviceType,
    moveTo,
    sections,
    opacity,
@@ -60,7 +62,7 @@ const NavigationBar = ({
    };
    return (
       <Wrapper isExpanded={isExpanded} opacity={opacity}>
-         <Media lessThan="md">
+         <MobileComponent>
             <MobileNavBar
                toggleNav={toggleNav}
                sections={sections}
@@ -69,8 +71,8 @@ const NavigationBar = ({
                onSectionClick={onSectionClick}
                currentPageIdx={currentPageIdx}
             />
-         </Media>
-         <Media greaterThanOrEqual="md">
+         </MobileComponent>
+         <DesktopComponent>
             <DefaultNavBar
                showNav={showNav}
                hideNav={hideNav}
@@ -80,7 +82,7 @@ const NavigationBar = ({
                onSectionClick={onSectionClick}
                currentPageIdx={currentPageIdx}
             />
-         </Media>
+         </DesktopComponent>
       </Wrapper>
    );
 };

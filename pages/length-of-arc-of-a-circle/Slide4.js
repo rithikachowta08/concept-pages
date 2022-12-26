@@ -29,12 +29,14 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
+import { ModalTriggerText } from "components/text";
 const diagram_of_a_circle =
    "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
 const minor_arc = "assets/length-of-arc-of-a-circle/minor_arc.svg";
 const major_arc = "assets/length-of-arc-of-a-circle/major_arc.svg";
 const semicircular_arc =
    "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+import { Icon } from "components/StyledElements";
 
 const Slide3 = ({ downIcon }) => {
    const modalContent = (

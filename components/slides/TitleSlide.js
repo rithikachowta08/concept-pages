@@ -1,18 +1,7 @@
 import { PropTypes } from "prop-types";
-import styled from "styled-components";
-import { TitleSlideWrap } from "components/StyledElements";
+import { Flex, TitleSlideWrap } from "components/StyledElements";
 import { Title, ContentList } from "components/text";
 import { useEffect, useRef } from "react";
-
-const Flex = styled.div`
-   display: flex;
-   flex-direction: column;
-   padding: 0 0 0 10vw;
-
-   @media (min-width: 200px) and (max-width: 810px) {
-      padding: 0 5vw;
-   }
-`;
 
 const TitleSlide = ({
    moveToSection,
@@ -29,7 +18,7 @@ const TitleSlide = ({
    }, []);
    return (
       <TitleSlideWrap ref={ref} bg={"DARK"}>
-         <Flex>
+         <Flex direction="column" padding="0 0 0 10vw">
             <Title marginBottom="5%">{title}</Title>
             <ContentList
                items={contentListItems}

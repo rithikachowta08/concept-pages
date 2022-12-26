@@ -46,7 +46,12 @@ const Slide7 = ({ downIcon }) => {
       <TextAndDiagramSlide
          title="Illustrative Example"
          secondaryTitle="Lateral Surface Area"
-         diagram={<StyledImg src={plain_values} />}
+         diagram={
+            <StyledImg
+               src={plain_values}
+               alt="Diagram of a right triangular prism with sides of triangular face 4 cm, 5 cm and 3 cm and length of rectangular face 8 cm."
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph>

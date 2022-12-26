@@ -16,7 +16,7 @@ export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
    height: 100vh;
-   width: 100%;
+   width: 100vw;
    padding: ${(props) => props.padding};
    gap: ${(props) => props.gap};
    display: flex;
@@ -49,7 +49,7 @@ export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
-   height: 100vh;
+   height: 100%;
    width: 100%;
    display: flex;
    flex-direction: column;
@@ -184,7 +184,7 @@ export const Icon = styled.img`
    margin-right: ${(props) => props.marginRight};
    align-self: ${(props) => props.alignSelf};
 
-   @media only screen and (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 810px) {
       width: ${(props) => props.width || "10px"};
    }
 `;

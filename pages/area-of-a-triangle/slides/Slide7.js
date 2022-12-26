@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Paragraph, TextLine } from "components/text";
+import { Paragraph, TextLine, TextSpan } from "components/text";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 import MathElement from "components/MathElement";
