@@ -17,7 +17,12 @@ const Slide11 = ({ downIcon }) => {
          title={"Scalene triangle"}
          secondaryTitle={"Area of Different types of Triangles"}
          bg={"LIGHT"}
-         diagram={<StyledImg src={area_triangle_sides_3_1} />}
+         diagram={
+            <StyledImg
+               src={area_triangle_sides_3_1}
+               alt="Diagram of a scalene triangle"
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph>

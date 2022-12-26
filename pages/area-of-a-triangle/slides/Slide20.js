@@ -1,4 +1,5 @@
 import MathElement from "components/MathElement";
+import EquationTable from "components/MathElement/EquationTable";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
@@ -21,13 +22,17 @@ const Slide20 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a scalene triangle of height h",
+                  "Diagram of a scalene triangle highlighting one of its part including height",
+               ]}
             />
          }
          downIcon={downIcon}
          isLastSlide
       >
          <Paragraph>
-            Apply the "Sine" formula in the{" "}
+            Apply the &quot;Sine&quot; formula in the{" "}
             <TextSpanBg
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
@@ -52,52 +57,41 @@ const Slide20 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <Paragraph>
-            <MultiLhsEquationContainer
-               equationLatex={{
-                  lhsLatex: ["Area\\ of\\ triangle\\ (\\Delta ABC)"],
-                  rhsLatex: [
-                     {
-                        eqLatex: " \\dfrac{1}{2} \\times Base \\times Height",
-                        hint: "",
+            <EquationTable
+               align="middle"
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["Area\\ of\\ triangle\\ (\\Delta ABC)"],
+                        type: "latex",
                      },
-                     {
-                        eqLatex: "\\dfrac{1}{2}\\times c\\times h",
-                        hint: "",
+                     rhsLatex: {
+                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                        type: "latex",
                      },
-                     {
-                        eqLatex: "\\dfrac{1}{2}\\times c\\times b\\ Sin A",
-                        hint: "",
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
                      },
-                  ],
-               }}
+                     rhsLatex: {
+                        value: ["\\dfrac{1}{2}\\times c\\times h"],
+                        type: "latex",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\dfrac{1}{2}\\times c\\times b\\ Sin A"],
+                        type: "latex",
+                     },
+                  },
+               ]}
             />
-            {/* <Flex>
-               <TextLine>
-                  Area of triangle (<MathElement htmlString={"\\Delta"} />
-                  ABC)
-               </TextLine>
-               <Flex direction="column">
-                  <TextLine>
-                     <MathElement
-                        htmlString={
-                           "\\ = \\frac{1}{2} \\times Base \\times Height"
-                        }
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={"\\ = \\frac{1}{2}\\times c\\times h"}
-                     />
-                  </TextLine>
-                  <TextLine>
-                     <MathElement
-                        htmlString={
-                           "\\ = \\frac{1}{2}\\times c\\times b\\ Sin A"
-                        }
-                     />
-                  </TextLine>
-               </Flex>
-            </Flex> */}
          </Paragraph>
          <Paragraph>
             <Pill>

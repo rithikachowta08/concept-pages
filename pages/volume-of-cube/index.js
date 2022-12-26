@@ -61,4 +61,8 @@ const VolumeOfCube = ({}) => {
    );
 };
 
+VolumeOfCube.title = "Volume of a Cube: Definition, Formula, Examples - BYJU'S";
+VolumeOfCube.meta =
+   "Learn about the volume of a cube, including its definition, formula, and examples. Master volume of a cube concept with BYJU'S interactive activities.";
+
 export default VolumeOfCube;

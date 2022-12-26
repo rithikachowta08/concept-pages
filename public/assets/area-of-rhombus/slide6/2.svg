@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: .1;
+      }
+
+      .cls-2 {
+        stroke-width: 6px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #8a86b2;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7, .cls-8 {
+        fill: #67dbe8;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0 7.9 7.9;
+      }
+
+      .cls-3, .cls-5, .cls-6 {
+        stroke-width: 4px;
+      }
+
+      .cls-9 {
+        fill: #8a86b2;
+      }
+
+      .cls-9, .cls-8 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        stroke-width: 5px;
+      }
+
+      .cls-6 {
+        stroke: #67dbe8;
+      }
+    </style>
+  </defs>
+  <text class="cls-8" transform="translate(224.2 495.05)"><tspan x="0" y="0">b</tspan></text>
+  <g>
+    <line class="cls-6" x1="391.29" y1="461.9" x2="74.99" y2="461.9"/>
+    <polygon class="cls-7" points="388.43 452.12 405.35 461.9 388.43 471.67 388.43 452.12"/>
+    <polygon class="cls-7" points="77.85 452.12 60.93 461.9 77.85 471.67 77.85 452.12"/>
+  </g>
+  <polygon class="cls-1" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+  <text class="cls-9" transform="translate(162.88 295.5)"><tspan x="0" y="0">h</tspan></text>
+  <rect class="cls-1" x="150.88" y="412.21" width="35.62" height="33.7"/>
+  <polyline class="cls-4" points="152.8 412.21 186.5 412.21 186.5 445.91"/>
+  <g>
+    <line class="cls-5" x1="152.59" y1="114.09" x2="152.59" y2="118.09"/>
+    <line class="cls-3" x1="152.59" y1="125.99" x2="152.59" y2="437.96"/>
+    <line class="cls-5" x1="152.59" y1="441.91" x2="152.59" y2="445.91"/>
+  </g>
+  <polygon class="cls-2" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+</svg>

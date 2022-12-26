@@ -32,7 +32,10 @@ const Slide2 = ({ downIcon }) => {
             equidistant from a fixed point. The fixed point is the center
             &quot;O&quot; and the fixed distance is the radius &quot;r&quot;.
          </Paragraph>
-         <ModalImg src={plain_radius} />
+         <ModalImg
+            src={plain_radius}
+            alt="Image of a circle with centre and radius shown"
+         />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -55,6 +58,10 @@ const Slide2 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain, circumference]}
+               altTexts={[
+                  "Diagram of a circle",
+                  "Diagram of a circle with circumference highlighted",
+               ]}
                activeIndex={activeIndex}
             />
          }

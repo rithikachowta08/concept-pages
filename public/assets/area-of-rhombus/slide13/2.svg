@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #333;
+        opacity: .1;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 6px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-4, .cls-6 {
+        stroke: #2b2bf0;
+      }
+
+      .cls-3, .cls-5 {
+        stroke: #b7b6b6;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 7.9 7.9;
+      }
+
+      .cls-4, .cls-6 {
+        stroke-width: 4px;
+      }
+
+      .cls-7 {
+        font-family: Raleway-Medium, Raleway;
+        font-weight: 500;
+      }
+
+      .cls-7, .cls-8 {
+        fill: #b7b6b6;
+        font-size: 36px;
+      }
+
+      .cls-5 {
+        stroke-width: 5px;
+      }
+
+      .cls-8 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+  <path class="cls-1" d="M74.69,406.19l-10.56,39.72h40.79s-4.3-29.25-30.24-39.72Z"/>
+  <path class="cls-5" d="M104.93,445.91s-4.3-29.25-30.24-39.72l-10.56,39.72"/>
+  <text class="cls-8" transform="translate(99.33 414.58)"><tspan x="0" y="0">θ</tspan></text>
+  <text class="cls-8" transform="translate(73.3 291.78)"><tspan x="0" y="0">a</tspan></text>
+  <text class="cls-8" transform="translate(162.88 295.5)"><tspan x="0" y="0">h</tspan></text>
+  <rect class="cls-1" x="150.88" y="412.21" width="35.62" height="33.7"/>
+  <polyline class="cls-5" points="152.8 412.21 186.5 412.21 186.5 445.91"/>
+  <polygon class="cls-3" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+  <text class="cls-7" transform="translate(223.9 484.09)"><tspan x="0" y="0">a</tspan></text>
+  <polyline class="cls-2" points="151.69 445.91 64.13 445.91 152.32 114.09"/>
+  <g>
+    <line class="cls-6" x1="152.59" y1="114.09" x2="152.59" y2="118.09"/>
+    <line class="cls-4" x1="152.59" y1="125.99" x2="152.59" y2="437.96"/>
+    <line class="cls-6" x1="152.59" y1="441.91" x2="152.59" y2="445.91"/>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-linecap: square;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke: #ffa4a4;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+
+      .cls-6 {
+        fill: #ea6560;
+      }
+
+      .cls-7 {
+        fill: #ce5555;
+      }
+
+      .cls-8 {
+        fill: #d16b6b;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 0 11.75 11.75;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0 10.94 10.94;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 12.19 12.19;
+      }
+
+      .cls-5 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-8" x="53.34" y="263.39" width="329.3" height="110.45"/>
+    <polygon class="cls-7" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
+    <polygon class="cls-6" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
+  </g>
+  <g>
+    <g>
+      <line class="cls-1" x1="506.66" y1="296.61" x2="500.66" y2="296.61"/>
+      <line class="cls-2" x1="488.91" y1="296.61" x2="189.23" y2="296.61"/>
+      <line class="cls-1" x1="183.35" y1="296.61" x2="177.35" y2="296.61"/>
+    </g>
+    <g>
+      <line class="cls-1" x1="53.34" y1="373.84" x2="58.44" y2="370.67"/>
+      <line class="cls-4" x1="68.78" y1="364.23" x2="167.09" y2="303"/>
+      <line class="cls-1" x1="172.26" y1="299.78" x2="177.35" y2="296.61"/>
+    </g>
+    <g>
+      <line class="cls-1" x1="177.35" y1="296.61" x2="177.35" y2="290.61"/>
+      <line class="cls-3" x1="177.35" y1="279.67" x2="177.35" y2="197.63"/>
+      <line class="cls-1" x1="177.35" y1="192.16" x2="177.35" y2="186.16"/>
+    </g>
+    <polygon class="cls-5" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
+    <rect class="cls-5" x="53.34" y="263.39" width="329.3" height="110.45"/>
+    <polygon class="cls-5" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
+  </g>
+</svg>

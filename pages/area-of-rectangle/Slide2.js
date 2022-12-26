@@ -33,6 +33,11 @@ const Slide2 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[rectangle_full, rectangle_sides, rectangle_angles]}
+               altTexts={[
+                  "Diagram of a rectangle",
+                  "Diagram of a rectangle highlighted angles.",
+                  "Diagram of a rectangle highlighted angles.",
+               ]}
                activeIndex={activeIndex}
             />
          }

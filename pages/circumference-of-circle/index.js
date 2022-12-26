@@ -15,7 +15,7 @@ const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
 
-const AreaOfRectangle = () => {
+const CircumferenceOfCircle = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
@@ -46,4 +46,10 @@ const AreaOfRectangle = () => {
    );
 };
 
-export default AreaOfRectangle;
+CircumferenceOfCircle.title =
+   "Circumference of Circle: Definition, Formula, Examples - BYJU'S";
+
+CircumferenceOfCircle.meta =
+   "Enhance your understanding of the circumference of circle with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
+
+export default CircumferenceOfCircle;
