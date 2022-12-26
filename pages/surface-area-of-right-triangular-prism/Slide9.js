@@ -37,6 +37,10 @@ const Slide9 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain_all_lengths, bases_values]}
+               altTexts={[
+                  "Diagram of a right triangular prism with sides of triangular face and length of rectangular face labelled.",
+                  "Diagram of a right triangular prism with triangular base areas highlighted.",
+               ]}
                activeIndex={activeIndex}
             />
          }

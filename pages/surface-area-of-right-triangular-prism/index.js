@@ -14,7 +14,7 @@ const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 
-const AreaOfRectangle = () => {
+const SurfaceAreaOfRightTriangularPrism = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
@@ -46,4 +46,10 @@ const AreaOfRectangle = () => {
    );
 };
 
-export default AreaOfRectangle;
+SurfaceAreaOfRightTriangularPrism.title =
+   "Surface area of a Right Triangular Prism: Definition, Formula, Examples - BYJU'S";
+
+SurfaceAreaOfRightTriangularPrism.meta =
+   "Gain a thorough understanding of the surface area of a right triangular prism with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
+
+export default SurfaceAreaOfRightTriangularPrism;

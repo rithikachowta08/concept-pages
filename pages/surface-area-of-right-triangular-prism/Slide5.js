@@ -56,6 +56,12 @@ const Slide5 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain_lengths, rect_faces, a_b_c_lengths, l_length]}
+               altTexts={[
+                  "Diagram of a right triangular prism",
+                  "Diagram of a right triangular prism with highlighted rectangular faces",
+                  "Diagram of a right triangular prism with sides of the triangular face labelled.",
+                  "Diagram of a right triangular prism with highlighted length of the rectangular face.",
+               ]}
                activeIndex={activeIndex}
             />
          }
