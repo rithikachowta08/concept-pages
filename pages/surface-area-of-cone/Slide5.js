@@ -1,13 +1,20 @@
 import dynamic from "next/dynamic";
-const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
+const TextAndAppletSlide = dynamic(() =>
+  import("components/slides/TextAndAppletSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
 
 const Slide5 = ({ downIcon }) => {
   return (
-    <VideoSlide
+    <TextAndAppletSlide
+      title=""
+      appletSrc="./applets/triangle.html"
       downIcon={downIcon}
-      title="Special Quadrilaterals"
-      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-    />
+    >
+      <Paragraph>Applet description here</Paragraph>
+    </TextAndAppletSlide>
   );
 };
 

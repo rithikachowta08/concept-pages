@@ -25,7 +25,7 @@ const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
 const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
 const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
 
-const Slide11 = ({ downIcon }) => {
+const Slide14 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
@@ -161,4 +161,4 @@ const Slide11 = ({ downIcon }) => {
   );
 };
 
-export default Slide11;
+export default Slide14;
