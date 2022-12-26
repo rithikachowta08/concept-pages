@@ -15,7 +15,7 @@ const Slide10 = ({ downIcon }) => {
       downIcon={downIcon}
       bg="DARK"
       title=""
-      // appletSrc="./applets/triangle.htmxl"
+      appletSrc="./applets/triangle.html"
     >
       <Paragraph color={colors.WHITE}>
         Relation between volume of a cone and cylinder
