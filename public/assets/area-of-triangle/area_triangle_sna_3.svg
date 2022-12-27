@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        fill: #67dbe8;
+      }
+
+      .cls-3, .cls-7, .cls-4, .cls-5 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-9 {
+        fill: none;
+        stroke: #67dbe8;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-4, .cls-10, .cls-5 {
+        opacity: .2;
+      }
+
+      .cls-11 {
+        opacity: .7;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-8 {
+        opacity: .6;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <text class="cls-4" transform="translate(266.71 149.31)"><tspan x="0" y="0">C</tspan></text>
+      <text class="cls-7" transform="translate(270.03 448.24)"><tspan x="0" y="0">c</tspan></text>
+      <text class="cls-7" transform="translate(428.46 262.76)"><tspan x="0" y="0">a</tspan></text>
+    </g>
+    <g>
+      <g>
+        <polygon class="cls-1" points="512.99 393.98 280.58 161.54 47.26 394.84 512.99 393.98"/>
+        <g class="cls-10">
+          <path class="cls-2" d="M280.58,161.54l232.41,232.43-465.73,.86,233.32-233.29m0-8.49l-4.24,4.24L43.02,390.6l-10.27,10.27,14.52-.03,465.73-.86,14.45-.03-10.21-10.22-232.41-232.43-4.24-4.24h0Z"/>
+        </g>
+        <g class="cls-10">
+          <text class="cls-3" transform="translate(135.22 262.76)"><tspan x="0" y="0">b</tspan></text>
+        </g>
+      </g>
+      <path class="cls-8" d="M475.78,399.53s-3.27-17.81,13.22-36.35c7.81,7.42,36.54,36.54,36.54,36.54l-49.75-.19Z"/>
+    </g>
+    <text class="cls-4" transform="translate(527.42 417.6)"><tspan x="0" y="0">B</tspan></text>
+    <text class="cls-5" transform="translate(8.42 417.6)"><tspan x="0" y="0">A</tspan></text>
+  </g>
+  <g class="cls-11">
+    <g>
+      <line class="cls-9" x1="69.5" y1="421" x2="500.56" y2="421"/>
+      <polygon class="cls-6" points="75.34 440.95 40.8 421 75.34 401.06 75.34 440.95"/>
+      <polygon class="cls-6" points="494.73 440.95 529.27 421 494.73 401.06 494.73 440.95"/>
+    </g>
+  </g>
+  <g class="cls-11">
+    <g>
+      <line class="cls-9" x1="313.69" y1="157.26" x2="516.02" y2="360.94"/>
+      <polygon class="cls-6" points="303.65 175.45 293.46 136.89 331.95 147.34 303.65 175.45"/>
+      <polygon class="cls-6" points="497.75 370.85 536.25 381.3 526.05 342.74 497.75 370.85"/>
+    </g>
+  </g>
+</svg>
