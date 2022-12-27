@@ -10,8 +10,8 @@ const Img = styled.img`
    height: ${(props) => props.width || "550px"};
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: ${(props) => props.smallMobileSize || "200px"};
-      height: ${(props) => props.smallMobileSize || "200px"};
+      width: ${(props) => props.smallMobileSize || "175px"};
+      height: ${(props) => props.smallMobileSize || "175px"};
    }
    @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};

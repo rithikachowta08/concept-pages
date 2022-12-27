@@ -14,9 +14,9 @@ const TextSpan = dynamic(() =>
 );
 
 const bg = "assets/purple_bg.png";
-const angle_sum = "assets/angle_sum.svg";
-const triangle_inequality = "assets/triangle_inequality.svg";
-const pythogoras = "assets/pythogoras.svg";
+const angle_sum = "assets/triangles/angle_sum.svg";
+const triangle_inequality = "assets/triangles/triangle_inequality.svg";
+const pythogoras = "assets/triangles/pythogoras.svg";
 
 const Slide4 = () => {
    return (
