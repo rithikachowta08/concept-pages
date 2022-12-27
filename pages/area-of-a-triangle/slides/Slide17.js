@@ -22,16 +22,14 @@ const Slide17 = ({ downIcon }) => {
          secondaryTitle={"Area of an Equilateral triangle"}
          bg={"LIGHT"}
          diagram={
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2]}
-                  activeIndex={activeIndex}
-                  altTexts={[
-                     "Diagram of an equilateral triangle showing equal sides, angles and height",
-                     "Diagram of an equilateral triangle highlighting one of its congruent half",
-                  ]}
-               />
-            </LeftWrap>
+            <TransitionImage
+               images={[image_1, image_2]}
+               activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing equal sides, angles and height",
+                  "Diagram of an equilateral triangle highlighting one of its congruent half",
+               ]}
+            />
          }
          downIcon={downIcon}
       >

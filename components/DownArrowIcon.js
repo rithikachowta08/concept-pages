@@ -19,6 +19,10 @@ const IconWrap = styled.div`
    @media (min-height: 400px) and (max-height: 700px) and (min-width: 767px) {
       scale: 0.75;
    }
+
+   @media (min-height: 300px) and (max-height: 800px) and (max-width: 950px) {
+      scale: 0.5;
+   }
 `;
 
 const DownArrowIcon = ({

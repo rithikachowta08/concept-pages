@@ -16,9 +16,10 @@ const TextSpanBg = dynamic(() =>
 );
 
 const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
+const surfaceCone_top = "assets/surface-area-of-cone/slide4/2.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide4/3.svg";
+const surfaceCone_rightlslide = "assets/surface-area-of-cone/slide4/4.svg";
+const surfaceCone_height = "assets/surface-area-of-cone/slide4/5.svg";
 
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -30,21 +31,21 @@ const Slide4 = ({ downIcon }) => {
   };
   return (
     <TextAndDiagramSlide
-      secondaryTitle="Introduction to a Cone"
-      title="Elements of a cone"
+      title="Parts of a Cone"
       diagram={
         <TransitionImage
           images={[
             surfaceCone_full,
+            surfaceCone_top,
             surfaceCone_right,
+            surfaceCone_rightlslide,
             surfaceCone_height,
-            surfaceCone_rightslide,
           ]}
           altTexts={[
             "Diagram of a cone",
-            "Diagram of a cone with highlighted radius.",
-            "Diagram of a cone with highlighted height.",
-            "Diagram of a cone with highlighted slant height.",
+            "Diagram of a cone with highlighted apex or vertex",
+            "Diagram of a cone with highlighted slant height",
+            "Diagram of a cone with highlighted height",
           ]}
           activeIndex={activeIndex}
         />
@@ -52,7 +53,7 @@ const Slide4 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        The three elements of a cone are its &nbsp;
+        The pointed end of a cone is called the&nbsp;
         <TextSpanBg
           id={1}
           onHover={onHover}
@@ -60,9 +61,12 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          radius (r)
+          vertex
         </TextSpanBg>
-        ,&nbsp;
+        &nbsp;or apex.
+      </Paragraph>
+      <Paragraph lineHeight={lineHeightProp}>
+        The radius of circular base is the&nbsp;
         <TextSpanBg
           id={2}
           onHover={onHover}
@@ -70,19 +74,36 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          height(h)
+          radius
         </TextSpanBg>
-        , and&nbsp;
+        &nbsp;of the cone.
+      </Paragraph>
+      <Paragraph lineHeight={lineHeightProp}>
+        The length of the cone from the vertex to any point on the circumference
+        of the base is the&nbsp;
         <TextSpanBg
-          id={2}
+          id={3}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          slant height(l)
+          slant height
         </TextSpanBg>
         .
+      </Paragraph>
+      <Paragraph lineHeight={lineHeightProp}>
+        The distance from the vertex of the cone to the base is the&nbsp;
+        <TextSpanBg
+          id={4}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.DARK_BLUE}
+        >
+          height
+        </TextSpanBg>
+        &nbsp;of the cone.
       </Paragraph>
     </TextAndDiagramSlide>
   );

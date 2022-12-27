@@ -78,7 +78,7 @@ const Slide11 = ({ downIcon }) => {
         </TextSpanBg>{" "}
         .
       </Paragraph>
-      <Pill>
+      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
         Area of the rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndDiagramSlide>

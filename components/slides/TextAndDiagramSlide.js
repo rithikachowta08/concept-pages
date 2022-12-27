@@ -34,8 +34,11 @@ const TextAndDiagramSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="30%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
                   <LeftWrap>
                      <div>
                         <SlideSecondaryTitle

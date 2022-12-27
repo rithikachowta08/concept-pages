@@ -47,7 +47,10 @@ const MultipleDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                {/* NavBar */}
-               <FillerNavBar isMobile />
+               <FillerNavBar
+                  mobileNavBarHeight={global.mobileNavBarHeight}
+                  isMobile
+               />
                {/* Body */}
                <Flex
                   direction="column"
@@ -106,6 +109,7 @@ const MultipleDiagramSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="80%"
                >
                   <FillerNavBar />
                   <Flex
@@ -132,6 +136,7 @@ const MultipleDiagramSlide = ({
                         {images.map((image, idx) => (
                            <ImageWrap key={idx}>
                               {React.cloneElement(image.diagram, {
+                                 mobileSize: "150px",
                                  tabletSize: "250px",
                                  smallDesktopSize: "300px",
                                  width: "400px",

@@ -69,7 +69,10 @@ const TextAndAppletSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               <FillerNavBar isMobile />
+               <FillerNavBar
+                  mobileNavBarHeight={global.mobileNavBarHeight}
+                  isMobile
+               />
                {/* Body */}
                <Flex
                   direction="column"
@@ -103,6 +106,7 @@ const TextAndAppletSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="50%"
                >
                   <FillerNavBar />
                   <LeftWrap marginRight="20px">
