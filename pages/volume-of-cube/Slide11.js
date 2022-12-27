@@ -50,7 +50,7 @@ const Slide11 = ({ downIcon }) => {
       []
    );
    let latex = [];
-   latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
+   latex.push(`= \\sqrt{3} \\times \\dfrac{{d}^3}{9} \\:cubic \\: units`);
    latex.push(`= \\sqrt{3}`);
    let mathjaxCounter = 0;
    return (
@@ -58,6 +58,7 @@ const Slide11 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_d, cube_s]}
+               altTexts={["Diagram of a cube with body diagonal","Diagram of a cube with body diagonal highlighted"," Diagram of a cube with body diagonal, where side is highlighted"]}
                activeIndex={activeIndex}
             />
          }

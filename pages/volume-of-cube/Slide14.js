@@ -62,6 +62,7 @@ const Slide14 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_f, cube_s]}
+               altTexts={["Diagram of a cube with face diagonal","Diagram of a cube with face diagonal highlighted","Diagram of a cube with side length highlighted"]}
                activeIndex={activeIndex}
             />
          }
@@ -70,15 +71,8 @@ const Slide14 = ({ downIcon }) => {
             <TextLine>
                {" "}
                Given the{" "}
-               <TextSpanBg
-                  id={1}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-               >
                   diagonal length
-               </TextSpanBg>{" "}
+              {" "}
                of a face of a cube:
             </TextLine>
          </Paragraph>
@@ -90,7 +84,7 @@ const Slide14 = ({ downIcon }) => {
             >
                Volume of a cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-               cubic unit
+               cubic units
             </Pill>
          </Paragraph>
          <Paragraph>
