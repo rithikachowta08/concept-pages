@@ -141,7 +141,7 @@
 
 @media only screen and (max-width: 767.98px) {
    .videoContainerPopup {
-      height: 60vh;
+      height: 100vh;
    }
 
    .videoTitle {
@@ -149,7 +149,7 @@
    }
 
    .videoContainer {
-      height: 60vh;
+      height: 100vh;
    }
 
    .playButtomDiv {
@@ -165,9 +165,5 @@
 
    .durationViewsContainer {
       padding-left: 10px;
-   }
-
-   .videoSolutionHeader {
-      margin-top: 60px;
    }
 }

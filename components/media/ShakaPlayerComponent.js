@@ -377,7 +377,7 @@ const VideoPlayer = (props) => {
    }
 
    return (
-      <div ref={videoContainer}>
+      <div ref={videoContainer} style={{ height: "100%" }}>
          <video
             id="shaka-player-video-component"
             className="shaka-video-play"
