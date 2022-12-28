@@ -27,13 +27,13 @@ const TextSpan = dynamic(() =>
 
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const triangle_red = "assets/triangle_red.svg";
-const triangle_angles = "assets/triangle_angles.svg";
-const triangle_sides = "assets/triangle_sides.svg";
-const triangle_vertices = "assets/triangle_vertices.svg";
-const vertice = "assets/vertice.svg";
-const ruler = "assets/ruler.svg";
-const three_figure = "assets/three_figure.svg";
+const triangle_red = "assets/triangles/triangle_red.svg";
+const triangle_angles = "assets/triangles/triangle_angles.svg";
+const triangle_sides = "assets/triangles/triangle_sides.svg";
+const triangle_vertices = "assets/triangles/triangle_vertices.svg";
+const vertice = "assets/triangles/vertice.svg";
+const ruler = "assets/triangles/ruler.svg";
+const three_figure = "assets/triangles/three_figure.svg";
 const bg = "assets/white_bg.png";
 
 const Slide2 = () => {

@@ -4,11 +4,11 @@ import TitleSlide from "components/slides/TitleSlide";
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
-         title="Volume of a cube"
+         title="Volume of a Cube"
          contentListItems={[
-            "What is the volume of a cube",
-            "Formula",
-            "Volume of a cube using diagnoal",
+            "What is the volume of a cube?",
+            "General Formula",
+            "Volume of a cube using diagonal",
             "Rectangular prism vs cube",
          ]}
          anchorIdxes={[2, 6, 11,17]}

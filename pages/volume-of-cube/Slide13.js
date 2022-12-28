@@ -11,8 +11,8 @@ const Slide13 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: ["\\text{Volume of cube}"],
-            type: "latex",
+            value: ["Volume of cube"],
+            type: "text",
          },
          rhsLatex: {
             value: ["\\sqrt{3} \\times {\\dfrac{d}{9}}^2"],
@@ -97,6 +97,7 @@ const Slide13 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
+               altTexts={["A cube with body diagonal equal to 3 feet.","A cube with body diagonal highlighted and equal to 3 feet."]}
                activeIndex={activeIndex}
             />
          }

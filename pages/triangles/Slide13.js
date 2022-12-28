@@ -19,7 +19,7 @@ const Paragraph = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 
-const pythogoras_slide = "assets/pythogoras_slide.svg";
+const pythogoras_slide = "assets/triangles/pythogoras_slide.svg";
 
 const Slide7 = () => {
    return (

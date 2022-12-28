@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import {
@@ -6,41 +6,72 @@ import {
    Flex,
    LeftWrap,
    RightWrap,
-   LeftAlignDiv,
 } from "components/StyledElements";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
+import Button from "components/Button";
+import { colors } from "utils/colors";
+
+const fit_to_width = "assets/fit_to_width.svg";
+const fullscreen_exit = "assets/fullscreen_exit.svg";
 
 const IFrame = styled.iframe`
-   width: 700px;
-   height: 700px;
+   width: 650px;
+   height: 650px;
    border-radius: 20px;
+   transition: all 0.2s;
 
-   @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: 250px;
-      height: 250px;
+   // Mobile
+   @media only screen and (min-width: 200px) and (max-width: 600px) {
+      width: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
    }
 
-   @media only screen and (min-width: 400px) and (max-width: 767px) {
-      width: 350px;
-      height: 350px;
+   // Large mobile + iPad mini
+   @media only screen and (min-width: 601px) and (max-width: 820px) {
+      width: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
    }
 
-   @media only screen and (min-width: 768px) and (max-width: 992px) {
-      width: 350px;
-      height: 350px;
+   // Tablet
+   @media (min-width: 821px) and (max-width: 992px) {
+      width: 500px;
+      height: 500px;
    }
 
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
-      width: 250px;
-      height: 250px;
+   // Small height desktop
+   @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
+      width: 500px;
+      height: 500px;
    }
 
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
-      width: 350px;
-      height: 350px;
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      width: 100vh;
+      height: 100vh;
+      margin-bottom: 0;
    }
+`;
+
+const LeftAlignDiv = styled.div`
+   align-self: flex-start;
+   width: 100%;
+   height: ${(props) => (props.isFitToWidth ? "0" : "auto")};
+   overflow: ${(props) => (props.isFitToWidth ? "hidden" : "unset")};
+   opacity: ${(props) => (props.isFitToWidth ? "0" : "1")};
+   transition: height 0ms 400ms, opacity 400ms 0ms;
+`;
+
+const IframeWrap = styled.div`
+   position: relative;
+   margin-bottom: 20px;
+`;
+
+const FullScreenIcon = styled.img`
+   position: absolute;
+   bottom: 15px;
+   right: 10px;
 `;
 
 const TextAndAppletSlide = ({
@@ -53,6 +84,10 @@ const TextAndAppletSlide = ({
    appletSrc,
 }) => {
    const ref = useRef(null);
+   const [isFitToWidth, setIsFitToWidth] = useState(false);
+   const toggleFitToWidth = () => {
+      setIsFitToWidth(!isFitToWidth);
+   };
    useEffect(() => {
       if (ref.current && bg === "DARK") {
          ref.current.parentNode.classList.add("dark");
@@ -69,7 +104,7 @@ const TextAndAppletSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               <FillerNavBar isMobile />
+               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
                {/* Body */}
                <Flex
                   direction="column"
@@ -82,14 +117,36 @@ const TextAndAppletSlide = ({
                      <SlideSecondaryTitle
                         bg={bg}
                         secondaryTitle={secondaryTitle}
-                        isMobile
+                        centerAlign
                      />
-                     <SlideTitle bg={bg} isMobile>
+                     <SlideTitle bg={bg} centerAlign>
                         {title}
                      </SlideTitle>
                   </div>
-                  <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
-                  <LeftAlignDiv>{children}</LeftAlignDiv>
+                  <IframeWrap>
+                     <IFrame
+                        src={appletSrc}
+                        isFitToWidth={isFitToWidth}
+                        allowFullScreen
+                        frameBorder="0"
+                     />
+                     <FullScreenIcon
+                        src={isFitToWidth ? fullscreen_exit : fit_to_width}
+                        onClick={toggleFitToWidth}
+                     ></FullScreenIcon>
+                  </IframeWrap>
+                  <LeftAlignDiv isFitToWidth={isFitToWidth}>
+                     {children}
+                  </LeftAlignDiv>
+                  {isFitToWidth && (
+                     <Button
+                        onClick={toggleFitToWidth}
+                        height="30px"
+                        bgColor={colors.DARK_GREY}
+                     >
+                        Click to exit full screen mode
+                     </Button>
+                  )}
                </Flex>
                {/* DownIcon */}
                {downIcon
@@ -98,13 +155,16 @@ const TextAndAppletSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"}>
+            <SlideWrap bg={bg} padding={"20px 30px"} hideFillerForLandscapeMode>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="50%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle
@@ -119,7 +179,11 @@ const TextAndAppletSlide = ({
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                   </RightWrap>
                </Flex>
-               {downIcon}
+               {downIcon
+                  ? React.cloneElement(downIcon, {
+                       hideInMobileLandscapeMode: true,
+                    })
+                  : downIcon}
             </SlideWrap>
          </DesktopComponent>
       </>

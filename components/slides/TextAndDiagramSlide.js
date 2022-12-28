@@ -34,8 +34,11 @@ const TextAndDiagramSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="30%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
                   <LeftWrap>
                      <div>
                         <SlideSecondaryTitle
@@ -61,14 +64,16 @@ const TextAndDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                <Flex direction="column" gap="2vh">
-                  <FillerNavBar />
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
                         secondaryTitle={secondaryTitle}
-                        isMobile
+                        centerAlign
                      />
-                     <SlideTitle bg={bg} isMobile>
+                     <SlideTitle bg={bg} centerAlign>
                         {title}
                      </SlideTitle>
                   </div>

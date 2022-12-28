@@ -15,7 +15,7 @@ const ImageWrap = styled.div`
    flex-direction: column;
    margin: 0;
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       margin: 0 auto;
    }
 `;
@@ -47,7 +47,7 @@ const MultipleDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                {/* NavBar */}
-               <FillerNavBar isMobile />
+               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
                {/* Body */}
                <Flex
                   direction="column"
@@ -59,9 +59,9 @@ const MultipleDiagramSlide = ({
                   <SlideSecondaryTitle
                      bg={bg}
                      secondaryTitle={secondaryTitle}
-                     isMobile
+                     centerAlign
                   />
-                  <SlideTitle bg={bg} isMobile>
+                  <SlideTitle bg={bg} centerAlign>
                      {title}
                   </SlideTitle>
                   {children}
@@ -106,8 +106,11 @@ const MultipleDiagramSlide = ({
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
+                  maxHeight="80%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
                   <Flex
                      direction="column"
                      justifyContent="space-between"
@@ -132,6 +135,7 @@ const MultipleDiagramSlide = ({
                         {images.map((image, idx) => (
                            <ImageWrap key={idx}>
                               {React.cloneElement(image.diagram, {
+                                 mobileSize: "150px",
                                  tabletSize: "250px",
                                  smallDesktopSize: "300px",
                                  width: "400px",
