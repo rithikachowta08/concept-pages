@@ -44,6 +44,9 @@ const Slide6 = ({ downIcon }) => {
          title={"Lateral Surface Area"}
          secondaryTitle={"Surface Area"}
          downIcon={downIcon}
+         appletSrc={
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v3/index.html"
+         }
       >
          <Modal
             bg="LIGHT"
@@ -65,7 +68,7 @@ const Slide6 = ({ downIcon }) => {
             excluding the two bases.
          </Paragraph>
          <Paragraph>
-            <Pill>Total surface area = 2(lw + wh + lh)</Pill>
+            <Pill>Lateral surface area = 2(l + w)h</Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );
