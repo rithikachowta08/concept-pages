@@ -1,4 +1,5 @@
-import VideoSlide from "components/slides/VideoSlide";
+const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
+import dynamic from "next/dynamic";
 import React from "react";
 
 // video slide

@@ -1,9 +1,11 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { StyledImg } from "components/StyledElements";
 import { Paragraph, TextLine } from "components/text";
-import React from "react";
 
 const image_1 = "assets/area-of-circle/slide_7.svg";
 

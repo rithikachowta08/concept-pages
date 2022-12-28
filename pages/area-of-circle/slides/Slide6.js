@@ -1,11 +1,18 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 

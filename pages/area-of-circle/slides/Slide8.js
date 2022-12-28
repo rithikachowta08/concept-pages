@@ -1,7 +1,11 @@
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import React, { useState } from "react";

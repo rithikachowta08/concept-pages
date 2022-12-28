@@ -1,5 +1,6 @@
-import TitleSlide from "components/slides/TitleSlide";
-import React from "react";
+import dynamic from "next/dynamic";
+
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
