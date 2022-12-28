@@ -44,7 +44,7 @@ const Slide9 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         downIcon={downIcon}
+         isLastSlide
       >
          <Paragraph>
             The area covered by all the faces of a right triangular prism

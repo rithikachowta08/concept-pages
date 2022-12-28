@@ -5,7 +5,7 @@ const Slide9 = ({ downIcon }) => {
    return (
       <TextAndAppletSlide
          title="Area using Unit Squares"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Volumes-of-cube-using-unit-cubes-v2/index.html"
          downIcon={downIcon}
       >
          <Paragraph>

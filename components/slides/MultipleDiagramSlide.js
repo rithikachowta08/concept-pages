@@ -101,7 +101,7 @@ const MultipleDiagramSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"}>
+            <SlideWrap bg={bg} isLastSlide={isLastSlide} padding={"20px 30px"}>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"

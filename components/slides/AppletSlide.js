@@ -112,6 +112,16 @@ const AppletSlide = ({
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
                   />
+                  <div>
+                     <SlideSecondaryTitle
+                        bg={bg}
+                        secondaryTitle={secondaryTitle}
+                        centerAlign
+                     />
+                     <SlideTitle bg={bg} centerAlign>
+                        {title}
+                     </SlideTitle>
+                  </div>
                   <Flex
                      direction="column"
                      height="100%"
@@ -119,16 +129,6 @@ const AppletSlide = ({
                      margin="0 auto"
                      alignItems="center"
                   >
-                     <div>
-                        <SlideSecondaryTitle
-                           bg={bg}
-                           secondaryTitle={secondaryTitle}
-                           centerAlign
-                        />
-                        <SlideTitle bg={bg} centerAlign>
-                           {title}
-                        </SlideTitle>
-                     </div>
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                   </Flex>
                </ContentWrap>
