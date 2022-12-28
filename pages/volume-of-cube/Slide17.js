@@ -1,13 +1,27 @@
+import dynamic from "next/dynamic";
+
 import { useState } from "react";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, TextLine, Paragraph } from "components/text";
-import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide17/1.svg";
 const cube_lwh = "assets/volume-of-cube/slide17/2.svg";
 const cube_s = "assets/volume-of-cube/slide17/3.svg";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
 const Slide17 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {

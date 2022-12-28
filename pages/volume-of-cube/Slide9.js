@@ -1,6 +1,11 @@
-import { Paragraph } from "components/text";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import dynamic from "next/dynamic";
 
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextAndAppletSlide = dynamic(() =>
+  import("components/slides/TextAndAppletSlide")
+);
 const Slide9 = ({ downIcon }) => {
    return (
       <TextAndAppletSlide
