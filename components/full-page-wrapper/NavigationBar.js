@@ -7,7 +7,7 @@ import { useState } from "react";
 import DefaultNavBar from "./DefaultNavBar";
 
 const Wrapper = styled.div`
-   width: 80px;
+   width: fit-content;
    z-index: 6;
    position: fixed;
    opacity: ${(props) => props.opacity};
@@ -18,27 +18,13 @@ const Wrapper = styled.div`
    display: grid;
    grid-template-columns: 1fr;
 
+   // Mobile
    @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       height: 45px;
       width: 100%;
       top: 0;
       left: 0;
       transform: none;
-   }
-
-   @media (min-width: 821px) and (max-width: 992px) {
-      scale: 0.8;
-      transform: translate(-10%, -70%);
-   }
-
-   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
-      scale: 0.8;
-      transform: translate(-10%, -70%);
-   }
-
-   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
-      scale: 0.5;
-      transform: translate(-30%, -100%);
    }
 `;
 

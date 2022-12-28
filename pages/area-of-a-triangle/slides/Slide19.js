@@ -100,7 +100,7 @@ const Slide19 = ({ downIcon }) => {
                      rhsLatex: {
                         value: [
                            // "\\dfrac{\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{Diameter (d)}}}{2}",
-                           "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}bc\\ SinA}}\\ = \\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ca\\ SinB}}\\ = \\htmlId{3}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ab\\ SinC}}",
+                           "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\frac{1}{2}bc\\ SinA}}\\ = \\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\frac{1}{2}ca\\ SinB}}\\ = \\htmlId{3}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\frac{1}{2}ab\\ SinC}}",
                         ],
                         type: "latex",
                      },
