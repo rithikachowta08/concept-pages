@@ -14,6 +14,9 @@ const Slide5 = ({ downIcon }) => {
          title={"Total Surface Area"}
          secondaryTitle={"Surface Area"}
          downIcon={downIcon}
+         appletSrc={
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/tsa_rectangularPrism_V1/index.html"
+         }
       >
          <Paragraph color={colors.WHITE}>
             The total surface area of a rectangular prism is the area occupied
