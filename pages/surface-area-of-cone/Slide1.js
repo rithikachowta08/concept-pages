@@ -11,7 +11,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
         "Curved surface area",
         "Total surface area",
       ]}
-      anchorIdxes={[2, 8, 10]}
+      anchorIdxes={[2, 7, 9]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>

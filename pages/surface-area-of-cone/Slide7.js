@@ -2,10 +2,10 @@ import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import { lineHeightProp } from "utils/fontStyles";
-import MathElement from "components/MathElement";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
+const MathElement = dynamic(() => import("components/MathElement"));
 const TextAndDiagramSlide = dynamic(() =>
   import("components/slides/TextAndDiagramSlide")
 );

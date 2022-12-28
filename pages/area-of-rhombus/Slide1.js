@@ -11,7 +11,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
         "Area of rhombus using diagonals",
         "Area of rhombus using trigonometry",
       ]}
-      anchorIdxes={[2, 6, 9, 12]}
+      anchorIdxes={[2, 5, 8, 11]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>

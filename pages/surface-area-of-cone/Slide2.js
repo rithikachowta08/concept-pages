@@ -2,10 +2,10 @@ import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import { lineHeightProp } from "utils/fontStyles";
-import HyperLink from "components/text/HyperLink";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
 const TextAndDiagramSlide = dynamic(() =>
   import("components/slides/TextAndDiagramSlide")
 );
@@ -47,7 +47,7 @@ const Slide2 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         A cone is a&nbsp;
         <HyperLink
-          href={"https://byjus.com/us/math/area-of-parallelogram/"}
+          href={"https://byjus.com/us/math/concept-three-dimensional-shapes/"}
           color={colors.DARK_BLUE}
         >
           three-dimensional
