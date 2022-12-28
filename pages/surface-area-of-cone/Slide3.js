@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
+import { ggb_applet_uri } from "utils/constants";
 const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
@@ -46,7 +47,7 @@ const Slide3 = ({ downIcon }) => {
     <TextAndAppletSlide
       downIcon={downIcon}
       title="Formation of a Cone"
-      appletSrc="./applets/triangle.html"
+      appletSrc={`${ggb_applet_uri}surface-area-of-cone-formation-v2/index.html`}
     >
       <Modal
         isOpen={isModalOpen}
