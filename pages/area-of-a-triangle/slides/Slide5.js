@@ -29,7 +29,7 @@ const Slide5 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg="LIGHT"
-         title="General formula"
+         title="General Formula"
          downIcon={downIcon}
          images={[
             {
@@ -41,6 +41,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_1_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an acute angled triangle",
+                        "Diagram of an acute angled triangle highlighting base",
+                        "Diagram of an acute angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Acute Triangle",
@@ -54,6 +59,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_2_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a right angled triangle",
+                        "Diagram of a right angled triangle highlighting base",
+                        "Diagram of a right angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Right Triangle",
@@ -67,6 +77,11 @@ const Slide5 = ({ downIcon }) => {
                         area_triangle_angles_3_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an obtuse angled triangle",
+                        "Diagram of an obtuse angled triangle highlighting base",
+                        "Diagram of an obtuse angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Obtuse Triangle",
@@ -74,33 +89,33 @@ const Slide5 = ({ downIcon }) => {
          ]}
       >
          <span>
-            <Paragraph textAlign={"center"}>
-               <TextLine>
-                  Let’s observe the base and height of different types of
-                  triangles.
-               </TextLine>
-               <TextLine>
-                  {" "}
-                  Area ={" "}
-                  <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
-                  <TextSpanBg
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => setActiveIndex(1)}
-                     onHoverOut={() => setActiveIndex(0)}
-                  >
-                     Base (b)
-                  </TextSpanBg>
-                  <MathElement htmlString={"\\ \\times\\ "} />
-                  <TextSpanBg
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => setActiveIndex(2)}
-                     onHoverOut={() => setActiveIndex(0)}
-                  >
-                     Height (h)
-                  </TextSpanBg>
-               </TextLine>
+            <Paragraph
+               textAlign={"center"}
+               marginBottom={"40px"}
+               color={colors.BLACK}
+            >
+               Let&apos;s observe the base and height of different types of
+               triangles.{" "}
+            </Paragraph>
+            <Paragraph textAlign={"center"} color={colors.BLACK}>
+               Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => setActiveIndex(1)}
+                  onHoverOut={() => setActiveIndex(0)}
+               >
+                  Base (b)
+               </TextSpanBg>
+               <MathElement htmlString={"\\ \\times\\ "} />
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => setActiveIndex(2)}
+                  onHoverOut={() => setActiveIndex(0)}
+               >
+                  Height (h)
+               </TextSpanBg>
             </Paragraph>
          </span>
       </MultipleDiagramSlide>

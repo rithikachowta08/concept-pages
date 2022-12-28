@@ -112,6 +112,7 @@ const Slide10 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
+               altTexts={["A cube whose side area is 16 square centimetres.","A cube with it's side highlighted having area of 16 square centimetres."]}
                activeIndex={activeIndex}
             />
          }

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
@@ -80,12 +81,21 @@ const DefaultNavBar = ({
    showNav,
    hideNav,
 }) => {
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current) {
+         console.log(ref.current);
+         global.desktopNavBarWidth = ref.current.getBoundingClientRect().width;
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [ref.current, currentPageIdx]);
    return (
       <NavWrap
          isExpanded={isExpanded}
          onMouseEnter={showNav}
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
+         ref={ref}
       >
          {isExpanded ? (
             <Flex

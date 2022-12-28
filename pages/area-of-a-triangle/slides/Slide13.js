@@ -26,6 +26,11 @@ const Slide13 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1, image_2, image_3]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an isoscele triangle showing equal sides and equal angles",
+                  "Diagram of an isosceles triangle highlighting base",
+                  "Diagram of an isosceles triangle highlighting equal sides and equal base angles",
+               ]}
             />
          }
          downIcon={downIcon}
@@ -42,7 +47,7 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               base &apos;b&apos;
+               base &quot;b&quot;
             </TextSpanBg>{" "}
             and the{" "}
             <TextSpanBg
@@ -55,7 +60,7 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               equal sides &apos;a&apos;
+               equal sides &quot;a&quot;
             </TextSpanBg>{" "}
             , its area can be calculated as:
          </Paragraph>

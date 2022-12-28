@@ -68,7 +68,17 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle="Arc of a Circle"
          diagram={
             <TransitionImage
-               images={[circle_showing_the_sector, central_angle_of_the_arc, length_of_the_arc]}
+               images={[
+                  circle_showing_the_sector,
+                  central_angle_of_the_arc,
+                  length_of_the_arc,
+               ]}
+               altTexts={[
+               "Diagram of a circle showing the sector",
+               "Diagram of a circle highlighting central angle of the arc",
+               "Diagram of a circle highlighting length of the arc"
+               ]}
+
                activeIndex={activeIndex}
             />
          }

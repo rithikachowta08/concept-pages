@@ -10,7 +10,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(area of base) x height"],
+            value: ["(Area of base) x Height"],
             type: "text",
          },
          rhsHint: {
@@ -24,7 +24,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(area of square sheet) x height"],
+            value: ["(Area of square sheet) x Height"],
             type: "text",
          },
          rhsHint: {

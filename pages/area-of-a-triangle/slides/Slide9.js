@@ -18,10 +18,15 @@ import { fontSizes, fontWeights } from "utils/fontStyles";
 const Slide9 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
-         title={"Heron's formula"}
+         title={"Heron's Formula"}
          secondaryTitle={"Area of a Triangle"}
          bg={"DARK"}
-         diagram={<StyledImg src={area_triangle_heron} />}
+         diagram={
+            <StyledImg
+               src={area_triangle_heron}
+               alt="Diagram of a scalene triangle"
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph color={colors.WHITE}>

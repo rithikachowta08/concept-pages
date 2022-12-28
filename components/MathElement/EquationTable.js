@@ -9,7 +9,7 @@ const EquationParentDiv = styled.div`
 
 const StyledTable = styled.table`
    border-spacing: 0 10px;
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       border-spacing: 0 5px;
    }
 `;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ea6560;
+        opacity: .1;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+  <polygon class="cls-2" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+</svg>

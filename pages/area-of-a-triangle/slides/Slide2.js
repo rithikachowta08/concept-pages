@@ -25,7 +25,7 @@ const Slide2 = ({ downIcon }) => {
             A triangle is a closed shape that has three sides, three angles, and
             three vertices.
          </Paragraph>
-         <ModalImg src={area_triangle_modal} />
+         <ModalImg src={area_triangle_modal} alt="Diagram of a triangle" />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -41,12 +41,17 @@ const Slide2 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title="Definition"
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
             <TransitionImage
                images={[area_triangle, area_triangle_shaded]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a triangle",
+                  "Diagram of area of a triangle",
+                  "Diagram of a triangle",
+               ]}
             />
          }
       >

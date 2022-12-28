@@ -72,7 +72,7 @@ const Slide8 = ({ downIcon }) => {
          secondaryTitle="Volume of a Cube Formula"
          title="Illustrative Example"
          downIcon={downIcon}
-         diagram={<StyledImg src={cube_red} />}
+         diagram={<StyledImg src={cube_red} alt="A cube with side length equal to 7 centimetres." />}
       >
          <Paragraph>
             What is the volume of a cube of side length 7 cm?

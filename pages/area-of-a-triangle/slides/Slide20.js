@@ -1,10 +1,8 @@
 import MathElement from "components/MathElement";
 import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import TransitionImage from "components/media/TransitionImage";
 import Pill from "components/Pill";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpan, TextSpanBg } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
@@ -16,12 +14,27 @@ const Slide20 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
-         title={"Derivation"}
+         title={
+            <p
+               style={{
+                  color: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  marginTop: "30px",
+               }}
+            >
+               Derivation
+            </p>
+         }
          bg={"LIGHT"}
          diagram={
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a scalene triangle of height h",
+                  "Diagram of a scalene triangle highlighting one of its part including height",
+               ]}
             />
          }
          downIcon={downIcon}

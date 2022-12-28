@@ -16,18 +16,22 @@ const Slide16 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Equilateral triangle"}
-         secondaryTitle={"Area of different types of triangle"}
+         secondaryTitle={"Area of Different types of Triangle"}
          bg={"LIGHT"}
          diagram={
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+               ]}
             />
          }
          downIcon={downIcon}
       >
          <Paragraph>
-            Given the length &apos;a&apos; of a side of an{" "}
+            Given the length &quot;a&quot; of a side of an{" "}
             <TextSpanBg
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}

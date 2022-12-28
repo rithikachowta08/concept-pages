@@ -23,9 +23,9 @@ const TextSpan = dynamic(() =>
 );
 
 const bg = "assets/white_bg.png";
-const right_red = "assets/right_red.svg";
-const right_angles_blue = "assets/right_angles_blue.svg";
-const hypotenuse = "assets/hypotenuse.svg";
+const right_red = "assets/triangles/right_red.svg";
+const right_angles_blue = "assets/triangles/right_angles_blue.svg";
+const hypotenuse = "assets/triangles/hypotenuse.svg";
 
 const Slide7 = () => {
    const [activeIndex, setActiveIndex] = useState(0);
