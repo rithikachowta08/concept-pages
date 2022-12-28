@@ -123,7 +123,7 @@ const TextAndAppletSlide = ({
                {/* Body */}
                <Flex
                   direction="column"
-                  padding="0 20px"
+                  padding="0 30px"
                   justifyContent="space-evenly"
                   alignItems="center"
                   width="100%"

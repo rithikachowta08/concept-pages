@@ -224,7 +224,7 @@ export const PageWrap = styled.div`
 `;
 
 export const LeftAlignDiv = styled.div`
-   align-self: center;
+   align-self: flex-start;
    width: fit-content;
 `;
 
