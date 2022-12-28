@@ -2,7 +2,7 @@ const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
 import dynamic from "next/dynamic";
 
 // video slide
-const Slide10 = ({ navBar, downIcon }) => {
+const Slide10 = ({ navBar }) => {
    return (
       <VideoSlide
          navBar={navBar}

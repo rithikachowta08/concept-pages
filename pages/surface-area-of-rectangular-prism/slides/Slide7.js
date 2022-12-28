@@ -5,7 +5,7 @@ const TextAndAppletSlide = dynamic(() =>
 );
 import { Paragraph } from "components/text";
 
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({}) => {
    return (
       <TextAndAppletSlide
          secondaryTitle={"Surface Area of Rectangular Prism"}
