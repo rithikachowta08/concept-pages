@@ -94,21 +94,21 @@ const ShakaPlayerContainer = (props) => {
       });
 
       if (localStorage.getItem("accesstoken")) {
-         getUserDetails(
-            localStorage.getItem("accesstoken"),
-            localStorage.getItem("idSubstring")
-         )
-            .then((r) => r.json())
-            .then((res) => {
-               if (res["accounts"]) {
-                  setLoggedIn(true);
-                  checkVideoView(true);
-               } else {
-                  checkVideoView(false);
-               }
-            });
+         // getUserDetails(
+         //    localStorage.getItem("accesstoken"),
+         //    localStorage.getItem("idSubstring")
+         // )
+         //    .then((r) => r.json())
+         //    .then((res) => {
+         //       if (res["accounts"]) {
+         //          setLoggedIn(true);
+         //          // checkVideoView(true);
+         //       } else {
+         //          // checkVideoView(false);
+         //       }
+         //    });
       } else {
-         checkVideoView(false);
+         // checkVideoView(false);
       }
    }, []);
 
@@ -143,81 +143,81 @@ const ShakaPlayerContainer = (props) => {
 
          isEncryptedVideo && (await getSrcKey(props.videoContent));
 
-         onWatchingVideo(props.videoContent["id"], getCookie("userToken")).then(
-            (res) => {}
-         );
-         localStorage.setItem("watchedVideoId", props.videoContent["id"]);
-         setVideoViews(videoViews + 1);
+         // onWatchingVideo(props.videoContent["id"], getCookie("userToken")).then(
+         //    (res) => {}
+         // );
+         // localStorage.setItem("watchedVideoId", props.videoContent["id"]);
+         // setVideoViews(videoViews + 1);
       })();
    }
 
    function checkVideoView(loggedIn) {
       if (videosViewedbyUser.includes(props.videoContent.id)) {
-         pushDataLayer({
-            event: "qa_video_thumbnail_view",
-            question_name: limitTo100(props.question_title),
-            video_name: props.videoContent.video_title,
-            user_id: localStorage.getItem("backendUuid")
-               ? String(localStorage.getItem("backendUuid"))
-               : undefined,
-         });
+         // pushDataLayer({
+         //    event: "qa_video_thumbnail_view",
+         //    question_name: limitTo100(props.question_title),
+         //    video_name: props.videoContent.video_title,
+         //    user_id: localStorage.getItem("backendUuid")
+         //       ? String(localStorage.getItem("backendUuid"))
+         //       : undefined,
+         // });
       } else if (
          videosViewedbyUser.length >= videoBlockerLimit &&
          loggedIn == false
       ) {
-         pushDataLayer({
-            event: "qa_blocker_view",
-            question_name: limitTo100(props.question_title),
-            video_name: props.videoContent.video_title,
-            user_id: localStorage.getItem("backendUuid")
-               ? String(localStorage.getItem("backendUuid"))
-               : undefined,
-            soucre: localStorage.getItem("loginSource")
-               ? localStorage.getItem("loginSource")
-               : undefined,
-         });
+         // pushDataLayer({
+         //    event: "qa_blocker_view",
+         //    question_name: limitTo100(props.question_title),
+         //    video_name: props.videoContent.video_title,
+         //    user_id: localStorage.getItem("backendUuid")
+         //       ? String(localStorage.getItem("backendUuid"))
+         //       : undefined,
+         //    soucre: localStorage.getItem("loginSource")
+         //       ? localStorage.getItem("loginSource")
+         //       : undefined,
+         // });
       } else {
-         pushDataLayer({
-            event: "qa_video_thumbnail_view",
-            question_name: limitTo100(props.question_title),
-            video_name: props.videoContent.video_title,
-            user_id: localStorage.getItem("backendUuid")
-               ? String(localStorage.getItem("backendUuid"))
-               : undefined,
-         });
+         // pushDataLayer({
+         //    event: "qa_video_thumbnail_view",
+         //    question_name: limitTo100(props.question_title),
+         //    video_name: props.videoContent.video_title,
+         //    user_id: localStorage.getItem("backendUuid")
+         //       ? String(localStorage.getItem("backendUuid"))
+         //       : undefined,
+         // });
       }
 
-      if (
-         videosViewedbyUser.length >= videoBlockerLimit &&
-         !videosViewedbyUser.includes(props.videoContent.id) &&
-         loggedIn == false
-      ) {
-         storeVideoWatchData(
-            props.videoContent["id"],
-            getCookie("userToken"),
-            "blocker",
-            -1
-         )
-            .then((r) => r.json())
-            .then((res) => {});
-      }
+      // if (
+      //    videosViewedbyUser.length >= videoBlockerLimit &&
+      //    !videosViewedbyUser.includes(props.videoContent.id) &&
+      //    loggedIn == false
+      // ) {
+      //    storeVideoWatchData(
+      //       props.videoContent["id"],
+      //       getCookie("userToken"),
+      //       "blocker",
+      //       -1
+      //    )
+      //       .then((r) => r.json())
+      //       .then((res) => {});
+      // }
    }
 
    function playvideo() {
       setVideoOpened(true);
       watchVideo();
-      pushDataLayer({
-         event: "qa_video_click",
-         question_name: limitTo100(props.question_title),
-         video_name: props.videoContent.video_title,
-      });
+      // pushDataLayer({
+      //    event: "qa_video_click",
+      //    question_name: limitTo100(props.question_title),
+      //    video_name: props.videoContent.video_title,
+      // });
 
       window.setTimeout(() => {
-         if (document.getElementsByClassName("shaka-fullscreen-button")) {
-            document
-               .getElementsByClassName("shaka-fullscreen-button")[0]
-               .click();
-         }
+         // if (document.getElementsByClassName("shaka-fullscreen-button")) {
+         //    document
+         //       .getElementsByClassName("shaka-fullscreen-button")[0]
+         //       .click();
+         // }
          if (document.getElementsByClassName("shaka-play-button")) {
             document.getElementsByClassName("shaka-play-button")[0].click();
          }
