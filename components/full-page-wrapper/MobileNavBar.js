@@ -37,9 +37,9 @@ const SectionIndicator = styled.div`
    border-radius: 50%;
    position: relative;
    cursor: pointer;
-   width: ${(props) => (props.isMobile ? "6px" : "14px")};
-   height: ${(props) => (props.isMobile ? "6px" : "14px")};
-   border: ${(props) => (props.isMobile ? "2px" : "4px")} solid
+   width: 6px;
+   height: 6px;
+   border: 2px solid
       ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
    background: ${(props) =>
       props.isComplete
@@ -50,12 +50,8 @@ const SectionIndicator = styled.div`
    box-shadow: ${(props) =>
       props.isComplete
          ? props.darkTheme
-            ? `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(255, 255, 255, 0.3)`
-            : `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(74, 51, 245, 0.3)`
+            ? `0px 0px 0px 4px rgba(255, 255, 255, 0.3)`
+            : `0px 0px 0px 4px rgba(74, 51, 245, 0.3)`
          : `none`};
    transition: all 0.3s;
 `;
@@ -113,7 +109,6 @@ const MobileNavBar = ({
                         key={idx}
                      >
                         <SectionIndicator
-                           isMobile
                            darkTheme={darkTheme}
                            isComplete={currentPageIdx >= section.slides[0]}
                         />

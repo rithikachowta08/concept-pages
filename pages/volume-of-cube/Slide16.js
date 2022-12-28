@@ -107,6 +107,7 @@ const Slide16 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
+               altTexts={["Diagram of a cube with face diagonal equal to 4 feet","Diagram of a cube with face diagonal highlighted and equal to 4 feet"]}
                activeIndex={activeIndex}
                bottomOffset="65px"
             />

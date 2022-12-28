@@ -3,12 +3,10 @@ import styled from "styled-components";
 
 const Div = styled.div`
    display: block;
+   height: 100%;
+   width: 100%;
 
-   @media (min-width: 200px) and (max-width: 810px) and (min-height: 600px) {
-      display: none;
-   }
-
-   @media (min-height: 300px) and (max-height: 400px) and (max-width: 500px) {
+   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       display: none;
    }
 `;

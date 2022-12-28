@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 
 const StyledButton = styled.button`
    border-radius: 8px;
-   height: 50px;
+   height: ${(props) => props.height || "50px"};
    border: 1px solid
       ${(props) => props.borderColor || props.bgColor || props.color || "white"};
    color: ${(props) => props.color || "white"};
@@ -32,6 +32,7 @@ const Button = ({
    borderColor,
    bgColor,
    margin,
+   height,
 }) => {
    return (
       <StyledButton
@@ -41,6 +42,7 @@ const Button = ({
          alignSelf={alignSelf}
          position={position}
          width={width}
+         height={height}
          onClick={onClick}
          color={color}
          margin={margin}

@@ -9,7 +9,7 @@ const Flex = styled.div`
    flex-direction: column;
    padding: 0 0 0 10vw;
 
-   @media (min-width: 200px) and (max-width: 810px) and (min-height: 600px) {
+   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       padding: 0 5vw;
    }
 `;

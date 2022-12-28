@@ -25,7 +25,7 @@ const Overlay = styled.div`
 // background: #3c3281;
 
 const bgMapping = {
-   LIGHT: "#ffffee",
+   LIGHT: "#ffffff",
    DARK: "#3c3281",
 };
 
@@ -102,6 +102,8 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                   bottom="40px"
                   width="130px"
                   onClick={onDismiss}
+                  borderColor={color}
+                  color={color}
                >
                   Got it!
                </Button>

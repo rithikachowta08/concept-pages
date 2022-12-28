@@ -17,7 +17,7 @@ const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 const bg = "assets/white_bg.png";
-const angle_sum_slide = "assets/angle_sum_slide.svg";
+const angle_sum_slide = "assets/triangles/angle_sum_slide.svg";
 
 const Slide7 = () => {
    return (

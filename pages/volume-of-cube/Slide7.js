@@ -10,7 +10,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(area of base) x height"],
+            value: ["(Area of base) x Height"],
             type: "text",
          },
          rhsHint: {
@@ -24,7 +24,7 @@ const Slide7 = ({ downIcon, navBar }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(area of square sheet) x height"],
+            value: ["(Area of square sheet) x Height"],
             type: "text",
          },
          rhsHint: {
@@ -69,7 +69,7 @@ const Slide7 = ({ downIcon, navBar }) => {
       <TextAndAppletSlide
          secondaryTitle="Volume of a Cube Formula"
          title="Derivation"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Volumes-of-cube-using-unit-cubes-v2/index.html"
          downIcon={downIcon}
       >
          <Paragraph>

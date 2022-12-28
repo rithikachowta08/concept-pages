@@ -2,10 +2,9 @@ import VideoSlide from "components/slides/VideoSlide";
 import React from "react";
 
 // video slide
-const Slide10 = ({ navBar, downIcon }) => {
+const Slide10 = ({ navBar }) => {
    return (
       <VideoSlide
-         downIcon={downIcon}
          navBar={navBar}
          title="Area of a Circle"
          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"

@@ -39,7 +39,7 @@ const Slide11 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["s^2 + (s\\sqrt{2})^2 =3S^2"],
+            value: ["s^2 + (s\\sqrt{2})^2 =3s^2"],
             type: "latex",
          },
       },
@@ -96,6 +96,7 @@ const Slide11 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal, cube_3]}
+               altTexts={["Diagram of a cube with body diagonal and face diagonal","Diagram of a cube highlighting a triangle formed by the face diagonal.","Diagram of a cube highlighting a triangle formed by the face diagonal."]}
                activeIndex={activeIndex}
                // bottomOffset="65px"
             />
@@ -125,7 +126,7 @@ const Slide11 = ({ downIcon }) => {
             <TextLine>
                In{" "}
                <TextSpanBg
-                  id={1}
+                  id={2}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
                   color={colors.RED}

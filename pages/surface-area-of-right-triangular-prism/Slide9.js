@@ -44,7 +44,7 @@ const Slide9 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         downIcon={downIcon}
+         isLastSlide
       >
          <Paragraph>
             The area covered by all the faces of a right triangular prism
@@ -54,16 +54,16 @@ const Slide9 = ({ downIcon }) => {
             <Paragraph lineHeight={lineHeightProp}>
                <TextLine>Total surface area</TextLine>
                <TextLine>
-                  = Area of the three lateral faces +&nbsp;
+                  = Area of the three lateral faces + Area of the two&nbsp;
                   <TextSpanBg
                      onHover={onHover}
                      onHoverOut={onHoverOut}
                      color={colors.RED}
-                     hoverColor={colors.AQUA}
+                     hoverColor={colors.DARK_BLUE}
                      fontWeight={fontWeights.BOLD}
                      fontSize="2.2rem"
                   >
-                     Area of the two triangular bases
+                     triangular bases
                   </TextSpanBg>
                </TextLine>
                <TextLine>= (a + b + c)l + &frac12; bh + &frac12; bh</TextLine>
