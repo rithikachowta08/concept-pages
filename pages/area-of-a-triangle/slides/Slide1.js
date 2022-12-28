@@ -13,7 +13,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Definition",
             "General Formula",
             "Heron's Formula",
-            "Area of different types of triangle",
+            "Area of different types of triangles",
             "Area of a triangle given two sides and the included angle",
          ]}
          moveToSection={moveToSection}

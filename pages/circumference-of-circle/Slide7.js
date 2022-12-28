@@ -86,6 +86,10 @@ const Slide8 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain_d, circumference_value]}
+               altTexts={[
+                  "Image of a circle with diameter d",
+                  "Image of a circle with circumference 28 pi highlighted",
+               ]}
                activeIndex={activeIndex}
             />
          }

@@ -5,7 +5,7 @@ const Slide4 = ({ downIcon }) => {
    return (
       <VideoSlide
          downIcon={downIcon}
-         title="Classification of triangles"
+         title="Rectangle and Square Perimeter and Area"
          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
    );

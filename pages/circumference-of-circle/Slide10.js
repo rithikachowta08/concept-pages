@@ -5,7 +5,7 @@ const Slide10 = ({ downIcon }) => {
    return (
       <VideoSlide
          downIcon={downIcon}
-         title="Classification of triangles"
+         title="Circle and its Definitions"
          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
    );

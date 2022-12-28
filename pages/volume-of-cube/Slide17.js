@@ -26,6 +26,7 @@ const Slide17 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_lwh, cube_s]}
+               altTexts={["Diagram of a rectangular prism with length l, width w and height h.","Diagram of a rectangular prism where length, width and height are highlighted"," Diagram of a rectangular prism where length, width and height are of equal length 's'."]}
                activeIndex={activeIndex}
             />
          }

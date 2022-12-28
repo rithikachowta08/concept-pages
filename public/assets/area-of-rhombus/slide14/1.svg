@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #ea6560;
+      }
+
+      .cls-6 {
+        stroke-width: 6px;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7 {
+        stroke-dasharray: 0 0 7.9 7.9;
+      }
+
+      .cls-7, .cls-9 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-weight: 500;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 36px;
+      }
+
+      .cls-8 {
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-4 {
+        opacity: .3;
+      }
+
+      .cls-5 {
+        opacity: .46;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+  <path class="cls-5" d="M74.69,406.19l-10.56,39.72h40.79s-4.3-29.25-30.24-39.72Z"/>
+  <path class="cls-8" d="M104.93,445.91s-4.3-29.25-30.24-39.72l-10.56,39.72"/>
+  <text class="cls-2" transform="translate(39.85 291.78)"><tspan x="0" y="0">4 in</tspan></text>
+  <text class="cls-2" transform="translate(205.06 484.09)"><tspan x="0" y="0">4 in</tspan></text>
+  <text class="cls-3" transform="translate(92.33 414.58)"><tspan x="0" y="0">30°</tspan></text>
+  <text class="cls-2" transform="translate(162.88 295.5)"><tspan x="0" y="0">h</tspan></text>
+  <g>
+    <line class="cls-9" x1="152.59" y1="114.09" x2="152.59" y2="118.09"/>
+    <line class="cls-7" x1="152.59" y1="125.99" x2="152.59" y2="437.96"/>
+    <line class="cls-9" x1="152.59" y1="441.91" x2="152.59" y2="445.91"/>
+  </g>
+  <rect class="cls-4" x="150.88" y="412.21" width="35.62" height="33.7"/>
+  <polyline class="cls-8" points="152.8 412.21 186.5 412.21 186.5 445.91"/>
+  <polygon class="cls-6" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+</svg>

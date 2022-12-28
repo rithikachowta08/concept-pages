@@ -38,6 +38,10 @@ const Slide9 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[rectangle_full_diagonal, rectangle_diagonal]}
+               altTexts={[
+                  "Diagram of a rectangle with length, width and diagonal labelled.",
+                  "Diagram of a rectangle with highlighted diagonal",
+               ]}
                activeIndex={activeIndex}
             />
          }

@@ -20,7 +20,7 @@ const Slide4 = ({ downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          title={"General Formula"}
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
             <TransitionImage
@@ -35,8 +35,8 @@ const Slide4 = ({ downIcon }) => {
          }
       >
          <Paragraph color={colors.WHITE}>
-            The area &apos;A&apos; of a triangle is one-half of the product of
-            its base &apos;b&apos; and height &apos;h&apos;.
+            The area &quot;A&quot; of a triangle is one-half of the product of
+            its base &quot;b&quot; and height &quot;h&quot;.
          </Paragraph>
          <Paragraph>
             <Pill>

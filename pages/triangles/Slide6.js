@@ -22,8 +22,8 @@ const TextSpan = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpan)
 );
 
-const obtuse_red = "assets/obtuse_red.svg";
-const obtuse_angles_blue = "assets/obtuse_angles_blue.svg";
+const obtuse_red = "assets/triangles/obtuse_red.svg";
+const obtuse_angles_blue = "assets/triangles/obtuse_angles_blue.svg";
 
 const Slide6 = () => {
    const [activeIndex, setActiveIndex] = useState(0);

@@ -19,7 +19,7 @@ const Slide6 = ({ downIcon, navBar }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["side \\times side \\times side"],
+            value: ["Side \\times Side \\times Side"],
             type: "latex",
          },
          rhsHint: {
@@ -76,10 +76,11 @@ const Slide6 = ({ downIcon, navBar }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_d]}
+               altTexts={["Diagram of a cube"," Diagram of a cube showing side length and volume"]}
                activeIndex={activeIndex}
             />
          }
-         title="Formula"
+         title="General Formula"
       >
          <Paragraph color={colors.WHITE}>
             <TextLine>
@@ -92,7 +93,7 @@ const Slide6 = ({ downIcon, navBar }) => {
                   hoverColor={colors.AQUA}
                   color={colors.RED}
                >
-                  side length ‘s’
+                  side length (s),
                </TextSpanBg>{" "}
             </TextLine>
             <EquationTable

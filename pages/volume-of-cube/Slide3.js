@@ -16,13 +16,14 @@ const Slide3 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
-            Unit cube is a cube whose sides are 1 unit long
+           A Unit cube is a cube whose sides are 1 unit long.
          </Paragraph>
          <StyledImg
             src={cube_unit}
             alignSelf="center"
             width="400px"
             marginBottom="50px"
+            alt="Diagram of a unit cube"
          />
       </Flex>
    );
@@ -46,6 +47,9 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_spaces]}
+               altTexts={
+                  ["Diagram of a cube highlighting sides","A cube filled with unit cube"]
+               }
                activeIndex={activeIndex}
             />
          }

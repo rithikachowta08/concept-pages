@@ -7,7 +7,6 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex, LeftWrap } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import HyperLink from "components/text/HyperLink";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
 
@@ -16,7 +15,6 @@ const image_2 = "assets/area-of-triangle/equi_deri_2.svg";
 
 // Derivation of equilateral triangle
 const Slide17 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
@@ -24,16 +22,14 @@ const Slide17 = ({ downIcon }) => {
          secondaryTitle={"Area of an Equilateral triangle"}
          bg={"LIGHT"}
          diagram={
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2]}
-                  activeIndex={activeIndex}
-                  altTexts={[
-                     "Diagram of an equilateral triangle showing equal sides, angles and height",
-                     "Diagram of an equilateral triangle highlighting one of its congruent half",
-                  ]}
-               />
-            </LeftWrap>
+            <TransitionImage
+               images={[image_1, image_2]}
+               activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing equal sides, angles and height",
+                  "Diagram of an equilateral triangle highlighting one of its congruent half",
+               ]}
+            />
          }
          downIcon={downIcon}
       >

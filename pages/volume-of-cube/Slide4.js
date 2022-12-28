@@ -4,8 +4,9 @@ const Slide4 = ({ downIcon }) => {
    return (
       <AppletSlide
          downIcon={downIcon}
-         description="Applet description here"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
+         title="Calculate the volume of the given cube"
+         secondaryTitle="What is the volume of a cube?"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/VolumeOfCube_V4/web-mobile/index.html"
       ></AppletSlide>
    );
 };

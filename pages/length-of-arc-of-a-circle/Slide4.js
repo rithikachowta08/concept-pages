@@ -39,7 +39,7 @@ const semicircular_arc= "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
-const Slide3 = ({ downIcon }) => {
+const Slide4 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
@@ -68,7 +68,18 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle="Arc of a Circle"
          diagram={
             <TransitionImage
-               images={[diagram_of_a_circle,minor_arc, major_arc, semicircular_arc]}
+               images={[
+                  diagram_of_a_circle,
+                  minor_arc,
+                  major_arc,
+                  semicircular_arc,
+               ]}
+               altTexts={[
+                  "Diagram of a circle",
+                  "Diagram of a circle highlighting minor arc",
+                  "Diagram of a circle highlighting major arc",
+                  "Diagram of a circle highlighting semicircular arc"
+                  ]}
                activeIndex={activeIndex}
             />
          }
@@ -81,12 +92,13 @@ const Slide3 = ({ downIcon }) => {
             onDismiss={onDismiss}
          />
          <Paragraph>
-         The arc of a circle is classified based on the degree measure of the arc.
+            The arc of a circle is classified based on the degree measure of the
+            arc.
          </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -95,11 +107,12 @@ const Slide3 = ({ downIcon }) => {
                >
                   Minor arc
                </TextSpanBg>
-               (<MathElement htmlString={'\\overgroup{ACB}'} />): An arc of a circle measuring less than 180∘.
+               (<MathElement htmlString={"\\overgroup{ACB}"} />
+               ): An arc of a circle measuring less than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -108,11 +121,12 @@ const Slide3 = ({ downIcon }) => {
                >
                   Major arc
                </TextSpanBg>
-               (<MathElement htmlString={'\\overgroup{ADB}'} />): An arc of a circle measuring greater than 180∘.
+               (<MathElement htmlString={"\\overgroup{ADB}"} />
+               ): An arc of a circle measuring greater than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(3)}
+                  onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
@@ -121,11 +135,12 @@ const Slide3 = ({ downIcon }) => {
                >
                   Semicircular arc
                </TextSpanBg>
-               (<MathElement htmlString={'\\overgroup{PDR}'} />): An arc of a circle measuring 180∘.
+               (<MathElement htmlString={"\\overgroup{PDR}"} />
+               ): An arc of a circle measuring 180°.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide3;
+export default Slide4;
