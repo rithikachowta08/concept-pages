@@ -25,7 +25,7 @@ const AreaOfATriangle = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
-      // <Slide3 key={2} />,
+      // <Slide3 key={2} />, hidden until approved from content team
       <Slide4 key={3} />,
       <Slide5 key={4} />,
       <Slide6 key={5} />,
@@ -34,7 +34,7 @@ const AreaOfATriangle = () => {
       <Slide9 key={8} />,
       <Slide10 key={9} />,
       <Slide11 key={10} />,
-      // <Slide12 key={11} />, // hidden until approved from content team
+      <Slide12 key={11} />,
       <Slide13 key={12} />,
       <Slide14 key={13} />,
       <Slide15 key={14} />,
@@ -65,12 +65,12 @@ const AreaOfATriangle = () => {
       },
       {
          title: "Area of a triangle given two sides and the included angle",
-         slides: [16, 17],
+         slides: [17, 18],
       },
    ];
 
    // const darkBgIndices = [0, 3, 5, 8, 9, 17];
-   const darkBgIndices = [0, 2, 4, 7, 8, 16];
+   const darkBgIndices = [0, 2, 4, 7, 8, 17];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -79,5 +79,10 @@ const AreaOfATriangle = () => {
       />
    );
 };
+
+AreaOfATriangle.title =
+   "Area of Triangle: Definition, Formula, Examples - BYJU'S";
+AreaOfATriangle.meta =
+   "Enhance your understanding of the area of triangle with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
 
 export default AreaOfATriangle;

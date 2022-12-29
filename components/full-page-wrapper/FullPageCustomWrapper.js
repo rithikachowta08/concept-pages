@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDeviceType } from "hooks/useDeviceType";
 import ReactFullpage from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
@@ -13,10 +12,16 @@ export const FullPageCustomWrapper = ({
    darkBgIndices,
    navigationSections,
 }) => {
-   const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
    return (
       <>
+         <NavigationBar
+            opacity={currentPageIdx === 0 ? 0 : 1}
+            sections={navigationSections}
+            darkTheme={darkBgIndices.includes(currentPageIdx)}
+            moveTo={fullPage?.moveTo}
+            currentPageIdx={currentPageIdx}
+         />
          <ReactFullpage
             //fullpage options
             // licenseKey={"YOUR_KEY_HERE"}
@@ -24,8 +29,8 @@ export const FullPageCustomWrapper = ({
             scrollBar={false}
             scrollingSpeed={900}
             fitToSectionDelay={900}
-            afterLoad={() => {
-               setCurrentPageIdx(fullPage?.getActiveSection().index() || 0);
+            onLeave={function (origin, destination) {
+               setCurrentPageIdx(destination.index);
             }}
             render={({ state, fullpageApi }) => {
                const moveToSection = fullpageApi?.moveTo;
@@ -34,15 +39,6 @@ export const FullPageCustomWrapper = ({
                   <>
                      <ReactFullpage.Wrapper>
                         {slidesComponentList.map((itm, idx) => {
-                           const navBar = idx ? (
-                              <NavigationBar
-                                 deviceType={deviceType}
-                                 sections={navigationSections}
-                                 darkTheme={darkBgIndices.includes(idx)}
-                                 moveTo={moveToSection}
-                                 currentPageIdx={currentPageIdx}
-                              />
-                           ) : null;
                            const downIcon = (
                               <DownArrowIcon
                                  visibility={
@@ -63,7 +59,6 @@ export const FullPageCustomWrapper = ({
                                  {/* No navigation bar on title page */}
                                  {React.cloneElement(itm, {
                                     downIcon,
-                                    navBar,
                                     moveToSection,
                                  })}
                               </div>

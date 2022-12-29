@@ -4,6 +4,7 @@ import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import { Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import { FillerNavBar } from "./common";
 
 const TextAndDiagramSlide = ({
    title,
@@ -73,7 +74,7 @@ const TextAndDiagramSlide = ({
             gap={isMobile ? "10px" : "60px"}
             direction={isMobile ? "column" : "row"}
          >
-            {navBar}
+            <FillerNavBar />
             <Flex
                padding={isMobile ? "0 20px" : "0"}
                direction={isMobile ? "column" : "row"}

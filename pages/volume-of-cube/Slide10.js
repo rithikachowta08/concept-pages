@@ -1,71 +1,112 @@
-import { TextSpanBg, Paragraph, TextLine } from "components/text";
-import { useState } from "react";
+import { Paragraph, TextLine, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
+import { useState } from "react";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide10/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide10/2.svg";
-import MathElement from "components/MathElement/index.js";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
+import EquationTable from "components/MathElement/EquationTable";
 
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
+      console.log(e.target);
       setActiveIndex(Number(e.target.id));
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-
-   let latex = [];
-   latex.push(`= (side)^3`);
-   latex.push(` (A)=(side)^2`);
-   latex.push(` \\sqrt{A} = side`);
-   latex.push(`=(\\sqrt{A})^3 `);
-   latex.push(`=(\\sqrt {16} m^2)^3 `);
-   latex.push(`= (4m)^3`);
-   latex.push(`= {64m}^3`);
-   let mathjaxCounter = 0;
-   let latexCounter = 0;
-
-   let EquationLatex = [
+   let EquationLatex0 = [
       {
-         lhsLatex: [`{Volume} \\: of cube`],
-         rhsLatex: [
-            {
-               eqLatex: "(side)^3",
-               hint: "",
-            },
-         ],
-      },
-      {
-         lhsLatex: ["(A)", "\\sqrt{A}"],
-         rhsLatex: [
-            {
-               eqLatex: "(side)^2",
-               hint: "",
-            },
-            {
-               eqLatex: "side",
-               hint: "",
-            },
-         ],
-      },
-
-      {
-         lhsLatex: [`V`, "", ""],
-         rhsLatex: [
-            {
-               eqLatex: "(\\sqrt{A})^3 = (\\sqrt {16}m^2)^3 ",
-               hint: "",
-            },
-            {
-               eqLatex: "(4m)^3 = {64m}^3",
-               hint: "",
-            },
-         ],
+         lhsLatex: {
+            value: ["\\text{Volume of a cube}"],
+            type: "latex",
+         },
+         rhsLatex: {
+            value: ["(side)^3"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
       },
    ];
+   let EquationLatex1 = [
+      {
+         lhsLatex: {
+            value: [
+               <TextSpanBg
+                  key={0}
+                  id={1}
+                  color={colors.RED}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_BLUE}
+               >
+                  Area of square face, (A)
+               </TextSpanBg>,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["(side)^2"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+      {
+         lhsLatex: {
+            value: ["\\sqrt{A}"],
+            type: "latex",
+         },
+         rhsLatex: {
+            value: ["side"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+   ];
+   let EquationLatex2 = [
+      {
+         lhsLatex: {
+            value: ["\\text{Volume}, V"],
+            type: "latex",
+         },
+         rhsLatex: {
+            value: ["(\\sqrt{A})^3 = (\\sqrt {16}m^2)^3"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["(4m)^3 = {64m}^3"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0, EquationLatex1, EquationLatex2);
+   let latexEquationCounter = 0;
+
    return (
       <TextAndDiagramSlide
          diagram={
@@ -75,7 +116,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
          secondaryTitle="Volume of a Cube using Area"
          title="Illustrative Example"
       >
@@ -85,34 +125,20 @@ const Slide10 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
-            <MultiLhsEquationContainer
-               equationLatex={EquationLatex[latexCounter++]}
-            ></MultiLhsEquationContainer>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
          <Paragraph>
-            <TextLine>
-               <TextSpanBg
-                  id={1}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_BLUE}
-                  color={colors.RED}
-               >
-                  Area of the square face
-               </TextSpanBg>
-            </TextLine>
-            <MultiLhsEquationContainer
-               lineHeight="1.7"
-               equationLatex={EquationLatex[latexCounter++]}
-            ></MultiLhsEquationContainer>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
 
          <Paragraph>
-            <TextLine>Volume,</TextLine>
-            <MultiLhsEquationContainer
-               lineHeight="1.7"
-               equationLatex={EquationLatex[latexCounter++]}
-            ></MultiLhsEquationContainer>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Paragraph>
       </TextAndDiagramSlide>
    );

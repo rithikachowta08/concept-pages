@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        opacity: .1;
+      }
+
+      .cls-3 {
+        stroke: #8a86b2;
+        stroke-width: 6px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: #67dbe8;
+      }
+
+      .cls-6 {
+        font-family: Raleway-Medium, Raleway;
+        font-weight: 500;
+      }
+
+      .cls-6, .cls-7 {
+        font-size: 36px;
+      }
+
+      .cls-4 {
+        stroke: #67dbe8;
+        stroke-width: 4px;
+      }
+
+      .cls-7 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-8 {
+        opacity: .6;
+      }
+    </style>
+  </defs>
+  <g class="cls-2">
+    <polygon class="cls-1" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+  </g>
+  <path class="cls-8" d="M74.69,406.19l-10.56,39.72h40.79s-4.3-29.25-30.24-39.72Z"/>
+  <path class="cls-4" d="M104.93,445.91s-4.3-29.25-30.24-39.72l-10.56,39.72"/>
+  <text class="cls-6" transform="translate(62.08 291.78)"><tspan x="0" y="0">a</tspan></text>
+  <text class="cls-6" transform="translate(223.9 488.09)"><tspan x="0" y="0">a</tspan></text>
+  <text class="cls-7" transform="translate(99.33 414.58)"><tspan x="0" y="0">θ</tspan></text>
+  <g>
+    <line class="cls-4" x1="51.25" y1="432.32" x2="132.21" y2="127.68"/>
+    <polygon class="cls-5" points="61.43 432.07 47.64 445.91 42.54 427.05 61.43 432.07"/>
+    <polygon class="cls-5" points="140.93 132.95 135.83 114.09 122.04 127.93 140.93 132.95"/>
+  </g>
+  <g>
+    <line class="cls-4" x1="393.08" y1="461.33" x2="78.2" y2="461.33"/>
+    <polygon class="cls-5" points="390.22 451.55 407.14 461.33 390.22 471.1 390.22 451.55"/>
+    <polygon class="cls-5" points="81.06 451.55 64.13 461.33 81.06 471.1 81.06 451.55"/>
+  </g>
+  <polygon class="cls-3" points="407.14 445.91 64.13 445.91 152.32 114.09 495.87 114.09 407.14 445.91"/>
+</svg>

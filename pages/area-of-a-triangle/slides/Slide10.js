@@ -9,14 +9,19 @@ const image_2 = "assets/area-of-triangle/slide_10_i.svg";
 const image_3 = "assets/area-of-triangle/slide_10_s.svg";
 
 // Types of triangle
-const Slide10 = ({ downIcon, navBar }) => {
+const Slide10 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg={"DARK"}
          title="Area of different types of triangles"
          images={[
             {
-               diagram: <StyledImg src={image_3} />,
+               diagram: (
+                  <StyledImg
+                     src={image_3}
+                     alt="Diagram of a scalene triangle"
+                  />
+               ),
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/scalene-triangle/"}
@@ -26,7 +31,12 @@ const Slide10 = ({ downIcon, navBar }) => {
                ),
             },
             {
-               diagram: <StyledImg src={image_2} />,
+               diagram: (
+                  <StyledImg
+                     src={image_2}
+                     alt="Diagram of a isosceles triangle"
+                  />
+               ),
                caption: (
                   <HyperLink
                      href={
@@ -38,7 +48,12 @@ const Slide10 = ({ downIcon, navBar }) => {
                ),
             },
             {
-               diagram: <StyledImg src={image_1} />,
+               diagram: (
+                  <StyledImg
+                     src={image_1}
+                     alt="Diagram of a equilateral triangle"
+                  />
+               ),
                caption: (
                   <HyperLink
                      href={"https://byjus.com/us/math/equilateral-triangle/"}
@@ -49,7 +64,6 @@ const Slide10 = ({ downIcon, navBar }) => {
             },
          ]}
          downIcon={downIcon}
-         navBar={navBar}
       />
    );
 };

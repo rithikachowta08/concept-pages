@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { colors } from "utils/colors";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 
 const IconWrap = styled.div`
    cursor: pointer;
@@ -19,6 +18,10 @@ const IconWrap = styled.div`
    }
    @media (min-height: 400px) and (max-height: 700px) and (min-width: 767px) {
       scale: 0.75;
+   }
+
+   @media (min-height: 300px) and (max-height: 800px) and (max-width: 950px) {
+      scale: 0.5;
    }
 `;
 

@@ -11,15 +11,19 @@ import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Scalene triangle
-const Slide11 = ({ downIcon, navBar }) => {
+const Slide11 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Scalene triangle"}
          secondaryTitle={"Area of Different types of Triangles"}
          bg={"LIGHT"}
-         diagram={<StyledImg src={area_triangle_sides_3_1} />}
+         diagram={
+            <StyledImg
+               src={area_triangle_sides_3_1}
+               alt="Diagram of a scalene triangle"
+            />
+         }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Given the length of the three sides (a, b, c) of a scalene triangle,

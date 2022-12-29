@@ -27,19 +27,14 @@ import { ModalTriggerText } from "components/text";
 const rectangle_plain = "assets/area-of-rectangle/rectangle_plain.svg";
 const rectangle_shaded = "assets/area-of-rectangle/rectangle_shaded.svg";
 const unit_square = "assets/area-of-rectangle/unit_square.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
-const Slide3 = ({ downIcon, navBar }) => {
+const Slide3 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
             A unit square is a square with side length equal to 1 unit.
          </Paragraph>
-         <ModalImg
-            src={unit_square}
-         // width="-webkit-fill-available"
-         // style={{ scale: "1", transform: "none" }}
-         />
+         <ModalImg src={unit_square} alt="Diagram of a unit rectangle" />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -62,11 +57,14 @@ const Slide3 = ({ downIcon, navBar }) => {
          diagram={
             <TransitionImage
                images={[rectangle_plain, rectangle_shaded]}
+               altTexts={[
+                  "Diagram of a rectangle",
+                  "Diagram of a area of a rectangle.",
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Modal
             isOpen={isModalOpen}
@@ -90,9 +88,7 @@ const Slide3 = ({ downIcon, navBar }) => {
          </Paragraph>
          <Paragraph>
             It is also the number of&nbsp;
-            <ModalTriggerText onClick={onClick}>
-               unit squares
-            </ModalTriggerText>
+            <ModalTriggerText onClick={onClick}>unit squares</ModalTriggerText>
             &nbsp;that can fit into a rectangle.
          </Paragraph>
       </TextAndDiagramSlide>

@@ -13,7 +13,7 @@ import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // General Formula Slide
-const Slide4 = ({ downIcon, navBar }) => {
+const Slide4 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -22,11 +22,15 @@ const Slide4 = ({ downIcon, navBar }) => {
          title={"General Formula"}
          secondaryTitle={"Area of a triangle"}
          downIcon={downIcon}
-         navBar={navBar}
          diagram={
             <TransitionImage
                images={[t_formula, t_base, t_height]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a triangle including base and height",
+                  "Diagram of a triangle highlighting base",
+                  "Diagram of a triangle highlighting height",
+               ]}
             />
          }
       >

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 
-const ActivitySlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
-);
+const ActivitySlide = dynamic(() => import("components/slides/ActivitySlide"));
 const QuestionAnswerImage = dynamic(() =>
    import("components/media/QuestionAnswerImage")
 );
@@ -21,10 +19,8 @@ const boat = "assets/boat.svg";
 const tent_with_triangle = "assets/tent_with_triangle.svg";
 const boat_correct_answer = "assets/boat_correct_answer.svg";
 const boat_wrong_answer = "assets/boat_wrong_answer.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
-const Slide6 = ({ downIcon, navBar }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+const Slide6 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
@@ -78,7 +74,6 @@ const Slide6 = ({ downIcon, navBar }) => {
             </Paragraph>
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Modal
             isOpen={isModalOpen}

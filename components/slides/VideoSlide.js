@@ -20,7 +20,7 @@ const VideoSlideWrap = styled.div`
    box-sizing: border-box;
 `;
 
-const VideoSlide = ({ title, downIcon, navBar, src }) => {
+const VideoSlide = ({ title, downIcon, src }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [isRotated, setIsRotated] = useState(false);
    function onFullScreen() {
@@ -62,7 +62,6 @@ const VideoSlide = ({ title, downIcon, navBar, src }) => {
    };
    return (
       <VideoSlideWrap>
-         {navBar ? React.cloneElement(navBar, { isAbsolute: true }) : null}
          <Video
             id="video-element"
             src={src}
@@ -73,7 +72,9 @@ const VideoSlide = ({ title, downIcon, navBar, src }) => {
          />
          {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
          {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>}
-         {downIcon ? React.cloneElement(downIcon, { isVideoSlide: true }) : null}
+         {downIcon
+            ? React.cloneElement(downIcon, { isVideoSlide: true })
+            : null}
       </VideoSlideWrap>
    );
 };

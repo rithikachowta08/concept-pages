@@ -9,7 +9,7 @@ const cube_edges = "assets/volume-of-cube/slide2/4.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 
-const Slide2 = ({ downIcon, navBar }) => {
+const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -17,17 +17,23 @@ const Slide2 = ({ downIcon, navBar }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
+
    return (
       <TextAndDiagramSlide
          title="What is a cube?"
          diagram={
             <TransitionImage
                images={[cube_red, cube_faces, cube_vertices, cube_edges]}
+               altTexts={[
+                  "Diagram of a cube",
+                  "Diagram of a cube highlighting faces",
+                  "Diagram of a cube highlighting vertices",
+                  "Diagram of a cube highlighting sides",
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph lineHeight={lineHeightProp}>
             A cube is a three-dimensional shape that has 6{" "}

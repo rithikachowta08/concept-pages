@@ -26,8 +26,8 @@ const Img = styled.img`
       height: ${(props) => props.smallDesktopSize || "350px"};
    }
    @media only screen and (max-height: 399px) and (min-width: 768px) {
-      width: ${(props) => props.mobileSize || "250px"};
-      height: ${(props) => props.mobileSize || "250px"};
+      width: ${(props) => props.mobileSize || "200px"};
+      height: ${(props) => props.mobileSize || "200px"};
    }
    @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
       width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
@@ -52,6 +52,7 @@ const ImgContainer = styled.div`
 
 const TransitionImage = ({
    images,
+   altTexts,
    marginRight,
    activeIndex,
    width,
@@ -66,7 +67,7 @@ const TransitionImage = ({
          {images.map((image, index) => (
             <Img
                key={index}
-               src={image}
+               data-src={image}
                index={index}
                width={width}
                activeIndex={activeIndex}
@@ -75,7 +76,7 @@ const TransitionImage = ({
                tabletSize={tabletSize}
                smallDesktopSize={smallDesktopSize}
                smallMobileSize={smallMobileSize}
-               alt="image"
+               alt={altTexts[index] || "image"}
             ></Img>
          ))}
       </ImgContainer>
@@ -91,7 +92,7 @@ TransitionImage.propTypes = {
 
 TransitionImage.defaultProps = {
    activeIndex: 0,
-   bottomOffset: "0px",
+   altTexts: [],
 };
 
 export default TransitionImage;

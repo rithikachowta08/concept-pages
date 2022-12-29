@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-4 {
+        stroke: #cecaca;
+        stroke-width: 3px;
+      }
+
+      .cls-5 {
+        opacity: .1;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #333;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-8, .cls-9, .cls-10 {
+        fill: #2b2bf0;
+      }
+
+      .cls-8, .cls-11, .cls-10, .cls-12 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-13, .cls-11, .cls-12 {
+        fill: #cecaca;
+      }
+
+      .cls-14 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-15 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-3 {
+        stroke: #2b2bf0;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 12.04 12.04;
+      }
+
+      .cls-10 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-16 {
+        opacity: .2;
+      }
+
+      .cls-17 {
+        opacity: .3;
+      }
+
+      .cls-12 {
+        letter-spacing: -.03em;
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-1" points="280 280 326.44 280 326.44 326.56 233.81 326.56 233.81 280 280 280"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <polygon class="cls-1" points="280 280 326.44 280 326.44 326.56 233.81 326.56 233.81 280 280 280"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" x="64.86" y="280" width="430.09" height="212.3"/>
+    </clipPath>
+  </defs>
+  <circle class="cls-5" cx="280" cy="280" r="201.7"/>
+  <g class="cls-7">
+    <g class="cls-17">
+      <circle class="cls-9" cx="280" cy="280" r="44.22"/>
+    </g>
+  </g>
+  <g class="cls-14">
+    <circle class="cls-3" cx="280" cy="280" r="44.22"/>
+  </g>
+  <text class="cls-12" transform="translate(103.33 130)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-11" transform="translate(268.79 63.74)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-11" transform="translate(431.26 130)"><tspan x="0" y="0">B</tspan></text>
+  <g>
+    <line class="cls-2" x1="484.65" y1="280" x2="478.65" y2="280"/>
+    <polyline class="cls-4" points="466.61 280 280 280 87.34 280"/>
+    <line class="cls-2" x1="81.32" y1="280" x2="75.32" y2="280"/>
+  </g>
+  <circle class="cls-9" cx="280" cy="280" r="7.2"/>
+  <text class="cls-8" transform="translate(237.97 358.62)"><tspan x="0" y="0">= 180º</tspan></text>
+  <text class="cls-8" transform="translate(495.46 289.93)"><tspan x="0" y="0">R</tspan></text>
+  <text class="cls-8" transform="translate(268.79 517.44)"><tspan x="0" y="0">D</tspan></text>
+  <text class="cls-10" transform="translate(43.17 289.93)"><tspan x="0" y="0">P</tspan></text>
+  <circle class="cls-9" cx="280" cy="485.1" r="7.2"/>
+  <g class="cls-16">
+    <path class="cls-6" d="M280,78.3c111.4,0,201.7,90.31,201.7,201.7s-90.31,201.7-201.7,201.7-201.7-90.31-201.7-201.7S168.6,78.3,280,78.3m0-6c-28.04,0-55.24,5.49-80.85,16.32-24.73,10.46-46.95,25.44-66.02,44.51-19.07,19.07-34.05,41.28-44.51,66.02-10.83,25.61-16.32,52.81-16.32,80.85s5.49,55.24,16.32,80.85c10.46,24.73,25.44,46.95,44.51,66.02,19.07,19.07,41.28,34.05,66.02,44.51,25.61,10.83,52.81,16.32,80.85,16.32s55.24-5.49,80.85-16.32c24.73-10.46,46.95-25.44,66.02-44.51,19.07-19.07,34.05-41.28,44.51-66.02,10.83-25.61,16.32-52.81,16.32-80.85s-5.49-55.24-16.32-80.85c-10.46-24.73-25.44-46.95-44.51-66.02-19.07-19.07-41.29-34.05-66.02-44.51-25.61-10.83-52.81-16.32-80.85-16.32h0Z"/>
+  </g>
+  <g class="cls-15">
+    <path class="cls-9" d="M280,78.3c111.4,0,201.7,90.31,201.7,201.7s-90.31,201.7-201.7,201.7-201.7-90.31-201.7-201.7S168.6,78.3,280,78.3m0-6c-28.04,0-55.24,5.49-80.85,16.32-24.73,10.46-46.95,25.44-66.02,44.51-19.07,19.07-34.05,41.28-44.51,66.02-10.83,25.61-16.32,52.81-16.32,80.85s5.49,55.24,16.32,80.85c10.46,24.73,25.44,46.95,44.51,66.02,19.07,19.07,41.28,34.05,66.02,44.51,25.61,10.83,52.81,16.32,80.85,16.32s55.24-5.49,80.85-16.32c24.73-10.46,46.95-25.44,66.02-44.51,19.07-19.07,34.05-41.28,44.51-66.02,10.83-25.61,16.32-52.81,16.32-80.85s-5.49-55.24-16.32-80.85c-10.46-24.73-25.44-46.95-44.51-66.02-19.07-19.07-41.29-34.05-66.02-44.51-25.61-10.83-52.81-16.32-80.85-16.32h0Z"/>
+  </g>
+  <circle class="cls-13" cx="134.33" cy="137.17" r="7.2"/>
+  <circle class="cls-13" cx="280" cy="75.3" r="7.2"/>
+  <circle class="cls-13" cx="425.62" cy="137.17" r="7.2"/>
+  <circle class="cls-9" cx="75.32" cy="280" r="7.2"/>
+  <circle class="cls-9" cx="484.65" cy="280" r="7.2"/>
+</svg>

@@ -23,7 +23,7 @@ const area_triangle_angles_2_3 = "assets/area-of-triangle/18.b.svg";
 const area_triangle_angles_3_3 = "assets/area-of-triangle/18.c.svg";
 
 // General Formula base and height slide
-const Slide5 = ({ downIcon, navBar }) => {
+const Slide5 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -31,7 +31,6 @@ const Slide5 = ({ downIcon, navBar }) => {
          bg="LIGHT"
          title="General formula"
          downIcon={downIcon}
-         navBar={navBar}
          images={[
             {
                diagram: (
@@ -42,6 +41,11 @@ const Slide5 = ({ downIcon, navBar }) => {
                         area_triangle_angles_1_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an acute angled triangle",
+                        "Diagram of an acute angled triangle highlighting base",
+                        "Diagram of an acute angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Acute Triangle",
@@ -55,6 +59,11 @@ const Slide5 = ({ downIcon, navBar }) => {
                         area_triangle_angles_2_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a right angled triangle",
+                        "Diagram of a right angled triangle highlighting base",
+                        "Diagram of a right angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Right Triangle",
@@ -68,6 +77,11 @@ const Slide5 = ({ downIcon, navBar }) => {
                         area_triangle_angles_3_3,
                      ]}
                      activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of an obtuse angled triangle",
+                        "Diagram of an obtuse angled triangle highlighting base",
+                        "Diagram of an obtuse angled triangle highlighting height",
+                     ]}
                   />
                ),
                caption: "Obtuse Triangle",

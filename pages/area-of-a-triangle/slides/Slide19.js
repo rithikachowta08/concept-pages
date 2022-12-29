@@ -11,7 +11,7 @@ import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // Two sides and included angle
-const Slide19 = ({ downIcon, navBar }) => {
+const Slide19 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -23,10 +23,13 @@ const Slide19 = ({ downIcon, navBar }) => {
             <TransitionImage
                images={[area_triangle_snt, area_triangle_snt_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a scalene triangle",
+                  "Diagram of a scalene triangle highlighting two sides and the included angle",
+               ]}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph color={colors.WHITE}>
             Given any{" "}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ea6560;
+      }
+
+      .cls-4 {
+        stroke-width: 6px;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 0 0 7.9 7.9;
+      }
+
+      .cls-5, .cls-7 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-6 {
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        opacity: .3;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(223.9 484.09)"><tspan x="0" y="0">b</tspan></text>
+  <g>
+    <polygon class="cls-1" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+    <polygon class="cls-4" points="407.41 445.91 64.4 445.91 152.59 114.09 496.14 114.09 407.41 445.91"/>
+  </g>
+  <text class="cls-2" transform="translate(162.88 295.5)"><tspan x="0" y="0">h</tspan></text>
+  <rect class="cls-3" x="150.88" y="412.21" width="35.62" height="33.7"/>
+  <polyline class="cls-6" points="152.8 412.21 186.5 412.21 186.5 445.91"/>
+  <g>
+    <line class="cls-7" x1="152.59" y1="114.09" x2="152.59" y2="118.09"/>
+    <line class="cls-5" x1="152.59" y1="125.99" x2="152.59" y2="437.96"/>
+    <line class="cls-7" x1="152.59" y1="441.91" x2="152.59" y2="445.91"/>
+  </g>
+</svg>

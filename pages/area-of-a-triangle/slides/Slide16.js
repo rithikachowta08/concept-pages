@@ -10,7 +10,7 @@ import MathElement from "components/MathElement";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // Equilateral triangle
-const Slide16 = ({ downIcon, navBar }) => {
+const Slide16 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
 
    return (
@@ -22,10 +22,13 @@ const Slide16 = ({ downIcon, navBar }) => {
             <TransitionImage
                images={[image_1, image_2]}
                activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+                  "Diagram of an equilateral triangle showing three equal sides and three equal angles",
+               ]}
             />
          }
          downIcon={downIcon}
-         navBar={navBar}
       >
          <Paragraph>
             Given the length &apos;a&apos; of a side of an{" "}
