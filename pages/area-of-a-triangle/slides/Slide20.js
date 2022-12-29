@@ -37,7 +37,6 @@ const Slide20 = ({ downIcon }) => {
                ]}
             />
          }
-         downIcon={downIcon}
          isLastSlide
       >
          <Paragraph>
@@ -75,7 +74,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                        value: ["\\frac{1}{2} \\times Base \\times Height"],
                         type: "latex",
                      },
                   },
@@ -85,7 +84,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2}\\times c\\times h"],
+                        value: ["\\frac{1}{2}\\times c\\times h"],
                         type: "latex",
                      },
                   },
@@ -95,7 +94,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2}\\times c\\times b\\ Sin A"],
+                        value: ["\\frac{1}{2}\\times c\\times b\\ Sin A"],
                         type: "latex",
                      },
                   },
@@ -105,7 +104,7 @@ const Slide20 = ({ downIcon }) => {
          <Paragraph>
             <Pill>
                Area =
-               <MathElement htmlString={"\\dfrac{1}{2}\\ bc\\ Sin\\ A"} />
+               <MathElement htmlString={"\\frac{1}{2}\\ bc\\ Sin\\ A"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

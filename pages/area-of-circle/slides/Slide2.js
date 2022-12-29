@@ -1,6 +1,12 @@
-import Modal from "components/layout/Modal";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("components/layout/Modal"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Flex, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 import React, { useState } from "react";
