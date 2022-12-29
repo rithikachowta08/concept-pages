@@ -1,20 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import {
-  getDrmData,
-  isSafariOrIOSDevice,
-  storeVideoWatchData,
-  pushDataLayer,
-  limitTo100,
-} from "utils/video-utils";
 import dynamic from "next/dynamic";
-import styles from "./ShakaPlayer.module.scss";
-
 const Image = dynamic(() => import("next/image"));
 
 import "shaka-player-react-lib/dist/bundle.css";
 import "shaka-player/dist/controls.css";
-import { getCookie } from "cookies-next";
-import { assetURL } from "utils/constants";
+import { getDrmData, isSafariOrIOSDevice } from "./playerFunction";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 const loadScript = require("load-script");
 const { ui } = require("shaka-player/dist/shaka-player.ui.js");
@@ -31,12 +21,6 @@ var player,
 const VideoPlayer = (props) => {
   const videoComponent = useRef();
   const videoContainer = useRef();
-  const [error, setError] = React.useState(false);
-  const [showPlayBack, setShowPlayBack] = React.useState(true);
-  const [forwardAni, setForwardAni] = React.useState("");
-  const [replayAni, setReplayAni] = React.useState("");
-  var videoStored = false;
-  // let videoPercent = 80;
   const fairplayDrmCert = new Uint8Array([
     48, 130, 5, 9, 48, 130, 3, 241, 160, 3, 2, 1, 2, 2, 8, 71, 203, 201, 69, 29,
     132, 56, 40, 48, 13, 6, 9, 42, 134, 72, 134, 247, 13, 1, 1, 5, 5, 0, 48,
@@ -179,19 +163,7 @@ const VideoPlayer = (props) => {
           .catch(onError);
       });
 
-    return () => {
-      pushDataLayer({
-        event: "qa_video_back",
-        question_name: limitTo100(props.question_title),
-        video_name: props.videoContent.video_title,
-        video_complete_percentage: localStorage.getItem("watchPercent")
-          ? localStorage.getItem("watchPercent")
-          : "0",
-        user_id: localStorage.getItem("backendUuid")
-          ? String(localStorage.getItem("backendUuid"))
-          : undefined,
-      });
-    };
+    return () => {};
   }, []);
 
   const onLoad = () => {
@@ -218,96 +190,7 @@ const VideoPlayer = (props) => {
     shaka.polyfill.installAll();
     player = new shaka.Player(video);
     video.loop = true;
-    var recorded25 = false;
-    var recorded50 = false;
-    var recorded75 = false;
-    var recorded100 = false;
-    var eventtriggered = false;
-
-    video.ontimeupdate = function () {
-      if (video.duration) {
-        var percent = Math.floor((video.currentTime / video.duration) * 100);
-        localStorage.setItem("watchPercent", percent);
-
-        // if(video.currentTime>10){
-        //   if(props.videosViewedbyUser.length >= props.videoBlockerLimit && !props.videosViewedbyUser.includes(props.videoContent.id) && !props.loggedIn){
-        //     props.setVideoOpened(false,true)
-        //     if(eventtriggered == false){
-        //
-        //   }else if(!videoStored){
-        //     watchVideo();
-        //   }
-        // }
-        // props.setVideoViews();
-
-        if (percent >= 25 && percent < 50 && recorded25 == false) {
-          recorded25 = true;
-          storeVideoWatchData(
-            props.videoContent["id"],
-            getCookie("userToken"),
-            "percent",
-            25
-          )
-            .then((r) => r.json())
-            .then((res) => {});
-        }
-        if (percent >= 50 && percent < 75 && recorded50 == false) {
-          recorded50 = true;
-          storeVideoWatchData(
-            props.videoContent["id"],
-            getCookie("userToken"),
-            "percent",
-            50
-          )
-            .then((r) => r.json())
-            .then((res) => {});
-        }
-        if (percent >= 75 && percent < 100 && recorded75 == false) {
-          recorded75 = true;
-          pushDataLayer({
-            event: "qa_video_complete",
-            question_name: limitTo100(props.question_title),
-            video_name: props.video_title,
-          });
-          storeVideoWatchData(
-            props.videoContent["id"],
-            getCookie("userToken"),
-            "percent",
-            75
-          )
-            .then((r) => r.json())
-            .then((res) => {});
-        }
-        if (percent == 100 && recorded100 == false) {
-          recorded100 = true;
-          storeVideoWatchData(
-            props.videoContent["id"],
-            getCookie("userToken"),
-            "percent",
-            100
-          )
-            .then((r) => r.json())
-            .then((res) => {});
-        }
-      }
-    };
-
-    var playerControlInterval = window.setInterval(() => {
-      if (document.getElementsByClassName("shaka-controls-container")[0]) {
-        if (
-          document
-            .getElementsByClassName("shaka-controls-container")[0]
-            .getAttribute("shown") == "true"
-        ) {
-          setShowPlayBack(true);
-        } else {
-          setShowPlayBack(false);
-        }
-      } else {
-        clearInterval(playerControlInterval);
-      }
-    }, 500);
-
+    // video.autoPlay = true;
     let uiConfig = {};
     uiConfig = props.uiConfig;
     uiConfig.controlPanelElements = [
@@ -328,7 +211,7 @@ const VideoPlayer = (props) => {
     ui.getControls();
     ui.configure(uiConfig);
     player.addEventListener("error", onErrorEvent);
-    //  video?.requestFullscreen();
+    // video?.requestFullscreen();
   }, []);
 
   const replay = () => {
@@ -341,12 +224,12 @@ const VideoPlayer = (props) => {
     video.currentTime = video.currentTime + 5;
   };
 
-  // if (document.addEventListener) {
-  //    document.addEventListener("fullscreenchange", exitHandler, false);
-  //    document.addEventListener("mozfullscreenchange", exitHandler, false);
-  //    document.addEventListener("MSFullscreenChange", exitHandler, false);
-  //    document.addEventListener("webkitfullscreenchange", exitHandler, false);
-  // }
+  if (document.addEventListener) {
+    document.addEventListener("fullscreenchange", exitHandler, false);
+    document.addEventListener("mozfullscreenchange", exitHandler, false);
+    document.addEventListener("MSFullscreenChange", exitHandler, false);
+    document.addEventListener("webkitfullscreenchange", exitHandler, false);
+  }
 
   function exitHandler() {
     if (
@@ -355,12 +238,11 @@ const VideoPlayer = (props) => {
       !document.msFullscreenElement
     ) {
       video.pause();
-      props.setVideoOpened(false, false);
     }
   }
 
   return (
-    <div ref={videoContainer} style={{ height: "100%" }}>
+    <div ref={videoContainer}>
       <video
         id="shaka-player-video-component"
         className="shaka-video-play"
@@ -372,40 +254,6 @@ const VideoPlayer = (props) => {
         poster={props.poster}
         src={props.src}
       />
-      <>
-        <div
-          onClick={replay}
-          className={"playerButtonsVisible " + styles.rewindbtn}
-          style={
-            showPlayBack ? { visibility: "visible" } : { visibility: "hidden" }
-          }
-        >
-          <Image
-            src={assetURL + `/replay_10.png`}
-            alt="replay-10"
-            className={replayAni}
-            priority
-            width="32"
-            height="32"
-          />
-        </div>
-        <div
-          onClick={forward}
-          className={"playerButtonsVisible " + styles.forwardbtn}
-          style={
-            showPlayBack ? { visibility: "visible" } : { visibility: "hidden" }
-          }
-        >
-          <Image
-            src={assetURL + `/forward_10.png`}
-            alt="forward-10"
-            priority
-            className={forwardAni}
-            width="40"
-            height="40"
-          />
-        </div>
-      </>
     </div>
   );
 };
