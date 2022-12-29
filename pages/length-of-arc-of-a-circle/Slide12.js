@@ -73,6 +73,7 @@ const Slide12 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
+         downIcon={downIcon}
          isLastSlide
       >
          <Paragraph lineHeight={lineHeightProp}>
