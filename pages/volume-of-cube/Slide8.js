@@ -1,10 +1,21 @@
-import { StyledImg } from "components/StyledElements";
-import { Paragraph } from "components/text";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-const cube_red = "assets/volume-of-cube/slide8/1.svg";
-import { TextLine } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+import dynamic from "next/dynamic";
 
+const cube_red = "assets/volume-of-cube/slide8/1.svg";
+const StyledImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
 const Slide8 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
@@ -72,7 +83,7 @@ const Slide8 = ({ downIcon }) => {
          secondaryTitle="Volume of a Cube Formula"
          title="Illustrative Example"
          downIcon={downIcon}
-         diagram={<StyledImg src={cube_red} />}
+         diagram={<StyledImg src={cube_red} alt="A cube with side length equal to 7 centimetres." />}
       >
          <Paragraph>
             What is the volume of a cube of side length 7 cm?

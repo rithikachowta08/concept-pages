@@ -25,13 +25,9 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const Pill = dynamic(() =>
-   import("components/Pill")
-);
+const Pill = dynamic(() => import("components/Pill"));
 
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
@@ -77,83 +73,86 @@ const Slide12 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         downIcon={downIcon}
+         isLastSlide
       >
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            The length of an arc where the central angle is mentioned in degrees is given by the following formula:
+               The length of an arc where the central angle is mentioned in
+               degrees is given by the following formula:
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-        <Paragraph >
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Length of an arc"],
-                        type: "text",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["Length of an arc"],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\dfrac{θ}{360°} \\times 2\\pi r \\thinspace units",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["\\dfrac{θ}{360°} \\times 2\\pi r \\thinspace units"],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  }
-               ]}
-            />
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-        <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph lineHeight={lineHeightProp}>
             <TextLine color={colors.BLACK}>
-            If the central angle is given in radian,
+               If the central angle is given in radian,
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-        <Paragraph >
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Length of the arc"],
-                        type: "text",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["Length of the arc"],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\dfrac{θ}{2\\pi} \\times 2\\pi r \\thinspace units",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: ["∵ 2𝝅 radians = 360°"],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["\\dfrac{θ}{2\\pi} \\times 2\\pi r \\thinspace units"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["θ \\times r \\thinspace units"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: ["∵ 2𝝅 radians = 360°"],
-                        type: "text",
-                     },
-                  },
-                  {
-                     lhsLatex: {
-                        value: [""],
-                        type: "text",
-                     },
-                     rhsLatex: {
-                        value: ["θ \\times r \\thinspace units"],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-               ]}
-            />
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
-            
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

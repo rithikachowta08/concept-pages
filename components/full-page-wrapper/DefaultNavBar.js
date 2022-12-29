@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
@@ -22,16 +23,37 @@ const NavWrap = styled.div`
    cursor: pointer;
    grid-row-start: 1;
    grid-column-start: 1;
-   width: ${(props) => (props.isExpanded ? "400px" : "100%")};
+   max-width: 500px;
+
+   // Low res desktop and tablet landscape
+   @media (min-width: 821px) and (max-width: 1224px) {
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 400px;
+   }
+
+   // Small height desktop
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 400px;
+   }
+
+   // Mobile landscape
+   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 400px;
+   }
 `;
 
 const SectionIndicator = styled.div`
    border-radius: 50%;
    position: relative;
    cursor: pointer;
-   min-width: ${(props) => (props.isMobile ? "6px" : "14px")};
-   min-height: ${(props) => (props.isMobile ? "6px" : "14px")};
-   border: ${(props) => (props.isMobile ? "2px" : "4px")} solid
+   min-width: 14px;
+   min-height: 14px;
+   border: 4px solid
       ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
    background: ${(props) =>
       props.isComplete
@@ -42,14 +64,34 @@ const SectionIndicator = styled.div`
    box-shadow: ${(props) =>
       props.isComplete
          ? props.darkTheme
-            ? `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(255, 255, 255, 0.3)`
-            : `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(74, 51, 245, 0.3)`
+            ? `0px 0px 0px 6px rgba(255, 255, 255, 0.3)`
+            : `0px 0px 0px 6px rgba(74, 51, 245, 0.3)`
          : `none`};
    transition: all 0.3s;
+
+   // Low res desktop and tablet landscape
+   @media (min-width: 821px) and (max-width: 1224px) {
+      min-width: 10px;
+      min-height: 10px;
+      border: 3px solid
+         ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
+   }
+
+   // Small height desktop
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
+      min-width: 10px;
+      min-height: 10px;
+      border: 3px solid
+         ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
+   }
+
+   // Mobile landscape
+   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
+      min-width: 10px;
+      min-height: 10px;
+      border: 3px solid
+         ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
+   }
 `;
 
 const Connector = styled.div`
@@ -61,6 +103,24 @@ const Connector = styled.div`
          : `rgba(74, 51, 245, ${props.isComplete ? 1 : 0.3})`};
    transition: all 0.3s;
    transform: translateX(5px);
+
+   // Low res desktop and tablet landscape
+   @media (min-width: 821px) and (max-width: 1224px) {
+      height: 50px;
+      transform: translateX(3px);
+   }
+
+   // Small height desktop
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
+      height: 50px;
+      transform: translateX(3px);
+   }
+
+   // Mobile landscape
+   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
+      height: 30px;
+      transform: translateX(3px);
+   }
 `;
 
 const Fill = styled.div`
@@ -80,19 +140,27 @@ const DefaultNavBar = ({
    showNav,
    hideNav,
 }) => {
+   const ref = useRef(null);
+   useEffect(() => {
+      if (ref.current) {
+         global.desktopNavBarWidth = ref.current.getBoundingClientRect().width;
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [ref.current, currentPageIdx]);
    return (
       <NavWrap
          isExpanded={isExpanded}
          onMouseEnter={showNav}
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
+         ref={ref}
       >
          {isExpanded ? (
             <Flex
                cursor="pointer"
                onClick={hideNav}
                alignItems="center"
-               marginBottom="40px"
+               marginBottom="2rem"
             >
                <Icon
                   src={darkTheme ? left_caret_light : left_caret_dark}

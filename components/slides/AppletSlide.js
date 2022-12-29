@@ -1,48 +1,94 @@
 import { PropTypes } from "prop-types";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import { Paragraph, Title } from "components/text";
-import { fontSizes, fontWeights } from "utils/fontStyles";
-import { colors } from "utils/colors";
-import { FillerNavBar } from "./common";
+import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 
 const IFrame = styled.iframe`
-   width: 700px;
-   height: 700px;
+   width: 650px;
+   height: 650px;
    border-radius: 20px;
 
-   @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: 150px;
-      height: 150px;
+   // Mobile
+   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+      margin: auto 0;
+      width: 100vw;
+      height: 100vw;
    }
 
-   @media only screen and (min-width: 400px) and (max-width: 767px) {
-      width: 350px;
-      height: 350px;
+   // Tablet
+   @media (min-width: 821px) and (max-width: 992px) {
+      width: 500px;
+      height: 500px;
    }
 
-   @media only screen and (min-width: 768px) and (max-width: 992px) {
-      width: 450px;
-      height: 450px;
+   // Low res desktop
+   @media (min-width: 993px) and (max-width: 1224px) {
+      width: 600px;
+      height: 600px;
    }
 
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
-      width: 350px;
-      height: 350px;
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      width: 100vh;
+      height: 100vh;
    }
 
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
-      width: 450px;
-      height: 450px;
+   // Small height desktop
+   @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
+      width: 500px;
+      height: 500px;
+   }
+`;
+
+const ContentWrap = styled.div`
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   width: 100%;
+   justify-content: flex-start;
+
+   // Mobile
+   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+      flex-direction: column;
+      height: 100%;
+      gap: 20px;
+   }
+
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      max-height: 40%;
+   }
+`;
+
+const TitleAndAppletWrap = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0 auto;
+
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+   }
+`;
+
+const TitleWrap = styled.div`
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      margin: 0 auto;
+      max-width: 30%;
    }
 `;
 
 const AppletSlide = ({
    title,
+   secondaryTitle,
    downIcon,
-   description,
    isLastSlide,
    bg = "LIGHT",
    appletSrc = "./applets/triangle.html",
@@ -53,61 +99,76 @@ const AppletSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
-      <SlideWrap
-         bg={bg}
-         ref={ref}
-         isLastSlide={isLastSlide}
-         padding={isMobile ? "0 0 20px 0" : "20px"}
-      >
-         <Flex
-            alignItems="center"
-            width="100%"
-            height="100%"
-            justifyContent={isMobile ? "flex-start" : "center"}
-            gap={isMobile ? "30px" : "60px"}
-            direction={isMobile ? "column" : "row"}
-         >
-            <FillerNavBar isMobile={isMobile} />
-            <Flex
-               gap={isMobile ? "30px" : "0"}
-               margin={isMobile ? "auto 0" : "0"}
-               justifyContent={isMobile ? "flex-start" : "space-evenly"}
-               flex="2"
-               alignItems="center"
+      <>
+         <MobileComponent>
+            <SlideWrap
+               bg={bg}
+               ref={ref}
+               padding="0 0 10px 0"
+               isLastSlide={isLastSlide}
             >
-               {title ? (
-                  <Title
-                     color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                     fontSize={fontSizes.H2}
-                     fontWeight={fontWeights.BOLD}
-                     padding="5%"
-                     small
+               <ContentWrap>
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
+                  <div>
+                     <SlideSecondaryTitle
+                        bg={bg}
+                        secondaryTitle={secondaryTitle}
+                        centerAlign
+                     />
+                     <SlideTitle bg={bg} centerAlign>
+                        {title}
+                     </SlideTitle>
+                  </div>
+                  <Flex
+                     direction="column"
+                     height="100%"
+                     width="100%"
+                     margin="0 auto"
+                     alignItems="center"
                   >
-                     {title}
-                  </Title>
-               ) : null}
-               <Flex
-                  direction={isMobile ? "column-reverse" : "row"}
-                  width="100%"
-                  height="100%"
-                  justifyContent="space-evenly"
-                  alignItems="center"
-               >
-                  {description && (
-                     <Paragraph
-                        color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-                     >
-                        {description}
-                     </Paragraph>
-                  )}
-                  <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
-               </Flex>
-            </Flex>
-         </Flex>
-         {downIcon}
-      </SlideWrap>
+                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                  </Flex>
+               </ContentWrap>
+               {downIcon}
+            </SlideWrap>
+         </MobileComponent>
+         <DesktopComponent>
+            <SlideWrap
+               bg={bg}
+               ref={ref}
+               padding="20px 30px"
+               isLastSlide={isLastSlide}
+               hideFillerForLandscapeMode
+            >
+               <ContentWrap>
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
+                  <TitleAndAppletWrap>
+                     <TitleWrap>
+                        <SlideSecondaryTitle
+                           bg={bg}
+                           secondaryTitle={secondaryTitle}
+                           centerAlign
+                        />
+                        <SlideTitle bg={bg} centerAlign>
+                           {title}
+                        </SlideTitle>
+                     </TitleWrap>
+                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                  </TitleAndAppletWrap>
+               </ContentWrap>
+               {downIcon
+                  ? React.cloneElement(downIcon, {
+                       hideInMobileLandscapeMode: true,
+                    })
+                  : downIcon}
+            </SlideWrap>
+         </DesktopComponent>
+      </>
    );
 };
 

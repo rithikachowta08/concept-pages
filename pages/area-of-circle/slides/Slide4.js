@@ -1,5 +1,8 @@
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import React from "react";
+import dynamic from "next/dynamic";
+
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
 
 const applet = "applets/triangle.html";
 

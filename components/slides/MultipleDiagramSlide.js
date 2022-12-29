@@ -15,7 +15,7 @@ const ImageWrap = styled.div`
    flex-direction: column;
    margin: 0;
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       margin: 0 auto;
    }
 `;
@@ -47,10 +47,7 @@ const MultipleDiagramSlide = ({
                isLastSlide={isLastSlide}
             >
                {/* NavBar */}
-               <FillerNavBar
-                  mobileNavBarHeight={global.mobileNavBarHeight}
-                  isMobile
-               />
+               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
                {/* Body */}
                <Flex
                   direction="column"
@@ -62,9 +59,9 @@ const MultipleDiagramSlide = ({
                   <SlideSecondaryTitle
                      bg={bg}
                      secondaryTitle={secondaryTitle}
-                     isMobile
+                     centerAlign
                   />
-                  <SlideTitle bg={bg} isMobile>
+                  <SlideTitle bg={bg} centerAlign>
                      {title}
                   </SlideTitle>
                   {children}
@@ -104,14 +101,16 @@ const MultipleDiagramSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"}>
+            <SlideWrap bg={bg} isLastSlide={isLastSlide} padding={"20px 30px"}>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
                   maxHeight="80%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
                   <Flex
                      direction="column"
                      justifyContent="space-between"

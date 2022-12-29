@@ -11,7 +11,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "General formula",
             "Area using diagonal",
          ]}
-         anchorIdxes={[2, 4, 7, 9]}
+         anchorIdxes={[2, 5, 7, 9]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

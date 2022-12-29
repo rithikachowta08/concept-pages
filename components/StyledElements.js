@@ -15,8 +15,8 @@ const bgToBgColorMap = {
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
-   height: 100vh;
-   width: 100vw;
+   height: 100%;
+   width: 100%;
    padding: ${(props) => props.padding};
    gap: ${(props) => props.gap};
    display: flex;
@@ -28,8 +28,8 @@ export const SlideWrap = styled.div`
    align-items: center;
 
    ${(props) =>
-      props.hideFiller
-         ? ""
+      props.isLastSlide
+         ? ``
          : `&::before {
       content: "D";
       margin: 1px 1px auto 1px;
@@ -38,7 +38,25 @@ export const SlideWrap = styled.div`
       background: #ddd;
    }`}
 
-   @media only screen and (min-width: 200px) and (max-width: 810px) and (min-height: 600px) {
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      ${(props) =>
+         props.hideFillerForLandscapeMode || props.isLastSlide
+            ? `&::before{
+               display:none
+               }
+               padding-right: 0;
+               `
+            : `&::before {
+         content: "D";
+         margin: 1px 1px auto 1px;
+         visibility: hidden;
+         padding: 5px;
+         background: #ddd;
+      }`}
+   }
+
+   @media only screen and (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       &::before {
          display: none;
       }
@@ -73,6 +91,16 @@ export const LeftWrap = styled.div`
    margin-left: 60px;
    margin-right: ${(props) => props.marginRight};
    width: 50%;
+
+   // Tablet
+   @media (min-width: 821px) and (max-width: 992px) {
+      margin-left: 30px;
+   }
+
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      margin-left: 30px;
+   }
 `;
 
 export const RightWrap = styled.div`
@@ -118,8 +146,8 @@ export const StyledImg = styled.img`
    width: ${(props) => props.width || "550px"};
    height: ${(props) => props.width || "550px"};
    @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: ${(props) => props.smallMobileSize || "200px"};
-      height: ${(props) => props.smallMobileSize || "200px"};
+      width: ${(props) => props.smallMobileSize || "175px"};
+      height: ${(props) => props.smallMobileSize || "175px"};
    }
    @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
@@ -185,7 +213,7 @@ export const Icon = styled.img`
    margin-right: ${(props) => props.marginRight};
    align-self: ${(props) => props.alignSelf};
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       width: ${(props) => props.width || "10px"};
    }
 `;
@@ -197,7 +225,7 @@ export const PageWrap = styled.div`
 
 export const LeftAlignDiv = styled.div`
    align-self: flex-start;
-   width: 100%;
+   width: fit-content;
 `;
 
 export const Video = styled.video`

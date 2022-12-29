@@ -17,8 +17,8 @@ const TextSpanBg = dynamic(() =>
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
+const Pill = dynamic(() => import("components/Pill"));
+const MathElement = dynamic(() => import("components/MathElement"));
 
 const surfaceCone_full = "assets/surface-area-of-cone/slide10/1.svg";
 const surfaceCone_top = "assets/surface-area-of-cone/slide10/2.svg";

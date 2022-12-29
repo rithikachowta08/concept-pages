@@ -1,15 +1,30 @@
 import { useState } from "react";
-// import {c}
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph } from "components/text";
-import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide6/1.svg";
 const cube_d = "assets/volume-of-cube/slide6/2.svg";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-import MathElement from "components/MathElement/index.js";
-import { TextLine } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+
+import dynamic from "next/dynamic";
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const MathElement = dynamic(() => import("components/MathElement"));
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const Slide6 = ({ downIcon, navBar }) => {
    let EquationLatex0 = [
@@ -19,7 +34,7 @@ const Slide6 = ({ downIcon, navBar }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["side \\times side \\times side"],
+            value: ["Side \\times Side \\times Side"],
             type: "latex",
          },
          rhsHint: {
@@ -76,10 +91,11 @@ const Slide6 = ({ downIcon, navBar }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_d]}
+               altTexts={["Diagram of a cube"," Diagram of a cube showing side length and volume"]}
                activeIndex={activeIndex}
             />
          }
-         title="Formula"
+         title="General Formula"
       >
          <Paragraph color={colors.WHITE}>
             <TextLine>
@@ -92,7 +108,7 @@ const Slide6 = ({ downIcon, navBar }) => {
                   hoverColor={colors.AQUA}
                   color={colors.RED}
                >
-                  side length ‘s’
+                  side length (s),
                </TextSpanBg>{" "}
             </TextLine>
             <EquationTable

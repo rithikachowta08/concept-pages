@@ -17,7 +17,7 @@ const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 
-const inequality_slide = "assets/inequality_slide.svg";
+const inequality_slide = "assets/triangles/inequality_slide.svg";
 
 const Slide7 = () => {
    return (
