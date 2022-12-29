@@ -17,6 +17,8 @@ const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
 const Slide11 = dynamic(() => import("./Slide11"));
 const Slide12 = dynamic(() => import("./Slide12"));
+const Slide13 = dynamic(() => import("./Slide13"));
+const Slide14 = dynamic(() => import("./Slide14"));
 
 
 
@@ -34,6 +36,8 @@ const LengthOfArcOfACircle = () => {
     <Slide10 key={9} />,
     <Slide11 key={10} />,
     <Slide12 key={11} />,
+    <Slide13 key={12} />,
+    <Slide14 key={13} />,
   ];
 
   const navigationSections = [
@@ -42,7 +46,7 @@ const LengthOfArcOfACircle = () => {
     { title: "Length of an arc of a sector", slides: [6, 7] },
   ];
 
-  const darkBgIndices = [0, 4, 6, 8];
+  const darkBgIndices = [0, 4, 6];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

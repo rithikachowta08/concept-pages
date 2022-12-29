@@ -87,9 +87,13 @@ const Slide9 = ({ downIcon }) => {
             <TextLine color={colors.BLACK}>
             Length of the arc of the circle when the angle is 360°<MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             </TextLine>
+            </Paragraph>
+            <Paragraph >
             <TextLine color={colors.BLACK}>
             Length of the arc of the circle when the angle is 1°<MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             </TextLine>
+            </Paragraph>
+            <Paragraph >
             <TextLine color={colors.BLACK}>
             Length of the arc of the circle when the angle is θ°<MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             </TextLine>
