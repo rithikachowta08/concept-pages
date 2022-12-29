@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 const cube_red = "assets/volume-of-cube/slide8/1.svg";
 const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
+   import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
