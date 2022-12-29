@@ -1,16 +1,14 @@
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import {
-   Paragraph,
-   TextLine,
-   TextSpan,
-   TextSpanBg,
-   Title,
-} from "components/text";
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const area_triangle_angles_1_1 = "assets/area-of-triangle/16.a.svg";
 const area_triangle_angles_2_1 = "assets/area-of-triangle/16.b.svg";

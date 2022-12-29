@@ -1,13 +1,20 @@
-import React, { useState } from "react";
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
+import dynamic from "next/dynamic";
+
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+
+import { useState } from "react";
+import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
-import Pill from "components/Pill";
-import TransitionImage from "components/media/TransitionImage";
 
 const image_1 = "assets/area-of-triangle/slide_11.svg";
 const image_2 = "assets/area-of-triangle/slide_11_2.svg";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // Equilateral triangle
 const Slide16 = ({ downIcon }) => {
