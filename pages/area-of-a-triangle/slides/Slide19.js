@@ -119,8 +119,8 @@ const Slide19 = ({ downIcon }) => {
                }}
             >
                <MathElement htmlString={"\\dfrac{1}{2}"} />
-               bc SinA{" "}
-            </TextSpanBg>
+               bc SinA
+            </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
                padding={"20px 20px"}
@@ -134,7 +134,7 @@ const Slide19 = ({ downIcon }) => {
                }}
             >
                <MathElement htmlString={"\\dfrac{1}{2}"} />
-               ca SinB{" "}
+               ca SinB
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
@@ -149,7 +149,7 @@ const Slide19 = ({ downIcon }) => {
                }}
             >
                <MathElement htmlString={"\\dfrac{1}{2}"} />
-               ab SinC{" "}
+               ab SinC
             </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>

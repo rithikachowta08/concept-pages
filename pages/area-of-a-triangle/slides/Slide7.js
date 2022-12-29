@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
-const Pill = dynamic(() => import("components/slides/VideoSlide"));
+const Pill = dynamic(() => import("components/Pill"));
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 const HyperLink = dynamic(() => import("components/text/HyperLink"));
 
-import { Paragraph, TextLine, TextSpan } from "components/text";
+import { Paragraph, TextLine } from "components/text";
 import { colors } from "utils/colors";
 
 const applet = "applets/triangle.html";
