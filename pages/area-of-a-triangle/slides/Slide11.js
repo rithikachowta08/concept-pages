@@ -1,14 +1,14 @@
-import React from "react";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
 
 import { StyledImg } from "components/StyledElements";
-import { Paragraph, TextLine, Title } from "components/text";
-import { colors } from "utils/colors";
-import Pill from "components/Pill";
+import { Paragraph } from "components/text";
+import dynamic from "next/dynamic";
 
 const area_triangle_sides_3_1 = "assets/area-of-triangle/slide_13.svg";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Scalene triangle
 const Slide11 = ({ downIcon }) => {

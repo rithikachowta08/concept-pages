@@ -2,7 +2,6 @@ import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCust
 import React from "react";
 import Slide1 from "./slides/Slide1";
 import Slide2 from "./slides/Slide2";
-import Slide3 from "./slides/Slide3";
 import Slide4 from "./slides/Slide4";
 import Slide5 from "./slides/Slide5";
 import Slide6 from "./slides/Slide6";
@@ -25,7 +24,6 @@ const AreaOfATriangle = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
-      // <Slide3 key={2} />, hidden until approved from content team
       <Slide4 key={3} />,
       <Slide5 key={4} />,
       <Slide6 key={5} />,
@@ -44,16 +42,6 @@ const AreaOfATriangle = () => {
       <Slide19 key={18} />,
       <Slide20 key={19} />,
    ];
-
-   // const navigationSections = [
-   //    { title: "Definition", slides: [1, 2] },
-   //    { title: "General Formula", slides: [3, 4, 5, 6, 7] },
-   //    { title: "Heron's Formula", slides: [8] },
-   //    {
-   //       title: "Area of different types of triangle",
-   //       slides: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
-   //    },
-   // ];
 
    const navigationSections = [
       { title: "Definition", slides: [1] },
