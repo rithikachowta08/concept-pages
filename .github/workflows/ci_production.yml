@@ -1,0 +1,26 @@
+name: CI_Production
+on:
+  push:
+    branches: 
+      - prdadeploy
+jobs:
+  codecommit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+      - name: pushes to codecommit
+        env:
+          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_MATH_URL_PRD }}
+          HOST_URL: ${{ secrets.HOST_URL }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER_KEY_ID: ${{ secrets.SSH_USER_KEY_ID }}
+        shell: bash
+        run: |
+          mkdir ~/.ssh && echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+          envsubst < ssh_config.tmpl > ~/.ssh/config && chmod 600 ~/.ssh/config
+          ssh-keyscan -H $HOST_URL > known_hosts && chmod 600 ~/.ssh/known_hosts
+          git remote add codecommit "$CODECOMMIT_URL"
+          git push --delete codecommit $GITHUB_REF
+          git push -u codecommit prdadeploy --force
