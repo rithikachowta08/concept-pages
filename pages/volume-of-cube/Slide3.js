@@ -27,7 +27,7 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
+   import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 
 const Slide3 = ({ downIcon }) => {
