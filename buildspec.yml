@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        python: 3.7
+  pre_build:
+    commands:
+      - apt-get update -y --allow-unauthenticated
+      - apt-get -y install gettext-base jq unzip curl
+      - pip install ecs-deploy==1.11.3
+      - echo Logging in to Amazon ECR..
+      - aws --version
+  build:
+    commands:
+      - echo Building Docker image - $ECR_IMAGE_URL .....
+      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - date && DATE=$(date)
+      - envsubst < deployment_version.tmpl > deployment_version.txt
+      - docker build -t $ECR_IMAGE_URL:latest -t $ECR_IMAGE_URL:$IMAGE_TAG -f Dockerfile .
+      - TEMP_ROLE=`aws sts assume-role --role-arn $ASSUME_ROLE_ARN --role-session-name temp`
+      - export TEMP_ROLE 
+      - export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
+      - export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
+      - export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
+      - env | grep -i "DB_\|SSM_\|AWS_" > .env || true
+      - aws ecr get-login-password --region $SSM_PS_RG | docker login --username AWS --password-stdin $(echo $ECR_IMAGE_URL | cut -f1 -d/)
+      - echo Pushing Docker image - $ECR_IMAGE_URL .....
+      - docker push $ECR_IMAGE_URL:latest
+      - docker push $ECR_IMAGE_URL:$IMAGE_TAG
+      - echo updating cluster $CLUSTER_NAME with service $SERVICE_NAME .....
+      - ecs deploy $CLUSTER_NAME $SERVICE_NAME --image $SERVICE_NAME $ECR_IMAGE_URL:$IMAGE_TAG --rollback --timeout 1200
+  post_build:
+    commands:
+      - echo Build Completed!
+artifacts:
+    files:
+    - '**/*'
+    name: $(date +%Y-%m-%d)-${CODEBUILD_BUILD_ID}

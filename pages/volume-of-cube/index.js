@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 const FullPageCustomWrapper = dynamic(() =>
-  import("components/full-page-wrapper/FullPageCustomWrapper").then(
-    (mod) => mod.FullPageCustomWrapper
-  )
+   import("components/full-page-wrapper/FullPageCustomWrapper").then(
+      (mod) => mod.FullPageCustomWrapper
+   )
 );
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
@@ -48,7 +48,7 @@ const VolumeOfCube = ({}) => {
       { title: "General Formula", slides: [5, 6, 7, 8] },
       {
          title: "Volume of a cube using diagonal",
-         slides: [9,10,11,12,13,14],
+         slides: [9, 10, 11, 12, 13, 14],
       },
       {
          title: "Rectangular prism vs cube",
