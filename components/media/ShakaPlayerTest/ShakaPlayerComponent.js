@@ -102,9 +102,7 @@ const VideoPlayer = (props) => {
     onError(event.detail);
   };
   const onError = (error) => {
-    if (error.code !== 3015) {
-      setError(true);
-    }
+    console.log(error);
   };
 
   useEffect(() => {
