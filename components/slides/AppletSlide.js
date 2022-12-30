@@ -48,12 +48,12 @@ const ContentWrap = styled.div`
    flex-direction: row;
    align-items: center;
    width: 100%;
+   height: 100%;
    justify-content: flex-start;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       flex-direction: column;
-      height: 100%;
       gap: 20px;
    }
 
@@ -67,7 +67,9 @@ const TitleAndAppletWrap = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
+   height: 100%;
    margin: 0 auto;
+   justify-content: space-evenly;
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
@@ -141,7 +143,7 @@ const AppletSlide = ({
                ref={ref}
                padding="20px 30px"
                isLastSlide={isLastSlide}
-               hideFillerForLandscapeMode
+               hideFiller
             >
                <ContentWrap>
                   <FillerNavBar
@@ -159,13 +161,14 @@ const AppletSlide = ({
                         </SlideTitle>
                      </TitleWrap>
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     {downIcon
+                        ? React.cloneElement(downIcon, {
+                             noMargin: true,
+                             hideInMobileLandscapeMode: true,
+                          })
+                        : downIcon}
                   </TitleAndAppletWrap>
                </ContentWrap>
-               {downIcon
-                  ? React.cloneElement(downIcon, {
-                       hideInMobileLandscapeMode: true,
-                    })
-                  : downIcon}
             </SlideWrap>
          </DesktopComponent>
       </>

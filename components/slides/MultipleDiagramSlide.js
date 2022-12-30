@@ -46,25 +46,31 @@ const MultipleDiagramSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               {/* NavBar */}
-               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
+               {/* Navbar and title */}
+               <Flex direction="column" gap="2vh">
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
+                  <div>
+                     <SlideSecondaryTitle
+                        bg={bg}
+                        secondaryTitle={secondaryTitle}
+                        centerAlign
+                     />
+                     <SlideTitle bg={bg} centerAlign>
+                        {title}
+                     </SlideTitle>
+                  </div>
+               </Flex>
                {/* Body */}
                <Flex
                   direction="column"
                   padding="0 20px"
-                  justifyContent="space-between"
+                  justifyContent="space-evenly"
                   alignItems="center"
                   width="100%"
+                  flex="1"
                >
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     centerAlign
-                  />
-                  <SlideTitle bg={bg} centerAlign>
-                     {title}
-                  </SlideTitle>
-                  {children}
                   <Flex
                      direction="row"
                      flexFlow={"wrap"}
@@ -93,6 +99,7 @@ const MultipleDiagramSlide = ({
                         </ImageWrap>
                      ))}
                   </Flex>
+                  {children}
                </Flex>
                {/* DownIcon */}
                {downIcon
