@@ -23,8 +23,8 @@ const TextSpan = dynamic(() =>
 );
 
 const bg = "assets/white_bg.png";
-const acute_red = "assets/acute_red.svg";
-const acute_angles_blue = "assets/acute_angles_blue.svg";
+const acute_red = "assets/triangles/acute_red.svg";
+const acute_angles_blue = "assets/triangles/acute_angles_blue.svg";
 
 const Slide5 = () => {
    const [activeIndex, setActiveIndex] = useState(0);

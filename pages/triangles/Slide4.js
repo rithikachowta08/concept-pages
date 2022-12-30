@@ -20,12 +20,12 @@ const TextSpan = dynamic(() =>
 );
 
 const bg = "assets/purple_bg.png";
-const triangle_acute = "assets/triangle_acute.svg";
-const triangle_acute_yellow = "assets/triangle_acute_yellow.svg";
-const triangle_obtuse = "assets/triangle_obtuse.svg";
-const triangle_obtuse_yellow = "assets/triangle_obtuse_yellow.svg";
-const triangle_right = "assets/triangle_right.svg";
-const triangle_right_yellow = "assets/triangle_right_yellow.svg";
+const triangle_acute = "assets/triangles/triangle_acute.svg";
+const triangle_acute_yellow = "assets/triangles/triangle_acute_yellow.svg";
+const triangle_obtuse = "assets/triangles/triangle_obtuse.svg";
+const triangle_obtuse_yellow = "assets/triangles/triangle_obtuse_yellow.svg";
+const triangle_right = "assets/triangles/triangle_right.svg";
+const triangle_right_yellow = "assets/triangles/triangle_right_yellow.svg";
 
 const Slide4 = () => {
    const [activeIndex, setActiveIndex] = useState(0);

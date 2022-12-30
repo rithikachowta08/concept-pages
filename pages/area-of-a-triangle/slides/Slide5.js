@@ -1,16 +1,14 @@
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import {
-   Paragraph,
-   TextLine,
-   TextSpan,
-   TextSpanBg,
-   Title,
-} from "components/text";
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const area_triangle_angles_1_1 = "assets/area-of-triangle/16.a.svg";
 const area_triangle_angles_2_1 = "assets/area-of-triangle/16.b.svg";
@@ -29,7 +27,7 @@ const Slide5 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg="LIGHT"
-         title="General formula"
+         title="General Formula"
          downIcon={downIcon}
          images={[
             {
@@ -89,33 +87,33 @@ const Slide5 = ({ downIcon }) => {
          ]}
       >
          <span>
-            <Paragraph textAlign={"center"}>
-               <TextLine>
-                  Let’s observe the base and height of different types of
-                  triangles.
-               </TextLine>
-               <TextLine>
-                  {" "}
-                  Area ={" "}
-                  <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
-                  <TextSpanBg
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => setActiveIndex(1)}
-                     onHoverOut={() => setActiveIndex(0)}
-                  >
-                     Base (b)
-                  </TextSpanBg>
-                  <MathElement htmlString={"\\ \\times\\ "} />
-                  <TextSpanBg
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     onHover={() => setActiveIndex(2)}
-                     onHoverOut={() => setActiveIndex(0)}
-                  >
-                     Height (h)
-                  </TextSpanBg>
-               </TextLine>
+            <Paragraph
+               textAlign={"center"}
+               marginBottom={"40px"}
+               color={colors.BLACK}
+            >
+               Let&apos;s observe the base and height of different types of
+               triangles.{" "}
+            </Paragraph>
+            <Paragraph textAlign={"center"} color={colors.BLACK}>
+               Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => setActiveIndex(1)}
+                  onHoverOut={() => setActiveIndex(0)}
+               >
+                  Base (b)
+               </TextSpanBg>
+               <MathElement htmlString={"\\ \\times\\ "} />
+               <TextSpanBg
+                  color={colors.RED}
+                  hoverColor={colors.DARK_BLUE}
+                  onHover={() => setActiveIndex(2)}
+                  onHoverOut={() => setActiveIndex(0)}
+               >
+                  Height (h)
+               </TextSpanBg>
             </Paragraph>
          </span>
       </MultipleDiagramSlide>

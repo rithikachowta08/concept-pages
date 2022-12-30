@@ -17,7 +17,7 @@ const Para = styled.p`
    margin-block-start: 1rem;
    padding: ${(props) => props.padding || 0};
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       margin-block-start: 0.5rem;
    }
 `;

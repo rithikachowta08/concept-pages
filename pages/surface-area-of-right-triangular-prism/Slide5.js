@@ -25,6 +25,7 @@ const a_b_c_lengths =
    "assets/surface-area-of-right-triangluar-prism/a_b_c_lengths.svg";
 const l_length = "assets/surface-area-of-right-triangluar-prism/l_length.svg";
 
+import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
@@ -56,6 +57,12 @@ const Slide5 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain_lengths, rect_faces, a_b_c_lengths, l_length]}
+               altTexts={[
+                  "Diagram of a right triangular prism",
+                  "Diagram of a right triangular prism with highlighted rectangular faces",
+                  "Diagram of a right triangular prism with sides of the triangular face labelled.",
+                  "Diagram of a right triangular prism with highlighted length of the rectangular face.",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -92,7 +99,7 @@ const Slide5 = ({ downIcon }) => {
             , represents the lateral surface area.
          </Paragraph>
          <Pill>Lateral surface area = (a + b + c)l square units</Pill>
-         <Paragraph color="white">
+         <Paragraph color="white" lineHeight={lineHeightProp}>
             Here,{" "}
             <TextSpanBg
                id={2}

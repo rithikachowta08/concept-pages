@@ -1,13 +1,20 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, LeftWrap } from "components/StyledElements";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
+
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import HyperLink from "components/text/HyperLink";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
@@ -22,16 +29,14 @@ const Slide17 = ({ downIcon }) => {
          secondaryTitle={"Area of an Equilateral triangle"}
          bg={"LIGHT"}
          diagram={
-            <LeftWrap>
-               <TransitionImage
-                  images={[image_1, image_2]}
-                  activeIndex={activeIndex}
-                  altTexts={[
-                     "Diagram of an equilateral triangle showing equal sides, angles and height",
-                     "Diagram of an equilateral triangle highlighting one of its congruent half",
-                  ]}
-               />
-            </LeftWrap>
+            <TransitionImage
+               images={[image_1, image_2]}
+               activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of an equilateral triangle showing equal sides, angles and height",
+                  "Diagram of an equilateral triangle highlighting one of its congruent half",
+               ]}
+            />
          }
          downIcon={downIcon}
       >

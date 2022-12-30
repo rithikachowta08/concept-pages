@@ -1,8 +1,9 @@
-import React from "react";
+import dynamic from "next/dynamic";
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
 import { StyledImg } from "components/StyledElements";
-import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import HyperLink from "components/text/HyperLink";
-import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/slide_10_e.svg";
 const image_2 = "assets/area-of-triangle/slide_10_i.svg";
@@ -13,7 +14,7 @@ const Slide10 = ({ downIcon }) => {
    return (
       <MultipleDiagramSlide
          bg={"DARK"}
-         title="Area of different types of triangles"
+         title="Area of Different Types of Triangles"
          images={[
             {
                diagram: (

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="ref" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #333;
+        opacity: .1;
+      }
+
+      .cls-2 {
+        stroke: #949393;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-6 {
+        fill: #cffffe;
+      }
+
+      .cls-7 {
+        fill: #2b2bf0;
+      }
+
+      .cls-3 {
+        opacity: .2;
+        stroke: #333;
+        stroke-dasharray: 0 12;
+        stroke-linecap: round;
+      }
+
+      .cls-8 {
+        opacity: .4;
+      }
+
+      .cls-9 {
+        fill: gray;
+        opacity: .5;
+      }
+    </style>
+    <clipPath id="clippath">
+      <ellipse class="cls-1" cx="-393.34" cy="472.41" rx="207.24" ry="53.14"/>
+    </clipPath>
+  </defs>
+  <g id="_25" data-name="25">
+    <g>
+      <path class="cls-4" d="M473.9,472.38c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l2.92-7.2L266.52,39.27l203.93,422.1,2.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+      <ellipse class="cls-9" cx="266.66" cy="472.38" rx="207.24" ry="53.14"/>
+      <path class="cls-3" d="M59.42,472.38c0-29.35,92.78-53.14,207.24-53.14s207.24,23.79,207.24,53.14"/>
+      <path class="cls-2" d="M473.9,472.38c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l2.92-7.2L266.52,39.27l203.93,422.1,2.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+    </g>
+    <circle class="cls-7" cx="266.46" cy="39.46" r="10.74"/>
+  </g>
+  <g class="cls-5">
+    <g class="cls-8">
+      <polygon class="cls-6" points="-329.86 698.09 -332.69 698.09 13.91 351.49 14.95 353.28 -329.86 698.09"/>
+    </g>
+  </g>
+</svg>

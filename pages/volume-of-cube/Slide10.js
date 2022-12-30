@@ -1,12 +1,27 @@
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import { colors } from "utils/colors";
-import { useState } from "react";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import TransitionImage from "components/media/TransitionImage";
+import dynamic from "next/dynamic";
+
 const cube_red = "assets/volume-of-cube/slide10/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide10/2.svg";
-import EquationTable from "components/MathElement/EquationTable";
-
+import { colors } from "utils/colors";
+import { useState } from "react";
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
@@ -112,6 +127,7 @@ const Slide10 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
+               altTexts={["A cube whose side area is 16 square centimetres.","A cube with it's side highlighted having area of 16 square centimetres."]}
                activeIndex={activeIndex}
             />
          }

@@ -247,7 +247,7 @@ const VideoPlayer = (props) => {
         width={"100%"}
         height={"100%"}
         playsInline
-        // autoPlay={true}
+        autoPlay={true}
         ref={videoComponent}
         poster={props.poster}
         src={props.src}

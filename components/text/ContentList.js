@@ -23,6 +23,7 @@ const Flex = styled.div`
 
 const ListItem = styled.div`
    display: flex;
+   width:fit-content;
    align-items: center;
    font-size: ${fontSizes.LARGE};
    gap: 10px;

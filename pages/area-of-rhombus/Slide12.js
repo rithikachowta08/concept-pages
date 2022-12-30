@@ -60,7 +60,7 @@ const Slide12 = ({ downIcon }) => {
         </TextSpanBg>{" "}
         between them are given, then the area can be calculated as:
       </Paragraph>
-      <Pill>
+      <Pill  color={colors.WHITE}   bgColor={colors.GREEN}>
         Area of a rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndDiagramSlide>

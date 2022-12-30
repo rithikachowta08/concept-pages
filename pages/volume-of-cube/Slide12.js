@@ -1,13 +1,30 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph, TextLine } from "components/text";
+import dynamic from "next/dynamic";
+
 import { useState } from "react";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide12/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide12/2.svg";
 const cube_3 = "assets/volume-of-cube/slide12/3.svg";
-import EquationTable from "components/MathElement/EquationTable";
 
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const Slide11 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
@@ -39,7 +56,7 @@ const Slide11 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["s^2 + (s\\sqrt{2})^2 =3S^2"],
+            value: ["s^2 + (s\\sqrt{2})^2 =3s^2"],
             type: "latex",
          },
       },
@@ -96,6 +113,7 @@ const Slide11 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal, cube_3]}
+               altTexts={["Diagram of a cube with body diagonal and face diagonal","Diagram of a cube highlighting a triangle formed by the face diagonal.","Diagram of a cube highlighting a triangle formed by the face diagonal."]}
                activeIndex={activeIndex}
                // bottomOffset="65px"
             />
@@ -125,7 +143,7 @@ const Slide11 = ({ downIcon }) => {
             <TextLine>
                In{" "}
                <TextSpanBg
-                  id={1}
+                  id={2}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
