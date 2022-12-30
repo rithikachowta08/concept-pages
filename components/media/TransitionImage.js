@@ -10,8 +10,8 @@ const Img = styled.img`
    height: ${(props) => props.width || "550px"};
 
    @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: ${(props) => props.smallMobileSize || "200px"};
-      height: ${(props) => props.smallMobileSize || "200px"};
+      width: ${(props) => props.smallMobileSize || "175px"};
+      height: ${(props) => props.smallMobileSize || "175px"};
    }
    @media only screen and (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
@@ -33,7 +33,7 @@ const Img = styled.img`
       width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
       height: ${(props) => props.tabletSize || props.mobileSize || "350px"};
    }
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 700px) {
+   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 900px) {
       width: ${(props) =>
          props.smallDesktopSize || props.tabletSize || "450px"};
       height: ${(props) =>

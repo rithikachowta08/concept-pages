@@ -6,7 +6,7 @@ const Slide3 = ({ downIcon }) => {
    return (
       <VideoSlide
          downIcon={downIcon}
-         title="Surface Area of Prisms"
+         title="What is the surface area of a rectangular prism?"
          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
    );

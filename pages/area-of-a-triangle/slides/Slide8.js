@@ -1,8 +1,8 @@
-import MathElement from "components/MathElement";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { Paragraph, Title } from "components/text";
-import React from "react";
-import { colors } from "utils/colors";
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
+import { Paragraph } from "components/text";
+import dynamic from "next/dynamic";
 
 const applet = "applets/triangle.html";
 

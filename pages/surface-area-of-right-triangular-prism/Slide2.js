@@ -33,6 +33,11 @@ const Slide2 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain, bases, sides]}
+               altTexts={[
+                  "Diagram of a right triangular prism",
+                  "Diagram of a right triangular prism with highlighted triangular bases",
+                  "Diagram of a right triangular prism with highlighted lateral faces",
+               ]}
                activeIndex={activeIndex}
             />
          }

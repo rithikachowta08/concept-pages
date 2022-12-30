@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="ref" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 8;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 4px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #ea6560;
+      }
+
+      .cls-6 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 12;
+      }
+
+      .cls-7 {
+        fill: #de7070;
+      }
+
+      .cls-7, .cls-8 {
+        opacity: .5;
+      }
+
+      .cls-8 {
+        fill: #c76560;
+      }
+    </style>
+  </defs>
+  <g id="_4" data-name="4">
+    <g>
+      <path class="cls-7" d="M473.9,472.38c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l2.92-7.2L266.52,39.27l203.93,422.1,2.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+      <ellipse class="cls-8" cx="266.66" cy="472.38" rx="207.24" ry="53.14"/>
+      <path class="cls-4" d="M59.42,472.38c0-29.35,92.78-53.14,207.24-53.14s207.24,23.79,207.24,53.14"/>
+      <text class="cls-6" transform="translate(407.86 254.31)"><tspan x="0" y="0">10 cm</tspan></text>
+      <line class="cls-2" x1="276.52" y1="472.15" x2="473.9" y2="472.02"/>
+      <path class="cls-1" d="M473.9,472.38c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l2.92-7.2L266.52,39.27l203.93,422.1,2.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+    </g>
+    <g>
+      <line class="cls-3" x1="295.81" y1="47.41" x2="494.34" y2="459.22"/>
+      <polygon class="cls-5" points="288.09 54.37 289.58 34.48 306.06 45.7 288.09 54.37"/>
+      <polygon class="cls-5" points="484.09 460.92 500.58 472.15 502.06 452.26 484.09 460.92"/>
+    </g>
+    <circle class="cls-5" cx="266.66" cy="471.76" r="7.36"/>
+  </g>
+  <text class="cls-6" transform="translate(337.64 461.97)"><tspan x="0" y="0">3 cm</tspan></text>
+</svg>

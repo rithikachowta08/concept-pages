@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
-import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 
 const t_formula = "assets/area-of-triangle/slide_3_normal.svg";
 const t_base = "assets/area-of-triangle/slide_3_b.svg";
 const t_height = "assets/area-of-triangle/slide_3_p.svg";
-
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // General Formula Slide
 const Slide4 = ({ downIcon }) => {
@@ -20,7 +24,7 @@ const Slide4 = ({ downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          title={"General Formula"}
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
             <TransitionImage
@@ -35,8 +39,8 @@ const Slide4 = ({ downIcon }) => {
          }
       >
          <Paragraph color={colors.WHITE}>
-            The area &apos;A&apos; of a triangle is one-half of the product of
-            its base &apos;b&apos; and height &apos;h&apos;.
+            The area &quot;A&quot; of a triangle is one-half of the product of
+            its base &quot;b&quot; and height &quot;h&quot;.
          </Paragraph>
          <Paragraph>
             <Pill>

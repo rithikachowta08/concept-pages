@@ -1,12 +1,19 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+
 import { Paragraph, TextLine, TextSpan, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/sidesAngles_deri_1.svg";
@@ -16,7 +23,18 @@ const Slide20 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
-         title={"Derivation"}
+         title={
+            <p
+               style={{
+                  color: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  marginTop: "30px",
+               }}
+            >
+               Derivation
+            </p>
+         }
          bg={"LIGHT"}
          diagram={
             <TransitionImage
@@ -28,7 +46,6 @@ const Slide20 = ({ downIcon }) => {
                ]}
             />
          }
-         downIcon={downIcon}
          isLastSlide
       >
          <Paragraph>
@@ -66,7 +83,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                        value: ["\\frac{1}{2} \\times Base \\times Height"],
                         type: "latex",
                      },
                   },
@@ -76,7 +93,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2}\\times c\\times h"],
+                        value: ["\\frac{1}{2}\\times c\\times h"],
                         type: "latex",
                      },
                   },
@@ -86,7 +103,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2}\\times c\\times b\\ Sin A"],
+                        value: ["\\frac{1}{2}\\times c\\times b\\ Sin A"],
                         type: "latex",
                      },
                   },
@@ -96,7 +113,7 @@ const Slide20 = ({ downIcon }) => {
          <Paragraph>
             <Pill>
                Area =
-               <MathElement htmlString={"\\dfrac{1}{2}\\ bc\\ Sin\\ A"} />
+               <MathElement htmlString={"\\frac{1}{2}\\ bc\\ Sin\\ A"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

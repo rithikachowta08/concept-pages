@@ -1,5 +1,6 @@
-import VideoSlide from "components/slides/VideoSlide";
-import React from "react";
+import dynamic from "next/dynamic";
+
+const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
 
 // Classification of triangles
 const Slide6 = ({ downIcon }) => {

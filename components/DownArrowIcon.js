@@ -6,7 +6,6 @@ import { colors } from "utils/colors";
 const IconWrap = styled.div`
    cursor: pointer;
    align-self: center;
-   visibility: ${(props) => props.visibility};
    margin: ${(props) =>
       props.noMargin ? "0" : props.isVideoSlide ? "0 auto" : "auto 0 0 0"};
 
@@ -23,11 +22,17 @@ const IconWrap = styled.div`
    @media (min-height: 300px) and (max-height: 800px) and (max-width: 950px) {
       scale: 0.5;
    }
+
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      display: ${(props) =>
+         props.hideInMobileLandscapeMode ? "none" : "block"};
+   }
 `;
 
 const DownArrowIcon = ({
    color = colors.DARK_GREY,
-   visibility,
+   hideInMobileLandscapeMode,
    noMargin,
    isVideoSlide,
    className,
@@ -38,7 +43,7 @@ const DownArrowIcon = ({
          onClick={onClick}
          noMargin={noMargin}
          isVideoSlide={isVideoSlide}
-         visibility={visibility}
+         hideInMobileLandscapeMode={hideInMobileLandscapeMode}
       >
          <svg
             width="66"

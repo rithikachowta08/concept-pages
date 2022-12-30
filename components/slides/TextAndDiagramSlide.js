@@ -29,14 +29,16 @@ const TextAndDiagramSlide = ({
    return (
       <>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"}>
+            <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
                   maxHeight="30%"
                >
-                  <FillerNavBar />
+                  <FillerNavBar
+                     desktopNavBarWidth={global.desktopNavBarWidth}
+                  />
                   <LeftWrap>
                      <div>
                         <SlideSecondaryTitle
@@ -61,15 +63,18 @@ const TextAndDiagramSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
+               {/* Navbar and title */}
                <Flex direction="column" gap="2vh">
-                  <FillerNavBar />
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
                         secondaryTitle={secondaryTitle}
-                        isMobile
+                        centerAlign
                      />
-                     <SlideTitle bg={bg} isMobile>
+                     <SlideTitle bg={bg} centerAlign>
                         {title}
                      </SlideTitle>
                   </div>
@@ -77,9 +82,10 @@ const TextAndDiagramSlide = ({
                {/* Body */}
                <Flex
                   direction="column"
-                  padding="0 20px"
-                  justifyContent="space-between"
+                  padding="0 30px"
+                  justifyContent="space-evenly"
                   alignItems="center"
+                  flex="1"
                   width="100%"
                >
                   {diagram}

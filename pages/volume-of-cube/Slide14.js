@@ -1,18 +1,51 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph, TextLine } from "components/text";
+import dynamic from "next/dynamic";
+
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide14/1.svg";
 const cube_f = "assets/volume-of-cube/slide14/2.svg";
 const cube_s = "assets/volume-of-cube/slide14/3.svg";
-import Pill from "components/Pill";
-import MathElement from "components/MathElement/index.js";
-import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+
 const Slide14 = ({ downIcon }) => {
-   let EquationLatex0 = [
+   let EquationLatex0=[
+      {
+         lhsLatex: {
+            value: [
+               `Volume of cube`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\sqrt{2} \\times \\dfrac{f^3}{4} \\: cubic \\: units",
+            ],
+            type: "latex",
+         },
+      },
+   ]
+   let EquationLatex1 = [
       {
          lhsLatex: {
             value: [
@@ -33,7 +66,7 @@ const Slide14 = ({ downIcon }) => {
       },
    ];
    let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0);
+   latexEquationContainer.push(EquationLatex0,EquationLatex1);
    let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHoverKatex = (e) => {
@@ -62,6 +95,7 @@ const Slide14 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_f, cube_s]}
+               altTexts={["Diagram of a cube with face diagonal","Diagram of a cube with face diagonal highlighted","Diagram of a cube with side length highlighted"]}
                activeIndex={activeIndex}
             />
          }
@@ -70,15 +104,8 @@ const Slide14 = ({ downIcon }) => {
             <TextLine>
                {" "}
                Given the{" "}
-               <TextSpanBg
-                  id={1}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-               >
                   diagonal length
-               </TextSpanBg>{" "}
+              {" "}
                of a face of a cube:
             </TextLine>
          </Paragraph>
@@ -88,9 +115,7 @@ const Slide14 = ({ downIcon }) => {
                bgColor={colors.OCEAN_GREEN}
                color={colors.BLACK}
             >
-               Volume of a cube{" "}
-               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-               cubic unit
+             <EquationTable align="middle" equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
             </Pill>
          </Paragraph>
          <Paragraph>

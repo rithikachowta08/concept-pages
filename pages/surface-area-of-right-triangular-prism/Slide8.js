@@ -12,7 +12,6 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-import { ModalTriggerText } from "components/text";
 const plain_all_lengths =
    "assets/surface-area-of-right-triangluar-prism/plain_all_lengths.svg";
 const b_length = "assets/surface-area-of-right-triangluar-prism/b_length.svg";
@@ -34,6 +33,11 @@ const Slide5 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[plain_all_lengths, b_length, h_length]}
+               altTexts={[
+                  "Diagram of a right triangular prism with sides of triangular face and length of rectangular face labelled.",
+                  "Diagram of a right triangular prism with base of the triangular face highlighted",
+                  "Diagram of a right triangular prism with height of rectangular face highlighted. ",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -46,7 +50,7 @@ const Slide5 = ({ downIcon }) => {
             The area covered by all the faces of a right triangular prism
             represents the total surface area.
          </Paragraph>
-         <Pill>Lateral surface area = (a + b + c)l + bh square units</Pill>
+         <Pill>Total surface area = (a + b + c)l + bh square units</Pill>
          <Paragraph color="white">
             Here, “a”, “b”, and “c” are the side lengths of the triangular face,
             “l” is the length of the rectangular face,{" "}

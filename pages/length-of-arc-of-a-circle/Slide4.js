@@ -24,21 +24,23 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() => import("components/MathElement"));
+const MathElement = dynamic(() => 
+  import("components/MathElement")
+)
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const diagram_of_a_circle =
-   "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
+const diagram_of_a_circle = "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
 const minor_arc = "assets/length-of-arc-of-a-circle/minor_arc.svg";
 const major_arc = "assets/length-of-arc-of-a-circle/major_arc.svg";
-const semicircular_arc =
-   "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+const semicircular_arc= "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
-const Slide3 = ({ downIcon }) => {
+const Slide4 = ({ downIcon }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
@@ -72,6 +74,12 @@ const Slide3 = ({ downIcon }) => {
                   major_arc,
                   semicircular_arc,
                ]}
+               altTexts={[
+                  "Diagram of a circle",
+                  "Diagram of a circle highlighting minor arc",
+                  "Diagram of a circle highlighting major arc",
+                  "Diagram of a circle highlighting semicircular arc"
+                  ]}
                activeIndex={activeIndex}
             />
          }
@@ -100,7 +108,7 @@ const Slide3 = ({ downIcon }) => {
                   Minor arc
                </TextSpanBg>
                (<MathElement htmlString={"\\overgroup{ACB}"} />
-               ): An arc of a circle measuring less than 180∘.
+               ): An arc of a circle measuring less than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
@@ -114,7 +122,7 @@ const Slide3 = ({ downIcon }) => {
                   Major arc
                </TextSpanBg>
                (<MathElement htmlString={"\\overgroup{ADB}"} />
-               ): An arc of a circle measuring greater than 180∘.
+               ): An arc of a circle measuring greater than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
@@ -128,11 +136,11 @@ const Slide3 = ({ downIcon }) => {
                   Semicircular arc
                </TextSpanBg>
                (<MathElement htmlString={"\\overgroup{PDR}"} />
-               ): An arc of a circle measuring 180∘.
+               ): An arc of a circle measuring 180°.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide3;
+export default Slide4;

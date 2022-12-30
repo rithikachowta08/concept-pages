@@ -10,7 +10,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Sector of a circle",
             "Length of an arc of a sector",
          ]}
-         anchorIdxes={[2, 4, 7]}
+         anchorIdxes={[2, 5, 7]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

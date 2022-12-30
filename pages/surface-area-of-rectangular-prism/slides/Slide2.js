@@ -19,7 +19,7 @@ const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
-         title={"What is rectangular prism?"}
+         title={"What Is a Rectangular Prism?"}
          bg={"LIGHT"}
          diagram={
             <TransitionImage
