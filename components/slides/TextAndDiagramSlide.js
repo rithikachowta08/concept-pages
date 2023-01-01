@@ -27,7 +27,7 @@ const TextAndDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div>
          <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
@@ -97,7 +97,7 @@ const TextAndDiagramSlide = ({
                   : downIcon}
             </SlideWrap>
          </MobileComponent>
-      </>
+      </div>
    );
 };
 

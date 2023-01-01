@@ -36,7 +36,7 @@ const MultipleDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -163,7 +163,7 @@ const MultipleDiagramSlide = ({
                {downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

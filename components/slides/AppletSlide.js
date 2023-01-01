@@ -12,14 +12,14 @@ const IFrame = styled.iframe`
    border-radius: 20px;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
       margin: auto 0;
       width: 100vw;
       height: 100vw;
    }
 
    // Tablet
-   @media (min-width: 821px) and (max-width: 992px) {
+   @media (min-width: 501px) and (max-width: 992px) {
       width: 500px;
       height: 500px;
    }
@@ -102,7 +102,7 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -130,6 +130,7 @@ const AppletSlide = ({
                      width="100%"
                      margin="0 auto"
                      alignItems="center"
+                     justifyContent="center"
                   >
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                   </Flex>
@@ -171,7 +172,7 @@ const AppletSlide = ({
                </ContentWrap>
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

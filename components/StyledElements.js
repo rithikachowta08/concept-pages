@@ -28,7 +28,7 @@ export const SlideWrap = styled.div`
    align-items: center;
 
    ${(props) =>
-      props.isLastSlide
+      props.isLastSlide || props.hideFiller
          ? ``
          : `&::before {
       content: "D";
@@ -41,7 +41,9 @@ export const SlideWrap = styled.div`
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       ${(props) =>
-         props.hideFillerForLandscapeMode || props.isLastSlide
+         props.hideFiller ||
+         props.hideFillerForLandscapeMode ||
+         props.isLastSlide
             ? `&::before{
                display:none
                }
