@@ -27,11 +27,9 @@ export const FullPageCustomWrapper = ({
             // licenseKey={"YOUR_KEY_HERE"}
             navigationTooltips={[]}
             css3={false}
+            scrollBar={false}
             scrollingSpeed={600}
             fitToSectionDelay={900}
-            slidesNavigation={true}
-            slidesNavPosition={"bottom"}
-            slideSelector={".section"}
             onLeave={function (origin, destination) {
                setCurrentPageIdx(destination.index);
             }}
