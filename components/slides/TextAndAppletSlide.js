@@ -94,7 +94,7 @@ const TextAndAppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -197,7 +197,7 @@ const TextAndAppletSlide = ({
                   : downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 
