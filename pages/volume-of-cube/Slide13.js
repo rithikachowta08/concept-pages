@@ -88,7 +88,7 @@ const Slide13 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["3 \\sqrt{3}ft^3"],
+            value: ["3 \\sqrt{3}feet^3"],
             type: "latex",
          },
          rhsHint: {

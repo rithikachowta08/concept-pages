@@ -1,3 +1,4 @@
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,7 +13,10 @@ const Div = styled.div`
 `;
 
 const DesktopComponent = ({ children }) => {
-   return <Div>{children}</Div>;
+   const deviceType = useDeviceType();
+   return deviceType && deviceType === DEVICE_TYPES.MOBILE ? null : (
+      <Div>{children}</Div>
+   );
 };
 
 export default DesktopComponent;

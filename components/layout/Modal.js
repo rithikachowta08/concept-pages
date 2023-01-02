@@ -45,7 +45,7 @@ const ModalBody = styled.div`
    box-sizing: border-box;
    transition: transform 0.5s;
 
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 820px) {
       border-radius: 20px 20px 0px 0px;
       padding: 36px 20px;
       width: 100%;
@@ -55,7 +55,7 @@ const ModalBody = styled.div`
          props.isOpen ? "translateY(0px)" : "translateY(999px)"};
    }
 
-   @media only screen and (min-width: 767px) and (max-width: 1284px) {
+   @media only screen and (min-width: 821px) and (max-width: 1284px) {
       width: 50vw;
    }
 `;
