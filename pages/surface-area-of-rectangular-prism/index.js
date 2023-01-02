@@ -17,7 +17,7 @@ const SurfaceAreaOfRectangularPrism = () => {
       <Slide4 key={3} />,
       <Slide5 key={4} />,
       <Slide6 key={5} />,
-      // <Slide7 key={6} />,
+      <Slide7 key={6} />,
    ];
    const navigationSections = [
       {
@@ -28,7 +28,7 @@ const SurfaceAreaOfRectangularPrism = () => {
       { title: "Lateral surface area", slides: [5, 6] },
    ];
 
-   const darkBgIndices = [0, 2, 4, 5];
+   const darkBgIndices = [0, 2, 5, 6];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
