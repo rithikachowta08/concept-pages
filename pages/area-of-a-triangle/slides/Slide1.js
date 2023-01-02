@@ -1,7 +1,7 @@
-import React from "react";
 import { PropTypes } from "prop-types";
+import dynamic from "next/dynamic";
 
-import TitleSlide from "components/slides/TitleSlide";
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 // Title Slide
 const Slide1 = ({ moveToSection, downIcon }) => {

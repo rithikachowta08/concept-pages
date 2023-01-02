@@ -1,3 +1,4 @@
+import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import React from "react";
 import styled from "styled-components";
 
@@ -13,7 +14,10 @@ const Div = styled.div`
 `;
 
 const MobileComponent = ({ children }) => {
-   return <Div>{children}</Div>;
+   const deviceType = useDeviceType();
+   return deviceType && deviceType !== DEVICE_TYPES.MOBILE ? null : (
+      <Div>{children}</Div>
+   );
 };
 
 export default MobileComponent;

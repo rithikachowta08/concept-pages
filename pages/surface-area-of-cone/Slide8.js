@@ -14,9 +14,8 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
-
+const Pill = dynamic(() => import("components/Pill"));
+const MathElement = dynamic(() => import("components/MathElement"));
 const surfaceCone_full = "assets/surface-area-of-cone/slide8/1.svg";
 const surfaceCone_right = "assets/surface-area-of-cone/slide8/2.svg";
 const surfaceCone_rightslide = "assets/surface-area-of-cone/slide8/3.svg";

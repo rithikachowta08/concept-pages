@@ -12,14 +12,14 @@ const IFrame = styled.iframe`
    border-radius: 20px;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
       margin: auto 0;
       width: 100vw;
       height: 100vw;
    }
 
    // Tablet
-   @media (min-width: 821px) and (max-width: 992px) {
+   @media (min-width: 501px) and (max-width: 992px) {
       width: 500px;
       height: 500px;
    }
@@ -48,12 +48,12 @@ const ContentWrap = styled.div`
    flex-direction: row;
    align-items: center;
    width: 100%;
+   height: 100%;
    justify-content: flex-start;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
       flex-direction: column;
-      height: 100%;
       gap: 20px;
    }
 
@@ -67,7 +67,9 @@ const TitleAndAppletWrap = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
+   height: 100%;
    margin: 0 auto;
+   justify-content: space-evenly;
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
@@ -100,7 +102,7 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -128,6 +130,7 @@ const AppletSlide = ({
                      width="100%"
                      margin="0 auto"
                      alignItems="center"
+                     justifyContent="center"
                   >
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
                   </Flex>
@@ -141,7 +144,7 @@ const AppletSlide = ({
                ref={ref}
                padding="20px 30px"
                isLastSlide={isLastSlide}
-               hideFillerForLandscapeMode
+               hideFiller
             >
                <ContentWrap>
                   <FillerNavBar
@@ -159,16 +162,17 @@ const AppletSlide = ({
                         </SlideTitle>
                      </TitleWrap>
                      <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     {downIcon
+                        ? React.cloneElement(downIcon, {
+                             noMargin: true,
+                             hideInMobileLandscapeMode: true,
+                          })
+                        : downIcon}
                   </TitleAndAppletWrap>
                </ContentWrap>
-               {downIcon
-                  ? React.cloneElement(downIcon, {
-                       hideInMobileLandscapeMode: true,
-                    })
-                  : downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

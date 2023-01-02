@@ -1,6 +1,9 @@
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
+import dynamic from "next/dynamic";
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
+
 import { StyledImg } from "components/StyledElements";
-import React from "react";
 
 const image_1 = "assets/area-of-triangle/ex_1.svg";
 

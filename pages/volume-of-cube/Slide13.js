@@ -1,12 +1,29 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph, TextLine } from "components/text";
+import dynamic from "next/dynamic";
+
 import { useState } from "react";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide13/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide13/2.svg";
-import EquationTable from "components/MathElement/EquationTable";
 
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const Slide13 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
@@ -71,7 +88,7 @@ const Slide13 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["3 \\sqrt{3}ft^3"],
+            value: ["3 \\sqrt{3}feet^3"],
             type: "latex",
          },
          rhsHint: {

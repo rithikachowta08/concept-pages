@@ -1,14 +1,34 @@
 import { useState } from "react";
-import { Flex, StyledImg } from "components/StyledElements";
-import { Paragraph, TextSpanBg, ModalTriggerText } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import Modal from "components/layout/Modal";
 const cube_red = "assets/volume-of-cube/slide3/1.svg";
 const cube_spaces = "assets/volume-of-cube/slide3/2.svg";
 const cube_unit = "assets/volume-of-cube/slide3/3.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
+import dynamic from "next/dynamic";
+
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const ModalTriggerText = dynamic(() =>
+  import("components/text").then((mod) => mod.ModalTriggerText)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const StyledImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.StyledImg)
+);
 
 const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);

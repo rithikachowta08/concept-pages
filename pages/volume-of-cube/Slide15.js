@@ -1,29 +1,29 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import {
-   TextSpan,
-   Title,
-   Paragraph,
-   TextSpanBg,
-   TextLine,
-} from "components/text";
+import dynamic from "next/dynamic";
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide15/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide15/2.svg";
-import Pill from "components/Pill";
-import MathElement from "components/MathElement/index.js";
-import { fetchData } from "utils/networking";
-import { Flex } from "components/StyledElements";
-import SingleLHSMathEquationContainer from "components/MathElement/SingleLHSMathEquationContainer";
-import {
-   LHSContainer,
-   RHSContainer,
-} from "components/MathElement/LHSContainer";
-import MathEquationLine from "components/MathElement/MathEquationLine";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import EquationTable from "components/MathElement/EquationTable";
+
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const Slide15 = ({ navBar, downIcon }) => {
    let EquationLatex0 = [

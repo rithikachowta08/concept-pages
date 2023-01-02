@@ -13,10 +13,10 @@ const StyledSpan = styled.span`
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-left: ${(props) => props.marginLeft || 0};
    margin: ${(props) => props.margin || "3px 0"};
+   padding: ${(props) => props.padding || "0 10px"};
    transform: ${(props) => props.transform};
    cursor: ${(props) => props.cursor || "default"};
-   border-radius: ${(props) => props.borderRadius || "25px"};
-   padding: 0 10px;
+   border-radius: ${(props) => props.borderRadius || "9999px"};
    -webkit-box-decoration-break: clone;
    -o-box-decoration-break: clone;
    box-decoration-break: clone;
@@ -42,6 +42,7 @@ const TextSpanBg = ({
    onClick,
    fontWeight,
    borderRadius,
+   padding,
 }) => {
    return (
       <StyledSpan
@@ -60,6 +61,7 @@ const TextSpanBg = ({
          onMouseLeave={onHoverOut}
          onMouseEnter={onHover}
          borderRadius={borderRadius}
+         padding={padding}
       >
          {children}
       </StyledSpan>
@@ -70,6 +72,7 @@ TextSpanBg.propTypes = {
    children: PropTypes.node.isRequired,
    color: PropTypes.string,
    margin: PropTypes.string,
+   padding: PropTypes.string,
    transform: PropTypes.string,
    id: PropTypes.any,
    hoverColor: PropTypes.string,

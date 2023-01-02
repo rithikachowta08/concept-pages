@@ -27,7 +27,7 @@ const TextAndDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }}>
          <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
@@ -82,7 +82,7 @@ const TextAndDiagramSlide = ({
                {/* Body */}
                <Flex
                   direction="column"
-                  padding="0 20px"
+                  padding="0 30px"
                   justifyContent="space-evenly"
                   alignItems="center"
                   flex="1"
@@ -97,7 +97,7 @@ const TextAndDiagramSlide = ({
                   : downIcon}
             </SlideWrap>
          </MobileComponent>
-      </>
+      </div>
    );
 };
 

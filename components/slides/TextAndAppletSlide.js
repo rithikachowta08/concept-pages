@@ -94,7 +94,7 @@ const TextAndAppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -123,7 +123,7 @@ const TextAndAppletSlide = ({
                {/* Body */}
                <Flex
                   direction="column"
-                  padding="0 20px"
+                  padding="0 30px"
                   justifyContent="space-evenly"
                   alignItems="center"
                   width="100%"
@@ -197,7 +197,7 @@ const TextAndAppletSlide = ({
                   : downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

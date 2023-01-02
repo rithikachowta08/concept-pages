@@ -45,7 +45,7 @@ const Slide3 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            he surface area of a right triangular prism is the area covered by
+            The surface area of a right triangular prism is the area covered by
             its faces.
          </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>

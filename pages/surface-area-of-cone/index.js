@@ -8,7 +8,6 @@ const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
 const Slide4 = dynamic(() => import("./Slide4"));
-const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
@@ -24,29 +23,28 @@ const SurfaceAreaofCone = () => {
     <Slide2 key={1} />,
     <Slide3 key={2} />,
     <Slide4 key={3} />,
-    <Slide5 key={4} />,
-    <Slide6 key={5} />,
-    <Slide7 key={6} />,
-    <Slide8 key={7} />,
-    <Slide9 key={8} />,
-    <Slide10 key={9} />,
-    <Slide11 key={10} />,
-    <Slide12 key={11} />,
-    <Slide13 key={12} />,
+    <Slide6 key={4} />,
+    <Slide7 key={5} />,
+    <Slide8 key={6} />,
+    <Slide9 key={7} />,
+    <Slide10 key={8} />,
+    <Slide11 key={9} />,
+    <Slide12 key={10} />,
+    <Slide13 key={11} />,
   ];
   const navigationSections = [
     {
       title: "What is the surface area of a cone?",
-      slides: [1, 2, 3, 4, 5, 6],
+      slides: [1, 2, 3, 4, 5],
     },
-    { title: "Curved surface area", slides: [7, 8] },
+    { title: "Curved surface area", slides: [6, 7] },
     {
       title: "Total surface area",
-      slides: [9, 10, 11],
+      slides: [8, 9, 10, 11],
     },
   ];
 
-  const darkBgIndices = [0, 5, 7, 9, 12];
+  const darkBgIndices = [0, 4, 6, 8, 11];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
