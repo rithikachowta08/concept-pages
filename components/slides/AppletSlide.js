@@ -102,7 +102,7 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div>
+      <div style={{ height: "100%", width: "100%" }}>
          <MobileComponent>
             <SlideWrap
                bg={bg}

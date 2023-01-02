@@ -27,7 +27,7 @@ const TextAndDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div>
+      <div style={{ height: "100%", width: "100%" }}>
          <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
