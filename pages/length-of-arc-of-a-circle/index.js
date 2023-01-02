@@ -46,7 +46,7 @@ const LengthOfArcOfACircle = () => {
     { title: "Length of an arc of a sector", slides: [6, 7] },
   ];
 
-  const darkBgIndices = [0, 4, 6];
+  const darkBgIndices = [0, 4, 6, 13];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
