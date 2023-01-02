@@ -47,7 +47,7 @@ const Slide3 = ({ downIcon }) => {
     <TextAndAppletSlide
       downIcon={downIcon}
       title="Formation of a Cone"
-      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v2/index.html`}
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
     >
       <Modal
         isOpen={isModalOpen}
