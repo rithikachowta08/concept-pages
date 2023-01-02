@@ -4,7 +4,6 @@ const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
 });
 
 const Slide5 = ({ downIcon }) => {
-   // return <div>Video slide</div>;
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2 title="Video here" downIcon={downIcon} />
