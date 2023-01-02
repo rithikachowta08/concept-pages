@@ -27,7 +27,8 @@
       "react-dom": "17.0.2",
       "react-katex": "^3.0.1",
       "react-scripts": "5.0.1",
-      "shaka-player": "^4.3.2",
+      "shaka-player": "^3.2.1",
+      "shaka-player-react": "^1.1.2",
       "shaka-player-react-lib": "^1.0.1",
       "shaka-player-ui-controls": "^1.0.8",
       "styled-components": "^5.3.6"

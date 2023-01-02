@@ -80,7 +80,7 @@ const ShakaPlayerContainer = (props) => {
                : props.videoContent?.dash_Url
          }
          poster={props.videoContent["thumbnail"]}
-         autoPlay={true}
+         //  autoPlay={true}
          srcKey={drmConf.key_id}
          uiConfig={uiConfig}
          isEncryptedVideo={isEncryptedVideo}
