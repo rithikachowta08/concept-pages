@@ -9,31 +9,24 @@ import Button from "components/Button";
 import ShakaPlayerContainer from "components/media/ShakaPlayerTest/ShakaPlayerContainer";
 
 const VideoSlideWrap = styled.div`
-  background-color: ${colors.BLACK};
-  height: 100%;
-  width: 100%;
-  gap: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  box-sizing: border-box;
+   background-color: ${colors.BLACK};
+   height: 100%;
+   width: 100%;
+   gap: 20px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   box-sizing: border-box;
 `;
 
 const VideoSlide = ({ title, downIcon, videoContent }) => {
-  useEffect(() => {
-    console.log("video player");
-    // if (document.getElementsByClassName("shaka-play-button")[0]) {
-    //   document.getElementsByClassName("shaka-play-button")[0].click();
-    // }
-  }, []);
-
-  return (
-    <VideoSlideWrap>
-      <ShakaPlayerContainer
-        videoContent={videoContent}
-      ></ShakaPlayerContainer>
-      {/* <ShakaPlayerContainer
+   return (
+      <VideoSlideWrap>
+         <ShakaPlayerContainer
+            videoContent={videoContent}
+         ></ShakaPlayerContainer>
+         {/* <ShakaPlayerContainer
             subject="Physics"
             views={326}
             videoContent={videoContent}
@@ -50,17 +43,17 @@ const VideoSlide = ({ title, downIcon, videoContent }) => {
                questionid: 441130,
             }}
          /> */}
-      {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
+         {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>}
          {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>}
          {downIcon
             ? React.cloneElement(downIcon, { isVideoSlide: true })
             : null} */}
-    </VideoSlideWrap>
-  );
+      </VideoSlideWrap>
+   );
 };
 
 VideoSlide.propTypes = {
-  title: PropTypes.string,
+   title: PropTypes.string,
 };
 
 export default VideoSlide;
