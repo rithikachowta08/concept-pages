@@ -24,6 +24,9 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
+const MathElement = dynamic(() =>
+   import("components/MathElement/index.js")
+);
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
@@ -62,6 +65,9 @@ const Slide3 = ({ downIcon }) => {
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
+   let latex = [];
+   latex.push(`\\large•`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Measure of an Arc"
@@ -101,7 +107,7 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
+                  <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
                   Central angle of the arc (𝜃)
                </TextSpanBg>
             </TextLine>
@@ -114,7 +120,7 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  <Icon width={isMobile ? "10px" : "15px"} src={bullet}></Icon>&nbsp;&nbsp;
+                  <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
                   The length of the arc (l)
                </TextSpanBg>
             </TextLine>
