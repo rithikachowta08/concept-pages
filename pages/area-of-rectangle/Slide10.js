@@ -71,7 +71,6 @@ const Slide10 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         downIcon={downIcon}
          isLastSlide
       >
          <Paragraph>

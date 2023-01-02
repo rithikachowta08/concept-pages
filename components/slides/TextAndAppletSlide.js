@@ -55,8 +55,8 @@ const IFrame = styled.iframe`
 `;
 
 const LeftAlignDiv = styled.div`
-   align-self: flex-start;
-   width: 100%;
+   align-self: center;
+   width: fit-content;
    height: ${(props) => (props.isFitToWidth ? "0" : "auto")};
    overflow: ${(props) => (props.isFitToWidth ? "hidden" : "unset")};
    opacity: ${(props) => (props.isFitToWidth ? "0" : "1")};
@@ -94,7 +94,7 @@ const TextAndAppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -104,15 +104,11 @@ const TextAndAppletSlide = ({
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
-               {/* Body */}
-               <Flex
-                  direction="column"
-                  padding="0 20px"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  width="100%"
-               >
+               {/* Navbar and title */}
+               <Flex direction="column" gap="2vh">
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
@@ -123,6 +119,16 @@ const TextAndAppletSlide = ({
                         {title}
                      </SlideTitle>
                   </div>
+               </Flex>
+               {/* Body */}
+               <Flex
+                  direction="column"
+                  padding="0 30px"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  width="100%"
+                  flex="1"
+               >
                   <IframeWrap>
                      <IFrame
                         src={appletSrc}
@@ -155,7 +161,12 @@ const TextAndAppletSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"} hideFillerForLandscapeMode>
+            <SlideWrap
+               bg={bg}
+               padding={"20px 30px"}
+               isLastSlide={isLastSlide}
+               hideFillerForLandscapeMode
+            >
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
@@ -186,7 +197,7 @@ const TextAndAppletSlide = ({
                   : downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

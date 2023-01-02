@@ -1,19 +1,51 @@
+import dynamic from "next/dynamic";
+
 import { useEffect, useState } from "react";
 
-import { TextSpanBg, Paragraph } from "components/text";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import Pill from "components/Pill";
 const cube_red = "assets/volume-of-cube/slide11/1.svg";
 const cube_d = "assets/volume-of-cube/slide11/2.svg";
 const cube_s = "assets/volume-of-cube/slide11/3.svg";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-import MathElement from "components/MathElement/index.js";
-import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
+
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+
 const Slide11 = ({ downIcon }) => {
-   let EquationLatex0 = [
+   let EquationLatex0=[
+      {
+         lhsLatex: {
+            value: [
+               `Volume of cube`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\sqrt{3} \\times \\dfrac{d^3}{9} \\: cubic \\: units",
+            ],
+            type: "latex",
+         },
+      },
+   ]
+   let EquationLatex1 = [
       {
          lhsLatex: {
             value: [
@@ -35,7 +67,7 @@ const Slide11 = ({ downIcon }) => {
    ];
 
    let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0);
+   latexEquationContainer.push(EquationLatex0,EquationLatex1);
    let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
@@ -75,8 +107,9 @@ const Slide11 = ({ downIcon }) => {
             bgColor={colors.OCEAN_GREEN}
             color={colors.BLACK}
          >
-            Volume of a cube{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+            <EquationTable align="middle"
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
          </Pill>
          <Paragraph color={colors.WHITE}>
             <EquationTable
