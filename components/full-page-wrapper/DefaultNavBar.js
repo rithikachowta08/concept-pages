@@ -5,6 +5,7 @@ import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
 import { fontSizes } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import HyperLink from "components/text/HyperLink";
 const left_caret_dark = "assets/left_caret.svg";
 const left_caret_light = "assets/left_caret_light.svg";
 
@@ -171,7 +172,7 @@ const DefaultNavBar = ({
                   color={darkTheme ? colors.WHITE : colors.PURPLE}
                   fontSize={fontSizes.SMALL}
                >
-                  Back to concepts
+                  <HyperLink color={colors.DARK_GREY} target="" href='https://byjus.com/us/math/'> Back to concepts </HyperLink>
                </TextSpan>
             </Flex>
          ) : null}

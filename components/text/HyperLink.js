@@ -9,9 +9,9 @@ const StyledAnchor = styled.a`
    }
 `;
 
-const HyperLink = ({ href, children, color = colors.YELLOW }) => {
+const HyperLink = ({ href, children, color = colors.YELLOW, target="_blank" }) => {
    return (
-      <StyledAnchor target="_blank" rel="noreferrer" color={color} href={href}>
+      <StyledAnchor target={target} rel="noreferrer" color={color} href={href}>
          {children}
       </StyledAnchor>
    );
