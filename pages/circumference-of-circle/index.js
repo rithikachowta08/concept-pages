@@ -7,7 +7,7 @@ const FullPageCustomWrapper = dynamic(() =>
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
-const Slide4 = dynamic(() => import("./Slide4"));
+// const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
@@ -20,7 +20,7 @@ const CircumferenceOfCircle = () => {
       <Slide1 key={0} />,
       <Slide2 key={1} />,
       <Slide3 key={2} />,
-      <Slide4 key={3} />,
+      // <Slide4 key={3} />,
       <Slide5 key={4} />,
       <Slide6 key={5} />,
       <Slide7 key={6} />,
@@ -31,12 +31,12 @@ const CircumferenceOfCircle = () => {
 
    const navigationSections = [
       { title: "What is the circumference of a circle?", slides: [1] },
-      { title: "Formula", slides: [2, 3] },
-      { title: "Derivation of the formula", slides: [4, 5, 6] },
-      { title: "How many revolutions?", slides: [7, 8, 9] },
+      { title: "Formula", slides: [2] },
+      { title: "Derivation of the formula", slides: [3, 4, 5] },
+      { title: "How many revolutions?", slides: [6, 7, 8] },
    ];
 
-   const darkBgIndices = [0, 2, 4, 7, 9];
+   const darkBgIndices = [0, 2, 3, 6, 8];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
