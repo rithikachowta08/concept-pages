@@ -17,38 +17,35 @@ const fit_to_width = "assets/fit_to_width.svg";
 const fullscreen_exit = "assets/fullscreen_exit.svg";
 
 const IFrame = styled.iframe`
-   width: 650px;
+   aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
    transition: all 0.2s;
 
    // Mobile
    @media only screen and (min-width: 200px) and (max-width: 600px) {
-      width: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
       height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
    }
 
    // Large mobile + iPad mini
    @media only screen and (min-width: 601px) and (max-width: 820px) {
-      width: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
       height: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
    }
 
    // Tablet
    @media (min-width: 821px) and (max-width: 992px) {
-      width: 500px;
-      height: 500px;
+      max-height: 500px;
+      height: 100%;
    }
 
    // Small height desktop
    @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
-      width: 500px;
-      height: 500px;
+      max-height: 500px;
+      height: 100%;
    }
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      width: 100vh;
       height: 100vh;
       margin-bottom: 0;
    }
