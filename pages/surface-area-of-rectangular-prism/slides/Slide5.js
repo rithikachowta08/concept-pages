@@ -15,7 +15,7 @@ const Slide5 = ({ downIcon }) => {
          secondaryTitle={"Surface Area"}
          downIcon={downIcon}
          appletSrc={
-            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/tsa_rectangularPrism_V1/index.html"
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/total-surface-area-of-rectangular-prism-derivation-v3/index.html"
          }
       >
          <Paragraph color={colors.WHITE}>
