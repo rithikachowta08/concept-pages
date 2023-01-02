@@ -35,7 +35,7 @@ export const FillerNavBar = styled.div`
    min-width: ${(props) => props.desktopNavBarWidth || "80"}px;
    height: 100px;
 
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       min-height: ${(props) => props.mobileNavBarHeight || 45}px;
       height: unset;
    }
