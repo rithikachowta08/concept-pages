@@ -94,7 +94,7 @@ const TextAndAppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
@@ -197,7 +197,7 @@ const TextAndAppletSlide = ({
                   : downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

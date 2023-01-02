@@ -15,8 +15,8 @@ const bgToBgColorMap = {
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
-   height: 100%;
-   width: 100%;
+   height: 100vh;
+   width: 100vw;
    padding: ${(props) => props.padding};
    gap: ${(props) => props.gap};
    display: flex;
@@ -28,7 +28,7 @@ export const SlideWrap = styled.div`
    align-items: center;
 
    ${(props) =>
-      props.isLastSlide
+      props.isLastSlide || props.hideFiller
          ? ``
          : `&::before {
       content: "D";
@@ -41,7 +41,9 @@ export const SlideWrap = styled.div`
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       ${(props) =>
-         props.hideFillerForLandscapeMode || props.isLastSlide
+         props.hideFiller ||
+         props.hideFillerForLandscapeMode ||
+         props.isLastSlide
             ? `&::before{
                display:none
                }
@@ -67,8 +69,8 @@ export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
-   height: 100%;
-   width: 100%;
+   height: 100vh;
+   width: 100vw;
    display: flex;
    flex-direction: column;
    justify-content: ${(props) => props.justifyContent || "center"};
