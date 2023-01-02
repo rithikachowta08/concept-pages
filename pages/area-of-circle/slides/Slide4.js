@@ -4,8 +4,6 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 
-const applet = "applets/triangle.html";
-
 // Applet slide
 const Slide4 = ({ navBar, downIcon }) => {
    return (
@@ -15,8 +13,10 @@ const Slide4 = ({ navBar, downIcon }) => {
          secondaryTitle={"Area of a Circle"}
          navBar={navBar}
          downIcon={downIcon}
-         appletSrc={applet}
-      ></TextAndAppletSlide>
+         appletSrc={
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/area_of_a_circle_v6/index.html"
+         }
+      />
    );
 };
 
