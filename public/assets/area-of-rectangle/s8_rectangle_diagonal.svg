@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
   <defs>
     <style>
       .cls-1, .cls-2 {
-        fill: #67dbe8;
+        opacity: .2;
       }
 
-      .cls-3 {
-        opacity: .7;
-      }
-
-      .cls-4, .cls-5 {
+      .cls-1, .cls-3 {
         fill: #fff;
       }
 
-      .cls-2, .cls-5 {
+      .cls-1, .cls-4 {
         font-family: Raleway-Medium, Raleway;
         font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-5 {
+        opacity: .1;
       }
 
       .cls-6 {
         letter-spacing: -.03em;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 6px;
+      }
+
+      .cls-2, .cls-7 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-8, .cls-4 {
+        fill: #67dbe8;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
       }
 
       .cls-7 {
@@ -28,52 +47,34 @@
         stroke-width: 4px;
       }
 
-      .cls-7, .cls-8 {
-        fill: none;
-        stroke-miterlimit: 10;
-      }
-
-      .cls-5, .cls-8 {
-        opacity: .2;
-      }
-
-      .cls-9 {
-        letter-spacing: -.02em;
-      }
-
       .cls-10 {
-        letter-spacing: -.02em;
-      }
-
-      .cls-11 {
-        opacity: .1;
-      }
-
-      .cls-12 {
         letter-spacing: 0em;
       }
 
-      .cls-8 {
-        stroke: #fff;
-        stroke-width: 6px;
+      .cls-11 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-12 {
+        opacity: .7;
       }
     </style>
   </defs>
   <g>
-    <g class="cls-11">
-      <rect class="cls-4" x="34.84" y="106.99" width="444.98" height="299.96"/>
+    <g class="cls-5">
+      <rect class="cls-3" x="34.84" y="106.99" width="444.98" height="299.96"/>
     </g>
-    <text class="cls-5" transform="translate(182.38 441.93)"><tspan class="cls-12" x="0" y="0">L</tspan><tspan x="17.31" y="0">ength (l)</tspan></text>
-    <text class="cls-5" transform="translate(514.18 330.83) rotate(-90)"><tspan x="0" y="0">Width </tspan><tspan class="cls-9" x="93.09" y="0">(w</tspan><tspan x="125.25" y="0">)</tspan></text>
-    <polyline class="cls-8" points="432.5 400.92 432.5 359.14 473.83 359.14"/>
+    <text class="cls-1" transform="translate(182.38 441.93)"><tspan class="cls-10" x="0" y="0">L</tspan><tspan x="17.31" y="0">ength (l)</tspan></text>
+    <text class="cls-1" transform="translate(514.18 330.83) rotate(-90)"><tspan x="0" y="0">Width </tspan><tspan class="cls-9" x="93.09" y="0">(w</tspan><tspan x="125.25" y="0">)</tspan></text>
+    <polyline class="cls-2" points="432.5 400.92 432.5 359.14 473.83 359.14"/>
   </g>
-  <text class="cls-2" transform="translate(152.13 306.78) rotate(-34.5)"><tspan x="0" y="0">Diagona</tspan><tspan class="cls-6" x="116.01" y="0">l</tspan><tspan x="123.69" y="0"> </tspan><tspan class="cls-10" x="131.28" y="0">(</tspan><tspan x="139.11" y="0">d)</tspan></text>
-  <rect class="cls-8" x="37.72" y="109.97" width="439.11" height="293.95"/>
-  <g class="cls-3">
+  <text class="cls-4" transform="translate(152.13 306.78) rotate(-34.5)"><tspan x="0" y="0">Diagona</tspan><tspan class="cls-6" x="116.01" y="0">l</tspan><tspan x="123.69" y="0"> </tspan><tspan class="cls-11" x="131.28" y="0">(</tspan><tspan x="139.11" y="0">d)</tspan></text>
+  <rect class="cls-2" x="37.72" y="109.97" width="439.11" height="293.95"/>
+  <g class="cls-12">
     <g>
       <line class="cls-7" x1="470.61" y1="112.42" x2="45.37" y2="400.04"/>
-      <polygon class="cls-1" points="462.77 105.92 482.26 104.54 473.72 122.11 462.77 105.92"/>
-      <polygon class="cls-1" points="42.27 390.34 33.72 407.92 53.22 406.53 42.27 390.34"/>
+      <polygon class="cls-8" points="462.77 105.92 482.26 104.54 473.72 122.11 462.77 105.92"/>
+      <polygon class="cls-8" points="42.27 390.34 33.72 407.92 53.22 406.53 42.27 390.34"/>
     </g>
   </g>
 </svg>
