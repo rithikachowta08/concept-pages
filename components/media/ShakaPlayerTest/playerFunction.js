@@ -1,5 +1,5 @@
 export function getDrmData() {
-  return fetch("/us/math/study/api/get_drm_data/", {
+  return fetch("/learn/api/get_drm_data/", {
     method: "GET",
   });
 }
@@ -18,7 +18,7 @@ export function get_video_manifest(url) {
   var dataToSend = {
     url: url,
   };
-  return fetch("/us/math/study/api/get_video_manifest/", {
+  return fetch("/learn/api/get_video_manifest/", {
     method: "POST",
     body: JSON.stringify(dataToSend),
   });
