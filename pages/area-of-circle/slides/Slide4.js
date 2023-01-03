@@ -1,15 +1,13 @@
 import dynamic from "next/dynamic";
 
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
 // Applet slide
 const Slide4 = ({ navBar, downIcon }) => {
    return (
-      <TextAndAppletSlide
+      <AppletSlide
          bg="LIGHT"
-         title={"Derivation"}
+         title={"General Formula"}
          secondaryTitle={"Area of a Circle"}
          navBar={navBar}
          downIcon={downIcon}
