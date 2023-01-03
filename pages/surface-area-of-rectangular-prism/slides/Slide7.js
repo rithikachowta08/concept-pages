@@ -43,10 +43,10 @@ const Slide7 = ({ downIcon }) => {
          bg="DARK"
          title={"Lateral Surface Area"}
          secondaryTitle={"Surface Area"}
-         downIcon={downIcon}
          appletSrc={
             "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v4/index.html"
          }
+         isLastSlide={true}
       >
          <Modal
             bg="LIGHT"
