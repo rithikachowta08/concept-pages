@@ -102,14 +102,9 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               padding="0 0 10px 0"
-               isLastSlide={isLastSlide}
-            >
+            <SlideWrap bg={bg} padding="0 0 10px 0" isLastSlide={isLastSlide}>
                <ContentWrap>
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
@@ -141,7 +136,6 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="20px 30px"
                isLastSlide={isLastSlide}
                hideFiller

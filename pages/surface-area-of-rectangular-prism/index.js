@@ -26,6 +26,8 @@ const SurfaceAreaOfRectangularPrism = () => {
       },
       { title: "Total surface area", slides: [5] },
       { title: "Lateral surface area", slides: [6] },
+      { title: "Total surface area", slides: [5] },
+      { title: "Lateral surface area", slides: [6] },
    ];
 
    const darkBgIndices = [0, 2, 5, 6];
