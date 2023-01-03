@@ -52,7 +52,7 @@ const ContentWrap = styled.div`
    justify-content: flex-start;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       flex-direction: column;
       gap: 20px;
    }
@@ -139,6 +139,7 @@ const AppletSlide = ({
                padding="20px 30px"
                isLastSlide={isLastSlide}
                hideFiller
+               noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
                   <FillerNavBar

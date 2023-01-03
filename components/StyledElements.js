@@ -48,6 +48,12 @@ export const SlideWrap = styled.div`
                display:none
                }
                padding-right: 0;
+               padding: 
+                  ${
+                     props.noVerticalPaddingInLandscapeMode
+                        ? "0 0 0 30px"
+                        : props.padding
+                  };
                `
             : `&::before {
          content: "D";
