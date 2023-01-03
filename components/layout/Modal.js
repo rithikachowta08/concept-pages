@@ -70,8 +70,10 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
    useEffect(() => {
       if (isOpen) {
          global.fullpage_api.setAllowScrolling(false);
+         global.fullpage_api.setKeyboardScrolling(false);
       } else {
          global.fullpage_api?.setAllowScrolling(true);
+         global.fullpage_api?.setKeyboardScrolling(true);
       }
    }, [isOpen]);
    return (
