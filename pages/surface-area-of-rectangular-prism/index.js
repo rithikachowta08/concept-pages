@@ -22,10 +22,10 @@ const SurfaceAreaOfRectangularPrism = () => {
    const navigationSections = [
       {
          title: "What is the surface area of a rectangular prism",
-         slides: [1, 2, 3],
+         slides: [3, 4],
       },
-      { title: "Total surface area", slides: [4] },
-      { title: "Lateral surface area", slides: [5, 6] },
+      { title: "Total surface area", slides: [5] },
+      { title: "Lateral surface area", slides: [6] },
    ];
 
    const darkBgIndices = [0, 2, 5, 6];
