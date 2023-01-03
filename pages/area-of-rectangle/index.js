@@ -39,7 +39,7 @@ const AreaOfRectangle = () => {
       { title: "Area using diagonal", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 5, 7];
+   const darkBgIndices = [0, 3, 4, 5, 7];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
