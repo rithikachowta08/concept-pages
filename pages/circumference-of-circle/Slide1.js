@@ -11,7 +11,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Derivation of the formula",
             "How many revolutions?",
          ]}
-         anchorIdxes={[2, 3, 5, 8]}
+         anchorIdxes={[2, 3, 4, 7]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
