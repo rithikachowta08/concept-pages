@@ -172,7 +172,14 @@ const DefaultNavBar = ({
                   color={darkTheme ? colors.WHITE : colors.PURPLE}
                   fontSize={fontSizes.SMALL}
                >
-                  <HyperLink color={colors.DARK_GREY} target="" href='https://byjus.com/us/math/'> Back to concepts </HyperLink>
+                  <HyperLink
+                     color={darkTheme ? colors.WHITE : colors.DARK_GREY}
+                     target=""
+                     href="https://byjus.com/us/math/"
+                  >
+                     {" "}
+                     Back to concepts{" "}
+                  </HyperLink>
                </TextSpan>
             </Flex>
          ) : null}
