@@ -35,7 +35,7 @@ const AreaOfCircle = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 5, 7];
+   const darkBgIndices = [0, 2, 5, 7, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

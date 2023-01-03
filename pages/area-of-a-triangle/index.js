@@ -1,5 +1,7 @@
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import React from "react";
+
+import dynamic from "next/dynamic";
 import Slide1 from "./slides/Slide1";
 import Slide2 from "./slides/Slide2";
 import Slide4 from "./slides/Slide4";
@@ -19,6 +21,26 @@ import Slide17 from "./slides/Slide17";
 import Slide18 from "./slides/Slide18";
 import Slide19 from "./slides/Slide19";
 import Slide20 from "./slides/Slide20";
+
+// const Slide1 = dynamic(() => import("./slides/Slide1"));
+// const Slide2 = dynamic(() => import("./slides/Slide2"), { ssr: false });
+// const Slide4 = dynamic(() => import("./slides/Slide4"), { ssr: false });
+// const Slide5 = dynamic(() => import("./slides/Slide5"), { ssr: false });
+// const Slide6 = dynamic(() => import("./slides/Slide6"), { ssr: false });
+// const Slide7 = dynamic(() => import("./slides/Slide7"), { ssr: false });
+// const Slide8 = dynamic(() => import("./slides/Slide8"), { ssr: false });
+// const Slide9 = dynamic(() => import("./slides/Slide9"), { ssr: false });
+// const Slide10 = dynamic(() => import("./slides/Slide10"), { ssr: false });
+// const Slide11 = dynamic(() => import("./slides/Slide11"), { ssr: false });
+// const Slide12 = dynamic(() => import("./slides/Slide12"), { ssr: false });
+// const Slide13 = dynamic(() => import("./slides/Slide13"), { ssr: false });
+// const Slide14 = dynamic(() => import("./slides/Slide14"), { ssr: false });
+// const Slide15 = dynamic(() => import("./slides/Slide15"), { ssr: false });
+// const Slide16 = dynamic(() => import("./slides/Slide16"), { ssr: false });
+// const Slide17 = dynamic(() => import("./slides/Slide17"), { ssr: false });
+// const Slide18 = dynamic(() => import("./slides/Slide18"), { ssr: false });
+// const Slide19 = dynamic(() => import("./slides/Slide19"), { ssr: false });
+// const Slide20 = dynamic(() => import("./slides/Slide20"), { ssr: false });
 
 const AreaOfATriangle = () => {
    const SlideArray = [

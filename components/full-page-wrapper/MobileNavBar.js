@@ -91,7 +91,7 @@ const MobileNavBar = ({
    }, [ref.current, currentPageIdx]);
    return (
       <MobileNavWrap ref={ref} isExpanded={isExpanded} darkTheme={darkTheme}>
-         <Flex
+         <Flex onClick={toggleNav}
             padding={isExpanded ? "20px" : "10px 20px 0px 20px"}
             color={darkTheme ? colors.WHITE : colors.BLACK}
             justifyContent="space-between"
@@ -128,7 +128,7 @@ const MobileNavBar = ({
             <Icon
                alignSelf={isExpanded ? "flex-start" : "center"}
                src={icon}
-               onClick={toggleNav}
+               // onClick={toggleNav}
             />
          </Flex>
          <Flex justifyContent="space-between">
