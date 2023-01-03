@@ -27,7 +27,7 @@ const TextAndDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
@@ -57,7 +57,6 @@ const TextAndDiagramSlide = ({
          <MobileComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
