@@ -58,7 +58,7 @@ export const SlideWrap = styled.div`
       }`}
    }
 
-   @media only screen and (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       &::before {
          display: none;
       }

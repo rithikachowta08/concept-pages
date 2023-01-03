@@ -19,7 +19,7 @@ const Wrapper = styled.div`
    grid-template-columns: 1fr;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       height: 45px;
       width: 100%;
       top: 0;
