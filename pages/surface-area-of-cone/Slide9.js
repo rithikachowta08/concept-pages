@@ -8,7 +8,7 @@ const Slide9 = ({ downIcon }) => {
       downIcon={downIcon}
       title="Curved Surface Area"
       secondaryTitle="Surface Area of Cone"
-      appletSrc={`${coco_applet_uri}surface-area-of-cone-derivation-v3/index.html`}
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-derivation-v4/index.html`}
     ></AppletSlide>
   );
 };

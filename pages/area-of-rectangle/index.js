@@ -9,7 +9,7 @@ const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
 const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
-const Slide6 = dynamic(() => import("./Slide6"));
+// const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
@@ -22,7 +22,7 @@ const AreaOfRectangle = () => {
       <Slide3 key={2} />,
       <Slide4 key={3} />,
       <Slide5 key={4} />,
-      <Slide6 key={5} />,
+      // <Slide6 key={5} />,
       <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
@@ -34,12 +34,12 @@ const AreaOfRectangle = () => {
 
    const navigationSections = [
       { title: "What is area of rectangle?", slides: [1, 2, 3] },
-      { title: "Area by counting unit squares", slides: [4, 5] },
-      { title: "General formula", slides: [6, 7] },
-      { title: "Area using diagonal", slides: [8, 9] },
+      { title: "Area by counting unit squares", slides: [4] },
+      { title: "General formula", slides: [5, 6] },
+      { title: "Area using diagonal", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 6, 8];
+   const darkBgIndices = [0, 3, 5, 7];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

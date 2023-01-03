@@ -71,8 +71,6 @@ const Slide19 = ({ downIcon }) => {
                   "Diagram of a scalene triangle highlighting two sides and the included angle",
                   "Diagram of a scalene triangle highlighting two sides and the included angle",
                   "Diagram of a scalene triangle highlighting two sides and the included angle",
-                  "Diagram of a scalene triangle highlighting two sides and the included angle",
-                  "Diagram of a scalene triangle highlighting two sides and the included angle",
                ]}
             />
          }
