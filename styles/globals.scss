@@ -77,12 +77,16 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    height: 100%;
 }
 
+.shaka-play-button {
+   cursor: pointer;
+}
+
 .section {
    display: block;
    flex-direction: unset;
    justify-content: unset;
-   height: 100vh;
-   width: 100vw;
+   height: 100%;
+   width: 100%;
 }
 
 .fp-overflow {

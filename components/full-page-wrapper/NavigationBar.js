@@ -11,6 +11,7 @@ const Wrapper = styled.div`
    z-index: 6;
    position: fixed;
    opacity: ${(props) => props.opacity};
+   pointer-events: ${(props) => (props.opacity === 0 ? "none" : "unset")};
    top: 50vh;
    left: 30px;
    transform: translateY(-50%);
