@@ -52,7 +52,7 @@ const ContentWrap = styled.div`
    justify-content: flex-start;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       flex-direction: column;
       gap: 20px;
    }
@@ -102,14 +102,9 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               padding="0 0 10px 0"
-               isLastSlide={isLastSlide}
-            >
+            <SlideWrap bg={bg} padding="0 0 10px 0" isLastSlide={isLastSlide}>
                <ContentWrap>
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
@@ -141,10 +136,10 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
-               padding="20px 30px"
+               padding="0 30px"
                isLastSlide={isLastSlide}
                hideFiller
+               noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
                   <FillerNavBar
