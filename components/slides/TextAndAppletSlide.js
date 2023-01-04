@@ -171,9 +171,7 @@ const TextAndAppletSlide = ({
                   width="100%"
                   height="100%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle

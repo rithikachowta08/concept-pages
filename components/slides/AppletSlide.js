@@ -142,9 +142,7 @@ const AppletSlide = ({
                noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <TitleAndAppletWrap>
                      <TitleWrap>
                         <SlideSecondaryTitle
