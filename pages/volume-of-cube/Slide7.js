@@ -10,7 +10,7 @@ const Slide7 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          title="Derivation"
          secondaryTitle="Volume of a Cube formula"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/VolumeOfCube_V4/web-mobile/index.html"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Volumes-of-cube-derivation-v4/index.html"
       ></AppletSlide>
    );
 };
