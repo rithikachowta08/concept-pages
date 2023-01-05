@@ -11,6 +11,7 @@ const ShakaPlayerContainer = (props) => {
   var [thumbnail, setThumbnail] = useState(null);
   var [uiConfig, setUiConfig] = useState({});
   var isEncryptedVideo = true;
+  var [videoClicked, setVideoClicked] = useState(false);
 
   useEffect(() => {
     setUiConfig({
@@ -74,10 +75,11 @@ const ShakaPlayerContainer = (props) => {
 
   return (
     <>
-      {!drmConf.key_id && (
+      {!videoClicked && (
         <div
           onClick={() => {
             watchVideo();
+            setVideoClicked(true);
           }}
         >
           <div className={"playButtomDiv"}>
@@ -88,6 +90,7 @@ const ShakaPlayerContainer = (props) => {
               }
               height="80"
               width="80"
+              priority={true}
             ></Image>
           </div>
           {thumbnail && (
@@ -96,6 +99,7 @@ const ShakaPlayerContainer = (props) => {
               src={thumbnail}
               layout="fill"
               objectFit="contain"
+              priority={true}
             ></Image>
           )}
         </div>
