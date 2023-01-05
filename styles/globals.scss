@@ -81,6 +81,18 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    cursor: pointer;
 }
 
+#__next {
+   height: 100%;
+   position: relative;
+}
+
+#fullpage {
+   height: 100%;
+   position: relative;
+   touch-action: none;
+   top: 0px;
+}
+
 .section {
    display: block;
    flex-direction: unset;
