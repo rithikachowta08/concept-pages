@@ -147,7 +147,7 @@ const DefaultNavBar = ({
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
       >
-         {isExpanded ? (
+         {/* {isExpanded ? (
             <Flex
                cursor="pointer"
                onClick={hideNav}
@@ -173,7 +173,7 @@ const DefaultNavBar = ({
                   </HyperLink>
                </TextSpan>
             </Flex>
-         ) : null}
+         ) : null} */}
          {sections.map((section, idx) => {
             let percentage = 0;
             const slides = section.slides;
