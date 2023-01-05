@@ -8,6 +8,7 @@ import { get_video_manifest, isSafariOrIOSDevice } from "./playerFunction";
 
 const ShakaPlayerContainer = (props) => {
   var [drmConf, setDrmConfig] = useState({});
+  var [thumbnail, setThumbnail] = useState(null);
   var [uiConfig, setUiConfig] = useState({});
   var isEncryptedVideo = true;
 
@@ -35,7 +36,8 @@ const ShakaPlayerContainer = (props) => {
         adBreaks: "rgb(255, 204, 0)",
       },
     });
-  }, []);
+    setThumbnail(props.videoContent["thumbnail"]);
+  }, [props]);
 
   function watchVideo() {
     (async () => {
@@ -90,7 +92,7 @@ const ShakaPlayerContainer = (props) => {
           </div>
           <Image
             alt="thumbnail"
-            src={props.videoContent["thumbnail"]}
+            src={thumbnail}
             layout="fill"
             objectFit="contain"
           ></Image>
