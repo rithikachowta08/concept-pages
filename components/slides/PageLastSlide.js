@@ -4,6 +4,9 @@ import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import styled from "styled-components";
 import { Paragraph } from "components/text";
 import { colors } from "utils/colors";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const shareIcon = "assets/share-icon.svg";
 
@@ -17,7 +20,7 @@ const UpperDiv = styled.div`
    width: 100%;
 `;
 
-const LowerDiv = styled.div`
+const LowerDiv = styled.a`
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -41,7 +44,26 @@ const ShareIcon = styled.img`
    cursor: pointer;
 `;
 
-const PageLastSlide = ({ currentPageTitle, bg = "DARK", nextPage }) => {
+const NextPageTitle = styled.p`
+   color: ${colors.WHITE};
+   text-decoration: underline;
+
+   &hover {
+      cursor: pointer;
+   }
+`;
+
+const PageLastSlide = ({
+   currentPageTitle,
+   bg = "DARK",
+   nextPageTitle,
+   nextPageLink,
+}) => {
+   const shareClickhandler = () => {
+      toast("Link has been copied to clipboard.");
+      navigator.clipboard.writeText(window.location.href);
+      console.log(window.location.href);
+   };
    return (
       <SlideWrap bg={bg} isLastSlide={true}>
          <FillerNavBar />
@@ -56,14 +78,24 @@ const PageLastSlide = ({ currentPageTitle, bg = "DARK", nextPage }) => {
                centerAlign={true}
             />
             <ShareIconWrapper>
-               <ShareIcon src={shareIcon} alt="share" />
+               <ShareIcon
+                  src={shareIcon}
+                  alt="share"
+                  onClick={shareClickhandler}
+               />
             </ShareIconWrapper>
          </UpperDiv>
-         <LowerDiv>
-            <Paragraph textAlign={"center"} color={colors.WHITE}>
+         <LowerDiv target={"_blank"} href={nextPageLink} rel="noreferrer">
+            <Paragraph
+               textAlign={"center"}
+               color={colors.WHITE}
+               marginBottom={"20px"}
+            >
                See Next Topic
             </Paragraph>
-            <SlideTitle centerAlign={true}>{nextPage}</SlideTitle>
+            <NextPageTitle>
+               <SlideTitle centerAlign={true}>{nextPageTitle}</SlideTitle>
+            </NextPageTitle>
          </LowerDiv>
       </SlideWrap>
    );
@@ -72,7 +104,8 @@ const PageLastSlide = ({ currentPageTitle, bg = "DARK", nextPage }) => {
 PageLastSlide.propTypes = {
    currentPageTitle: PropTypes.string.isRequired,
    bg: PropTypes.string,
-   nextPage: PropTypes.string.isRequired,
+   nextPageTitle: PropTypes.string.isRequired,
+   nextPageLink: PropTypes.string.isRequired,
 };
 
 export default PageLastSlide;
