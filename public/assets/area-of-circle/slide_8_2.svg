@@ -33,30 +33,32 @@
       }
     </style>
   </defs>
-  <circle class="cls-2" cx="281.18" cy="294.38" r="179.66"/>
-  <text class="cls-5" transform="translate(160.25 117.72) rotate(-32.78)"><tspan x="0" y="0">C</tspan></text>
-  <text class="cls-5" transform="translate(177.27 107.01) rotate(-29.04)"><tspan x="0" y="0">i</tspan></text>
-  <text class="cls-5" transform="translate(183.09 103.72) rotate(-26.61)"><tspan x="0" y="0">r</tspan></text>
-  <text class="cls-5" transform="translate(192.17 99.05) rotate(-22.96)"><tspan x="0" y="0">c</tspan></text>
-  <text class="cls-5" transform="translate(207.07 92.68) rotate(-18.26)"><tspan x="0" y="0">u</tspan></text>
-  <text class="cls-5" transform="translate(223.6 86.93) rotate(-12.07)"><tspan x="0" y="0">m</tspan></text>
-  <text class="cls-5" transform="translate(250.19 81.61) rotate(-6.96)"><tspan x="0" y="0">f</tspan></text>
-  <text class="cls-5" transform="translate(259.72 80.31) rotate(-3.25)"><tspan x="0" y="0">e</tspan></text>
-  <text class="cls-5" transform="translate(277.06 79.42) rotate(.63)"><tspan x="0" y="0">r</tspan></text>
-  <text class="cls-5" transform="translate(287.26 79.4) rotate(4.43)"><tspan x="0" y="0">e</tspan></text>
-  <text class="cls-5" transform="translate(304.5 80.72) rotate(9.27)"><tspan x="0" y="0">n</tspan></text>
-  <text class="cls-5" transform="translate(321.56 83.51) rotate(13.98)"><tspan x="0" y="0">c</tspan></text>
-  <text class="cls-5" transform="translate(337.15 87.34) rotate(18.65)"><tspan x="0" y="0">e</tspan></text>
-  <text class="cls-5" transform="translate(353.61 93.05) rotate(22.12)"><tspan x="0" y="0"> </tspan></text>
-  <text class="cls-5" transform="translate(360.45 95.81) rotate(24.31)"><tspan x="0" y="0">(</tspan></text>
-  <text class="cls-5" transform="translate(367.45 98.72) rotate(28.09)"><tspan x="0" y="0">C</tspan></text>
-  <text class="cls-5" transform="translate(385.1 108.37) rotate(31.9)"><tspan x="0" y="0">)</tspan></text>
+  <text class="cls-5" transform="translate(158.26 81.79) rotate(-32.78)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-5" transform="translate(175.27 71.08) rotate(-29.04)"><tspan x="0" y="0">i</tspan></text>
+  <text class="cls-5" transform="translate(181.1 67.8) rotate(-26.61)"><tspan x="0" y="0">r</tspan></text>
+  <text class="cls-5" transform="translate(190.18 63.12) rotate(-22.96)"><tspan x="0" y="0">c</tspan></text>
+  <text class="cls-5" transform="translate(205.08 56.76) rotate(-18.26)"><tspan x="0" y="0">u</tspan></text>
+  <text class="cls-5" transform="translate(221.6 51) rotate(-12.07)"><tspan x="0" y="0">m</tspan></text>
+  <text class="cls-5" transform="translate(248.19 45.68) rotate(-6.96)"><tspan x="0" y="0">f</tspan></text>
+  <text class="cls-5" transform="translate(257.72 44.38) rotate(-3.25)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-5" transform="translate(275.07 43.5) rotate(.63)"><tspan x="0" y="0">r</tspan></text>
+  <text class="cls-5" transform="translate(285.26 43.47) rotate(4.43)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-5" transform="translate(302.5 44.79) rotate(9.27)"><tspan x="0" y="0">n</tspan></text>
+  <text class="cls-5" transform="translate(319.57 47.58) rotate(13.98)"><tspan x="0" y="0">c</tspan></text>
+  <text class="cls-5" transform="translate(335.16 51.41) rotate(18.65)"><tspan x="0" y="0">e</tspan></text>
+  <text class="cls-5" transform="translate(351.62 57.12) rotate(22.12)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-5" transform="translate(358.45 59.88) rotate(24.31)"><tspan x="0" y="0">(</tspan></text>
+  <text class="cls-5" transform="translate(365.45 62.8) rotate(28.09)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-5" transform="translate(383.1 72.44) rotate(31.9)"><tspan x="0" y="0">)</tspan></text>
   <g>
-    <path class="cls-6" d="M277.86,93.24c31.88,.82,75.8,16.57,98.69,29.27,94.92,52.67,129.17,172.32,76.5,267.24-52.67,94.92-172.32,129.17-267.24,76.5-94.92-52.67-129.17-172.32-76.5-267.24,25.6-46.14,73.4-88.73,140.08-102.49"/>
-    <polygon class="cls-4" points="281.21 103.3 263.53 94.08 280.36 83.37 281.21 103.3"/>
-    <polygon class="cls-4" points="248.32 106.98 263.53 94.08 244.76 87.36 248.32 106.98"/>
+    <path class="cls-6" d="M274.61,57.84c35.73,.38,85.94,18.32,111.92,32.73,106.02,58.83,144.28,192.47,85.45,298.49-58.83,106.02-192.47,144.28-298.49,85.45C67.46,415.68,29.2,282.04,88.03,176.01c28.81-51.92,82.77-99.81,158.1-114.82"/>
+    <polygon class="cls-4" points="278.06 67.85 260.29 58.81 277 47.93 278.06 67.85"/>
+    <polygon class="cls-4" points="245 71.61 260.29 58.81 241.55 51.97 245 71.61"/>
   </g>
-  <g class="cls-3">
-    <path class="cls-1" d="M281.18,114.72c99.22,0,179.66,80.44,179.66,179.66s-80.44,179.66-179.66,179.66-179.66-80.44-179.66-179.66S181.96,114.72,281.18,114.72m0-6c-25.06,0-49.38,4.91-72.27,14.59-22.11,9.35-41.96,22.74-59.01,39.79-17.05,17.05-30.43,36.9-39.79,59.01-9.68,22.89-14.59,47.21-14.59,72.27s4.91,49.38,14.59,72.27c9.35,22.11,22.74,41.96,39.79,59.01,17.05,17.05,36.9,30.43,59.01,39.79,22.89,9.68,47.21,14.59,72.27,14.59s49.38-4.91,72.27-14.59c22.11-9.35,41.96-22.74,59.01-39.79,17.05-17.05,30.43-36.9,39.79-59.01,9.68-22.89,14.59-47.21,14.59-72.27s-4.91-49.38-14.59-72.27c-9.35-22.11-22.74-41.96-39.79-59.01-17.05-17.05-36.9-30.43-59.01-39.79-22.89-9.68-47.21-14.59-72.27-14.59h0Z"/>
+  <g>
+    <circle class="cls-2" cx="280" cy="280" r="201.7"/>
+    <g class="cls-3">
+      <path class="cls-1" d="M280,78.3c111.4,0,201.7,90.31,201.7,201.7s-90.31,201.7-201.7,201.7-201.7-90.31-201.7-201.7S168.6,78.3,280,78.3m0-6c-28.04,0-55.24,5.49-80.85,16.32-24.73,10.46-46.95,25.44-66.02,44.51-19.07,19.07-34.05,41.29-44.51,66.02-10.83,25.61-16.32,52.81-16.32,80.85s5.49,55.24,16.32,80.85c10.46,24.73,25.44,46.95,44.51,66.02,19.07,19.07,41.28,34.05,66.02,44.51,25.61,10.83,52.81,16.32,80.85,16.32s55.24-5.49,80.85-16.32c24.73-10.46,46.95-25.44,66.02-44.51,19.07-19.07,34.05-41.29,44.51-66.02,10.83-25.61,16.32-52.81,16.32-80.85s-5.49-55.24-16.32-80.85c-10.46-24.73-25.44-46.95-44.51-66.02-19.07-19.07-41.28-34.05-66.02-44.51-25.61-10.83-52.81-16.32-80.85-16.32h0Z"/>
+    </g>
   </g>
 </svg>

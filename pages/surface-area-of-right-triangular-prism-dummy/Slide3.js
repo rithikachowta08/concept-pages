@@ -15,8 +15,7 @@ const TextSpanBg = dynamic(() =>
 );
 import { TextLine } from "components/text";
 const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides_shaded =
-   "assets/surface-area-of-right-triangluar-prism/sides_shaded.svg";
+const sides_shaded = "assets/surface-area-of-right-triangluar-prism/sides.svg";
 const all_sides_shaded =
    "assets/surface-area-of-right-triangluar-prism/all_sides_shaded.svg";
 import { lineHeightProp } from "utils/fontStyles";

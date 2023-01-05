@@ -11,6 +11,7 @@ const Wrapper = styled.div`
    z-index: 6;
    position: fixed;
    opacity: ${(props) => props.opacity};
+   pointer-events: ${(props) => (props.opacity === 0 ? "none" : "unset")};
    top: 50vh;
    left: 30px;
    transform: translateY(-50%);
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
    grid-template-columns: 1fr;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       height: 45px;
       width: 100%;
       top: 0;

@@ -7,39 +7,39 @@ import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
 
 const IFrame = styled.iframe`
-   width: 650px;
+   aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
       margin: auto 0;
-      width: 100vw;
       height: 100vw;
    }
 
    // Tablet
    @media (min-width: 501px) and (max-width: 992px) {
-      width: 500px;
-      height: 500px;
+      height: 100%;
+      max-width: 500px;
+      max-height: 500px;
    }
 
    // Low res desktop
    @media (min-width: 993px) and (max-width: 1224px) {
-      width: 600px;
-      height: 600px;
+      max-height: 600px;
+      height: 100%;
    }
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      width: 100vh;
       height: 100vh;
    }
 
    // Small height desktop
    @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
-      width: 500px;
-      height: 500px;
+      max-width: 500px;
+      max-height: 500px;
+      height: 100%;
    }
 `;
 
@@ -52,7 +52,7 @@ const ContentWrap = styled.div`
    justify-content: flex-start;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       flex-direction: column;
       gap: 20px;
    }
@@ -102,14 +102,9 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               padding="0 0 10px 0"
-               isLastSlide={isLastSlide}
-            >
+            <SlideWrap bg={bg} padding="0 0 10px 0" isLastSlide={isLastSlide}>
                <ContentWrap>
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
@@ -141,15 +136,13 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
-               padding="20px 30px"
+               padding="0 30px"
                isLastSlide={isLastSlide}
                hideFiller
+               noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <TitleAndAppletWrap>
                      <TitleWrap>
                         <SlideSecondaryTitle

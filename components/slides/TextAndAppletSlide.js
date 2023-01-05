@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import {
-   SlideWrap,
-   Flex,
-   LeftWrap,
-   RightWrap,
-} from "components/StyledElements";
+import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
@@ -17,39 +12,35 @@ const fit_to_width = "assets/fit_to_width.svg";
 const fullscreen_exit = "assets/fullscreen_exit.svg";
 
 const IFrame = styled.iframe`
-   width: 650px;
+   aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
    transition: all 0.2s;
 
    // Mobile
    @media only screen and (min-width: 200px) and (max-width: 600px) {
-      width: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
       height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
    }
 
    // Large mobile + iPad mini
    @media only screen and (min-width: 601px) and (max-width: 820px) {
-      width: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
-      height: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "500px")};
    }
 
    // Tablet
    @media (min-width: 821px) and (max-width: 992px) {
-      width: 500px;
-      height: 500px;
+      max-height: 500px;
    }
 
    // Small height desktop
-   @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
-      width: 500px;
-      height: 500px;
+   @media (min-height: 400px) and (max-height: 820px) and (min-width: 900px) {
+      max-height: 500px;
+      height: 100%;
    }
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      width: 100vh;
-      height: 100vh;
+      height: 100%;
       margin-bottom: 0;
    }
 `;
@@ -74,6 +65,13 @@ const FullScreenIcon = styled.img`
    right: 10px;
 `;
 
+const RightWrap = styled.div`
+   height: 100%;
+   text-align: center;
+   display: flex;
+   align-items: center;
+`;
+
 const TextAndAppletSlide = ({
    title,
    bg = "LIGHT",
@@ -94,11 +92,10 @@ const TextAndAppletSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
@@ -166,16 +163,15 @@ const TextAndAppletSlide = ({
                padding={"20px 30px"}
                isLastSlide={isLastSlide}
                hideFillerForLandscapeMode
+               noVerticalPaddingInLandscapeMode
             >
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
-                  maxHeight="50%"
+                  height="100%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle

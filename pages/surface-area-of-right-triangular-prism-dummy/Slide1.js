@@ -4,14 +4,13 @@ const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
-         title="Circumference of a Circle"
+         title="Surface Area of a Right Triangular Prism"
          contentListItems={[
-            "What is the circumference of a circle?",
-            "Formula",
-            "Derivation of the formula",
-            "How many revolutions?",
+            "What is the surface area of a right triangular prism?",
+            "Lateral surface area",
+            "Total surface area",
          ]}
-         anchorIdxes={[2, 3, 4, 7]}
+         anchorIdxes={[2, 5, 8]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

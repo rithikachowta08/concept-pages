@@ -32,10 +32,25 @@ export const SlideTitle = ({ children, bg, centerAlign }) => {
 };
 
 export const FillerNavBar = styled.div`
-   min-width: ${(props) => props.desktopNavBarWidth || "80"}px;
+   min-width: 76px;
    height: 100px;
 
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   // Low res desktop and tablet landscape
+   @media (min-width: 821px) and (max-width: 1224px) {
+      min-width: 52px;
+   }
+
+   // Small height desktop
+   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
+      min-width: 52px;
+   }
+
+   // Mobile landscape
+   @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
+      min-width: 42px;
+   }
+
+   @media (orientation: portrait) {
       min-height: ${(props) => props.mobileNavBarHeight || 45}px;
       height: unset;
    }

@@ -63,8 +63,10 @@ const Slide7 = ({ downIcon }) => {
          <div>
             <Paragraph lineHeight={lineHeightProp}>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
-               <TextLine>a = 4 cm, b = 5 cm</TextLine>
-               <TextLine>c = 3 cm, l = 10 cm</TextLine>
+               <TextLine>a = 4 cm</TextLine>
+               <TextLine>b = 5 cm</TextLine>
+               <TextLine>c = 3 cm</TextLine>
+               <TextLine>l = 10 cm</TextLine>
             </Paragraph>
             <Paragraph>
                <MultiLhsEquationContainer

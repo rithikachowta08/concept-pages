@@ -67,6 +67,15 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
          onDismiss();
       }
    };
+   useEffect(() => {
+      if (isOpen) {
+         global.fullpage_api.setAllowScrolling(false);
+         global.fullpage_api.setKeyboardScrolling(false);
+      } else {
+         global.fullpage_api?.setAllowScrolling(true);
+         global.fullpage_api?.setKeyboardScrolling(true);
+      }
+   }, [isOpen]);
    return (
       <Overlay isOpen={isOpen} id="overlay" onClick={onClick}>
          <ModalBody isOpen={isOpen} bg={bg} color={color}>

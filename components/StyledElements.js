@@ -15,8 +15,8 @@ const bgToBgColorMap = {
 export const SlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
-   height: 100vh;
-   width: 100vw;
+   height: 100%;
+   width: 100%;
    padding: ${(props) => props.padding};
    gap: ${(props) => props.gap};
    display: flex;
@@ -48,6 +48,12 @@ export const SlideWrap = styled.div`
                display:none
                }
                padding-right: 0;
+               padding: 
+                  ${
+                     props.noVerticalPaddingInLandscapeMode
+                        ? "0 0 0 30px"
+                        : props.padding
+                  };
                `
             : `&::before {
          content: "D";
@@ -58,7 +64,7 @@ export const SlideWrap = styled.div`
       }`}
    }
 
-   @media only screen and (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       &::before {
          display: none;
       }
@@ -69,8 +75,8 @@ export const TitleSlideWrap = styled.div`
    background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
    background-color: ${(props) => bgToBgColorMap[props.bg]};
    padding-bottom: 5vh;
-   height: 100vh;
-   width: 100vw;
+   height: 100%;
+   width: 100%;
    display: flex;
    flex-direction: column;
    justify-content: ${(props) => props.justifyContent || "center"};

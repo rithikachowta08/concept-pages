@@ -15,13 +15,11 @@ const TextSpanBg = dynamic(() =>
 );
 import { TextLine } from "components/text";
 const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides_shaded =
-   "assets/surface-area-of-right-triangluar-prism/sides_shaded.svg";
-const all_sides_shaded =
-   "assets/surface-area-of-right-triangluar-prism/all_sides_shaded.svg";
+const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
+const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
-const Slide3 = ({ downIcon }) => {
+const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
       setActiveIndex(parseInt(e.target.id));
@@ -31,27 +29,24 @@ const Slide3 = ({ downIcon }) => {
    };
    return (
       <TextAndDiagramSlide
-         title="What is the surface area of a right triangular prism?"
+         title="What is a right triangular prism?"
          diagram={
             <TransitionImage
-               images={[plain, sides_shaded, all_sides_shaded]}
+               images={[plain, bases, sides]}
                altTexts={[
                   "Diagram of a right triangular prism",
-                  "Diagram of a right triangular prism with highlighted lateral surface area.",
-                  "Diagram of a right triangular prism with highlighted total surface area.",
+                  "Diagram of a right triangular prism with highlighted triangular bases",
+                  "Diagram of a right triangular prism with highlighted lateral faces",
                ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         <Paragraph>
-            The surface area of a right triangular prism is the area covered by
-            its faces.
-         </Paragraph>
+         <Paragraph>A right triangular prism has:</Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
-            <TextLine>There are two types of surface areas:</TextLine>
             <TextLine>
+               2{" "}
                <TextSpanBg
                   id={1}
                   onHover={onHover}
@@ -61,10 +56,12 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  &bull; Lateral surface area
-               </TextSpanBg>
+                  triangular bases
+               </TextSpanBg>{" "}
+               parallel and congruent to each other.
             </TextLine>
             <TextLine>
+               3{" "}
                <TextSpanBg
                   id={2}
                   onHover={onHover}
@@ -74,12 +71,13 @@ const Slide3 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  &bull; Total surface area
-               </TextSpanBg>
+                  rectangular faces
+               </TextSpanBg>{" "}
+               perpendicular to the triangular bases.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide3;
+export default Slide2;

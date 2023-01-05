@@ -74,7 +74,6 @@ const Slide12 = ({ downIcon }) => {
             />
          }
          downIcon={downIcon}
-         isLastSlide
       >
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>

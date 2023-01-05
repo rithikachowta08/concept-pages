@@ -16,9 +16,6 @@ const TextSpanBg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
 import { ModalTriggerText } from "components/text";
 const plain_lengths =
    "assets/surface-area-of-right-triangluar-prism/plain_lengths.svg";
@@ -27,8 +24,6 @@ const rect_faces =
 const a_b_c_lengths =
    "assets/surface-area-of-right-triangluar-prism/a_b_c_lengths.svg";
 const l_length = "assets/surface-area-of-right-triangluar-prism/l_length.svg";
-const sides_shaded =
-   "assets/surface-area-of-right-triangluar-prism/sides_shaded.svg";
 
 import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
@@ -41,7 +36,6 @@ const Slide5 = ({ downIcon }) => {
             The lateral faces of a three-dimensional object are all the side
             faces excluding the base and the top.
          </Paragraph>
-         <ModalImg src={sides_shaded} />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
@@ -86,8 +80,7 @@ const Slide5 = ({ downIcon }) => {
             color={colors.BLACK}
          />
          <Paragraph color="white" textAlign="left">
-            Lateral surface area of a right triangular prism is the area of its
-            three{" "}
+            The area covered by the three{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
@@ -99,11 +92,11 @@ const Slide5 = ({ downIcon }) => {
             >
                rectangular faces
             </TextSpanBg>{" "}
-            , also called{" "}
+            of the right triangular prism, known as the{" "}
             <ModalTriggerText onClick={onClick} color={colors.WHITE}>
                lateral faces
             </ModalTriggerText>
-            .
+            , represents the lateral surface area.
          </Paragraph>
          <Pill>Lateral surface area = (a + b + c)l square units</Pill>
          <Paragraph color="white" lineHeight={lineHeightProp}>
