@@ -53,7 +53,7 @@
       }
 
       .cls-6 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 29px;
         font-weight: 500;
       }

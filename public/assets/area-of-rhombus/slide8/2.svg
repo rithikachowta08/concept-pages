@@ -37,7 +37,7 @@
       }
 
       .cls-9, .cls-8 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 36px;
         font-weight: 500;
       }
