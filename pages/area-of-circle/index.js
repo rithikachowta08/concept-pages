@@ -12,16 +12,6 @@ const Slide7 = dynamic(() => import("./slides/Slide7"));
 const Slide8 = dynamic(() => import("./slides/Slide8"));
 const Slide9 = dynamic(() => import("./slides/Slide9"));
 const Slide10 = dynamic(() => import("./slides/Slide10"));
-const Slide1 = dynamic(() => import("./slides/Slide1"));
-const Slide2 = dynamic(() => import("./slides/Slide2"));
-const Slide3 = dynamic(() => import("./slides/Slide3"));
-const Slide4 = dynamic(() => import("./slides/Slide4"));
-const Slide5 = dynamic(() => import("./slides/Slide5"));
-const Slide6 = dynamic(() => import("./slides/Slide6"));
-const Slide7 = dynamic(() => import("./slides/Slide7"));
-const Slide8 = dynamic(() => import("./slides/Slide8"));
-const Slide9 = dynamic(() => import("./slides/Slide9"));
-const Slide10 = dynamic(() => import("./slides/Slide10"));
 
 const AreaOfCircle = () => {
    const SlideArray = [

@@ -1,17 +1,14 @@
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { Flex, ModalImg, StyledImg } from "components/StyledElements";
-import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
-import { useState } from "react";
-import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
+);
+import { StyledImg } from "components/StyledElements";
+import { Paragraph } from "components/text";
 
 const image_1 = "assets/area-of-sector-of-a-circle/18.svg";
 
 const Slide7 = ({ navBar, downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-
    return (
       <TextAndAppletSlide
          bg="LIGHT"

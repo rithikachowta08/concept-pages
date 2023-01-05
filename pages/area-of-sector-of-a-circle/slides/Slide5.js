@@ -1,10 +1,15 @@
-import Modal from "components/layout/Modal";
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
-import { Flex, ModalImg } from "components/StyledElements";
-import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
+import dynamic from "next/dynamic";
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
 import { colors } from "utils/colors";
 
@@ -14,7 +19,6 @@ const image_3 = "assets/area-of-sector-of-a-circle/20.svg";
 
 const Slide5 = ({ navBar, downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
 
    return (
       <TextAndDiagramSlide
@@ -24,6 +28,11 @@ const Slide5 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[image_1, image_2, image_3]}
+               altTexts={[
+                  "Diagram of a of a circle showing sector angle theta and radii r",
+                  "Diagram of a circle Highlighting measure of the angle",
+                  "Diagram of a circle Highlighting radii 'r' of a circle",
+               ]}
                activeIndex={activeIndex}
             />
          }

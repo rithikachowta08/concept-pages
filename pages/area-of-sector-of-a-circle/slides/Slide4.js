@@ -1,6 +1,11 @@
-import Modal from "components/layout/Modal";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
+import dynamic from "next/dynamic";
+const Modal = dynamic(() => import("components/layout/Modal"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -24,7 +29,10 @@ const Slide4 = ({ navBar, downIcon }) => {
             Two points on the circumference of a circle divide the circle into
             arcs.
          </Paragraph>
-         <ModalImg src={image_3} />
+         <ModalImg
+            src={image_3}
+            alt="Diagram of circles showing different types of arc of a circle i e,  Major arc, Minor arc and Semicircular arc"
+         />
       </Flex>
    );
 
@@ -35,6 +43,10 @@ const Slide4 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[image_1, image_2]}
+               altTexts={[
+                  "Diagram of a circle showing enclosed area between arc and radius",
+                  "Diagram  of a circle highlighting the area of the sector",
+               ]}
                activeIndex={activeIndex}
             />
          }

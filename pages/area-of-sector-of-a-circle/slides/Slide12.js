@@ -1,6 +1,13 @@
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
 import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import { useState } from "react";
 import { colors } from "utils/colors";
@@ -19,10 +26,15 @@ const Slide12 = ({ downIcon, navBar }) => {
          diagram={
             <TransitionImage
                images={[image_1, image_2, image_3]}
+               altTexts={[
+                  "Diagram of circle showing length of an arc 'l' of  6 units and radius 'r' of 10 units",
+                  "Diagram of a circle highlighting radius of 10 units",
+                  "Diagram of a circle highlighting arc length of 6 units",
+               ]}
                activeIndex={activeIndex}
             />
          }
-         downIcon={downIcon}
+         isLastSlide={true}
          navBar={navBar}
       >
          <Paragraph>
@@ -43,7 +55,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                = 10 units
             </TextSpan>
             <br />
-            <TextSpan>
+            <TextSpan margin={"10px 0 0 0"}>
                <TextSpanBg
                   color={colors.RED}
                   hoverColor={colors.DARK_BLUE}
@@ -94,7 +106,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["30 sq units"],
+                        value: ["30\\ sq\\ units"],
                         type: "latex",
                      },
                      rhsHint: {

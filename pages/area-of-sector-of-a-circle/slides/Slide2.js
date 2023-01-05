@@ -1,6 +1,11 @@
-import Modal from "components/layout/Modal";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
+import dynamic from "next/dynamic";
+const Modal = dynamic(() => import("components/layout/Modal"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -27,7 +32,10 @@ const Slide2 = ({ navBar, downIcon }) => {
             always equidistant from a fixed point. The fixed point is the center
             &quot;O&quot;, and the fixed distance is the radius &quot;r&quot;.
          </Paragraph>
-         <ModalImg />
+         <ModalImg
+            src={image_modal}
+            alt="Diagram of circle with center o and radius r"
+         />
       </Flex>
    );
 
@@ -38,6 +46,12 @@ const Slide2 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[image_1, image_2, image_3, image_4]}
+               altTexts={[
+                  "Diagram of a circle showing center, radii and sector",
+                  "Diagram of a circle highlighting sector",
+                  "Diagram of a circle highlighting radii.",
+                  "Diagram  of a circle highlighting arc",
+               ]}
                activeIndex={activeIndex}
             />
          }

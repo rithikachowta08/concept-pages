@@ -1,9 +1,13 @@
-import Modal from "components/layout/Modal";
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
+import dynamic from "next/dynamic";
+const Modal = dynamic(() => import("components/layout/Modal"));
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
 import { Flex, ModalImg, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -24,7 +28,10 @@ const Slide10 = ({ navBar, downIcon }) => {
             The length of the arc (l) of the sector of a circle is the distance
             that runs through the arc.
          </Paragraph>
-         <ModalImg src={image_1} />
+         <ModalImg
+            src={image_1}
+            alt="Diagram of circle showing length of an arc l, sector angle theta and radius r"
+         />
          <Paragraph>
             Length of an arc of sector angle ={" "}
             <MathElement htmlString={"\\dfrac{θ}{360}\\times 2\\pi r"} />
@@ -37,7 +44,12 @@ const Slide10 = ({ navBar, downIcon }) => {
          bg="DARK"
          secondaryTitle={"Area of a Sector of a Circle"}
          title={"Using the Length of an Arc"}
-         diagram={<StyledImg src={image_1} />}
+         diagram={
+            <StyledImg
+               src={image_1}
+               alt="Diagram of circle showing length of an arc l, sector angle theta and radius r"
+            />
+         }
          navBar={navBar}
          downIcon={downIcon}
       >

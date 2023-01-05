@@ -1,6 +1,13 @@
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
+import dynamic from "next/dynamic";
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
 import { Paragraph, TextSpanBg } from "components/text";
 import { useEffect, useState } from "react";
 import { colors } from "utils/colors";
@@ -40,6 +47,12 @@ const Slide9 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[image_1, image_2, image_3, image_4]}
+               altTexts={[
+                  "Diagram of a circle showing radii of 4 cm and measure of sector angle is 30 degree",
+                  "Diagram of a circle highlighting radii of 4 cm",
+                  "Diagram of a circle highlighting sector angle measures 30 degree",
+                  "Diagram of a circle highlighting area of sector of circle",
+               ]}
                activeIndex={activeIndex}
             />
          }

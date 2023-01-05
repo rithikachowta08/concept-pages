@@ -1,22 +1,25 @@
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/ActivitySlide";
-import { Flex, ModalImg, StyledImg } from "components/StyledElements";
-import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
-import { useState } from "react";
-import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/ActivitySlide")
+);
+import { StyledImg } from "components/StyledElements";
+import { Paragraph } from "components/text";
 
 const image_1 = "assets/area-of-sector-of-a-circle/18.svg";
 
 const Slide6 = ({ navBar, downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-
    return (
       <TextAndDiagramSlide
          bg="LIGHT"
          secondaryTitle={"Area of a Sector of a Circle"}
          title={"Derivation"}
-         diagram={<StyledImg src={image_1} />}
+         diagram={
+            <StyledImg
+               src={image_1}
+               alt="Diagram  of a circle showing  sector angle and radii"
+            />
+         }
          navBar={navBar}
          downIcon={downIcon}
       >
