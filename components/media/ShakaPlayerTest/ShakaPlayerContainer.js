@@ -90,12 +90,14 @@ const ShakaPlayerContainer = (props) => {
               width="80"
             ></Image>
           </div>
-          <Image
-            alt="thumbnail"
-            src={thumbnail}
-            layout="fill"
-            objectFit="contain"
-          ></Image>
+          {thumbnail && (
+            <Image
+              alt="thumbnail"
+              src={thumbnail}
+              layout="fill"
+              objectFit="contain"
+            ></Image>
+          )}
         </div>
       )}
       {drmConf.key_id && (
