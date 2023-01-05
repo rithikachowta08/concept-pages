@@ -28,7 +28,8 @@ const AreaOfCircle = () => {
       <PageLastSlide
          key={10}
          currentPageTitle={"Area of a Circle"}
-         nextPage="Area of Rectangle"
+         nextPageTitle="Surface area of a Right Triangular Prism"
+         nextPageLink="/study/surface-area-of-right-triangular-prism"
       />,
    ];
    const navigationSections = [
