@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
 import { fontSizes } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import HyperLink from "components/text/HyperLink";
 const left_caret_dark = "assets/left_caret.svg";
 const left_caret_light = "assets/left_caret_light.svg";
 
@@ -41,8 +41,8 @@ const NavWrap = styled.div`
 
    // Mobile landscape
    @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
-      padding: 30px 20px;
-      border-radius: 15px;
+      padding: 20px 15px;
+      border-radius: 12px;
       max-width: 400px;
    }
 `;
@@ -140,20 +140,12 @@ const DefaultNavBar = ({
    showNav,
    hideNav,
 }) => {
-   const ref = useRef(null);
-   useEffect(() => {
-      if (ref.current) {
-         global.desktopNavBarWidth = ref.current.getBoundingClientRect().width;
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [ref.current, currentPageIdx]);
    return (
       <NavWrap
          isExpanded={isExpanded}
          onMouseEnter={showNav}
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
-         ref={ref}
       >
          {isExpanded ? (
             <Flex
@@ -171,7 +163,14 @@ const DefaultNavBar = ({
                   color={darkTheme ? colors.WHITE : colors.PURPLE}
                   fontSize={fontSizes.SMALL}
                >
-                  Back to concepts
+                  <HyperLink
+                     color={darkTheme ? colors.WHITE : colors.DARK_GREY}
+                     target=""
+                     href="https://byjus.com/us/math/"
+                  >
+                     {" "}
+                     Back to concepts{" "}
+                  </HyperLink>
                </TextSpan>
             </Flex>
          ) : null}

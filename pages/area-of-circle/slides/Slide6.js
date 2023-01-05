@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 const MathElement = dynamic(() => import("components/MathElement"));
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
@@ -10,8 +12,7 @@ const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 import { Flex } from "components/StyledElements";
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import dynamic from "next/dynamic";
+import { Paragraph, TextLine } from "components/text";
 import { useEffect, useState } from "react";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";

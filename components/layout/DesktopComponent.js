@@ -1,3 +1,4 @@
+import { useOrientation, ORIENTATION_TYPES } from "hooks/useDeviceType";
 import React from "react";
 import styled from "styled-components";
 
@@ -6,13 +7,16 @@ const Div = styled.div`
    height: 100%;
    width: 100%;
 
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       display: none;
    }
 `;
 
 const DesktopComponent = ({ children }) => {
-   return <Div>{children}</Div>;
+   const orientation = useOrientation();
+   return orientation && orientation === ORIENTATION_TYPES.PORTRAIT ? null : (
+      <Div>{children}</Div>
+   );
 };
 
 export default DesktopComponent;

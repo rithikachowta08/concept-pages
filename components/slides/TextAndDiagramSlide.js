@@ -27,7 +27,7 @@ const TextAndDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <DesktopComponent>
             <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
@@ -36,9 +36,7 @@ const TextAndDiagramSlide = ({
                   width="100%"
                   maxHeight="30%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <LeftWrap>
                      <div>
                         <SlideSecondaryTitle
@@ -57,7 +55,6 @@ const TextAndDiagramSlide = ({
          <MobileComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
@@ -82,7 +79,7 @@ const TextAndDiagramSlide = ({
                {/* Body */}
                <Flex
                   direction="column"
-                  padding="0 20px"
+                  padding="0 30px"
                   justifyContent="space-evenly"
                   alignItems="center"
                   flex="1"
@@ -97,7 +94,7 @@ const TextAndDiagramSlide = ({
                   : downIcon}
             </SlideWrap>
          </MobileComponent>
-      </>
+      </div>
    );
 };
 

@@ -63,7 +63,7 @@ const Slide2 = ({ downIcon }) => {
             >
                edges
             </TextSpanBg>
-            ?
+            .
          </Paragraph>
       </TextAndDiagramSlide>
    );

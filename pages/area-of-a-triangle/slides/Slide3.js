@@ -1,5 +1,4 @@
 import Button from "components/Button";
-import QuestionAnswerImage from "components/media/QuestionAnswerImage";
 import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 import { Flex } from "components/StyledElements";
 import { Paragraph } from "components/text";

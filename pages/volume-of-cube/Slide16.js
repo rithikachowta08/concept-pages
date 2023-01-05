@@ -1,19 +1,30 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import {
-   TextSpan,
-   Title,
-   Paragraph,
-   TextSpanBg,
-   TextLine,
-} from "components/text";
+import dynamic from "next/dynamic";
+
 // import inequality_slide from "assets/inequality_slide.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 const cube_red = "assets/volume-of-cube/slide16/1.svg";
 const cube_diagonal = "assets/volume-of-cube/slide16/2.svg";
-import EquationTable from "components/MathElement/EquationTable";
 
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const Slide16 = ({ navBar, downIcon }) => {
    let EquationLatex0 = [
       {

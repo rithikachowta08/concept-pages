@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
-import TitleSlide from "components/slides/TitleSlide";
+import dynamic from "next/dynamic";
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
@@ -11,7 +12,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Volume of a cube using diagonal",
             "Rectangular prism vs cube",
          ]}
-         anchorIdxes={[2, 6, 11,17]}
+         anchorIdxes={[2, 6, 10,16]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

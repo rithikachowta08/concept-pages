@@ -9,7 +9,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
          anchorIdxes={[2, 3, 6, 8]}
          contentListItems={[
             "What is the area of a circle?",
-            "General Formula",
+            "General formula",
             "Area of a circle using the diameter",
             "Area of a circle using the circumference",
          ]}

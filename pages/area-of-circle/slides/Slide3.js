@@ -47,7 +47,7 @@ const Slide3 = ({ navBar, downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          title={"General Formula"}
-         secondaryTitle="Area of a circle"
+         secondaryTitle="Area of a Circle"
          navBar={navBar}
          downIcon={downIcon}
          diagram={

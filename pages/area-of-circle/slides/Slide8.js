@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 const MathElement = dynamic(() => import("components/MathElement"));
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -8,7 +10,7 @@ const TextAndDiagramSlide = dynamic(() =>
 );
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-circle/slide_8.svg";

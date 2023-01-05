@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
 
-import { LeftWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, TextSpanBg } from "components/text";
+import { useState } from "react";
+import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
-import Pill from "components/Pill";
-import TransitionImage from "components/media/TransitionImage";
+import dynamic from "next/dynamic";
 
 const image_1 = "assets/area-of-triangle/slide_12.svg";
 const image_2 = "assets/area-of-triangle/slide_12_2.svg";
 const image_3 = "assets/area-of-triangle/slide_12_3.svg";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { fontSizes } from "utils/fontStyles";
 
 // Isosceles triangle
 const Slide13 = ({ downIcon }) => {

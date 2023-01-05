@@ -28,7 +28,7 @@ export const SlideWrap = styled.div`
    align-items: center;
 
    ${(props) =>
-      props.isLastSlide
+      props.isLastSlide || props.hideFiller
          ? ``
          : `&::before {
       content: "D";
@@ -41,11 +41,19 @@ export const SlideWrap = styled.div`
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       ${(props) =>
-         props.hideFillerForLandscapeMode || props.isLastSlide
+         props.hideFiller ||
+         props.hideFillerForLandscapeMode ||
+         props.isLastSlide
             ? `&::before{
                display:none
                }
                padding-right: 0;
+               padding: 
+                  ${
+                     props.noVerticalPaddingInLandscapeMode
+                        ? "0 0 0 30px"
+                        : props.padding
+                  };
                `
             : `&::before {
          content: "D";
@@ -56,7 +64,7 @@ export const SlideWrap = styled.div`
       }`}
    }
 
-   @media only screen and (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       &::before {
          display: none;
       }
@@ -224,7 +232,7 @@ export const PageWrap = styled.div`
 `;
 
 export const LeftAlignDiv = styled.div`
-   align-self: center;
+   align-self: flex-start;
    width: fit-content;
 `;
 

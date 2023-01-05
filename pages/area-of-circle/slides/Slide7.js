@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );

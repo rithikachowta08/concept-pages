@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-import dynamic from "next/dynamic";
 import { addTransitionToKatex } from "utils/domutils";
 import { lineHeightProp } from "utils/fontStyles";
+import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );

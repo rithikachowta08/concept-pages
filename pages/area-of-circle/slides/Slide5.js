@@ -42,7 +42,7 @@ const Slide5 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <Flex>
-               <div>Area of a circle</div>
+               <div>Area of the circle</div>
                <Flex direction="column">
                   <TextLine>
                      <MathElement htmlString={"\\ = \\pi\\ "} />
