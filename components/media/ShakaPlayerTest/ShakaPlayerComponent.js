@@ -197,7 +197,7 @@ const VideoPlayer = (props) => {
       // "forward_10",
       "time_and_duration",
       "spacer",
-      // "vertical_volume",
+      "vertical_volume",
       // "mute",
       "playback_rate",
       "quality",
