@@ -54,7 +54,7 @@ const Slide9 = ({ downIcon }) => {
             <Paragraph lineHeight={lineHeightProp}>
                <TextLine>Total surface area</TextLine>
                <TextLine>
-                  = Area of the three lateral faces + Area of the two&nbsp;
+                  = Area of the three lateral faces + Area of the{" "}
                   <TextSpanBg
                      onHover={onHover}
                      onHoverOut={onHoverOut}
@@ -63,11 +63,16 @@ const Slide9 = ({ downIcon }) => {
                      fontWeight={fontWeights.BOLD}
                      fontSize="2.2rem"
                   >
-                     triangular bases
+                     two triangular bases
                   </TextSpanBg>
                </TextLine>
-               <TextLine>= (a + b + c)l + &frac12; bh + &frac12; bh</TextLine>
-               <TextLine>= (a + b + c)l + bh square units</TextLine>
+               <TextLine>
+                  = (a + b + c) &times; l + &frac12; &times; b &times; h +
+                  &frac12; &times; b &times; h
+               </TextLine>
+               <TextLine>
+                  = (a + b + c) &times; l + b &times; h sq units
+               </TextLine>
             </Paragraph>
          </div>
       </TextAndDiagramSlide>

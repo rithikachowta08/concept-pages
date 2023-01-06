@@ -46,7 +46,6 @@ const Slide2 = ({ downIcon }) => {
          <Paragraph>A right triangular prism has:</Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-               2{" "}
                <TextSpanBg
                   id={1}
                   onHover={onHover}
@@ -56,12 +55,11 @@ const Slide2 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  triangular bases
+                  2 triangular bases
                </TextSpanBg>{" "}
                parallel and congruent to each other.
             </TextLine>
             <TextLine>
-               3{" "}
                <TextSpanBg
                   id={2}
                   onHover={onHover}
@@ -71,7 +69,7 @@ const Slide2 = ({ downIcon }) => {
                   fontWeight={700}
                   fontSize="2.2rem"
                >
-                  rectangular faces
+                  3 rectangular faces
                </TextSpanBg>{" "}
                perpendicular to the triangular bases.
             </TextLine>

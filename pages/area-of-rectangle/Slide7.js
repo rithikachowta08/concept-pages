@@ -35,11 +35,11 @@ const Slide7 = ({ downIcon }) => {
          lhsLatex: [`{Area}`, ""],
          rhsLatex: [
             {
-               eqLatex: "4 \\ cm \\times 3 \\ cm",
+               eqLatex: "4 \\ in \\times 3 \\ in",
                hint: "",
             },
             {
-               eqLatex: "12 \\ sq \\ cm",
+               eqLatex: "12 \\ sq \\ in",
                hint: "",
             },
          ],
@@ -48,14 +48,14 @@ const Slide7 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white">
-            The area of a rectangle is measured in square units (square
-            centimeters, square inches, square feet, and so on).
+            The area of a rectangle is measured in square units (square inches,
+            square feet, square yards and so on).
          </Paragraph>
          <Paragraph>
             <TextLine color="white">Example :</TextLine>
             <ModalImg
                src={rectangle_square_units}
-               alt="Diagram of a rectangle with length 4 cm and width 3 cm"
+               alt="Diagram of a rectangle with length 4 in and width 3 in"
             />
             <MultiLhsEquationContainer
                color={colors.WHITE}
