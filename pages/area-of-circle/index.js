@@ -1,5 +1,7 @@
-import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import dynamic from "next/dynamic";
+
+import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
+import PageLastSlide from "components/slides/PageLastSlide";
 
 const Slide1 = dynamic(() => import("./slides/Slide1"));
 const Slide2 = dynamic(() => import("./slides/Slide2"));
@@ -24,6 +26,12 @@ const AreaOfCircle = () => {
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <Slide10 key={9} />,
+      <PageLastSlide
+         key={10}
+         currentPageTitle={"Area of a Circle"}
+         nextPageTitle="Surface area of a Right Triangular Prism"
+         nextPageLink="/study/surface-area-of-right-triangular-prism"
+      />,
    ];
    const navigationSections = [
       { title: "What is the area of a circle?", slides: [1] },
@@ -35,7 +43,7 @@ const AreaOfCircle = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 5, 7, 9];
+   const darkBgIndices = [0, 2, 5, 7, 9, 10];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

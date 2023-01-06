@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import {
-   SlideWrap,
-   Flex,
-   LeftWrap,
-   RightWrap,
-} from "components/StyledElements";
+import { SlideWrap, Flex, LeftWrap } from "components/StyledElements";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
@@ -29,24 +24,23 @@ const IFrame = styled.iframe`
 
    // Large mobile + iPad mini
    @media only screen and (min-width: 601px) and (max-width: 820px) {
-      height: ${(props) => (props.isFitToWidth ? "100vw" : "400px")};
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "500px")};
    }
 
    // Tablet
    @media (min-width: 821px) and (max-width: 992px) {
       max-height: 500px;
-      height: 100%;
    }
 
    // Small height desktop
-   @media (min-height: 400px) and (max-height: 800px) and (min-width: 900px) {
+   @media (min-height: 400px) and (max-height: 820px) and (min-width: 900px) {
       max-height: 500px;
       height: 100%;
    }
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      height: 100vh;
+      height: 100%;
       margin-bottom: 0;
    }
 `;
@@ -69,6 +63,13 @@ const FullScreenIcon = styled.img`
    position: absolute;
    bottom: 15px;
    right: 10px;
+`;
+
+const RightWrap = styled.div`
+   height: 100%;
+   text-align: center;
+   display: flex;
+   align-items: center;
 `;
 
 const TextAndAppletSlide = ({
@@ -162,16 +163,15 @@ const TextAndAppletSlide = ({
                padding={"20px 30px"}
                isLastSlide={isLastSlide}
                hideFillerForLandscapeMode
+               noVerticalPaddingInLandscapeMode
             >
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
-                  maxHeight="50%"
+                  height="100%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle

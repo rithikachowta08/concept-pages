@@ -50,7 +50,7 @@ const Slide8 = ({ downIcon }) => {
       bg="DARK"
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+      <Paragraph color={colors.WHITE}>
         The curved surface area of the right circular cone is given by:
       </Paragraph>
       <div>

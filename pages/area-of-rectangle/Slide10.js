@@ -71,7 +71,7 @@ const Slide10 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         isLastSlide
+         downIcon={downIcon}
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>

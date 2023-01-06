@@ -16,12 +16,15 @@ const StyledTable = styled.table`
 const LHSLatex = styled.td`
    text-align: right;
    vertical-align: ${(props) => props.align};
+   line-height: ${(props) => props.lineHeight || "inherit"};
 `;
 const EqualsTo = styled.td`
    vertical-align: ${(props) => props.align};
+   line-height: ${(props) => props.lineHeight || "inherit"};
 `;
 const RHSLatex = styled.td`
    vertical-align: ${(props) => props.align};
+   line-height: ${(props) => props.lineHeight || "inherit"};
 `;
 const RHSHint = styled.td`
    vertical-align: ${(props) => props.align};
@@ -30,7 +33,11 @@ const RHSHint = styled.td`
 `;
 const Span = styled.span``;
 
-const EquationTable = ({ equationLatex: eqLatex, align = "top" }) => {
+const EquationTable = ({
+   equationLatex: eqLatex,
+   align = "top",
+   lineHeight,
+}) => {
    if (!eqLatex) {
       return <></>;
    }
@@ -40,7 +47,7 @@ const EquationTable = ({ equationLatex: eqLatex, align = "top" }) => {
             {eqLatex.map((latex, index) => {
                return (
                   <tr key={index}>
-                     <LHSLatex align={align}>
+                     <LHSLatex align={align} lineHeight={lineHeight}>
                         {latex.lhsLatex.value.map((val, i) => {
                            if (latex.lhsLatex.type == "latex") {
                               return (
@@ -56,10 +63,10 @@ const EquationTable = ({ equationLatex: eqLatex, align = "top" }) => {
                            }
                         })}
                      </LHSLatex>
-                     <EqualsTo align={align}>
+                     <EqualsTo align={align} lineHeight={lineHeight}>
                         <TeX>{"="}</TeX>
                      </EqualsTo>
-                     <RHSLatex align={align}>
+                     <RHSLatex align={align} lineHeight={lineHeight}>
                         {latex.rhsLatex.value.map((val, i) => {
                            if (latex.rhsLatex.type == "latex") {
                               return (

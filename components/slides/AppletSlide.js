@@ -19,9 +19,8 @@ const IFrame = styled.iframe`
 
    // Tablet
    @media (min-width: 501px) and (max-width: 992px) {
-      height: 100%;
-      max-width: 500px;
-      max-height: 500px;
+      margin: auto 0;
+      height: 100vw;
    }
 
    // Low res desktop
@@ -52,7 +51,7 @@ const ContentWrap = styled.div`
    justify-content: flex-start;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       flex-direction: column;
       gap: 20px;
    }
@@ -136,14 +135,13 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
-               padding="20px 30px"
+               padding="0 30px"
                isLastSlide={isLastSlide}
                hideFiller
+               noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <TitleAndAppletWrap>
                      <TitleWrap>
                         <SlideSecondaryTitle

@@ -78,9 +78,7 @@ const Slide19 = ({ downIcon }) => {
       >
          <Paragraph color={colors.WHITE}>
             In a triangle, given any two sides and the included angle between
-            them, the area can be calculated as: In a triangle, given any two
-            sides and the included angle between them, the area can be
-            calculated as:
+            them, the area can be calculated as:
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             {/* <EquationTable
@@ -106,7 +104,6 @@ const Slide19 = ({ downIcon }) => {
             /> */}
             Area ={" "}
             <TextSpanBg
-               padding={"20px 20px"}
                color={colors.RED}
                hoverColor={colors.AQUA}
                onHover={() => {
@@ -116,12 +113,11 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\dfrac{1}{2}"} />
+               <MathElement htmlString={"\\frac{1}{2}"} />
                bc SinA
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               padding={"20px 20px"}
                color={colors.RED}
                hoverColor={colors.AQUA}
                onHover={() => {
@@ -131,12 +127,11 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\dfrac{1}{2}"} />
+               <MathElement htmlString={"\\frac{1}{2}"} />
                ca SinB
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               padding={"20px 20px"}
                color={colors.RED}
                hoverColor={colors.AQUA}
                onHover={() => {
@@ -146,7 +141,7 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\dfrac{1}{2}"} />
+               <MathElement htmlString={"\\frac{1}{2}"} />
                ab SinC
             </TextSpanBg>
          </Paragraph>
