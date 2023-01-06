@@ -8,11 +8,11 @@ const Slide10 = ({ navBar }) => {
          navBar={navBar}
          videoContent={{
             dash_Url:
-               "https://byjus-in.akamaized.net/production/mpkgr-production-746d6072/r47ghj/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT014/dash/h264.mpd",
+               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-896b0152/rnyleh/INTL_Maths/230104/SEO18INTL07MAT11KT014/dash/h264.mpd",
             duration: "0:05:45",
             grade: "Grade 08",
             hls_Url:
-               "https://byjus-in.akamaized.net/production/mpkgr-production-746d6072/r47ghj/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT014/hls/h264.m3u8",
+               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-896b0152/rnyleh/INTL_Maths/230104/SEO18INTL07MAT11KT014/hls/h264.m3u8",
             rating: 0,
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803282.jpg?1671774814",
