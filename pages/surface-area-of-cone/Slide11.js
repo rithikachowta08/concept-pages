@@ -71,7 +71,7 @@ const Slide11 = ({ downIcon }) => {
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -101,7 +101,7 @@ const Slide11 = ({ downIcon }) => {
         The total surface area of a cone is the sum of its&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
@@ -111,7 +111,7 @@ const Slide11 = ({ downIcon }) => {
         &nbsp;and its{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
