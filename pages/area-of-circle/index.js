@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
+
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import PageLastSlide from "components/slides/PageLastSlide";
-import dynamic from "next/dynamic";
 
 const Slide1 = dynamic(() => import("./slides/Slide1"));
 const Slide2 = dynamic(() => import("./slides/Slide2"));
