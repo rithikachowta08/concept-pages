@@ -15,16 +15,19 @@ const IFrame = styled.iframe`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
+   border: 1px solid #444;
    transition: all 0.2s;
 
    // Mobile
    @media only screen and (min-width: 200px) and (max-width: 600px) {
       height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
+      border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
    }
 
    // Large mobile + iPad mini
    @media only screen and (min-width: 601px) and (max-width: 820px) {
       height: ${(props) => (props.isFitToWidth ? "100vw" : "500px")};
+      border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
    }
 
    // Tablet
