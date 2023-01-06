@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fb5a5a;
+        font-family: Raleway-Medium, Raleway;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #ea6560;
+      }
+
+      .cls-2 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5, .cls-4 {
+        opacity: .3;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #ea6560;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <g class="cls-5">
+    <circle class="cls-3" cx="280" cy="280" r="201.7"/>
+  </g>
+  <polyline class="cls-6" points="379.48 452.1 279.99 279.78 180.54 452.02"/>
+  <path class="cls-3" d="M280,84.3c26.42,0,52.05,5.17,76.17,15.38,23.3,9.86,44.23,23.97,62.21,41.94,17.98,17.97,32.09,38.9,41.94,62.21,10.2,24.12,15.38,49.75,15.38,76.17s-5.17,52.05-15.38,76.17c-9.86,23.3-23.97,44.23-41.94,62.21-17.98,17.97-38.9,32.09-62.21,41.94-24.12,10.2-49.75,15.38-76.17,15.38s-52.05-5.17-76.17-15.38c-23.3-9.86-44.23-23.97-62.21-41.94-17.98-17.97-32.09-38.9-41.94-62.21-10.2-24.12-15.38-49.75-15.38-76.17s5.17-52.05,15.38-76.17c9.86-23.3,23.97-44.23,41.94-62.21,17.98-17.97,38.9-32.09,62.21-41.94,24.12-10.2,49.75-15.38,76.17-15.38m0-6c-111.4,0-201.7,90.31-201.7,201.7s90.31,201.7,201.7,201.7,201.7-90.31,201.7-201.7-90.31-201.7-201.7-201.7h0Z"/>
+  <polyline class="cls-6" points="379.48 452.1 279.99 279.78 180.86 451.48"/>
+  <path class="cls-4" d="M279.99,279.78l-100.96,174.87c30.4,18.37,62.86,27.06,100.97,27.06s70.29-10.59,100.95-27.04l-100.97-174.88Z"/>
+  <text class="cls-2" transform="translate(154.27 474.88)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-1" transform="translate(387.57 474.88)"><tspan x="0" y="0">B</tspan></text>
+  <text class="cls-1" transform="translate(269.73 271.97)"><tspan x="0" y="0">O</tspan></text>
+  <circle class="cls-3" cx="279.65" cy="280.32" r="7.2"/>
+  <circle class="cls-3" cx="180.07" cy="450.86" r="7.2"/>
+  <circle class="cls-3" cx="378.77" cy="451.86" r="7.2"/>
+</svg>
