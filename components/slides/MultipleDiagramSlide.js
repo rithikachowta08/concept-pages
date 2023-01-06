@@ -114,9 +114,7 @@ const MultipleDiagramSlide = ({
                   width="100%"
                   maxHeight="80%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <Flex
                      direction="column"
                      justifyContent="space-between"

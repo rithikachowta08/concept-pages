@@ -19,9 +19,8 @@ const IFrame = styled.iframe`
 
    // Tablet
    @media (min-width: 501px) and (max-width: 992px) {
-      height: 100%;
-      max-width: 500px;
-      max-height: 500px;
+      margin: auto 0;
+      height: 100vw;
    }
 
    // Low res desktop
@@ -142,9 +141,7 @@ const AppletSlide = ({
                noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <TitleAndAppletWrap>
                      <TitleWrap>
                         <SlideSecondaryTitle

@@ -41,7 +41,7 @@
       }
 
       .cls-6, .cls-8, .cls-10, .cls-11 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-weight: 500;
       }
 

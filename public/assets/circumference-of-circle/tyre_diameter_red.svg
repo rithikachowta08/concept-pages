@@ -50,7 +50,7 @@
       }
 
       .cls-2 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 27px;
         font-weight: 500;
       }

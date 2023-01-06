@@ -51,7 +51,7 @@ const Slide2 = ({ downIcon }) => {
           color={colors.DARK_BLUE}
         >
           three-dimensional
-        </HyperLink>{" "}
+        </HyperLink>
         &nbsp;shape that narrows smoothly from a&nbsp;
         <TextSpanBg
           id={1}

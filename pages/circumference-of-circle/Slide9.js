@@ -31,11 +31,13 @@ const Slide8 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: [`\\text{Number of revolutions}`],
-            type: "latex",
+            value: [`Number of revolutions`],
+            type: "text",
          },
          rhsLatex: {
-            value: ["\\dfrac{\\text{Total distance covered}}{Circumference}"],
+            value: [
+               "\\dfrac{\\text{Total distance covered Circumference}}{Circumference}",
+            ],
             type: "latex",
          },
          rhsHint: {
@@ -136,23 +138,24 @@ const Slide8 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
                      fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
                   >
                      Circumference
                   </TextSpanBg>
-                  &nbsp;of circle = &pi; &times;{" "}
+                  &nbsp;= &pi; &times;{" "}
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
                      color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
                      fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
                   >
                      diameter (d)
                   </TextSpanBg>
                </TextLine>
-               <EquationTable equationLatex={EquationLatex0}></EquationTable>
+               <EquationTable
+                  equationLatex={EquationLatex0}
+                  lineHeight="1.1"
+               ></EquationTable>
                {/* <MultiLhsEquationContainer
                   equationLatex={EquationLatex[0]}
                ></MultiLhsEquationContainer> */}
