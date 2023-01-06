@@ -23,7 +23,7 @@ const Slide4 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          bg="DARK"
-         title={"General Formula"}
+         title={"General formula"}
          secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={

@@ -10,17 +10,20 @@ const IFrame = styled.iframe`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
+   border: 1px solid #444;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
       margin: auto 0;
       height: 100vw;
+      border: none;
    }
 
    // Tablet
    @media (min-width: 501px) and (max-width: 992px) {
       margin: auto 0;
       height: 100vw;
+      border: none;
    }
 
    // Low res desktop
@@ -32,6 +35,7 @@ const IFrame = styled.iframe`
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       height: 100vh;
+      border: none;
    }
 
    // Small height desktop

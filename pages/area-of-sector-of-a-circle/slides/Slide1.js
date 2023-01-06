@@ -1,29 +1,22 @@
-import { PropTypes } from "prop-types";
 import dynamic from "next/dynamic";
 
 const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
-// Title Slide
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
-         title={"Area of a Triangle"}
-         anchorIdxes={[2, 3, 7, 8, 16]}
+         title={"Area of a Sector of a Circle"}
+         anchorIdxes={[2, 4, 5, 10]}
          contentListItems={[
-            "Definition",
+            "What is a sector of a circle?",
+            "Area of a sector of a circle",
             "General formula",
-            "Heron's formula",
-            "Area of different types of triangles",
-            "Area of a triangle given two sides and the included angle",
+            "Area of a sector using the length of an arc",
          ]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       />
    );
-};
-
-Slide1.propTypes = {
-   moveToSection: PropTypes.any,
 };
 
 export default Slide1;
