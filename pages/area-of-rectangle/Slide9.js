@@ -62,10 +62,10 @@ const Slide9 = ({ downIcon }) => {
                diagonal
             </TextSpanBg>{" "}
             can be calculated using the{" "}
-            <HyperLink href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse.">
+            {/* <HyperLink href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse.">
                Pythagorean
-            </HyperLink>{" "}
-            theorem.
+            </HyperLink>{" "} */}
+            Pythagorean theorem.
             <TextLine>
                <i>
                   {" "}
