@@ -34,7 +34,7 @@ const Slide10 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}rl + {\\pi}r^2"],
+        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
         type: "latex",
       },
       rhsHint: {
@@ -48,7 +48,7 @@ const Slide10 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(l+r)"],
+        value: ["{\\pi} \\times r \\times (l + r)"],
         type: "latex",
       },
       rhsHint: {
@@ -68,7 +68,7 @@ const Slide10 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`= {\\pi}r(l+r)`);
+  latex.push(`= {\\pi} \\times r \\times (l + r)`);
   latex.push(`(\\ell)`);
   let mathjaxCounter = 0;
   return (
@@ -130,7 +130,7 @@ const Slide10 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         <Pill bgColor={colors.GREEN} color={colors.WHITE}>
           Total surface area{" "}
-          <MathElement htmlString={latex[mathjaxCounter++]} /> square units
+          <MathElement htmlString={latex[mathjaxCounter++]} />
         </Pill>
       </Paragraph>
 
@@ -145,8 +145,7 @@ const Slide10 = ({ downIcon }) => {
         >
           radius
         </TextSpanBg>
-        &nbsp;of the circular base of a cone, and{" "}
-        <MathElement htmlString={latex[mathjaxCounter++]} /> is the&nbsp;
+        &nbsp;of the circular base of a cone, and (l) is the&nbsp;
         <TextSpanBg
           id={4}
           onHover={() => onHover(4)}

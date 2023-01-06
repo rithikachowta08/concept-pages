@@ -61,9 +61,9 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          vertex
+          vertex or apex
         </TextSpanBg>
-        &nbsp;or apex.
+        .
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         The radius of circular base is the&nbsp;
@@ -74,9 +74,9 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          radius
+          radius of the cone
         </TextSpanBg>
-        &nbsp;of the cone.
+        .
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         The length of the cone from the vertex to any point on the circumference
@@ -101,9 +101,9 @@ const Slide4 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          height
+          height of the cone
         </TextSpanBg>
-        &nbsp;of the cone.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );

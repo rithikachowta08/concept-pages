@@ -10,9 +10,9 @@ const Slide13 = ({ downIcon }) => {
       <VideoSlide2
         videoContent={{
           dash_Url:
-            "https://byjus-in.akamaized.net/production/mpkgr-production-54f9577e/r47glm/Maths_INTL/211215/B2/18INTL08MAT11/18INTL08MAT11KT015/dash/h264.mpd",
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-188632ba/ro0jfw/20230105_124345_SEOD18INTL08MAT11KT015/dash/h264.mpd",
           hls_Url:
-            "https://byjus-in.akamaized.net/production/mpkgr-production-54f9577e/r47glm/Maths_INTL/211215/B2/18INTL08MAT11/18INTL08MAT11KT015/hls/h264.m3u8",
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-188632ba/ro0jfw/20230105_124345_SEOD18INTL08MAT11KT015/hls/h264.m3u8",
           thumbnail:
             "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803338.jpg?1671775717",
         }}

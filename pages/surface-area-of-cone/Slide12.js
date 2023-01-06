@@ -32,7 +32,7 @@ const Slide12 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(r+\\ell)"],
+        value: ["{\\pi} \\times r \\times (r + l)"],
         type: "latex",
       },
       rhsHint: {
@@ -46,7 +46,7 @@ const Slide12 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi} \\times 3\\:(3+10)\\ cm^2"],
+        value: ["{\\pi} \\times 3 \\times (3 + 10)"],
         type: "latex",
       },
       rhsHint: {
@@ -60,7 +60,7 @@ const Slide12 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi} \\times 3\\times 13\\ cm^2"],
+        value: ["{\\pi} \\times 3\\times 13\\ sq \\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -74,7 +74,7 @@ const Slide12 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["39{\\pi}\\ cm^2"],
+        value: ["39{\\pi}\\ sq\\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -96,9 +96,6 @@ const Slide12 = ({ downIcon }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`(\\ell)`);
-  let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
@@ -133,9 +130,9 @@ const Slide12 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          Slant height <MathElement htmlString={latex[mathjaxCounter++]} />
+          Slant height (l)
         </TextSpanBg>
-        &nbsp;= 10 cm&nbsp;
+        &nbsp;= 10 in&nbsp;
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
@@ -147,7 +144,7 @@ const Slide12 = ({ downIcon }) => {
         >
           Radius (r)
         </TextSpanBg>
-        &nbsp;= 3 cm&nbsp;
+        &nbsp;= 3 in&nbsp;
       </Paragraph>
       <Paragraph>
         <EquationTable

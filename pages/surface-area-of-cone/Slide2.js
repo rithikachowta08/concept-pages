@@ -70,9 +70,9 @@ const Slide2 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          apex
+          apex or vertex
         </TextSpanBg>
-        &nbsp;or vertex.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );

@@ -29,7 +29,7 @@ const Slide8 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`= {\\pi}r\\ell `);
+  latex.push(`= {\\pi} \\times r \\times l `);
   latex.push(`(\\ell)`);
   let mathjaxCounter = 0;
   return (
@@ -57,7 +57,7 @@ const Slide8 = ({ downIcon }) => {
         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
           <Pill bgColor={colors.GREEN} color={colors.WHITE}>
             Curved surface area{" "}
-            <MathElement htmlString={latex[mathjaxCounter++]} /> square units
+            <MathElement htmlString={latex[mathjaxCounter++]} />
           </Pill>
         </Paragraph>
       </div>
@@ -73,8 +73,7 @@ const Slide8 = ({ downIcon }) => {
         >
           radius
         </TextSpanBg>
-        &nbsp;of the circular base of a cone, and{" "}
-        <MathElement htmlString={latex[mathjaxCounter++]} /> is the&nbsp;
+        &nbsp;of the circular base of a cone, and (l) is the&nbsp;
         <TextSpanBg
           id={2}
           onHover={() => onHover(2)}

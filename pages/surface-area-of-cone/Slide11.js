@@ -43,7 +43,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}rl + {\\pi}r^2"],
+        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
         type: "latex",
       },
       rhsHint: {
@@ -57,7 +57,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(l+r)\\ square\\ units"],
+        value: ["{\\pi} \\times r \\times (l + r)\\ sq\\ units"],
         type: "latex",
       },
       rhsHint: {
@@ -76,10 +76,6 @@ const Slide11 = ({ downIcon }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`= {\\pi}r(l+r)`);
-  latex.push(`(\\ell)`);
-  let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
       title="Derivation"
