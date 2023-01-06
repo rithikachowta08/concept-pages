@@ -89,8 +89,7 @@ const Slide5 = ({ downIcon }) => {
             color={colors.BLACK}
          />
          <Paragraph color="white" textAlign="left">
-            Lateral surface area of a right triangular prism is the area of its
-            three{" "}
+            Lateral surface area of a right triangular prism is the area of its{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
@@ -100,7 +99,7 @@ const Slide5 = ({ downIcon }) => {
                fontWeight={700}
                fontSize="2.2rem"
             >
-               rectangular faces
+               three rectangular faces
             </TextSpanBg>{" "}
             , also called{" "}
             <ModalTriggerText onClick={onClick} color={colors.WHITE}>
@@ -108,7 +107,7 @@ const Slide5 = ({ downIcon }) => {
             </ModalTriggerText>
             .
          </Paragraph>
-         <Pill>Lateral surface area = (a + b + c)l square units</Pill>
+         <Pill>Lateral surface area = (a + b + c) &times; l</Pill>
          <Paragraph color="white" lineHeight={lineHeightProp}>
             Here,{" "}
             <TextSpanBg
