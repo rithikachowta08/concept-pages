@@ -1,18 +1,18 @@
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-import { Paragraph } from "components/text";
 import dynamic from "next/dynamic";
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
-const applet = "applets/triangle.html";
-
-const Slide8 = ({ downIcon }) => {
+const Slide8 = ({ navBar, downIcon }) => {
    return (
-      <TextAndAppletSlide bg={"LIGHT"} appletSrc={applet} downIcon={downIcon}>
-         <Paragraph>
-            Move the slider to create a triangle of area 15 unit<sup>2</sup>.
-         </Paragraph>
-      </TextAndAppletSlide>
+      <AppletSlide
+         bg={"LIGHT"}
+         title={"Derivation of General Formula"}
+         secondaryTitle={"Area of a Triangle"}
+         appletSrc={
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Area-of-triangle-v2/index.html"
+         }
+         downIcon={downIcon}
+         navBar={navBar}
+      />
    );
 };
 

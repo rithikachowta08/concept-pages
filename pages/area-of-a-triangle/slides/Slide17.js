@@ -42,16 +42,7 @@ const Slide17 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine>
-               Apply the{" "}
-               <HyperLink
-                  href={
-                     "https://byjus.com/us/math/pythagorean-theorem-formulas/"
-                  }
-                  color={colors.DARK_BLUE}
-               >
-                  Pythagoras Theorem
-               </HyperLink>{" "}
-               in the{" "}
+               Apply the Pythagoras Theorem in the{" "}
                <TextSpanBg
                   color={colors.RED}
                   hoverColor={colors.DARK_BLUE}
