@@ -43,7 +43,7 @@ const Slide8 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "3 \\ m \\times 2 \\ m \\ = 6 \\ sq \\ m",
+               eqLatex: "3 \\ in \\times 2 \\ in \\ = 6 \\ sq \\ in",
                hint: "",
             },
          ],
@@ -56,9 +56,9 @@ const Slide8 = ({ downIcon }) => {
             <TransitionImage
                images={[rectangle_full, rectangle_bottom, rectangle_right]}
                altTexts={[
-                  "Diagram of a rectangle with length 3 m and width 2 m",
-                  "Diagram of a rectangle with highlighted length 3 m",
-                  "Diagram of a rectangle with highlighted width 2 m",
+                  "Diagram of a rectangle with length 3 in and width 2 in",
+                  "Diagram of a rectangle with highlighted length 3 in",
+                  "Diagram of a rectangle with highlighted width 2 in",
                ]}
                activeIndex={activeIndex}
             />
@@ -67,8 +67,8 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               Find the area of a rectangle whose length and width are 3 m and 2
-               m, respectively.
+               Find the area of a rectangle whose length and width are 3 in and
+               2 in, respectively.
             </TextLine>
          </Paragraph>
          <div>
@@ -85,7 +85,7 @@ const Slide8 = ({ downIcon }) => {
                   >
                      Length
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 3 m
+                  &nbsp;of the rectangle = 3 in
                </TextLine>
                <TextLine>
                   <TextSpanBg
@@ -98,7 +98,7 @@ const Slide8 = ({ downIcon }) => {
                   >
                      Width
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 2 m
+                  &nbsp;of the rectangle = 2 in
                </TextLine>
             </Paragraph>
             <Paragraph>
