@@ -148,22 +148,23 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
   font-style: normal !important;
 }
 .textSpanBg {
-  background-color: #ea6560;
+  background-color: none;
   padding: 0 10px;
   border-radius: 25px;
-  color: white;
   cursor: default;
 }
 
 .lightBg {
+  color: #4a33f5;
   &:hover {
-    background-color: #4a33f5;
+    background-color: rgba(74, 51, 245, 0.2);
   }
 }
 
 .darkBg {
+  color: #67dbe8;
   &:hover {
-    background-color: #67dbe8;
+    background-color: rgba(103, 219, 232, 0.2);
   }
 }
 
