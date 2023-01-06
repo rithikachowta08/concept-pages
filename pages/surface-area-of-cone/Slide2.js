@@ -45,14 +45,7 @@ const Slide2 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        A cone is a&nbsp;
-        <HyperLink
-          href={"https://byjus.com/us/math/concept-three-dimensional-shapes/"}
-          color={colors.DARK_BLUE}
-        >
-          three-dimensional
-        </HyperLink>
-        &nbsp;shape that narrows smoothly from a&nbsp;
+        A cone is a three-dimensional shape that narrows smoothly from a&nbsp;
         <TextSpanBg
           id={1}
           onHover={() => onHover(1)}
