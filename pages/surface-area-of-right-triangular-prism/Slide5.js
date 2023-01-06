@@ -41,7 +41,10 @@ const Slide5 = ({ downIcon }) => {
             The lateral faces of a three-dimensional object are all the side
             faces excluding the base and the top.
          </Paragraph>
-         <ModalImg src={sides_shaded} />
+         <ModalImg
+            src={sides_shaded}
+            alt="Diagram of a right triangular prism with highlighted lateral surface area."
+         />
       </Flex>
    );
    const [activeIndex, setActiveIndex] = useState(0);
