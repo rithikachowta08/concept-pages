@@ -49,12 +49,12 @@ const AreaOfATriangle = () => {
       <Slide4 key={3} />,
       <Slide5 key={4} />,
       <Slide6 key={5} />,
-      <Slide7 key={6} />,
+      // <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <Slide10 key={9} />,
       <Slide11 key={10} />,
-      <Slide12 key={11} />,
+      // <Slide12 key={11} />,
       <Slide13 key={12} />,
       <Slide14 key={13} />,
       <Slide15 key={14} />,
@@ -80,7 +80,7 @@ const AreaOfATriangle = () => {
    ];
 
    // const darkBgIndices = [0, 3, 5, 8, 9, 17];
-   const darkBgIndices = [0, 2, 4, 7, 8, 17];
+   const darkBgIndices = [0, 2, 4, 6, 7, 15];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

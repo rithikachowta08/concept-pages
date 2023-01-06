@@ -46,7 +46,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Acute Triangle",
+               caption: "Acute triangle",
             },
             {
                diagram: (
@@ -64,7 +64,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Right Triangle",
+               caption: "Right triangle",
             },
             {
                diagram: (
@@ -82,7 +82,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Obtuse Triangle",
+               caption: "Obtuse triangle",
             },
          ]}
       >
