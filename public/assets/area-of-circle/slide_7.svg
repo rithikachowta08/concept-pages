@@ -29,7 +29,7 @@
   <g>
     <circle class="cls-1" cx="280" cy="280" r="201.7"/>
     <line class="cls-1" x1="78.3" y1="280" x2="481.7" y2="280"/>
-    <text class="cls-3" transform="translate(216.09 267.79)"><tspan x="0" y="0">d = 12 cm</tspan></text>
+    <text class="cls-3" transform="translate(216.09 267.79)"><tspan x="0" y="0">d = 12 in</tspan></text>
     <text class="cls-3" transform="translate(268.8 311.94)"><tspan x="0" y="0">O</tspan></text>
   </g>
   <circle class="cls-2" cx="280" cy="280" r="7.2"/>
