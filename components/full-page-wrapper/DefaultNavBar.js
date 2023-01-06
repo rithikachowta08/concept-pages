@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { TextSpan } from "components/text";
 import { Flex, Icon } from "components/StyledElements";
@@ -42,8 +41,8 @@ const NavWrap = styled.div`
 
    // Mobile landscape
    @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
-      padding: 30px 20px;
-      border-radius: 15px;
+      padding: 20px 15px;
+      border-radius: 12px;
       max-width: 400px;
    }
 `;
@@ -141,22 +140,14 @@ const DefaultNavBar = ({
    showNav,
    hideNav,
 }) => {
-   const ref = useRef(null);
-   useEffect(() => {
-      if (ref.current) {
-         global.desktopNavBarWidth = ref.current.getBoundingClientRect().width;
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [ref.current, currentPageIdx]);
    return (
       <NavWrap
          isExpanded={isExpanded}
          onMouseEnter={showNav}
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
-         ref={ref}
       >
-         {isExpanded ? (
+         {/* {isExpanded ? (
             <Flex
                cursor="pointer"
                onClick={hideNav}
@@ -182,7 +173,7 @@ const DefaultNavBar = ({
                   </HyperLink>
                </TextSpan>
             </Flex>
-         ) : null}
+         ) : null} */}
          {sections.map((section, idx) => {
             let percentage = 0;
             const slides = section.slides;

@@ -36,9 +36,7 @@ const TextAndDiagramSlide = ({
                   width="100%"
                   maxHeight="30%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <LeftWrap>
                      <div>
                         <SlideSecondaryTitle
