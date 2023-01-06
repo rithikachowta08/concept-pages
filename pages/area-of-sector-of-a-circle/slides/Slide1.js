@@ -6,7 +6,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
          title={"Area of a Sector of a Circle"}
-         anchorIdxes={[2, 3, 6, 8]}
+         anchorIdxes={[2, 4, 5, 10]}
          contentListItems={[
             "What is a sector of a circle?",
             "Area of a sector of a circle",

@@ -50,7 +50,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             >
                Minor sector
             </TextSpanBg>{" "}
-            (OACB) : A sector of a circle having measure less than 180°.
+            (OACB) : A sector of a circle measuring less than 180°.
          </Paragraph>
          <Paragraph>
             <TextSpanBg
@@ -61,7 +61,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             >
                Major sector
             </TextSpanBg>{" "}
-            (OADB) : A sector of a circle having measure greater than 180°.
+            (OADB) : A sector of a circle measuring greater than 180°.
          </Paragraph>
          <Paragraph>
             <TextSpanBg
@@ -72,7 +72,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             >
                Semicircular sector
             </TextSpanBg>{" "}
-            (OPDR) : A sector of a circle having measure equal to 180°.
+            (OPDR) : A sector of a circle measuring equal to 180°.
          </Paragraph>
       </TextAndDiagramSlide>
    );

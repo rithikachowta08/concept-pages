@@ -1,17 +1,19 @@
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
+import dynamic from "next/dynamic";
 
-import Slide1 from "./slides/Slide1";
-import Slide10 from "./slides/Slide10";
-import Slide11 from "./slides/Slide11";
-import Slide12 from "./slides/Slide12";
-import Slide2 from "./slides/Slide2";
-import Slide3 from "./slides/Slide3";
-import Slide4 from "./slides/Slide4";
-import Slide5 from "./slides/Slide5";
-import Slide6 from "./slides/Slide6";
-import Slide7 from "./slides/Slide7";
-import Slide8 from "./slides/Slide8";
-import Slide9 from "./slides/Slide9";
+const Slide1 = dynamic(() => import("./slides/Slide1"));
+const Slide2 = dynamic(() => import("./slides/Slide2"));
+const Slide3 = dynamic(() => import("./slides/Slide3"));
+const Slide4 = dynamic(() => import("./slides/Slide4"));
+const Slide5 = dynamic(() => import("./slides/Slide5"));
+const Slide6 = dynamic(() => import("./slides/Slide6"));
+const Slide7 = dynamic(() => import("./slides/Slide7"));
+const Slide8 = dynamic(() => import("./slides/Slide8"));
+const Slide9 = dynamic(() => import("./slides/Slide9"));
+const Slide10 = dynamic(() => import("./slides/Slide10"));
+const Slide11 = dynamic(() => import("./slides/Slide11"));
+const Slide12 = dynamic(() => import("./slides/Slide12"));
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
 // const Slide2 = dynamic(() => import("./slides/Slide2"), { ssr: false });
 // const Slide3 = dynamic(() => import("./slides/Slide3"), { ssr: false });
@@ -31,18 +33,24 @@ const AreaOfSectorOfCircle = () => {
       <Slide10 key={9} />,
       <Slide11 key={10} />,
       <Slide12 key={11} />,
+      <PageLastSlide
+         key={12}
+         currentPageTitle={"Area of a Sector of a Circle"}
+         nextPageTitle={"<not yet integrated>"}
+         nextPageLink={"/study/area-of-sector-of-a-circle"}
+      />,
    ];
    const navigationSections = [
-      { title: "What is a sector of a circle?", slides: [] },
-      { title: "Area of a sector of a circle", slides: [] },
-      { title: "General formula", slides: [] },
+      { title: "What is a sector of a circle?", slides: [1, 2] },
+      { title: "Area of a sector of a circle", slides: [3] },
+      { title: "General formula", slides: [4, 5, 6, 7, 8] },
       {
          title: "Area of a sector using the length of an arc",
-         slides: [],
+         slides: [9, 10, 11],
       },
    ];
 
-   const darkBgIndices = [0, 3, 4];
+   const darkBgIndices = [0, 3, 4, 7, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
