@@ -1,9 +1,5 @@
 import dynamic from "next/dynamic";
-import { colors } from "utils/colors";
 const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
 
 const Slide8 = ({ downIcon }) => {
    return (
