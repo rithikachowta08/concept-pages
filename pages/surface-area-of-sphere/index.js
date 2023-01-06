@@ -4,7 +4,6 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
-const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -15,7 +14,7 @@ const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 
-const SurfaceAreaOfRightTriangularPrism = () => {
+const SurfaceAreaOfSphere = () => {
    const SlideArray = [
       <Slide1 key={0} />,
       <Slide2 key={1} />,
@@ -26,24 +25,18 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
-      <PageLastSlide
-         key={10}
-         currentPageTitle={"Surface Area of a Right Triangular Prism"}
-         nextPageTitle="Surface Area of Rectangular Prism"
-         nextPageLink="/study/surface-area-of-rectangular-prism"
-      />,
    ];
 
    const navigationSections = [
       {
-         title: "What is the surface area of a right triangular prism?",
-         slides: [1, 2, 3],
+         title: "What is the surface area of a sphere?",
+         slides: [1, 2, 3, 4],
       },
-      { title: "Lateral surface area", slides: [4, 5, 6] },
-      { title: "Total surface area", slides: [7, 8] },
+      { title: "General Formula", slides: [5] },
+      { title: "Why is the surface area 4πr", slides: [6, 7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 4, 7];
+   const darkBgIndices = [0, 5, 6, 8];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -53,10 +46,10 @@ const SurfaceAreaOfRightTriangularPrism = () => {
    );
 };
 
-SurfaceAreaOfRightTriangularPrism.title =
-   "Surface area of a Right Triangular Prism: Definition, Formula, Examples - BYJU'S";
+SurfaceAreaOfSphere.title =
+   "Surface Area of Sphere: Definition, Formula, Examples - BYJU'S";
 
-SurfaceAreaOfRightTriangularPrism.meta =
-   "Gain a thorough understanding of the surface area of a right triangular prism with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
+SurfaceAreaOfSphere.meta =
+   "Enhance your understanding of the surface area of sphere with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
 
-export default SurfaceAreaOfRightTriangularPrism;
+export default SurfaceAreaOfSphere;
