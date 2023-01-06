@@ -65,7 +65,7 @@
 
       .cls-16 {
         fill: #808091;
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 36px;
         letter-spacing: -.03em;
       }

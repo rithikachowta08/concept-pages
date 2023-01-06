@@ -38,7 +38,7 @@
       }
 
       .cls-11 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 36px;
         letter-spacing: -.03em;
       }

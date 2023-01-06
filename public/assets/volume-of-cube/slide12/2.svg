@@ -44,7 +44,7 @@
       }
 
       .m, .p, .n, .s {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-weight: 500;
       }
 
