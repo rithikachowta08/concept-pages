@@ -23,7 +23,7 @@ const Slide6 = ({ downIcon }) => {
             by its six faces.
          </Paragraph>
          <Paragraph>
-            <Pill>Total surface area = 2(lw + wh + lh)</Pill>
+            <Pill>Total surface area = 2 x (l x w + w x h + l x h)</Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );
