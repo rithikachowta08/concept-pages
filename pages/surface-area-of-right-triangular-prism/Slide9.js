@@ -61,7 +61,6 @@ const Slide9 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
                      fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
                   >
                      two triangular bases
                   </TextSpanBg>

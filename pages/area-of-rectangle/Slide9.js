@@ -57,7 +57,6 @@ const Slide9 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                length of the diagonal
             </TextSpanBg>{" "}

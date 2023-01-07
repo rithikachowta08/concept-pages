@@ -61,7 +61,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “b”
             </TextSpanBg>{" "}
@@ -73,7 +72,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “h”
             </TextSpanBg>{" "}

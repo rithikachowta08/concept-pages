@@ -10,7 +10,7 @@ export const SlideSecondaryTitle = ({ centerAlign, bg, secondaryTitle }) =>
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={centerAlign ? "center" : "left"}
          marginBottom="1vh"
-         extraSmall
+         level={3}
       >
          {secondaryTitle}
       </Title>
@@ -20,11 +20,11 @@ export const SlideTitle = ({ children, bg, centerAlign }) => {
    return (
       <Title
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         fontSize={fontSizes.H2}
+         fontSize={fontSizes.LARGE}
          fontWeight={fontWeights.BOLD}
          textAlign={centerAlign ? "center" : "left"}
          marginBottom="1vh"
-         small
+         level={2}
       >
          {children}
       </Title>

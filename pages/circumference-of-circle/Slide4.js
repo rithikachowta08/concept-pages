@@ -28,13 +28,7 @@ const Slide4 = ({ downIcon }) => {
                "If the object has a triangular surface present within itself, then choose 'Yes'"
             }
          </Paragraph>
-         <Title
-            fontSize="1.8rem"
-            marginBottom="20px"
-            color="white"
-            fontWeight={700}
-            small
-         >
+         <Title marginBottom="20px" color="white" fontWeight={700} level={2}>
             Example
          </Title>
          <QuestionAnswerImage

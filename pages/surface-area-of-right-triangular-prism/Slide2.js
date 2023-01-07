@@ -53,7 +53,6 @@ const Slide2 = ({ downIcon }) => {
                   color={colors.RED}
                   hoverColor={colors.DARK_BLUE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   2 triangular bases
                </TextSpanBg>{" "}
@@ -67,7 +66,6 @@ const Slide2 = ({ downIcon }) => {
                   color={colors.RED}
                   hoverColor={colors.DARK_BLUE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   3 rectangular faces
                </TextSpanBg>{" "}

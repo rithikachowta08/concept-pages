@@ -81,7 +81,6 @@ const Slide8 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.AQUA}
                      fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
                   >
                      Length
                   </TextSpanBg>
@@ -94,7 +93,6 @@ const Slide8 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.AQUA}
                      fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
                   >
                      Width
                   </TextSpanBg>

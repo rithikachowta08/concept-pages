@@ -33,7 +33,7 @@ const Slide6 = ({ downIcon }) => {
             marginBottom="20px"
             color="white"
             fontWeight={700}
-            small
+            level={3}
          >
             Example
          </Title>

@@ -91,7 +91,7 @@ const MultipleDiagramSlide = ({
                               }
                               fontWeight={400}
                               textAlign="center"
-                              fontSize={fontSizes.LARGE}
+                              fontSize={fontSizes.MEDIUM}
                            >
                               {image.caption}
                            </Paragraph>

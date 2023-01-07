@@ -97,7 +97,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                three rectangular faces
             </TextSpanBg>{" "}
@@ -117,7 +116,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “a”,“ b”, and “ c”,
             </TextSpanBg>{" "}
@@ -129,7 +127,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “l”
             </TextSpanBg>{" "}
