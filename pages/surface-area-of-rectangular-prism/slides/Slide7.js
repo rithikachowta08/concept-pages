@@ -68,7 +68,7 @@ const Slide7 = ({ downIcon }) => {
             excluding the two bases.
          </Paragraph>
          <Paragraph>
-            <Pill>Lateral surface area = 2(l + w)h</Pill>
+            <Pill>Lateral surface area = 2 x (l + w) x h</Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );
