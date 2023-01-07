@@ -92,7 +92,8 @@ const Slide3 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <Pill>
-               Area of a circle = <MathElement htmlString={"\\pi r^2"} />
+               Area of a circle ={" "}
+               <MathElement htmlString={"\\pi \\times r^2"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>
