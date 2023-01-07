@@ -82,9 +82,11 @@ const TextAndAppletSlide = ({
    downIcon,
    secondaryTitle,
    children,
+   currentPageIdx,
    appletSrc,
 }) => {
    const ref = useRef(null);
+   const [src, setSrc] = useState(null);
    const [isFitToWidth, setIsFitToWidth] = useState(false);
    const toggleFitToWidth = () => {
       setIsFitToWidth(!isFitToWidth);
@@ -94,6 +96,11 @@ const TextAndAppletSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   useEffect(() => {
+      if (currentPageIdx !== 0 && !src) {
+         setSrc(appletSrc);
+      }
+   }, [currentPageIdx, appletSrc, src]);
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
@@ -132,7 +139,7 @@ const TextAndAppletSlide = ({
                >
                   <IframeWrap>
                      <IFrame
-                        src={appletSrc}
+                        src={src}
                         isFitToWidth={isFitToWidth}
                         allowFullScreen
                         frameBorder="0"
@@ -190,7 +197,7 @@ const TextAndAppletSlide = ({
                      {children}
                   </LeftWrap>
                   <RightWrap>
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                   </RightWrap>
                </Flex>
                {downIcon

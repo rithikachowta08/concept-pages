@@ -20,7 +20,7 @@ const Flex = dynamic(() =>
 );
 
 const cube_unit = "assets/surface-area-of-cone/slide3/1.svg";
-const Slide3 = ({ downIcon }) => {
+const Slide3 = ({ downIcon, currentPageIdx }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const modalContent = (
       <Flex direction="column">
@@ -48,6 +48,7 @@ const Slide3 = ({ downIcon }) => {
          downIcon={downIcon}
          title="Formation of a Cone"
          appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
+         currentPageIdx={currentPageIdx}
       >
          <Modal
             isOpen={isModalOpen}

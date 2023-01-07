@@ -8,13 +8,14 @@ import { StyledImg } from "components/StyledElements";
 const image_1 = "assets/area-of-triangle/ex_1.svg";
 
 // Area of triangle exercise
-const Slide12 = ({ downIcon }) => {
+const Slide12 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          secondaryTitle={
             "Find the area of a triangle with the given dimensions."
          }
          bg={"LIGHT"}
+         currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
          <StyledImg src={image_1} alt="Diagram of a scalene triangle" />

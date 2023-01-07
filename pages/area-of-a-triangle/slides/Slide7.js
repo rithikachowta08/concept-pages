@@ -11,13 +11,14 @@ import { colors } from "utils/colors";
 const applet = "applets/triangle.html";
 
 // General formula derivation
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          title={"Derivation"}
          secondaryTitle={"Area of a Triangle"}
          bg={"LIGHT"}
          appletSrc={applet}
+         currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
          <Paragraph marginBottom={"40px"}>

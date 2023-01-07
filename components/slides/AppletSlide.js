@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
@@ -91,14 +91,21 @@ const AppletSlide = ({
    downIcon,
    isLastSlide,
    bg = "LIGHT",
-   appletSrc = "./applets/triangle.html",
+   currentPageIdx,
+   appletSrc,
 }) => {
    const ref = useRef(null);
+   const [src, setSrc] = useState(null);
    useEffect(() => {
       if (ref.current && bg === "DARK") {
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   useEffect(() => {
+      if (currentPageIdx !== 0 && !src) {
+         setSrc(appletSrc);
+      }
+   }, [currentPageIdx, appletSrc, src]);
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
@@ -126,7 +133,7 @@ const AppletSlide = ({
                      alignItems="center"
                      justifyContent="center"
                   >
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                   </Flex>
                </ContentWrap>
                {downIcon}
@@ -154,7 +161,7 @@ const AppletSlide = ({
                            {title}
                         </SlideTitle>
                      </TitleWrap>
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                      {downIcon
                         ? React.cloneElement(downIcon, {
                              noMargin: true,

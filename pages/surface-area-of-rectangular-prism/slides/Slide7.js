@@ -13,7 +13,7 @@ import { colors } from "utils/colors";
 const image_modal =
    "assets/surface-area-of-rectangular-prism/slide_6_modal.svg";
 
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ currentPageIdx }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    const onModalDismiss = () => {
@@ -43,6 +43,7 @@ const Slide7 = ({ downIcon }) => {
          bg="DARK"
          title={"Lateral Surface Area"}
          secondaryTitle={"Surface Area"}
+         currentPageIdx={currentPageIdx}
          appletSrc={
             "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v4/index.html"
          }

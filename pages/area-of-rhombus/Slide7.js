@@ -9,7 +9,7 @@ const Paragraph = dynamic(() =>
 const MathElement = dynamic(() => import("components/MathElement"));
 const Pill = dynamic(() => import("components/Pill"));
 
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ downIcon, currentPageIdx }) => {
    let latex = [];
    latex.push(`\\times`);
    latex.push(`\\times`);
@@ -21,6 +21,7 @@ const Slide7 = ({ downIcon }) => {
          title="Derivation"
          appletSrc="./applets/triangle.html"
          downIcon={downIcon}
+         currentPageIdx={currentPageIdx}
       >
          <Paragraph>
             The area of rhombus will be equal to the area of rectangle.

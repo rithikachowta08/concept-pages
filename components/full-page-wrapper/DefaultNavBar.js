@@ -27,23 +27,20 @@ const NavWrap = styled.div`
 
    // Low res desktop and tablet landscape
    @media (min-width: 821px) and (max-width: 1224px) {
-      padding: 30px 20px;
+      padding: 50px 20px;
       border-radius: 15px;
-      max-width: 400px;
    }
 
    // Small height desktop
    @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
-      padding: 30px 20px;
+      padding: 50px 20px;
       border-radius: 15px;
-      max-width: 400px;
    }
 
    // Mobile landscape
    @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
       padding: 20px 15px;
       border-radius: 12px;
-      max-width: 400px;
    }
 `;
 
