@@ -8,6 +8,7 @@ export const colors = {
    DARK_GREY: "#333333",
    BLACK: "#000000",
    AQUA: "#67DBE8",
+   DARK_AQUA: "#56B7C8",
    YELLOW: "#fec429",
    PURPLE: "#4A33F5",
 };
