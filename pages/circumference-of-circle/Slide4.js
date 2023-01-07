@@ -23,7 +23,7 @@ const boat_wrong_answer = "assets/triangles/boat_wrong_answer.svg";
 const Slide4 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+         <Paragraph color="white" marginBottom="50px">
             {
                "If the object has a triangular surface present within itself, then choose 'Yes'"
             }

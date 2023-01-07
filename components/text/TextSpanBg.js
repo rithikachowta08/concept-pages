@@ -8,12 +8,12 @@ const StyledSpan = styled.span`
    color: ${(props) => props.color || colors.DARK_GREY};
    background-color: "none";
    font-weight: ${(props) => props.fontWeight || "500"};
-   font-size: ${(props) => props.fontSize || "1.5rem"};
+   font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    text-decoration: ${(props) => props.textDecoration || "none"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-left: ${(props) => props.marginLeft || 0};
    margin: ${(props) => props.margin || "3px 0"};
-   padding: ${(props) => props.padding || "0 10px"};
+   padding: ${(props) => props.padding || "0 5px"};
    transform: ${(props) => props.transform};
    cursor: ${(props) => props.cursor || "default"};
    border-radius: ${(props) => props.borderRadius || "9999px"};

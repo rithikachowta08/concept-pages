@@ -59,11 +59,6 @@ const ContentWrap = styled.div`
       flex-direction: column;
       gap: 20px;
    }
-
-   // Mobile landscape mode
-   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      max-height: 40%;
-   }
 `;
 
 const TitleAndAppletWrap = styled.div`

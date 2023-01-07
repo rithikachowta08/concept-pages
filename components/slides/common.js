@@ -7,6 +7,7 @@ export const SlideSecondaryTitle = ({ centerAlign, bg, secondaryTitle }) =>
    secondaryTitle ? (
       <Title
          opacity={0.5}
+         fontSize={fontSizes.MEDIUM}
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={centerAlign ? "center" : "left"}
          marginBottom="1vh"

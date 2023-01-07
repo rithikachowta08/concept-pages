@@ -14,6 +14,7 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 import { Icon } from "components/StyledElements";
+import { fontSizes } from "utils/fontStyles";
 const info = "assets/info.svg";
 const boat = "assets/boat.svg";
 const tent_with_triangle = "assets/triangles/tent_with_triangle.svg";
@@ -23,13 +24,13 @@ const boat_wrong_answer = "assets/triangles/boat_wrong_answer.svg";
 const Slide6 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+         <Paragraph color="white" marginBottom="50px">
             {
                "If the object has a triangular surface present within itself, then choose 'Yes'"
             }
          </Paragraph>
          <Title
-            fontSize="1.8rem"
+            fontSize={fontSizes.MEDIUM}
             marginBottom="20px"
             color="white"
             fontWeight={700}
