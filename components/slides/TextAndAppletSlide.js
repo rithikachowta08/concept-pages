@@ -112,6 +112,7 @@ const TextAndAppletSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -178,10 +179,13 @@ const TextAndAppletSlide = ({
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle
+                           marginBottom="15px"
                            bg={bg}
                            secondaryTitle={secondaryTitle}
                         />
-                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                        <SlideTitle marginBottom="30px" bg={bg}>
+                           {title}
+                        </SlideTitle>
                      </div>
                      {children}
                   </LeftWrap>

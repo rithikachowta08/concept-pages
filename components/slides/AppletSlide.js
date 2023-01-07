@@ -110,6 +110,7 @@ const AppletSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -145,6 +146,7 @@ const AppletSlide = ({
                      <TitleWrap>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                            centerAlign
                         />

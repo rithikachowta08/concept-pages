@@ -11,7 +11,7 @@ const Para = styled.p`
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    margin: ${(props) => props.margin};
-   line-height: ${(props) => props.lineHeight};
+   line-height: ${(props) => props.lineHeight || "150%"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};
    margin-block-start: 1rem;
