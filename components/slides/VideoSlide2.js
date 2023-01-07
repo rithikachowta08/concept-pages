@@ -22,7 +22,7 @@ const VideoSlideWrap = styled.div`
 
 const VideoSlide = ({
    title,
-   currentPageIndex,
+   currentPageIdx,
    index,
    downIcon,
    videoSlideId,
@@ -35,7 +35,7 @@ const VideoSlide = ({
             videoContent={videoContent}
             videoSlideId={videoSlideId}
             downIconId={downIconId}
-            currentPageIndex={currentPageIndex}
+            currentPageIdx={currentPageIdx}
             index={index}
          />
          {/* {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>} */}

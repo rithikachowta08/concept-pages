@@ -5,7 +5,7 @@ const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
 const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"));
 
 // Classification of triangles
-const Slide6 = ({ downIcon, curIdx }) => {
+const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
       <VideoSlide2
          downIcon={downIcon}
@@ -19,7 +19,7 @@ const Slide6 = ({ downIcon, curIdx }) => {
          }}
          downIconId="s6-video-down-icon"
          videoSlideId="s6-video-slide"
-         currentPageIndex={curIdx}
+         currentPageIdx={currentPageIdx}
          index={4}
       />
    );

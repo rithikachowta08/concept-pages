@@ -39,11 +39,11 @@ const ShakaPlayerContainer = (props) => {
    }, []);
 
    useEffect(() => {
-      if (props.currentPageIndex === props.index && !isVideoLoaded) {
+      if (props.currentPageIdx === props.index && !isVideoLoaded) {
          setIsVideoLoaded(true);
          watchVideo();
       }
-   }, [props.currentPageIndex, props.index, watchVideo, isVideoLoaded]);
+   }, [props.currentPageIdx, props.index, watchVideo, isVideoLoaded]);
 
    function watchVideo() {
       (async () => {
