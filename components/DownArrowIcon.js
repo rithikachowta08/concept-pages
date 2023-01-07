@@ -6,9 +6,17 @@ import { colors } from "utils/colors";
 const IconWrap = styled.div`
    cursor: pointer;
    align-self: center;
-   margin: ${(props) =>
-      props.noMargin ? "0" : props.isVideoSlide ? "0 auto" : "auto 0 0 0"};
+   margin: ${(props) => (props.noMargin ? "0" : "auto 0 0 0")};
+   opacity: 1;
+   transition: opacity 0.5s;
 
+   ${(props) =>
+      props.isVideoSlide
+         ? `
+      position:absolute;
+      bottom:80px;
+      `
+         : ""}
    @media (min-width: 200px) and (max-width: 399px) {
       scale: 0.6;
    }
@@ -34,12 +42,14 @@ const DownArrowIcon = ({
    color = colors.DARK_GREY,
    hideInMobileLandscapeMode,
    noMargin,
+   id,
    isVideoSlide,
    className,
    onClick,
 }) => {
    return (
       <IconWrap
+         id={id}
          onClick={onClick}
          noMargin={noMargin}
          isVideoSlide={isVideoSlide}

@@ -18,6 +18,8 @@ const Slide4 = ({ downIcon }) => {
                // video_title: "Area of Rectangle",
             }}
             downIcon={downIcon}
+            downIconId="s4-video-down-icon"
+            videoSlideId="s4-video-slide"
          />
       </div>
    );

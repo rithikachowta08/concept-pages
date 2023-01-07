@@ -17,6 +17,8 @@ const Slide10 = ({ downIcon }) => {
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803302.jpg?1671775176",
                // video_title: "Circle and its Definitions",
             }}
+            downIconId="s10-video-down-icon"
+            videoSlideId="s10-video-slide"
             downIcon={downIcon}
          />
       </div>

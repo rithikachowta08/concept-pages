@@ -18,6 +18,8 @@ const Slide9 = ({ downIcon }) => {
                // video_title: "Surface Area of a Right Triangular Prism",
             }}
             downIcon={downIcon}
+            downIconId="s9-video-down-icon"
+            videoSlideId="s9-video-slide"
          />
       </div>
    );
