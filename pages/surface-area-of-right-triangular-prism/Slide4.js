@@ -18,7 +18,7 @@ const Slide4 = ({ downIcon, curIdx }) => {
                // video_title: "Surface Area of a Right Triangular Prism",
             }}
             downIcon={downIcon}
-            currentPageIndex={curIdx}
+            currentPageIdx={curIdx}
             index={3}
             downIconId="s4-video-down-icon"
             videoSlideId="s4-video-slide"

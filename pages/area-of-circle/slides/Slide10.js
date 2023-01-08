@@ -2,7 +2,7 @@ const VideoSlide = dynamic(() => import("components/slides/VideoSlide2"));
 import dynamic from "next/dynamic";
 
 // video slide
-const Slide10 = ({ downIcon }) => {
+const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
       <VideoSlide
          videoContent={{
@@ -13,9 +13,10 @@ const Slide10 = ({ downIcon }) => {
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803282.jpg?1671774814",
          }}
-         isLastSlide={true}
          downIconId="s10-video-down-icon"
          videoSlideId="s10-video-slide"
+         index={9}
+         currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       />
    );

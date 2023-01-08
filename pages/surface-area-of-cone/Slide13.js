@@ -17,7 +17,9 @@ const Slide13 = ({ downIcon, curIdx }) => {
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803338.jpg?1671775717",
             }}
             videoSlideId="s13-video-slide"
-            currentPageIndex={curIdx}
+            downIconId="s13-down-arrow-icon"
+            downIcon={downIcon}
+            currentPageIdx={curIdx}
             index={11}
          />
       </div>

@@ -20,7 +20,7 @@ const Slide14 = ({ downIcon, curIdx }) => {
             }}
             downIconId="s14-video-down-icon"
             videoSlideId="s14-video-slide"
-            currentPageIndex={curIdx}
+            currentPageIdx={curIdx}
             index={13}
          />
       </div>

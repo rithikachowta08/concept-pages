@@ -289,7 +289,7 @@ const VideoPlayer = (props) => {
             playsInline
             // autoPlay={true}
             ref={videoComponent}
-            // poster={props.poster}
+            poster={props.poster}
             src={props.src}
          />
       </div>

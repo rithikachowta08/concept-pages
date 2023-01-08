@@ -19,7 +19,7 @@ const Slide3 = ({ downIcon, curIdx }) => {
             }}
             downIconId="s3-video-down-icon"
             videoSlideId="s3-video-slide"
-            currentPageIndex={curIdx}
+            currentPageIdx={curIdx}
             index={2}
          />
       </div>

@@ -20,7 +20,7 @@ const Slide10 = ({ downIcon, curIdx }) => {
             downIconId="s10-video-down-icon"
             videoSlideId="s10-video-slide"
             downIcon={downIcon}
-            currentPageIndex={curIdx}
+            currentPageIdx={curIdx}
             index={8}
          />
       </div>
