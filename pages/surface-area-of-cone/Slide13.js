@@ -3,7 +3,7 @@ const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
    ssr: false,
 });
 
-const Slide13 = ({ downIcon }) => {
+const Slide13 = ({ downIcon, curIdx }) => {
    // return <div>Video slide</div>;
    return (
       <div style={{ height: "100%" }}>
@@ -16,8 +16,9 @@ const Slide13 = ({ downIcon }) => {
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803338.jpg?1671775717",
             }}
-            downIconId="s13-video-down-icon"
             videoSlideId="s13-video-slide"
+            currentPageIndex={curIdx}
+            index={11}
          />
       </div>
    );

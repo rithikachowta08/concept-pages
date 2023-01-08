@@ -3,7 +3,7 @@ const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
    ssr: false,
 });
 
-const Slide9 = ({ downIcon }) => {
+const Slide9 = ({ downIcon, curIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
@@ -18,6 +18,8 @@ const Slide9 = ({ downIcon }) => {
                // video_title: "Surface Area of a Right Triangular Prism",
             }}
             downIcon={downIcon}
+            currentPageIndex={curIdx}
+            index={8}
             downIconId="s9-video-down-icon"
             videoSlideId="s9-video-slide"
          />

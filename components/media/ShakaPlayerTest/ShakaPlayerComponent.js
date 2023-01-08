@@ -191,7 +191,6 @@ const VideoPlayer = (props) => {
          "https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"
       );
    };
-
    const onPause = () => {
       document.getElementById(props.downIconId).style.opacity = 1;
    };
@@ -199,14 +198,13 @@ const VideoPlayer = (props) => {
    const onPlay = () => {
       document.getElementById(props.downIconId).style.opacity = 0;
    };
-
    useEffect(() => {
       video = videoComponent.current;
       videoContainerRef = videoContainer.current;
       shaka.polyfill.installAll();
       player = new shaka.Player(video);
       video.loop = true;
-      video.autoPlay = true;
+      // video.autoPlay = true;
       let uiConfig = {};
       uiConfig = props.uiConfig;
       uiConfig.controlPanelElements = [
@@ -232,23 +230,25 @@ const VideoPlayer = (props) => {
       ui.getControls();
       ui.configure(uiConfig);
       player.addEventListener("error", onErrorEvent);
-      video.addEventListener("pause", onPause);
-      video.addEventListener("playing", onPlay);
-      video.addEventListener("canplay", () => {
-         document.getElementById(props.downIconId).style.opacity = 0;
-         document
-            .getElementById(props.videoSlideId)
-            .addEventListener("mousemove", () => {
-               document.getElementById(props.downIconId).style.opacity = 1;
-               setTimeout(() => {
-                  if (!video.paused) {
-                     document.getElementById(
-                        props.downIconId
-                     ).style.opacity = 0;
-                  }
-               }, 3500);
-            });
-      });
+      if (props.downIconId) {
+         video.addEventListener("pause", onPause);
+         video.addEventListener("playing", onPlay);
+         video.addEventListener("canplay", () => {
+            document.getElementById(props.downIconId).style.opacity = 0;
+            document
+               .getElementById(props.videoSlideId)
+               .addEventListener("mousemove", () => {
+                  document.getElementById(props.downIconId).style.opacity = 1;
+                  setTimeout(() => {
+                     if (!video.paused) {
+                        document.getElementById(
+                           props.downIconId
+                        ).style.opacity = 0;
+                     }
+                  }, 3500);
+               });
+         });
+      }
       // video?.requestFullscreen();
    }, []);
 
@@ -287,9 +287,9 @@ const VideoPlayer = (props) => {
             width={"100%"}
             height={"100%"}
             playsInline
-            autoPlay={true}
+            // autoPlay={true}
             ref={videoComponent}
-            poster={props.poster}
+            // poster={props.poster}
             src={props.src}
          />
       </div>

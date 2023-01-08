@@ -22,6 +22,8 @@ const VideoSlideWrap = styled.div`
 
 const VideoSlide = ({
    title,
+   currentPageIdx,
+   index,
    downIcon,
    videoSlideId,
    downIconId,
@@ -33,6 +35,8 @@ const VideoSlide = ({
             videoContent={videoContent}
             videoSlideId={videoSlideId}
             downIconId={downIconId}
+            currentPageIdx={currentPageIdx}
+            index={index}
          />
          {/* {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>} */}
          {/* {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>} */}

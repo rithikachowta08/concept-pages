@@ -15,6 +15,7 @@ const IconWrap = styled.div`
          ? `
       position:absolute;
       bottom:80px;
+      z-index: 1;
       `
          : ""}
    @media (min-width: 200px) and (max-width: 399px) {

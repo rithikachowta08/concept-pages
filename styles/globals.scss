@@ -78,19 +78,6 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    height: 100%;
 }
 
-.video-wrap {
-   height: 100%;
-}
-
-.playButtomDiv {
-   z-index: 4;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   text-align: center;
-}
-
 .shaka-play-button {
    cursor: pointer;
 }
