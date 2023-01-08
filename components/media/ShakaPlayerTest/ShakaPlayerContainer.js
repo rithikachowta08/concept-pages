@@ -39,7 +39,13 @@ const ShakaPlayerContainer = (props) => {
    }, []);
 
    useEffect(() => {
-      if (props.currentPageIdx === props.index && !isVideoLoaded) {
+      console.log("props.currentPageIdx", props.currentPageIdx);
+      console.log("props.index", props.index);
+      if (
+         !isVideoLoaded &&
+         props.currentPageIdx >= props.index - 2 &&
+         props.currentPageIdx <= props.index + 2
+      ) {
          setIsVideoLoaded(true);
          watchVideo();
       }

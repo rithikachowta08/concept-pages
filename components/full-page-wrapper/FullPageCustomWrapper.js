@@ -60,7 +60,6 @@ export const FullPageCustomWrapper = ({
                                  {/* No navigation bar on title page */}
                                  {React.cloneElement(itm, {
                                     downIcon,
-                                    curIdx: currentPageIdx,
                                     currentPageIdx,
                                     moveToSection,
                                  })}
