@@ -20,7 +20,7 @@
       }
 
       .cls-2 {
-        font-family: Nunito-Medium, Nunito;
+        font-family: Nunito-Medium, Nunito, sans-serif;
         font-size: 30px;
       }
     </style>

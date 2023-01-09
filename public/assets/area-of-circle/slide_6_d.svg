@@ -27,7 +27,7 @@
       }
 
       .cls-7, .cls-3 {
-        font-family: Nunito-Medium, Nunito;
+        font-family: Nunito-Medium, Nunito, sans-serif;
         font-size: 30px;
       }
 
