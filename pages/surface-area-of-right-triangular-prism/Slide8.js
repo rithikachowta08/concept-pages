@@ -54,21 +54,11 @@ const Slide5 = ({ downIcon }) => {
          <Paragraph color="white">
             Here, “a”, “b”, and “c” are the side lengths of the triangular face,
             “l” is the length of the rectangular face,{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                “b”
             </TextSpanBg>{" "}
             is also the base of the triangle and{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
                “h”
             </TextSpanBg>{" "}
             is the height of the triangle.

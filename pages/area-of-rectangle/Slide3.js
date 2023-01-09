@@ -77,7 +77,7 @@ const Slide3 = ({ downIcon }) => {
             <TextSpanBg
                onHover={onHover}
                onHoverOut={onHoverOut}
-               hoverColor={colors.PURPLE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                region enclosed
             </TextSpanBg>

@@ -51,11 +51,7 @@ const Slide9 = ({ downIcon }) => {
       >
          <Paragraph color="white">
             The{" "}
-            <TextSpanBg
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg onHover={onHover} onHoverOut={onHoverOut}>
                length of the diagonal
             </TextSpanBg>{" "}
             can be calculated using the{" "}

@@ -30,7 +30,6 @@ const l_length = "assets/surface-area-of-right-triangluar-prism/l_length.svg";
 const sides_shaded =
    "assets/surface-area-of-right-triangluar-prism/sides_shaded.svg";
 
-import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
@@ -90,12 +89,7 @@ const Slide5 = ({ downIcon }) => {
          />
          <Paragraph color="white" textAlign="left">
             Lateral surface area of a right triangular prism is the area of its{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                three rectangular faces
             </TextSpanBg>{" "}
             , also called{" "}
@@ -105,23 +99,13 @@ const Slide5 = ({ downIcon }) => {
             .
          </Paragraph>
          <Pill>Lateral surface area = (a + b + c) &times; l</Pill>
-         <Paragraph color="white" lineHeight={lineHeightProp}>
+         <Paragraph color="white">
             Here,{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
                “a”,“ b”, and “ c”,
             </TextSpanBg>{" "}
             are the side lengths of the triangular face and{" "}
-            <TextSpanBg
-               id={3}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-            >
+            <TextSpanBg id={3} onHover={onHover} onHoverOut={onHoverOut}>
                “l”
             </TextSpanBg>{" "}
             is the length of the rectangular face.
