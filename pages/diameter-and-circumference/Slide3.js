@@ -25,13 +25,9 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const Pill = dynamic(() =>
-   import("components/Pill")
-);
+const Pill = dynamic(() => import("components/Pill"));
 
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
@@ -39,7 +35,8 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // );
 import { ModalTriggerText } from "components/text";
 const circleRatio = "assets/diameter-and-circumference/circleRatio.svg";
-const circumferenceRatio = "assets/diameter-and-circumference/circumferenceRatio.svg";
+const circumferenceRatio =
+   "assets/diameter-and-circumference/circumferenceRatio.svg";
 const diameterRatio = "assets/diameter-and-circumference/diameterRatio.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
@@ -68,12 +65,12 @@ const Slide3 = ({ downIcon }) => {
          title="Ratio of Circumference to Diameter "
          diagram={
             <TransitionImage
-               images={[circleRatio,circumferenceRatio, diameterRatio]}
+               images={[circleRatio, circumferenceRatio, diameterRatio]}
                altTexts={[
                   "Diagram of a circle showing diameter (D)",
                   "Diagram of a circle with highlighted circumference",
-                  "Diagram of a circle showing diameter (D)"
-                  ]}
+                  "Diagram of a circle showing diameter (D)",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -81,49 +78,47 @@ const Slide3 = ({ downIcon }) => {
       >
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            The ratio of the &nbsp;
+               The ratio of the &nbsp;
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   circumference
-               </TextSpanBg>&nbsp;
-               to &nbsp;
+               </TextSpanBg>
+               &nbsp; to &nbsp;
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   diameter
-               </TextSpanBg>&nbsp;
-               for any circle is always a constant.
+               </TextSpanBg>
+               &nbsp; for any circle is always a constant.
             </TextLine>
-            </Paragraph>
-            <Paragraph lineHeight={lineHeightProp}>
+         </Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}
                color={colors.BLACK}
             >
-                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-                3.14159… {" "}
+               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
+               3.14159…{" "}
                {/* <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "} */}
             </Pill>
-            </Paragraph>
-            <Paragraph lineHeight={lineHeightProp}>
+         </Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            The decimal expansion of the ratio shown above is non-terminating and non-repeating
-             in nature, and this constant value is represented by the greek letter π (pi).
+               The decimal expansion of the ratio shown above is non-terminating
+               and non-repeating in nature, and this constant value is
+               represented by the greek letter π (pi).
             </TextLine>
-            </Paragraph>
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

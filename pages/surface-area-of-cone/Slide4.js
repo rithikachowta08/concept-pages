@@ -24,7 +24,7 @@ const surfaceCone_height = "assets/surface-area-of-cone/slide4/5.svg";
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -56,34 +56,34 @@ const Slide4 = ({ downIcon }) => {
         The pointed end of a cone is called the&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          vertex
+          vertex or apex
         </TextSpanBg>
-        &nbsp;or apex.
+        .
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         The radius of circular base is the&nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          radius
+          radius of the cone
         </TextSpanBg>
-        &nbsp;of the cone.
+        .
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         The length of the cone from the vertex to any point on the circumference
         of the base is the&nbsp;
         <TextSpanBg
           id={3}
-          onHover={onHover}
+          onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
@@ -96,14 +96,14 @@ const Slide4 = ({ downIcon }) => {
         The distance from the vertex of the cone to the base is the&nbsp;
         <TextSpanBg
           id={4}
-          onHover={onHover}
+          onHover={() => onHover(4)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
         >
-          height
+          height of the cone
         </TextSpanBg>
-        &nbsp;of the cone.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );

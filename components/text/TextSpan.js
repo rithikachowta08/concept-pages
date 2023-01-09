@@ -90,7 +90,7 @@ TextSpan.propTypes = {
 
 TextSpan.defaultProps = {
    fontWeight: fontWeights.NORMAL,
-   fontSize: fontSizes.LARGE,
+   fontSize: fontSizes.MEDIUM,
    textDecoration: "none",
    cursor: "default",
    onHover: () => {},

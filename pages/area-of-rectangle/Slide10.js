@@ -43,15 +43,15 @@ const Slide10 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "4 \\times \\sqrt{5^2 - 4^2} \\ sq \\ m",
+               eqLatex: "4 \\times \\sqrt{5^2 - 4^2} \\ sq \\ in",
                hint: "",
             },
             {
-               eqLatex: "4 \\times 3 \\ sq \\ m",
+               eqLatex: "4 \\times 3 \\ sq \\ in",
                hint: "",
             },
             {
-               eqLatex: "12 \\ sq \\ m",
+               eqLatex: "12 \\ sq \\ in",
                hint: "",
             },
          ],
@@ -64,9 +64,9 @@ const Slide10 = ({ downIcon }) => {
             <TransitionImage
                images={[rectangle_full, rectangle_bottom, rectangle_cross]}
                altTexts={[
-                  "Diagram of a rectangle with diagonal 5 m and length 4 m",
-                  "Diagram of a rectangle with highlights length 4 m",
-                  "Diagram of a rectangle with highlighted diagonal 5 m",
+                  "Diagram of a rectangle with diagonal 5 in and length 4 in",
+                  "Diagram of a rectangle with highlights length 4 in",
+                  "Diagram of a rectangle with highlighted diagonal 5 in",
                ]}
                activeIndex={activeIndex}
             />
@@ -75,8 +75,8 @@ const Slide10 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               Find the area of a rectangle whose length and diagonal are 4 m
-               and 5 m, respectively.
+               Find the area of a rectangle whose length and diagonal are 4 in
+               and 5 in, respectively.
             </TextLine>
          </Paragraph>
          <div>
@@ -89,11 +89,10 @@ const Slide10 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.AQUA}
                      fontWeight={700}
-                     fontSize="2.2rem"
                   >
                      Length
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 4 m
+                  &nbsp;of the rectangle = 4 in
                </TextLine>
                <TextLine color={colors.BLACK}>
                   <TextSpanBg
@@ -102,11 +101,10 @@ const Slide10 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.AQUA}
                      fontWeight={700}
-                     fontSize="2.2rem"
                   >
                      Diagonal
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 5 m
+                  &nbsp;of the rectangle = 5 in
                </TextLine>
             </Paragraph>
             <Paragraph>
@@ -117,9 +115,9 @@ const Slide10 = ({ downIcon }) => {
             <div>Area&nbsp;</div>
             <div>
               = l × √ d<sup>2</sup> - l<sup>2</sup>
-              <br />= 4 × √ 5<sup>2</sup> - 4<sup>2</sup> sq m
-              <br />= 4 × 3 sq m
-              <br />= 12 sq m
+              <br />= 4 × √ 5<sup>2</sup> - 4<sup>2</sup> sq in
+              <br />= 4 × 3 sq in
+              <br />= 12 sq in
             </div>
           </Flex> */}
             </Paragraph>
