@@ -6,6 +6,8 @@ import { PropTypes } from "prop-types";
 import { colors } from "utils/colors";
 
 const Pill = ({
+   math=true,
+   darkbg=false,
    children,
    icon,
    width = "fit-content",
@@ -19,7 +21,7 @@ const Pill = ({
 }) => {
    return (
       <Flex
-         bgColor={bgColor}
+         bgColor={darkbg?colors.DARK_BLUE:colors.OCEAN_GREEN}
          bottom={bottom}
          padding="0.7rem"
          alignItems="center"
@@ -30,9 +32,10 @@ const Pill = ({
          position={position}
          color={color}
          width={width}
+         className={math?"pill-math":""}
       >
          {icon ? <Icon src={icon} marginRight="6px"></Icon> : null}
-         <TextSpan color={color} fontSize={fontSize}>
+         <TextSpan className="textspan" color={color} fontSize={fontSize}>
             {children}
          </TextSpan>
       </Flex>
