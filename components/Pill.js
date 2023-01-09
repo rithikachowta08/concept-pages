@@ -6,8 +6,8 @@ import { PropTypes } from "prop-types";
 import { colors } from "utils/colors";
 
 const Pill = ({
-   math=true,
-   darkbg=true,
+   math = true,
+   darkbg = true,
    children,
    icon,
    width = "fit-content",
@@ -15,28 +15,29 @@ const Pill = ({
    bottom,
    alignSelf,
    marginBottom,
-   color = colors.DARK_GREY,
-   bgColor = colors.OCEAN_GREEN,
    fontSize = fontSizes.MEDIUM,
 }) => {
    return (
       <Flex
-         bgColor={darkbg?colors.PILL_BLUR:colors.PILL_SOLID}
+         bgColor={darkbg ? colors.PILL_BLUR : colors.PILL_SOLID}
          bottom={bottom}
          padding="0.7rem"
          alignItems="center"
          marginBottom={marginBottom}
-         marginTop="1rem"
+         marginTop="2rem"
          alignSelf={alignSelf}
          borderRadius="8px"
          position={position}
-         color={darkbg?colors.WHITE:colors.BLACK}
+         color={darkbg ? colors.WHITE : colors.BLACK}
          width={width}
-         className={math?"pill-math":""}
+         className={math ? "pill-math" : ""}
          border={`1px solid ${colors.PILL_SOLID}`}
       >
          {icon ? <Icon src={icon} marginRight="6px"></Icon> : null}
-         <TextSpan color={darkbg?colors.WHITE:colors.BLACK} fontSize={fontSize}>
+         <TextSpan
+            color={darkbg ? colors.WHITE : colors.BLACK}
+            fontSize={fontSize}
+         >
             {children}
          </TextSpan>
       </Flex>
