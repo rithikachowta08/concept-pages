@@ -53,7 +53,7 @@ const Slide12 = ({ downIcon }) => {
           id={1}
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           two adjacent sides and the included angle

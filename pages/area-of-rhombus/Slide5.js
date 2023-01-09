@@ -49,7 +49,7 @@ const Slide5 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           region bounded
         </TextSpanBg>

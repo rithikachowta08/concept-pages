@@ -60,7 +60,7 @@ const Slide11 = ({ downIcon }) => {
           id={1}
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           d
@@ -71,7 +71,7 @@ const Slide11 = ({ downIcon }) => {
           id={2}
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           d<MathElement htmlString={latex[mathjaxCounter++]} />
