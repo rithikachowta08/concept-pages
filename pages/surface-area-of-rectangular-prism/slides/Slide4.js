@@ -12,7 +12,7 @@ import { Flex, ModalImg, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import { colors } from "utils/colors";
 
-const image_1 = "assets/surface-area-of-rectangular-prism/slide_2.svg";
+const image_1 = "assets/surface-area-of-rectangular-prism/slide_4.svg";
 const image_modal =
    "assets/surface-area-of-rectangular-prism/slide_4_modal.svg";
 

@@ -37,7 +37,7 @@ const SurfaceAreaofCone = () => {
     <PageLastSlide
       key={12}
       currentPageTitle={"Surface Area of a Cone"}
-      nextPageLink={"/study/volume-of-cube"}
+      nextPageLink={"/us/math/study/volume-of-cube"}
       nextPageTitle={"Volume of a Cube"}
     />,
   ];

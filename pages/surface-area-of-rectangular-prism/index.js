@@ -24,14 +24,14 @@ const SurfaceAreaOfRectangularPrism = () => {
       <PageLastSlide
          key={7}
          currentPageTitle={"Surface Area of Rectangular Prism"}
-         nextPageLink={"/study/surface-area-of-cone"}
+         nextPageLink={"/us/math/study/surface-area-of-cone"}
          nextPageTitle={"Surface Area of Cone"}
       />,
    ];
    const navigationSections = [
       {
          title: "What is the surface area of a rectangular prism?",
-         slides: [3],
+         slides: [1, 2, 3],
       },
       { title: "Total surface area", slides: [4] },
       { title: "Lateral surface area", slides: [5] },

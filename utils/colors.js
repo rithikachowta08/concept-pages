@@ -14,7 +14,7 @@ export const colors = {
    PILL_BLUR: "#c8c8c833",
    PILL_SOLID: "#cccccc",
    LAVENDER: "#F2A4FF",
-   DARK_LAVENDER: "#B07FD7",
+   DARK_LAVENDER: "#A753B5",
 };
 
 export const hexToRgbA = (hex, alpha = 1) => {
