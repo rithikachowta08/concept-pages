@@ -83,15 +83,17 @@ const ShakaPlayerContainer = (props) => {
           }}
         >
           <div className={"playButtomDiv"}>
-            <Image
-              alt="playIcon"
-              src={
-                "https://search-static.byjusweb.com/assets" + "/playIcon.png"
-              }
-              height="80"
-              width="80"
-              priority={true}
-            ></Image>
+            <div className={"playButtomIcon"}>
+              <Image
+                alt="playIcon"
+                src={
+                  "data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
+                }
+                height="30"
+                width="30"
+                priority={true}
+              ></Image>
+            </div>
           </div>
           {thumbnail && (
             <Image

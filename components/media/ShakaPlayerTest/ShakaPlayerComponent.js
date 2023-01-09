@@ -192,13 +192,13 @@ const VideoPlayer = (props) => {
     let uiConfig = {};
     uiConfig = props.uiConfig;
     uiConfig.controlPanelElements = [
-      // "play_pause",
-      // "rewind_10",
-      // "forward_10",
+      "play_pause",
+      "rewind_10",
+      "forward_10",
       "time_and_duration",
       "spacer",
-      "vertical_volume",
-      // "mute",
+      // "vertical_volume",
+      "mute",
       "playback_rate",
       "quality",
       "fullscreen",
@@ -209,35 +209,7 @@ const VideoPlayer = (props) => {
     ui.getControls();
     ui.configure(uiConfig);
     player.addEventListener("error", onErrorEvent);
-    // video?.requestFullscreen();
   }, []);
-
-  const replay = () => {
-    const video = videoComponent.current;
-    video.currentTime = video.currentTime - 5;
-  };
-
-  const forward = () => {
-    const video = videoComponent.current;
-    video.currentTime = video.currentTime + 5;
-  };
-
-  if (document.addEventListener) {
-    document.addEventListener("fullscreenchange", exitHandler, false);
-    document.addEventListener("mozfullscreenchange", exitHandler, false);
-    document.addEventListener("MSFullscreenChange", exitHandler, false);
-    document.addEventListener("webkitfullscreenchange", exitHandler, false);
-  }
-
-  function exitHandler() {
-    if (
-      !document.webkitIsFullScreen &&
-      !document.mozFullScreen &&
-      !document.msFullscreenElement
-    ) {
-      video.pause();
-    }
-  }
 
   return (
     <div ref={videoContainer}>

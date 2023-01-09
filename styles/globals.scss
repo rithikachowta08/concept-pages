@@ -81,10 +81,23 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
   z-index: 4;
   position: relative;
   text-align: center;
+  left: (calc(50% - 25px));
+}
+
+.playButtomIcon {
+  background-color: rgb(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
 }
 
 .shaka-play-button {
   cursor: pointer;
+  padding: 30px !important;
 }
 
 #__next {
