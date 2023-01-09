@@ -81,7 +81,7 @@ const Slide13 = ({ downIcon }) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -117,7 +117,7 @@ const Slide13 = ({ downIcon }) => {
         Apply the ‘sine’ formula in the{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}

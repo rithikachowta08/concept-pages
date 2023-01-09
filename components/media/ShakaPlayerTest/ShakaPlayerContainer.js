@@ -8,10 +8,9 @@ import { get_video_manifest, isSafariOrIOSDevice } from "./playerFunction";
 
 const ShakaPlayerContainer = (props) => {
   var [drmConf, setDrmConfig] = useState({});
-  var [thumbnail, setThumbnail] = useState(null);
+  var [isVideoLoaded, setIsVideoLoaded] = useState(false);
   var [uiConfig, setUiConfig] = useState({});
   var isEncryptedVideo = true;
-  var [videoClicked, setVideoClicked] = useState(false);
 
   useEffect(() => {
     setUiConfig({
@@ -37,8 +36,20 @@ const ShakaPlayerContainer = (props) => {
         adBreaks: "rgb(255, 204, 0)",
       },
     });
-    setThumbnail(props.videoContent["thumbnail"]);
-  }, [props]);
+  }, []);
+
+  useEffect(() => {
+    console.log("props.currentPageIdx", props.currentPageIdx);
+    console.log("props.index", props.index);
+    if (
+      !isVideoLoaded &&
+      props.currentPageIdx >= props.index - 2 &&
+      props.currentPageIdx <= props.index + 2
+    ) {
+      setIsVideoLoaded(true);
+      watchVideo();
+    }
+  }, [props.currentPageIdx, props.index, watchVideo, isVideoLoaded]);
 
   function watchVideo() {
     (async () => {
@@ -73,56 +84,23 @@ const ShakaPlayerContainer = (props) => {
     })();
   }
 
-  return (
-    <>
-      {!videoClicked && (
-        <div
-          onClick={() => {
-            watchVideo();
-            setVideoClicked(true);
-          }}
-        >
-          <div className={"playButtomDiv"}>
-            <div className={"playButtomIcon"}>
-              <Image
-                alt="playIcon"
-                src={
-                  "data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
-                }
-                height="30"
-                width="30"
-                priority={true}
-              ></Image>
-            </div>
-          </div>
-          {thumbnail && (
-            <Image
-              alt="thumbnail"
-              src={thumbnail}
-              layout="fill"
-              objectFit="contain"
-              priority={true}
-            ></Image>
-          )}
-        </div>
-      )}
-      {drmConf.key_id && (
-        <ShakaPlayerComponent
-          src={
-            isSafariOrIOSDevice()
-              ? props.videoContent?.hls_Url
-              : props.videoContent?.dash_Url
-          }
-          poster={props.videoContent["thumbnail"]}
-          autoPlay={true}
-          srcKey={drmConf.key_id}
-          uiConfig={uiConfig}
-          isEncryptedVideo={isEncryptedVideo}
-          videoContent={props.videoContent}
-        />
-      )}
-    </>
-  );
+  return drmConf.key_id ? (
+    <ShakaPlayerComponent
+      src={
+        isSafariOrIOSDevice()
+          ? props.videoContent?.hls_Url
+          : props.videoContent?.dash_Url
+      }
+      poster={props.videoContent["thumbnail"]}
+      // autoPlay={true}
+      srcKey={drmConf.key_id}
+      uiConfig={uiConfig}
+      isEncryptedVideo={isEncryptedVideo}
+      videoContent={props.videoContent}
+      videoSlideId={props.videoSlideId}
+      downIconId={props.downIconId}
+    />
+  ) : null;
 };
 
 export default ShakaPlayerContainer;

@@ -25,23 +25,23 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const Pill = dynamic(() =>
-   import("components/Pill")
-);
+const Pill = dynamic(() => import("components/Pill"));
 
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const formula_degree_circle = "assets/length-of-arc-of-a-circle/formula_degree_circle.svg";
-const formula_degree_arc = "assets/length-of-arc-of-a-circle/formula_degree_arc.svg";
-const formula_degree_angle = "assets/length-of-arc-of-a-circle/formula_degree_angle.svg";
-const formula_degree_radius= "assets/length-of-arc-of-a-circle/formula_degree_radius.svg";
+const formula_degree_circle =
+   "assets/length-of-arc-of-a-circle/formula_degree_circle.svg";
+const formula_degree_arc =
+   "assets/length-of-arc-of-a-circle/formula_degree_arc.svg";
+const formula_degree_angle =
+   "assets/length-of-arc-of-a-circle/formula_degree_angle.svg";
+const formula_degree_radius =
+   "assets/length-of-arc-of-a-circle/formula_degree_radius.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -70,13 +70,18 @@ const Slide8 = ({ downIcon }) => {
          secondaryTitle="Length of an Arc of a Sector"
          diagram={
             <TransitionImage
-               images={[formula_degree_circle,formula_degree_arc, formula_degree_angle, formula_degree_radius]}
+               images={[
+                  formula_degree_circle,
+                  formula_degree_arc,
+                  formula_degree_angle,
+                  formula_degree_radius,
+               ]}
                altTexts={[
                   "Diagram of a circle showing the sector",
                   "Diagram of a circle highlighting the length of the sector",
                   "Diagram of a circle highlighting the measure of the angle of the sector",
-                  "Diagram of a circle highlighting the radius"
-                  ]}
+                  "Diagram of a circle highlighting the radius",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -84,59 +89,56 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            The &nbsp;
+               The &nbsp;
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   length of the arc (l)
-               </TextSpanBg>&nbsp;
-               of the sector of a circle is given by the following formula:
+               </TextSpanBg>
+               &nbsp; of the sector of a circle is given by the following
+               formula:
             </TextLine>
-            </Paragraph>
-            <Paragraph lineHeight={lineHeightProp}>
+         </Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}
                color={colors.BLACK}
             >
-               Length of an arc (l) {" "}
+               Length of an arc (l){" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
                units
             </Pill>
-            </Paragraph>
-            <Paragraph lineHeight={lineHeightProp}>
+         </Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            Here, (θ) is the &nbsp;
+               Here, (θ) is the &nbsp;
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
-                measure of the angle
-               </TextSpanBg>&nbsp;
-               (in degrees) and (r) is the &nbsp;
+                  measure of the angle
+               </TextSpanBg>
+               &nbsp; (in degrees) and (r) is the &nbsp;
                <TextSpanBg
-                  onHover={()=>onHover(3)}
+                  onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
-                radius
-               </TextSpanBg>&nbsp;
-               of the circle.
+                  radius
+               </TextSpanBg>
+               &nbsp; of the circle.
             </TextLine>
-            </Paragraph>
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

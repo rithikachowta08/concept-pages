@@ -23,13 +23,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a scalene triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={"https://byjus.com/us/math/scalene-triangle/"}
-                  >
-                     Scalene Triangle
-                  </HyperLink>
-               ),
+               caption: "Scalene Triangle",
             },
             {
                diagram: (
@@ -38,15 +32,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a isosceles triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={
-                        "https://byjus.com/us/math/area-of-isosceles-triangle/"
-                     }
-                  >
-                     Isosceles Triangle
-                  </HyperLink>
-               ),
+               caption: "Isosceles Triangle",
             },
             {
                diagram: (
@@ -55,13 +41,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a equilateral triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={"https://byjus.com/us/math/equilateral-triangle/"}
-                  >
-                     Equilateral Triangle
-                  </HyperLink>
-               ),
+               caption: "Equilateral Triangle",
             },
          ]}
          downIcon={downIcon}

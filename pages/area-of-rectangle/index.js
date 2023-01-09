@@ -4,6 +4,8 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
+
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -27,6 +29,12 @@ const AreaOfRectangle = () => {
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <Slide10 key={9} />,
+      <PageLastSlide
+         key={10}
+         currentPageTitle={"Area of a Rectangle"}
+         nextPageTitle="Area of a Circle"
+         nextPageLink="/study/area-of-circle"
+      />,
       // <Slide11 key={10} />,
       // <Slide12 key={11} />,
       // <Slide13 key={12} />
@@ -39,7 +47,7 @@ const AreaOfRectangle = () => {
       { title: "Area using diagonal", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 4, 5, 7];
+   const darkBgIndices = [0, 3, 4, 5, 7, 9, 10];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

@@ -80,7 +80,6 @@ const Slide3 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.PURPLE}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                region enclosed
             </TextSpanBg>

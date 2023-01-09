@@ -43,7 +43,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}rl + {\\pi}r^2"],
+        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
         type: "latex",
       },
       rhsHint: {
@@ -57,7 +57,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(l+r)\\ square\\ units"],
+        value: ["{\\pi} \\times r \\times (l + r)\\ sq\\ units"],
         type: "latex",
       },
       rhsHint: {
@@ -71,15 +71,11 @@ const Slide11 = ({ downIcon }) => {
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`= {\\pi}r(l+r)`);
-  latex.push(`(\\ell)`);
-  let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
       title="Derivation"
@@ -101,7 +97,7 @@ const Slide11 = ({ downIcon }) => {
         The total surface area of a cone is the sum of its&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
@@ -111,7 +107,7 @@ const Slide11 = ({ downIcon }) => {
         &nbsp;and its{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}

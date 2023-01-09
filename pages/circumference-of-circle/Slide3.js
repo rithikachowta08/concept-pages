@@ -94,7 +94,6 @@ const Slide3 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                diameter(d)
             </TextSpanBg>
@@ -109,7 +108,6 @@ const Slide3 = ({ downIcon }) => {
                      color={colors.RED}
                      hoverColor={colors.AQUA}
                      fontWeight={700}
-                     fontSize="2.2rem"
                   >
                      Circumference
                   </TextSpanBg>

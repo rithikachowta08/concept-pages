@@ -8,12 +8,13 @@ const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 //    import("components/text").then((mod) => mod.Paragraph)
 // );
 
-const Slide6 = ({ downIcon }) => {
+const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
       <AppletSlide
          title="Lateral Surface Area"
          secondaryTitle="Right Triangular Prism"
          appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
+         currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
          {/* <Paragraph>

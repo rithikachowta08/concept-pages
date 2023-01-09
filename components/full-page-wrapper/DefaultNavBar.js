@@ -27,23 +27,20 @@ const NavWrap = styled.div`
 
    // Low res desktop and tablet landscape
    @media (min-width: 821px) and (max-width: 1224px) {
-      padding: 30px 20px;
+      padding: 50px 20px;
       border-radius: 15px;
-      max-width: 400px;
    }
 
    // Small height desktop
    @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
-      padding: 30px 20px;
+      padding: 50px 20px;
       border-radius: 15px;
-      max-width: 400px;
    }
 
    // Mobile landscape
    @media (min-height: 300px) and (max-height: 500px) and (max-width: 950px) {
       padding: 20px 15px;
       border-radius: 12px;
-      max-width: 400px;
    }
 `;
 
@@ -147,33 +144,6 @@ const DefaultNavBar = ({
          onMouseLeave={hideNav}
          darkTheme={darkTheme}
       >
-         {isExpanded ? (
-            <Flex
-               cursor="pointer"
-               onClick={hideNav}
-               alignItems="center"
-               marginBottom="2rem"
-            >
-               <Icon
-                  src={darkTheme ? left_caret_light : left_caret_dark}
-               ></Icon>
-               <TextSpan
-                  cursor="pointer"
-                  marginLeft="20px"
-                  color={darkTheme ? colors.WHITE : colors.PURPLE}
-                  fontSize={fontSizes.SMALL}
-               >
-                  <HyperLink
-                     color={darkTheme ? colors.WHITE : colors.DARK_GREY}
-                     target=""
-                     href="https://byjus.com/us/math/"
-                  >
-                     {" "}
-                     Back to concepts{" "}
-                  </HyperLink>
-               </TextSpan>
-            </Flex>
-         ) : null}
          {sections.map((section, idx) => {
             let percentage = 0;
             const slides = section.slides;

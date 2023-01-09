@@ -23,7 +23,7 @@ const rhombus_leftcross = "assets/area-of-rhombus/slide9/3.svg";
 const Slide11 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -58,7 +58,7 @@ const Slide11 = ({ downIcon }) => {
         The area (A), of a rhombus is half the product of its diagonals{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           hoverColor={colors.AQUA}
           color={colors.RED}
@@ -69,7 +69,7 @@ const Slide11 = ({ downIcon }) => {
         and{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           hoverColor={colors.AQUA}
           color={colors.RED}
@@ -78,7 +78,7 @@ const Slide11 = ({ downIcon }) => {
         </TextSpanBg>{" "}
         .
       </Paragraph>
-      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN}>
         Area of the rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndDiagramSlide>

@@ -23,7 +23,7 @@
       }
 
       .cls-7, .cls-10, .cls-9, .cls-11 {
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 30px;
         font-weight: 500;
       }

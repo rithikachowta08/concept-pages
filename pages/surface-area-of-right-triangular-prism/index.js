@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -25,6 +26,12 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
+      <PageLastSlide
+         key={10}
+         currentPageTitle={"Surface Area of a Right Triangular Prism"}
+         nextPageTitle="Surface Area of Rectangular Prism"
+         nextPageLink="/study/surface-area-of-rectangular-prism"
+      />,
    ];
 
    const navigationSections = [
@@ -36,7 +43,7 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       { title: "Total surface area", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 4, 7];
+   const darkBgIndices = [0, 3, 4, 7, 10];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

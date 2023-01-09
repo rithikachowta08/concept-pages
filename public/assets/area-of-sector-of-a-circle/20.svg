@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #28e1ea;
+        letter-spacing: -.02em;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        font-size: 30px;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        font-family: Raleway-Medium, Raleway;
+        font-weight: 500;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        opacity: .1;
+      }
+
+      .cls-5, .cls-8, .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-6, .cls-9 {
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-6, .cls-9, .cls-10 {
+        fill: none;
+      }
+
+      .cls-6, .cls-10 {
+        stroke: #fff;
+      }
+
+      .cls-11 {
+        fill: #67dbe8;
+      }
+
+      .cls-3 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-3, .cls-12, .cls-10 {
+        opacity: .2;
+      }
+
+      .cls-9 {
+        stroke: #67dbe8;
+      }
+
+      .cls-9, .cls-10 {
+        stroke-linecap: round;
+      }
+
+      .cls-10 {
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+
+      .cls-4 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <g id="background">
+    <g class="cls-12">
+      <text class="cls-4" transform="translate(154.27 474.88)"><tspan x="0" y="0">A</tspan></text>
+    </g>
+    <g class="cls-12">
+      <text class="cls-2" transform="translate(387.57 474.88)"><tspan x="0" y="0">B</tspan></text>
+    </g>
+    <g class="cls-12">
+      <text class="cls-2" transform="translate(269.73 271.97)"><tspan x="0" y="0">O</tspan></text>
+    </g>
+  </g>
+  <g id="design">
+    <g class="cls-7">
+      <circle class="cls-8" cx="280" cy="280" r="201.7"/>
+    </g>
+    <polyline class="cls-10" points="379.48 452.1 279.99 279.78 180.54 452.02"/>
+    <path class="cls-5" d="M279.99,279.78l-100.96,174.87c30.4,18.37,62.86,27.06,100.97,27.06s70.63-8.81,100.95-27.04l-100.97-174.88Z"/>
+    <path class="cls-6" d="M267.5,301.41s11.81,12,24.98,0"/>
+    <text class="cls-3" transform="translate(271.97 333.84)"><tspan x="0" y="0">θ</tspan></text>
+    <text class="cls-1" transform="translate(200.41 369.69)"><tspan x="0" y="0">r</tspan></text>
+    <text class="cls-1" transform="translate(352.5 369.69)"><tspan x="0" y="0">r</tspan></text>
+    <g class="cls-12">
+      <path class="cls-8" d="M280,84.3c26.42,0,52.05,5.17,76.17,15.38,23.3,9.86,44.23,23.97,62.21,41.94s32.09,38.9,41.94,62.21c10.2,24.12,15.38,49.75,15.38,76.17s-5.17,52.05-15.38,76.17c-9.86,23.3-23.97,44.23-41.94,62.21-17.97,17.97-38.9,32.09-62.21,41.94-24.12,10.2-49.75,15.38-76.17,15.38s-52.05-5.17-76.17-15.38c-23.3-9.86-44.23-23.97-62.21-41.94s-32.09-38.9-41.94-62.21c-10.2-24.12-15.38-49.75-15.38-76.17s5.17-52.05,15.38-76.17c9.86-23.3,23.97-44.23,41.94-62.21,17.97-17.97,38.9-32.09,62.21-41.94,24.12-10.2,49.75-15.38,76.17-15.38m0-6c-111.4,0-201.7,90.3-201.7,201.7s90.31,201.7,201.7,201.7,201.7-90.31,201.7-201.7-90.31-201.7-201.7-201.7h0Z"/>
+    </g>
+    <g>
+      <line class="cls-9" x1="173.88" y1="434.02" x2="260.48" y2="284.01"/>
+      <polygon class="cls-11" points="183.97 436.48 166.7 446.45 166.7 426.51 183.97 436.48"/>
+      <polygon class="cls-11" points="267.66 291.53 267.66 271.58 250.39 281.55 267.66 291.53"/>
+    </g>
+    <g>
+      <line class="cls-9" x1="386.27" y1="434.02" x2="299.67" y2="284.01"/>
+      <polygon class="cls-11" points="393.45 426.51 393.45 446.45 376.18 436.48 393.45 426.51"/>
+      <polygon class="cls-11" points="309.76 281.55 292.49 271.58 292.49 291.53 309.76 281.55"/>
+    </g>
+    <g class="cls-12">
+      <circle class="cls-8" cx="279.65" cy="280.32" r="7.2"/>
+    </g>
+    <g class="cls-12">
+      <circle class="cls-8" cx="180.07" cy="450.86" r="7.2"/>
+    </g>
+    <g class="cls-12">
+      <circle class="cls-8" cx="378.77" cy="451.86" r="7.2"/>
+    </g>
+  </g>
+</svg>
