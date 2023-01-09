@@ -145,6 +145,24 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
+.pill-math{
+
+  span{
+    font-family: 'Times New Roman', Times, serif !important;
+    font-style: italic !important;
+  }
+  .katex .mathdefault,
+  .katex .mathnormal{
+    font-style: italic !important;
+    font-family: 'Times New Roman', Times, serif !important;
+  }
+  .katex .mord {
+    display: inline-block;
+    font-style: italic !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    
+  }
+  }
 
 .textSpanBg {
    background-color: none;
