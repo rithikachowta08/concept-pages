@@ -80,8 +80,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             <MathElement htmlString={"(\\pi = \\dfrac{22}{7}"} /> or 3.14) and
             the square of the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               color={colors.LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >

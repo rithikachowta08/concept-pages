@@ -47,8 +47,7 @@ const Slide5 = ({ navBar, downIcon }) => {
                   <TextLine>
                      <MathElement htmlString={"\\ = \\pi\\ \\times\\ "} />
                      <TextSpanBg
-                        color={colors.RED}
-                        hoverColor={colors.DARK_BLUE}
+                        color={colors.LAVENDER}
                         onHover={() => setActiveIndex(1)}
                         onHoverOut={() => setActiveIndex(0)}
                      >

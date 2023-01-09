@@ -42,8 +42,7 @@ const Slide9 = ({ navBar, downIcon }) => {
             <TextLine>In the given figure, </TextLine>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  color={colors.LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
