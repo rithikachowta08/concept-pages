@@ -43,7 +43,7 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       { title: "Total surface area", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 4, 7];
+   const darkBgIndices = [0, 3, 4, 7, 10];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

@@ -50,7 +50,7 @@ const Slide5 = ({ downIcon }) => {
             The area covered by all the faces of a right triangular prism
             represents the total surface area.
          </Paragraph>
-         <Pill>Total surface area = (a + b + c)l + bh square units</Pill>
+         <Pill>Total surface area = (a + b + c) &times; l + b &times; h</Pill>
          <Paragraph color="white">
             Here, “a”, “b”, and “c” are the side lengths of the triangular face,
             “l” is the length of the rectangular face,{" "}
@@ -61,7 +61,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “b”
             </TextSpanBg>{" "}
@@ -73,7 +72,6 @@ const Slide5 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.AQUA}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                “h”
             </TextSpanBg>{" "}

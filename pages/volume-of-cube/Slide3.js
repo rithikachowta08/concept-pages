@@ -7,21 +7,21 @@ import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
+   import("components/text").then((mod) => mod.TextSpanBg)
 );
 const ModalTriggerText = dynamic(() =>
-  import("components/text").then((mod) => mod.ModalTriggerText)
+   import("components/text").then((mod) => mod.ModalTriggerText)
 );
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
@@ -35,8 +35,8 @@ const Slide3 = ({ downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
-           A Unit cube is a cube whose sides are 1 unit long.
+         <Paragraph color="white" marginBottom="1vh">
+            A Unit cube is a cube whose sides are 1 unit long.
          </Paragraph>
          <StyledImg
             src={cube_unit}
@@ -67,9 +67,10 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_spaces]}
-               altTexts={
-                  ["Diagram of a cube highlighting sides","A cube filled with unit cube"]
-               }
+               altTexts={[
+                  "Diagram of a cube highlighting sides",
+                  "A cube filled with unit cube",
+               ]}
                activeIndex={activeIndex}
             />
          }

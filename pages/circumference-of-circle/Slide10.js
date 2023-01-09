@@ -3,7 +3,7 @@ const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
    ssr: false,
 });
 
-const Slide10 = ({ downIcon }) => {
+const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
@@ -17,7 +17,11 @@ const Slide10 = ({ downIcon }) => {
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803302.jpg?1671775176",
                // video_title: "Circle and its Definitions",
             }}
+            downIconId="s10-video-down-icon"
+            videoSlideId="s10-video-slide"
             downIcon={downIcon}
+            currentPageIdx={currentPageIdx}
+            index={8}
          />
       </div>
    );

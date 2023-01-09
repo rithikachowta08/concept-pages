@@ -15,16 +15,19 @@ const IFrame = styled.iframe`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
+   border: 1px solid #444;
    transition: all 0.2s;
 
    // Mobile
    @media only screen and (min-width: 200px) and (max-width: 600px) {
       height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
+      border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
    }
 
    // Large mobile + iPad mini
    @media only screen and (min-width: 601px) and (max-width: 820px) {
       height: ${(props) => (props.isFitToWidth ? "100vw" : "500px")};
+      border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
    }
 
    // Tablet
@@ -79,9 +82,11 @@ const TextAndAppletSlide = ({
    downIcon,
    secondaryTitle,
    children,
+   currentPageIdx,
    appletSrc,
 }) => {
    const ref = useRef(null);
+   const [src, setSrc] = useState(null);
    const [isFitToWidth, setIsFitToWidth] = useState(false);
    const toggleFitToWidth = () => {
       setIsFitToWidth(!isFitToWidth);
@@ -91,6 +96,11 @@ const TextAndAppletSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   useEffect(() => {
+      if (currentPageIdx !== 0 && !src) {
+         setSrc(appletSrc);
+      }
+   }, [currentPageIdx, appletSrc, src]);
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
@@ -109,6 +119,7 @@ const TextAndAppletSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -128,7 +139,7 @@ const TextAndAppletSlide = ({
                >
                   <IframeWrap>
                      <IFrame
-                        src={appletSrc}
+                        src={src}
                         isFitToWidth={isFitToWidth}
                         allowFullScreen
                         frameBorder="0"
@@ -175,15 +186,18 @@ const TextAndAppletSlide = ({
                   <LeftWrap marginRight="20px">
                      <div>
                         <SlideSecondaryTitle
+                           marginBottom="15px"
                            bg={bg}
                            secondaryTitle={secondaryTitle}
                         />
-                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                        <SlideTitle marginBottom="30px" bg={bg}>
+                           {title}
+                        </SlideTitle>
                      </div>
                      {children}
                   </LeftWrap>
                   <RightWrap>
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                   </RightWrap>
                </Flex>
                {downIcon

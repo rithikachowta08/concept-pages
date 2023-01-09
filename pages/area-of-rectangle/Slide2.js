@@ -51,7 +51,6 @@ const Slide2 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                opposite sides equal
             </TextSpanBg>{" "}
@@ -62,7 +61,6 @@ const Slide2 = ({ downIcon }) => {
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                internal angles
             </TextSpanBg>{" "}

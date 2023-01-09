@@ -1,23 +1,16 @@
 import dynamic from "next/dynamic";
-import { colors } from "utils/colors";
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
-const Slide5 = ({ downIcon }) => {
+const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndAppletSlide
-         title="Derivation of the Formula"
+      <AppletSlide
+         title="General Formula"
          secondaryTitle="Circumference of a Circle"
-         appletSrc="./applets/triangle.html"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/circumference_of_circle_v3/index.html"
          downIcon={downIcon}
+         currentPageIdx={currentPageIdx}
          bg="DARK"
-      >
-         <Paragraph color={colors.WHITE}></Paragraph>
-      </TextAndAppletSlide>
+      ></AppletSlide>
    );
 };
 

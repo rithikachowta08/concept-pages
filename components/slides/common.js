@@ -3,28 +3,34 @@ import { Title } from "components/text";
 import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
-export const SlideSecondaryTitle = ({ centerAlign, bg, secondaryTitle }) =>
+export const SlideSecondaryTitle = ({
+   centerAlign,
+   marginBottom,
+   bg,
+   secondaryTitle,
+}) =>
    secondaryTitle ? (
       <Title
          opacity={0.5}
+         fontSize={fontSizes.MEDIUM}
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={centerAlign ? "center" : "left"}
-         marginBottom="1vh"
-         extraSmall
+         marginBottom={marginBottom}
+         level={3}
       >
          {secondaryTitle}
       </Title>
    ) : null;
 
-export const SlideTitle = ({ children, bg, centerAlign }) => {
+export const SlideTitle = ({ children, bg, marginBottom, centerAlign }) => {
    return (
       <Title
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         fontSize={fontSizes.H2}
+         fontSize={fontSizes.LARGE}
          fontWeight={fontWeights.BOLD}
          textAlign={centerAlign ? "center" : "left"}
-         marginBottom="1vh"
-         small
+         marginBottom={marginBottom}
+         level={2}
       >
          {children}
       </Title>

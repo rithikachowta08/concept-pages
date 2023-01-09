@@ -15,7 +15,7 @@ const Pill = ({
    marginBottom,
    color = colors.DARK_GREY,
    bgColor = colors.OCEAN_GREEN,
-   fontSize = fontSizes.LARGE,
+   fontSize = fontSizes.MEDIUM,
 }) => {
    return (
       <Flex
