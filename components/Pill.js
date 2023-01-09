@@ -35,7 +35,7 @@ const Pill = ({
          className={math?"pill-math":""}
       >
          {icon ? <Icon src={icon} marginRight="6px"></Icon> : null}
-         <TextSpan className="textspan" color={color} fontSize={fontSize}>
+         <TextSpan color={color} fontSize={fontSize}>
             {children}
          </TextSpan>
       </Flex>
