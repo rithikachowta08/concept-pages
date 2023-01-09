@@ -78,7 +78,7 @@ const Slide2 = ({ downIcon }) => {
             <TextSpanBg
                onHover={onHover}
                onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                circumference
             </TextSpanBg>
