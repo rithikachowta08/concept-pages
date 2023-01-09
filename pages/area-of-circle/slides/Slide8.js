@@ -40,7 +40,7 @@ const Slide8 = ({ navBar, downIcon }) => {
       >
          <Paragraph color={colors.WHITE}>
             <TextSpanBg
-               color={colors.LAVENDER}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -48,7 +48,7 @@ const Slide8 = ({ navBar, downIcon }) => {
             </TextSpanBg>{" "}
             = <MathElement htmlString={"2\\times \\pi\\ \\times\\ "} />
             <TextSpanBg
-               color={colors.LAVENDER}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
