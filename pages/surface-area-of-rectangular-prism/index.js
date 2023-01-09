@@ -31,13 +31,13 @@ const SurfaceAreaOfRectangularPrism = () => {
    const navigationSections = [
       {
          title: "What is the surface area of a rectangular prism?",
-         slides: [3, 4],
+         slides: [3],
       },
-      { title: "Total surface area", slides: [5] },
-      { title: "Lateral surface area", slides: [6] },
+      { title: "Total surface area", slides: [4] },
+      { title: "Lateral surface area", slides: [5] },
    ];
 
-   const darkBgIndices = [0, 2, 5, 6, 7];
+   const darkBgIndices = [0, 2, 4, 5, 6];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

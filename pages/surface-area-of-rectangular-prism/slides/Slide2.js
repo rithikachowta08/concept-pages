@@ -38,8 +38,7 @@ const Slide2 = ({ downIcon }) => {
          <Paragraph>
             A rectangular prism is a three-dimensional solid shape that has{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -47,8 +46,7 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>
             ,{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -56,8 +54,7 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>
             , and{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(3)}
                onHoverOut={() => setActiveIndex(0)}
             >
