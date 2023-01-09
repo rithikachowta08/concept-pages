@@ -128,6 +128,7 @@ export const Flex = styled.div`
    padding: ${(props) => props.padding};
    color: ${(props) => props.color};
    background-color: ${(props) => props.bgColor};
+   border: ${(props) => props.border};
    border-radius: ${(props) => props.borderRadius};
    position: ${(props) => props.position};
    left: ${(props) => props.left};
