@@ -32,7 +32,7 @@ const Slide4 = ({ downIcon }) => {
          <Paragraph color={colors.WHITE}>Example:</Paragraph>
          <ModalImg
             src={image_modal}
-            alt="Diagram of a rectangle with 4 cm length and 3 cm width"
+            alt="Diagram of a rectangle with 4 in length and 3 in width"
          />
          <Paragraph color={colors.WHITE}>
             <MultiLhsEquationContainer
@@ -41,10 +41,10 @@ const Slide4 = ({ downIcon }) => {
                   lhsLatex: ["\\text{Area}"],
                   rhsLatex: [
                      {
-                        eqLatex: "\\text{4cm}\\ \\times\\ \\text{3cm}",
+                        eqLatex: "\\text{4\\ in}\\ \\times\\ \\text{3\\ in}",
                         hint: "",
                      },
-                     { eqLatex: "\\text{12\\ sq\\ cm}", hint: "" },
+                     { eqLatex: "\\text{12\\ sq\\ in}", hint: "" },
                   ],
                }}
             />
