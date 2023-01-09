@@ -50,9 +50,7 @@ const Slide2 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                center
             </TextSpanBg>{" "}
@@ -61,9 +59,7 @@ const Slide2 = ({ downIcon }) => {
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                radius
             </TextSpanBg>{" "}
