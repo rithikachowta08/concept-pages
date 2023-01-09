@@ -1,74 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="BG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+<svg id="BG" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
   <defs>
     <style>
       .cls-1 {
-        stroke-dasharray: 0 0 10.94 10.94;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
-        fill: none;
-        stroke: #4a33f5;
-        stroke-linejoin: round;
-        stroke-width: 6px;
-      }
-
-      .cls-1, .cls-3, .cls-4, .cls-5 {
-        stroke-linecap: square;
+        fill: #a4a4a5;
       }
 
       .cls-2 {
-        stroke-linecap: round;
+        fill: #a753b5;
       }
 
-      .cls-6 {
-        fill: #8d8d8e;
-      }
-
-      .cls-7 {
-        fill: #aaa;
-      }
-
-      .cls-8 {
+      .cls-3 {
         fill: #bfbfbf;
       }
 
       .cls-4 {
-        stroke-dasharray: 0 0 12.19 12.19;
-      }
-
-      .cls-9 {
         opacity: .8;
       }
 
       .cls-5 {
-        stroke-dasharray: 0 0 11.75 11.75;
+        fill: #aaa;
+      }
+
+      .cls-6 {
+        stroke: #a753b5;
+      }
+
+      .cls-6, .cls-7 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+
+      .cls-7 {
+        stroke: #bc5ecc;
       }
     </style>
   </defs>
-  <g class="cls-9">
-    <rect class="cls-8" x="53.34" y="263.39" width="329.3" height="110.45"/>
-    <polygon class="cls-6" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
-    <polygon class="cls-7" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
+  <g class="cls-4">
+    <rect class="cls-3" x="53.34" y="263.39" width="329.3" height="110.45"/>
+    <polygon class="cls-1" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
+    <polygon class="cls-5" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
   </g>
   <g>
     <g>
-      <line class="cls-3" x1="506.66" y1="296.61" x2="500.66" y2="296.61"/>
-      <line class="cls-5" x1="488.91" y1="296.61" x2="189.23" y2="296.61"/>
-      <line class="cls-3" x1="183.35" y1="296.61" x2="177.35" y2="296.61"/>
+      <polygon class="cls-2" points="505.65 299.61 497.66 299.61 497.66 293.61 509.66 293.61 505.65 299.61"/>
+      <path class="cls-2" d="M491.91,299.61h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Zm-23.5,0h-17.75v-6h17.75v6Z"/>
+      <rect class="cls-2" x="174.35" y="293.61" width="12" height="6"/>
     </g>
     <g>
-      <line class="cls-3" x1="53.34" y1="373.84" x2="58.44" y2="370.67"/>
-      <line class="cls-4" x1="68.78" y1="364.23" x2="167.09" y2="303"/>
-      <line class="cls-3" x1="172.26" y1="299.78" x2="177.35" y2="296.61"/>
+      <polygon class="cls-2" points="55.23 375.13 51.88 370.21 59.4 366.54 62.57 371.63 55.23 375.13"/>
+      <path class="cls-2" d="M67.82,368.36l-3.17-5.09,15.44-9.62,3.17,5.09-15.44,9.62Zm20.7-12.89l-3.17-5.09,15.44-9.62,3.17,5.09-15.44,9.62Zm20.7-12.89l-3.17-5.09,15.44-9.62,3.17,5.09-15.44,9.62Zm20.7-12.89l-3.17-5.09,15.44-9.62,3.17,5.09-15.44,9.62Zm20.7-12.89l-3.17-5.09,15.44-9.62,3.17,5.09-15.44,9.62Z"/>
+      <rect class="cls-2" x="168.81" y="295.19" width="12" height="6" transform="translate(-131.21 137.47) rotate(-31.91)"/>
     </g>
     <g>
-      <line class="cls-3" x1="177.35" y1="296.61" x2="177.35" y2="290.61"/>
-      <line class="cls-1" x1="177.35" y1="279.67" x2="177.35" y2="197.63"/>
-      <line class="cls-3" x1="177.35" y1="192.16" x2="177.35" y2="186.16"/>
+      <rect class="cls-2" x="174.35" y="287.61" width="6" height="12"/>
+      <path class="cls-2" d="M180.35,282.67h-6v-16.94h6v16.94Zm0-21.88h-6v-16.94h6v16.94Zm0-21.88h-6v-16.94h6v16.94Zm0-21.88h-6v-16.94h6v16.94Z"/>
+      <polygon class="cls-2" points="180.35 195.16 174.35 195.16 174.35 186.16 180.35 183.16 180.35 195.16"/>
     </g>
-    <polygon class="cls-2" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
-    <rect class="cls-2" x="53.34" y="263.39" width="329.3" height="110.45"/>
-    <polygon class="cls-2" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
+    <polygon class="cls-7" points="382.65 263.39 53.34 263.39 177.35 186.16 506.66 186.16 382.65 263.39"/>
+    <rect class="cls-6" x="53.34" y="263.39" width="329.3" height="110.45"/>
+    <polygon class="cls-6" points="506.66 296.61 382.65 373.84 382.65 263.39 506.66 186.16 506.66 296.61"/>
   </g>
 </svg>
