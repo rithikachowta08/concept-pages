@@ -33,6 +33,7 @@ const Pill = ({
          color={darkbg?colors.WHITE:colors.BLACK}
          width={width}
          className={math?"pill-math":""}
+         border={`1px solid ${colors.PILL_SOLID}`}
       >
          {icon ? <Icon src={icon} marginRight="6px"></Icon> : null}
          <TextSpan color={darkbg?colors.WHITE:colors.BLACK} fontSize={fontSize}>
