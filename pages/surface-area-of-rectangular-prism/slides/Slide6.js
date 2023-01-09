@@ -6,6 +6,7 @@ const TextAndAppletSlide = dynamic(() =>
 );
 import { Paragraph } from "components/text";
 import { colors } from "utils/colors";
+import MathElement from "components/MathElement";
 
 const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
@@ -24,7 +25,14 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             by its six faces.
          </Paragraph>
          <Paragraph>
-            <Pill>Total surface area = 2 x (l x w + w x h + l x h)</Pill>
+            <Pill>
+               Total surface area ={" "}
+               <MathElement
+                  htmlString={
+                     "2 \\times (l \\times w + w \\times h + l \\times h)"
+                  }
+               />
+            </Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );

@@ -9,6 +9,7 @@ import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
+import MathElement from "components/MathElement";
 
 const image_modal =
    "assets/surface-area-of-rectangular-prism/slide_6_modal.svg";
@@ -70,7 +71,10 @@ const Slide7 = ({ currentPageIdx, downIcon }) => {
             excluding the two bases.
          </Paragraph>
          <Paragraph>
-            <Pill>Lateral surface area = 2 x (l + w) x h</Pill>
+            <Pill>
+               Lateral surface area ={" "}
+               <MathElement htmlString={"2 \\times (l + w) \\times h"} />
+            </Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );
