@@ -7,7 +7,7 @@ import { colors } from "utils/colors";
 
 const Pill = ({
    math=true,
-   darkbg=false,
+   darkbg=true,
    children,
    icon,
    width = "fit-content",
@@ -21,7 +21,7 @@ const Pill = ({
 }) => {
    return (
       <Flex
-         bgColor={darkbg?colors.DARK_BLUE:colors.OCEAN_GREEN}
+         bgColor={darkbg?colors.PILL_BLUR:colors.PILL_SOLID}
          bottom={bottom}
          padding="0.7rem"
          alignItems="center"
@@ -30,12 +30,12 @@ const Pill = ({
          alignSelf={alignSelf}
          borderRadius="8px"
          position={position}
-         color={color}
+         color={darkbg?colors.WHITE:colors.BLACK}
          width={width}
          className={math?"pill-math":""}
       >
          {icon ? <Icon src={icon} marginRight="6px"></Icon> : null}
-         <TextSpan color={color} fontSize={fontSize}>
+         <TextSpan color={darkbg?colors.WHITE:colors.BLACK} fontSize={fontSize}>
             {children}
          </TextSpan>
       </Flex>

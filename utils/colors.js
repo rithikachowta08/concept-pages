@@ -11,6 +11,8 @@ export const colors = {
    DARK_AQUA: "#56B7C8",
    YELLOW: "#fec429",
    PURPLE: "#4A33F5",
+   PILL_BLUR:'#c8c8c833',
+   PILL_SOLID:'#cccccc'
 };
 
 export const hexToRgbA = (hex, alpha = 1) => {
