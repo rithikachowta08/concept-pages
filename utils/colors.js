@@ -11,6 +11,7 @@ export const colors = {
    DARK_AQUA: "#56B7C8",
    YELLOW: "#fec429",
    PURPLE: "#4A33F5",
+   LAVENDER: "#F2A4FF",
 };
 
 export const hexToRgbA = (hex, alpha = 1) => {
