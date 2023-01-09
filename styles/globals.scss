@@ -80,6 +80,7 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .shaka-play-button {
    cursor: pointer;
+   padding: 30px !important;
 }
 
 #__next {
@@ -168,19 +169,9 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    padding: 0 5px;
    border-radius: 25px;
    cursor: default;
-}
-
-.lightBg {
-   color: #4a33f5;
+   color: #f2a4ff;
    &:hover {
-      background-color: rgba(74, 51, 245, 0.2);
-   }
-}
-
-.darkBg {
-   color: #67dbe8;
-   &:hover {
-      background-color: rgba(103, 219, 232, 0.2);
+      background-color: rgba(242, 164, 255, 0.2);
    }
 }
 
