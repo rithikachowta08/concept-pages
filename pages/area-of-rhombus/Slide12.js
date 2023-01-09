@@ -21,7 +21,7 @@ const rhombus_lb = "assets/area-of-rhombus/slide12/2.svg";
 const Slide12 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -51,16 +51,16 @@ const Slide12 = ({ downIcon }) => {
         In a rhombus, if the lengths of{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           two adjacent sides and the included angle
         </TextSpanBg>{" "}
         between them are given, then the area can be calculated as:
       </Paragraph>
-      <Pill  color={colors.WHITE}   bgColor={colors.GREEN}>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN}>
         Area of a rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndDiagramSlide>

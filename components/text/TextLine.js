@@ -8,7 +8,7 @@ const Line = styled.div`
    color: ${(props) => props.color || "inherit"};
    text-align: ${(props) => props.textAlign};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
-   font-size: ${(props) => props.fontSize || fontSizes.LARGE};
+   font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
 `;
 
 const TextLine = ({ children, fontSize, textAlign, fontWeight, color }) => {

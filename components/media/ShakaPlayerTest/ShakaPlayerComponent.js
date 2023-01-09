@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 const Image = dynamic(() => import("next/image"));
 
@@ -19,6 +19,7 @@ var player,
    videoContainerRef = null;
 
 const VideoPlayer = (props) => {
+   const [isFirstTimePlay, setIsFirstTimePlay] = useState(false);
    const videoComponent = useRef();
    const videoContainer = useRef();
    const fairplayDrmCert = new Uint8Array([
@@ -191,7 +192,29 @@ const VideoPlayer = (props) => {
          "https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"
       );
    };
+   const onPause = () => {
+      document.getElementById(props.downIconId).style.opacity = 1;
+   };
 
+   const onPlay = () => {
+      if (!isFirstTimePlay) {
+         setIsFirstTimePlay(true);
+         document.getElementById(props.downIconId).style.opacity = 0;
+         document
+            .getElementById(props.videoSlideId)
+            .addEventListener("mousemove", () => {
+               document.getElementById(props.downIconId).style.opacity = 1;
+               setTimeout(() => {
+                  if (!video.paused) {
+                     document.getElementById(
+                        props.downIconId
+                     ).style.opacity = 0;
+                  }
+               }, 3500);
+            });
+      }
+      document.getElementById(props.downIconId).style.opacity = 0;
+   };
    useEffect(() => {
       video = videoComponent.current;
       videoContainerRef = videoContainer.current;
@@ -202,13 +225,13 @@ const VideoPlayer = (props) => {
       let uiConfig = {};
       uiConfig = props.uiConfig;
       uiConfig.controlPanelElements = [
-         // "play_pause",
-         // "rewind_10",
-         // "forward_10",
+         "play_pause",
+         "rewind_10",
+         "forward_10",
          "time_and_duration",
          "spacer",
          // "vertical_volume",
-         // "mute",
+         "mute",
          "playback_rate",
          "quality",
          "fullscreen",
@@ -224,35 +247,11 @@ const VideoPlayer = (props) => {
       ui.getControls();
       ui.configure(uiConfig);
       player.addEventListener("error", onErrorEvent);
-      // video?.requestFullscreen();
-   }, []);
-
-   const replay = () => {
-      const video = videoComponent.current;
-      video.currentTime = video.currentTime - 5;
-   };
-
-   const forward = () => {
-      const video = videoComponent.current;
-      video.currentTime = video.currentTime + 5;
-   };
-
-   if (document.addEventListener) {
-      document.addEventListener("fullscreenchange", exitHandler, false);
-      document.addEventListener("mozfullscreenchange", exitHandler, false);
-      document.addEventListener("MSFullscreenChange", exitHandler, false);
-      document.addEventListener("webkitfullscreenchange", exitHandler, false);
-   }
-
-   function exitHandler() {
-      if (
-         !document.webkitIsFullScreen &&
-         !document.mozFullScreen &&
-         !document.msFullscreenElement
-      ) {
-         video.pause();
+      if (props.downIconId) {
+         video.addEventListener("pause", onPause);
+         video.addEventListener("playing", onPlay);
       }
-   }
+   }, []);
 
    return (
       <div ref={videoContainer}>
@@ -264,7 +263,7 @@ const VideoPlayer = (props) => {
             playsInline
             // autoPlay={true}
             ref={videoComponent}
-            //   poster={props.poster}
+            poster={props.poster}
             src={props.src}
          />
       </div>

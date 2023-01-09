@@ -4,7 +4,6 @@ const MathElement = dynamic(() => import("components/MathElement"));
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
-const HyperLink = dynamic(() => import("components/text/HyperLink"));
 
 import { Paragraph, TextLine } from "components/text";
 import { colors } from "utils/colors";
@@ -12,13 +11,14 @@ import { colors } from "utils/colors";
 const applet = "applets/triangle.html";
 
 // General formula derivation
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          title={"Derivation"}
          secondaryTitle={"Area of a Triangle"}
          bg={"LIGHT"}
          appletSrc={applet}
+         currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
          <Paragraph marginBottom={"40px"}>
@@ -26,13 +26,8 @@ const Slide7 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextLine>
-               <HyperLink
-                  href={"https://byjus.com/us/math/area-of-parallelogram/"}
-                  color={colors.DARK_BLUE}
-               >
-                  Area of a parallelogram
-               </HyperLink>{" "}
-               = Base (b) <MathElement htmlString={"\\times"} /> Height (h)
+               Area of a parallelogram = Base (b){" "}
+               <MathElement htmlString={"\\times"} /> Height (h)
             </TextLine>
          </Paragraph>
          <span>

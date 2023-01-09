@@ -4,13 +4,15 @@ const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 //    import("components/text").then((mod) => mod.Paragraph)
 // );
 
-const Slide5 = ({ downIcon }) => {
+const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
       <AppletSlide
          secondaryTitle="Area of Rectangle"
          title="Using Unit Squares"
+         currentPageIdx={currentPageIdx}
          appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
          downIcon={downIcon}
+         bg="DARK"
       >
          {/* <Paragraph></Paragraph> */}
       </AppletSlide>

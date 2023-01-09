@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: "/learn",
+  basePath: "/us/math/study",
   images: {
-    path: "/_next/image/",
+    path: "/us/math/study/_next/image/",
     domains: [
       "search-static.byjusweb.com",
       "static.tllms.com",

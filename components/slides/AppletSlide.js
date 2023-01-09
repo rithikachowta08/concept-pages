@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
@@ -10,18 +10,20 @@ const IFrame = styled.iframe`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
+   border: 1px solid #444;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
       margin: auto 0;
       height: 100vw;
+      border: none;
    }
 
    // Tablet
    @media (min-width: 501px) and (max-width: 992px) {
-      height: 100%;
-      max-width: 500px;
-      max-height: 500px;
+      margin: auto 0;
+      height: 100vw;
+      border: none;
    }
 
    // Low res desktop
@@ -33,6 +35,7 @@ const IFrame = styled.iframe`
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       height: 100vh;
+      border: none;
    }
 
    // Small height desktop
@@ -52,14 +55,9 @@ const ContentWrap = styled.div`
    justify-content: flex-start;
 
    // Mobile
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       flex-direction: column;
       gap: 20px;
-   }
-
-   // Mobile landscape mode
-   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
-      max-height: 40%;
    }
 `;
 
@@ -93,23 +91,26 @@ const AppletSlide = ({
    downIcon,
    isLastSlide,
    bg = "LIGHT",
-   appletSrc = "./applets/triangle.html",
+   currentPageIdx,
+   appletSrc,
 }) => {
    const ref = useRef(null);
+   const [src, setSrc] = useState(null);
    useEffect(() => {
       if (ref.current && bg === "DARK") {
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   useEffect(() => {
+      console.log("src", src);
+      if (currentPageIdx !== 0 && !src) {
+         setSrc(appletSrc);
+      }
+   }, [currentPageIdx, appletSrc, src]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
-            <SlideWrap
-               bg={bg}
-               ref={ref}
-               padding="0 0 10px 0"
-               isLastSlide={isLastSlide}
-            >
+            <SlideWrap bg={bg} padding="0 0 10px 0" isLastSlide={isLastSlide}>
                <ContentWrap>
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
@@ -117,6 +118,7 @@ const AppletSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -132,7 +134,7 @@ const AppletSlide = ({
                      alignItems="center"
                      justifyContent="center"
                   >
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                   </Flex>
                </ContentWrap>
                {downIcon}
@@ -141,19 +143,18 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
-               padding="20px 30px"
+               padding="0 30px"
                isLastSlide={isLastSlide}
                hideFiller
+               noVerticalPaddingInLandscapeMode
             >
                <ContentWrap>
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <TitleAndAppletWrap>
                      <TitleWrap>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                            centerAlign
                         />
@@ -161,7 +162,7 @@ const AppletSlide = ({
                            {title}
                         </SlideTitle>
                      </TitleWrap>
-                     <IFrame src={appletSrc} allowFullScreen frameBorder="0" />
+                     <IFrame src={src} allowFullScreen frameBorder="0" />
                      {downIcon
                         ? React.cloneElement(downIcon, {
                              noMargin: true,

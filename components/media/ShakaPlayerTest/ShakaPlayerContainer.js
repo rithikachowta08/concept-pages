@@ -8,6 +8,7 @@ import { get_video_manifest, isSafariOrIOSDevice } from "./playerFunction";
 
 const ShakaPlayerContainer = (props) => {
    var [drmConf, setDrmConfig] = useState({});
+   var [isVideoLoaded, setIsVideoLoaded] = useState(false);
    var [uiConfig, setUiConfig] = useState({});
    var isEncryptedVideo = true;
 
@@ -35,9 +36,18 @@ const ShakaPlayerContainer = (props) => {
             adBreaks: "rgb(255, 204, 0)",
          },
       });
-
-      watchVideo();
    }, []);
+
+   useEffect(() => {
+      if (
+         !isVideoLoaded &&
+         props.currentPageIdx >= props.index - 2 &&
+         props.currentPageIdx <= props.index + 2
+      ) {
+         setIsVideoLoaded(true);
+         watchVideo();
+      }
+   }, [props.currentPageIdx, props.index, watchVideo, isVideoLoaded]);
 
    function watchVideo() {
       (async () => {
@@ -80,11 +90,13 @@ const ShakaPlayerContainer = (props) => {
                : props.videoContent?.dash_Url
          }
          poster={props.videoContent["thumbnail"]}
-         //  autoPlay={true}
+         // autoPlay={true}
          srcKey={drmConf.key_id}
          uiConfig={uiConfig}
          isEncryptedVideo={isEncryptedVideo}
          videoContent={props.videoContent}
+         videoSlideId={props.videoSlideId}
+         downIconId={props.downIconId}
       />
    ) : null;
 };

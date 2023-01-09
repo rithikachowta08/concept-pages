@@ -1,119 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
   <defs>
     <style>
       .cls-1 {
-        fill: #2b2bf0;
-        opacity: .6;
-      }
-
-      .cls-2 {
-        opacity: .2;
-      }
-
-      .cls-3, .cls-4 {
-        fill: #333;
-      }
-
-      .cls-5 {
-        clip-path: url(#clippath-1);
-      }
-
-      .cls-6, .cls-7 {
-        fill: #cffffe;
-      }
-
-      .cls-6, .cls-8 {
-        opacity: .4;
-      }
-
-      .cls-9 {
-        clip-path: url(#clippath);
-      }
-
-      .cls-10 {
         fill: none;
       }
 
-      .cls-4 {
+      .cls-2 {
         opacity: .1;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #333;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5, .cls-6 {
+        fill: #cffffe;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-8 {
+        opacity: .2;
+      }
+
+      .cls-9, .cls-6 {
+        opacity: .4;
+      }
+
+      .cls-10 {
+        fill: #2b2bf0;
+        opacity: .6;
       }
     </style>
     <clipPath id="clippath">
-      <polygon class="cls-10" points="442.47 -151.87 46.04 -151.87 134.15 -418.99 530.59 -418.99 442.47 -151.87"/>
+      <polygon class="cls-1" points="442.47 -151.87 46.04 -151.87 134.15 -418.99 530.59 -418.99 442.47 -151.87"/>
     </clipPath>
     <clipPath id="clippath-1">
-      <polygon class="cls-10" points="280 41.98 42.91 452.64 517.09 452.64 280 41.98"/>
+      <polygon class="cls-1" points="280 74.67 42.91 485.33 517.09 485.33 280 74.67"/>
     </clipPath>
   </defs>
-  <g id="BG">
-    <polygon class="cls-4" points="280 41.98 42.91 452.64 517.09 452.64 280 41.98"/>
-    <polygon class="cls-4" points="280 41.98 42.91 452.64 517.09 452.64 280 41.98"/>
-    <g class="cls-9">
+  <g id="Layer_1" data-name="Layer 1">
+    <g class="cls-4">
       <g>
-        <polygon class="cls-7" points="301.66 119.09 298.83 119.09 569.72 -151.8 570.76 -150.01 301.66 119.09"/>
-        <g class="cls-8">
-          <polygon class="cls-7" points="279.4 96.82 276.57 96.82 547.46 -174.06 548.5 -172.27 279.4 96.82"/>
-        </g>
-      </g>
-    </g>
-    <polygon class="cls-1" points="280 41.98 42.91 452.64 517.09 452.64 280 41.98"/>
-    <g class="cls-5">
-      <g>
-        <polygon class="cls-6" points="149.27 489.59 146.44 489.59 495.32 140.71 496.35 142.5 149.27 489.59"/>
-        <polygon class="cls-7" points="-88.09 236.61 -84.5 230.19 139.09 6.6 140.12 8.4 -88.09 236.61"/>
-        <g class="cls-8">
-          <polygon class="cls-7" points="-96.62 334.36 -99.45 334.36 171.43 63.47 172.47 65.27 -96.62 334.36"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="-118.89 312.1 -121.71 312.1 149.17 41.21 150.21 43.01 -118.89 312.1"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="-52.01 378.97 -54.84 378.97 284.95 39.18 285.98 40.98 -52.01 378.97"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="-74.28 356.71 -77.1 356.71 193.78 85.82 194.82 87.62 -74.28 356.71"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="3.72 412.35 .89 412.35 341.28 71.96 342.32 73.75 3.72 412.35"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="-18.54 390.08 -21.37 390.08 299.35 69.37 300.38 71.16 -18.54 390.08"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="48.34 456.97 45.51 456.97 385.9 116.58 386.94 118.37 48.34 456.97"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="26.08 434.71 23.25 434.71 363.64 94.32 364.68 96.11 26.08 434.71"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="104.65 444.97 101.82 444.97 450.7 96.09 451.73 97.88 104.65 444.97"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="127.01 467.33 124.18 467.33 473.06 118.45 474.09 120.24 127.01 467.33"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="171.53 511.85 168.7 511.85 517.58 162.97 518.62 164.76 171.53 511.85"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="294.14 478.48 291.32 478.48 562.2 207.59 563.24 209.39 294.14 478.48"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="271.88 456.22 269.05 456.22 539.94 185.33 540.98 187.13 271.88 456.22"/>
-        </g>
-        <g class="cls-8">
-          <polygon class="cls-7" points="316.4 500.74 313.58 500.74 584.46 229.86 585.5 231.65 316.4 500.74"/>
-        </g>
-        <polygon class="cls-6" points="237.7 668.69 234.87 668.69 505.76 397.8 506.8 399.59 237.7 668.69"/>
-        <g class="cls-8">
-          <polygon class="cls-7" points="215.44 646.43 212.61 646.43 483.5 375.54 484.54 377.33 215.44 646.43"/>
+        <polygon class="cls-5" points="301.66 119.09 298.83 119.09 569.72 -151.8 570.76 -150.01 301.66 119.09"/>
+        <g class="cls-9">
+          <polygon class="cls-5" points="279.4 96.82 276.57 96.82 547.46 -174.06 548.5 -172.27 279.4 96.82"/>
         </g>
       </g>
     </g>
   </g>
   <g id="Layer_2" data-name="Layer 2">
-    <g class="cls-2">
-      <path class="cls-3" d="M280,41.98l237.09,410.66H42.91L280,41.98m0-12l-5.2,9L37.71,449.64l-5.2,9h494.97l-5.2-9L285.2,38.98l-5.2-9h0Z"/>
+    <g>
+      <polygon class="cls-2" points="280 74.67 42.91 485.33 517.09 485.33 280 74.67"/>
+      <polygon class="cls-2" points="280 74.67 42.91 485.33 517.09 485.33 280 74.67"/>
+      <polygon class="cls-10" points="280 74.67 42.91 485.33 517.09 485.33 280 74.67"/>
+      <g class="cls-7">
+        <g>
+          <polygon class="cls-6" points="149.27 522.28 146.44 522.28 495.32 173.4 496.35 175.19 149.27 522.28"/>
+          <polygon class="cls-5" points="-88.09 269.3 -84.5 262.88 139.09 39.29 140.12 41.09 -88.09 269.3"/>
+          <g class="cls-9">
+            <polygon class="cls-5" points="-96.62 367.05 -99.45 367.05 171.43 96.16 172.47 97.96 -96.62 367.05"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="-118.89 344.79 -121.71 344.79 149.17 73.9 150.21 75.69 -118.89 344.79"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="-52.01 411.66 -54.84 411.66 284.95 71.87 285.98 73.66 -52.01 411.66"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="-74.28 389.4 -77.1 389.4 193.78 118.51 194.82 120.31 -74.28 389.4"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="3.72 445.03 .89 445.03 341.28 104.64 342.32 106.44 3.72 445.03"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="-18.54 422.77 -21.37 422.77 299.35 102.06 300.38 103.85 -18.54 422.77"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="48.34 489.66 45.51 489.66 385.9 149.27 386.94 151.06 48.34 489.66"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="26.08 467.39 23.25 467.39 363.64 127 364.68 128.8 26.08 467.39"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="104.65 477.66 101.82 477.66 450.7 128.78 451.73 130.57 104.65 477.66"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="127.01 500.02 124.18 500.02 473.06 151.14 474.09 152.93 127.01 500.02"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="171.53 544.54 168.7 544.54 517.58 195.66 518.62 197.45 171.53 544.54"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="294.14 511.17 291.32 511.17 562.2 240.28 563.24 242.08 294.14 511.17"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="271.88 488.91 269.05 488.91 539.94 218.02 540.98 219.81 271.88 488.91"/>
+          </g>
+          <g class="cls-9">
+            <polygon class="cls-5" points="316.4 533.43 313.58 533.43 584.46 262.54 585.5 264.34 316.4 533.43"/>
+          </g>
+          <polygon class="cls-6" points="237.7 701.38 234.87 701.38 505.76 430.49 506.8 432.28 237.7 701.38"/>
+          <g class="cls-9">
+            <polygon class="cls-5" points="215.44 679.12 212.61 679.12 483.5 408.23 484.54 410.02 215.44 679.12"/>
+          </g>
+        </g>
+      </g>
+      <g class="cls-8">
+        <path class="cls-3" d="M280,74.67l237.09,410.66H42.91L280,74.67m0-12l-5.2,9L37.71,482.33l-5.2,9h494.97l-5.2-9L285.2,71.67l-5.2-9h0Z"/>
+      </g>
     </g>
   </g>
 </svg>

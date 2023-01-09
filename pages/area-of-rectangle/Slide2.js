@@ -44,29 +44,27 @@ const Slide2 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph lineHeight={lineHeightProp}>
-            A rectangle is a four-sided polygon with&nbsp;
+            A rectangle is a four-sided polygon with{" "}
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                opposite sides equal
-            </TextSpanBg>
-            &nbsp;in length and all the&nbsp;
+            </TextSpanBg>{" "}
+            in length and all the{" "}
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.DARK_BLUE}
                fontWeight={700}
-               fontSize="2.2rem"
             >
                internal angles
-            </TextSpanBg>
-            &nbsp;equal to 90 degrees.
+            </TextSpanBg>{" "}
+            equal to 90 degrees.
          </Paragraph>
       </TextAndDiagramSlide>
    );

@@ -24,7 +24,7 @@ const TextAndDiagramSlide = ({
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={isMobile ? "center" : "left"}
          marginBottom="1vh"
-         small
+         level={2}
       >
          {secondaryTitle}
       </Title>
@@ -36,7 +36,7 @@ const TextAndDiagramSlide = ({
          fontWeight={fontWeights.BOLD}
          textAlign={isMobile ? "center" : "left"}
          marginBottom="1vh"
-         small
+         level={2}
       >
          {title}
       </Title>

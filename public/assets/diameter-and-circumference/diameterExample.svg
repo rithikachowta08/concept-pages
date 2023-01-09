@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #2b2bf0;
+      }
+
+      .cls-3 {
+        stroke: #2b2bf0;
+        stroke-linecap: round;
+        stroke-width: 4px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        font-family: Nunito-Medium, Nunito;
+        font-size: 30px;
+      }
+
+      .cls-5 {
+        fill: #333;
+        opacity: .1;
+      }
+
+      .cls-4 {
+        stroke: #b7b6b6;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-5" cx="280" cy="280" r="201.7"/>
+  <text class="cls-2" transform="translate(229.9 266.85)"><tspan x="0" y="0">D = 6 in</tspan></text>
+  <circle class="cls-1" cx="280" cy="280" r="7.2"/>
+  <circle class="cls-4" cx="280" cy="280" r="201.7"/>
+  <g>
+    <line class="cls-3" x1="92.65" y1="280" x2="467.35" y2="280"/>
+    <polygon class="cls-1" points="95.57 289.97 78.3 280 95.57 270.03 95.57 289.97"/>
+    <polygon class="cls-1" points="464.43 289.97 481.7 280 464.43 270.03 464.43 289.97"/>
+  </g>
+</svg>

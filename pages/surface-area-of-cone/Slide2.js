@@ -23,7 +23,7 @@ const surfaceCone_top = "assets/surface-area-of-cone/slide2/3.svg";
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -45,34 +45,27 @@ const Slide2 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        A cone is a&nbsp;
-        <HyperLink
-          href={"https://byjus.com/us/math/concept-three-dimensional-shapes/"}
-          color={colors.DARK_BLUE}
-        >
-          three-dimensional
-        </HyperLink>{" "}
-        &nbsp;shape that narrows smoothly from a&nbsp;
+        A cone is a three-dimensional shape that narrows smoothly from a&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           circular base
         </TextSpanBg>
         &nbsp;to a point called the&nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
-          apex
+          apex or vertex
         </TextSpanBg>
-        &nbsp;or vertex.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );

@@ -9,7 +9,7 @@ const TextAndDiagramSlide = dynamic(() =>
 );
 import { Flex, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-circle/slide_2.svg";
@@ -65,8 +65,7 @@ const Slide2 = ({ downIcon, navBar }) => {
          <Paragraph>
             The area of a circle is the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >

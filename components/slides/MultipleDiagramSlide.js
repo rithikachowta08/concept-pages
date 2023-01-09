@@ -36,11 +36,10 @@ const MultipleDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <div style={{ height: "100%", width: "100%" }}>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
@@ -54,6 +53,7 @@ const MultipleDiagramSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -92,7 +92,7 @@ const MultipleDiagramSlide = ({
                               }
                               fontWeight={400}
                               textAlign="center"
-                              fontSize={fontSizes.LARGE}
+                              fontSize={fontSizes.MEDIUM}
                            >
                               {image.caption}
                            </Paragraph>
@@ -115,9 +115,7 @@ const MultipleDiagramSlide = ({
                   width="100%"
                   maxHeight="80%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <Flex
                      direction="column"
                      justifyContent="space-between"
@@ -127,6 +125,7 @@ const MultipleDiagramSlide = ({
                      <div>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                         />
                         <SlideTitle bg={bg}>{title}</SlideTitle>

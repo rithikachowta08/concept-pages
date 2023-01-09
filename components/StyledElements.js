@@ -48,6 +48,12 @@ export const SlideWrap = styled.div`
                display:none
                }
                padding-right: 0;
+               padding: 
+                  ${
+                     props.noVerticalPaddingInLandscapeMode
+                        ? "0 0 0 30px"
+                        : props.padding
+                  };
                `
             : `&::before {
          content: "D";
@@ -122,6 +128,7 @@ export const Flex = styled.div`
    padding: ${(props) => props.padding};
    color: ${(props) => props.color};
    background-color: ${(props) => props.bgColor};
+   border: ${(props) => props.border};
    border-radius: ${(props) => props.borderRadius};
    position: ${(props) => props.position};
    left: ${(props) => props.left};

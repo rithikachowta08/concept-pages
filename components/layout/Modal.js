@@ -70,8 +70,10 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
    useEffect(() => {
       if (isOpen) {
          global.fullpage_api.setAllowScrolling(false);
+         global.fullpage_api.setKeyboardScrolling(false);
       } else {
          global.fullpage_api?.setAllowScrolling(true);
+         global.fullpage_api?.setKeyboardScrolling(true);
       }
    }, [isOpen]);
    return (
@@ -87,7 +89,7 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                      fontWeight={fontWeights.BOLD}
                      fontSize={fontSizes.LARGE}
                      color={color || "white"}
-                     small
+                     level={2}
                   >
                      {title}
                   </Title>

@@ -42,7 +42,7 @@
 
       .cls-9 {
         fill: #ababed;
-        font-family: Raleway-Medium, Raleway;
+        font-family: Nunito, sans-serif;
         font-size: 33px;
         font-weight: 500;
       }

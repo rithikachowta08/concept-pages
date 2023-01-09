@@ -40,17 +40,15 @@ const Slide8 = ({ navBar, downIcon }) => {
       >
          <Paragraph color={colors.WHITE}>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
                Circumference (C)
             </TextSpanBg>{" "}
-            = <MathElement htmlString={"2\\pi\\ \\times\\ "} />
+            = <MathElement htmlString={"2\\times \\pi\\ \\times\\ "} />
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -58,15 +56,18 @@ const Slide8 = ({ navBar, downIcon }) => {
             </TextSpanBg>
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            Radius (r) = <MathElement htmlString={"\\dfrac{C}{2\\pi}"} />
+            Radius (r) ={" "}
+            <MathElement htmlString={"\\dfrac{C}{2\\times \\pi}"} />
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             <Flex>
                <TextLine>Area of a circle </TextLine>
                <Flex direction="column">
-                  <MathElement htmlString={"\\ =\\ \\pi r^2"} />
+                  <MathElement htmlString={"\\ =\\ \\pi\\times r^2"} />
                   <MathElement
-                     htmlString={"\\ =\\ \\pi \\Big(\\dfrac{C}{2\\pi}\\Big)^2"}
+                     htmlString={
+                        "\\ =\\ \\pi\\times \\Big(\\dfrac{C}{2\\times \\pi}\\Big)^2"
+                     }
                   />
                </Flex>
             </Flex>
@@ -74,7 +75,9 @@ const Slide8 = ({ navBar, downIcon }) => {
          <Paragraph>
             <Pill>
                Area of a circle
-               <MathElement htmlString={"\\ =\\ \\dfrac{C^2}{4\\pi }"} />
+               <MathElement
+                  htmlString={"\\ =\\ \\dfrac{C^2}{4\\times \\pi }"}
+               />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>
