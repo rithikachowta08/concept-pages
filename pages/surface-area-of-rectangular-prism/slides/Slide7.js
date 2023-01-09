@@ -13,7 +13,7 @@ import { colors } from "utils/colors";
 const image_modal =
    "assets/surface-area-of-rectangular-prism/slide_6_modal.svg";
 
-const Slide7 = ({ currentPageIdx }) => {
+const Slide7 = ({ currentPageIdx, downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    const onModalDismiss = () => {
@@ -48,6 +48,7 @@ const Slide7 = ({ currentPageIdx }) => {
             "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v4/index.html"
          }
          isLastSlide={true}
+         downIcon={downIcon}
       >
          <Modal
             bg="LIGHT"
