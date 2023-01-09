@@ -13,7 +13,7 @@ const TextLine = dynamic(() =>
 );
 const plain_values =
    "assets/surface-area-of-right-triangluar-prism/plain_values.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide7 = ({ downIcon }) => {
@@ -61,7 +61,7 @@ const Slide7 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>a = 4 in, b = 5 in</TextLine>
                <TextLine>c = 3 in, l = 10 in</TextLine>

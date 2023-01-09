@@ -33,7 +33,10 @@ const SurfaceAreaOfSphere = () => {
          slides: [1, 2, 3, 4],
       },
       { title: "General Formula", slides: [5] },
-      { title: "Why is the surface area 4πr", slides: [6, 7, 8] },
+      {
+         title: <div>Why is the surface area 4πr&sup2;</div>,
+         slides: [6, 7, 8],
+      },
    ];
 
    const darkBgIndices = [0, 5, 6, 8];

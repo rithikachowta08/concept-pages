@@ -56,9 +56,7 @@ const Slide3 = ({ downIcon }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   &bull; Lateral surface area
                </TextSpanBg>
@@ -68,9 +66,7 @@ const Slide3 = ({ downIcon }) => {
                   id={2}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   &bull; Total surface area
                </TextSpanBg>

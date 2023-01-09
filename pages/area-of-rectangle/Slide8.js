@@ -23,7 +23,7 @@ const Flex = dynamic(() =>
 const rectangle_full = "assets/area-of-rectangle/s7_rectangle_full.svg";
 const rectangle_right = "assets/area-of-rectangle/s7_rectangle_right.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s7_rectangle_bottom.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide8 = ({ downIcon }) => {
@@ -72,15 +72,13 @@ const Slide8 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>
                   <TextSpanBg
                      onHover={() => onHover(1)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={fontWeights.BOLD}
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      Length
                   </TextSpanBg>
@@ -90,9 +88,7 @@ const Slide8 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={fontWeights.BOLD}
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      Width
                   </TextSpanBg>

@@ -3,23 +3,18 @@
   <defs>
     <style>
       .cls-1 {
-        opacity: .1;
-      }
-
-      .cls-2 {
         fill: none;
-        stroke: #ea6560;
+        stroke: #f2a4ff;
         stroke-miterlimit: 10;
         stroke-width: 6px;
       }
 
-      .cls-3 {
-        fill: #ea6560;
+      .cls-2 {
+        fill: #f2a4ff;
+        opacity: .3;
       }
     </style>
   </defs>
-  <g class="cls-1">
-    <rect class="cls-3" x="37.72" y="109.97" width="439.11" height="293.95"/>
-  </g>
+  <rect class="cls-1" x="37.72" y="109.97" width="439.11" height="293.95"/>
   <rect class="cls-2" x="37.72" y="109.97" width="439.11" height="293.95"/>
 </svg>
