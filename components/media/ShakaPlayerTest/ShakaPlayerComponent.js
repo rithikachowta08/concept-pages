@@ -181,24 +181,30 @@ const VideoPlayer = (props) => {
       "https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"
     );
   };
+  const onPause = () => {
+    document.getElementById(props.downIconId).style.opacity = 1;
+  };
 
+  const onPlay = () => {
+    document.getElementById(props.downIconId).style.opacity = 0;
+  };
   useEffect(() => {
     video = videoComponent.current;
     videoContainerRef = videoContainer.current;
     shaka.polyfill.installAll();
     player = new shaka.Player(video);
     video.loop = true;
-    video.autoPlay = true;
+    // video.autoPlay = true;
     let uiConfig = {};
     uiConfig = props.uiConfig;
     uiConfig.controlPanelElements = [
-      // "play_pause",
-      // "rewind_10",
-      // "forward_10",
+      "play_pause",
+      "rewind_10",
+      "forward_10",
       "time_and_duration",
       "spacer",
-      "vertical_volume",
-      // "mute",
+      // "vertical_volume",
+      "mute",
       "playback_rate",
       "quality",
       "fullscreen",
@@ -209,35 +215,24 @@ const VideoPlayer = (props) => {
     ui.getControls();
     ui.configure(uiConfig);
     player.addEventListener("error", onErrorEvent);
-    // video?.requestFullscreen();
-  }, []);
-
-  const replay = () => {
-    const video = videoComponent.current;
-    video.currentTime = video.currentTime - 5;
-  };
-
-  const forward = () => {
-    const video = videoComponent.current;
-    video.currentTime = video.currentTime + 5;
-  };
-
-  if (document.addEventListener) {
-    document.addEventListener("fullscreenchange", exitHandler, false);
-    document.addEventListener("mozfullscreenchange", exitHandler, false);
-    document.addEventListener("MSFullscreenChange", exitHandler, false);
-    document.addEventListener("webkitfullscreenchange", exitHandler, false);
-  }
-
-  function exitHandler() {
-    if (
-      !document.webkitIsFullScreen &&
-      !document.mozFullScreen &&
-      !document.msFullscreenElement
-    ) {
-      video.pause();
+    if (props.downIconId) {
+      video.addEventListener("pause", onPause);
+      video.addEventListener("playing", onPlay);
+      video.addEventListener("canplay", () => {
+        document.getElementById(props.downIconId).style.opacity = 0;
+        document
+          .getElementById(props.videoSlideId)
+          .addEventListener("mousemove", () => {
+            document.getElementById(props.downIconId).style.opacity = 1;
+            setTimeout(() => {
+              if (!video.paused) {
+                document.getElementById(props.downIconId).style.opacity = 0;
+              }
+            }, 3500);
+          });
+      });
     }
-  }
+  }, []);
 
   return (
     <div ref={videoContainer}>
@@ -247,7 +242,7 @@ const VideoPlayer = (props) => {
         width={"100%"}
         height={"100%"}
         playsInline
-        autoPlay={true}
+        // autoPlay={true}
         ref={videoComponent}
         poster={props.poster}
         src={props.src}

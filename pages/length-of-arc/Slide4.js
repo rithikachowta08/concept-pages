@@ -24,18 +24,18 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() => 
-  import("components/MathElement")
-)
+const MathElement = dynamic(() => import("components/MathElement"));
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const diagram_of_a_circle = "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
+const diagram_of_a_circle =
+   "assets/length-of-arc-of-a-circle/diagram_of_a_circle.svg";
 const minor_arc = "assets/length-of-arc-of-a-circle/minor_arc.svg";
 const major_arc = "assets/length-of-arc-of-a-circle/major_arc.svg";
-const semicircular_arc= "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
+const semicircular_arc =
+   "assets/length-of-arc-of-a-circle/semicircular_arc.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -78,8 +78,8 @@ const Slide4 = ({ downIcon }) => {
                   "Diagram of a circle",
                   "Diagram of a circle highlighting minor arc",
                   "Diagram of a circle highlighting major arc",
-                  "Diagram of a circle highlighting semicircular arc"
-                  ]}
+                  "Diagram of a circle highlighting semicircular arc",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -103,7 +103,6 @@ const Slide4 = ({ downIcon }) => {
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   Minor arc
                </TextSpanBg>
@@ -117,7 +116,6 @@ const Slide4 = ({ downIcon }) => {
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   Major arc
                </TextSpanBg>
@@ -131,7 +129,6 @@ const Slide4 = ({ downIcon }) => {
                   color={colors.RED}
                   hoverColor={colors.PURPLE}
                   fontWeight={700}
-                  fontSize="2.2rem"
                >
                   Semicircular arc
                </TextSpanBg>

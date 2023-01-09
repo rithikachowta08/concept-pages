@@ -89,7 +89,7 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                      fontWeight={fontWeights.BOLD}
                      fontSize={fontSizes.LARGE}
                      color={color || "white"}
-                     small
+                     level={2}
                   >
                      {title}
                   </Title>

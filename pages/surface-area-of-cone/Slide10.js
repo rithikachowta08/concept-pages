@@ -34,7 +34,7 @@ const Slide10 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}rl + {\\pi}r^2"],
+        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
         type: "latex",
       },
       rhsHint: {
@@ -48,7 +48,7 @@ const Slide10 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}r(l+r)"],
+        value: ["{\\pi} \\times r \\times (l + r)"],
         type: "latex",
       },
       rhsHint: {
@@ -62,13 +62,13 @@ const Slide10 = ({ downIcon }) => {
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`= {\\pi}r(l+r)`);
+  latex.push(`= {\\pi} \\times r \\times (l + r)`);
   latex.push(`(\\ell)`);
   let mathjaxCounter = 0;
   return (
@@ -101,7 +101,7 @@ const Slide10 = ({ downIcon }) => {
         The total surface area of a cone is the sum of its&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.AQUA}
@@ -111,7 +111,7 @@ const Slide10 = ({ downIcon }) => {
         &nbsp;and its{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.AQUA}
@@ -130,7 +130,7 @@ const Slide10 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         <Pill bgColor={colors.GREEN} color={colors.WHITE}>
           Total surface area{" "}
-          <MathElement htmlString={latex[mathjaxCounter++]} /> square units
+          <MathElement htmlString={latex[mathjaxCounter++]} />
         </Pill>
       </Paragraph>
 
@@ -138,18 +138,17 @@ const Slide10 = ({ downIcon }) => {
         Here, (r) is the&nbsp;
         <TextSpanBg
           id={3}
-          onHover={onHover}
+          onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.AQUA}
         >
           radius
         </TextSpanBg>
-        &nbsp;of the circular base of a cone, and{" "}
-        <MathElement htmlString={latex[mathjaxCounter++]} /> is the&nbsp;
+        &nbsp;of the circular base of a cone, and (l) is the&nbsp;
         <TextSpanBg
           id={4}
-          onHover={onHover}
+          onHover={() => onHover(4)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.AQUA}

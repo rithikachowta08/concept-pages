@@ -23,7 +23,7 @@ const surfaceCone_bottom = "assets/surface-area-of-cone/slide7/3.svg";
 const Slide7 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -56,7 +56,7 @@ const Slide7 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}
@@ -68,7 +68,7 @@ const Slide7 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_BLUE}

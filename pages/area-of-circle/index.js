@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
+
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import PageLastSlide from "components/slides/PageLastSlide";
-import dynamic from "next/dynamic";
 
 const Slide1 = dynamic(() => import("./slides/Slide1"));
 const Slide2 = dynamic(() => import("./slides/Slide2"));
@@ -42,7 +43,7 @@ const AreaOfCircle = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 5, 7, 9, 10];
+   const darkBgIndices = [0, 2, 5, 7, 9, 10, 11];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

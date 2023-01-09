@@ -7,13 +7,14 @@ const TextAndAppletSlide = dynamic(() =>
 import { Paragraph } from "components/text";
 import { colors } from "utils/colors";
 
-const Slide6 = ({ downIcon }) => {
+const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          bg="DARK"
          title={"Total Surface Area"}
          secondaryTitle={"Surface Area"}
          downIcon={downIcon}
+         currentPageIdx={currentPageIdx}
          appletSrc={
             "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/tsa_rectangularPrism_v2/index.html"
          }
@@ -23,7 +24,7 @@ const Slide6 = ({ downIcon }) => {
             by its six faces.
          </Paragraph>
          <Paragraph>
-            <Pill>Total surface area = 2(lw + wh + lh)</Pill>
+            <Pill>Total surface area = 2 x (l x w + w x h + l x h)</Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );

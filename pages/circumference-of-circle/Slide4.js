@@ -23,18 +23,12 @@ const boat_wrong_answer = "assets/triangles/boat_wrong_answer.svg";
 const Slide4 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+         <Paragraph color="white" marginBottom="50px">
             {
                "If the object has a triangular surface present within itself, then choose 'Yes'"
             }
          </Paragraph>
-         <Title
-            fontSize="1.8rem"
-            marginBottom="20px"
-            color="white"
-            fontWeight={700}
-            small
-         >
+         <Title marginBottom="20px" color="white" fontWeight={700} level={2}>
             Example
          </Title>
          <QuestionAnswerImage

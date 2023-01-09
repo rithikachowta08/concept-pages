@@ -53,6 +53,7 @@ const MultipleDiagramSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
@@ -91,7 +92,7 @@ const MultipleDiagramSlide = ({
                               }
                               fontWeight={400}
                               textAlign="center"
-                              fontSize={fontSizes.LARGE}
+                              fontSize={fontSizes.MEDIUM}
                            >
                               {image.caption}
                            </Paragraph>
@@ -124,6 +125,7 @@ const MultipleDiagramSlide = ({
                      <div>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                         />
                         <SlideTitle bg={bg}>{title}</SlideTitle>

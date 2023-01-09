@@ -41,9 +41,12 @@ const TextAndDiagramSlide = ({
                      <div>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                         />
-                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                        <SlideTitle marginBottom="30px" bg={bg}>
+                           {title}
+                        </SlideTitle>
                      </div>
                      {children}
                   </LeftWrap>
@@ -68,6 +71,7 @@ const TextAndDiagramSlide = ({
                   <div>
                      <SlideSecondaryTitle
                         bg={bg}
+                        marginBottom="10px"
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
