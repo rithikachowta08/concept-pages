@@ -124,7 +124,7 @@ const Slide11 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Diagonal (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>
@@ -136,7 +136,7 @@ const Slide11 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Diagonal (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>
