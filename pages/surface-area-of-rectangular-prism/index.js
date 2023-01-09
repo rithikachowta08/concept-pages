@@ -18,7 +18,7 @@ const SurfaceAreaOfRectangularPrism = () => {
       <Slide2 key={1} />,
       <Slide3 key={2} />,
       <Slide4 key={3} />,
-      <Slide5 key={4} />,
+      // <Slide5 key={4} />,
       <Slide6 key={5} />,
       <Slide7 key={6} />,
       <PageLastSlide
