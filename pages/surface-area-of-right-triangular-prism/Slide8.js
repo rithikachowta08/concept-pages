@@ -58,9 +58,7 @@ const Slide5 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.AQUA}
-               fontWeight={700}
             >
                “b”
             </TextSpanBg>{" "}
@@ -69,9 +67,7 @@ const Slide5 = ({ downIcon }) => {
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.AQUA}
-               fontWeight={700}
             >
                “h”
             </TextSpanBg>{" "}

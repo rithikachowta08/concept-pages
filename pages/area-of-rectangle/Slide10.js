@@ -86,9 +86,7 @@ const Slide10 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(1)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={700}
+                     hoverColor={colors.DARK_AQUA}
                   >
                      Length
                   </TextSpanBg>
@@ -98,9 +96,7 @@ const Slide10 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={700}
+                     hoverColor={colors.DARK_AQUA}
                   >
                      Diagonal
                   </TextSpanBg>

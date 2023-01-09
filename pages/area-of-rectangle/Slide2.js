@@ -48,9 +48,7 @@ const Slide2 = ({ downIcon }) => {
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                opposite sides equal
             </TextSpanBg>{" "}
@@ -58,9 +56,7 @@ const Slide2 = ({ downIcon }) => {
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
                hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                internal angles
             </TextSpanBg>{" "}

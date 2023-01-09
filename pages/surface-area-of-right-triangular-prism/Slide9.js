@@ -58,9 +58,7 @@ const Slide9 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={onHover}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
                   >
                      two triangular bases
                   </TextSpanBg>

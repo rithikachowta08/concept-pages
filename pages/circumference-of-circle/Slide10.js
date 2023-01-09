@@ -10,9 +10,9 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
             title="Circle and its Definitions"
             videoContent={{
                dash_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-fdf8b61f/r47ghf/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT011/dash/h264.mpd",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-818d94e0/rnylf5/INTL_Maths/230104/SEOD18INTL07MAT11KT020/dash/h264.mpd",
                hls_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-fdf8b61f/r47ghf/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT011/hls/h264.m3u8",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-818d94e0/rnylf5/INTL_Maths/230104/SEOD18INTL07MAT11KT020/hls/h264.m3u8",
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803302.jpg?1671775176",
                // video_title: "Circle and its Definitions",
