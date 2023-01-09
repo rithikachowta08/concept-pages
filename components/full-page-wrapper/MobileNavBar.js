@@ -68,8 +68,8 @@ const BarFill = styled.div`
 `;
 
 const MobileNavBar = ({
-   toggleNav,
    currentPageIdx,
+   toggleNav,
    onSectionClick,
    darkTheme,
    sections,
@@ -90,8 +90,13 @@ const MobileNavBar = ({
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [ref.current, currentPageIdx]);
    return (
-      <MobileNavWrap ref={ref} isExpanded={isExpanded} darkTheme={darkTheme}>
-         <Flex onClick={toggleNav}
+      <MobileNavWrap
+         ref={ref}
+         isExpanded={isExpanded}
+         onClick={toggleNav}
+         darkTheme={darkTheme}
+      >
+         <Flex
             padding={isExpanded ? "20px" : "10px 20px 0px 20px"}
             color={darkTheme ? colors.WHITE : colors.BLACK}
             justifyContent="space-between"
@@ -125,11 +130,7 @@ const MobileNavBar = ({
                   {currentSection.title}
                </TextSpan>
             )}
-            <Icon
-               alignSelf={isExpanded ? "flex-start" : "center"}
-               src={icon}
-               // onClick={toggleNav}
-            />
+            <Icon alignSelf={isExpanded ? "flex-start" : "center"} src={icon} />
          </Flex>
          <Flex justifyContent="space-between">
             {sections.map((section, idx) => {
@@ -159,7 +160,6 @@ const MobileNavBar = ({
 MobileNavBar.propTypes = {
    sections: PropTypes.array.isRequired,
    onSectionClick: PropTypes.func.isRequired,
-   toggleNav: PropTypes.func.isRequired,
    currentPageIdx: PropTypes.number,
    isExpanded: PropTypes.bool,
    darkTheme: PropTypes.bool,
