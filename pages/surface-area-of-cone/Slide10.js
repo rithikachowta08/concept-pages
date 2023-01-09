@@ -27,39 +27,6 @@ const surfaceCone_right = "assets/surface-area-of-cone/slide10/4.svg";
 const surfaceCone_rightslide = "assets/surface-area-of-cone/slide10/5.svg";
 
 const Slide10 = ({ downIcon }) => {
-  let EquationLatex0 = [
-    {
-      lhsLatex: {
-        value: [`Total surface area`],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times r \\times (l + r)"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-  ];
-  let latexEquationContainer = [];
-  latexEquationContainer.push(EquationLatex0);
-  let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
     setActiveIndex(e);
@@ -104,7 +71,7 @@ const Slide10 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           curved surface area
         </TextSpanBg>
@@ -114,7 +81,7 @@ const Slide10 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           base area
         </TextSpanBg>
@@ -123,8 +90,37 @@ const Slide10 = ({ downIcon }) => {
 
       <Paragraph color={colors.WHITE}>
         <EquationTable
-          equationLatex={latexEquationContainer[latexEquationCounter++]}
-        ></EquationTable>
+          equationLatex={[
+            {
+              lhsLatex: {
+                value: [`Total surface area`],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times r \\times (l + r)"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+          ]}
+        />
       </Paragraph>
 
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
@@ -141,7 +137,7 @@ const Slide10 = ({ downIcon }) => {
           onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           radius
         </TextSpanBg>
@@ -151,7 +147,7 @@ const Slide10 = ({ downIcon }) => {
           onHover={() => onHover(4)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           slant height
         </TextSpanBg>

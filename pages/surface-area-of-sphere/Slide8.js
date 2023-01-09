@@ -67,24 +67,24 @@ const Slide7 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               Find the surface area of a spherical ball of{" "}
-               <TextSpanBg
-                  id={1}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
-               >
-                  radius
-               </TextSpanBg>{" "}
-               6 in.
+               Find the surface area of a spherical ball of radius 6 in.
             </TextLine>
          </Paragraph>
          <div>
             <Paragraph lineHeight={lineHeightProp}>
                {/* <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine> */}
-               <TextLine>For the given sphere of radius 6 in,</TextLine>
+               <TextLine>
+                  For the given sphere of{" "}
+                  <TextSpanBg
+                     id={1}
+                     onHover={onHover}
+                     onHoverOut={onHoverOut}
+                     hoverColor={colors.DARK_BLUE}
+                  >
+                     radius
+                  </TextSpanBg>{" "}
+                  6 in,
+               </TextLine>
             </Paragraph>
             <MultiLhsEquationContainer
                equationLatex={EquationLatex[0]}

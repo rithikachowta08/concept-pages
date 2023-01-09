@@ -41,66 +41,66 @@ const Slide18 = dynamic(() => import("./slides/Slide18"), { ssr: false });
 const Slide19 = dynamic(() => import("./slides/Slide19"), { ssr: false });
 const Slide20 = dynamic(() => import("./slides/Slide20"), { ssr: false });
 const PageLastSlide = dynamic(() =>
-   import("../../components/slides/PageLastSlide")
+  import("../../components/slides/PageLastSlide")
 );
 
 const AreaOfATriangle = () => {
-   const SlideArray = [
-      <Slide1 key={0} />,
-      <Slide2 key={1} />,
-      <Slide4 key={3} />,
-      <Slide5 key={4} />,
-      <Slide6 key={5} />,
-      // <Slide7 key={6} />,
-      <Slide8 key={7} />,
-      <Slide9 key={8} />,
-      <Slide10 key={9} />,
-      <Slide11 key={10} />,
-      // <Slide12 key={11} />,
-      <Slide13 key={12} />,
-      <Slide14 key={13} />,
-      <Slide15 key={14} />,
-      <Slide16 key={15} />,
-      <Slide17 key={16} />,
-      <Slide18 key={17} />,
-      <Slide19 key={18} />,
-      <Slide20 key={19} />,
-      <PageLastSlide
-         key={20}
-         currentPageTitle={"Area of a Triangle"}
-         nextPageTitle={"Volume of a cube"}
-         nextPageLink={"/study/volume-of-cube"}
-      />,
-   ];
+  const SlideArray = [
+    <Slide1 key={0} />,
+    <Slide2 key={1} />,
+    <Slide4 key={3} />,
+    <Slide5 key={4} />,
+    <Slide6 key={5} />,
+    // <Slide7 key={6} />,
+    <Slide8 key={7} />,
+    <Slide9 key={8} />,
+    <Slide10 key={9} />,
+    <Slide11 key={10} />,
+    // <Slide12 key={11} />,
+    <Slide13 key={12} />,
+    <Slide14 key={13} />,
+    <Slide15 key={14} />,
+    <Slide16 key={15} />,
+    <Slide17 key={16} />,
+    <Slide18 key={17} />,
+    <Slide19 key={18} />,
+    <Slide20 key={19} />,
+    <PageLastSlide
+      key={20}
+      currentPageTitle={"Area of a Triangle"}
+      nextPageTitle={"Volume of a cube"}
+      nextPageLink={"/us/math/study/volume-of-cube"}
+    />,
+  ];
 
-   const navigationSections = [
-      { title: "Definition", slides: [1] },
-      { title: "General Formula", slides: [2, 3, 4, 5] },
-      { title: "Heron's Formula", slides: [6] },
-      {
-         title: "Area of different types of triangle",
-         slides: [7, 8, 9, 10, 11, 12, 13, 14],
-      },
-      {
-         title: "Area of a triangle given two sides and the included angle",
-         slides: [15, 16, 17],
-      },
-   ];
+  const navigationSections = [
+    { title: "Definition", slides: [1] },
+    { title: "General Formula", slides: [2, 3, 4, 5] },
+    { title: "Heron's Formula", slides: [6] },
+    {
+      title: "Area of different types of triangle",
+      slides: [7, 8, 9, 10, 11, 12, 13, 14],
+    },
+    {
+      title: "Area of a triangle given two sides and the included angle",
+      slides: [15, 16, 17],
+    },
+  ];
 
-   // const darkBgIndices = [0, 3, 5, 8, 9, 17];
-   const darkBgIndices = [0, 2, 4, 6, 7, 15, 17];
-   return (
-      <FullPageCustomWrapper
-         slidesComponentList={SlideArray}
-         navigationSections={navigationSections}
-         darkBgIndices={darkBgIndices}
-      />
-   );
+  // const darkBgIndices = [0, 3, 5, 8, 9, 17];
+  const darkBgIndices = [0, 2, 4, 6, 7, 15, 17];
+  return (
+    <FullPageCustomWrapper
+      slidesComponentList={SlideArray}
+      navigationSections={navigationSections}
+      darkBgIndices={darkBgIndices}
+    />
+  );
 };
 
 AreaOfATriangle.title =
-   "Area of Triangle: Definition, Formula, Examples - BYJU'S";
+  "Area of Triangle: Definition, Formula, Examples - BYJU'S";
 AreaOfATriangle.meta =
-   "Enhance your understanding of the area of triangle with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
+  "Enhance your understanding of the area of triangle with BYJU'S interactive activities. Explore the definition, formula, and examples of this important mathematical concept.";
 
 export default AreaOfATriangle;

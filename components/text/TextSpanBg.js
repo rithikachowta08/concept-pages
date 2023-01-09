@@ -5,7 +5,7 @@ import { colors, hexToRgbA } from "utils/colors";
 import { fontSizes } from "utils/fontStyles";
 
 const StyledSpan = styled.span`
-   color: ${(props) => props.color || colors.DARK_GREY};
+   color: ${(props) => props.color || colors.LAVENDER};
    background-color: "none";
    font-weight: ${(props) => props.fontWeight || "500"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
@@ -33,7 +33,7 @@ const TextSpanBg = ({
    transform,
    cursor,
    id,
-   hoverColor,
+   hoverColor = colors.LAVENDER,
    textDecoration,
    marginBottom,
    marginLeft,
