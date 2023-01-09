@@ -59,7 +59,7 @@ const Slide7 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           <MathElement htmlString={latex[mathjaxCounter++]} /> Curved surface
           area
@@ -71,7 +71,7 @@ const Slide7 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           <MathElement htmlString={latex[mathjaxCounter++]} /> Total surface
           area

@@ -69,7 +69,7 @@ const Slide8 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           radius
         </TextSpanBg>
@@ -79,7 +79,7 @@ const Slide8 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           slant height
         </TextSpanBg>

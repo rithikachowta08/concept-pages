@@ -59,7 +59,7 @@ const Slide4 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           vertex or apex
         </TextSpanBg>
@@ -72,7 +72,7 @@ const Slide4 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           radius of the cone
         </TextSpanBg>
@@ -86,7 +86,7 @@ const Slide4 = ({ downIcon }) => {
           onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           slant height
         </TextSpanBg>
@@ -99,7 +99,7 @@ const Slide4 = ({ downIcon }) => {
           onHover={() => onHover(4)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           height of the cone
         </TextSpanBg>
