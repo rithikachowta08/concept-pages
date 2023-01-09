@@ -8,7 +8,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
          contentListItems={[
             "What is the surface area of a sphere?",
             "General Formula",
-            "Why is the surface area 4πr",
+            <div key={3}>Why is the surface area 4πr&sup2;</div>,
          ]}
          anchorIdxes={[2, 6, 7]}
          moveToSection={moveToSection}

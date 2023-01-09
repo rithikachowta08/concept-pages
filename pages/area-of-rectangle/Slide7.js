@@ -108,23 +108,11 @@ const Slide7 = ({ downIcon }) => {
          />
          <Paragraph color="white" textAlign="left">
             Area of a rectangle =&nbsp;
-            <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-            >
+            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                Length
             </TextSpanBg>
             &nbsp;&times;&nbsp;
-            <TextSpanBg
-               onHover={() => onHover(2)}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-            >
+            <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
                Width
             </TextSpanBg>
          </Paragraph>

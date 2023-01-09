@@ -135,9 +135,7 @@ const Slide8 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(1)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
                   >
                      Circumference
                   </TextSpanBg>
@@ -145,9 +143,7 @@ const Slide8 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
                      hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
                   >
                      diameter (d)
                   </TextSpanBg>
