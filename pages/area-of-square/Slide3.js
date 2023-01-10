@@ -1,14 +1,36 @@
 import { useState } from "react";
-import { Flex, StyledImg } from "components/StyledElements";
-import { Paragraph, TextSpanBg, ModalTriggerText } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import Modal from "components/layout/Modal";
+import dynamic from "next/dynamic";
+
+import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
+
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+   import("components/text").then((mod) => mod.TextSpanBg)
+);
+const ModalTriggerText = dynamic(() =>
+   import("components/text").then((mod) => mod.ModalTriggerText)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
+);
+
 const square_1 = "assets/area-of-square/slide3_1.svg";
 const square_2 = "assets/area-of-square/slide3_2.svg";
 const square_3 = "assets/area-of-square/slide3_3.svg";
-import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -19,7 +41,7 @@ const Slide3 = ({ downIcon }) => {
          A unit square is a square that has a side length equal to 1 unit.
 
          </Paragraph>
-         <StyledImg
+         <ModalImg
             src={square_3}
             alignSelf="center"
             width="400px"
@@ -47,6 +69,10 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[square_1,square_2]}
+               altTexts={[
+                  "Diagram of a square",
+                  "Diagram of a square with bounded area highlighted.",
+               ]}
                activeIndex={activeIndex}
             />
          }

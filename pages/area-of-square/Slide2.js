@@ -1,12 +1,23 @@
 import { useState } from "react";
-import { Paragraph, TextSpanBg } from "components/text";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import TransitionImage from "components/media/TransitionImage";
+import dynamic from "next/dynamic";
+
+import { colors } from "utils/colors";
+
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
 const square_1 = "assets/area-of-square/slide2_1.svg";
 const square_2 = "assets/area-of-square/slide2_2.svg";
 const square_3= "assets/area-of-square/slide2_3.svg";
-import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -33,14 +44,13 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             A square is a four sided polygon in which all the {" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                sides
             </TextSpanBg>
@@ -49,8 +59,7 @@ const Slide2 = ({ downIcon }) => {
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                internal angles
             </TextSpanBg>{" "}

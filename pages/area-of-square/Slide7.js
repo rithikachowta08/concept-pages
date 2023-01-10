@@ -1,18 +1,45 @@
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { colors } from "utils/colors";
+import MathElement from "components/MathElement/index.js";
+import { addTransitionToKatex } from "utils/domutils";
 
-import { TextSpanBg, Paragraph,ModalTriggerText, TextLine } from "components/text";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import Pill from "components/Pill";
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+const Pill = dynamic(() => import("components/Pill"));
+
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+   import("components/text").then((mod) => mod.TextSpanBg)
+);
+const ModalTriggerText = dynamic(() =>
+   import("components/text").then((mod) => mod.ModalTriggerText)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
+);
+
 const square_1 = "assets/area-of-square/slide7_1.svg";
 const square_2 = "assets/area-of-square/slide7_2.svg";
 const square_3 = "assets/area-of-square/slide7_3.svg";
-import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-import MathElement from "components/MathElement/index.js";
-import EquationTable from "components/MathElement/EquationTable";
-import { addTransitionToKatex } from "utils/domutils";
-import Modal from "components/layout/Modal";
-import { Flex, StyledImg } from "components/StyledElements";
 
 
 const Slide7 = ({ downIcon }) => {
@@ -67,13 +94,12 @@ const Slide7 = ({ downIcon }) => {
          The area of a square is measured in square units (square centimeters, square inches, square feet, and so on).
          </Paragraph>
          <TextLine>Example:</TextLine>
-         <StyledImg
+         <ModalImg
             src={square_3}
             alignSelf="center"
-            width="400px"
-            marginBottom="50px"
+            alt="Diagram of a square"
          />
-         <Paragraph>
+         <Paragraph color={colors.WHITE}>
             <EquationTable equationLatex={modalLatex}></EquationTable>
          </Paragraph>
       </Flex>
@@ -104,14 +130,18 @@ const Slide7 = ({ downIcon }) => {
    latex.push(`= \\sqrt{3}`);
    return (
       <TextAndDiagramSlide
+         bg="DARK"
          diagram={
             <TransitionImage
                images={[square_1,square_2]}
+               altTexts={[
+                  "Diagram of a square.",
+                  "Diagram of a square with sides highlighted.",
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
-         bg="DARK"
          secondaryTitle="Area of Square"
          title="General Formula"
       >
@@ -127,8 +157,6 @@ const Slide7 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
             >
               sides
             </TextSpanBg> 
@@ -138,15 +166,10 @@ const Slide7 = ({ downIcon }) => {
          </Paragraph>
          <Pill
             width="fit-content"
-            bgColor={colors.OCEAN_GREEN}
-            color={colors.BLACK}
          >
             Area of square{" "} = <MathElement htmlString={"Side \\times Side"}></MathElement> = <MathElement htmlString={"(Side)^2"}></MathElement>
             
          </Pill>
-         <Paragraph color={colors.WHITE}>
-           
-         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

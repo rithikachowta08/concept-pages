@@ -1,22 +1,37 @@
-import { StyledImg } from "components/StyledElements";
-import { Paragraph } from "components/text";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-const square_1 = "assets/area-of-square/slide8_1.svg";
-const square_2 = "assets/area-of-square/slide8_2.svg";
-const square_3 = "assets/area-of-square/slide8_3.svg";
-import { TextLine } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+
+import dynamic from "next/dynamic";
+
 import { colors } from "utils/colors";
 import { useState, useEffect } from "react";
 import { addTransitionToKatex } from "utils/domutils";
-import TransitionImage from "components/media/TransitionImage";
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+
+const square_1 = "assets/area-of-square/slide8_1.svg";
+const square_2 = "assets/area-of-square/slide8_2.svg";
+const square_3 = "assets/area-of-square/slide8_3.svg";
 
 
 const Slide8 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: ["\\: \\htmlId{1}{\\htmlClass{textSpanBg slide-8 }{Side}} \\: of Square"],
+            value: ["\\: \\htmlId{1}{\\htmlClass{textSpanBg slide-8 }{Side}} \\: of \\: Square"],
             type: "latex",
          },
          rhsLatex: {
@@ -26,7 +41,7 @@ const Slide8 = ({ downIcon }) => {
       },
       {
          lhsLatex: {
-            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-8 }{Area}} \\: of Square"],
+            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-8 }{Area}} \\: of \\: Square"],
             type: "latex",
          },
          rhsLatex: {
@@ -82,6 +97,11 @@ const Slide8 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[square_1,square_2,square_3]}
+               altTexts={[
+                  "Diagram of a square of side 7 ft",
+                  "Diagram of a square of side 7 ft highlighted",
+                  "Diagram of a square with bounded area highlighted"
+               ]}
                activeIndex={activeIndex}
             />
          }

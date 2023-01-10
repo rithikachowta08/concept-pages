@@ -1,13 +1,24 @@
-import AppletSlide from "components/slides/AppletSlide";
-
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, TextLine, Paragraph } from "components/text";
-import Pill from "components/Pill";
+import { colors } from "utils/colors";
+
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
 const square_1 = "assets/area-of-square/slide4_1.svg";
 const square_2 = "assets/area-of-square/slide4_2.svg";
-import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
 
 const Slide4 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -20,25 +31,26 @@ const Slide4 = ({ downIcon }) => {
 
    return (
       <TextAndDiagramSlide
-         bg="DARK"
          title="Counting Unit Squares"
          secondaryTitle="Finding Area"
+         bg="DARK"
          downIcon={downIcon}
          diagram={
             <TransitionImage
                images={[square_1, square_2]}
+               altTexts={[
+                  "Diagram of a square with units square shown inside.",
+                  "Diagram of a square with number of units square highlighted.",
+               ]}
                activeIndex={activeIndex}
             />
          }
-         isLastSlide
       >
          <Paragraph color={colors.WHITE}>
          One of the ways to find area is by <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               hoverColor={colors.AQUA}
-               color={colors.RED}
             >
                counting the unit squares
             </TextSpanBg> that fit inside the square.

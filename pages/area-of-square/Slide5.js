@@ -1,6 +1,11 @@
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { Paragraph } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+
+import dynamic from "next/dynamic";
+
+const TextAndAppletSlide = dynamic(() => import("components/slides/TextAndAppletSlide"));
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+
 
 const Slide5 = ({ downIcon }) => {
    return (
@@ -13,8 +18,6 @@ const Slide5 = ({ downIcon }) => {
          <Paragraph>
          Vary the size of the square and count the number of unit squares in it to find its area.
 
-         </Paragraph>
-         <Paragraph>
          </Paragraph>
       </TextAndAppletSlide>
    );

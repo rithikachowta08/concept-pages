@@ -1,15 +1,31 @@
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
+import dynamic from "next/dynamic";
 import { colors } from "utils/colors";
 import { useState,useEffect } from "react";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import TransitionImage from "components/media/TransitionImage";
+import { addTransitionToKatex } from "utils/domutils";
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+
 const square_1 = "assets/area-of-square/slide10_1.svg";
 const square_2 = "assets/area-of-square/slide10_2.svg";
 const square_3 = "assets/area-of-square/slide10_3.svg";
-import EquationTable from "components/MathElement/EquationTable";
-import MathLine from "components/MathElement/MathLine";
-import MathElement from "components/MathElement";
-import { addTransitionToKatex } from "utils/domutils";
 
 const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -70,6 +86,11 @@ const Slide10 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[square_1, square_2,square_3]}
+               altTexts={[
+                  "Diagram of a square with diagonal of 6 ft shown.",
+                  "Diagram of a square with diagonal of 6 ft highlighted.",
+                  "Diagram of a square with bounded area highlighted"
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -85,10 +106,9 @@ const Slide10 = ({ downIcon }) => {
    <Paragraph>            <TextSpanBg
                   key={0}
                   id={1}
-                  color={colors.RED}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Diagonal
                </TextSpanBg>{" "} of the square = 6ft

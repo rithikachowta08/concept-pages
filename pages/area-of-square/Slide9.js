@@ -1,13 +1,26 @@
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
 import { useState } from "react";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import TransitionImage from "components/media/TransitionImage";
+
+import MathElement from "components/MathElement";
+
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
 const square_1 = "assets/area-of-square/slide9_1.svg";
 const square_2 = "assets/area-of-square/slide9_2.svg";
-import EquationTable from "components/MathElement/EquationTable";
-import MathLine from "components/MathElement/MathLine";
-import MathElement from "components/MathElement";
 
 const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -59,6 +72,10 @@ const Slide9 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[square_1,square_2]}
+               altTexts={[
+                  "Diagram of a square with one diagonal and sides shown.",
+                  "Diagram of a square with one diagonal highlighted.",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -70,10 +87,8 @@ const Slide9 = ({ downIcon }) => {
          <TextLine>The length of a <TextSpanBg
                   key={0}
                   id={1}
-                  color={colors.RED}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_BLUE}
                >
                   Diagonal
                </TextSpanBg> can be calculated using  the <span style={{color:'#c49225'}}>Pythagorean</span> theorem.
@@ -88,7 +103,7 @@ const Slide9 = ({ downIcon }) => {
  Area = <MathElement htmlString={"s \\times s = s^2 = \\dfrac{d^2}{2}"}></MathElement>
  </TextLine>
  <TextLine>
- and,<MathElement htmlString={"s = \\dfrac{d}{\\sqrt{2}}"}></MathElement>
+ and,{" "}<MathElement htmlString={"s = \\dfrac{d}{\\sqrt{2}}"}></MathElement>
  (taking only the positive root)  
  </TextLine>
          </Paragraph>

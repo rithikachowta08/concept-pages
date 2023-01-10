@@ -1,13 +1,30 @@
-import VideoSlide from "components/slides/VideoSlide";
+import dynamic from "next/dynamic";
+const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
+   ssr: false,
+});
 
-const Slide11 = ({ downIcon }) => {
+const Slide11 = ({ downIcon, currentPageIdx }) => {
    return (
-      <VideoSlide
-         title="Video here"
-         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-         downIcon={downIcon}
-      ></VideoSlide>
+      <div style={{ height: "100%" }}>
+         <VideoSlide2
+            title="Video here"
+            downIcon={downIcon}
+            videoContent={{
+               dash_Url:
+                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/dash/h264.mpd",
+               hls_Url:
+                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/hls/h264.m3u8",
+               thumbnail:
+                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792471.jpg?1671000412",
+            }}
+            downIconId="s5-video-down-icon"
+            videoSlideId="s5-video-slide"
+            currentPageIdx={currentPageIdx}
+            index={9}
+         />
+      </div>
    );
 };
 
 export default Slide11;
+
