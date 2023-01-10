@@ -6,7 +6,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
          title={"Surface Area of Rectangular Prism"}
-         anchorIdxes={[4, 6, 7]}
+         anchorIdxes={[2, 5, 6]}
          contentListItems={[
             "What is the surface area of a rectangular prism?",
             "Total surface area",

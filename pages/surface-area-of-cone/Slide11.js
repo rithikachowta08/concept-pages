@@ -22,53 +22,6 @@ const surfaceCone_top = "assets/surface-area-of-cone/slide11/2.svg";
 const surfaceCone_bottom = "assets/surface-area-of-cone/slide11/3.svg";
 
 const Slide11 = ({ downIcon }) => {
-  let EquationLatex0 = [
-    {
-      lhsLatex: {
-        value: [`Total surface area `],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["Curved surface area + Base area"],
-        type: "text",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times r \\times (l + r)\\ sq\\ units"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-  ];
-  let latexEquationContainer = [];
-  latexEquationContainer.push(EquationLatex0);
-  let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
     setActiveIndex(e);
@@ -100,7 +53,7 @@ const Slide11 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           curved surface area
         </TextSpanBg>
@@ -110,7 +63,7 @@ const Slide11 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           base area
         </TextSpanBg>
@@ -119,8 +72,51 @@ const Slide11 = ({ downIcon }) => {
 
       <Paragraph>
         <EquationTable
-          equationLatex={latexEquationContainer[latexEquationCounter++]}
-        ></EquationTable>
+          equationLatex={[
+            {
+              lhsLatex: {
+                value: [`Total surface area `],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["Curved surface area + Base area"],
+                type: "text",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times r \\times l + {\\pi} \\times r^2"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times r \\times (l + r)\\ sq\\ units"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+          ]}
+        />
       </Paragraph>
     </TextAndDiagramSlide>
   );

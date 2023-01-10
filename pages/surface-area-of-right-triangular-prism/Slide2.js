@@ -50,9 +50,7 @@ const Slide2 = ({ downIcon }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   2 triangular bases
                </TextSpanBg>{" "}
@@ -63,9 +61,7 @@ const Slide2 = ({ downIcon }) => {
                   id={2}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   3 rectangular faces
                </TextSpanBg>{" "}

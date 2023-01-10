@@ -1,80 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
   <defs>
     <style>
-      .cls-1, .cls-2, .cls-3 {
-        fill: #d16b6b;
+      .cls-1, .cls-2 {
+        opacity: .5;
       }
 
-      .cls-4 {
-        fill: #de7070;
+      .cls-2, .cls-3, .cls-4 {
+        fill: #bb70de;
       }
 
-      .cls-5 {
-        opacity: .4;
-      }
-
-      .cls-6 {
-        opacity: .6;
-      }
-
-      .cls-7 {
-        opacity: .8;
-      }
-
-      .cls-2 {
+      .cls-3 {
         opacity: .51;
       }
 
-      .cls-3, .cls-8 {
-        opacity: .72;
-      }
-
-      .cls-9 {
-        stroke: #ffc0c0;
-      }
-
-      .cls-9, .cls-10, .cls-8 {
+      .cls-5 {
         fill: none;
+        stroke: #a753b5;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 6px;
       }
-
-      .cls-10, .cls-8 {
-        stroke: #ffa4a4;
-      }
     </style>
   </defs>
   <g>
-    <polygon class="cls-2" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
-    <polygon class="cls-10" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
+    <polygon class="cls-3" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
+    <polygon class="cls-5" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
   </g>
-  <polygon class="cls-10" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
+  <polygon class="cls-5" points="383.46 71.91 383.46 398.01 176.54 418.1 176.54 92 383.46 71.91"/>
   <g>
-    <g class="cls-7">
-      <polygon class="cls-1" points="383.46 398.01 176.54 418.1 308.51 488.09 383.46 398.01"/>
-    </g>
-    <polyline class="cls-10" points="176.54 418.1 308.51 488.09 383.46 398.01"/>
+    <polygon class="cls-4" points="383.46 398.01 176.54 418.1 308.51 488.09 383.46 398.01"/>
+    <polyline class="cls-5" points="176.54 418.1 308.51 488.09 383.46 398.01"/>
   </g>
   <g>
-    <polygon class="cls-3" points="383.46 71.91 176.54 92 308.51 161.99 383.46 71.91"/>
-    <polygon class="cls-10" points="383.46 71.91 176.54 92 308.51 161.99 383.46 71.91"/>
+    <polygon class="cls-4" points="383.46 71.91 176.54 92 308.51 161.99 383.46 71.91"/>
+    <polygon class="cls-5" points="383.46 71.91 176.54 92 308.51 161.99 383.46 71.91"/>
   </g>
-  <line class="cls-9" x1="383.46" y1="398.01" x2="176.54" y2="418.1"/>
+  <line class="cls-5" x1="383.46" y1="398.01" x2="176.54" y2="418.1"/>
   <g>
-    <g class="cls-6">
+    <g class="cls-1">
       <polygon class="cls-4" points="383.46 71.91 383.46 398.01 308.51 488.09 308.51 161.99 383.46 71.91"/>
     </g>
     <g>
-      <polygon class="cls-8" points="383.46 71.91 383.46 398.01 308.51 488.09 308.51 161.99 383.46 71.91"/>
-      <polygon class="cls-10" points="383.46 71.91 383.46 398.01 308.51 488.09 308.51 161.99 383.46 71.91"/>
+      <polygon class="cls-5" points="383.46 71.91 383.46 398.01 308.51 488.09 308.51 161.99 383.46 71.91"/>
+      <polygon class="cls-5" points="383.46 71.91 383.46 398.01 308.51 488.09 308.51 161.99 383.46 71.91"/>
     </g>
   </g>
   <g>
-    <g class="cls-5">
-      <polygon class="cls-4" points="308.51 488.09 308.51 161.99 176.54 92 176.54 418.1 308.51 488.09"/>
-    </g>
-    <polygon class="cls-10" points="308.51 488.09 308.51 161.99 176.54 92 176.54 418.1 308.51 488.09"/>
+    <polygon class="cls-2" points="308.51 488.09 308.51 161.99 176.54 92 176.54 418.1 308.51 488.09"/>
+    <polygon class="cls-5" points="308.51 488.09 308.51 161.99 176.54 92 176.54 418.1 308.51 488.09"/>
   </g>
 </svg>

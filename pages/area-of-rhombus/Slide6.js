@@ -55,7 +55,7 @@ const Slide6 = ({ downIcon }) => {
           id={1}
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           base (b)
@@ -65,7 +65,7 @@ const Slide6 = ({ downIcon }) => {
           id={2}
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           height (h)
