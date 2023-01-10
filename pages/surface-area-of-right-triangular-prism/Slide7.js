@@ -13,7 +13,7 @@ const TextLine = dynamic(() =>
 );
 const plain_values =
    "assets/surface-area-of-right-triangluar-prism/plain_values.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide7 = ({ downIcon }) => {
@@ -22,7 +22,7 @@ const Slide7 = ({ downIcon }) => {
          lhsLatex: [`\\text{Lateral surface area}`, "", "", ""],
          rhsLatex: [
             {
-               eqLatex: "\\text{(a + b + c)l}",
+               eqLatex: "(a + b + c) \\times l",
                hint: "",
             },
             {
@@ -36,7 +36,7 @@ const Slide7 = ({ downIcon }) => {
             },
             ,
             {
-               eqLatex: "96\\ cm^2",
+               eqLatex: "96\\ sq\\ in",
                hint: "",
             },
          ],
@@ -46,7 +46,12 @@ const Slide7 = ({ downIcon }) => {
       <TextAndDiagramSlide
          title="Illustrative Example"
          secondaryTitle="Lateral Surface Area"
-         diagram={<StyledImg src={plain_values} />}
+         diagram={
+            <StyledImg
+               src={plain_values}
+               alt="Diagram of a right triangular prism with sides of triangular face 4 in, 5 in and 3 in and length of rectangular face 8 in."
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph>
@@ -56,12 +61,10 @@ const Slide7 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
-               <TextLine>a = 4 cm</TextLine>
-               <TextLine>b = 5 cm</TextLine>
-               <TextLine>c = 3 cm</TextLine>
-               <TextLine>l = 10 cm</TextLine>
+               <TextLine>a = 4 in, b = 5 in</TextLine>
+               <TextLine>c = 3 in, l = 10 in</TextLine>
             </Paragraph>
             <Paragraph>
                <MultiLhsEquationContainer

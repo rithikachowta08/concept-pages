@@ -11,7 +11,7 @@ const ModalTriggerText = ({ children, onClick, color }) => {
          textDecoration="underline"
          cursor="pointer"
          onClick={onClick}
-         fontSize={fontSizes.LARGE}
+         fontSize={fontSizes.MEDIUM}
       >
          {children}
       </TextSpan>

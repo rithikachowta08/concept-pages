@@ -1,11 +1,19 @@
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
-const image_1 = "assets/area-of-circle/slide_8.svg";
+const image_1 = "assets/area-of-circle/slide_9_1.svg";
 const image_2 = "assets/area-of-circle/slide_9_2.svg";
 
 // Find the area of the circle whose circumference is 10 m slide
@@ -15,7 +23,7 @@ const Slide9 = ({ navBar, downIcon }) => {
    return (
       <TextAndDiagramSlide
          bg="LIGHT"
-         title={"Find the area of the circle whose circumference is 10 m."}
+         title={"Find the area of the circle whose circumference is 10 ft."}
          secondaryTitle={"Illustrative Examples"}
          navBar={navBar}
          downIcon={downIcon}
@@ -34,14 +42,13 @@ const Slide9 = ({ navBar, downIcon }) => {
             <TextLine>In the given figure, </TextLine>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
                   Circumference (C)
                </TextSpanBg>{" "}
-               = 10 m
+               = 10 ft
             </TextLine>
          </Paragraph>
          <Paragraph>
@@ -53,7 +60,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{C^2}{4\\pi}"],
+                        value: ["\\dfrac{C^2}{4\\times \\pi}"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -67,7 +74,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{(10)^2}{4\\pi}"],
+                        value: ["\\dfrac{(10)^2}{4\\times \\pi}\\ sq\\ ft"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -81,7 +88,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{100}{4\\pi}"],
+                        value: ["\\dfrac{100}{4\\times \\pi}\\ sq\\ ft"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -95,7 +102,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{25}{\\pi}\\ m^2"],
+                        value: ["\\dfrac{25}{\\pi}\\ sq\\ ft"],
                         type: "latex",
                      },
                      rhsHint: {

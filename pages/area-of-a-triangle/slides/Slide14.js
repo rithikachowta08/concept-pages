@@ -1,11 +1,20 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
+
 import { Paragraph, TextSpanBg } from "components/text";
-import HyperLink from "components/text/HyperLink";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/isos_deri_1.svg";
@@ -32,17 +41,9 @@ const Slide14 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            Apply the{" "}
-            <HyperLink
-               href={"https://byjus.com/us/math/pythagorean-theorem-formulas/"}
-               color={colors.DARK_BLUE}
-            >
-               Pythagoras Theorem
-            </HyperLink>{" "}
-            in the{" "}
+            Apply the Pythagoras Theorem in the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -139,7 +140,7 @@ const Slide14 = ({ downIcon }) => {
             />
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an isosceles triangle =
                <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
             </Pill>

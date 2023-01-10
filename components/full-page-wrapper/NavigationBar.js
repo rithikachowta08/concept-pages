@@ -1,40 +1,36 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import MobileNavBar from "./MobileNavBar";
-import { DEVICE_TYPES } from "hooks/useDeviceType";
+import MobileComponent from "components/layout/MobileComponent";
+import DesktopComponent from "components/layout/DesktopComponent";
 import { useState } from "react";
 import DefaultNavBar from "./DefaultNavBar";
 
 const Wrapper = styled.div`
-   width: ${(props) => (props.isMobile ? "100%" : "80px")};
+   width: fit-content;
    z-index: 6;
    position: fixed;
    opacity: ${(props) => props.opacity};
-   top: ${(props) => (props.isMobile ? "0" : "50vh")};
-   left: ${(props) => (props.isMobile ? "0" : "30px")};
-   transform: ${(props) => (!props.isMobile ? "translateY(-50%)" : "none")};
+   pointer-events: ${(props) => (props.opacity === 0 ? "none" : "unset")};
+   top: 50vh;
+   left: 30px;
+   transform: translateY(-50%);
    transition: opacity 0.3s;
    display: grid;
    grid-template-columns: 1fr;
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   // Mobile
+   @media (orientation: portrait) {
       height: 45px;
-   }
-
-   @media (min-width: 811px) and (max-width: 992px) {
-      scale: 0.8;
-      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
-   }
-
-   @media (min-height: 500px) and (max-height: 800px) and (min-width: 768px) {
-      scale: 0.8;
-      transform: ${(props) => (!props.isMobile ? "translateY(-70%)" : "none")};
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: none;
    }
 `;
 
 const NavigationBar = ({
    darkTheme,
-   deviceType,
    moveTo,
    sections,
    opacity,
@@ -55,38 +51,29 @@ const NavigationBar = ({
       setIsExpanded(false);
       moveTo(e.currentTarget.getAttribute("data-section-idx"));
    };
-   let content;
-   if (deviceType === DEVICE_TYPES.MOBILE) {
-      content = (
-         <MobileNavBar
-            toggleNav={toggleNav}
-            sections={sections}
-            isExpanded={isExpanded}
-            darkTheme={darkTheme}
-            onSectionClick={onSectionClick}
-            currentPageIdx={currentPageIdx}
-         />
-      );
-   } else {
-      content = (
-         <DefaultNavBar
-            showNav={showNav}
-            hideNav={hideNav}
-            sections={sections}
-            isExpanded={isExpanded}
-            darkTheme={darkTheme}
-            onSectionClick={onSectionClick}
-            currentPageIdx={currentPageIdx}
-         />
-      );
-   }
    return (
-      <Wrapper
-         isExpanded={isExpanded}
-         opacity={opacity}
-         isMobile={deviceType === DEVICE_TYPES.MOBILE}
-      >
-         {content}
+      <Wrapper isExpanded={isExpanded} opacity={opacity}>
+         <MobileComponent>
+            <MobileNavBar
+               toggleNav={toggleNav}
+               sections={sections}
+               isExpanded={isExpanded}
+               darkTheme={darkTheme}
+               onSectionClick={onSectionClick}
+               currentPageIdx={currentPageIdx}
+            />
+         </MobileComponent>
+         <DesktopComponent>
+            <DefaultNavBar
+               showNav={showNav}
+               hideNav={hideNav}
+               sections={sections}
+               isExpanded={isExpanded}
+               darkTheme={darkTheme}
+               onSectionClick={onSectionClick}
+               currentPageIdx={currentPageIdx}
+            />
+         </DesktopComponent>
       </Wrapper>
    );
 };

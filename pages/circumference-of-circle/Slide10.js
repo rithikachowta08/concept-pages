@@ -1,13 +1,29 @@
 import dynamic from "next/dynamic";
-const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
+const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
+   ssr: false,
+});
 
-const Slide10 = ({ downIcon }) => {
+const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
-      <VideoSlide
-         downIcon={downIcon}
-         title="Circle and its Definitions"
-         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-      />
+      <div style={{ height: "100%" }}>
+         <VideoSlide2
+            title="Circle and its Definitions"
+            videoContent={{
+               dash_Url:
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-818d94e0/rnylf5/INTL_Maths/230104/SEOD18INTL07MAT11KT020/dash/h264.mpd",
+               hls_Url:
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-818d94e0/rnylf5/INTL_Maths/230104/SEOD18INTL07MAT11KT020/hls/h264.m3u8",
+               thumbnail:
+                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803302.jpg?1671775176",
+               // video_title: "Circle and its Definitions",
+            }}
+            downIconId="s10-video-down-icon"
+            videoSlideId="s10-video-slide"
+            downIcon={downIcon}
+            currentPageIdx={currentPageIdx}
+            index={8}
+         />
+      </div>
    );
 };
 

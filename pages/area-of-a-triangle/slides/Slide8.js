@@ -1,18 +1,19 @@
-import MathElement from "components/MathElement";
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { Paragraph, Title } from "components/text";
-import React from "react";
-import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
-const applet = "applets/triangle.html";
-
-const Slide8 = ({ downIcon }) => {
+const Slide8 = ({ navBar, currentPageIdx, downIcon }) => {
    return (
-      <TextAndAppletSlide bg={"LIGHT"} appletSrc={applet} downIcon={downIcon}>
-         <Paragraph>
-            Move the slider to create a triangle of area 15 unit<sup>2</sup>.
-         </Paragraph>
-      </TextAndAppletSlide>
+      <AppletSlide
+         bg={"LIGHT"}
+         title={"Derivation of General Formula"}
+         secondaryTitle={"Area of a Triangle"}
+         appletSrc={
+            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Area-of-triangle-v2/index.html"
+         }
+         currentPageIdx={currentPageIdx}
+         downIcon={downIcon}
+         navBar={navBar}
+      />
    );
 };
 

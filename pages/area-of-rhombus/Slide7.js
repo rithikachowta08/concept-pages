@@ -6,11 +6,10 @@ const TextAndAppletSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const HyperLink = dynamic(() => import("components/text/HyperLink"));
 const MathElement = dynamic(() => import("components/MathElement"));
 const Pill = dynamic(() => import("components/Pill"));
 
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ downIcon, currentPageIdx }) => {
   let latex = [];
   latex.push(`\\times`);
   latex.push(`\\times`);
@@ -22,18 +21,10 @@ const Slide7 = ({ downIcon }) => {
       title="Derivation"
       appletSrc="./applets/triangle.html"
       downIcon={downIcon}
+      currentPageIdx={currentPageIdx}
     >
       <Paragraph>
-        The area of rhombus will be equal to the{" "}
-        <HyperLink
-          href={
-            "https://docs.google.com/presentation/d/1KOI1widIxq6Tgh6WFAwh8OC9zn7u-NWmlLmr88BBfB8/edit#slide=id.g19f0da22f33_0_274"
-          }
-          color={colors.YELLOW}
-        >
-          area of rectangle
-        </HyperLink>
-        .
+        The area of rhombus will be equal to the area of rectangle.
       </Paragraph>
       <Paragraph>
         Area of a rectangle = Length{" "}
@@ -43,7 +34,7 @@ const Slide7 = ({ downIcon }) => {
         Here, the length and width of the rectangle are the base and height of
         the rhombus.
       </Paragraph>
-      <Pill>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN} darkbg={false}>
         Area of the rhombus = Base(b){" "}
         <MathElement htmlString={latex[mathjaxCounter++]} /> Height(h)
       </Pill>

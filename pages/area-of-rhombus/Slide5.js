@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
@@ -16,12 +17,11 @@ const TextSpanBg = dynamic(() =>
 
 const rhombus_full = "assets/area-of-rhombus/slide5/1.svg";
 const rhombus_lined = "assets/area-of-rhombus/slide5/2.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -46,10 +46,10 @@ const Slide5 = ({ downIcon }) => {
         The area of a rhombus is the &nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           region bounded
         </TextSpanBg>

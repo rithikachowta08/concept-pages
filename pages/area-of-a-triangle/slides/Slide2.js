@@ -1,17 +1,16 @@
-import { Flex, LeftWrap, ModalImg, StyledImg } from "components/StyledElements";
-import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { Flex, ModalImg } from "components/StyledElements";
+import { useState } from "react";
 
-import Modal from "components/layout/Modal";
+const Modal = dynamic(() => import("components/layout/Modal"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { colors } from "utils/colors";
-import {
-   ModalTriggerText,
-   Paragraph,
-   TextSpan,
-   TextSpanBg,
-} from "components/text";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { fontSizes } from "utils/fontStyles";
+import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
 
 const area_triangle_modal = "assets/area-of-triangle/slide_2_modal.svg";
 const area_triangle = "assets/area-of-triangle/slide_2_normal.svg";
@@ -41,7 +40,7 @@ const Slide2 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title="Definition"
-         secondaryTitle={"Area of a triangle"}
+         secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
             <TransitionImage
@@ -66,10 +65,9 @@ const Slide2 = ({ downIcon }) => {
             <ModalTriggerText onClick={onClick}>triangle</ModalTriggerText> is
             the{" "}
             <TextSpanBg
-               color={colors.RED}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
-               hoverColor={colors.DARK_BLUE}
             >
                region enclosed
             </TextSpanBg>{" "}

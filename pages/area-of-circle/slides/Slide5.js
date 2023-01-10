@@ -1,9 +1,15 @@
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Flex } from "components/StyledElements";
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-circle/slide_5.svg";
@@ -36,13 +42,12 @@ const Slide5 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <Flex>
-               <div>Area of a circle</div>
+               <div>Area of the circle</div>
                <Flex direction="column">
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi\\ "} />
+                     <MathElement htmlString={"\\ = \\pi\\ \\times\\ "} />
                      <TextSpanBg
-                        color={colors.RED}
-                        hoverColor={colors.DARK_BLUE}
+                        hoverColor={colors.DARK_LAVENDER}
                         onHover={() => setActiveIndex(1)}
                         onHoverOut={() => setActiveIndex(0)}
                      >
@@ -51,13 +56,15 @@ const Slide5 = ({ navBar, downIcon }) => {
                      <MathElement htmlString={"^2"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi\\ (5\\ in)^2"} />
+                     <MathElement htmlString={"\\ = \\pi\\times (5\\ in)^2"} />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi\\ 25\\ in^2"} />
+                     <MathElement
+                        htmlString={"\\ = \\pi\\times 25\\ sq\\ in"}
+                     />
                   </TextLine>
                   <TextLine>
-                     <MathElement htmlString={"\\ = 25 \\pi\\ in^2"} />
+                     <MathElement htmlString={"\\ = 25 \\pi\\ sq\\ in"} />
                   </TextLine>
                </Flex>
             </Flex>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Flex, Icon } from "components/StyledElements";
 import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
+import { useEffect, useRef } from "react";
 const down_caret_light = "assets/down_caret.svg";
 const up_caret_light = "assets/up_caret_light.svg";
 const down_caret_dark = "assets/down_caret_dark.svg";
@@ -36,9 +37,9 @@ const SectionIndicator = styled.div`
    border-radius: 50%;
    position: relative;
    cursor: pointer;
-   width: ${(props) => (props.isMobile ? "6px" : "14px")};
-   height: ${(props) => (props.isMobile ? "6px" : "14px")};
-   border: ${(props) => (props.isMobile ? "2px" : "4px")} solid
+   width: 6px;
+   height: 6px;
+   border: 2px solid
       ${(props) => (props.darkTheme ? colors.WHITE : colors.PURPLE)};
    background: ${(props) =>
       props.isComplete
@@ -49,12 +50,8 @@ const SectionIndicator = styled.div`
    box-shadow: ${(props) =>
       props.isComplete
          ? props.darkTheme
-            ? `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(255, 255, 255, 0.3)`
-            : `0px 0px 0px ${
-                 props.isMobile ? "4" : "6"
-              }px rgba(74, 51, 245, 0.3)`
+            ? `0px 0px 0px 4px rgba(255, 255, 255, 0.3)`
+            : `0px 0px 0px 4px rgba(74, 51, 245, 0.3)`
          : `none`};
    transition: all 0.3s;
 `;
@@ -71,13 +68,14 @@ const BarFill = styled.div`
 `;
 
 const MobileNavBar = ({
-   toggleNav,
    currentPageIdx,
+   toggleNav,
    onSectionClick,
    darkTheme,
    sections,
    isExpanded,
 }) => {
+   const ref = useRef(null);
    const currentSection =
       sections.find((section) => section.slides.includes(currentPageIdx)) ||
       sections[0];
@@ -85,8 +83,19 @@ const MobileNavBar = ({
    if (isExpanded) {
       icon = darkTheme ? up_caret_light : up_caret_dark;
    }
+   useEffect(() => {
+      if (ref.current) {
+         global.mobileNavBarHeight = ref.current.getBoundingClientRect().height;
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [ref.current, currentPageIdx]);
    return (
-      <MobileNavWrap isExpanded={isExpanded} darkTheme={darkTheme}>
+      <MobileNavWrap
+         ref={ref}
+         isExpanded={isExpanded}
+         onClick={toggleNav}
+         darkTheme={darkTheme}
+      >
          <Flex
             padding={isExpanded ? "20px" : "10px 20px 0px 20px"}
             color={darkTheme ? colors.WHITE : colors.BLACK}
@@ -105,7 +114,6 @@ const MobileNavBar = ({
                         key={idx}
                      >
                         <SectionIndicator
-                           isMobile
                            darkTheme={darkTheme}
                            isComplete={currentPageIdx >= section.slides[0]}
                         />
@@ -122,11 +130,7 @@ const MobileNavBar = ({
                   {currentSection.title}
                </TextSpan>
             )}
-            <Icon
-               alignSelf={isExpanded ? "flex-start" : "center"}
-               src={icon}
-               onClick={toggleNav}
-            />
+            <Icon alignSelf={isExpanded ? "flex-start" : "center"} src={icon} />
          </Flex>
          <Flex justifyContent="space-between">
             {sections.map((section, idx) => {
@@ -156,7 +160,6 @@ const MobileNavBar = ({
 MobileNavBar.propTypes = {
    sections: PropTypes.array.isRequired,
    onSectionClick: PropTypes.func.isRequired,
-   toggleNav: PropTypes.func.isRequired,
    currentPageIdx: PropTypes.number,
    isExpanded: PropTypes.bool,
    darkTheme: PropTypes.bool,

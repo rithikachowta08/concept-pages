@@ -20,7 +20,7 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 import { ModalTriggerText, TextLine } from "components/text";
-const plain = "assets/circumference-of-circle/plain.svg";
+const plain_light = "assets/circumference-of-circle/plain_light.svg";
 const diameter_formula = "assets/circumference-of-circle/diameter_formula.svg";
 const circumference_dark_bg =
    "assets/circumference-of-circle/circumference_dark_bg.svg";
@@ -60,7 +60,7 @@ const Slide3 = ({ downIcon }) => {
       <TextAndDiagramSlide
          diagram={
             <TransitionImage
-               images={[plain, diameter_formula, circumference_dark_bg]}
+               images={[plain_light, diameter_formula, circumference_dark_bg]}
                altTexts={[
                   "Image of a circle",
                   "Image of a circle with diameter highlighted",
@@ -88,14 +88,7 @@ const Slide3 = ({ downIcon }) => {
                &pi; (pi)
             </ModalTriggerText>
             &nbsp;and the{" "}
-            <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
-            >
+            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                diameter(d)
             </TextSpanBg>
             &nbsp;of the circle.
@@ -106,10 +99,6 @@ const Slide3 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={700}
-                     fontSize="2.2rem"
                   >
                      Circumference
                   </TextSpanBg>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDeviceType } from "hooks/useDeviceType";
 import ReactFullpage from "@fullpage/react-fullpage";
 import DownArrowIcon from "components/DownArrowIcon.js";
 import NavigationBar from "./NavigationBar";
@@ -13,13 +12,11 @@ export const FullPageCustomWrapper = ({
    darkBgIndices,
    navigationSections,
 }) => {
-   const deviceType = useDeviceType();
    const [currentPageIdx, setCurrentPageIdx] = useState(0);
    return (
       <>
          <NavigationBar
             opacity={currentPageIdx === 0 ? 0 : 1}
-            deviceType={deviceType}
             sections={navigationSections}
             darkTheme={darkBgIndices.includes(currentPageIdx)}
             moveTo={fullPage?.moveTo}
@@ -29,8 +26,9 @@ export const FullPageCustomWrapper = ({
             //fullpage options
             // licenseKey={"YOUR_KEY_HERE"}
             navigationTooltips={[]}
+            css3={false}
             scrollBar={false}
-            scrollingSpeed={900}
+            scrollingSpeed={600}
             fitToSectionDelay={900}
             onLeave={function (origin, destination) {
                setCurrentPageIdx(destination.index);
@@ -62,6 +60,7 @@ export const FullPageCustomWrapper = ({
                                  {/* No navigation bar on title page */}
                                  {React.cloneElement(itm, {
                                     downIcon,
+                                    currentPageIdx,
                                     moveToSection,
                                  })}
                               </div>

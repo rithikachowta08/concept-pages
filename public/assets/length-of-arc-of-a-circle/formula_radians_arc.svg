@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .1;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #333;
+      }
+
+      .cls-3 {
+        stroke: #2b2bf0;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 6px;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: #cecaca;
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #2b2bf0;
+      }
+
+      .cls-6, .cls-8, .cls-9, .cls-10, .cls-11 {
+        font-size: 30px;
+      }
+
+      .cls-6, .cls-8, .cls-10, .cls-11 {
+        font-family: Nunito, sans-serif;
+        font-weight: 500;
+      }
+
+      .cls-12, .cls-8, .cls-9, .cls-10, .cls-11 {
+        fill: #cecaca;
+      }
+
+      .cls-9 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        opacity: .2;
+      }
+
+      .cls-11 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-1" cx="280" cy="280" r="201.7"/>
+    <g>
+      <g class="cls-13">
+        <path class="cls-2" d="M280,78.3c111.4,0,201.7,90.31,201.7,201.7s-90.3,201.7-201.7,201.7-201.7-90.31-201.7-201.7S168.6,78.3,280,78.3m0-6c-28.04,0-55.24,5.49-80.85,16.32-24.73,10.46-46.95,25.44-66.02,44.51-19.07,19.07-34.05,41.29-44.51,66.02-10.83,25.61-16.32,52.81-16.32,80.85s5.49,55.24,16.32,80.85c10.46,24.73,25.44,46.95,44.51,66.02,19.07,19.07,41.29,34.05,66.02,44.51,25.61,10.83,52.81,16.32,80.85,16.32s55.24-5.49,80.85-16.32c24.73-10.46,46.95-25.44,66.02-44.51s34.05-41.29,44.51-66.02c10.83-25.61,16.32-52.81,16.32-80.85s-5.49-55.24-16.32-80.85c-10.46-24.73-25.44-46.95-44.51-66.02s-41.28-34.05-66.02-44.51c-25.61-10.83-52.81-16.32-80.85-16.32h0Z"/>
+      </g>
+      <text class="cls-11" transform="translate(103.33 130)"><tspan x="0" y="0">A</tspan></text>
+      <text class="cls-8" transform="translate(431.26 130)"><tspan x="0" y="0">B</tspan></text>
+    </g>
+  </g>
+  <polyline class="cls-4" points="425.62 135.92 280 280 134.33 137.17"/>
+  <path class="cls-5" d="M248.73,248.73c17.27-17.27,45.27-17.27,62.54,0"/>
+  <text class="cls-8" transform="translate(268.79 312.08)"><tspan x="0" y="0">O</tspan></text>
+  <text class="cls-10" transform="translate(364.42 227.08)"><tspan x="0" y="0">r</tspan></text>
+  <circle class="cls-12" cx="280" cy="280" r="7.2"/>
+  <circle class="cls-12" cx="134.33" cy="137.17" r="7.2"/>
+  <circle class="cls-12" cx="425.62" cy="137.17" r="7.2"/>
+  <g>
+    <path class="cls-3" d="M140.74,105.71c38.93-28.93,87.17-46.05,139.4-46.05s96.96,15.9,135.13,42.95"/>
+    <polygon class="cls-7" points="150.97 113 127.3 116.48 136.12 94.23 150.97 113"/>
+    <polygon class="cls-7" points="405.19 110.12 428.94 113.08 419.63 91.03 405.19 110.12"/>
+  </g>
+  <text class="cls-6" transform="translate(275.68 49.4)"><tspan x="0" y="0">l</tspan></text>
+  <text class="cls-9" transform="translate(271.99 231.31)"><tspan x="0" y="0">θ</tspan></text>
+</svg>

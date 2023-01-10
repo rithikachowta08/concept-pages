@@ -25,7 +25,7 @@ const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
 const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
 const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
 
-const Slide11 = ({ downIcon }) => {
+const Slide14 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
@@ -94,7 +94,7 @@ const Slide11 = ({ downIcon }) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -123,15 +123,15 @@ const Slide11 = ({ downIcon }) => {
           activeIndex={activeIndex}
         />
       }
-      downIcon={downIcon}
+      isLastSlide
     >
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Side (a)
         </TextSpanBg>
@@ -140,10 +140,10 @@ const Slide11 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Angle (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>
@@ -161,4 +161,4 @@ const Slide11 = ({ downIcon }) => {
   );
 };
 
-export default Slide11;
+export default Slide14;

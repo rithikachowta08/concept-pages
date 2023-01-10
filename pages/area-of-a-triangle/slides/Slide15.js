@@ -1,12 +1,16 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import dynamic from "next/dynamic";
+
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/isos_ex_1.svg";
@@ -16,7 +20,6 @@ const image_3 = "assets/area-of-triangle/isos_ex_3.svg";
 // Example of isosceles triangle
 const Slide15 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    return (
       <TextAndDiagramSlide
          bg={"LIGHT"}
@@ -38,8 +41,7 @@ const Slide15 = ({ downIcon }) => {
          <Paragraph>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(1);
                   }}
@@ -53,8 +55,7 @@ const Slide15 = ({ downIcon }) => {
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(2);
                   }}

@@ -8,16 +8,16 @@ const Para = styled.p`
    color: ${(props) => props.color || colors.DARK_GREY};
    text-align: ${(props) => props.textAlign};
    max-width: ${(props) => props.maxWidth};
-   font-size: ${(props) => props.fontSize || fontSizes.LARGE};
+   font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    margin: ${(props) => props.margin};
-   line-height: ${(props) => props.lineHeight};
+   line-height: ${(props) => props.lineHeight || "150%"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};
    margin-block-start: 1rem;
    padding: ${(props) => props.padding || 0};
 
-   @media (min-width: 200px) and (max-width: 810px) {
+   @media (min-width: 200px) and (max-width: 820px) {
       margin-block-start: 0.5rem;
    }
 `;

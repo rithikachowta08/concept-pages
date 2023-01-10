@@ -23,7 +23,7 @@ const Flex = dynamic(() =>
 const rectangle_full = "assets/area-of-rectangle/s7_rectangle_full.svg";
 const rectangle_right = "assets/area-of-rectangle/s7_rectangle_right.svg";
 const rectangle_bottom = "assets/area-of-rectangle/s7_rectangle_bottom.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide8 = ({ downIcon }) => {
@@ -43,7 +43,7 @@ const Slide8 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "3 \\ m \\times 2 \\ m \\ = 6 \\ sq \\ m",
+               eqLatex: "3 \\ in \\times 2 \\ in \\ = 6 \\ sq \\ in",
                hint: "",
             },
          ],
@@ -56,9 +56,9 @@ const Slide8 = ({ downIcon }) => {
             <TransitionImage
                images={[rectangle_full, rectangle_bottom, rectangle_right]}
                altTexts={[
-                  "Diagram of a rectangle with length 3 m and width 2 m",
-                  "Diagram of a rectangle with highlighted length 3 m",
-                  "Diagram of a rectangle with highlighted width 2 m",
+                  "Diagram of a rectangle with length 3 in and width 2 in",
+                  "Diagram of a rectangle with highlighted length 3 in",
+                  "Diagram of a rectangle with highlighted width 2 in",
                ]}
                activeIndex={activeIndex}
             />
@@ -67,38 +67,32 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               Find the area of a rectangle whose length and width are 3 m and 2
-               m, respectively.
+               Find the area of a rectangle whose length and width are 3 in and
+               2 in, respectively.
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>
                   <TextSpanBg
                      onHover={() => onHover(1)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      Length
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 3 m
+                  &nbsp;of the rectangle = 3 in
                </TextLine>
                <TextLine>
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      Width
                   </TextSpanBg>
-                  &nbsp;of the rectangle = 2 m
+                  &nbsp;of the rectangle = 2 in
                </TextLine>
             </Paragraph>
             <Paragraph>

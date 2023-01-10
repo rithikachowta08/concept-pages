@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
@@ -17,12 +18,11 @@ const TextSpanBg = dynamic(() =>
 const rhombus_full = "assets/area-of-rhombus/slide2/1.svg";
 const rhombus_arrow = "assets/area-of-rhombus/slide2/2.svg";
 const rhombus_line = "assets/area-of-rhombus/slide2/3.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -48,20 +48,20 @@ const Slide2 = ({ downIcon }) => {
         &nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           parallel
         </TextSpanBg>
         &nbsp;and all sides are&nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           equal
         </TextSpanBg>

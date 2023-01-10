@@ -16,27 +16,19 @@ const Flex = dynamic(() =>
 import { Icon } from "components/StyledElements";
 const info = "assets/info.svg";
 const boat = "assets/boat.svg";
-const tent_with_triangle = "assets/tent_with_triangle.svg";
-const boat_correct_answer = "assets/boat_correct_answer.svg";
-const boat_wrong_answer = "assets/boat_wrong_answer.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
+const tent_with_triangle = "assets/triangles/tent_with_triangle.svg";
+const boat_correct_answer = "assets/triangles/boat_correct_answer.svg";
+const boat_wrong_answer = "assets/triangles/boat_wrong_answer.svg";
 
 const Slide4 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white" marginBottom="50px" fontSize="1.5rem">
+         <Paragraph color="white" marginBottom="50px">
             {
                "If the object has a triangular surface present within itself, then choose 'Yes'"
             }
          </Paragraph>
-         <Title
-            fontSize="1.8rem"
-            marginBottom="20px"
-            color="white"
-            fontWeight={700}
-            small
-         >
+         <Title marginBottom="20px" color="white" fontWeight={700} level={2}>
             Example
          </Title>
          <QuestionAnswerImage

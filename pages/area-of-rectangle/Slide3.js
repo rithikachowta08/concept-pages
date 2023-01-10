@@ -27,7 +27,6 @@ import { ModalTriggerText } from "components/text";
 const rectangle_plain = "assets/area-of-rectangle/rectangle_plain.svg";
 const rectangle_shaded = "assets/area-of-rectangle/rectangle_shaded.svg";
 const unit_square = "assets/area-of-rectangle/unit_square.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const Slide3 = ({ downIcon }) => {
    const modalContent = (
@@ -78,10 +77,7 @@ const Slide3 = ({ downIcon }) => {
             <TextSpanBg
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.PURPLE}
-               fontWeight={700}
-               fontSize="2.2rem"
+               hoverColor={colors.DARK_LAVENDER}
             >
                region enclosed
             </TextSpanBg>
