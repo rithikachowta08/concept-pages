@@ -112,7 +112,7 @@ const Slide11 = ({ downIcon }) => {
             ></EquationTable>
          </Pill>
          <Paragraph color={colors.WHITE}>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
