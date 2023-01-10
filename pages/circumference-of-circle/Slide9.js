@@ -36,7 +36,7 @@ const Slide8 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\dfrac{\\text{Total distance covered Circumference}}{Circumference}",
+               "\\dfrac{\\text{Total distance covered}}{Circumference} \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ ",
             ],
             type: "latex",
          },
@@ -135,9 +135,7 @@ const Slide8 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(1)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      Circumference
                   </TextSpanBg>
@@ -145,9 +143,7 @@ const Slide8 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      diameter (d)
                   </TextSpanBg>

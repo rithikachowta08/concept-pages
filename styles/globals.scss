@@ -129,12 +129,13 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 }
 
 .katex {
-   font: unset !important;
+   font-size: unset !important;
+   font-family: unset !important;
 }
 
-.katex {
-   font: unset !important;
-}
+// .katex {
+//    font: unset !important;
+// }
 
 .katex .katex-html {
    overflow-wrap: normal;
@@ -145,30 +146,34 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
-.pill-math{
-
-  span{
-    font-family: 'Times New Roman', Times, serif !important;
-    font-style: italic !important;
-  }
-  .katex .mathdefault,
-  .katex .mathnormal{
-    font-style: italic !important;
-    font-family: 'Times New Roman', Times, serif !important;
-  }
-  .katex .mord {
-    display: inline-block;
-    font-style: italic !important;
-    font-family: 'Times New Roman', Times, serif !important;
-    
-  }
-  }
+.pill-math {
+   span {
+      font-family: "Times New Roman", Times, serif !important;
+      font-style: italic !important;
+   }
+   .katex .mathdefault,
+   .katex .mathnormal {
+      font-style: italic !important;
+      font-family: "Times New Roman", Times, serif !important;
+   }
+   .katex .mord {
+      display: inline-block;
+      font-style: italic !important;
+      font-family: "Times New Roman", Times, serif !important;
+   }
+}
 
 .textSpanBg {
-   background-color: none;
    padding: 0 5px;
    border-radius: 25px;
    cursor: default;
+   color: #a753b5;
+   &:hover {
+      background-color: rgba(167, 83, 181, 0.2);
+   }
+}
+
+.darkBg {
    color: #f2a4ff;
    &:hover {
       background-color: rgba(242, 164, 255, 0.2);

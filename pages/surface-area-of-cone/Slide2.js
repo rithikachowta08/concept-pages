@@ -51,7 +51,7 @@ const Slide2 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           circular base
         </TextSpanBg>
@@ -61,7 +61,7 @@ const Slide2 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           apex or vertex
         </TextSpanBg>

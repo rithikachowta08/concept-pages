@@ -131,7 +131,7 @@ const Slide14 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Side (a)
         </TextSpanBg>
@@ -143,7 +143,7 @@ const Slide14 = ({ downIcon }) => {
           onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Angle (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>

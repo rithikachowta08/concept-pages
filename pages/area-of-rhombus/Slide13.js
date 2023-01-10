@@ -120,7 +120,7 @@ const Slide13 = ({ downIcon }) => {
           onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           triangle
         </TextSpanBg>
@@ -138,7 +138,7 @@ const Slide13 = ({ downIcon }) => {
         />
       </Paragraph>
       <Paragraph>
-        <Pill color={colors.WHITE} bgColor={colors.GREEN}>
+        <Pill color={colors.WHITE} bgColor={colors.GREEN} darkbg={false}>
           Area of a rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
         </Pill>
       </Paragraph>
