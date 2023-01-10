@@ -4,7 +4,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
@@ -50,7 +50,7 @@ const Slide2 = ({ navBar, downIcon }) => {
                   "Diagram of a circle showing center, radii and sector",
                   "Diagram of a circle highlighting sector",
                   "Diagram of a circle highlighting radii.",
-                  "Diagram  of a circle highlighting arc",
+                  "Diagram of a circle highlighting arc",
                ]}
                activeIndex={activeIndex}
             />
@@ -67,8 +67,7 @@ const Slide2 = ({ navBar, downIcon }) => {
          <Paragraph>
             A{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -76,8 +75,7 @@ const Slide2 = ({ navBar, downIcon }) => {
             </TextSpanBg>{" "}
             is a portion that is enclosed between any{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -85,8 +83,7 @@ const Slide2 = ({ navBar, downIcon }) => {
             </TextSpanBg>{" "}
             and the adjoining{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(3)}
                onHoverOut={() => setActiveIndex(0)}
             >

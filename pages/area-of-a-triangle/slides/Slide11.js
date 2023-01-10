@@ -30,7 +30,7 @@ const Slide11 = ({ downIcon }) => {
             its area can be calculated using the Heron&apos;s formula.
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of a scalene triangle =
                <MathElement htmlString={"\\sqrt{s (s - a)(s - b)(s - c)}"} />
             </Pill>

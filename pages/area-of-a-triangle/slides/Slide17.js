@@ -44,8 +44,7 @@ const Slide17 = ({ downIcon }) => {
             <TextLine>
                Apply the Pythagoras Theorem in the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(1);
                   }}
@@ -145,7 +144,7 @@ const Slide17 = ({ downIcon }) => {
             </Paragraph>
          </span>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an isosceles triangle =
                <MathElement htmlString={"\\dfrac{\\sqrt{3}}{4} \\times a^2"} />
             </Pill>

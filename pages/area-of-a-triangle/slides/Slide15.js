@@ -41,8 +41,7 @@ const Slide15 = ({ downIcon }) => {
          <Paragraph>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(1);
                   }}
@@ -56,8 +55,7 @@ const Slide15 = ({ downIcon }) => {
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(2);
                   }}
