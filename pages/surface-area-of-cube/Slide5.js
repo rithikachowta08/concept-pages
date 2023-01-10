@@ -106,7 +106,7 @@ const Slide5 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           Total surface area
         </TextSpanBg>{" "}

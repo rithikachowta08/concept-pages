@@ -151,7 +151,7 @@ const Slide7 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           Lateral surface area
         </TextSpanBg>{" "}

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { coco_applet_uri } from "utils/constants";
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
 );
@@ -6,12 +7,13 @@ const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
 
-const Slide4 = ({ downIcon }) => {
+const Slide4 = ({ downIcon, currentPageIdx }) => {
   return (
     <TextAndAppletSlide
       title="Nets of a Cube"
-      appletSrc="./applets/triangle.html"
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
       downIcon={downIcon}
+      currentPageIdx={currentPageIdx}
     >
       <Paragraph>Let’s visualize the cube using nets.</Paragraph>
       <br />

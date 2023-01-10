@@ -50,7 +50,7 @@ const Slide3 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
         >
           six square faces
         </TextSpanBg>{" "}of the cube. It is measured in square units.

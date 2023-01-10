@@ -57,7 +57,7 @@ const Slide2 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           square faces
         </TextSpanBg>
@@ -67,7 +67,7 @@ const Slide2 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           vertices
         </TextSpanBg>
@@ -77,7 +77,7 @@ const Slide2 = ({ downIcon }) => {
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           edges
         </TextSpanBg>{" "}
