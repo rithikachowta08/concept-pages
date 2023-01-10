@@ -19,6 +19,7 @@ const Slide11 = dynamic(() => import("./Slide11"));
 const Slide12 = dynamic(() => import("./Slide12"));
 const Slide13 = dynamic(() => import("./Slide13"));
 const Slide14 = dynamic(() => import("./Slide14"));
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
 
 
@@ -38,6 +39,12 @@ const LengthOfArcOfACircle = () => {
     <Slide12 key={11} />,
     <Slide13 key={12} />,
     <Slide14 key={13} />,
+    <PageLastSlide
+      key={14}
+      currentPageTitle={"Length of Arc of a circle"}
+      nextPageTitle="Surface Area of Rectangular Prism"
+      nextPageLink="/us/math/study/surface-area-of-rectangular-prism"
+    />,
   ];
 
   const navigationSections = [
@@ -46,7 +53,7 @@ const LengthOfArcOfACircle = () => {
     { title: "Length of an arc of a sector", slides: [6, 7] },
   ];
 
-  const darkBgIndices = [0, 4, 6, 13];
+  const darkBgIndices = [0, 4, 6, 13, 14];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

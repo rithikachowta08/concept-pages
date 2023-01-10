@@ -79,7 +79,7 @@ const Slide7 = ({ downIcon }) => {
                      id={1}
                      onHover={onHover}
                      onHoverOut={onHoverOut}
-                     hoverColor={colors.DARK_BLUE}
+                     hoverColor={colors.DARK_LAVENDER}
                   >
                      radius
                   </TextSpanBg>{" "}

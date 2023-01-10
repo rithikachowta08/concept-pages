@@ -132,10 +132,6 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    font: unset !important;
 }
 
-.katex {
-   font: unset !important;
-}
-
 .katex .katex-html {
    overflow-wrap: normal;
 }
@@ -166,9 +162,9 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    padding: 0 5px;
    border-radius: 25px;
    cursor: default;
-   color: #b07fd7;
+   color: #a753b5;
    &:hover {
-      background-color: rgba(176, 127, 215, 0.2);
+      background-color: rgba(167, 83, 181, 0.2);
    }
 }
 

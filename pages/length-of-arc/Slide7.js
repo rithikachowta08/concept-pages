@@ -49,9 +49,6 @@ const Slide7 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                length of the arc (l)
             </TextSpanBg>
