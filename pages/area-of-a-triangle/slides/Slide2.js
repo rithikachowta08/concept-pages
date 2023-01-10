@@ -65,10 +65,9 @@ const Slide2 = ({ downIcon }) => {
             <ModalTriggerText onClick={onClick}>triangle</ModalTriggerText> is
             the{" "}
             <TextSpanBg
-               color={colors.RED}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
-               hoverColor={colors.DARK_BLUE}
             >
                region enclosed
             </TextSpanBg>{" "}

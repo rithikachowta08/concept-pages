@@ -41,8 +41,7 @@ const Slide13 = ({ downIcon }) => {
          <Paragraph>
             Given the length of the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -54,8 +53,7 @@ const Slide13 = ({ downIcon }) => {
             </TextSpanBg>{" "}
             and the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(2);
                }}
@@ -68,7 +66,7 @@ const Slide13 = ({ downIcon }) => {
             , its area can be calculated as:
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an isosceles triangle =
                <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
             </Pill>

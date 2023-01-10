@@ -98,8 +98,7 @@ const Slide5 = ({ downIcon }) => {
             <Paragraph textAlign={"center"} color={colors.BLACK}>
                Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
@@ -107,8 +106,7 @@ const Slide5 = ({ downIcon }) => {
                </TextSpanBg>
                <MathElement htmlString={"\\ \\times\\ "} />
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >
