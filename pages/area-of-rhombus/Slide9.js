@@ -33,7 +33,7 @@ const Slide11 = ({ downIcon }) => {
   latex.push(`\\scriptscriptstyle 1`);
   latex.push(`\\scriptscriptstyle 2`);
   latex.push(
-    `= \\dfrac{1}{2}({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
+    `= \\dfrac{1}{2} \\times ({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
   );
   let mathjaxCounter = 0;
   return (
