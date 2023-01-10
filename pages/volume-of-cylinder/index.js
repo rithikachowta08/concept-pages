@@ -5,8 +5,8 @@ const FullPageCustomWrapper = dynamic(() =>
    )
 );
 const Slide1 = dynamic(() => import("./Slide1"));
-// const Slide2 = dynamic(() => import("./Slide2"));
-// const Slide3 = dynamic(() => import("./Slide3"));
+const Slide2 = dynamic(() => import("./Slide2"));
+const Slide3 = dynamic(() => import("./Slide3"));
 // const Slide4 = dynamic(() => import("./Slide4"));
 // const Slide5 = dynamic(() => import("./Slide5"));
 // const Slide6 = dynamic(() => import("./Slide6"));
@@ -17,8 +17,8 @@ const Slide1 = dynamic(() => import("./Slide1"));
 const VolumeOfCylinder = () => {
    const SlideArray = [
       <Slide1 key={0} />,
-      // <Slide2 key={1} />,
-      // <Slide3 key={2} />,
+      <Slide2 key={1} />,
+      <Slide3 key={2} />,
       // <Slide4 key={3} />,
       // <Slide5 key={4} />,
       // <Slide6 key={5} />,
