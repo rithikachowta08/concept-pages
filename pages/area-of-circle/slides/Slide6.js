@@ -90,11 +90,13 @@ const Slide6 = ({ navBar, downIcon }) => {
                <TextLine>Area of a Circle</TextLine>
                <Flex direction="column">
                   <TextLine>
-                     <MathElement htmlString={"\\ = \\pi r^2"} />
+                     <MathElement htmlString={"\\ = \\pi\\times r^2"} />
                   </TextLine>
                   <TextLine>
                      <MathElement
-                        htmlString={"\\ = \\pi \\Big( \\dfrac{d}{2}\\Big)^2"}
+                        htmlString={
+                           "\\ = \\pi\\times \\Big( \\dfrac{d}{2}\\Big)^2"
+                        }
                      />
                   </TextLine>
                </Flex>
@@ -103,7 +105,7 @@ const Slide6 = ({ navBar, downIcon }) => {
          <Paragraph>
             <Pill>
                Area of a Circle ={" "}
-               <MathElement htmlString={"\\dfrac{\\pi d^2}{4}"} />
+               <MathElement htmlString={"\\dfrac{\\pi\\times d^2}{4}"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

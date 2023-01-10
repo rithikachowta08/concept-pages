@@ -88,14 +88,7 @@ const Slide3 = ({ downIcon }) => {
                &pi; (pi)
             </ModalTriggerText>
             &nbsp;and the{" "}
-            <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
-            >
+            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                diameter(d)
             </TextSpanBg>
             &nbsp;of the circle.
@@ -106,10 +99,6 @@ const Slide3 = ({ downIcon }) => {
                   <TextSpanBg
                      onHover={() => onHover(2)}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.AQUA}
-                     fontWeight={700}
-                     fontSize="2.2rem"
                   >
                      Circumference
                   </TextSpanBg>

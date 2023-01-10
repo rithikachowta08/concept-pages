@@ -20,7 +20,6 @@ const plain_all_lengths =
    "assets/surface-area-of-right-triangluar-prism/plain_all_lengths.svg";
 const bases_values =
    "assets/surface-area-of-right-triangluar-prism/bases_values.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 
 const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -51,23 +50,25 @@ const Slide9 = ({ downIcon }) => {
             represents the total surface area.
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine>Total surface area</TextLine>
                <TextLine>
-                  = Area of the three lateral faces + Area of the two&nbsp;
+                  = Area of the three lateral faces + Area of the{" "}
                   <TextSpanBg
                      onHover={onHover}
                      onHoverOut={onHoverOut}
-                     color={colors.RED}
-                     hoverColor={colors.DARK_BLUE}
-                     fontWeight={fontWeights.BOLD}
-                     fontSize="2.2rem"
+                     hoverColor={colors.DARK_LAVENDER}
                   >
-                     triangular bases
+                     two triangular bases
                   </TextSpanBg>
                </TextLine>
-               <TextLine>= (a + b + c)l + &frac12; bh + &frac12; bh</TextLine>
-               <TextLine>= (a + b + c)l + bh square units</TextLine>
+               <TextLine>
+                  = (a + b + c) &times; l + &frac12; &times; b &times; h +
+                  &frac12; &times; b &times; h
+               </TextLine>
+               <TextLine>
+                  = (a + b + c) &times; l + b &times; h sq units
+               </TextLine>
             </Paragraph>
          </div>
       </TextAndDiagramSlide>

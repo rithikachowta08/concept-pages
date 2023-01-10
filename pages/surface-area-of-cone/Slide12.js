@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
-import { addTransitionToKatex } from "utils/domutils";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
@@ -15,7 +14,6 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
-const MathElement = dynamic(() => import("components/MathElement"));
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
@@ -25,84 +23,13 @@ const surfaceCone_rightslide = "assets/surface-area-of-cone/slide12/2.svg";
 const surfaceCone_right = "assets/surface-area-of-cone/slide12/3.svg";
 
 const Slide12 = ({ downIcon }) => {
-  let EquationLatex0 = [
-    {
-      lhsLatex: {
-        value: [`Surface area of a cone`],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi}r(r+\\ell)"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times 3\\:(3+10)\\ cm^2"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["{\\pi} \\times 3\\times 13\\ cm^2"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-    {
-      lhsLatex: {
-        value: [""],
-        type: "text",
-      },
-      rhsLatex: {
-        value: ["39{\\pi}\\ cm^2"],
-        type: "latex",
-      },
-      rhsHint: {
-        value: [""],
-        type: "text",
-      },
-    },
-  ];
-  let latexEquationContainer = [];
-  latexEquationContainer.push(EquationLatex0);
-  let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
-  const onHoverKatex = (e) => {
-    setActiveIndex(Number(e.currentTarget.parentNode.id));
-  };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`(\\ell)`);
-  let mathjaxCounter = 0;
-  useEffect(
-    addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
-    []
-  );
   return (
     <TextAndDiagramSlide
       secondaryTitle="Total Surface Area"
@@ -128,31 +55,88 @@ const Slide12 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
-          Slant height <MathElement htmlString={latex[mathjaxCounter++]} />
+          Slant height (l)
         </TextSpanBg>
-        &nbsp;= 10 cm&nbsp;
+        &nbsp;= 10 in&nbsp;
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Radius (r)
         </TextSpanBg>
-        &nbsp;= 3 cm&nbsp;
+        &nbsp;= 3 in&nbsp;
       </Paragraph>
       <Paragraph>
         <EquationTable
-          equationLatex={latexEquationContainer[latexEquationCounter++]}
-        ></EquationTable>
+          equationLatex={[
+            {
+              lhsLatex: {
+                value: [`Surface area of a cone`],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times r \\times (r + l)"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times 3 \\times (3 + 10)"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["{\\pi} \\times 3\\times 13\\ sq \\ in"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+            {
+              lhsLatex: {
+                value: [""],
+                type: "text",
+              },
+              rhsLatex: {
+                value: ["39{\\pi}\\ sq\\ in"],
+                type: "latex",
+              },
+              rhsHint: {
+                value: [""],
+                type: "text",
+              },
+            },
+          ]}
+        />
       </Paragraph>
     </TextAndDiagramSlide>
   );

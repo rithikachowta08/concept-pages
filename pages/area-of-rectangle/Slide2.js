@@ -17,7 +17,6 @@ const TextSpanBg = dynamic(() =>
 const rectangle_full = "assets/area-of-rectangle/rectangle_full.svg";
 const rectangle_angles = "assets/area-of-rectangle/rectangle_angles.svg";
 const rectangle_sides = "assets/area-of-rectangle/rectangle_sides.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -43,15 +42,12 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             A rectangle is a four-sided polygon with{" "}
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
+               hoverColor={colors.DARK_LAVENDER}
             >
                opposite sides equal
             </TextSpanBg>{" "}
@@ -59,10 +55,7 @@ const Slide2 = ({ downIcon }) => {
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
-               fontSize="2.2rem"
+               hoverColor={colors.DARK_LAVENDER}
             >
                internal angles
             </TextSpanBg>{" "}

@@ -36,32 +36,29 @@ const Slide2 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            A rectangular prism is a three-dimensional solid shape that has 6{" "}
+            A rectangular prism is a three-dimensional solid shape that has{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
-               faces
-            </TextSpanBg>{" "}
-            , 8{" "}
+               6 faces
+            </TextSpanBg>
+            ,{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
-               vertices
+               8 vertices
             </TextSpanBg>
-            , and 12{" "}
+            , and{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(3)}
                onHoverOut={() => setActiveIndex(0)}
             >
-               edges
+               12 edges
             </TextSpanBg>
             .
          </Paragraph>

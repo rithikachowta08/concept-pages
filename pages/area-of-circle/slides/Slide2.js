@@ -65,8 +65,7 @@ const Slide2 = ({ downIcon, navBar }) => {
          <Paragraph>
             The area of a circle is the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >

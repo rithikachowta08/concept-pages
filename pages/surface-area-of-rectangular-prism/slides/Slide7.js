@@ -9,11 +9,12 @@ import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph } from "components/text";
 import React, { useState } from "react";
 import { colors } from "utils/colors";
+import MathElement from "components/MathElement";
 
 const image_modal =
    "assets/surface-area-of-rectangular-prism/slide_6_modal.svg";
 
-const Slide7 = ({ downIcon }) => {
+const Slide7 = ({ currentPageIdx, downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    const onModalDismiss = () => {
@@ -43,10 +44,12 @@ const Slide7 = ({ downIcon }) => {
          bg="DARK"
          title={"Lateral Surface Area"}
          secondaryTitle={"Surface Area"}
+         currentPageIdx={currentPageIdx}
          appletSrc={
             "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v4/index.html"
          }
          isLastSlide={true}
+         downIcon={downIcon}
       >
          <Modal
             bg="LIGHT"
@@ -68,7 +71,10 @@ const Slide7 = ({ downIcon }) => {
             excluding the two bases.
          </Paragraph>
          <Paragraph>
-            <Pill>Lateral surface area = 2(l + w)h</Pill>
+            <Pill>
+               Lateral surface area ={" "}
+               <MathElement htmlString={"2 \\times (l + w) \\times h"} />
+            </Pill>
          </Paragraph>
       </TextAndAppletSlide>
    );

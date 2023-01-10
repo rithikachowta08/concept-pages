@@ -29,10 +29,14 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const typeofsector_circle = "assets/length-of-arc-of-a-circle/typeofsector_circle.svg";
-const typeofsector_minor = "assets/length-of-arc-of-a-circle/typeofsector_minor.svg";
-const typeofsector_major = "assets/length-of-arc-of-a-circle/typeofsector_major.svg";
-const typeofsector_semicircular= "assets/length-of-arc-of-a-circle/typeofsector_semicircular.svg";
+const typeofsector_circle =
+   "assets/length-of-arc-of-a-circle/typeofsector_circle.svg";
+const typeofsector_minor =
+   "assets/length-of-arc-of-a-circle/typeofsector_minor.svg";
+const typeofsector_major =
+   "assets/length-of-arc-of-a-circle/typeofsector_major.svg";
+const typeofsector_semicircular =
+   "assets/length-of-arc-of-a-circle/typeofsector_semicircular.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -58,60 +62,57 @@ const Slide6 = ({ downIcon }) => {
          secondaryTitle="Sector of a Circle"
          diagram={
             <TransitionImage
-               images={[typeofsector_circle,typeofsector_minor, typeofsector_major, typeofsector_semicircular]}
+               images={[
+                  typeofsector_circle,
+                  typeofsector_minor,
+                  typeofsector_major,
+                  typeofsector_semicircular,
+               ]}
                altTexts={[
                   "Diagram of a circle",
                   "Diagram of a circle highlighting the minor sector",
                   "Diagram of a circle highlighting the major sector",
-                  "Diagram of a circle highlighting the semicircular sector"
-                  ]}
+                  "Diagram of a circle highlighting the semicircular sector",
+               ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
          <Paragraph>
-         The sectors of a circle are classified based on the degree measure of the sector.
+            The sectors of a circle are classified based on the degree measure
+            of the sector.
          </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
-                  fontSize="2.2rem"
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Minor sector
-               </TextSpanBg>&nbsp;
-               (OACB): A sector of a circle measuring less than 180°.
+               </TextSpanBg>
+               &nbsp; (OACB): A sector of a circle measuring less than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
-                  fontSize="2.2rem"
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Major sector
-               </TextSpanBg>&nbsp;
-               (OADB): A sector of a circle measuring greater than 180°.
+               </TextSpanBg>
+               &nbsp; (OADB): A sector of a circle measuring greater than 180°.
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(3)}
+                  onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
-                  fontSize="2.2rem"
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Semicircular sector
-               </TextSpanBg>&nbsp;
-               (OPDR): A sector of a circle measuring 180°.
+               </TextSpanBg>
+               &nbsp; (OPDR): A sector of a circle measuring 180°.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

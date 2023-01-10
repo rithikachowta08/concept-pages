@@ -8,7 +8,7 @@ import { Paragraph } from "components/text";
 
 const image_1 = "assets/area-of-sector-of-a-circle/18.svg";
 
-const Slide7 = ({ navBar, downIcon }) => {
+const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          bg="LIGHT"
@@ -17,6 +17,7 @@ const Slide7 = ({ navBar, downIcon }) => {
          diagram={<StyledImg src={image_1} />}
          navBar={navBar}
          downIcon={downIcon}
+         currentPageIdx={currentPageIdx}
       >
          <Paragraph margin={"40px 0 0 0"}>
             Area of the circle when the angle is 360° ={" "}

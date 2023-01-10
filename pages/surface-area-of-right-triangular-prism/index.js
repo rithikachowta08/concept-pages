@@ -27,10 +27,10 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <PageLastSlide
-         key={10}
+         key={9}
          currentPageTitle={"Surface Area of a Right Triangular Prism"}
          nextPageTitle="Surface Area of Rectangular Prism"
-         nextPageLink="/study/surface-area-of-rectangular-prism"
+         nextPageLink="/us/math/study/surface-area-of-rectangular-prism"
       />,
    ];
 
@@ -43,7 +43,7 @@ const SurfaceAreaOfRightTriangularPrism = () => {
       { title: "Total surface area", slides: [7, 8] },
    ];
 
-   const darkBgIndices = [0, 3, 4, 7];
+   const darkBgIndices = [0, 3, 4, 7, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

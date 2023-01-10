@@ -4,12 +4,13 @@ const TextAndAppletSlide = dynamic(() =>
 );
 import { Paragraph } from "components/text";
 
-const Slide11 = ({ navBar, downIcon }) => {
+const Slide11 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          title={"Storyboarding for applet"}
          downIcon={downIcon}
          navBar={navBar}
+         currentPageIdx={currentPageIdx}
       >
          <Paragraph>
             The slider vary the arc length of the circle and while dot vary the

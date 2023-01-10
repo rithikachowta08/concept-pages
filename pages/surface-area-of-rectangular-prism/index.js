@@ -8,6 +8,9 @@ const Slide4 = dynamic(() => import("./slides/Slide4.js"));
 const Slide5 = dynamic(() => import("./slides/Slide5.js"));
 const Slide6 = dynamic(() => import("./slides/Slide6.js"));
 const Slide7 = dynamic(() => import("./slides/Slide7.js"));
+const PageLastSlide = dynamic(() =>
+   import("../../components/slides/PageLastSlide")
+);
 
 const SurfaceAreaOfRectangularPrism = () => {
    const SlideArray = [
@@ -15,20 +18,26 @@ const SurfaceAreaOfRectangularPrism = () => {
       <Slide2 key={1} />,
       <Slide3 key={2} />,
       <Slide4 key={3} />,
-      <Slide5 key={4} />,
+      // <Slide5 key={4} />,
       <Slide6 key={5} />,
       <Slide7 key={6} />,
+      <PageLastSlide
+         key={7}
+         currentPageTitle={"Surface Area of Rectangular Prism"}
+         nextPageLink={"/us/math/study/surface-area-of-cone"}
+         nextPageTitle={"Surface Area of Cone"}
+      />,
    ];
    const navigationSections = [
       {
          title: "What is the surface area of a rectangular prism?",
-         slides: [3, 4],
+         slides: [1, 2, 3],
       },
-      { title: "Total surface area", slides: [5] },
-      { title: "Lateral surface area", slides: [6] },
+      { title: "Total surface area", slides: [4] },
+      { title: "Lateral surface area", slides: [5] },
    ];
 
-   const darkBgIndices = [0, 2, 5, 6];
+   const darkBgIndices = [0, 2, 4, 5, 6];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

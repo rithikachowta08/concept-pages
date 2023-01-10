@@ -25,9 +25,7 @@ const Slide4 = ({ downIcon }) => {
             A sphere has just one curved surface and no flat surfaces.
             Therefore, for a sphere,
          </Paragraph>
-         <Pill /* color={colors.WHITE} */>
-            Total surface area = Curved surface area
-         </Pill>
+         <Pill darkbg={false}>Total surface area = Curved surface area</Pill>
       </TextAndDiagramSlide>
    );
 };

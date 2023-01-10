@@ -78,7 +78,7 @@ const Slide8 = ({ downIcon }) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -109,10 +109,10 @@ const Slide8 = ({ downIcon }) => {
         &nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Base (b)
         </TextSpanBg>
@@ -122,10 +122,10 @@ const Slide8 = ({ downIcon }) => {
         &nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Height (h)
         </TextSpanBg>

@@ -24,17 +24,18 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const circle_showing_the_sector = "assets/length-of-arc-of-a-circle/circle_showing_the_sector.svg";
-const central_angle_of_the_arc = "assets/length-of-arc-of-a-circle/central_angle_of_the_arc.svg";
-const length_of_the_arc = "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
+const circle_showing_the_sector =
+   "assets/length-of-arc-of-a-circle/circle_showing_the_sector.svg";
+const central_angle_of_the_arc =
+   "assets/length-of-arc-of-a-circle/central_angle_of_the_arc.svg";
+const length_of_the_arc =
+   "assets/length-of-arc-of-a-circle/length_of_the_arc.svg";
 // const unit_square = "assets/area-of-rectangle/unit_square.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
@@ -80,11 +81,10 @@ const Slide3 = ({ downIcon }) => {
                   length_of_the_arc,
                ]}
                altTexts={[
-               "Diagram of a circle showing the sector",
-               "Diagram of a circle highlighting central angle of the arc",
-               "Diagram of a circle highlighting length of the arc"
+                  "Diagram of a circle showing the sector",
+                  "Diagram of a circle highlighting central angle of the arc",
+                  "Diagram of a circle highlighting length of the arc",
                ]}
-
                activeIndex={activeIndex}
             />
          }
@@ -100,28 +100,24 @@ const Slide3 = ({ downIcon }) => {
             An arc can be measured using two different ways:&nbsp;
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(1)}
+                  onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
-                  fontSize="2.2rem"
+                  hoverColor={colors.DARK_LAVENDER}
                >
-                  <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                  Central angle of the arc (𝜃)
+                  <MathElement htmlString={latex[mathjaxCounter]} />
+                  &nbsp; Central angle of the arc (𝜃)
                </TextSpanBg>
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={()=>onHover(2)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
-                  fontSize="2.2rem"
+                  hoverColor={colors.DARK_LAVENDER}
                >
-                  <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                  The length of the arc (l)
+                  <MathElement htmlString={latex[mathjaxCounter]} />
+                  &nbsp; The length of the arc (l)
                </TextSpanBg>
             </TextLine>
          </Paragraph>

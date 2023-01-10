@@ -18,7 +18,7 @@ const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
 import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
-const Slide5 = ({ downIcon }) => {
+const Slide5 = ({ downIcon, currentPageIdx }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph>
@@ -45,9 +45,10 @@ const Slide5 = ({ downIcon }) => {
       <TextAndAppletSlide
          appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
          downIcon={downIcon}
+         currentPageIdx={currentPageIdx}
          bg="DARK"
          secondaryTitle="Sphere"
-         title="Why is the surface area 4πr2?"
+         title={<div>Why is the surface area 4πr&sup2;</div>}
       >
          <Modal
             isOpen={isModalOpen}
