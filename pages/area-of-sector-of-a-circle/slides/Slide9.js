@@ -6,7 +6,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpanBg } from "components/text";
 import { useEffect, useState } from "react";
@@ -66,8 +66,7 @@ const Slide9 = ({ navBar, downIcon }) => {
          <Paragraph margin={"40px 0 0 0"}>Given:</Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -77,8 +76,7 @@ const Slide9 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -93,7 +91,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                   {
                      lhsLatex: {
                         value: [
-                           "\\htmlId{3}{\\htmlClass{textSpanBg soc-slide-9 darkBg}{\\text{Sector (OAPB)}}}",
+                           "\\htmlId{3}{\\htmlClass{textSpanBg soc-slide-9}{\\text{Sector (OAPB)}}}",
                         ],
                         type: "latex",
                      },
