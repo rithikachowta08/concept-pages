@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -27,6 +28,12 @@ const CircumferenceOfCircle = () => {
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <Slide10 key={9} />,
+      <PageLastSlide
+         key={10}
+         currentPageTitle={"Circumference of a Circle"}
+         nextPageTitle="Area of a Rhombus"
+         nextPageLink="/us/math/study/area-of-rhombus"
+      />,
    ];
 
    const navigationSections = [
@@ -36,7 +43,7 @@ const CircumferenceOfCircle = () => {
       { title: "How many revolutions?", slides: [6, 7, 8] },
    ];
 
-   const darkBgIndices = [0, 2, 3, 6, 8];
+   const darkBgIndices = [0, 2, 3, 6, 8, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
