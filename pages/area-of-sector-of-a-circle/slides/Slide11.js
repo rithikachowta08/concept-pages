@@ -11,6 +11,7 @@ const Slide11 = ({ navBar, downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          navBar={navBar}
          currentPageIdx={currentPageIdx}
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/length-of-arc-of-circle-v2/index.html"
       >
          <Paragraph>
             The slider vary the arc length of the circle and while dot vary the

@@ -51,8 +51,7 @@ const Slide20 = ({ downIcon }) => {
          <Paragraph>
             Apply the &quot;Sine&quot; formula in the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -111,7 +110,7 @@ const Slide20 = ({ downIcon }) => {
             />
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area =
                <MathElement htmlString={"\\frac{1}{2}\\ bc\\ Sin\\ A"} />
             </Pill>
