@@ -8,7 +8,7 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
-            title="Video here"
+            title="Length of an Arc of a Sector"
             downIcon={downIcon}
             videoContent={{
                dash_Url:

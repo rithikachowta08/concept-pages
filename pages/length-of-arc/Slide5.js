@@ -60,9 +60,6 @@ const Slide5 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                sector
             </TextSpanBg>
@@ -70,9 +67,6 @@ const Slide5 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                two radii
             </TextSpanBg>
@@ -80,9 +74,6 @@ const Slide5 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(3)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
             >
                arc
             </TextSpanBg>

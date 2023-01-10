@@ -103,8 +103,7 @@ const Slide3 = ({ downIcon }) => {
                   onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   <MathElement htmlString={latex[mathjaxCounter]} />
                   &nbsp; Central angle of the arc (𝜃)
@@ -115,8 +114,7 @@ const Slide3 = ({ downIcon }) => {
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   <MathElement htmlString={latex[mathjaxCounter]} />
                   &nbsp; The length of the arc (l)

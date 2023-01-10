@@ -88,9 +88,7 @@ const Slide6 = ({ downIcon }) => {
                <TextSpanBg
                   onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Minor sector
                </TextSpanBg>
@@ -100,9 +98,7 @@ const Slide6 = ({ downIcon }) => {
                <TextSpanBg
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Major sector
                </TextSpanBg>
@@ -112,9 +108,7 @@ const Slide6 = ({ downIcon }) => {
                <TextSpanBg
                   onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Semicircular sector
                </TextSpanBg>
