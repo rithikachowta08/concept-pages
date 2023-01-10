@@ -89,9 +89,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
+               hoverColor={colors.DARK_LAVENDER}
             >
                arc
             </TextSpanBg>
@@ -101,9 +99,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             <TextSpanBg
                onHover={() => onHover(2)}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
-               fontWeight={700}
+               hoverColor={colors.DARK_LAVENDER}
             >
                circumference
             </TextSpanBg>

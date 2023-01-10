@@ -30,7 +30,7 @@ const SurfaceAreaOfRightTriangularPrism = () => {
          key={9}
          currentPageTitle={"Surface Area of a Right Triangular Prism"}
          nextPageTitle="Surface Area of Rectangular Prism"
-         nextPageLink="/us/math/study/surface-area-of-rectangular-prism"
+         nextPageLink="/study/surface-area-of-rectangular-prism"
       />,
    ];
 
