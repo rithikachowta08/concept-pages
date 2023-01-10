@@ -46,7 +46,7 @@ const Slide6 = ({ downIcon }) => {
           id={1}
           onHover={onHover}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           space occupied
