@@ -81,31 +81,9 @@ const Slide19 = ({ downIcon }) => {
             them, the area can be calculated as:
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            {/* <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: [`Area`],
-                        type: "text",
-                     },
-                     rhsLatex: {
-                        value: [
-                           "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}bc\\ SinA}}\\ = \\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ca\\ SinB}}\\ = \\htmlId{3}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ab\\ SinC}}",
-                        ],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],   
-                        type: "text",
-                     },
-                  },
-               ]}
-            /> */}
             Area ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -118,8 +96,7 @@ const Slide19 = ({ downIcon }) => {
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(2);
                }}
@@ -132,8 +109,7 @@ const Slide19 = ({ downIcon }) => {
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(3);
                }}

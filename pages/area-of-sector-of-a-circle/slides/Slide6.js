@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { StyledImg } from "components/StyledElements";
 import { Paragraph } from "components/text";

@@ -51,9 +51,9 @@ const Slide5 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          region bounded
+          region bounded by its four sides
         </TextSpanBg>
-        &nbsp;by its four sides in a two-dimensional space.&nbsp;
+        &nbsp;in a two-dimensional space.&nbsp;
       </Paragraph>
     </TextAndDiagramSlide>
   );

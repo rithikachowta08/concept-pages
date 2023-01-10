@@ -47,19 +47,17 @@ const Slide4 = ({ downIcon }) => {
                Area of the triangle ={" "}
                <MathElement htmlString={"\\dfrac{1}{2} \\times"} />{" "}
                <TextSpanBg
-                  color={colors.RED}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                >
                   Base
                </TextSpanBg>{" "}
                <MathElement htmlString={"\\times"} />{" "}
                <TextSpanBg
-                  color={colors.RED}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                >
                   Perpendicular height
                </TextSpanBg>

@@ -105,8 +105,6 @@ const Slide6 = ({ downIcon, navBar }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.AQUA}
-                  color={colors.RED}
                >
                   side length (s),
                </TextSpanBg>{" "}
@@ -118,12 +116,9 @@ const Slide6 = ({ downIcon, navBar }) => {
          <div>
             <Pill
                width="fit-content"
-               bgColor={colors.OCEAN_GREEN}
-               color={colors.BLACK}
             >
                Volume of cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-               cubic units
             </Pill>
          </div>
       </TextAndDiagramSlide>

@@ -129,13 +129,13 @@ const Slide11 = ({ downIcon }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
+
                >
                   △BCD
                </TextSpanBg>
             </TextLine>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
@@ -146,13 +146,12 @@ const Slide11 = ({ downIcon }) => {
                   id={2}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   △ABD
                </TextSpanBg>
             </TextLine>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>

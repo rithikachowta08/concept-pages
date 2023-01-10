@@ -6,7 +6,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -34,8 +34,8 @@ const Slide12 = ({ downIcon, navBar }) => {
                activeIndex={activeIndex}
             />
          }
-         isLastSlide={true}
          navBar={navBar}
+         downIcon={downIcon}
       >
          <Paragraph>
             Find the area of the sector of a circle if the radius of the circle
@@ -45,8 +45,7 @@ const Slide12 = ({ downIcon, navBar }) => {
          <Paragraph>
             <TextSpan>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
@@ -57,8 +56,7 @@ const Slide12 = ({ downIcon, navBar }) => {
             <br />
             <TextSpan margin={"10px 0 0 0"}>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >
