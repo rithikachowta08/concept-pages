@@ -17,6 +17,9 @@ const Slide11 = dynamic(() => import("./Slide11"));
 const Slide12 = dynamic(() => import("./Slide12"));
 const Slide13 = dynamic(() => import("./Slide13"));
 const Slide14 = dynamic(() => import("./Slide14"));
+const PageLastSlide = dynamic(() =>
+  import("../../components/slides/PageLastSlide")
+);
 
 const AreaOfRhombus = () => {
   const SlideArray = [
@@ -33,6 +36,12 @@ const AreaOfRhombus = () => {
     <Slide12 key={10} />,
     <Slide13 key={11} />,
     <Slide14 key={12} />,
+    <PageLastSlide
+      key={13}
+      currentPageTitle={"Surface Area of a Cone"}
+      nextPageLink={"/us/math/study/volume-of-cube"}
+      nextPageTitle={"Volume of a Cube"}
+    />,
   ];
 
   const navigationSections = [
@@ -45,7 +54,7 @@ const AreaOfRhombus = () => {
     },
   ];
 
-  const darkBgIndices = [0, 2, 4, 7, 10];
+  const darkBgIndices = [0, 2, 4, 7, 10, 13];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

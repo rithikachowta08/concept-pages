@@ -28,7 +28,7 @@ const Slide8 = ({ downIcon }) => {
     {
       lhsLatex: {
         value: [
-          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area}}}\\ of\\ the\\ rhombus`,
+          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area of the rhombus}}}`,
         ],
         type: "latex",
       },
@@ -61,7 +61,7 @@ const Slide8 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["20 \\  in^2"],
+        value: ["20 \\ sq\\ in"],
         type: "latex",
       },
       rhsHint: {
