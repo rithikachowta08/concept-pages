@@ -119,7 +119,7 @@ const Slide11 = ({ downIcon }) => {
             />
          }
          title="Proof"
-         secondaryTitle="Volume of a Cube using Diagonal"
+         secondaryTitle="Volume of a Cube Using Diagonal"
          downIcon={downIcon}
       >
          <Paragraph>
