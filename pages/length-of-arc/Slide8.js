@@ -62,7 +62,7 @@ const Slide8 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-   latex.push(` = \\dfrac{θ}{360} \\times 2\\pi r`);
+   latex.push(` = \\dfrac{θ}{360} \\times 2 \\times \\pi \\times r`);
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -119,7 +119,7 @@ const Slide8 = ({ downIcon }) => {
                <TextSpanBg
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
-                   
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   measure of the angle
                </TextSpanBg>
