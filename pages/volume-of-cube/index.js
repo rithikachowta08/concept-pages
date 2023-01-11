@@ -45,9 +45,9 @@ const VolumeOfCube = ({}) => {
       <Slide17 key={15} />,
       <PageLastSlide
       key={16}
-      currentPageTitle={"Area of a Rectangle"}
-      nextPageTitle="Area of a Circle"
-      nextPageLink="/us/math/study/area-of-triangle"
+      currentPageTitle={"Volume of Cube"}
+      nextPageTitle="Area of Triangle"
+      nextPageLink="/us/math/study/area-of-a-triangle"
     />,
    ];
 
