@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
-const cube_red = "assets/volume-of-cube/slide10/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide10/2.svg";
+const cube_red = "assets/volume-of-cube/slide10_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide10_b.svg";
 import { colors } from "utils/colors";
 import { useState } from "react";
 const TextLine = dynamic(() =>

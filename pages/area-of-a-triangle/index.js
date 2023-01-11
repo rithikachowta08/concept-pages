@@ -68,8 +68,8 @@ const AreaOfATriangle = () => {
       <PageLastSlide
          key={20}
          currentPageTitle={"Area of a Triangle"}
-         nextPageTitle={"Volume of a cube"}
-         nextPageLink={"/us/math/study/volume-of-cube"}
+         nextPageTitle="Circumference of circle"
+         nextPageLink="/us/math/study/circumference-of-circle"
       />,
    ];
 

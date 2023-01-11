@@ -107,7 +107,7 @@ const Slide3 = ({ downIcon }) => {
                <div>
                   <TextLine>= &pi; &times; d</TextLine>
                   <TextLine>= &pi; &times; 2 &times; radius (r)</TextLine>
-                  <TextLine>= 2 &pi; r</TextLine>
+                  <TextLine>= 2 &times; &pi; &times; r</TextLine>
                </div>
             </Flex>
          </Paragraph>

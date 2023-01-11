@@ -138,7 +138,7 @@ const Slide9 = ({ downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{θ}{360°} \\times 2\\pi r"],
+                        value: ["\\dfrac{θ}{360°} \\times 2 \\times \\pi \\times r"],
                         type: "latex",
                      },
                      rhsHint: {
