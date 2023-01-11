@@ -20,8 +20,8 @@
         stroke-width: 6px;
       }
 
-      .cls-4, .cls-5 {
-        fill: #b870dc;
+      .cls-5, .cls-4 {
+        fill: #bb70de;
       }
 
       .cls-6 {

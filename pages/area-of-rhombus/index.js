@@ -38,9 +38,9 @@ const AreaOfRhombus = () => {
     <Slide14 key={12} />,
     <PageLastSlide
       key={13}
-      currentPageTitle={"Surface Area of a Cone"}
-      nextPageLink={"/us/math/study/volume-of-cube"}
-      nextPageTitle={"Volume of a Cube"}
+      currentPageTitle={"Area of a Rhombus"}
+      nextPageLink={"/us/math/study/length-of-arc"}
+      nextPageTitle={"Length of Arc of a circle"}
     />,
   ];
 
