@@ -124,7 +124,6 @@ const Slide14 = ({ downIcon }) => {
         />
       }
       downIcon={downIcon}
-      isLastSlide
     >
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg

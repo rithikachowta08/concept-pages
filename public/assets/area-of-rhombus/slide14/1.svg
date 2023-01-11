@@ -20,8 +20,12 @@
         stroke-width: 6px;
       }
 
-      .cls-4, .cls-5 {
-        fill: #b870dc;
+      .cls-5 {
+        opacity: .1;
+      }
+
+      .cls-5, .cls-4 {
+        fill: #bb70de;
       }
 
       .cls-6 {
@@ -30,10 +34,6 @@
 
       .cls-7 {
         fill: #ea6560;
-      }
-
-      .cls-5 {
-        opacity: .1;
       }
     </style>
   </defs>
