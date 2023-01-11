@@ -1,8 +1,7 @@
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide6/1.svg";
-const cube_d = "assets/volume-of-cube/slide6/2.svg";
 import { colors } from "utils/colors";
-
+const cube_red = "assets/volume-of-cube/slide6_a.svg";
+const cube_d = "assets/volume-of-cube/slide6_b.svg";
 import dynamic from "next/dynamic";
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -105,8 +104,6 @@ const Slide6 = ({ downIcon, navBar }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.AQUA}
-                  color={colors.RED}
                >
                   side length (s),
                </TextSpanBg>{" "}
@@ -118,12 +115,9 @@ const Slide6 = ({ downIcon, navBar }) => {
          <div>
             <Pill
                width="fit-content"
-               bgColor={colors.OCEAN_GREEN}
-               color={colors.BLACK}
             >
                Volume of cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-               cubic units
             </Pill>
          </div>
       </TextAndDiagramSlide>

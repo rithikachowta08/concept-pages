@@ -30,12 +30,12 @@ const Slide14 = ({ downIcon }) => {
     {
       lhsLatex: {
         value: [
-          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area}}}\\ of\\ the\\ rhombus`,
+          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area\\ of\\ the\\ rhombus}}}`,
         ],
         type: "latex",
       },
       rhsLatex: {
-        value: ["a^2\\sin \\theta "],
+        value: ["a^2 \\times \\sin \\theta "],
         type: "latex",
       },
       rhsHint: {
@@ -49,7 +49,7 @@ const Slide14 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["4^2 \\sin 30\\degree"],
+        value: ["4^2 \\times \\sin 30\\degree"],
         type: "latex",
       },
       rhsHint: {
@@ -77,7 +77,7 @@ const Slide14 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["8 \\  in^2"],
+        value: ["8 \\ sq\\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -123,7 +123,7 @@ const Slide14 = ({ downIcon }) => {
           activeIndex={activeIndex}
         />
       }
-      isLastSlide
+      downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg

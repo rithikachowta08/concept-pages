@@ -1,4 +1,4 @@
-@import url("styles/fonts/stylesheet.css");
+// @import url("styles/fonts/stylesheet.css");
 
 html,
 body {
@@ -129,8 +129,13 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 }
 
 .katex {
-   font: unset !important;
+   font-size: unset !important;
+   font-family: unset !important;
 }
+
+// .katex {
+//    font: unset !important;
+// }
 
 .katex .katex-html {
    overflow-wrap: normal;

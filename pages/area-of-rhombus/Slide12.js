@@ -28,7 +28,7 @@ const Slide12 = ({ downIcon }) => {
   };
 
   let latex = [];
-  latex.push(`= a^2 \\sin \\theta`);
+  latex.push(`= a^2 \\times \\sin \\theta`);
   let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide

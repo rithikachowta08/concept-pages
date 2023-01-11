@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="assets" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 8;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #333;
+      }
+
+      .cls-1, .cls-3, .cls-5, .cls-6 {
+        opacity: .2;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-width: 4px;
+      }
+
+      .cls-7 {
+        fill: #989898;
+        opacity: .1;
+      }
+
+      .cls-2 {
+        stroke: #adacac;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 6px;
+      }
+
+      .cls-8, .cls-9 {
+        fill: #2b2bdf;
+      }
+
+      .cls-10 {
+        fill: #adacac;
+        letter-spacing: -.03em;
+      }
+
+      .cls-10, .cls-11, .cls-9 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36px;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 12;
+      }
+
+      .cls-11 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-11, .cls-5 {
+        fill: #333;
+      }
+
+      .cls-4 {
+        stroke: #2b2bdf;
+      }
+    </style>
+  </defs>
+  <g id="_6" data-name="6">
+    <g>
+      <ellipse class="cls-5" cx="280" cy="444.99" rx="207.24" ry="53.14"/>
+      <path class="cls-3" d="M72.76,444.99c0-29.35,92.78-53.14,207.24-53.14s207.24,23.79,207.24,53.14"/>
+      <path class="cls-7" d="M487.24,444.98c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l3.92-7.2L279.86,61.87l202.93,372.1,3.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+      <g class="cls-6">
+        <text class="cls-11" transform="translate(371.98 437.58)"><tspan x="0" y="0">r</tspan></text>
+      </g>
+      <polyline class="cls-1" points="279.86 61.88 279.86 444.75 487.24 444.62"/>
+      <path class="cls-2" d="M487.24,444.98c0,29.35-92.78,53.14-207.24,53.14s-207.23-23.79-207.23-53.14c0-1.28,.18-2.55,.53-3.81l3.92-7.2L279.86,61.87l202.93,372.1,3.92,7.2c.35,1.26,.53,2.53,.53,3.81Z"/>
+    </g>
+    <g>
+      <line class="cls-4" x1="279.86" y1="79.22" x2="279.91" y2="430.4"/>
+      <polygon class="cls-8" points="269.89 82.14 279.86 64.87 289.83 82.13 269.89 82.14"/>
+      <polygon class="cls-8" points="269.94 427.48 279.91 444.75 289.88 427.48 269.94 427.48"/>
+    </g>
+  </g>
+  <text class="cls-9" transform="translate(287.42 272.45)"><tspan x="0" y="0">h</tspan></text>
+  <text class="cls-10" transform="translate(400.86 254.31)"><tspan x="0" y="0">l</tspan></text>
+</svg>

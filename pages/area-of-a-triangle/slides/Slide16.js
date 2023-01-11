@@ -40,8 +40,7 @@ const Slide16 = ({ downIcon }) => {
          <Paragraph>
             Given the length &quot;a&quot; of a side of an{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -54,7 +53,7 @@ const Slide16 = ({ downIcon }) => {
             , its area can be calculated as:
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an equilateral triangle ={" "}
                <MathElement htmlString={"\\dfrac{\\sqrt{3}}{4} \\times a^2"} />
             </Pill>

@@ -20,7 +20,7 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 import { ModalTriggerText, TextLine } from "components/text";
-const plain = "assets/circumference-of-circle/plain.svg";
+const plain_light = "assets/circumference-of-circle/plain_light.svg";
 const diameter_formula = "assets/circumference-of-circle/diameter_formula.svg";
 const circumference_dark_bg =
    "assets/circumference-of-circle/circumference_dark_bg.svg";
@@ -60,7 +60,7 @@ const Slide3 = ({ downIcon }) => {
       <TextAndDiagramSlide
          diagram={
             <TransitionImage
-               images={[plain, diameter_formula, circumference_dark_bg]}
+               images={[plain_light, diameter_formula, circumference_dark_bg]}
                altTexts={[
                   "Image of a circle",
                   "Image of a circle with diameter highlighted",
@@ -107,7 +107,7 @@ const Slide3 = ({ downIcon }) => {
                <div>
                   <TextLine>= &pi; &times; d</TextLine>
                   <TextLine>= &pi; &times; 2 &times; radius (r)</TextLine>
-                  <TextLine>= 2 &pi; r</TextLine>
+                  <TextLine>= 2 &times; &pi; &times; r</TextLine>
                </div>
             </Flex>
          </Paragraph>
