@@ -6,10 +6,9 @@ const Slide9 = ({ downIcon, currentPageIdx }) => {
   return (
     <AppletSlide
       downIcon={downIcon}
-      title="Using Base and Height"
-      secondaryTitle="Area of a Rhombus"
+      title="Real LifeExample"
       currentPageIdx={currentPageIdx}
-      appletSrc={`${coco_applet_uri}area_of_rhombus_v2/index.html`}
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-derivation-v4/index.html`}
     ></AppletSlide>
   );
 };
