@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 
 import { useEffect, useState } from "react";
 
-const cube_red = "assets/volume-of-cube/slide11/1.svg";
-const cube_d = "assets/volume-of-cube/slide11/2.svg";
-const cube_s = "assets/volume-of-cube/slide11/3.svg";
+const cube_red = "assets/volume-of-cube/slide11_a.svg";
+const cube_d = "assets/volume-of-cube/slide11_b.svg";
+const cube_s = "assets/volume-of-cube/slide11_c.svg";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 

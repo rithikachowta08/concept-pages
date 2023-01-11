@@ -13,7 +13,7 @@ const radius_red = "assets/surface-area-of-sphere/radius_red.svg";
 import { colors } from "utils/colors";
 import Pill from "components/Pill";
 
-const Slide4 = ({ downIcon }) => {
+const Slide6 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          diagram={
@@ -38,4 +38,4 @@ const Slide4 = ({ downIcon }) => {
    );
 };
 
-export default Slide4;
+export default Slide6;

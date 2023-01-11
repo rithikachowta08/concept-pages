@@ -21,6 +21,7 @@ const Slide7 = ({ downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
+         bg="DARK"
          title="Customary Measurement System"
          diagram={
             <TransitionImage
@@ -34,13 +35,13 @@ const Slide7 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph>
+         <Paragraph color={colors.WHITE}>
             The American measurement system is also called the United States
             Customary System (USCS). It follows&nbsp;
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
+               hoverColor={colors.LAVENDER}
             >
                five customary units
             </TextSpanBg>
