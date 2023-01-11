@@ -7,7 +7,7 @@ const TransitionImage = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -69,8 +69,7 @@ const Slide5 = ({ navBar, downIcon }) => {
             <Paragraph color={colors.WHITE}>
                Here, (θ) is the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
@@ -78,8 +77,7 @@ const Slide5 = ({ navBar, downIcon }) => {
                </TextSpanBg>{" "}
                (in degrees) and (r) is the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >

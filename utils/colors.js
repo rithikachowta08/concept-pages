@@ -12,7 +12,7 @@ export const colors = {
    YELLOW: "#fec429",
    PURPLE: "#4A33F5",
    PILL_BLUR: "#c8c8c833",
-   PILL_SOLID: "#cccccc",
+   PILL_SOLID: "#cccccc33",
    LAVENDER: "#F2A4FF",
    DARK_LAVENDER: "#A753B5",
 };

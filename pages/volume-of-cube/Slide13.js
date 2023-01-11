@@ -88,7 +88,7 @@ const Slide13 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["3 \\sqrt{3}feet^3"],
+            value: ["3 \\sqrt{3}\\: cu \\:ft "],
             type: "latex",
          },
          rhsHint: {
@@ -128,12 +128,11 @@ const Slide13 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                diagonal
             </TextSpanBg>{" "}
-            is 3 feet long.
+            is 3 ft long.
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>

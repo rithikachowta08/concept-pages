@@ -3,7 +3,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 
 import { Paragraph, TextSpanBg } from "components/text";
@@ -43,8 +43,7 @@ const Slide3 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -54,8 +53,7 @@ const Slide3 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -65,8 +63,7 @@ const Slide3 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(3)}
                onHoverOut={() => setActiveIndex(0)}
             >
