@@ -21,7 +21,7 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { colors } from "utils/colors";
 
-const Slide7 = ({ downIcon }) => {
+const Slide8 = ({ downIcon }) => {
    let EquationLatex = [
       {
          lhsLatex: [`\\text{Surface area}`, "", ""],
@@ -94,4 +94,4 @@ const Slide7 = ({ downIcon }) => {
    );
 };
 
-export default Slide7;
+export default Slide8;

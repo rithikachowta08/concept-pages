@@ -51,7 +51,7 @@ const Slide8 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\dfrac{15.7 \\ m}{3.14 \\ m}"],
+            value: ["\\dfrac{15.7 \\ ft}{3.14 \\ ft}"],
             type: "latex",
          },
          rhsHint: {
@@ -91,7 +91,7 @@ const Slide8 = ({ downIcon }) => {
    //             hint: "",
    //          },
    //          {
-   //             eqLatex: "\\dfrac{15.7 \\ m}{3.14 \\ m}",
+   //             eqLatex: "\\dfrac{15.7 \\ ft}{3.14 \\ ft}",
    //             hint: "",
    //          },
    //          {
@@ -113,9 +113,9 @@ const Slide8 = ({ downIcon }) => {
                   tyre_diameter_blue,
                ]}
                altTexts={[
-                  "Image of a wheel with diameter 1 m",
+                  "Image of a wheel with diameter 1 ft",
                   "Image of a wheel with circumference pi*d highlighted",
-                  "Image of a wheel with diameter 1 m highlighted",
+                  "Image of a wheel with diameter 1 ft highlighted",
                ]}
                activeIndex={activeIndex}
             />
@@ -124,8 +124,8 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               The diameter of a wheel is 1 m. How many times will the wheel
-               revolve in order to cover a distance of 15.7 m?
+               The diameter of a wheel is 1 ft. How many times will the wheel
+               revolve in order to cover a distance of 15.7 ft?
             </TextLine>
          </Paragraph>
          <div>
