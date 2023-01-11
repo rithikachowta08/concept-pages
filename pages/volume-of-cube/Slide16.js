@@ -89,7 +89,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["16 \\sqrt{2}ft^3"],
+            value: ["16 \\sqrt{2} \\: cu \\: ft"],
             type: "latex",
          },
          rhsHint: {
@@ -118,7 +118,7 @@ const Slide16 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
-               altTexts={["Diagram of a cube with face diagonal equal to 4 feet","Diagram of a cube with face diagonal highlighted and equal to 4 feet"]}
+               altTexts={["Diagram of a cube with face diagonal equal to 4 ft","Diagram of a cube with face diagonal highlighted and equal to 4 feet"]}
                activeIndex={activeIndex}
                bottomOffset="65px"
             />
@@ -132,8 +132,7 @@ const Slide16 = ({ navBar, downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                diagonal of a face
             </TextSpanBg>{" "}

@@ -150,12 +150,12 @@ const Slide15 = ({ navBar, downIcon }) => {
                   onHover={onHover}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   △BCD
                </TextSpanBg>
             </TextLine>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
