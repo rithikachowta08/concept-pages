@@ -106,6 +106,7 @@ const Slide11 = ({ downIcon }) => {
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}
                color={colors.BLACK}
+               darkbg = {false}
             >
                Length of an arc (l){" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}

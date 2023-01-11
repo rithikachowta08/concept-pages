@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5 {
+        opacity: .1;
+      }
+
+      .cls-6 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 44.14px;
+        font-weight: 500;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #ea6560;
+      }
+
+      .cls-8 {
+        fill: #e96560;
+      }
+
+      .cls-9 {
+        fill: #cffffe;
+      }
+
+      .cls-10 {
+        fill: #81438e;
+      }
+
+      .cls-2 {
+        stroke: #ea6560;
+        stroke-width: 5px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-3 {
+        stroke: #e96560;
+        stroke-width: 4px;
+      }
+
+      .cls-12 {
+        opacity: .4;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="-185.87" y="-655.6" width="371.73" height="371.71"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="-589.1" y="92.28" width="371.73" height="371.71"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect class="cls-2" x="122.07" y="123.06" width="242.05" height="242.05"/>
+    <g>
+      <g class="cls-5">
+        <rect class="cls-7" x="122.07" y="123.06" width="242.49" height="242.05"/>
+      </g>
+      <g>
+        <line class="cls-3" x1="384.08" y1="133.27" x2="384.08" y2="352.54"/>
+        <polygon class="cls-8" points="374.31 136.13 384.08 119.21 393.85 136.13 374.31 136.13"/>
+        <polygon class="cls-8" points="374.31 349.68 384.08 366.61 393.85 349.68 374.31 349.68"/>
+      </g>
+      <g>
+        <line class="cls-3" x1="350.49" y1="385.57" x2="136.13" y2="385.57"/>
+        <polygon class="cls-8" points="347.63 375.8 364.56 385.57 347.63 395.34 347.63 375.8"/>
+        <polygon class="cls-8" points="138.99 375.8 122.07 385.57 138.99 395.34 138.99 375.8"/>
+      </g>
+      <text class="cls-6" transform="translate(193.72 430.86)"><tspan x="0" y="0">1 unit</tspan></text>
+      <text class="cls-6" transform="translate(428 293.53) rotate(-90)"><tspan x="0" y="0">1 unit</tspan></text>
+    </g>
+  </g>
+  <g class="cls-4">
+    <polygon class="cls-10" points="5.91 8.96 2.44 8.96 334.6 -323.19 335.87 -320.99 5.91 8.96"/>
+  </g>
+  <g class="cls-11">
+    <g class="cls-12">
+      <polygon class="cls-9" points="-300.24 519.75 -303.07 519.75 .75 215.93 1.79 217.72 -300.24 519.75"/>
+    </g>
+  </g>
+</svg>

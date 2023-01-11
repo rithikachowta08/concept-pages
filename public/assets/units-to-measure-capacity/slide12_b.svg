@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BG" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #2b2bec;
+      }
+
+      .cls-2, .cls-3 {
+        font-family: Nunito-Medium, Nunito;
+      }
+
+      .cls-2, .cls-4 {
+        font-size: 32px;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        font-family: Raleway-Medium, Raleway;
+      }
+
+      .cls-9 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-10 {
+        fill: none;
+        stroke: #919090;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .cls-11 {
+        letter-spacing: .01em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13 {
+        fill: #333;
+        opacity: .1;
+      }
+
+      .cls-4 {
+        fill: #919090;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-13" x="14.79" y="52.52" width="531.24" height="454.96"/>
+    <g>
+      <rect class="cls-10" x="13.97" y="52.52" width="531.24" height="454.96"/>
+      <line class="cls-10" x1="390.02" y1="52.52" x2="390.02" y2="507.48"/>
+      <line class="cls-10" x1="13.97" y1="116.45" x2="543.29" y2="116.45"/>
+      <line class="cls-10" x1="13.97" y1="183.45" x2="543.29" y2="183.45"/>
+      <line class="cls-10" x1="17.52" y1="249.45" x2="543.29" y2="249.45"/>
+      <line class="cls-10" x1="13.97" y1="314.45" x2="543.29" y2="314.45"/>
+      <line class="cls-10" x1="13.97" y1="379.45" x2="543.29" y2="379.45"/>
+      <line class="cls-10" x1="13.97" y1="442.45" x2="543.29" y2="442.45"/>
+    </g>
+  </g>
+  <text class="cls-2" transform="translate(183.9 95.31)"><tspan class="cls-11" x="0" y="0">K</tspan><tspan x="20.77" y="0">i</tspan><tspan class="cls-6" x="28.35" y="0">l</tspan><tspan x="37.82" y="0">o</tspan></text>
+  <text class="cls-4" transform="translate(437.07 95.31)"><tspan class="cls-3" x="0" y="0">10</tspan><tspan class="cls-8" x="38.4" y="0">�</tspan></text>
+  <text class="cls-2" transform="translate(168.93 161.38)"><tspan x="0" y="0">He</tspan><tspan class="cls-7" x="41.54" y="0">c</tspan><tspan class="cls-6" x="56.45" y="0">t</tspan><tspan x="67.74" y="0">o</tspan></text>
+  <text class="cls-4" transform="translate(437.03 161.38)"><tspan class="cls-3" x="0" y="0">10</tspan><tspan class="cls-8" x="38.4" y="0">�</tspan></text>
+  <text class="cls-2" transform="translate(175.37 229.3)"><tspan x="0" y="0">De</tspan><tspan class="cls-5" x="40.99" y="0">c</tspan><tspan class="cls-1" x="55.74" y="0">a</tspan></text>
+  <text class="cls-4" transform="translate(438.89 229.3)"><tspan class="cls-3" x="0" y="0">10</tspan><tspan class="cls-8" x="38.4" y="0">�</tspan></text>
+  <text class="cls-2" transform="translate(181.4 293.36)"><tspan x="0" y="0">Unit</tspan></text>
+  <text class="cls-2" transform="translate(178.19 357.99)"><tspan x="0" y="0">Deci</tspan></text>
+  <text class="cls-2" transform="translate(172.34 425.91)"><tspan class="cls-9" x="0" y="0">C</tspan><tspan x="20.48" y="0">en</tspan><tspan class="cls-12" x="55.87" y="0">t</tspan><tspan x="67.58" y="0">i</tspan></text>
+  <text class="cls-2" transform="translate(178.98 489.98)"><tspan x="0" y="0">Milli</tspan></text>
+  <text class="cls-4" transform="translate(435.9 293.36)"><tspan class="cls-3" x="0" y="0">10</tspan><tspan class="cls-8" x="38.4" y="0">�</tspan></text>
+  <text class="cls-4" transform="translate(430.89 356.06)"><tspan class="cls-3" x="0" y="0">10ˉ</tspan><tspan class="cls-8" x="54.4" y="0">�</tspan></text>
+  <text class="cls-4" transform="translate(430.89 423.98)"><tspan class="cls-3" x="0" y="0">10ˉ</tspan><tspan class="cls-8" x="54.4" y="0">�</tspan></text>
+  <text class="cls-4" transform="translate(430.89 488.05)"><tspan class="cls-3" x="0" y="0">10ˉ</tspan><tspan class="cls-8" x="54.4" y="0">�</tspan></text>
+</svg>
