@@ -35,6 +35,7 @@ const Slide20 = ({ downIcon }) => {
                Derivation
             </p>
          }
+         downIcon={downIcon}
          bg={"LIGHT"}
          diagram={
             <TransitionImage
@@ -46,7 +47,6 @@ const Slide20 = ({ downIcon }) => {
                ]}
             />
          }
-         isLastSlide
       >
          <Paragraph>
             Apply the &quot;Sine&quot; formula in the{" "}
