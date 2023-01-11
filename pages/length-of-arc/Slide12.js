@@ -94,7 +94,7 @@ const Slide12 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{θ}{360°} \\times 2\\pi r \\thinspace units",
+                              "\\dfrac{θ}{360°} \\times 2 \\times \\pi \\times r \\thinspace units",
                            ],
                            type: "latex",
                         },
@@ -126,7 +126,7 @@ const Slide12 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{θ}{2\\pi} \\times 2\\pi r \\thinspace units",
+                              "\\dfrac{θ}{2\\pi} \\times 2 \\times \\pi \\times r \\thinspace units",
                            ],
                            type: "latex",
                         },

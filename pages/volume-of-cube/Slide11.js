@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 
 import { useEffect, useState } from "react";
 
-const cube_red = "assets/volume-of-cube/slide11/1.svg";
-const cube_d = "assets/volume-of-cube/slide11/2.svg";
-const cube_s = "assets/volume-of-cube/slide11/3.svg";
+const cube_red = "assets/volume-of-cube/slide11_a.svg";
+const cube_d = "assets/volume-of-cube/slide11_b.svg";
+const cube_s = "assets/volume-of-cube/slide11_c.svg";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 
@@ -33,13 +33,13 @@ const Slide11 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Volume of cube`,
+               `Volume of a cube`,
             ],
             type: "text",
          },
          rhsLatex: {
             value: [
-               "\\sqrt{3} \\times \\dfrac{d^3}{9} \\: cubic \\: units",
+               "\\sqrt{3} \\times \\dfrac{d^3}{9}",
             ],
             type: "latex",
          },
@@ -49,13 +49,13 @@ const Slide11 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               "Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-11 darkBg}{diagonal}} \\medspace",
+               "Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-11 darkBg}{diagonal(d)}}",
             ],
             type: "latex",
          },
          rhsLatex: {
             value: [
-               "\\sqrt{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-11 darkBg}{side}} \\medspace units",
+               "\\sqrt{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-11 darkBg}{side(s)}} ",
             ],
             type: "latex",
          },
@@ -96,7 +96,7 @@ const Slide11 = ({ downIcon }) => {
          }
          downIcon={downIcon}
          bg="DARK"
-         secondaryTitle="Volume of a cube using diagonal"
+         secondaryTitle="Volume of a Cube Using Diagonal"
          title="Diagonal of a Cube"
       >
          <Paragraph color={colors.WHITE}>

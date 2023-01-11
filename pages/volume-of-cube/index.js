@@ -45,14 +45,14 @@ const VolumeOfCube = ({}) => {
       <Slide17 key={15} />,
       <PageLastSlide
       key={16}
-      currentPageTitle={"Area of a Rectangle"}
-      nextPageTitle="Area of a Circle"
-      nextPageLink="/us/math/study/area-of-triangle"
+      currentPageTitle={"Volume of Cube"}
+      nextPageTitle="Area of Triangle"
+      nextPageLink="/us/math/study/area-of-a-triangle"
     />,
    ];
 
    const navigationSections = [
-      { title: "What is the volume of a cube?", slides: [ 2, 3, 4] },
+      { title: "What is the volume of a cube?", slides: [ 1,2, 3, 4] },
       { title: "General Formula", slides: [5, 6, 7, 8] },
       {
          title: "Volume of a cube using diagonal",

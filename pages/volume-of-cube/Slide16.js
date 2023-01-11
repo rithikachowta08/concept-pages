@@ -3,8 +3,8 @@ import dynamic from "next/dynamic";
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState } from "react";
 import { colors } from "utils/colors";
-const cube_red = "assets/volume-of-cube/slide16/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide16/2.svg";
+const cube_red = "assets/volume-of-cube/slide16_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide16_b.svg";
 
 
 const TextAndDiagramSlide = dynamic(() =>
@@ -48,20 +48,6 @@ const Slide16 = ({ navBar, downIcon }) => {
          },
          rhsLatex: {
             value: ["\\sqrt{2} \\times \\dfrac{4^3}{4}"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: ["\\sqrt{2}\\times \\dfrac{64}{4}"],
             type: "latex",
          },
          rhsHint: {
@@ -136,7 +122,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             >
                diagonal of a face
             </TextSpanBg>{" "}
-            is 4 feet long.
+            is 4 ft long.
          </Paragraph>
 
          <Paragraph>

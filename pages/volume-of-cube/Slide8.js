@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const cube_red = "assets/volume-of-cube/slide8/1.svg";
+const cube_red = "assets/volume-of-cube/slide8_a.svg";
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
@@ -66,7 +66,7 @@ const Slide8 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["343\\:in^3"],
+            value: ["343 cu\\:in"],
             type: "latex",
          },
          rhsHint: {

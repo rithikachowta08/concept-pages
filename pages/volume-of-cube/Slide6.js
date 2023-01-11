@@ -1,8 +1,7 @@
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide6/1.svg";
-const cube_d = "assets/volume-of-cube/slide6/2.svg";
 import { colors } from "utils/colors";
-
+const cube_red = "assets/volume-of-cube/slide6_a.svg";
+const cube_d = "assets/volume-of-cube/slide6_b.svg";
 import dynamic from "next/dynamic";
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -117,7 +116,7 @@ const Slide6 = ({ downIcon, navBar }) => {
             <Pill
                width="fit-content"
             >
-               Volume of cube{" "}
+               Volume of a cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
             </Pill>
          </div>

@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-const cube_red = "assets/volume-of-cube/slide14/1.svg";
-const cube_f = "assets/volume-of-cube/slide14/2.svg";
-const cube_s = "assets/volume-of-cube/slide14/3.svg";
+const cube_red = "assets/volume-of-cube/slide14_a.svg";
+const cube_f = "assets/volume-of-cube/slide14_b.svg";
+const cube_s = "assets/volume-of-cube/slide14_c.svg";
 import { addTransitionToKatex } from "utils/domutils";
 
 const TextAndDiagramSlide = dynamic(() =>
@@ -39,7 +39,7 @@ const Slide14 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\sqrt{2} \\times \\dfrac{f^3}{4} \\: cubic \\: units",
+               "\\sqrt{2} \\times \\dfrac{f}{4}^3",
             ],
             type: "latex",
          },
@@ -55,7 +55,7 @@ const Slide14 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of side(s)}}}",
+               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of sides(s)}}}",
             ],
             type: "latex",
          },
