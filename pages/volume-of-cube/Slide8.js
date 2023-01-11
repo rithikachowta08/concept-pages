@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const cube_red = "assets/volume-of-cube/slide8/1.svg";
+const cube_red = "assets/volume-of-cube/slide8_a.svg";
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );

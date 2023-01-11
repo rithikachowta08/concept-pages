@@ -1,8 +1,8 @@
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide2/1.svg";
-const cube_faces = "assets/volume-of-cube/slide2/2.svg";
-const cube_vertices = "assets/volume-of-cube/slide2/3.svg";
-const cube_edges = "assets/volume-of-cube/slide2/4.svg";
+const cube_red = "assets/volume-of-cube/slide2_a.svg";
+const cube_faces = "assets/volume-of-cube/slide2_b.svg";
+const cube_vertices = "assets/volume-of-cube/slide2_c.svg";
+const cube_edges = "assets/volume-of-cube/slide2_d.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";

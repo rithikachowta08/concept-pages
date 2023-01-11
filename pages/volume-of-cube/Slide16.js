@@ -3,8 +3,8 @@ import dynamic from "next/dynamic";
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState } from "react";
 import { colors } from "utils/colors";
-const cube_red = "assets/volume-of-cube/slide16/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide16/2.svg";
+const cube_red = "assets/volume-of-cube/slide16_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide16_b.svg";
 
 
 const TextAndDiagramSlide = dynamic(() =>
