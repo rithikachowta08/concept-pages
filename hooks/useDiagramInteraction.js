@@ -8,8 +8,10 @@ const useDiagramInteraction = () => {
    const onHoverOut = () => {
       setActiveIndex(0);
    };
-
-   return { activeIndex, onHover, onHoverOut };
+   const onHoverKatex = (e) => {
+      setActiveIndex(Number(e.currentTarget.parentNode.id));
+   };
+   return { activeIndex, onHover, onHoverKatex, onHoverOut };
 };
 
 export default useDiagramInteraction;
