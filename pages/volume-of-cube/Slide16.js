@@ -61,21 +61,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\sqrt{2}\\times \\dfrac{64}{4}"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: ["\\sqrt{2} \\times 16 \\:ft^3"],
+            value: ["\\sqrt{2} \\times 16"],
             type: "latex",
          },
          rhsHint: {

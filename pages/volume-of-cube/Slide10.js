@@ -145,12 +145,12 @@ const Slide10 = ({ downIcon }) => {
             />
          }
          downIcon={downIcon}
-         secondaryTitle="Volume of a Cube using Area"
+         secondaryTitle="Volume of a Cube"
          title="Illustrative Example"
       >
          <Paragraph>
             What is the volume of a cube, when the area of one of the faces is
-            16 in <sup>2</sup>?
+            16 in<sup>2</sup>?
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
