@@ -39,7 +39,7 @@ const Slide12 = ({ downIcon, navBar }) => {
       >
          <Paragraph>
             Find the area of the sector of a circle if the radius of the circle
-            is 10 units, and the length of an arc is 6 units.
+            is 10 in, and the length of an arc is 6 in.
          </Paragraph>
          <Paragraph>Given:</Paragraph>
          <Paragraph>
@@ -51,7 +51,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                >
                   Radius (r)
                </TextSpanBg>{" "}
-               = 10 units
+               = 10 in
             </TextSpan>
             <br />
             <TextSpan margin={"10px 0 0 0"}>
@@ -62,7 +62,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                >
                   Length of an arc (l)
                </TextSpanBg>{" "}
-               = 6 units
+               = 6 in
             </TextSpan>
          </Paragraph>
          <Paragraph>
@@ -90,7 +90,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{6\\times 10}{2}\\ sq\\ units"],
+                        value: ["\\dfrac{6\\times 10}{2}\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -104,7 +104,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["30\\ sq\\ units"],
+                        value: ["30\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {
