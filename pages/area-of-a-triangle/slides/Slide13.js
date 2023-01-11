@@ -49,7 +49,7 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               base &quot;b&quot;
+               base (b)
             </TextSpanBg>{" "}
             and the{" "}
             <TextSpanBg
@@ -61,14 +61,18 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               equal sides &quot;a&quot;
+               equal sides (a)
             </TextSpanBg>{" "}
-            , its area can be calculated as:
+            of an isosceles triangle, its area can be calculated as:
          </Paragraph>
          <Paragraph>
             <Pill darkbg={false}>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+               <MathElement
+                  htmlString={
+                     "\\dfrac{\\ 1}{4}\\times b\\times \\sqrt{4\\times a^2 - b^2}"
+                  }
+               />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

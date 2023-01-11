@@ -47,7 +47,7 @@ const Slide18 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               a
+               Length of the equal sides (a)
             </TextSpanBg>{" "}
             = 4 in
          </Paragraph>
@@ -80,7 +80,7 @@ const Slide18 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{16 \\ \\sqrt{3}}{4}"],
+                        value: ["\\dfrac{16\\ \\sqrt{3}}{4}"],
                         type: "latex",
                      },
                   },
@@ -90,7 +90,7 @@ const Slide18 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["4 \\sqrt{3}\\ in^2"],
+                        value: ["4 \\sqrt{3}\\ sq\\ in"],
                         type: "latex",
                      },
                   },
