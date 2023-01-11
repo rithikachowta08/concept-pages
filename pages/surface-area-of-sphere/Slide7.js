@@ -18,7 +18,7 @@ const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
 import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
-const Slide5 = ({ downIcon, currentPageIdx }) => {
+const Slide7 = ({ downIcon, currentPageIdx }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph>
@@ -82,4 +82,4 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
    );
 };
 
-export default Slide5;
+export default Slide7;
