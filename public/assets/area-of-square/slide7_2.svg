@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 36.79px;
+        font-weight: 500;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #67dbe8;
+      }
+
+      .cls-3 {
+        stroke: #8a86b2;
+        stroke-width: 6px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        opacity: .1;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        stroke: #67dbe8;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <line class="cls-4" x1="451.8" y1="489.07" x2="108.2" y2="489.07"/>
+      <polygon class="cls-2" points="448.94 479.3 465.87 489.07 448.94 498.84 448.94 479.3"/>
+      <polygon class="cls-2" points="111.06 479.3 94.14 489.07 111.06 498.84 111.06 479.3"/>
+    </g>
+    <text class="cls-1" transform="translate(241.78 524.49)"><tspan x="0" y="0">Side</tspan></text>
+    <g>
+      <g class="cls-5">
+        <rect class="cls-6" x="94.14" y="94.14" width="371.73" height="371.71"/>
+      </g>
+      <rect class="cls-3" x="94.14" y="94.14" width="371.73" height="371.71"/>
+    </g>
+  </g>
+  <g>
+    <line class="cls-4" x1="491.5" y1="451.79" x2="491.5" y2="108.21"/>
+    <polygon class="cls-2" points="501.27 448.93 491.5 465.86 481.73 448.93 501.27 448.93"/>
+    <polygon class="cls-2" points="501.27 111.07 491.5 94.14 481.73 111.07 501.27 111.07"/>
+  </g>
+  <text class="cls-1" transform="translate(533.6 317.1) rotate(-90)"><tspan x="0" y="0">Side</tspan></text>
+</svg>
