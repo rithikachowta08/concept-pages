@@ -36,7 +36,7 @@ const Slide17 = ({ downIcon }) => {
          bg="DARK"
          downIcon={downIcon}
          title="Rectangular Prism vs. Cube"
-         secondaryTitle="Volume of a cube"
+         secondaryTitle="Volume of a Cube"
          diagram={
             <TransitionImage
                images={[cube_red, cube_lwh, cube_s]}
@@ -75,7 +75,6 @@ const Slide17 = ({ downIcon }) => {
                >
                   s<sup>3</sup>
                </TextSpanBg>{" "}
-               cubic units
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

@@ -32,7 +32,11 @@ const Slide11 = ({ downIcon }) => {
          <Paragraph>
             <Pill darkbg={false}>
                Area of a scalene triangle =
-               <MathElement htmlString={"\\sqrt{s (s - a)(s - b)(s - c)}"} />
+               <MathElement
+                  htmlString={
+                     "\\sqrt{s\\times (s - a)\\times (s - b)\\times (s - c)}"
+                  }
+               />
             </Pill>
          </Paragraph>
          <span>
