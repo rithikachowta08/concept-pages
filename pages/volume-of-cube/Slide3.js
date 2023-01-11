@@ -5,6 +5,7 @@ const cube_unit = "assets/volume-of-cube/slide3/3.svg";
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
+import { ModalImg } from "components/StyledElements";
 
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -38,7 +39,7 @@ const Slide3 = ({ downIcon }) => {
          <Paragraph color="white" marginBottom="1vh">
             A Unit cube is a cube whose sides are 1 unit long.
          </Paragraph>
-         <StyledImg
+         <ModalImg
             src={cube_unit}
             alignSelf="center"
             width="400px"
@@ -87,8 +88,7 @@ const Slide3 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                space
             </TextSpanBg>{" "}

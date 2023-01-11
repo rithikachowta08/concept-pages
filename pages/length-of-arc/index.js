@@ -42,8 +42,8 @@ const LengthOfArcOfACircle = () => {
     <PageLastSlide
       key={14}
       currentPageTitle={"Length of Arc of a circle"}
-      nextPageTitle="Surface Area of Rectangular Prism"
-      nextPageLink="/us/math/study/surface-area-of-rectangular-prism"
+      nextPageTitle="Area of Square"
+      nextPageLink="/us/math/study/area-of-square"
     />,
   ];
 

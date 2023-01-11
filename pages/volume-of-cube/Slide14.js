@@ -49,7 +49,7 @@ const Slide14 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of diagonal(f)}}}`,
+               `\\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of diagonal(f)}}}`,
             ],
             type: "latex",
          },
@@ -104,7 +104,7 @@ const Slide14 = ({ downIcon }) => {
             <TextLine>
                {" "}
                Given the{" "}
-                  diagonal length
+                  diagonal length(f)
               {" "}
                of a face of a cube:
             </TextLine>
@@ -112,14 +112,14 @@ const Slide14 = ({ downIcon }) => {
          <Paragraph>
             <Pill
                width="fit-content"
-               bgColor={colors.OCEAN_GREEN}
-               color={colors.BLACK}
+               darkbg={false}
             >
              <EquationTable align="middle" equationLatex={latexEquationContainer[latexEquationCounter++]}></EquationTable>
             </Pill>
          </Paragraph>
          <Paragraph>
-            <EquationTable
+            <TextLine>Here,</TextLine>
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>

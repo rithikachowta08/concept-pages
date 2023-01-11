@@ -44,8 +44,7 @@ const Slide2 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        A rhombus is a quadrilateral whose both pairs of opposite sides are
-        &nbsp;
+        A rhombus is a quadrilateral whose both pairs of&nbsp;
         <TextSpanBg
           id={1}
           onHover={() => onHover(1)}
@@ -53,9 +52,9 @@ const Slide2 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          parallel
+          opposite sides are parallel
         </TextSpanBg>
-        &nbsp;and all sides are&nbsp;
+        &nbsp;and&nbsp;
         <TextSpanBg
           id={2}
           onHover={() => onHover(2)}
@@ -63,7 +62,7 @@ const Slide2 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          equal
+          all sides are equal
         </TextSpanBg>
         .
       </Paragraph>
