@@ -2,9 +2,9 @@ import dynamic from "next/dynamic";
 
 import { useState } from "react";
 import { colors } from "utils/colors";
-const cube_red = "assets/volume-of-cube/slide12/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide12/2.svg";
-const cube_3 = "assets/volume-of-cube/slide12/3.svg";
+const cube_red = "assets/volume-of-cube/slide12_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide12_b.svg";
+const cube_3 = "assets/volume-of-cube/slide12_c.svg";
 
 
 const TextAndDiagramSlide = dynamic(() =>

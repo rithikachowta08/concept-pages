@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide17/1.svg";
-const cube_lwh = "assets/volume-of-cube/slide17/2.svg";
-const cube_s = "assets/volume-of-cube/slide17/3.svg";
+const cube_red = "assets/volume-of-cube/slide17_a.svg";
+const cube_lwh = "assets/volume-of-cube/slide17_b.svg";
+const cube_s = "assets/volume-of-cube/slide17_c.svg";
 import { colors } from "utils/colors";
 
 
