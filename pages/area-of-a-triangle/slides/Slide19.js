@@ -91,8 +91,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               bc SinA
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times b\\times c\\times Sin\\ A"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
@@ -104,8 +105,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ca SinB
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times c\\times a\\times Sin\\ B"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
@@ -117,8 +119,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ab SinC
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times a\\times b\\times Sin\\ C"}
+               />
             </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
