@@ -1,0 +1,109 @@
+import { useState } from "react";
+import { colors } from "utils/colors";
+import dynamic from "next/dynamic";
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+   import("components/text").then((mod) => mod.TextSpanBg)
+);
+const Pill = dynamic(() => import("components/Pill"));
+
+import { TextLine } from "components/text";
+const MultiLhsEquationContainer = dynamic(() =>
+   import("components/MathElement/MultiLhsEquationContainer")
+);
+const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
+const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
+const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+import { lineHeightProp } from "utils/fontStyles";
+
+const Slide4 = ({ downIcon }) => {
+   let EquationLatex = [
+      {
+         lhsLatex: [`\\text{Volume}`, "", ""],
+         rhsLatex: [
+            {
+               eqLatex: "A \\times h",
+               hint: "",
+            },
+            {
+               eqLatex: "\\pi r^2 \\times h",
+               hint: "",
+            },
+            {
+               eqLatex: "\\pi r^2 h",
+               hint: "",
+            },
+         ],
+      },
+   ];
+   const [activeIndex, setActiveIndex] = useState(0);
+   const onHover = (e) => {
+      setActiveIndex(parseInt(e.target.id));
+   };
+   const onHoverOut = (e) => {
+      setActiveIndex(0);
+   };
+   return (
+      <TextAndDiagramSlide
+         title="Formula"
+         secondaryTitle="Volume of a Cylinder"
+         diagram={
+            <TransitionImage
+               images={[plain, bases, bases]}
+               altTexts={[
+                  "Diagram of a cylinder",
+                  "Diagram of a cylinder highlighting circular bases",
+                  "Diagram of a cylinder highlighting height",
+               ]}
+               activeIndex={activeIndex}
+            />
+         }
+         bg="DARK"
+         downIcon={downIcon}
+      >
+         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+            For a cylinder with a{" "}
+            <TextSpanBg
+               id={1}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               circular base area (A)
+            </TextSpanBg>{" "}
+            and{" "}
+            <TextSpanBg
+               id={2}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               height (h)
+            </TextSpanBg>{" "}
+            , the volume is calculated as:
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
+            <MultiLhsEquationContainer
+               color={colors.WHITE}
+               equationLatex={EquationLatex[0]}
+            ></MultiLhsEquationContainer>
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
+            <Pill>Volume of a cylinder = πr&sup2;h cubic units</Pill>
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
+            Here, (r) is radius of the base and (h) is height of the cylinder.
+         </Paragraph>
+      </TextAndDiagramSlide>
+   );
+};
+
+export default Slide4;
