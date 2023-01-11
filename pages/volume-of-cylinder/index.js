@@ -12,7 +12,11 @@ const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
-// const Slide9 = dynamic(() => import("./Slide9"));
+const Slide9 = dynamic(() => import("./Slide9"));
+const Slide10 = dynamic(() => import("./Slide10"));
+const Slide11 = dynamic(() => import("./Slide11"));
+const Slide12 = dynamic(() => import("./Slide12"));
+const Slide13 = dynamic(() => import("./Slide13"));
 
 const VolumeOfCylinder = () => {
    const SlideArray = [
@@ -24,7 +28,11 @@ const VolumeOfCylinder = () => {
       <Slide6 key={5} />,
       <Slide7 key={6} />,
       <Slide8 key={7} />,
-      // <Slide9 key={8} />,
+      <Slide9 key={8} />,
+      <Slide10 key={9} />,
+      <Slide11 key={10} />,
+      <Slide12 key={11} />,
+      <Slide13 key={12} />,
    ];
 
    const navigationSections = [

@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -10,18 +9,14 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-   import("components/text").then((mod) => mod.TextSpanBg)
-);
-import { TextLine } from "components/text";
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
 const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
 const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
 const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
-import { lineHeightProp } from "utils/fontStyles";
 import { addTransitionToKatex } from "utils/domutils";
+import useDiagramInteraction from "hooks/useDiagramInteraction";
 
 const Slide8 = ({ downIcon }) => {
    let EquationLatex = [
@@ -48,13 +43,7 @@ const Slide8 = ({ downIcon }) => {
          ],
       },
    ];
-   const [activeIndex, setActiveIndex] = useState(0);
-   const onHoverKatex = (e) => {
-      setActiveIndex(Number(e.currentTarget.parentNode.id));
-   };
-   const onHoverOut = (e) => {
-      setActiveIndex(0);
-   };
+   const { activeIndex, onHoverKatex, onHoverOut } = useDiagramInteraction();
 
    useEffect(
       addTransitionToKatex(".textSpanBg.slide-8", onHoverKatex, onHoverOut),
