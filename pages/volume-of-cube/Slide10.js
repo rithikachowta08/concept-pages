@@ -108,7 +108,7 @@ const Slide10 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(4\\:in)^3 = {64\\:in}^3"],
+            value: ["(4\\:in)^3"],
             type: "latex",
          },
          rhsHint: {

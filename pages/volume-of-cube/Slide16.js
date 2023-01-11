@@ -75,7 +75,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\sqrt{2} \\times 16"],
+            value: ["\\sqrt{2} \\times 16 \\:ft^3"],
             type: "latex",
          },
          rhsHint: {
@@ -136,7 +136,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             >
                diagonal of a face
             </TextSpanBg>{" "}
-            is 4 feet long.
+            is 4 ft long.
          </Paragraph>
 
          <Paragraph>
