@@ -32,7 +32,7 @@ const Slide13 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\sqrt{3} \\times {\\dfrac{d}{9}}^2"],
+            value: ["\\sqrt{3} \\times {\\dfrac{d}{9}}^3"],
             type: "latex",
          },
          rhsHint: {
@@ -46,7 +46,7 @@ const Slide13 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\sqrt{3} \\times {\\dfrac{3}{9}}^2"],
+            value: ["\\sqrt{3} \\times {\\dfrac{3}{9}}^3"],
             type: "latex",
          },
          rhsHint: {
@@ -61,20 +61,6 @@ const Slide13 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: ["\\sqrt{3}\\times \\dfrac{27}{9}"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: ["\\sqrt{3} \\times 3"],
             type: "latex",
          },
          rhsHint: {

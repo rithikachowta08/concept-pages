@@ -91,9 +91,9 @@ const Slide3 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               space
+               space occupied
             </TextSpanBg>{" "}
-            occupied by it. It is also the total number of{" "}
+             by it. It is also the total number of{" "}
             <ModalTriggerText id={2} onClick={onClick}>
                unit cubes
             </ModalTriggerText>{" "}
