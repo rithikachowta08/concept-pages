@@ -13,7 +13,7 @@ import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 
-const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
+const area_triangle_snt = "assets/area-of-triangle/area_triangle_sna_1.svg";
 const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
 const area_triangle_snt_3 = "assets/area-of-triangle/area_triangle_sna_3.svg";
 const area_triangle_snt_4 = "assets/area-of-triangle/area_triangle_sna_4.svg";
