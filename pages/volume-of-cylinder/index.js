@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -33,18 +34,27 @@ const VolumeOfCylinder = () => {
       <Slide11 key={10} />,
       <Slide12 key={11} />,
       <Slide13 key={12} />,
+      <PageLastSlide
+         key={13}
+         currentPageTitle={"Volume of a Cylinder"}
+         nextPageTitle="Area of Trapezoid"
+         nextPageLink="/us/math/study/area-of-trapezoid"
+      />,
    ];
 
    const navigationSections = [
       {
          title: "What is the volume of a cylinder?",
-         slides: [1, 2, 3, 4],
+         slides: [1, 2],
       },
-      { title: "General Formula", slides: [5] },
-      { title: "Volume of different types of cylinders", slides: [6, 7, 8] },
+      { title: "General Formula", slides: [3, 4, 5] },
+      {
+         title: "Volume of different types of cylinders",
+         slides: [6, 7, 8, 9, 10, 11, 12],
+      },
    ];
 
-   const darkBgIndices = [0, 5, 6, 8];
+   const darkBgIndices = [0, 3, 5, 6, 13];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

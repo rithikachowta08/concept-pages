@@ -10,7 +10,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "General Formula",
             "Volume of different types of cylinders",
          ]}
-         anchorIdxes={[2, 6, 7]}
+         anchorIdxes={[2, 4, 7]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
