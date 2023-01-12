@@ -55,8 +55,7 @@ const Slide11 = ({ downIcon }) => {
       title="Using Diagonals"
     >
       <Paragraph color={colors.WHITE}>
-        The area (A), of a rhombus is equal to half the product of its
-        diagonals&nbsp;
+        The area (A), of a rhombus is equal to half the product of its diagonals{" "}
         <TextSpanBg
           id={1}
           onHover={() => onHover(1)}
@@ -64,7 +63,11 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          <MathElement htmlString={latex[mathjaxCounter++]} />
+          d
+          <sub>
+            <small>1</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
         </TextSpanBg>
         &nbsp;and&nbsp;
         <TextSpanBg
@@ -74,7 +77,11 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          <MathElement htmlString={latex[mathjaxCounter++]} />
+          d
+          <sub>
+            <small>2</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
         </TextSpanBg>
         .
       </Paragraph>
