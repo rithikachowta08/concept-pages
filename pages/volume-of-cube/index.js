@@ -52,7 +52,7 @@ const VolumeOfCube = ({}) => {
    ];
 
    const navigationSections = [
-      { title: "What is the volume of a cube?", slides: [ 2, 3, 4] },
+      { title: "What is the volume of a cube?", slides: [ 1,2, 3, 4] },
       { title: "General Formula", slides: [5, 6, 7, 8] },
       {
          title: "Volume of a cube using diagonal",

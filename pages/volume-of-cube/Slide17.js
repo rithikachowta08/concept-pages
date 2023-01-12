@@ -35,8 +35,8 @@ const Slide17 = ({ downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          downIcon={downIcon}
-         title="Rectangular Prism vs. Cube"
-         secondaryTitle="Volume of a cube"
+         title="Rectangular Prism vs Cube"
+         secondaryTitle="Volume of a Cube"
          diagram={
             <TransitionImage
                images={[cube_red, cube_lwh, cube_s]}
@@ -51,7 +51,7 @@ const Slide17 = ({ downIcon }) => {
       >
          <Paragraph color={colors.WHITE}>
             If the length(l), width(w), and height(h) of a rectangular prism are equal,
-            it forms a cube of side(s)
+            it forms a cube of side(s).
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             Volume of a rectangular prism ={" "}
@@ -62,7 +62,6 @@ const Slide17 = ({ downIcon }) => {
             >
                l x w x h
             </TextSpanBg>{" "}
-            cubic units
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             <TextLine>For l = w = h = s,</TextLine>
@@ -75,7 +74,6 @@ const Slide17 = ({ downIcon }) => {
                >
                   s<sup>3</sup>
                </TextSpanBg>{" "}
-               cubic units
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

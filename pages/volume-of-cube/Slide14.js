@@ -33,13 +33,13 @@ const Slide14 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Volume of cube`,
+               `Volume of a cube`,
             ],
             type: "text",
          },
          rhsLatex: {
             value: [
-               "\\sqrt{2} \\times \\dfrac{f^3}{4} \\: cubic \\: units",
+               "\\sqrt{2} \\times \\dfrac{f}{4}^3",
             ],
             type: "latex",
          },
@@ -55,7 +55,7 @@ const Slide14 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of side(s)}}}",
+               "\\sqrt{2} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{length of sides(s)}}}",
             ],
             type: "latex",
          },

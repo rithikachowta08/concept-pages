@@ -116,7 +116,7 @@ const Slide6 = ({ downIcon, navBar }) => {
             <Pill
                width="fit-content"
             >
-               Volume of cube{" "}
+               Volume of a cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
             </Pill>
          </div>

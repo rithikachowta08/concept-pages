@@ -6,6 +6,7 @@ const Slide13 = ({navBar, downIcon, currentPageIdx }) => {
    return (
       <AppletSlide
          bg="LIGHT"
+         title={"Arc length And Central Angle"}
          navBar={navBar}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
