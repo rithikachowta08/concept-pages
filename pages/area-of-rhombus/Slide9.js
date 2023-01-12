@@ -30,8 +30,8 @@ const Slide11 = ({ downIcon }) => {
   };
 
   let latex = [];
-  latex.push(`\\scriptscriptstyle{1}`);
-  latex.push(`\\scriptscriptstyle{2}`);
+  latex.push(`\\space\\scriptscriptstyle{1}\\space`);
+  latex.push(`\\space\\scriptscriptstyle{2}\\space`);
   latex.push(
     `= \\dfrac{1}{2} \\times ({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
   );
