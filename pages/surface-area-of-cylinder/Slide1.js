@@ -6,12 +6,11 @@ const Slide1 = ({ moveToSection, downIcon }) => {
       <TitleSlide
          title="Area of Square"
          contentListItems={[
-            "What is the area of a square?",
-            "Area by counting unit squares",
-            "General Formula",
-            "Area using diagonal",
+            "What is the surface area of a cylinder?",
+            "Curved surface area",
+            "Total surface area",
          ]}
-         anchorIdxes={[2, 4, 6,8]}
+         anchorIdxes={[2, 4, 6]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
