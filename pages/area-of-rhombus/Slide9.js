@@ -63,11 +63,9 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          d
-          <sub>
-            <small>1</small>
-          </sub>
-          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+          <span>
+            <MathElement htmlString={latex[mathjaxCounter++]} />
+          </span>
         </TextSpanBg>
         &nbsp;and&nbsp;
         <TextSpanBg
@@ -77,11 +75,9 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          d
-          <sub>
-            <small>2</small>
-          </sub>
-          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+          <span>
+            <MathElement htmlString={latex[mathjaxCounter++]} />
+          </span>
         </TextSpanBg>
         .
       </Paragraph>
