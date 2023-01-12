@@ -1,122 +1,30 @@
-
 import dynamic from "next/dynamic";
+const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
+   ssr: false,
+});
 
-import { colors } from "utils/colors";
-import { useState, useEffect } from "react";
-import { addTransitionToKatex } from "utils/domutils";
-
-const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
-);
-const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
-);
-const TextLine = dynamic(() =>
-   import("components/text").then((mod) => mod.TextLine)
-);
-const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
-);
-
-const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
-);
-
-const square_1 = "assets/area-of-square/slide8_1.svg";
-const square_2 = "assets/area-of-square/slide8_2.svg";
-const square_3 = "assets/area-of-square/slide8_3.svg";
-
-
-const Slide8 = ({ downIcon }) => {
-   let EquationLatex0 = [
-      {
-         lhsLatex: {
-            value: ["\\: \\htmlId{1}{\\htmlClass{textSpanBg slide-8 }{Side}} \\: of \\: Square"],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: ["7ft"],
-            type: "latex",
-         },
-      },
-      {
-         lhsLatex: {
-            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-8 }{Area}} \\: of \\: Square"],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: ["Side \\times Side"],
-            type: "latex",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["7ft \\times 7ft"],
-            type: "latex",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["49\\: sq \\: ft"],
-            type: "latex",
-         },
-      },
-   ];
-   const [activeIndex, setActiveIndex] = useState(0);
-
-   const onHoverKatex = (e) => {
-      setActiveIndex(Number(e.currentTarget.parentNode.id));
-   };
-   const onHover = (e) => {
-      setActiveIndex(Number(e.target.id));
-   };
-   const onHoverOut = (e) => {
-      setActiveIndex(0);
-   };
-   
-   useEffect(
-      addTransitionToKatex(".textSpanBg.slide-8", onHoverKatex, onHoverOut),
-      []
-   );
-   let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0);
-   let latexEquationCounter = 0;
+const Slide8 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndDiagramSlide
-         secondaryTitle=""
-         title="Illustrative Example"
-         downIcon={downIcon}
-         diagram={
-            <TransitionImage
-               images={[square_1,square_2,square_3]}
-               altTexts={[
-                  "Diagram of a square of side 7 ft",
-                  "Diagram of a square of side 7 ft highlighted",
-                  "Diagram of a square with bounded area highlighted"
-               ]}
-               activeIndex={activeIndex}
-            />
-         }
-      >
-         <Paragraph>
-        <TextLine  fontWeight={"Bold"}> Find the area of a square whose side length is 7 ft.</TextLine> 
-         </Paragraph>
-         <Paragraph>
-            <TextLine fontWeight={"Bold"} color={colors.DARK_GREY} >Solution:</TextLine>
-            <Paragraph><EquationTable
-               equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable>
-            </Paragraph>
-         </Paragraph>
-      </TextAndDiagramSlide>
+      <div style={{ height: "100%" }}>
+         <VideoSlide2
+            title="Video here"
+            downIcon={downIcon}
+            videoContent={{
+               dash_Url:
+                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/dash/h264.mpd",
+               hls_Url:
+                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/hls/h264.m3u8",
+               thumbnail:
+                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792471.jpg?1671000412",
+            }}
+            downIconId="s5-video-down-icon"
+            videoSlideId="s5-video-slide"
+            currentPageIdx={currentPageIdx}
+            index={7}
+         />
+      </div>
    );
 };
+
 export default Slide8;
+

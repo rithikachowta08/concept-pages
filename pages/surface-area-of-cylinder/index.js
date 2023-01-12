@@ -10,11 +10,9 @@ const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
 const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
+const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
-const Slide9 = dynamic(() => import("./Slide9"));
-const Slide10 = dynamic(() => import("./Slide10"));
-const Slide11 = dynamic(() => import("./Slide11"));
 const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
 
@@ -25,14 +23,12 @@ const SurfaceAreaOfCylinder= ({}) => {
       <Slide3 key={2} />,
       <Slide4 key={3} />,
       <Slide5 key={4} />,
-      <Slide7 key={5} />,
-      <Slide8 key={6} />,
-      <Slide9 key={7} />,
-      <Slide10 key={8} />,
-      <Slide11 key={9} />,
+      <Slide6 key={5} />,
+      <Slide7 key={6} />,
+      <Slide8 key={7} />,
       <PageLastSlide
-      key={10}
-      currentPageTitle={"Surface Area of Cylinder"}
+      key={8}
+      currentPageTitle={"Surface Area of a Cylinder"}
       nextPageTitle="Surface Area of Sphere"
       nextPageLink="/us/math/study/surface-area-of-sphere"
     />,
@@ -43,11 +39,11 @@ const SurfaceAreaOfCylinder= ({}) => {
       { title: "Curved surface area", slides: [3,4] },
       {
          title: "Total surface area",
-         slides: [5,6],
+         slides: [5,6,7],
       },
    ];
 
-   const darkBgIndices = [0,3];
+   const darkBgIndices = [0,3,5,7,8];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -57,8 +53,8 @@ const SurfaceAreaOfCylinder= ({}) => {
    );
 };
 
-SurfaceAreaOfCylinder.title = "Surface Area of Cylinder: Definition, Formula, Examples - BYJU'S";
+SurfaceAreaOfCylinder.title = "Surface Area of a Cylinder: Definition, Formula, Examples - BYJU'S";
 SurfaceAreaOfCylinder.meta =
-   "Learn about the surface area of a cylinder, including its definition, formula, and examples. Master surface area of a cylinder concept with BYJU'S interactive activities.";
+   "Discover the concept of surface area of cylinder, including its definition, formula, and examples. Enhance your understanding with BYJU'S interactive activities and examples.";
 
 export default SurfaceAreaOfCylinder;

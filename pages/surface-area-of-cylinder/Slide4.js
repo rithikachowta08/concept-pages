@@ -17,8 +17,16 @@ const TextSpanBg = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const square_1 = "assets/area-of-square/slide4_1.svg";
-const square_2 = "assets/area-of-square/slide4_2.svg";
+const Pill = dynamic(() => import("components/Pill"));
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
+const MathElement = dynamic(() => import("components/MathElement"));
+
+const image_1 = "assets/surface-area-of-cylinder/slide4_a.svg";
+const image_2 = "assets/surface-area-of-cylinder/slide4_b.svg";
+const image_3 = "assets/surface-area-of-cylinder/slide4_c.svg";
+const image_4 = "assets/surface-area-of-cylinder/slide4_d.svg";
 
 const Slide4 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -29,34 +37,82 @@ const Slide4 = ({ downIcon }) => {
       setActiveIndex(0);
    };
 
+   let latex = [];
+   latex.push(` = 2 \\times \\pi \\times r \\times h`);
+   let mathjaxCounter = 0;
+   let EquationLatex0 = [
+      {
+         lhsLatex: {
+            value: [
+               `Curved surface area of cylinder`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "2 \\times \\pi \\times r \\times h",
+            ],
+            type: "latex",
+         },
+      },
+   ];
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter=0
    return (
       <TextAndDiagramSlide
-         title="Counting Unit Squares"
-         secondaryTitle="Finding Area"
+         title="Curved Surface Area"
+         secondaryTitle="Cylinder"
          bg="DARK"
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[square_1, square_2]}
+               images={[image_1, image_2,image_3,image_4]}
                altTexts={[
-                  "Diagram of a square with units square shown inside.",
-                  "Diagram of a square with number of units square highlighted.",
+                  "Diagram of a cylinder with height and radius labelled.",
+                  "Diagram of a cylinder with curved surface highlighted.",
+                  "Diagram of a cylinder with radius highlighted.",
+                  "Diagram of a cylinder with height highlighted."
                ]}
                activeIndex={activeIndex}
             />
          }
       >
          <Paragraph color={colors.WHITE}>
-         One of the ways to find area is by <TextSpanBg
+        <TextLine> The curved surface area is defined as the area of only the <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
             >
-               counting the unit squares
-            </TextSpanBg> that fit inside the square.
+               curved surface of the cylinder
+            </TextSpanBg>.
+            </TextLine>
          </Paragraph>
+         <div>
+         <Pill
+               width="fit-content"
+            >
+                          <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
+            </Pill>
+            </div>
+
          <Paragraph color={colors.WHITE}>
-            <TextLine>Area of the given square = 16 unit squares</TextLine>
+            <TextLine>Here, (r) is the <TextSpanBg
+               id={2}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+            >
+               radius of the base
+            </TextSpanBg> and (h) is the <TextSpanBg
+               id={3}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+            >
+               height of the cylinder
+            </TextSpanBg>.
+</TextLine>
             
          </Paragraph>
       </TextAndDiagramSlide>

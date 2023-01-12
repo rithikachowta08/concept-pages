@@ -1,118 +1,32 @@
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
 import { colors } from "utils/colors";
-import MathElement from "components/MathElement/index.js";
+import { useState,useEffect } from "react";
+
+const image_1 = "assets/surface-area-of-cylinder/slide7_a.svg";
+const image_2 = "assets/surface-area-of-cylinder/slide7_b.svg";
+const image_3 = "assets/surface-area-of-cylinder/slide7_c.svg";
 import { addTransitionToKatex } from "utils/domutils";
 
-const TransitionImage = dynamic(() =>
-   import("components/media/TransitionImage")
-);
-const Modal = dynamic(() => import("components/layout/Modal"));
-const Pill = dynamic(() => import("components/Pill"));
 
-const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/TextAndDiagramSlide")
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
 );
 const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
+  import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-   import("components/text").then((mod) => mod.TextSpanBg)
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
 );
-const ModalTriggerText = dynamic(() =>
-   import("components/text").then((mod) => mod.ModalTriggerText)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-
-const square_1 = "assets/area-of-square/slide7_1.svg";
-const square_2 = "assets/area-of-square/slide7_2.svg";
-const square_3 = "assets/area-of-square/slide7_3.svg";
-
-
 const Slide7 = ({ downIcon }) => {
-   let EquationLatex0 = [
-      {
-         lhsLatex: {
-            value: [
-               "Here, \\htmlId{1}{\\htmlClass{textSpanBg slide-11 darkBg}{diagonal}} \\medspace",
-            ],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: [
-               "\\sqrt{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-11 darkBg}{side}} \\medspace units",
-            ],
-            type: "latex",
-         },
-      },
-   ];
-   let modalLatex=[
-      {
-         lhsLatex: {
-            value: [
-               "Area",
-            ],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: [
-               "4cm \\times 4cm",
-            ],
-            type: "latex",
-         },
-      },
-      {
-         lhsLatex: {
-            value: ["" ],
-            type: "latex",
-         },
-         rhsLatex: {
-            value: [
-               "16\\:sq \\:cm",
-            ],
-            type: "latex",
-         },
-      }
-   ]
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
-         The area of a square is measured in square units (square centimeters, square inches, square feet, and so on).
-         </Paragraph>
-         <TextLine>Example:</TextLine>
-         <ModalImg
-            src={square_3}
-            alignSelf="center"
-            alt="Diagram of a square"
-         />
-         <Paragraph color={colors.WHITE}>
-            <EquationTable equationLatex={modalLatex}></EquationTable>
-         </Paragraph>
-      </Flex>
-   );
-   let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0);
-   let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
+   const onHoverKatex = (e) => {
+      setActiveIndex(Number(e.currentTarget.parentNode.id));
    };
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
@@ -122,56 +36,94 @@ const Slide7 = ({ downIcon }) => {
    };
    // eslint-disable-next-line react-hooks/exhaustive-deps
    useEffect(
-      addTransitionToKatex(".slide-11.textSpanBg", onHover, onHoverOut),
+      addTransitionToKatex(".textSpanBg.slide-7", onHoverKatex, onHoverOut),
       []
    );
+
+   let EquationLatex0 = [
+      {
+         lhsLatex: {
+            value: [" "],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["\\htmlId{1}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of curved surface}}} +\\htmlId{2}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of curved surface}}} "],
+            type: "latex",
+         }
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["2 \\times \\pi \\times r \\times h + \\pi \\times r^2 + \\pi \\times r^2"],
+            type: "latex",
+         }
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["2 \\times \\pi \\times r \\times h + 2 \\times \\pi \\times r^2 "],
+            type: "latex",
+         }
+         
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["2 \\times \\pi \\times r \\times (h+r) \\:sq \\:units  "],
+            type: "latex",
+         }
+         
+      },
+   ];
+   
+   let latexEquationContainer = [];
+   latexEquationContainer.push(EquationLatex0);
+   let latexEquationCounter = 0;
    let latex = [];
-   latex.push(`= \\sqrt{3} \\times \\frac{{d}^3}{9}`);
-   latex.push(`= \\sqrt{3}`);
+   latex.push(` length(2 \\times \\pi \\times r)`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
-         bg="DARK"
-         diagram={
-            <TransitionImage
-               images={[square_1,square_2]}
-               altTexts={[
-                  "Diagram of a square.",
-                  "Diagram of a square with sides highlighted.",
-               ]}
-               activeIndex={activeIndex}
-            />
-         }
+         secondaryTitle="Total Surface Area of Cylinder"
+         title="Derivation"
          downIcon={downIcon}
-         secondaryTitle="Area of Square"
-         title="General Formula"
+         diagram={<TransitionImage
+            images={[image_1,image_2,image_3]}
+            altTexts={[
+               "Diagram of a net of a cylinder with radius and height highlighted.",
+               "Diagram of a net of a cylinder with area of curved surface highlighted",
+               "Diagram of a net of a cylinder with area of circular bases highlighted."
+            ]}
+            activeIndex={activeIndex}
+         />}
       >
-                  <Modal
-            isOpen={isModalOpen}
-            title="Square Units"
-            content={modalContent}
-            onDismiss={onDismiss}
-         />
-         <Paragraph color={colors.WHITE}>
-         The area of a square is the product of the length of its two{" "}
-         <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >
-              sides
-            </TextSpanBg> 
-         {" "}.It is measured in  <ModalTriggerText id={2} color={colors.WHITE} onClick={onClick}>
-            square units
-            </ModalTriggerText>{" "}
+         <Paragraph>
+         
+         <TextLine>
+         The total surface area of a cylinder is equal to the sum of the area of the curved surface and the area of the circular bases of the cylinder.
+         </TextLine>
          </Paragraph>
-         <Pill
-            width="fit-content"
-         >
-            Area of square{" "} = <MathElement htmlString={"Side \\times Side"}></MathElement> = <MathElement htmlString={"(Side)^2"}></MathElement>
-            
-         </Pill>
+         <div>
+         <Paragraph>
+            <TextLine>
+               Total surface area
+            </TextLine>
+            <EquationTable
+               equationLatex={latexEquationContainer[latexEquationCounter++]}
+            ></EquationTable>
+         </Paragraph>
+         </div>
       </TextAndDiagramSlide>
    );
 };
-
 export default Slide7;
+
