@@ -13,10 +13,9 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-import { TextLine } from "components/text";
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
@@ -45,14 +44,14 @@ const Slide2 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph lineHeight={lineHeightProp}>
-            A cylinder is a three-dimensional shape that has two parallel{" "}
+            A cylinder is a three-dimensional shape that has two{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               circular bases
+               parallel circular bases
             </TextSpanBg>{" "}
             of{" "}
             <TextSpanBg
@@ -63,15 +62,14 @@ const Slide2 = ({ downIcon }) => {
             >
                radius (r)
             </TextSpanBg>{" "}
-            , joined by a curved surface. The bases are separated by a
-            perpendicular{" "}
+            , joined by a curved surface. The bases are separated by a{" "}
             <TextSpanBg
                id={3}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               distance (h)
+               perpendicular distance (h)
             </TextSpanBg>
             .
          </Paragraph>

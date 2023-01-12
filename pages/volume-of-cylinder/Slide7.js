@@ -4,9 +4,9 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 import { StyledImg } from "components/StyledElements";
 
-const image_1 = "assets/area-of-triangle/slide_10_e.svg";
-const image_2 = "assets/area-of-triangle/slide_10_i.svg";
-const image_3 = "assets/area-of-triangle/slide_10_s.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 
 // Types of triangle
 const Slide7 = ({ downIcon }) => {
@@ -18,7 +18,7 @@ const Slide7 = ({ downIcon }) => {
             {
                diagram: (
                   <StyledImg
-                     src={image_3}
+                     src={bases}
                      alt="Diagram of a right circular cylinder"
                   />
                ),
@@ -26,26 +26,20 @@ const Slide7 = ({ downIcon }) => {
             },
             {
                diagram: (
-                  <StyledImg
-                     src={image_2}
-                     alt="Diagram of a oblique cylinder"
-                  />
+                  <StyledImg src={sides} alt="Diagram of a oblique cylinder" />
                ),
                caption: "Oblique cylinder",
             },
             {
                diagram: (
-                  <StyledImg
-                     src={image_1}
-                     alt="Diagram of a elliptic cylinder"
-                  />
+                  <StyledImg src={plain} alt="Diagram of a elliptic cylinder" />
                ),
                caption: "Elliptic cylinder",
             },
             {
                diagram: (
                   <StyledImg
-                     src={image_1}
+                     src={plain}
                      alt="Diagram of a right circular hollow cylinder"
                   />
                ),

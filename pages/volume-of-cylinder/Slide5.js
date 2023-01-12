@@ -1,25 +1,15 @@
-import { useState } from "react";
 import dynamic from "next/dynamic";
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
-import { ModalTriggerText, TextLine } from "components/text";
-const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
+import { TextLine } from "components/text";
 import { lineHeightProp } from "utils/fontStyles";
-import { colors } from "utils/colors";
 
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    let EquationLatex = [
@@ -31,11 +21,11 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 \\times h",
+               eqLatex: "(\\pi \\times r^2) \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 h",
+               eqLatex: "\\pi \\times r^2 \\times h",
                hint: "",
             },
          ],

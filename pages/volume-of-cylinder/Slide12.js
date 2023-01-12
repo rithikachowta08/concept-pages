@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -25,10 +24,9 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
-import { addTransitionToKatex } from "utils/domutils";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
@@ -51,11 +49,12 @@ const Slide12 = ({ downIcon }) => {
          lhsLatex: [`\\text{Volume}`, ""],
          rhsLatex: [
             {
-               eqLatex: "\\pi R^2 \\times h - \\pi r^2 \\times h",
+               eqLatex:
+                  "\\pi \\times R^2 \\times h - \\pi \\times r^2 \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi (R^2 - r^2) h",
+               eqLatex: "\\pi \\times (R^2 - r^2) \\times h",
                hint: "",
             },
          ],

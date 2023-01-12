@@ -22,9 +22,9 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import { addTransitionToKatex } from "utils/domutils";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
@@ -37,8 +37,8 @@ const Slide11 = ({ downIcon }) => {
             An ellipse is a closed curve that is oval in shape.
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            The area of an ellipse &pi;ab sq units, where ‘a’ is the semiminor
-            axis and ‘b’ is the semimajor axis.
+            The area of an ellipse &pi; &times; a &times; b sq units, where ‘a’
+            is the semiminor axis and ‘b’ is the semimajor axis.
          </Paragraph>
          <ModalImg src={plain} alt="Diagram of a ellipse" />
       </Flex>
@@ -57,11 +57,11 @@ const Slide11 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 \\times h",
+               eqLatex: "(\\pi \\times a \\times b) \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 h",
+               eqLatex: "\\pi \\times a \\times b \\times h",
                hint: "",
             },
          ],

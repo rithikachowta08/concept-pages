@@ -13,10 +13,8 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-import { TextLine } from "components/text";
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide3 = ({ downIcon }) => {
@@ -50,13 +48,12 @@ const Slide3 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               volume
+               volume of a cylinder
             </TextSpanBg>{" "}
-            of a cylinder is the space occupied by it.
+            is the space occupied by it.
          </Paragraph>
          <Paragraph>
-            It is measured in cubic units such as cm&sup3;, in&sup3;, m&sup3;,
-            etc.
+            It is measured in cubic units such as cu cm, cu in, cu m, etc.
          </Paragraph>
       </TextAndDiagramSlide>
    );

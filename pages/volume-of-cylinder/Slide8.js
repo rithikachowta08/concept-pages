@@ -12,9 +12,9 @@ const Paragraph = dynamic(() =>
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import { addTransitionToKatex } from "utils/domutils";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 
@@ -33,11 +33,11 @@ const Slide8 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 \\times h",
+               eqLatex: "(\\pi \\times r^2) \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 h",
+               eqLatex: "\\pi \\times r^2 \\times h",
                hint: "",
             },
          ],

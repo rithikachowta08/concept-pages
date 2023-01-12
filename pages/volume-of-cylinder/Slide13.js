@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -15,9 +14,9 @@ const MultiLhsEquationContainer = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const sides = "assets/volume-of-cylinder/sides.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -30,7 +29,7 @@ const Slide13 = ({ downIcon }) => {
          lhsLatex: [`\\text{Volume}`, "", "", ""],
          rhsLatex: [
             {
-               eqLatex: "\\pi (R^2 - r^2) h\\ \\text{cubic units}",
+               eqLatex: "\\pi \\times (R^2 - r^2) \\times h",
                hint: "",
             },
             {
@@ -42,7 +41,7 @@ const Slide13 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "502.4\\ cm^3",
+               eqLatex: "502.4\\ cu\\ in",
                hint: "",
             },
          ],
@@ -58,10 +57,10 @@ const Slide13 = ({ downIcon }) => {
             <TransitionImage
                images={[plain, bases, sides, bases]}
                altTexts={[
-                  "Diagram of a right circular hollow cylinder with inner radius 3 cm, outer radius 5 cm and height 10 cm.",
-                  "Diagram of a right circular hollow cylinder with inner radius 3 cm highlighted",
-                  "Diagram of a right circular hollow cylinder with outer radius 5 cm highlighted",
-                  "Diagram of a right circular hollow cylinder with height 10 cm highlighted",
+                  "Diagram of a right circular hollow cylinder with inner radius 3 in, outer radius 5 in and height 10 in.",
+                  "Diagram of a right circular hollow cylinder with inner radius 3 in highlighted",
+                  "Diagram of a right circular hollow cylinder with outer radius 5 in highlighted",
+                  "Diagram of a right circular hollow cylinder with height 10 in highlighted",
                ]}
                activeIndex={activeIndex}
             />
@@ -81,7 +80,7 @@ const Slide13 = ({ downIcon }) => {
                >
                   Inner radius (r)
                </TextSpanBg>{" "}
-               = 3 cm
+               = 3 in
             </TextLine>
             <TextLine>
                <TextSpanBg
@@ -92,7 +91,7 @@ const Slide13 = ({ downIcon }) => {
                >
                   Outer radius (R)
                </TextSpanBg>{" "}
-               = 5 cm
+               = 5 in
             </TextLine>
             <TextLine>
                <TextSpanBg
@@ -103,7 +102,7 @@ const Slide13 = ({ downIcon }) => {
                >
                   Height (h)
                </TextSpanBg>{" "}
-               = 10 cm
+               = 10 in
             </TextLine>
          </Paragraph>
          <Paragraph>

@@ -14,14 +14,11 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Pill = dynamic(() => import("components/Pill"));
-
-import { TextLine } from "components/text";
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
-const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
-const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
-const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+const plain = "assets/volume-of-cylinder/plain.svg";
+const bases = "assets/volume-of-cylinder/bases.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide4 = ({ downIcon }) => {
@@ -34,11 +31,11 @@ const Slide4 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 \\times h",
+               eqLatex: "(\\pi \\times r^2) \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi r^2 h",
+               eqLatex: "\\pi \\times r^2 \\times h",
                hint: "",
             },
          ],
@@ -71,21 +68,11 @@ const Slide4 = ({ downIcon }) => {
       >
          <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
             For a cylinder with a{" "}
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >
+            <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                circular base area (A)
             </TextSpanBg>{" "}
             and{" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >
+            <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
                height (h)
             </TextSpanBg>{" "}
             , the volume is calculated as:
@@ -97,7 +84,9 @@ const Slide4 = ({ downIcon }) => {
             ></MultiLhsEquationContainer>
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            <Pill>Volume of a cylinder = πr&sup2;h cubic units</Pill>
+            <Pill>
+               Volume of a cylinder = π &times; r&sup2; &times; h cubic units
+            </Pill>
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             Here, (r) is radius of the base and (h) is height of the cylinder.
