@@ -35,7 +35,7 @@ const Slide17 = ({ downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          downIcon={downIcon}
-         title="Rectangular Prism vs. Cube"
+         title="Rectangular Prism vs Cube"
          secondaryTitle="Volume of a Cube"
          diagram={
             <TransitionImage
