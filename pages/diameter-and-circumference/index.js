@@ -11,12 +11,13 @@ const Slide3 = dynamic(() => import("./Slide3"));
 const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
-// const Slide7 = dynamic(() => import("./Slide7"));
-// const Slide8 = dynamic(() => import("./Slide8"));
+const Slide7 = dynamic(() => import("./Slide7"));
+const Slide8 = dynamic(() => import("./Slide8"));
 // const Slide9 = dynamic(() => import("./Slide9"));
 // const Slide10 = dynamic(() => import("./Slide10"));
 // const Slide11 = dynamic(() => import("./Slide11"));
 // const Slide12 = dynamic(() => import("./Slide12"));
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
 
 
@@ -28,21 +29,27 @@ const RelationshipBetweenDiameterAndCircumference = () => {
     <Slide4 key={3} />,
     <Slide5 key={4} />,
     <Slide6 key={5} />,
-    // <Slide7 key={6} />,
-    // <Slide8 key={7} />,
+    <Slide7 key={6} />,
+    <Slide8 key={7} />,
     // <Slide9 key={8} />,
     // <Slide10 key={9} />,
     // <Slide11 key={10} />,
     // <Slide12 key={11} />,
+    <PageLastSlide
+      key={14}
+      currentPageTitle={"Length of Arc of a circle"}
+      nextPageTitle="Area of Square"
+      nextPageLink="/us/math/study/area-of-square"
+    />,
   ];
 
   const navigationSections = [
-    { title: "Arc of a circle", slides: [1, 2, 3] },
-    { title: "Sector of a circle", slides: [4, 5] },
-    { title: "Length of an arc of a sector", slides: [6, 7] },
+    { title: "Circumference of a circle", slides: [1] },
+    { title: "Ratio of circumference to diameter", slides: [2, 3] },
+    { title: "Relation between circumference and diameter", slides: [4, 5, 6, 7] },
   ];
 
-  const darkBgIndices = [0, 4, 6, 8];
+  const darkBgIndices = [0, 2, 4, 7, 8];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
