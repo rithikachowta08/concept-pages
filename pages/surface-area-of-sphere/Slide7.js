@@ -26,7 +26,7 @@ const Slide7 = ({ downIcon, currentPageIdx }) => {
             its curved surface.
          </Paragraph>
          <Paragraph>
-            <TextLine>CSA = 2πrh </TextLine>
+            <TextLine>CSA = 2 &times; π &times; r &times; h </TextLine>
          </Paragraph>
          <ModalImg
             src={cylinder}
@@ -48,7 +48,7 @@ const Slide7 = ({ downIcon, currentPageIdx }) => {
          currentPageIdx={currentPageIdx}
          bg="DARK"
          secondaryTitle="Sphere"
-         title={<div>Why is the surface area 4πr&sup2;</div>}
+         title={<div>Why is the surface area 4 &times; π &times; r&sup2;</div>}
       >
          <Modal
             isOpen={isModalOpen}
