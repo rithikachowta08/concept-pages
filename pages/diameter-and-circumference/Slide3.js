@@ -62,6 +62,7 @@ const Slide3 = ({ downIcon }) => {
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
+         bg="DARK"
          title="Ratio of Circumference to Diameter "
          diagram={
             <TransitionImage
@@ -76,15 +77,12 @@ const Slide3 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
             <TextLine>
                The ratio of the &nbsp;
                <TextSpanBg
                   onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
                >
                   circumference
                </TextSpanBg>
@@ -92,9 +90,6 @@ const Slide3 = ({ downIcon }) => {
                <TextSpanBg
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.PURPLE}
-                  fontWeight={700}
                >
                   diameter
                </TextSpanBg>
@@ -113,7 +108,7 @@ const Slide3 = ({ downIcon }) => {
             </Pill>
          </Paragraph>
          <Paragraph lineHeight={lineHeightProp}>
-            <TextLine>
+            <TextLine color={colors.WHITE}>
                The decimal expansion of the ratio shown above is non-terminating
                and non-repeating in nature, and this constant value is
                represented by the greek letter π (pi).
