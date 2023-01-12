@@ -72,7 +72,7 @@ const Slide3 = ({ downIcon }) => {
          downIcon={downIcon}
          bg="DARK"
          secondaryTitle="Circumference of a Circle"
-         title="Formula"
+         title="General Formula"
       >
          <Modal
             isOpen={isModalOpen}
