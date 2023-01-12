@@ -15,10 +15,10 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide4/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide4/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide4/3.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide4/4.svg";
+const volumeCone_full = "assets/concept-volume-of-cone/slide4/1.svg";
+const volumeCone_right = "assets/concept-volume-of-cone/slide4/2.svg";
+const volumeCone_height = "assets/concept-volume-of-cone/slide4/3.svg";
+const volumeCone_rightslide = "assets/concept-volume-of-cone/slide4/4.svg";
 
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,10 +35,10 @@ const Slide4 = ({ downIcon }) => {
       diagram={
         <TransitionImage
           images={[
-            surfaceCone_full,
-            surfaceCone_right,
-            surfaceCone_height,
-            surfaceCone_rightslide,
+            volumeCone_full,
+            volumeCone_right,
+            volumeCone_height,
+            volumeCone_rightslide,
           ]}
           altTexts={[
             "Diagram of a cone",

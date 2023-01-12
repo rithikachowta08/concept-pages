@@ -96,7 +96,7 @@ const Slide17 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} (\\sqrt{3} a)"],
+                           value: ["\\dfrac{1}{2}\\times  (\\sqrt{3} a)"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -130,7 +130,7 @@ const Slide17 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
+                              "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2}\\times  \\sqrt{3}a",
                            ],
                            type: "latex",
                         },

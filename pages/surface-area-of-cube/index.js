@@ -13,6 +13,9 @@ const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
+const PageLastSlide = dynamic(() =>
+  import("../../components/slides/PageLastSlide")
+);
 // const Slide10 = dynamic(() => import("./Slide10"));
 // const Slide11 = dynamic(() => import("./Slide11"));
 // const Slide12 = dynamic(() => import("./Slide12"));
@@ -29,6 +32,12 @@ const SurfaceAreaofCone = () => {
     <Slide7 key={6} />,
     <Slide8 key={7} />,
     <Slide9 key={8} />,
+    <PageLastSlide
+      key={9}
+      currentPageTitle={"Surface Area of Cube"}
+      nextPageLink={"/us/math/study/units-to-measure-capacity"}
+      nextPageTitle={"Units to measure Capacity"}
+    />,
     // <Slide10 key={8} />,
     // <Slide11 key={10} />,
     // <Slide12 key={11} />,
@@ -46,7 +55,7 @@ const SurfaceAreaofCone = () => {
     },
   ];
 
-  const darkBgIndices = [0, 2, 4, 6, 8];
+  const darkBgIndices = [0, 2, 4, 6, 8, 9];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

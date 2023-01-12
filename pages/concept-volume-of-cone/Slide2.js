@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { lineHeightProp } from "utils/fontStyles";
+import { coco_applet_uri } from "utils/constants";
 import dynamic from "next/dynamic";
 const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
@@ -18,8 +19,8 @@ const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const cube_unit = "assets/surface-area-of-cone/slide2/1.svg";
-const Slide2 = ({ downIcon }) => {
+const cone_unit = "assets/concept-volume-of-cone/slide2/1.svg";
+const Slide2 = ({ downIcon, currentPageIdx }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalContent = (
     <Flex direction="column">
@@ -28,11 +29,11 @@ const Slide2 = ({ downIcon }) => {
         angles equal to 90 degrees.
       </Paragraph>
       <ModalImg
-        src={cube_unit}
+        src={cone_unit}
         alignSelf="center"
         width="400px"
         marginBottom="50px"
-        alt="Diagram of right angle triangle"
+        alt="Diagram of a right angle triangle"
       />
     </Flex>
   );
@@ -44,10 +45,10 @@ const Slide2 = ({ downIcon }) => {
   };
   return (
     <TextAndAppletSlide
+      title="Total Surface Area of Cube"
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
       downIcon={downIcon}
-      title="Formation of a Cone"
-      secondaryTitle="Introduction to a Cone"
-      appletSrc="./applets/triangle.html"
+      currentPageIdx={currentPageIdx}
     >
       <Modal
         isOpen={isModalOpen}

@@ -114,7 +114,7 @@ const Slide9 = ({ downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["4 cm"],
+                        value: ["4 in"],
                         type: "text",
                      },
                      rhsHint: {
@@ -180,7 +180,7 @@ const Slide9 = ({ downIcon }) => {
                        type: "text",
                     },
                     rhsLatex: {
-                       value: ["\\dfrac{4}{3}\\times \\pi \\thinspace cm"],
+                       value: ["\\dfrac{4}{3}\\times \\pi \\thinspace in"],
                        type: "latex",
                     },
                     rhsHint: {

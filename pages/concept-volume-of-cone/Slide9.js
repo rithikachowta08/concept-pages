@@ -19,9 +19,9 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide9/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide9/2.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide9/3.svg";
+const volumeCone_full = "assets/concept-volume-of-cone/slide9/1.svg";
+const volumeCone_right = "assets/concept-volume-of-cone/slide9/2.svg";
+const volumeCone_height = "assets/concept-volume-of-cone/slide9/3.svg";
 
 const Slide9 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -89,7 +89,7 @@ const Slide9 = ({ downIcon }) => {
       title="Find the volume of a cone whose dimensions are given."
       diagram={
         <TransitionImage
-          images={[surfaceCone_full, surfaceCone_right, surfaceCone_height]}
+          images={[volumeCone_full, volumeCone_right, volumeCone_height]}
           altTexts={[
             "Diagram of a cone",
             "Diagram of a cone with radius 9 cm",
