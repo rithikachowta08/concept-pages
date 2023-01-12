@@ -14,6 +14,9 @@ const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
+const PageLastSlide = dynamic(() =>
+  import("../../components/slides/PageLastSlide")
+);
 
 const SurfaceAreaofCone = () => {
   const SlideArray = [
@@ -27,6 +30,12 @@ const SurfaceAreaofCone = () => {
     <Slide8 key={7} />,
     <Slide9 key={8} />,
     <Slide10 key={9} />,
+    <PageLastSlide
+      key={10}
+      currentPageTitle={"Volume of a Cone"}
+      nextPageLink={"/us/math/study/the-surface-area-of-a-pyramids"}
+      nextPageTitle={"Surface Area of Pyramids"}
+    />,
   ];
   const navigationSections = [
     { title: "Introduction to a cone", slides: [1, 2, 3, 4] },
@@ -41,7 +50,7 @@ const SurfaceAreaofCone = () => {
     },
   ];
 
-  const darkBgIndices = [0, 4, 5, 7, 9];
+  const darkBgIndices = [0, 4, 5, 7, 9, 10];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
@@ -51,8 +60,8 @@ const SurfaceAreaofCone = () => {
   );
 };
 SurfaceAreaofCone.title =
-  "Surface area of Cone: Definition, Formula, Examples - BYJU'S";
+  "Volume of Cone: Definition, Formula, Examples - BYJU'S";
 SurfaceAreaofCone.meta =
-  "Discover the concept of surface area of cone, including its definition, formula, and examples. Enhance your understanding with BYJU'S interactive activities and examples.";
+  "Gain a thorough understanding of the volume of cone with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default SurfaceAreaofCone;

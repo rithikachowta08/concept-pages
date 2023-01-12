@@ -64,7 +64,7 @@ const Slide13 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["a \\times h \\times \\sin \\theta "],
+        value: ["a \\times a \\times \\sin \\theta "],
         type: "latex",
       },
       rhsHint: {

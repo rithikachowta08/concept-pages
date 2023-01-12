@@ -33,7 +33,7 @@ const Slide14 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Volume of cube`,
+               `Volume of a cube`,
             ],
             type: "text",
          },

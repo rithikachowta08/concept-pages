@@ -29,11 +29,11 @@ const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
-const surfaceCone_full = "assets/surface-area-of-cone/slide8/1.svg";
-const surfaceCone_fill = "assets/surface-area-of-cone/slide8/2.svg";
-const surfaceCone_pi = "assets/surface-area-of-cone/slide8/3.svg";
-const surfaceCone_height = "assets/surface-area-of-cone/slide8/4.svg";
-const surfaceCone_height_right = "assets/surface-area-of-cone/slide8/5.svg";
+const volumeCone_full = "assets/concept-volume-of-cone/slide8/1.svg";
+const volumeCone_fill = "assets/concept-volume-of-cone/slide8/2.svg";
+const volumeCone_pi = "assets/concept-volume-of-cone/slide8/3.svg";
+const volumeCone_height = "assets/concept-volume-of-cone/slide8/4.svg";
+const volumeCone_height_right = "assets/concept-volume-of-cone/slide8/5.svg";
 
 const Slide8 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -113,7 +113,7 @@ const Slide8 = ({ downIcon }) => {
         Example:
       </Paragraph>
       <ModalImg
-        src={surfaceCone_height_right}
+        src={volumeCone_height_right}
         alignSelf="center"
         width="400px"
         marginBottom="0px"
@@ -147,10 +147,10 @@ const Slide8 = ({ downIcon }) => {
       diagram={
         <TransitionImage
           images={[
-            surfaceCone_full,
-            surfaceCone_fill,
-            surfaceCone_pi,
-            surfaceCone_height,
+            volumeCone_full,
+            volumeCone_fill,
+            volumeCone_pi,
+            volumeCone_height,
           ]}
           altTexts={[
             "Diagram of a cone",
@@ -215,8 +215,9 @@ const Slide8 = ({ downIcon }) => {
       <Paragraph color={colors.WHITE}>
         The area obtained is measured in &nbsp;
         <ModalTriggerText id={2} onClick={onClick} color={colors.WHITE}>
-          right-angled triangle
-        </ModalTriggerText>{" "}
+          cubic units
+        </ModalTriggerText>
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );
