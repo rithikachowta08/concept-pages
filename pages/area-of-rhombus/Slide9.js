@@ -30,8 +30,8 @@ const Slide11 = ({ downIcon }) => {
   };
 
   let latex = [];
-  latex.push(`d{\\scriptscriptstyle{1}}`);
-  latex.push(`d{\\scriptscriptstyle{2}}`);
+  // latex.push(`d{\\scriptscriptstyle{1}}`);
+  // latex.push(`d{\\scriptscriptstyle{2}}`);
   latex.push(
     `= \\dfrac{1}{2} \\times ({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
   );
@@ -63,9 +63,11 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          <span>
-            <MathElement htmlString={latex[mathjaxCounter++]} />
-          </span>
+          d
+          <sub>
+            <small>1</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
         </TextSpanBg>
         &nbsp;and&nbsp;
         <TextSpanBg
@@ -75,9 +77,11 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          <span>
-            <MathElement htmlString={latex[mathjaxCounter++]} />
-          </span>
+          d
+          <sub>
+            <small>2</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
         </TextSpanBg>
         .
       </Paragraph>
