@@ -66,7 +66,7 @@ const Slide8 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["343 cu\\:in"],
+            value: ["343\\: cu\\:in"],
             type: "latex",
          },
          rhsHint: {
