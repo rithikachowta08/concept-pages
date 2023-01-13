@@ -19,19 +19,21 @@ const Slide2 = ({ downIcon, navBar }) => {
          title={"What Is a Rectangular Prism?"}
          navBar={navBar}
          downIcon={downIcon}
-         // diagram={
-         //    <TransitionImage
-         //       images={[]}
-         //       activeIndex={activeIndex}
-         //       altTexts={[
-         //          "Diagram of a circle with given radius",
-         //          "Diagram of a circle with area highlighted in it",
-         //       ]}
-         //    />
-         // }
+         diagram={
+            <TransitionImage
+               images={[]}
+               activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a rectangular prism",
+                  "Diagram of a rectangular prism with highlighted faces",
+                  "Diagram of a rectangular prism with highlighted vertices",
+                  "Diagram of a rectangular prism with highlighted edges",
+               ]}
+            />
+         }
       >
          <Paragraph>
-            A rectangular prism is a three-dimensional solid shape that has
+            A rectangular prism is a three-dimensional solid shape that has{" "}
             <TextSpanBg
                hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}

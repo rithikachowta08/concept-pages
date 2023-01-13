@@ -25,11 +25,7 @@ const Slide8 = ({ downIcon }) => {
                   <TransitionImage
                      images={[]}
                      activeIndex={activeIndex}
-                     altTexts={[
-                        "Diagram of an acute angled triangle",
-                        "Diagram of an acute angled triangle highlighting base",
-                        "Diagram of an acute angled triangle highlighting height",
-                     ]}
+                     altTexts={["Diagram of a right rectangular prism"]}
                   />
                ),
                caption: "Right rectangular prism",
@@ -39,11 +35,7 @@ const Slide8 = ({ downIcon }) => {
                   <TransitionImage
                      images={[]}
                      activeIndex={activeIndex}
-                     altTexts={[
-                        "Diagram of a right angled triangle",
-                        "Diagram of a right angled triangle highlighting base",
-                        "Diagram of a right angled triangle highlighting height",
-                     ]}
+                     altTexts={["Diagram of a oblique rectangular prism"]}
                   />
                ),
                caption: "Oblique rectangular prism",

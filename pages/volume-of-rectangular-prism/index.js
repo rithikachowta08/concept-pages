@@ -36,12 +36,12 @@ const VolumeOfRectangularPrism = () => {
       />,
    ];
    const navigationSections = [
-      { title: "What is a rectangular prism?", slides: [] },
-      { title: "Volume by counting the unit cubes", slides: [] },
-      { title: "General Formula", slides: [] },
+      { title: "What is a rectangular prism?", slides: [1] },
+      { title: "Volume by counting the unit cubes", slides: [2, 3, 4] },
+      { title: "General Formula", slides: [5, 6] },
       {
          title: "Types of rectangular prisms",
-         slides: [],
+         slides: [7, 8, 9, 10],
       },
    ];
 

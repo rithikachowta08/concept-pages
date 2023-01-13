@@ -1,12 +1,18 @@
 import EquationTable from "components/MathElement/EquationTable";
 import { Paragraph, TextSpan } from "components/text";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 
 const Slide7 = ({ downIcon, navBar }) => {
+   const [activeIndex, setActiveIndex] = useState(0);
+
    return (
       <TextAndDiagramSlide
          bg="LIGHT"
@@ -16,16 +22,18 @@ const Slide7 = ({ downIcon, navBar }) => {
          secondaryTitle={"Illustrative Example"}
          navBar={navBar}
          downIcon={downIcon}
-         // diagram={
-         //    <TransitionImage
-         //       images={[]}
-         //       activeIndex={activeIndex}
-         //       altTexts={[
-         //          "Diagram of a circle with given radius",
-         //          "Diagram of a circle with area highlighted in it",
-         //       ]}
-         //    />
-         // }
+         diagram={
+            <TransitionImage
+               images={[]}
+               activeIndex={activeIndex}
+               altTexts={[
+                  "Diagram of a rectangular prism",
+                  "Diagram of a rectangular prism with highlighted length 8 cm",
+                  "Diagram of a rectangular prism with highlighted width 5 cm",
+                  "Diagram of a rectangular prism with highlighted height 5 cm",
+               ]}
+            />
+         }
       >
          <Paragraph>
             <TextSpan>Length = 8 cm</TextSpan>
@@ -45,7 +53,7 @@ const Slide7 = ({ downIcon, navBar }) => {
                      },
                      rhsLatex: {
                         value: [
-                           "\\ \\htmlId{1}{\\htmlClass{textSpanBg aosoc-slide-6}{Length}}\\times \\htmlId{2}{\\htmlClass{textSpanBg aosoc-slide-6}{Width}}\\times \\htmlId{3}{\\htmlClass{textSpanBg aosoc-slide-6}{Height}}",
+                           "\\htmlId{1}{\\htmlClass{textSpanBg aosoc-slide-6}{Length}}\\times \\htmlId{2}{\\htmlClass{textSpanBg aosoc-slide-6}{Width}}\\times \\htmlId{3}{\\htmlClass{textSpanBg aosoc-slide-6}{Height}}",
                         ],
                         type: "latex",
                      },
