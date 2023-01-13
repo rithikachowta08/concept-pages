@@ -11,7 +11,6 @@ const H1 = styled.h1`
    margin: 0;
    margin-bottom: ${(props) => props.marginBottom || 0};
    text-align: ${(props) => props.textAlign};
-   font-family: "Nunito-Bold";
 
    @media (min-width: 200px) and (max-width: 767px) {
       font-size: ${(props) =>

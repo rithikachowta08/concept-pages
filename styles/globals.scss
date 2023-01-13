@@ -1,3 +1,5 @@
+@import url("../public/fonts/stylesheet.css");
+
 html,
 body {
    margin: 0;
@@ -8,6 +10,11 @@ body {
       "Helvetica Neue", sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+   font-family: "Nunito-Medium";
+}
+
+h1 {
+   font-family: "Nunito-Bold";
 }
 
 a {
@@ -133,10 +140,17 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    overflow-wrap: normal;
 }
 
+.katex .mathdefault,
+.katex .mathnormal,
+.katex .mord {
+   font-family: "Nunito-Medium";
+}
+
 .katex .mord {
    display: inline-block;
    font-style: normal !important;
 }
+
 .pill-math {
    span {
       font-family: "Times New Roman", Times, serif !important;
