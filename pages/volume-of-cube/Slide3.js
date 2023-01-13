@@ -1,10 +1,12 @@
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide3/1.svg";
-const cube_spaces = "assets/volume-of-cube/slide3/2.svg";
-const cube_unit = "assets/volume-of-cube/slide3/3.svg";
+
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
+
+const cube_red = "assets/volume-of-cube/slide3_a.svg";
+const cube_spaces = "assets/volume-of-cube/slide3_b.svg";
+const cube_unit = "assets/volume-of-cube/slide3_c.svg";
 
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -26,8 +28,8 @@ const ModalTriggerText = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.StyledImg)
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
 const Slide3 = ({ downIcon }) => {
@@ -38,7 +40,7 @@ const Slide3 = ({ downIcon }) => {
          <Paragraph color="white" marginBottom="1vh">
             A Unit cube is a cube whose sides are 1 unit long.
          </Paragraph>
-         <StyledImg
+         <ModalImg
             src={cube_unit}
             alignSelf="center"
             width="400px"
@@ -87,12 +89,11 @@ const Slide3 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
-               space
+               space occupied
             </TextSpanBg>{" "}
-            occupied by it. It is also the total number of{" "}
+             by it. It is also the total number of{" "}
             <ModalTriggerText id={2} onClick={onClick}>
                unit cubes
             </ModalTriggerText>{" "}

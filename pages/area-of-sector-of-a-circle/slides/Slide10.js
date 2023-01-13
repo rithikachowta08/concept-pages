@@ -6,7 +6,7 @@ const EquationTable = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Flex, ModalImg, StyledImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";

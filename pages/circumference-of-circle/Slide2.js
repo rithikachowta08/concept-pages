@@ -20,7 +20,8 @@ const Modal = dynamic(() => import("components/layout/Modal"));
 import { ModalTriggerText } from "components/text";
 const plain = "assets/circumference-of-circle/plain.svg";
 const circumference = "assets/circumference-of-circle/circumference.svg";
-const plain_radius = "assets/circumference-of-circle/plain_radius.svg";
+const plain_radius_light =
+   "assets/circumference-of-circle/plain_radius_light.svg";
 import { lineHeightProp } from "utils/fontStyles";
 import { ModalImg } from "components/StyledElements";
 
@@ -33,7 +34,7 @@ const Slide2 = ({ downIcon }) => {
             &quot;O&quot; and the fixed distance is the radius &quot;r&quot;.
          </Paragraph>
          <ModalImg
-            src={plain_radius}
+            src={plain_radius_light}
             alt="Image of a circle with centre and radius shown"
          />
       </Flex>
@@ -84,7 +85,7 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>
             &nbsp;of a&nbsp;
             <ModalTriggerText onClick={onClick}>circle</ModalTriggerText>
-            &nbsp;is the measure of the length of its boundary
+            &nbsp;is the measure of the length of its boundary.
          </Paragraph>
       </TextAndDiagramSlide>
    );

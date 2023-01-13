@@ -13,7 +13,7 @@ import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 
-const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
+const area_triangle_snt = "assets/area-of-triangle/area_triangle_sna_1.svg";
 const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
 const area_triangle_snt_3 = "assets/area-of-triangle/area_triangle_sna_3.svg";
 const area_triangle_snt_4 = "assets/area-of-triangle/area_triangle_sna_4.svg";
@@ -81,31 +81,9 @@ const Slide19 = ({ downIcon }) => {
             them, the area can be calculated as:
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            {/* <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: [`Area`],
-                        type: "text",
-                     },
-                     rhsLatex: {
-                        value: [
-                           "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}bc\\ SinA}}\\ = \\htmlId{2}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ca\\ SinB}}\\ = \\htmlId{3}{\\htmlClass{textSpanBg aoc-slide-6 darkBg}{\\dfrac{1}{2}ab\\ SinC}}",
-                        ],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],   
-                        type: "text",
-                     },
-                  },
-               ]}
-            /> */}
             Area ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -113,13 +91,13 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               bc SinA
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times b\\times c\\times Sin\\ A"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(2);
                }}
@@ -127,13 +105,13 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ca SinB
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times c\\times a\\times Sin\\ B"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => {
                   setActiveIndex(3);
                }}
@@ -141,8 +119,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ab SinC
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times a\\times b\\times Sin\\ C"}
+               />
             </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>

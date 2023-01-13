@@ -1,12 +1,20 @@
 import dynamic from "next/dynamic";
 
-const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
+const VideoSlide = dynamic(() => import("components/slides/VideoSlide2"));
 
-const Slide8 = () => {
+const Slide8 = ({ currentPageIdx, downIcon }) => {
    return (
       <VideoSlide
-         title={"General Formula"}
-         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+         videoContent={{
+            dash_Url: "",
+            hls_Url: "",
+            thumbnail: "",
+         }}
+         downIconId="s8-video-down-icon"
+         videoSlideId="s8-video-slide"
+         index={8}
+         currentPageIdx={currentPageIdx}
+         downIcon={downIcon}
       />
    );
 };

@@ -15,8 +15,8 @@ const TextLine = dynamic(() =>
 // import inequality_slide from "assets/inequality_slide.svg";
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-const cube_red = "assets/volume-of-cube/slide15/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide15/2.svg";
+const cube_red = "assets/volume-of-cube/slide15_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide15_b.svg";
 
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
@@ -150,12 +150,12 @@ const Slide15 = ({ navBar, downIcon }) => {
                   onHover={onHover}
                   onHoverOut={onHoverOut}
                   color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   △BCD
                </TextSpanBg>
             </TextLine>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>

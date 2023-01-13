@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
-const cube_red = "assets/volume-of-cube/slide10/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide10/2.svg";
+const cube_red = "assets/volume-of-cube/slide10_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide10_b.svg";
 import { colors } from "utils/colors";
 import { useState } from "react";
 const TextLine = dynamic(() =>
@@ -54,10 +54,9 @@ const Slide10 = ({ downIcon }) => {
                <TextSpanBg
                   key={0}
                   id={1}
-                  color={colors.RED}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Area of square face, (A)
                </TextSpanBg>,
@@ -95,7 +94,7 @@ const Slide10 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["(\\sqrt{A})^3 = (\\sqrt {16}m^2)^3"],
+            value: ["(\\sqrt{A})^3 = (\\sqrt {16}\\:in^2)^3"],
             type: "latex",
          },
          rhsHint: {
@@ -109,7 +108,21 @@ const Slide10 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(4m)^3 = {64m}^3"],
+            value: ["(4\\:in)^3"],
+            type: "latex",
+         },
+         rhsHint: {
+            value: [""],
+            type: "text",
+         },
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: ["64\\:cu\\:in"],
             type: "latex",
          },
          rhsHint: {
@@ -132,12 +145,12 @@ const Slide10 = ({ downIcon }) => {
             />
          }
          downIcon={downIcon}
-         secondaryTitle="Volume of a Cube using Area"
+         secondaryTitle="Volume of a Cube"
          title="Illustrative Example"
       >
          <Paragraph>
             What is the volume of a cube, when the area of one of the faces is
-            16 sq m?
+            16 in<sup>2</sup>?
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
@@ -146,13 +159,13 @@ const Slide10 = ({ downIcon }) => {
             ></EquationTable>
          </Paragraph>
          <Paragraph>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
 
          <Paragraph>
-            <EquationTable
+            <EquationTable align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>

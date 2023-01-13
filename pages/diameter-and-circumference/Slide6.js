@@ -24,25 +24,30 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() => import("components/MathElement/index.js"));
-const EquationTable = dynamic(() =>
-   import("components/MathElement/EquationTable")
+const MathElement = dynamic(() =>
+   import("components/MathElement/index.js")
 );
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const circleExample = "assets/diameter-and-circumference/circleExample.svg";
-const diameterExample = "assets/diameter-and-circumference/diameterExample.svg";
-const circumferenceExample =
-   "assets/diameter-and-circumference/circumferenceExample.svg";
-// const unit_square = "assets/area-of-rectangle/unit_square.svg";
+const pi = "assets/diameter-and-circumference/pi.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
 const Slide6 = ({ downIcon }) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   const modalContent = (
+      <Flex direction="column">
+         <Paragraph color="white">
+            A unit square is a square with side length equal to 1 unit.
+         </Paragraph>
+         {/* <ModalImg
+            src={unit_square}
+         /> */}
+      </Flex>
+   );
    const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
    const onClick = () => {
@@ -58,19 +63,20 @@ const Slide6 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-   latex.push(`\\large•`);
-   let mathjaxCounter = 0;
+  latex.push(`\\large•`);
+  let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
-         title="Illustrative Example"
+         title="Facts about  π (pi)"
          diagram={
             <TransitionImage
-               images={[circleExample, diameterExample, circumferenceExample]}
-               altTexts={[
-                  "Diagram of a circle showing diameter (D)",
-                  "Diagram of a circle with highlighted diameter (D)",
-                  "Diagram of a circle with highlighted circumference",
+               images={[
+                  pi,
                ]}
+               altTexts={[
+               "Diagram showing the symbol of pi"
+               ]}
+
                activeIndex={activeIndex}
             />
          }
@@ -83,91 +89,19 @@ const Slide6 = ({ downIcon }) => {
             onDismiss={onDismiss}
          /> */}
          <Paragraph lineHeight={lineHeightProp}>
-            The diameter of a circle is 6 in. Find the ratio of the
-            circumference to diameter of the circle.
-         </Paragraph>
-
-         <Paragraph>Solution:</Paragraph>
-
-         <Paragraph>
             <TextLine>
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
-               >
-                  Diameter (D)
-               </TextSpanBg>
-               &nbsp; = 6 in
+                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
+                π is irrational (not equal to the ratio of any two whole numbers), and its digits do not repeat.
             </TextLine>
-         </Paragraph>
-
-         <Paragraph>
-            <TextLine color={colors.BLACK}>
-               <TextSpanBg
-                  onHover={() => onHover(2)}
-                  onHoverOut={onHoverOut}
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  fontWeight={700}
-               >
-                  Circumference
-               </TextSpanBg>
-               &nbsp; = 18.8 in
+            <TextLine>
+                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
+                An approximation for π, such as 3.14 or         is often used for calculations.
             </TextLine>
-         </Paragraph>
-
-         <Paragraph>
-            <TextLine color={colors.BLACK}>
-               <EquationTable
-                  align="middle"
-                  equationLatex={[
-                     {
-                        lhsLatex: {
-                           value: ["Ratio"],
-                           type: "text",
-                        },
-                        rhsLatex: {
-                           value: ["\\dfrac{Circumference}{Diameter} "],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                     {
-                        lhsLatex: {
-                           value: [""],
-                           type: "latex",
-                        },
-                        rhsLatex: {
-                           value: ["\\dfrac{18.8}{6} "],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                     {
-                        lhsLatex: {
-                           value: [""],
-                           type: "text",
-                        },
-                        rhsLatex: {
-                           value: ["3.14159… ≃ π"],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                  ]}
-               />
+            <TextLine>
+                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
+                Pi Day is celebrated every year on 14 March. The date represents the first 3 digits
+                 of this unique number. The day was recognised in 1988 by physicist Larry Shaw.
+                  This day was also recognised as International Mathematics day by UNESCO in 2019.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

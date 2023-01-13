@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BG" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .03em;
+      }
+
+      .cls-2 {
+        stroke-width: 5px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #cd6b6b;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: #cd6b6b;
+      }
+
+      .cls-3 {
+        stroke-width: 5.33px;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-12 {
+        letter-spacing: .02em;
+      }
+
+      .cls-5 {
+        opacity: .5;
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-6, .cls-7 {
+        font-family: Nunito-Medium, Nunito;
+        font-size: 32px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" x="188.57" y="469.75" width="182.87" height="73.77"/>
+  <text class="cls-7" transform="translate(243.76 502.7)"><tspan class="cls-12" x="0" y="0">F</tspan><tspan x="18.4" y="0">luid</tspan><tspan x="-10.11" y="29">Oun</tspan><tspan class="cls-9" x="50.94" y="29">c</tspan><tspan x="65.5" y="29">e</tspan></text>
+  <rect class="cls-5" x="188.57" y="356.85" width="182.87" height="73.77"/>
+  <text class="cls-7" transform="translate(250.96 404.3)"><tspan class="cls-11" x="0" y="0">C</tspan><tspan class="cls-10" x="21.22" y="0">up</tspan></text>
+  <polygon class="cls-5" points="371.43 318.85 188.57 318.85 189.61 246.12 372.47 246.12 371.43 318.85"/>
+  <text class="cls-7" transform="translate(251.14 292.53)"><tspan x="0" y="0">Pint</tspan></text>
+  <polygon class="cls-5" points="371.43 205.96 188.57 205.96 189.61 133.22 372.47 133.22 371.43 205.96"/>
+  <text class="cls-7" transform="translate(238.1 179.63)"><tspan x="0" y="0">Qua</tspan><tspan class="cls-1" x="59.81" y="0">r</tspan><tspan class="cls-10" x="72.35" y="0">t</tspan></text>
+  <polygon class="cls-5" points="372.47 92.99 189.61 92.99 188.57 18.17 371.43 18.17 372.47 92.99"/>
+  <rect class="cls-3" x="188.57" y="469.75" width="182.87" height="73.77"/>
+  <rect class="cls-3" x="188.57" y="356.85" width="182.87" height="73.77"/>
+  <polygon class="cls-3" points="371.43 318.85 188.57 318.85 189.61 246.12 372.47 246.12 371.43 318.85"/>
+  <polygon class="cls-3" points="371.43 205.96 188.57 205.96 189.61 133.22 372.47 133.22 371.43 205.96"/>
+  <polygon class="cls-3" points="372.47 92.99 189.61 92.99 188.57 18.17 371.43 18.17 372.47 92.99"/>
+  <text class="cls-7" transform="translate(232.15 65.62)"><tspan x="0" y="0">Gal</tspan><tspan class="cls-8" x="50.02" y="0">l</tspan><tspan x="59.49" y="0">on</tspan></text>
+  <g>
+    <path class="cls-2" d="M399.91,80.64c5.91,8.28,9.43,18.67,9.43,29.96,0,20.15-11.21,37.45-27.23,44.95"/>
+    <polygon class="cls-4" points="393.26 92.39 386.91 68.28 410.96 74.83 393.26 92.39"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M173.55,68.28c-13.42,8.47-22.44,24.25-22.44,42.33,0,13.32,4.9,25.39,12.84,34.21"/>
+    <polygon class="cls-4" points="153.69 151.87 178.34 155.56 169.21 132.36 153.69 151.87"/>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(439.36 119.49)"><tspan x="0" y="0">4</tspan></text>
+    <text class="cls-6" transform="translate(421.08 124.58)"><tspan x="0" y="0">×</tspan></text>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(122.99 119.49)"><tspan x="0" y="0">4</tspan></text>
+    <text class="cls-6" transform="translate(101.72 124.58)"><tspan x="0" y="0">÷</tspan></text>
+  </g>
+  <g>
+    <path class="cls-2" d="M399.91,199.64c5.91,8.28,9.43,18.67,9.43,29.96,0,20.15-11.21,37.45-27.23,44.95"/>
+    <polygon class="cls-4" points="393.26 211.39 386.91 187.28 410.96 193.83 393.26 211.39"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M173.55,187.28c-13.42,8.47-22.44,24.25-22.44,42.33,0,13.32,4.9,25.39,12.84,34.21"/>
+    <polygon class="cls-4" points="153.69 270.87 178.34 274.56 169.21 251.36 153.69 270.87"/>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(439.36 238.49)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-6" transform="translate(421.08 243.58)"><tspan x="0" y="0">×</tspan></text>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(122.99 238.49)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-6" transform="translate(101.72 243.58)"><tspan x="0" y="0">÷</tspan></text>
+  </g>
+  <g>
+    <path class="cls-2" d="M399.91,317.64c5.91,8.28,9.43,18.67,9.43,29.96,0,20.15-11.21,37.45-27.23,44.95"/>
+    <polygon class="cls-4" points="393.26 329.39 386.91 305.28 410.96 311.83 393.26 329.39"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M173.55,305.28c-13.42,8.47-22.44,24.25-22.44,42.33,0,13.32,4.9,25.39,12.84,34.21"/>
+    <polygon class="cls-4" points="153.69 388.87 178.34 392.56 169.21 369.36 153.69 388.87"/>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(439.36 356.49)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-6" transform="translate(421.08 361.58)"><tspan x="0" y="0">×</tspan></text>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(122.99 356.49)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-6" transform="translate(101.72 361.58)"><tspan x="0" y="0">÷</tspan></text>
+  </g>
+  <g>
+    <path class="cls-2" d="M399.91,436.64c5.91,8.28,9.43,18.67,9.43,29.96,0,20.15-11.21,37.45-27.23,44.95"/>
+    <polygon class="cls-4" points="393.26 448.39 386.91 424.28 410.96 430.83 393.26 448.39"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M173.55,424.28c-13.42,8.47-22.44,24.25-22.44,42.33,0,13.32,4.9,25.39,12.84,34.21"/>
+    <polygon class="cls-4" points="153.69 507.87 178.34 511.56 169.21 488.36 153.69 507.87"/>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(439.36 475.49)"><tspan x="0" y="0">8</tspan></text>
+    <text class="cls-6" transform="translate(421.08 480.58)"><tspan x="0" y="0">×</tspan></text>
+  </g>
+  <g>
+    <text class="cls-6" transform="translate(122.99 475.49)"><tspan x="0" y="0">8</tspan></text>
+    <text class="cls-6" transform="translate(101.72 480.58)"><tspan x="0" y="0">÷</tspan></text>
+  </g>
+</svg>

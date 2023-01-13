@@ -30,10 +30,10 @@ const Slide11 = ({ downIcon }) => {
   };
 
   let latex = [];
-  latex.push(`\\scriptscriptstyle 1`);
-  latex.push(`\\scriptscriptstyle 2`);
+  // latex.push(`d{\\scriptscriptstyle{1}}`);
+  // latex.push(`d{\\scriptscriptstyle{2}}`);
   latex.push(
-    `= \\dfrac{1}{2}({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
+    `= \\dfrac{1}{2} \\times ({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
   );
   let mathjaxCounter = 0;
   return (
@@ -55,7 +55,7 @@ const Slide11 = ({ downIcon }) => {
       title="Using Diagonals"
     >
       <Paragraph color={colors.WHITE}>
-        The area (A), of a rhombus is half the product of its diagonals{" "}
+        The area (A), of a rhombus is equal to half the product of its diagonals{" "}
         <TextSpanBg
           id={1}
           onHover={() => onHover(1)}
@@ -64,9 +64,12 @@ const Slide11 = ({ downIcon }) => {
           color={colors.RED}
         >
           d
-          <MathElement htmlString={latex[mathjaxCounter++]} />
-        </TextSpanBg>{" "}
-        and{" "}
+          <sub>
+            <small>1</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+        </TextSpanBg>
+        &nbsp;and&nbsp;
         <TextSpanBg
           id={2}
           onHover={() => onHover(2)}
@@ -74,8 +77,12 @@ const Slide11 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          d<MathElement htmlString={latex[mathjaxCounter++]} />
-        </TextSpanBg>{" "}
+          d
+          <sub>
+            <small>2</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+        </TextSpanBg>
         .
       </Paragraph>
       <Pill color={colors.WHITE} bgColor={colors.GREEN}>

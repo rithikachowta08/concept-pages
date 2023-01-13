@@ -4,7 +4,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
@@ -71,8 +71,7 @@ const Slide4 = ({ navBar, downIcon }) => {
             </ModalTriggerText>{" "}
             of a circle is known as the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >

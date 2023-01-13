@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bfbfbf;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        opacity: .8;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+        stroke: #a753b5;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        fill: #aaa;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 0 12;
+        stroke-linecap: square;
+      }
+
+      .cls-3 {
+        fill: #a4a4a5;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-3" points="460.81 99.2 219.73 99.2 99.19 219.73 340.27 219.73 460.81 99.2"/>
+    <polygon class="cls-2" points="460.81 340.27 340.27 460.81 340.27 219.73 460.81 99.19 460.81 340.27"/>
+    <rect class="cls-1" x="99.19" y="219.73" width="241.07" height="241.07"/>
+  </g>
+  <g>
+    <rect class="cls-4" x="99.19" y="219.73" width="241.07" height="241.07"/>
+    <polyline class="cls-4" points="99.19 460.81 340.27 460.81 460.81 340.27"/>
+    <polyline class="cls-4" points="99.19 460.81 99.19 219.73 219.73 99.19"/>
+    <polygon class="cls-4" points="460.81 340.27 340.27 460.81 340.27 219.73 460.81 99.19 460.81 340.27"/>
+    <polygon class="cls-4" points="460.81 99.2 219.73 99.2 99.19 219.73 340.27 219.73 460.81 99.2"/>
+    <line class="cls-5" x1="219.73" y1="99.19" x2="219.73" y2="340.27"/>
+    <line class="cls-5" x1="460.81" y1="340.27" x2="219.73" y2="340.27"/>
+    <line class="cls-5" x1="219.73" y1="340.27" x2="99.19" y2="460.81"/>
+  </g>
+</svg>

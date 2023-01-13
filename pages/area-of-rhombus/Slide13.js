@@ -64,7 +64,7 @@ const Slide13 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["a \\times h \\times \\sin \\theta "],
+        value: ["a \\times a \\times \\sin \\theta "],
         type: "latex",
       },
       rhsHint: {
@@ -89,7 +89,7 @@ const Slide13 = ({ downIcon }) => {
   let latex = [];
   latex.push(`\\sin \\theta = \\dfrac{h}{a}`);
   latex.push(`h = a \\times \\sin \\theta`);
-  latex.push(`= a^2 \\sin \\theta`);
+  latex.push(`= a^2 \\times \\sin \\theta`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),

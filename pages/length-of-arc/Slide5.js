@@ -20,7 +20,7 @@ const highlighting_sector =
 const highlighting_radii =
    "assets/length-of-arc-of-a-circle/highlighting_radii.svg";
 const highlighting_arc =
-   "assets/length-of-arc-of-a-circle/highlighting_arc.png";
+   "assets/length-of-arc-of-a-circle/highlighting_arc.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide5 = ({ downIcon, navBar }) => {
@@ -70,7 +70,7 @@ const Slide5 = ({ downIcon, navBar }) => {
             >
                two radii
             </TextSpanBg>
-            &nbsp; and the adjoining &nbsp;
+            &nbsp;and the adjoining&nbsp;
             <TextSpanBg
                onHover={() => onHover(3)}
                onHoverOut={onHoverOut}

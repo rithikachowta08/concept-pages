@@ -35,6 +35,7 @@ const Slide20 = ({ downIcon }) => {
                Derivation
             </p>
          }
+         downIcon={downIcon}
          bg={"LIGHT"}
          diagram={
             <TransitionImage
@@ -46,13 +47,11 @@ const Slide20 = ({ downIcon }) => {
                ]}
             />
          }
-         isLastSlide
       >
          <Paragraph>
             Apply the &quot;Sine&quot; formula in the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -70,7 +69,7 @@ const Slide20 = ({ downIcon }) => {
                <MathElement htmlString={"Sin\\ A = \\dfrac{h}{b}"} />
             </TextLine>
             <TextLine>
-               <MathElement htmlString={"h = b.Sin \\ A"} />
+               <MathElement htmlString={"h = b\\times Sin\\ A"} />
             </TextLine>
          </Paragraph>
          <Paragraph>
@@ -83,7 +82,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\frac{1}{2} \\times Base \\times Height"],
+                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
                         type: "latex",
                      },
                   },
@@ -93,7 +92,7 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\frac{1}{2}\\times c\\times h"],
+                        value: ["\\dfrac{1}{2}\\times c\\times h"],
                         type: "latex",
                      },
                   },
@@ -103,7 +102,9 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\frac{1}{2}\\times c\\times b\\ Sin A"],
+                        value: [
+                           "\\dfrac{1}{2}\\times c\\times b\\times Sin\\ A",
+                        ],
                         type: "latex",
                      },
                   },
@@ -111,9 +112,13 @@ const Slide20 = ({ downIcon }) => {
             />
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area =
-               <MathElement htmlString={"\\frac{1}{2}\\ bc\\ Sin\\ A"} />
+               <MathElement
+                  htmlString={
+                     "\\dfrac{\\ 1}{2}\\times b\\times c\\times Sin\\ A"
+                  }
+               />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>
