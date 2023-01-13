@@ -70,7 +70,7 @@ const Slide5 = ({ downIcon, navBar }) => {
             >
                two radii
             </TextSpanBg>
-            &nbsp; and the adjoining &nbsp;
+            &nbsp;and the adjoining&nbsp;
             <TextSpanBg
                onHover={() => onHover(3)}
                onHoverOut={onHoverOut}

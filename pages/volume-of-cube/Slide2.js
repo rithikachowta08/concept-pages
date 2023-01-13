@@ -64,7 +64,7 @@ const Slide2 = ({ downIcon }) => {
             >
               8 vertices
             </TextSpanBg>{" "}
-            and 12{" "}
+            and{" "}
             <TextSpanBg
                id={3}
                onHover={onHover}

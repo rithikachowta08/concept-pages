@@ -65,6 +65,6 @@ const AreaOfSquare= ({}) => {
 
 AreaOfSquare.title = "Area of Square: Definition, Formula, Examples - BYJU'S";
 AreaOfSquare.meta =
-   "Learn about the area of a square, including its definition, formula, and examples. Master area of asquare concept with BYJU'S interactive activities.";
+   "Gain a deep understanding of area of square with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
 
 export default AreaOfSquare;

@@ -9,7 +9,7 @@ const Slide9 = ({ downIcon, currentPageIdx }) => {
       title="Using Base and Height"
       secondaryTitle="Area of a Rhombus"
       currentPageIdx={currentPageIdx}
-      appletSrc={`${coco_applet_uri}surface-area-of-cone-derivation-v4/index.html`}
+      appletSrc={`${coco_applet_uri}area_of_rhombus_v2/index.html`}
     ></AppletSlide>
   );
 };
