@@ -28,9 +28,9 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
-const square_1 = "assets/area-of-square/slide3_1.svg";
-const square_2 = "assets/area-of-square/slide3_2.svg";
-const square_3 = "assets/area-of-square/slide3_3.svg";
+const square_1 = "assets/area-of-square/slide3_a.svg";
+const square_2 = "assets/area-of-square/slide3_b.svg";
+const square_3 = "assets/area-of-square/slide3_c.svg";
 
 const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -89,8 +89,7 @@ const Slide3 = ({ downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                region enclosed
             </TextSpanBg>{" "}

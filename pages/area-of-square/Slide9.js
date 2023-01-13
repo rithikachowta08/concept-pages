@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 import MathElement from "components/MathElement";
+import { colors } from "utils/colors";
 
 
 const TextAndDiagramSlide = dynamic(() =>
@@ -19,8 +20,8 @@ const TextLine = dynamic(() =>
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
-const square_1 = "assets/area-of-square/slide9_1.svg";
-const square_2 = "assets/area-of-square/slide9_2.svg";
+const square_1 = "assets/area-of-square/slide9_a.svg";
+const square_2 = "assets/area-of-square/slide9_b.svg";
 
 const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -89,6 +90,7 @@ const Slide9 = ({ downIcon }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   Diagonal
                </TextSpanBg> can be calculated using  the <span style={{color:'#c49225'}}>Pythagorean</span> theorem.

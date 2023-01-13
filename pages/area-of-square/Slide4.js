@@ -17,8 +17,8 @@ const TextSpanBg = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const square_1 = "assets/area-of-square/slide4_1.svg";
-const square_2 = "assets/area-of-square/slide4_2.svg";
+const square_1 = "assets/area-of-square/slide4_a.svg";
+const square_2 = "assets/area-of-square/slide4_b.svg";
 
 const Slide4 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
