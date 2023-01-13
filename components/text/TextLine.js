@@ -8,6 +8,8 @@ const Line = styled.div`
    color: ${(props) => props.color || "inherit"};
    text-align: ${(props) => props.textAlign};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
 `;
 

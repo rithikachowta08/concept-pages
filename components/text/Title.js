@@ -11,6 +11,7 @@ const H1 = styled.h1`
    margin: 0;
    margin-bottom: ${(props) => props.marginBottom || 0};
    text-align: ${(props) => props.textAlign};
+   font-family: "Nunito-Bold";
 
    @media (min-width: 200px) and (max-width: 767px) {
       font-size: ${(props) =>
@@ -22,6 +23,8 @@ const H2 = styled.h2`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
    font-weight: ${(props) =>
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
    font-size: ${(props) =>
@@ -34,6 +37,8 @@ const H3 = styled.h3`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
    font-weight: ${(props) =>
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
    font-size: ${(props) =>
