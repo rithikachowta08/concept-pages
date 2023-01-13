@@ -5,6 +5,7 @@ import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
+import { Applet } from "concept-applet";
 
 const IFrame = styled.iframe`
    aspect-ratio: 1/1;
@@ -134,7 +135,8 @@ const AppletSlide = ({
                      alignItems="center"
                      justifyContent="center"
                   >
-                     <IFrame src={src} allowFullScreen frameBorder="0" />
+                     {/* <IFrame src={src} allowFullScreen frameBorder="0" /> */}
+                     <Applet></Applet>
                   </Flex>
                </ContentWrap>
                {downIcon}
@@ -162,7 +164,8 @@ const AppletSlide = ({
                            {title}
                         </SlideTitle>
                      </TitleWrap>
-                     <IFrame src={src} allowFullScreen frameBorder="0" />
+                     {/* <IFrame src={src} allowFullScreen frameBorder="0" /> */}
+                     <Applet></Applet>
                      {downIcon
                         ? React.cloneElement(downIcon, {
                              noMargin: true,
