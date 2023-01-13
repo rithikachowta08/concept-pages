@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { fontSizes } from "utils/fontStyles";
+import { fontSizes, fontWeights } from "utils/fontStyles";
 import { colors } from "utils/colors";
 import { PropTypes } from "prop-types";
 
@@ -9,7 +9,9 @@ const MathEqLine = styled.p`
    text-align: ${(props) => props.textAlign};
    max-width: ${(props) => props.maxWidth};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
-   font-weight: ${(props) => props.fontWeight || 400};
+   font-weight: ${(props) => props.fontWeight || 500};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    margin: ${(props) => props.margin};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};
