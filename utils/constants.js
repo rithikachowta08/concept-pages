@@ -1,5 +1,5 @@
 export const coco_applet_uri =
-  "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/";
+   "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/";
 export const assetURL = "https://search-static.byjusweb.com/assets";
 export const absolutePath = "https://byjus.com";
 export const redirect_uri = "https://byjus.com/question-answer/callback/";
