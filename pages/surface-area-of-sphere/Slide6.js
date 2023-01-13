@@ -28,11 +28,11 @@ const Slide6 = ({ downIcon }) => {
          title="General Formula"
       >
          <Pill /* color={colors.WHITE} */>
-            Surface area of a sphere = 4πr&sup2;
+            Surface area of a sphere = 4 &times; π &times; r&sup2;
          </Pill>
          <Paragraph color={colors.WHITE}>
             The surface area of a sphere with radius r is directly proportional
-            to r&sup2;, where 4π is the constant of proportionality.
+            to r&sup2;, where 4 &times; π is the constant of proportionality.
          </Paragraph>
       </TextAndDiagramSlide>
    );
