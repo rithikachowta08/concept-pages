@@ -85,7 +85,7 @@ const Slide2 = ({ downIcon }) => {
             </TextSpanBg>
             &nbsp;of a&nbsp;
             <ModalTriggerText onClick={onClick}>circle</ModalTriggerText>
-            &nbsp;is the measure of the length of its boundary
+            &nbsp;is the measure of the length of its boundary.
          </Paragraph>
       </TextAndDiagramSlide>
    );

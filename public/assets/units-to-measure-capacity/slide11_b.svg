@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BG" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        stroke-width: 3px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke: #cd6b6b;
+        stroke-linejoin: round;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: #cd6b6b;
+      }
+
+      .cls-4 {
+        stroke-width: 5px;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: .02em;
+      }
+
+      .cls-6 {
+        font-family: Nunito-Medium, Nunito;
+      }
+
+      .cls-6, .cls-7 {
+        font-size: 24px;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-16 {
+        letter-spacing: .01em;
+      }
+
+      .cls-17 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        font-family: Raleway-Medium, Raleway;
+      }
+    </style>
+  </defs>
+  <path class="cls-4" d="M26.7,160.22H99.07v31.38h73.09v34.15h72.37v30.13h72.37v30.33h73.09v33.35h71.65v29.23h71.65v30.64"/>
+  <g>
+    <line class="cls-3" x1="238.95" y1="132.37" x2="410.99" y2="201.6"/>
+    <polygon class="cls-5" points="238.49 137.02 232.96 129.96 241.84 128.69 238.49 137.02"/>
+  </g>
+  <g>
+    <line class="cls-3" x1="343.27" y1="331.21" x2="171.23" y2="261.98"/>
+    <polygon class="cls-5" points="343.73 326.56 349.26 333.62 340.38 334.88 343.73 326.56"/>
+  </g>
+  <text class="cls-6" transform="translate(218.68 101.18)"><tspan x="0" y="0">M</tspan><tspan class="cls-13" x="20.59" y="0">ov</tspan><tspan x="46.08" y="0">e </tspan><tspan class="cls-2" x="65.16" y="0">t</tspan><tspan class="cls-9" x="73.94" y="0">he demi</tspan><tspan class="cls-8" x="160.01" y="0">c</tspan><tspan x="171.07" y="0">al </tspan><tspan class="cls-17" x="197.35" y="0">t</tspan><tspan x="205.82" y="0">o </tspan><tspan class="cls-2" x="225.52" y="0">t</tspan><tspan class="cls-9" x="234.31" y="0">he </tspan><tspan class="cls-17" x="267.12" y="0">l</tspan><tspan class="cls-12" x="274.22" y="0">e</tspan><tspan class="cls-14" x="287.01" y="0">f</tspan><tspan class="cls-11" x="294.57" y="0">t</tspan><tspan x="303.52" y="0">.</tspan></text>
+  <text class="cls-7" transform="translate(31.1 149.61)"><tspan x="0" y="0">Kilo-</tspan></text>
+  <text class="cls-6" transform="translate(106.8 181.8)"><tspan x="0" y="0">he</tspan><tspan class="cls-1" x="26.54" y="0">c</tspan><tspan class="cls-10" x="37.73" y="0">t</tspan><tspan class="cls-11" x="46.2" y="0">o</tspan><tspan x="60" y="0">-</tspan></text>
+  <text class="cls-6" transform="translate(184.22 213.19)"><tspan x="0" y="0">de</tspan><tspan class="cls-17" x="26.9" y="0">k</tspan><tspan x="38.98" y="0">a-</tspan></text>
+  <text class="cls-6" transform="translate(328.39 269.83)"><tspan x="0" y="0">deci-</tspan></text>
+  <text class="cls-6" transform="translate(401.17 309.36)"><tspan class="cls-15" x="0" y="0">c</tspan><tspan x="10.92" y="0">en</tspan><tspan class="cls-2" x="37.46" y="0">t</tspan><tspan x="46.25" y="0">i-</tspan></text>
+  <text class="cls-6" transform="translate(475.75 336.63)"><tspan x="0" y="0">milli-</tspan></text>
+  <text class="cls-6" transform="translate(260.24 222.25)"><tspan x="0" y="0">Base</tspan><tspan x="0" y="22">Unit</tspan></text>
+  <text class="cls-6" transform="translate(31.81 369.16)"><tspan x="0" y="0">M</tspan><tspan class="cls-13" x="20.59" y="0">ov</tspan><tspan x="46.08" y="0">e </tspan><tspan class="cls-2" x="65.16" y="0">t</tspan><tspan class="cls-9" x="73.94" y="0">he demi</tspan><tspan class="cls-8" x="160.01" y="0">c</tspan><tspan x="171.07" y="0">al </tspan><tspan class="cls-17" x="197.35" y="0">t</tspan><tspan x="205.82" y="0">o </tspan><tspan class="cls-2" x="225.52" y="0">t</tspan><tspan class="cls-9" x="234.31" y="0">he righ</tspan><tspan class="cls-16" x="309.45" y="0">t</tspan><tspan x="318.4" y="0">.</tspan></text>
+</svg>

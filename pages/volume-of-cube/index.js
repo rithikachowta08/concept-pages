@@ -21,6 +21,8 @@ const Slide14 = dynamic(() => import("./Slide14"));
 const Slide15 = dynamic(() => import("./Slide15"));
 const Slide16 = dynamic(() => import("./Slide16"));
 const Slide17 = dynamic(() => import("./Slide17"));
+import PageLastSlide from "components/slides/PageLastSlide";
+
 
 const VolumeOfCube = ({}) => {
    const SlideArray = [
@@ -41,10 +43,16 @@ const VolumeOfCube = ({}) => {
       <Slide15 key={13} />,
       <Slide16 key={14} />,
       <Slide17 key={15} />,
+      <PageLastSlide
+      key={16}
+      currentPageTitle={"Volume of Cube"}
+      nextPageTitle="Area of Triangle"
+      nextPageLink="/us/math/study/area-of-a-triangle"
+    />,
    ];
 
    const navigationSections = [
-      { title: "What is the volume of a cube?", slides: [1, 2, 3, 4] },
+      { title: "What is the volume of a cube?", slides: [ 1,2, 3, 4] },
       { title: "General Formula", slides: [5, 6, 7, 8] },
       {
          title: "Volume of a cube using diagonal",
@@ -56,7 +64,7 @@ const VolumeOfCube = ({}) => {
       },
    ];
 
-   const darkBgIndices = [0, 4, 5, 9, 15];
+   const darkBgIndices = [0, 4, 5, 9, 15,16];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

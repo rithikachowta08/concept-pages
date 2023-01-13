@@ -13,7 +13,7 @@ import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 
-const area_triangle_snt = "assets/area-of-triangle/area_triangle_s&t.svg";
+const area_triangle_snt = "assets/area-of-triangle/area_triangle_sna_1.svg";
 const area_triangle_snt_2 = "assets/area-of-triangle/area_triangle_sna_2.svg";
 const area_triangle_snt_3 = "assets/area-of-triangle/area_triangle_sna_3.svg";
 const area_triangle_snt_4 = "assets/area-of-triangle/area_triangle_sna_4.svg";
@@ -91,8 +91,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               bc SinA
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times b\\times c\\times Sin\\ A"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
@@ -104,8 +105,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ca SinB
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times c\\times a\\times Sin\\ B"}
+               />
             </TextSpanBg>{" "}
             ={" "}
             <TextSpanBg
@@ -117,8 +119,9 @@ const Slide19 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               <MathElement htmlString={"\\frac{1}{2}"} />
-               ab SinC
+               <MathElement
+                  htmlString={"\\frac{1}{2}\\times a\\times b\\times Sin\\ C"}
+               />
             </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>

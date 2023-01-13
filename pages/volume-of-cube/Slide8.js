@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const cube_red = "assets/volume-of-cube/slide8/1.svg";
+const cube_red = "assets/volume-of-cube/slide8_a.svg";
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
@@ -38,7 +38,7 @@ const Slide8 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["(7cm)^3"],
+            value: ["(7\\:in)^3"],
             type: "latex",
          },
          rhsHint: {
@@ -52,7 +52,7 @@ const Slide8 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["7cm \\times 7cm \\times 7cm"],
+            value: ["7\\:in \\times 7\\:in \\times 7\\:in"],
             type: "latex",
          },
          rhsHint: {
@@ -66,7 +66,7 @@ const Slide8 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["343cm^3"],
+            value: ["343\\: cu\\:in"],
             type: "latex",
          },
          rhsHint: {
@@ -86,7 +86,7 @@ const Slide8 = ({ downIcon }) => {
          diagram={<StyledImg src={cube_red} alt="A cube with side length equal to 7 centimetres." />}
       >
          <Paragraph>
-            What is the volume of a cube of side length 7 cm?
+            What is the volume of a cube of side length 7 in?
          </Paragraph>
          <Paragraph>
             <TextLine>Solution:</TextLine>
