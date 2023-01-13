@@ -23,9 +23,9 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const square_1 = "assets/area-of-square/slide10_1.svg";
-const square_2 = "assets/area-of-square/slide10_2.svg";
-const square_3 = "assets/area-of-square/slide10_3.svg";
+const square_1 = "assets/area-of-square/slide10_a.svg";
+const square_2 = "assets/area-of-square/slide10_b.svg";
+const square_3 = "assets/area-of-square/slide10_c.svg";
 
 const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);

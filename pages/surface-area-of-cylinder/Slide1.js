@@ -1,18 +1,18 @@
 import { PropTypes } from "prop-types";
 import dynamic from "next/dynamic";
 const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
+
+
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
       <TitleSlide
-         title="Surface Area of Sphere"
+         title="Surface Area of a Cylinder"
          contentListItems={[
-            "What is the surface area of a sphere?",
-            "General Formula",
-            <div key={3}>
-               Why is the surface area 4 &times; π &times; r&sup2;
-            </div>,
+            "What is the surface area of a cylinder?",
+            "Curved surface area",
+            "Total surface area",
          ]}
-         anchorIdxes={[2, 6, 7]}
+         anchorIdxes={[2, 4, 6]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

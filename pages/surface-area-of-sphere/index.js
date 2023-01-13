@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -25,6 +26,12 @@ const SurfaceAreaOfSphere = () => {
       <Slide7 key={6} />,
       <Slide8 key={7} />,
       <Slide9 key={8} />,
+      <PageLastSlide
+         key={9}
+         currentPageTitle={"Surface Area of Sphere"}
+         nextPageTitle="Surface Area of Cube"
+         nextPageLink="/us/math/study/surface-area-of-sphere"
+      />,
    ];
 
    const navigationSections = [
@@ -34,12 +41,12 @@ const SurfaceAreaOfSphere = () => {
       },
       { title: "General Formula", slides: [5] },
       {
-         title: <div>Why is the surface area 4πr&sup2;</div>,
+         title: <div>Why is the surface area 4 &times; π &times; r&sup2;</div>,
          slides: [6, 7, 8],
       },
    ];
 
-   const darkBgIndices = [0, 5, 6, 8];
+   const darkBgIndices = [0, 5, 6, 8, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
