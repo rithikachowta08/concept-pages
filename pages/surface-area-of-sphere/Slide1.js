@@ -12,7 +12,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
                Why is the surface area 4 &times; π &times; r&sup2;
             </div>,
          ]}
-         anchorIdxes={[2, 6, 7]}
+         anchorIdxes={[2, 5, 6]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
