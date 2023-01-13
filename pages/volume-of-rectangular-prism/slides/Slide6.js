@@ -1,4 +1,5 @@
-import { Paragraph } from "components/text";
+import MathElement from "components/MathElement";
+import { Paragraph, TextSpanBg } from "components/text";
 import dynamic from "next/dynamic";
 import { colors } from "utils/colors";
 
@@ -34,7 +35,12 @@ const Slide6 = ({ downIcon, navBar }) => {
             inside the rectangular prism.
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            Volume = Length (l) × Width (w) × Height (h)
+            <TextSpanBg>Volume</TextSpanBg> ={" "}
+            <TextSpanBg>Length (l)</TextSpanBg>{" "}
+            <MathElement htmlString={"\\times"} />{" "}
+            <TextSpanBg>Width (w)</TextSpanBg>{" "}
+            <MathElement htmlString={"\\times"} />{" "}
+            <TextSpanBg>Height (h)</TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
    );

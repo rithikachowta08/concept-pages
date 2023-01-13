@@ -1,4 +1,5 @@
-import { Paragraph } from "components/text";
+import EquationTable from "components/MathElement/EquationTable";
+import { Paragraph, TextSpan } from "components/text";
 import dynamic from "next/dynamic";
 
 const TextAndDiagramSlide = dynamic(() =>
@@ -26,9 +27,63 @@ const Slide7 = ({ downIcon, navBar }) => {
          //    />
          // }
       >
-         <Paragraph>Length = 8 cm Width = 5 cm Height = 5 cm</Paragraph>
          <Paragraph>
-            Volume = Length × Width × Height = 8 cm × 5 cm × 5 cm = 200 cm3
+            <TextSpan>Length = 8 cm</TextSpan>
+            <br />
+            <TextSpan>Width = 5 cm</TextSpan>
+            <br />
+            <TextSpan>Height = 5 cm</TextSpan>
+         </Paragraph>
+         <Paragraph>
+            <EquationTable
+               align="middle"
+               equationLatex={[
+                  {
+                     lhsLatex: {
+                        value: ["\\text{Volume}\\ "],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: [
+                           "\\ \\htmlId{1}{\\htmlClass{textSpanBg aosoc-slide-6}{Length}}\\times \\htmlId{2}{\\htmlClass{textSpanBg aosoc-slide-6}{Width}}\\times \\htmlId{3}{\\htmlClass{textSpanBg aosoc-slide-6}{Height}}",
+                        ],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\ 8\\ in\\times 5\\ in\\times 5\\ in"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+                  {
+                     lhsLatex: {
+                        value: [""],
+                        type: "latex",
+                     },
+                     rhsLatex: {
+                        value: ["\\ 200\\ cu\\ in"],
+                        type: "latex",
+                     },
+                     rhsHint: {
+                        value: [""],
+                        type: "text",
+                     },
+                  },
+               ]}
+            />
          </Paragraph>
       </TextAndDiagramSlide>
    );

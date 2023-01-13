@@ -1,4 +1,5 @@
-import { Paragraph } from "components/text";
+import MathElement from "components/MathElement";
+import { Paragraph, TextSpanBg } from "components/text";
 import dynamic from "next/dynamic";
 import { colors } from "utils/colors";
 
@@ -12,7 +13,7 @@ const TextAndDiagramSlide = dynamic(() =>
 const Slide11 = ({ downIcon, navBar }) => {
    return (
       <TextAndDiagramSlide
-         bg="DARK"
+         bg="LIGHT"
          title={"Volume"}
          secondaryTitle={"Oblique Rectangular Prism"}
          navBar={navBar}
@@ -28,13 +29,22 @@ const Slide11 = ({ downIcon, navBar }) => {
          //    />
          // }
       >
-         <Paragraph color={colors.WHITE}>
+         <Paragraph>
             The volume of an oblique rectangular prism can be found by
             multiplying the length, width, and height of the prism from the
             base.
          </Paragraph>
-         <Paragraph color={colors.WHITE}>
-            Volume = Length (l) × Width (w) × Height (h)
+         <Paragraph>
+            <TextSpanBg hoverColor={colors.DARK_LAVENDER}>Volume</TextSpanBg> ={" "}
+            <TextSpanBg hoverColor={colors.DARK_LAVENDER}>
+               Length (l)
+            </TextSpanBg>{" "}
+            <MathElement htmlString={"\\times"} />{" "}
+            <TextSpanBg hoverColor={colors.DARK_LAVENDER}>Width (w)</TextSpanBg>{" "}
+            <MathElement htmlString={"\\times"} />{" "}
+            <TextSpanBg hoverColor={colors.DARK_LAVENDER}>
+               Height (h)
+            </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
    );

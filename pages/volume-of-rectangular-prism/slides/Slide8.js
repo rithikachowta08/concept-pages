@@ -1,6 +1,7 @@
 import { Paragraph } from "components/text";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { colors } from "utils/colors";
 
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -14,7 +15,7 @@ const Slide8 = ({ downIcon }) => {
 
    return (
       <MultipleDiagramSlide
-         bg="LIGHT"
+         bg="DARK"
          title="Types of Rectangular Prisms"
          secondaryTitle="Rectangular Prism"
          downIcon={downIcon}
@@ -49,7 +50,9 @@ const Slide8 = ({ downIcon }) => {
             },
          ]}
       >
-         <Paragraph>There are two types of rectangular prisms:</Paragraph>
+         <Paragraph color={colors.WHITE}>
+            There are two types of rectangular prisms:
+         </Paragraph>
       </MultipleDiagramSlide>
    );
 };
