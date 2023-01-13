@@ -6,7 +6,7 @@ const TextAndDiagramSlide = dynamic(() =>
 import { StyledImg } from "components/StyledElements";
 import { Paragraph } from "components/text";
 
-const image_1 = "assets/area-of-sector-of-a-circle/18.svg";
+const image_1 = "assets/area-of-sector-of-a-circle/18_2.svg";
 
 const Slide6 = ({ navBar, downIcon }) => {
    return (
