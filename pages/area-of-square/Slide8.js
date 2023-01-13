@@ -22,9 +22,9 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const square_1 = "assets/area-of-square/slide8_1.svg";
-const square_2 = "assets/area-of-square/slide8_2.svg";
-const square_3 = "assets/area-of-square/slide8_3.svg";
+const square_1 = "assets/area-of-square/slide8_a.svg";
+const square_2 = "assets/area-of-square/slide8_b.svg";
+const square_3 = "assets/area-of-square/slide8_c.svg";
 
 
 const Slide8 = ({ downIcon }) => {

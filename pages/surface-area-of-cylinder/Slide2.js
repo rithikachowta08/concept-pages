@@ -15,9 +15,10 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
-const square_1 = "assets/area-of-square/slide2_a.svg";
-const square_2 = "assets/area-of-square/slide2_b.svg";
-const square_3= "assets/area-of-square/slide2_c.svg";
+const cylinder_1 = "assets/surface-area-of-cylinder/slide2_a.svg";
+const cylinder_2 = "assets/surface-area-of-cylinder/slide2_b.svg";
+const cylinder_3= "assets/surface-area-of-cylinder/slide2_c.svg";
+const cylinder_4= "assets/surface-area-of-cylinder/slide2_d.svg";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -30,14 +31,15 @@ const Slide2 = ({ downIcon }) => {
 
    return (
       <TextAndDiagramSlide
-         title="What is a square?"
+         title="What is a Cylinder?"
          diagram={
             <TransitionImage
-               images={[square_1, square_2, square_3]}
+               images={[cylinder_1,cylinder_2,cylinder_3,cylinder_4]}
                altTexts={[
-                  "Diagram of a square",
-                  "Diagram of a square with equal sides highlighted",
-                  "Diagram of a square with 90 degree internal angles highlighted",
+                  "Diagram of a cylinder",
+                  "Diagram of a cylinder with highlighted bases",
+                  "Diagram of a cylinder with highlighted radius",
+                  "Diagram of a cylinder with highlighted height"
                ]}
                activeIndex={activeIndex}
             />
@@ -45,25 +47,34 @@ const Slide2 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            A square is a four sided polygon in which all the {" "}
+         A cylinder is a three-dimensional shape that has two parallel {" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               sides
+               circular bases
             </TextSpanBg>
-           {" "} are equal in length and all the {" "}
+           {" "} of {" "}
             <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               internal angles
+               radius (r)
             </TextSpanBg>{" "}
-           are equal to 90 degrees.
+            joined by a curved surface. The bases are separated by a
+            <TextSpanBg
+               id={3}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               perpendicular distance (h)
+            </TextSpanBg>{"."}
+            
          </Paragraph>
       </TextAndDiagramSlide>
    );

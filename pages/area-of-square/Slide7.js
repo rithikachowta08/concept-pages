@@ -37,9 +37,9 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
-const square_1 = "assets/area-of-square/slide7_1.svg";
-const square_2 = "assets/area-of-square/slide7_2.svg";
-const square_3 = "assets/area-of-square/slide7_3.svg";
+const square_1 = "assets/area-of-square/slide7_a.svg";
+const square_2 = "assets/area-of-square/slide7_b.svg";
+const square_3 = "assets/area-of-square/slide7_c.svg";
 
 
 const Slide7 = ({ downIcon }) => {
