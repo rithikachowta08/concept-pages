@@ -11,23 +11,9 @@ export default class MyDocument extends Document {
             <Head>
                <link
                   rel="preload"
-                  href="fonts/Nunito-Bold.ttf"
+                  href="fonts/Nunito-Bold.woff2"
                   as="font"
-                  type="font/ttf"
-                  crossOrigin=""
-               />
-               <link
-                  rel="preload"
-                  href="fonts/Nunito-Medium.ttf"
-                  as="font"
-                  type="font/ttf"
-                  crossOrigin=""
-               />
-               <link
-                  rel="preload"
-                  href="fonts/Nunito-Regular.ttf"
-                  as="font"
-                  type="font/ttf"
+                  type="font/woff2"
                   crossOrigin=""
                />
                <link rel="preload" as="image" href="assets/white_bg.webp" />

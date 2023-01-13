@@ -31,11 +31,11 @@
    font-style: normal;
    font-weight: 700;
    font-display: swap;
-   src: url("Nunito-Bold.ttf"); /* IE9 Compat Modes */
+   src: url("Nunito-Bold.woff2"); /* IE9 Compat Modes */
    src: local("Nunito"),
-      url("Nunito-Bold.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-Bold.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-Bold.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-Bold.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-Bold.ttf#Nunito") format("svg"); /* Legacy iOS */
+      url("Nunito-Bold.woff2?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */ url("Nunito-Bold.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("Nunito-Bold.woff2") format("woff"),
+      /* Modern Browsers */ url("Nunito-Bold.woff2") format("truetype"),
+      /* Safari, Android, iOS */ url("Nunito-Bold.woff2#Nunito") format("svg"); /* Legacy iOS */
 }
