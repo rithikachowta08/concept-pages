@@ -9,11 +9,11 @@ const Slide9 = ({ downIcon, currentPageIdx }) => {
       <VideoSlide2
         videoContent={{
           dash_Url:
-            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-188632ba/ro0jfw/20230105_124345_SEOD18INTL08MAT11KT015/dash/h264.mpd",
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-6025e0e0/robhcu/INTL_Maths/230111/SEO18INTL06MAT10KT010/dash/h264.mpd",
           hls_Url:
-            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-188632ba/ro0jfw/20230105_124345_SEOD18INTL08MAT11KT015/hls/h264.m3u8",
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-6025e0e0/robhcu/INTL_Maths/230111/SEO18INTL06MAT10KT010/hls/h264.m3u8",
           thumbnail:
-            "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803338.jpg?1671775717",
+            "https://drive.google.com/file/d/1GUZLdLWsgyi7Y7iJw_UaBNfEOON7NeEY/view?usp=share_link",
         }}
         videoSlideId="s9-video-slide"
         downIconId="s9-down-arrow-icon"
