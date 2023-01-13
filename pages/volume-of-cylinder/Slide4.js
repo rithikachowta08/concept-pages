@@ -17,8 +17,9 @@ const Pill = dynamic(() => import("components/Pill"));
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
-const plain = "assets/volume-of-cylinder/plain.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_4_a = "assets/volume-of-cylinder/slide 4_a.svg";
+const slide_4_b = "assets/volume-of-cylinder/slide 4_b.svg";
+const slide_4_c = "assets/volume-of-cylinder/slide 4_c.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide4 = ({ downIcon }) => {
@@ -54,7 +55,7 @@ const Slide4 = ({ downIcon }) => {
          secondaryTitle="Volume of a Cylinder"
          diagram={
             <TransitionImage
-               images={[plain, bases, bases]}
+               images={[slide_4_a, slide_4_b, slide_4_c]}
                altTexts={[
                   "Diagram of a cylinder",
                   "Diagram of a cylinder highlighting circular bases",

@@ -24,9 +24,10 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_13_a = "assets/volume-of-cylinder/slide 13_a.svg";
+const slide_13_b = "assets/volume-of-cylinder/slide 13_b.svg";
+const slide_13_c = "assets/volume-of-cylinder/slide 13_c.svg";
+const slide_13_d = "assets/volume-of-cylinder/slide 13_d.svg";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
@@ -39,7 +40,7 @@ const Slide12 = ({ downIcon }) => {
             space between the inner and outer cylinders filled.
          </Paragraph>
          <ModalImg
-            src={plain}
+            src={slide_13_a}
             alt="Diagram of a right circular hollow cylinder"
          />
       </Flex>
@@ -69,7 +70,7 @@ const Slide12 = ({ downIcon }) => {
          secondaryTitle="Volume of Different Types of Cylinders"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_13_a, slide_13_b, slide_13_c, slide_13_d]}
                altTexts={[
                   "Diagram of a right circular hollow cylinder",
                   "Diagram of a right circular hollow cylinder with highlighted outer radius",

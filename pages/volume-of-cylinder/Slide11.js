@@ -22,9 +22,11 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_12_a = "assets/volume-of-cylinder/slide 12_a.svg";
+const slide_12_b = "assets/volume-of-cylinder/slide 12_b.svg";
+const slide_12_c = "assets/volume-of-cylinder/slide 12_c.svg";
+const slide_12_d = "assets/volume-of-cylinder/slide 12_d.svg";
+const slide_12_pop_up = "assets/volume-of-cylinder/slide 12_pop up.svg";
 import { addTransitionToKatex } from "utils/domutils";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
@@ -40,7 +42,7 @@ const Slide11 = ({ downIcon }) => {
             The area of an ellipse &pi; &times; a &times; b sq units, where ‘a’
             is the semiminor axis and ‘b’ is the semimajor axis.
          </Paragraph>
-         <ModalImg src={plain} alt="Diagram of a ellipse" />
+         <ModalImg src={slide_12_pop_up} alt="Diagram of a ellipse" />
       </Flex>
    );
    let EquationLatex = [
@@ -80,7 +82,7 @@ const Slide11 = ({ downIcon }) => {
          secondaryTitle="Volume of Different Types of Cylinders"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_12_a, slide_12_b, slide_12_c, slide_12_d]}
                altTexts={[
                   "Diagram of a elliptic cylinder",
                   "Diagram of a elliptic cylinder representing its volume",

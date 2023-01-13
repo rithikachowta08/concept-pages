@@ -14,9 +14,10 @@ const MultiLhsEquationContainer = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_14_a = "assets/volume-of-cylinder/slide 14_a.svg";
+const slide_14_b = "assets/volume-of-cylinder/slide 14_b.svg";
+const slide_14_c = "assets/volume-of-cylinder/slide 14_c.svg";
+const slide_14_d = "assets/volume-of-cylinder/slide 14_d.svg";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -55,7 +56,7 @@ const Slide13 = ({ downIcon }) => {
          secondaryTitle="Volume of Different Types of Cylinders"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_14_a, slide_14_b, slide_14_c, slide_14_d]}
                altTexts={[
                   "Diagram of a right circular hollow cylinder with inner radius 3 in, outer radius 5 in and height 10 in.",
                   "Diagram of a right circular hollow cylinder with inner radius 3 in highlighted",

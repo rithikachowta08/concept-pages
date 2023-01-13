@@ -13,9 +13,10 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_2_a = "assets/volume-of-cylinder/slide 2_a.svg";
+const slide_2_b = "assets/volume-of-cylinder/slide 2_b.svg";
+const slide_2_c = "assets/volume-of-cylinder/slide 2_c.svg";
+const slide_2_d = "assets/volume-of-cylinder/slide 2_d.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
@@ -31,7 +32,7 @@ const Slide2 = ({ downIcon }) => {
          title="What is a cylinder?"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_2_a, slide_2_b, slide_2_c, slide_2_d]}
                altTexts={[
                   "Diagram of a cylinder",
                   "Diagram of a cylinder highlighting circular bases",

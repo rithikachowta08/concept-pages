@@ -22,9 +22,11 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_10_a = "assets/volume-of-cylinder/slide 10_a.svg";
+const slide_10_b = "assets/volume-of-cylinder/slide 10_b.svg";
+const slide_10_c = "assets/volume-of-cylinder/slide 10_c.svg";
+const slide_10_d = "assets/volume-of-cylinder/slide 10_d.svg";
+const slide_10_pop_up = "assets/volume-of-cylinder/slide 10_pop up.svg";
 import { addTransitionToKatex } from "utils/domutils";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
@@ -37,7 +39,7 @@ const Slide9 = ({ downIcon }) => {
             A cylinder in which the sides are slanted (not perpendicular to its
             base) is called an oblique cylinder.
          </Paragraph>
-         <ModalImg src={plain} alt="Diagram of a oblique cylinder" />
+         <ModalImg src={slide_10_pop_up} alt="Diagram of a oblique cylinder" />
       </Flex>
    );
    let EquationLatex = [
@@ -77,7 +79,7 @@ const Slide9 = ({ downIcon }) => {
          secondaryTitle="Volume of Different Types of Cylinders"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_10_a, slide_10_b, slide_10_c, slide_10_d]}
                altTexts={[
                   "Diagram of a oblique cylinder",
                   "Diagram of a oblique cylinder representing its volume",

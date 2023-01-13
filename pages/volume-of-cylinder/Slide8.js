@@ -12,9 +12,10 @@ const Paragraph = dynamic(() =>
 const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
-const plain = "assets/volume-of-cylinder/plain.svg";
-const sides = "assets/volume-of-cylinder/sides.svg";
-const bases = "assets/volume-of-cylinder/bases.svg";
+const slide_9_a = "assets/volume-of-cylinder/slide 9_a.svg";
+const slide_9_b = "assets/volume-of-cylinder/slide 9_b.svg";
+const slide_9_c = "assets/volume-of-cylinder/slide 9_c.svg";
+const slide_9_d = "assets/volume-of-cylinder/slide 9_d.svg";
 import { addTransitionToKatex } from "utils/domutils";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 
@@ -55,7 +56,7 @@ const Slide8 = ({ downIcon }) => {
          secondaryTitle="Volume of Different Types of Cylinders"
          diagram={
             <TransitionImage
-               images={[plain, bases, sides, bases]}
+               images={[slide_9_a, slide_9_b, slide_9_c, slide_9_d]}
                altTexts={[
                   "Diagram of a right circular cylinder",
                   "Diagram of a right circular cylinder representing its volume",
