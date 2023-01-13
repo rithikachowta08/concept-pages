@@ -1,13 +1,20 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, LeftWrap } from "components/StyledElements";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
+
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import HyperLink from "components/text/HyperLink";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/equi_deri_1.svg";
@@ -35,19 +42,9 @@ const Slide17 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine>
-               Apply the{" "}
-               <HyperLink
-                  href={
-                     "https://byjus.com/us/math/pythagorean-theorem-formulas/"
-                  }
-                  color={colors.DARK_BLUE}
-               >
-                  Pythagoras Theorem
-               </HyperLink>{" "}
-               in the{" "}
+               Apply the Pythagoras Theorem in the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(1);
                   }}
@@ -99,7 +96,7 @@ const Slide17 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} (\\sqrt{3} a)"],
+                           value: ["\\dfrac{1}{2}\\times  (\\sqrt{3} a)"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -133,7 +130,7 @@ const Slide17 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2} \\sqrt{3}a",
+                              "\\dfrac{1}{2} \\times a \\times \\dfrac{1}{2}\\times  \\sqrt{3}a",
                            ],
                            type: "latex",
                         },
@@ -147,7 +144,7 @@ const Slide17 = ({ downIcon }) => {
             </Paragraph>
          </span>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an isosceles triangle =
                <MathElement htmlString={"\\dfrac{\\sqrt{3}}{4} \\times a^2"} />
             </Pill>

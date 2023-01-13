@@ -27,22 +27,33 @@ export const SlideWrap = styled.div`
    background-repeat: no-repeat;
    align-items: center;
 
-   &::before {
+   ${(props) =>
+      props.isLastSlide || props.hideFiller
+         ? ``
+         : `&::before {
       content: "D";
       margin: 1px 1px auto 1px;
       visibility: hidden;
       padding: 5px;
       background: #ddd;
-   }
+   }`}
 
    // Mobile landscape mode
    @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
       ${(props) =>
-         props.hideFillerForLandscapeMode
+         props.hideFiller ||
+         props.hideFillerForLandscapeMode ||
+         props.isLastSlide
             ? `&::before{
                display:none
                }
                padding-right: 0;
+               padding: 
+                  ${
+                     props.noVerticalPaddingInLandscapeMode
+                        ? "0 0 0 30px"
+                        : props.padding
+                  };
                `
             : `&::before {
          content: "D";
@@ -53,7 +64,7 @@ export const SlideWrap = styled.div`
       }`}
    }
 
-   @media only screen and (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       &::before {
          display: none;
       }
@@ -117,6 +128,7 @@ export const Flex = styled.div`
    padding: ${(props) => props.padding};
    color: ${(props) => props.color};
    background-color: ${(props) => props.bgColor};
+   border: ${(props) => props.border};
    border-radius: ${(props) => props.borderRadius};
    position: ${(props) => props.position};
    left: ${(props) => props.left};
@@ -222,7 +234,7 @@ export const PageWrap = styled.div`
 
 export const LeftAlignDiv = styled.div`
    align-self: flex-start;
-   width: 100%;
+   width: fit-content;
 `;
 
 export const Video = styled.video`

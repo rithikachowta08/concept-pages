@@ -1,8 +1,9 @@
-import React from "react";
+import dynamic from "next/dynamic";
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+const HyperLink = dynamic(() => import("components/text/HyperLink"));
 import { StyledImg } from "components/StyledElements";
-import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import HyperLink from "components/text/HyperLink";
-import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/slide_10_e.svg";
 const image_2 = "assets/area-of-triangle/slide_10_i.svg";
@@ -22,13 +23,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a scalene triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={"https://byjus.com/us/math/scalene-triangle/"}
-                  >
-                     Scalene Triangle
-                  </HyperLink>
-               ),
+               caption: "Scalene Triangle",
             },
             {
                diagram: (
@@ -37,15 +32,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a isosceles triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={
-                        "https://byjus.com/us/math/area-of-isosceles-triangle/"
-                     }
-                  >
-                     Isosceles Triangle
-                  </HyperLink>
-               ),
+               caption: "Isosceles Triangle",
             },
             {
                diagram: (
@@ -54,13 +41,7 @@ const Slide10 = ({ downIcon }) => {
                      alt="Diagram of a equilateral triangle"
                   />
                ),
-               caption: (
-                  <HyperLink
-                     href={"https://byjus.com/us/math/equilateral-triangle/"}
-                  >
-                     Equilateral Triangle
-                  </HyperLink>
-               ),
+               caption: "Equilateral Triangle",
             },
          ]}
          downIcon={downIcon}

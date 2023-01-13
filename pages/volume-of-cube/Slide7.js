@@ -1,87 +1,15 @@
-import TextAndAppletSlide from "components/slides/TextAndAppletSlide";
-import { Paragraph } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+import dynamic from "next/dynamic";
 
-const Slide7 = ({ downIcon, navBar }) => {
-   let EquationLatex0 = [
-      {
-         lhsLatex: {
-            value: ["Volume of cube"],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["(Area of base) x Height"],
-            type: "text",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["(Area of square sheet) x Height"],
-            type: "text",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["s^2 \\times s"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
-            value: ["s^3"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-   ];
-   let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0);
-   let latexEquationCounter = 0;
-
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
+const Slide7 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndAppletSlide
-         secondaryTitle="Volume of a Cube Formula"
-         title="Derivation"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
+      <AppletSlide
          downIcon={downIcon}
-      >
-         <Paragraph>
-            If we stack square sheets of side length ‘s’ one over the other, a
-            cube is formed.
-         </Paragraph>
-         <Paragraph>
-            <EquationTable
-               equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable>
-         </Paragraph>
-      </TextAndAppletSlide>
+         currentPageIdx={currentPageIdx}
+         title="Derivation"
+         secondaryTitle="Volume of a Cube formula"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Volumes-of-cube-derivation-v4/index.html"
+      ></AppletSlide>
    );
 };
 export default Slide7;

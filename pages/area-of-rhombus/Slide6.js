@@ -22,7 +22,7 @@ const rhombus_height = "assets/area-of-rhombus/slide6/3.svg";
 const Slide6 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -53,9 +53,9 @@ const Slide6 = ({ downIcon }) => {
         The area (A), of a rhombus is the product of its{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           base (b)
@@ -63,16 +63,16 @@ const Slide6 = ({ downIcon }) => {
         and{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           height (h)
-        </TextSpanBg>{" "}
+        </TextSpanBg>
         .
       </Paragraph>
-      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN}>
         Area of the rhombus = Base{" "}
         <MathElement htmlString={latex[mathjaxCounter++]} /> Perpendicular
         height

@@ -7,9 +7,9 @@ import { useEffect, useRef } from "react";
 const Flex = styled.div`
    display: flex;
    flex-direction: column;
-   padding: 0 0 0 10vw;
+   padding: 0 10vw;
 
-   @media (min-width: 200px) and (max-width: 820px) and (min-height: 500px) {
+   @media (orientation: portrait) {
       padding: 0 5vw;
    }
 `;

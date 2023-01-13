@@ -50,22 +50,15 @@ const Slide9 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph color="white">
-            The length of a{" "}
-            <TextSpanBg
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.AQUA}
-               fontWeight={700}
-               fontSize="2.2rem"
-            >
-               diagonal
+            The{" "}
+            <TextSpanBg onHover={onHover} onHoverOut={onHoverOut}>
+               length of the diagonal
             </TextSpanBg>{" "}
             can be calculated using the{" "}
-            <HyperLink href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse.">
+            {/* <HyperLink href="https://byjus.com/maths/pythagoras-theorem/#:~:text=Pythagoras%20theorem%20states%20that%20%E2%80%9CIn,named%20Perpendicular%2C%20Base%20and%20Hypotenuse.">
                Pythagorean
-            </HyperLink>{" "}
-            theorem.
+            </HyperLink>{" "} */}
+            Pythagorean theorem.
             <TextLine>
                <i>
                   {" "}

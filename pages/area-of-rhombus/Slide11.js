@@ -30,7 +30,7 @@ const Slide11 = ({ downIcon }) => {
     {
       lhsLatex: {
         value: [
-          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area}}}\\ of\\ the\\ rhombus`,
+          `\\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area\\ of\\ the\\ rhombus}}}`,
         ],
         type: "latex",
       },
@@ -51,7 +51,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["\\dfrac{1}{2} \\times 6 \\times 4 "],
+        value: ["\\dfrac{1}{2} \\times 6\\ ft \\times 4\\ ft "],
         type: "latex",
       },
       rhsHint: {
@@ -65,7 +65,7 @@ const Slide11 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["12 \\space ft^2 "],
+        value: ["12 \\space sq\\ ft "],
         type: "latex",
       },
       rhsHint: {
@@ -82,7 +82,7 @@ const Slide11 = ({ downIcon }) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -121,10 +121,10 @@ const Slide11 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Diagonal (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>
@@ -133,10 +133,10 @@ const Slide11 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           Diagonal (<MathElement htmlString={latex[mathjaxCounter++]} />)
         </TextSpanBg>

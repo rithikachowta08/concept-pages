@@ -1,11 +1,16 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex } from "components/StyledElements";
+import dynamic from "next/dynamic";
+
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/isos_ex_1.svg";
@@ -36,8 +41,7 @@ const Slide15 = ({ downIcon }) => {
          <Paragraph>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(1);
                   }}
@@ -45,14 +49,13 @@ const Slide15 = ({ downIcon }) => {
                      setActiveIndex(0);
                   }}
                >
-                  a
+                  Length of equal sides (a)
                </TextSpanBg>{" "}
-               = 5 cm
+               = 5 in
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => {
                      setActiveIndex(2);
                   }}
@@ -60,9 +63,9 @@ const Slide15 = ({ downIcon }) => {
                      setActiveIndex(0);
                   }}
                >
-                  b
+                  Length of the base (b)
                </TextSpanBg>{" "}
-               = 8 cm
+               = 8 in
             </TextLine>
          </Paragraph>
          <span>
@@ -75,22 +78,8 @@ const Slide15 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                     {
-                        lhsLatex: {
-                           value: [""],
-                           type: "latex",
-                        },
-                        rhsLatex: {
                            value: [
-                              "\\dfrac{1}{4}\\times 8 \\sqrt{4(5)^2 - (8)^2}",
+                              "\\dfrac{1}{4}\\times b\\times  \\sqrt{4\\times a^2 - b^2}",
                            ],
                            type: "latex",
                         },
@@ -105,7 +94,9 @@ const Slide15 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{4}\\times 8 \\sqrt{100 - 64}"],
+                           value: [
+                              "\\dfrac{1}{4}\\times 8\\times  \\sqrt{4\\times (5)^2 - (8)^2}",
+                           ],
                            type: "latex",
                         },
                         rhsHint: {
@@ -119,7 +110,23 @@ const Slide15 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{4}\\times 8 \\sqrt{36}"],
+                           value: [
+                              "\\dfrac{1}{4}\\times 8\\times  \\sqrt{100 - 64}",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{4}\\times 8\\times  \\sqrt{36}"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -147,7 +154,7 @@ const Slide15 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["12 \\ cm^2"],
+                           value: ["12 \\ sq\\ in"],
                            type: "latex",
                         },
                         rhsHint: {

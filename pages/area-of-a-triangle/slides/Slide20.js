@@ -1,10 +1,19 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const MathElement = dynamic(() => import("components/MathElement"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+
 import { Paragraph, TextLine, TextSpan, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/sidesAngles_deri_1.svg";
@@ -26,6 +35,7 @@ const Slide20 = ({ downIcon }) => {
                Derivation
             </p>
          }
+         downIcon={downIcon}
          bg={"LIGHT"}
          diagram={
             <TransitionImage
@@ -37,14 +47,11 @@ const Slide20 = ({ downIcon }) => {
                ]}
             />
          }
-         downIcon={downIcon}
-         isLastSlide
       >
          <Paragraph>
             Apply the &quot;Sine&quot; formula in the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -62,7 +69,7 @@ const Slide20 = ({ downIcon }) => {
                <MathElement htmlString={"Sin\\ A = \\dfrac{h}{b}"} />
             </TextLine>
             <TextLine>
-               <MathElement htmlString={"h = b.Sin \\ A"} />
+               <MathElement htmlString={"h = b\\times Sin\\ A"} />
             </TextLine>
          </Paragraph>
          <Paragraph>
@@ -95,7 +102,9 @@ const Slide20 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{1}{2}\\times c\\times b\\ Sin A"],
+                        value: [
+                           "\\dfrac{1}{2}\\times c\\times b\\times Sin\\ A",
+                        ],
                         type: "latex",
                      },
                   },
@@ -103,9 +112,13 @@ const Slide20 = ({ downIcon }) => {
             />
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area =
-               <MathElement htmlString={"\\dfrac{1}{2}\\ bc\\ Sin\\ A"} />
+               <MathElement
+                  htmlString={
+                     "\\dfrac{\\ 1}{2}\\times b\\times c\\times Sin\\ A"
+                  }
+               />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

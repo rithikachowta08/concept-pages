@@ -1,16 +1,18 @@
-import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
-import React from "react";
+import dynamic from "next/dynamic";
 
-import Slide1 from "./slides/Slide1";
-import Slide10 from "./slides/Slide10";
-import Slide2 from "./slides/Slide2";
-import Slide3 from "./slides/Slide3";
-import Slide4 from "./slides/Slide4";
-import Slide5 from "./slides/Slide5";
-import Slide6 from "./slides/Slide6";
-import Slide7 from "./slides/Slide7";
-import Slide8 from "./slides/Slide8";
-import Slide9 from "./slides/Slide9";
+import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
+import PageLastSlide from "components/slides/PageLastSlide";
+
+const Slide1 = dynamic(() => import("./slides/Slide1"));
+const Slide2 = dynamic(() => import("./slides/Slide2"));
+const Slide3 = dynamic(() => import("./slides/Slide3"));
+const Slide4 = dynamic(() => import("./slides/Slide4"));
+const Slide5 = dynamic(() => import("./slides/Slide5"));
+const Slide6 = dynamic(() => import("./slides/Slide6"));
+const Slide7 = dynamic(() => import("./slides/Slide7"));
+const Slide8 = dynamic(() => import("./slides/Slide8"));
+const Slide9 = dynamic(() => import("./slides/Slide9"));
+const Slide10 = dynamic(() => import("./slides/Slide10"));
 
 const AreaOfCircle = () => {
    const SlideArray = [
@@ -24,6 +26,12 @@ const AreaOfCircle = () => {
       <Slide8 key={7} />,
       <Slide9 key={8} />,
       <Slide10 key={9} />,
+      <PageLastSlide
+         key={10}
+         currentPageTitle={"Area of a Circle"}
+         nextPageTitle="Surface area of a Right Triangular Prism"
+         nextPageLink="/us/math/study/surface-area-of-right-triangular-prism"
+      />,
    ];
    const navigationSections = [
       { title: "What is the area of a circle?", slides: [1] },
@@ -35,7 +43,7 @@ const AreaOfCircle = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 5, 7];
+   const darkBgIndices = [0, 2, 5, 7, 9, 10, 11];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

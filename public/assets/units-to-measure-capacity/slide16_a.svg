@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BG" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: Nunito-Medium, Nunito;
+        font-size: 18px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #cd6b6b;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        opacity: .1;
+      }
+
+      .cls-5 {
+        stroke-width: 1.61px;
+      }
+
+      .cls-5, .cls-6 {
+        stroke-linejoin: round;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: none;
+        stroke: #cd6b6b;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: .03em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        stroke-width: 2px;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-14 {
+        letter-spacing: .01em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-17 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x="101.45" y="106.06" width="357.11" height="347.41"/>
+  <rect class="cls-5" x="101.45" y="107.06" width="357.11" height="346.34"/>
+  <line class="cls-6" x1="227.18" y1="106.06" x2="227.18" y2="453.94"/>
+  <line class="cls-6" x1="342.18" y1="106.06" x2="342.18" y2="453.94"/>
+  <line class="cls-5" x1="101.45" y1="190.35" x2="458.55" y2="190.35"/>
+  <line class="cls-5" x1="101.45" y1="231.35" x2="458.55" y2="231.35"/>
+  <line class="cls-5" x1="101.45" y1="293.35" x2="458.55" y2="293.35"/>
+  <line class="cls-5" x1="101.45" y1="327.35" x2="458.55" y2="327.35"/>
+  <line class="cls-5" x1="101.45" y1="359.35" x2="458.55" y2="359.35"/>
+  <line class="cls-5" x1="101.45" y1="389.35" x2="458.55" y2="389.35"/>
+  <text class="cls-2" transform="translate(132.34 145.54)"><tspan x="0" y="0">Units </tspan><tspan class="cls-8" x="47.55" y="0">o</tspan><tspan x="57.54" y="0">f</tspan><tspan x="-23.88" y="21">Measu</tspan><tspan class="cls-16" x="29.64" y="21">r</tspan><tspan x="36.08" y="21">ement</tspan></text>
+  <text class="cls-2" transform="translate(131.9 216.26)"><tspan x="0" y="0">1 oun</tspan><tspan class="cls-10" x="46.04" y="0">c</tspan><tspan class="cls-13" x="54.23" y="0">e</tspan></text>
+  <text class="cls-2" transform="translate(140.76 272.85)"><tspan x="0" y="0">1 cup</tspan></text>
+  <text class="cls-2" transform="translate(245.23 216.26)"><tspan x="0" y="0">1 fluid </tspan><tspan class="cls-11" x="56.73" y="0">o</tspan><tspan class="cls-1" x="66.69" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(361.04 217.02)"><tspan x="0" y="0">1 fluid </tspan><tspan class="cls-11" x="56.73" y="0">o</tspan><tspan class="cls-1" x="66.69" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(360.93 269.22)"><tspan x="0" y="0">8 fluid </tspan><tspan class="cls-11" x="56.73" y="0">o</tspan><tspan class="cls-1" x="66.69" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(142.49 315.61)"><tspan x="0" y="0">1 pint</tspan></text>
+  <text class="cls-2" transform="translate(239.03 315.61)"><tspan x="0" y="0">20 fluid </tspan><tspan class="cls-11" x="67.53" y="0">o</tspan><tspan class="cls-1" x="77.49" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(356.84 316.37)"><tspan x="0" y="0">16 fluid </tspan><tspan class="cls-11" x="67.53" y="0">o</tspan><tspan class="cls-1" x="77.49" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(135.25 348.93)"><tspan x="0" y="0">1 qua</tspan><tspan class="cls-9" x="45.83" y="0">r</tspan><tspan x="52.88" y="0">t</tspan></text>
+  <text class="cls-2" transform="translate(238.92 348.93)"><tspan x="0" y="0">40 fluid </tspan><tspan class="cls-11" x="67.53" y="0">o</tspan><tspan class="cls-1" x="77.49" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(355.73 349.68)"><tspan x="0" y="0">32 fluid </tspan><tspan class="cls-11" x="67.53" y="0">o</tspan><tspan class="cls-1" x="77.49" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(132.03 380.31)"><tspan x="0" y="0">1 gal</tspan><tspan class="cls-8" x="41.13" y="0">l</tspan><tspan x="46.46" y="0">on</tspan></text>
+  <text class="cls-2" transform="translate(157.33 419.35)"><tspan x="0" y="0">SI</tspan><tspan class="cls-17" x="-35.03" y="21">E</tspan><tspan class="cls-1" x="-24.55" y="21">qui</tspan><tspan class="cls-12" x=".45" y="21">v</tspan><tspan x="9.59" y="21">a</tspan><tspan class="cls-8" x="19.19" y="21">l</tspan><tspan x="24.52" y="21">ent</tspan></text>
+  <text class="cls-2" transform="translate(242.51 419.35)"><tspan x="0" y="0">1 fluid </tspan><tspan class="cls-11" x="56.73" y="0">o</tspan><tspan class="cls-1" x="66.69" y="0">z=</tspan><tspan x="4.21" y="21">28.41 mL</tspan></text>
+  <text class="cls-2" transform="translate(357.6 419.35)"><tspan x="0" y="0">1 fluid </tspan><tspan class="cls-11" x="56.73" y="0">o</tspan><tspan class="cls-1" x="66.69" y="0">z=</tspan><tspan x="4.21" y="21">29.57 mL</tspan></text>
+  <text class="cls-2" transform="translate(233.05 380.31)"><tspan x="0" y="0">160 fluid </tspan><tspan class="cls-16" x="78.33" y="0">o</tspan><tspan x="88.29" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(350.86 381.07)"><tspan x="0" y="0">128 fluid </tspan><tspan class="cls-16" x="78.33" y="0">o</tspan><tspan x="88.29" y="0">z.</tspan></text>
+  <text class="cls-2" transform="translate(251.82 145.54)"><tspan x="0" y="0">Imperial</tspan><tspan class="cls-11" x="3.02" y="21">S</tspan><tspan class="cls-10" x="14.02" y="21">y</tspan><tspan class="cls-4" x="23.15" y="21">st</tspan><tspan x="38.11" y="21">em</tspan></text>
+  <text class="cls-2" transform="translate(381.62 145.54)"><tspan class="cls-15" x="0" y="0">U</tspan><tspan class="cls-14" x="12.8" y="0">.</tspan><tspan class="cls-12" x="17.17" y="0">S</tspan><tspan class="cls-1" x="28.12" y="0">.</tspan><tspan class="cls-11" x="-13.94" y="21">S</tspan><tspan class="cls-10" x="-2.94" y="21">y</tspan><tspan class="cls-4" x="6.18" y="21">st</tspan><tspan x="21.14" y="21">em</tspan></text>
+  <line class="cls-7" x1="272.55" y1="262.35" x2="297.67" y2="262.35"/>
+</svg>

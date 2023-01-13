@@ -6,14 +6,15 @@ import { colors } from "utils/colors";
 
 const H1 = styled.h1`
    color: ${(props) => props.color || "white"};
-   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.H1)};
+   font-size: ${(props) =>
+      props.fontSize ? props.fontSize : fontSizes.PAGE_TITLE};
    margin: 0;
    margin-bottom: ${(props) => props.marginBottom || 0};
    text-align: ${(props) => props.textAlign};
 
    @media (min-width: 200px) and (max-width: 767px) {
       font-size: ${(props) =>
-         props.fontSize ? props.fontSize : fontSizes.SMALLSCREEN_H1};
+         props.fontSize ? props.fontSize : fontSizes.MOBILE_PAGE_TITLE};
    }
 `;
 
@@ -23,7 +24,8 @@ const H2 = styled.h2`
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
-   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.LARGE)};
+   font-size: ${(props) =>
+      props.fontSize ? props.fontSize : fontSizes.MEDIUM};
    margin: 0;
    text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
@@ -34,7 +36,8 @@ const H3 = styled.h3`
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
-   font-size: ${(props) => (props.fontSize ? props.fontSize : fontSizes.LARGE)};
+   font-size: ${(props) =>
+      props.fontSize ? props.fontSize : fontSizes.MEDIUM};
    margin: 0;
    text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
@@ -48,15 +51,14 @@ const Title = ({
    fontWeight,
    opacity,
    color,
-   small,
-   extraSmall,
+   level,
    textAlign,
 }) => {
    let HeadingElement = H1;
-   if (small) {
+   if (level === 2) {
       HeadingElement = H2;
    }
-   if (extraSmall) {
+   if (level === 3) {
       HeadingElement = H3;
    }
    return (

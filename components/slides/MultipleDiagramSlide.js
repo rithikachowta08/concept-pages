@@ -36,35 +36,41 @@ const MultipleDiagramSlide = ({
       }
    }, [bg, ref.current]);
    return (
-      <>
+      <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
             <SlideWrap
                bg={bg}
-               ref={ref}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
                isLastSlide={isLastSlide}
             >
-               {/* NavBar */}
-               <FillerNavBar mobileNavBarHeight={global.mobileNavBarHeight} />
+               {/* Navbar and title */}
+               <Flex direction="column" gap="2vh">
+                  <FillerNavBar
+                     mobileNavBarHeight={global.mobileNavBarHeight}
+                  />
+                  <div>
+                     <SlideSecondaryTitle
+                        bg={bg}
+                        marginBottom="10px"
+                        secondaryTitle={secondaryTitle}
+                        centerAlign
+                     />
+                     <SlideTitle bg={bg} centerAlign>
+                        {title}
+                     </SlideTitle>
+                  </div>
+               </Flex>
                {/* Body */}
                <Flex
                   direction="column"
                   padding="0 20px"
-                  justifyContent="space-between"
+                  justifyContent="space-evenly"
                   alignItems="center"
                   width="100%"
+                  flex="1"
                >
-                  <SlideSecondaryTitle
-                     bg={bg}
-                     secondaryTitle={secondaryTitle}
-                     centerAlign
-                  />
-                  <SlideTitle bg={bg} centerAlign>
-                     {title}
-                  </SlideTitle>
-                  {children}
                   <Flex
                      direction="row"
                      flexFlow={"wrap"}
@@ -86,13 +92,14 @@ const MultipleDiagramSlide = ({
                               }
                               fontWeight={400}
                               textAlign="center"
-                              fontSize={fontSizes.LARGE}
+                              fontSize={fontSizes.MEDIUM}
                            >
                               {image.caption}
                            </Paragraph>
                         </ImageWrap>
                      ))}
                   </Flex>
+                  {children}
                </Flex>
                {/* DownIcon */}
                {downIcon
@@ -101,16 +108,14 @@ const MultipleDiagramSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"}>
+            <SlideWrap bg={bg} isLastSlide={isLastSlide} padding={"20px 30px"}>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
                   width="100%"
                   maxHeight="80%"
                >
-                  <FillerNavBar
-                     desktopNavBarWidth={global.desktopNavBarWidth}
-                  />
+                  <FillerNavBar />
                   <Flex
                      direction="column"
                      justifyContent="space-between"
@@ -120,6 +125,7 @@ const MultipleDiagramSlide = ({
                      <div>
                         <SlideSecondaryTitle
                            bg={bg}
+                           marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                         />
                         <SlideTitle bg={bg}>{title}</SlideTitle>
@@ -156,7 +162,7 @@ const MultipleDiagramSlide = ({
                {downIcon}
             </SlideWrap>
          </DesktopComponent>
-      </>
+      </div>
    );
 };
 

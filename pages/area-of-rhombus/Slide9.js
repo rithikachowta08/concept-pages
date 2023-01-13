@@ -23,17 +23,17 @@ const rhombus_leftcross = "assets/area-of-rhombus/slide9/3.svg";
 const Slide11 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
 
   let latex = [];
-  latex.push(`\\scriptscriptstyle 1`);
-  latex.push(`\\scriptscriptstyle 2`);
+  // latex.push(`d{\\scriptscriptstyle{1}}`);
+  // latex.push(`d{\\scriptscriptstyle{2}}`);
   latex.push(
-    `= \\dfrac{1}{2}({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
+    `= \\dfrac{1}{2} \\times ({d\\scriptscriptstyle 1} \\times {d\\scriptscriptstyle 2})`
   );
   let mathjaxCounter = 0;
   return (
@@ -55,30 +55,37 @@ const Slide11 = ({ downIcon }) => {
       title="Using Diagonals"
     >
       <Paragraph color={colors.WHITE}>
-        The area (A), of a rhombus is half the product of its diagonals{" "}
+        The area (A), of a rhombus is equal to half the product of its diagonals{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           d
-          <MathElement htmlString={latex[mathjaxCounter++]} />
-        </TextSpanBg>{" "}
-        and{" "}
+          <sub>
+            <small>1</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+        </TextSpanBg>
+        &nbsp;and&nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
-          hoverColor={colors.AQUA}
+          hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
-          d<MathElement htmlString={latex[mathjaxCounter++]} />
-        </TextSpanBg>{" "}
+          d
+          <sub>
+            <small>2</small>
+          </sub>
+          {/* <MathElement htmlString={latex[mathjaxCounter++]} /> */}
+        </TextSpanBg>
         .
       </Paragraph>
-      <Pill  color={colors.WHITE}  bgColor={colors.GREEN}>
+      <Pill color={colors.WHITE} bgColor={colors.GREEN}>
         Area of the rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
       </Pill>
     </TextAndDiagramSlide>

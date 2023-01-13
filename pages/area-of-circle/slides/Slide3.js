@@ -1,11 +1,17 @@
-import Modal from "components/layout/Modal";
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import Pill from "components/Pill";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
+import dynamic from "next/dynamic";
+
+const Modal = dynamic(() => import("components/layout/Modal"));
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 import { Flex, ModalImg } from "components/StyledElements";
 import { ModalTriggerText, Paragraph, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-circle/slide_3.svg";
@@ -41,7 +47,7 @@ const Slide3 = ({ navBar, downIcon }) => {
       <TextAndDiagramSlide
          bg="DARK"
          title={"General Formula"}
-         secondaryTitle="Area of a circle"
+         secondaryTitle="Area of a Circle"
          navBar={navBar}
          downIcon={downIcon}
          diagram={
@@ -74,8 +80,7 @@ const Slide3 = ({ navBar, downIcon }) => {
             <MathElement htmlString={"(\\pi = \\dfrac{22}{7}"} /> or 3.14) and
             the square of the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -86,7 +91,8 @@ const Slide3 = ({ navBar, downIcon }) => {
          </Paragraph>
          <Paragraph>
             <Pill>
-               Area of a circle = <MathElement htmlString={"\\pi r^2"} />
+               Area of a circle ={" "}
+               <MathElement htmlString={"\\pi \\times r^2"} />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

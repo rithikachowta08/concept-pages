@@ -25,7 +25,7 @@ const Overlay = styled.div`
 // background: #3c3281;
 
 const bgMapping = {
-   LIGHT: "#ffffee",
+   LIGHT: "#ffffff",
    DARK: "#3c3281",
 };
 
@@ -45,7 +45,7 @@ const ModalBody = styled.div`
    box-sizing: border-box;
    transition: transform 0.5s;
 
-   @media only screen and (min-width: 200px) and (max-width: 767px) {
+   @media only screen and (min-width: 200px) and (max-width: 820px) {
       border-radius: 20px 20px 0px 0px;
       padding: 36px 20px;
       width: 100%;
@@ -55,7 +55,7 @@ const ModalBody = styled.div`
          props.isOpen ? "translateY(0px)" : "translateY(999px)"};
    }
 
-   @media only screen and (min-width: 767px) and (max-width: 1284px) {
+   @media only screen and (min-width: 821px) and (max-width: 1284px) {
       width: 50vw;
    }
 `;
@@ -67,6 +67,15 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
          onDismiss();
       }
    };
+   useEffect(() => {
+      if (isOpen) {
+         global.fullpage_api.setAllowScrolling(false);
+         global.fullpage_api.setKeyboardScrolling(false);
+      } else {
+         global.fullpage_api?.setAllowScrolling(true);
+         global.fullpage_api?.setKeyboardScrolling(true);
+      }
+   }, [isOpen]);
    return (
       <Overlay isOpen={isOpen} id="overlay" onClick={onClick}>
          <ModalBody isOpen={isOpen} bg={bg} color={color}>
@@ -80,7 +89,7 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                      fontWeight={fontWeights.BOLD}
                      fontSize={fontSizes.LARGE}
                      color={color || "white"}
-                     small
+                     level={2}
                   >
                      {title}
                   </Title>
@@ -102,6 +111,8 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
                   bottom="40px"
                   width="130px"
                   onClick={onDismiss}
+                  borderColor={color}
+                  color={color}
                >
                   Got it!
                </Button>

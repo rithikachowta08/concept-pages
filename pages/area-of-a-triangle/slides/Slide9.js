@@ -1,18 +1,14 @@
-import React from "react";
-import {
-   Flex,
-   LeftWrap,
-   SlideWrap,
-   StyledImg,
-} from "components/StyledElements";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+import { StyledImg } from "components/StyledElements";
 import { Paragraph, Title } from "components/text";
 import { colors } from "utils/colors";
-import Pill from "components/Pill";
 
 const area_triangle_heron = "assets/area-of-triangle/slide_7.svg";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { fontSizes, fontWeights } from "utils/fontStyles";
 
 // Heron's Formula
 const Slide9 = ({ downIcon }) => {
@@ -36,7 +32,11 @@ const Slide9 = ({ downIcon }) => {
          <Paragraph>
             <Pill>
                Area of a triangle ={" "}
-               <MathElement htmlString={"\\sqrt{s(s - a)(s - b)(s - c)}"} />{" "}
+               <MathElement
+                  htmlString={
+                     "\\sqrt{s\\times (s - a)\\times (s - b)\\times (s - c)}"
+                  }
+               />{" "}
             </Pill>
          </Paragraph>
          <span>

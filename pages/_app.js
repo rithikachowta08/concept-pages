@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
 import "styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
             />
          </Head>
          <Component {...pageProps} />
+         <ToastContainer />
       </>
    );
 }

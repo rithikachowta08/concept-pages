@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
-import { Paragraph, TextSpan, TextSpanBg, Title } from "components/text";
-import TransitionImage from "components/media/TransitionImage";
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
 
 const t_formula = "assets/area-of-triangle/slide_3_normal.svg";
 const t_base = "assets/area-of-triangle/slide_3_b.svg";
 const t_height = "assets/area-of-triangle/slide_3_p.svg";
-
-import Pill from "components/Pill";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
 
 // General Formula Slide
 const Slide4 = ({ downIcon }) => {
@@ -19,7 +23,7 @@ const Slide4 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          bg="DARK"
-         title={"General Formula"}
+         title={"General formula"}
          secondaryTitle={"Area of a Triangle"}
          downIcon={downIcon}
          diagram={
@@ -43,19 +47,17 @@ const Slide4 = ({ downIcon }) => {
                Area of the triangle ={" "}
                <MathElement htmlString={"\\dfrac{1}{2} \\times"} />{" "}
                <TextSpanBg
-                  color={colors.RED}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                >
                   Base
                </TextSpanBg>{" "}
                <MathElement htmlString={"\\times"} />{" "}
                <TextSpanBg
-                  color={colors.RED}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                >
                   Perpendicular height
                </TextSpanBg>

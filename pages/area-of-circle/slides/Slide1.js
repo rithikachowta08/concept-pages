@@ -1,5 +1,6 @@
-import TitleSlide from "components/slides/TitleSlide";
-import React from "react";
+import dynamic from "next/dynamic";
+
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 const Slide1 = ({ moveToSection, downIcon }) => {
    return (
@@ -8,7 +9,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
          anchorIdxes={[2, 3, 6, 8]}
          contentListItems={[
             "What is the area of a circle?",
-            "General Formula",
+            "General formula",
             "Area of a circle using the diameter",
             "Area of a circle using the circumference",
          ]}

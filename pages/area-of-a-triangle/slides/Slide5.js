@@ -1,16 +1,14 @@
-import MathElement from "components/MathElement";
-import TransitionImage from "components/media/TransitionImage";
-import MultipleDiagramSlide from "components/slides/MultipleDiagramSlide";
-import {
-   Paragraph,
-   TextLine,
-   TextSpan,
-   TextSpanBg,
-   Title,
-} from "components/text";
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+import { Paragraph, TextSpanBg } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const area_triangle_angles_1_1 = "assets/area-of-triangle/16.a.svg";
 const area_triangle_angles_2_1 = "assets/area-of-triangle/16.b.svg";
@@ -48,7 +46,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Acute Triangle",
+               caption: "Acute triangle",
             },
             {
                diagram: (
@@ -66,7 +64,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Right Triangle",
+               caption: "Right triangle",
             },
             {
                diagram: (
@@ -84,7 +82,7 @@ const Slide5 = ({ downIcon }) => {
                      ]}
                   />
                ),
-               caption: "Obtuse Triangle",
+               caption: "Obtuse triangle",
             },
          ]}
       >
@@ -100,8 +98,7 @@ const Slide5 = ({ downIcon }) => {
             <Paragraph textAlign={"center"} color={colors.BLACK}>
                Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
@@ -109,8 +106,7 @@ const Slide5 = ({ downIcon }) => {
                </TextSpanBg>
                <MathElement htmlString={"\\ \\times\\ "} />
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >

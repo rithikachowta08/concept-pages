@@ -10,7 +10,6 @@ const Flex = styled.div`
    display: flex;
    flex-direction: column;
    color: ${(props) => (props.color ? props.color : "white")};
-   font-size: ${fontSizes.H1};
    gap: 40px;
    @media (min-width: 200px) and (max-width: 767px) {
       gap: 10px;
@@ -23,9 +22,9 @@ const Flex = styled.div`
 
 const ListItem = styled.div`
    display: flex;
-   width:fit-content;
+   width: fit-content;
    align-items: center;
-   font-size: ${fontSizes.LARGE};
+   font-size: ${fontSizes.MEDIUM};
    gap: 10px;
    &:hover {
       color: ${colors.YELLOW};

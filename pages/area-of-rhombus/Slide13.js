@@ -64,7 +64,7 @@ const Slide13 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["a \\times h \\times \\sin \\theta "],
+        value: ["a \\times a \\times \\sin \\theta "],
         type: "latex",
       },
       rhsHint: {
@@ -81,7 +81,7 @@ const Slide13 = ({ downIcon }) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -89,7 +89,7 @@ const Slide13 = ({ downIcon }) => {
   let latex = [];
   latex.push(`\\sin \\theta = \\dfrac{h}{a}`);
   latex.push(`h = a \\times \\sin \\theta`);
-  latex.push(`= a^2 \\sin \\theta`);
+  latex.push(`= a^2 \\times \\sin \\theta`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
@@ -117,10 +117,10 @@ const Slide13 = ({ downIcon }) => {
         Apply the ‘sine’ formula in the{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
           triangle
         </TextSpanBg>
@@ -138,7 +138,7 @@ const Slide13 = ({ downIcon }) => {
         />
       </Paragraph>
       <Paragraph>
-        <Pill color={colors.WHITE} bgColor={colors.GREEN}>
+        <Pill color={colors.WHITE} bgColor={colors.GREEN} darkbg={false}>
           Area of a rhombus <MathElement htmlString={latex[mathjaxCounter++]} />
         </Pill>
       </Paragraph>

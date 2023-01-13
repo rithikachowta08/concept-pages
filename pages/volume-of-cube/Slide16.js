@@ -1,19 +1,30 @@
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import {
-   TextSpan,
-   Title,
-   Paragraph,
-   TextSpanBg,
-   TextLine,
-} from "components/text";
-// import inequality_slide from "assets/inequality_slide.svg";
-import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-const cube_red = "assets/volume-of-cube/slide16/1.svg";
-const cube_diagonal = "assets/volume-of-cube/slide16/2.svg";
-import EquationTable from "components/MathElement/EquationTable";
+import dynamic from "next/dynamic";
 
+// import inequality_slide from "assets/inequality_slide.svg";
+import { useState } from "react";
+import { colors } from "utils/colors";
+const cube_red = "assets/volume-of-cube/slide16_a.svg";
+const cube_diagonal = "assets/volume-of-cube/slide16_b.svg";
+
+
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const Slide16 = ({ navBar, downIcon }) => {
    let EquationLatex0 = [
       {
@@ -50,20 +61,6 @@ const Slide16 = ({ navBar, downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\sqrt{2}\\times \\dfrac{64}{4}"],
-            type: "latex",
-         },
-         rhsHint: {
-            value: [""],
-            type: "text",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "latex",
-         },
-         rhsLatex: {
             value: ["\\sqrt{2} \\times 16"],
             type: "latex",
          },
@@ -78,7 +75,7 @@ const Slide16 = ({ navBar, downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["16 \\sqrt{2}ft^3"],
+            value: ["16 \\sqrt{2} \\: cu \\: ft"],
             type: "latex",
          },
          rhsHint: {
@@ -107,7 +104,7 @@ const Slide16 = ({ navBar, downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
-               altTexts={["Diagram of a cube with face diagonal equal to 4 feet","Diagram of a cube with face diagonal highlighted and equal to 4 feet"]}
+               altTexts={["Diagram of a cube with face diagonal equal to 4 ft","Diagram of a cube with face diagonal highlighted and equal to 4 feet"]}
                activeIndex={activeIndex}
                bottomOffset="65px"
             />
@@ -121,12 +118,11 @@ const Slide16 = ({ navBar, downIcon }) => {
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
                diagonal of a face
             </TextSpanBg>{" "}
-            is 4 feet long.
+            is 4 ft long.
          </Paragraph>
 
          <Paragraph>

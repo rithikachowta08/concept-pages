@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+const MathElement = dynamic(() => import("components/MathElement"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
 
-import { LeftWrap } from "components/StyledElements";
-import { Paragraph, TextSpan, TextSpanBg } from "components/text";
+import { useState } from "react";
+import { Paragraph, TextSpanBg } from "components/text";
 import { colors } from "utils/colors";
-import Pill from "components/Pill";
-import TransitionImage from "components/media/TransitionImage";
+import dynamic from "next/dynamic";
 
 const image_1 = "assets/area-of-triangle/slide_12.svg";
 const image_2 = "assets/area-of-triangle/slide_12_2.svg";
 const image_3 = "assets/area-of-triangle/slide_12_3.svg";
-import MathElement from "components/MathElement";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { fontSizes } from "utils/fontStyles";
 
 // Isosceles triangle
 const Slide13 = ({ downIcon }) => {
@@ -38,8 +41,7 @@ const Slide13 = ({ downIcon }) => {
          <Paragraph>
             Given the length of the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -47,12 +49,11 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               base &quot;b&quot;
+               base (b)
             </TextSpanBg>{" "}
             and the{" "}
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(2);
                }}
@@ -60,14 +61,18 @@ const Slide13 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               equal sides &quot;a&quot;
+               equal sides (a)
             </TextSpanBg>{" "}
-            , its area can be calculated as:
+            of an isosceles triangle, its area can be calculated as:
          </Paragraph>
          <Paragraph>
-            <Pill>
+            <Pill darkbg={false}>
                Area of an isosceles triangle =
-               <MathElement htmlString={"\\dfrac{1}{4}b \\sqrt{4a^2 - b^2}"} />
+               <MathElement
+                  htmlString={
+                     "\\dfrac{\\ 1}{4}\\times b\\times \\sqrt{4\\times a^2 - b^2}"
+                  }
+               />
             </Pill>
          </Paragraph>
       </TextAndDiagramSlide>

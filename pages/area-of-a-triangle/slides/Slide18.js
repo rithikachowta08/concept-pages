@@ -1,11 +1,17 @@
-import MathElement from "components/MathElement";
-import EquationTable from "components/MathElement/EquationTable";
-import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
-import TransitionImage from "components/media/TransitionImage";
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { Flex, LeftWrap } from "components/StyledElements";
-import { Paragraph, TextLine, TextSpanBg } from "components/text";
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+
+import { Paragraph, TextSpanBg } from "components/text";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-triangle/equi_ex_1.svg";
@@ -33,8 +39,7 @@ const Slide18 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => {
                   setActiveIndex(1);
                }}
@@ -42,7 +47,7 @@ const Slide18 = ({ downIcon }) => {
                   setActiveIndex(0);
                }}
             >
-               a
+               Length of the equal sides (a)
             </TextSpanBg>{" "}
             = 4 in
          </Paragraph>
@@ -75,7 +80,7 @@ const Slide18 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{16 \\ \\sqrt{3}}{4}"],
+                        value: ["\\dfrac{16\\ \\sqrt{3}}{4}"],
                         type: "latex",
                      },
                   },
@@ -85,7 +90,7 @@ const Slide18 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["4 \\sqrt{3}\\ in^2"],
+                        value: ["4 \\sqrt{3}\\ sq\\ in"],
                         type: "latex",
                      },
                   },

@@ -21,7 +21,7 @@ const rhombus_lined = "assets/area-of-rhombus/slide5/2.svg";
 const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -46,14 +46,14 @@ const Slide5 = ({ downIcon }) => {
         The area of a rhombus is the &nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
-          hoverColor={colors.DARK_BLUE}
+          hoverColor={colors.DARK_LAVENDER}
         >
-          region bounded
+          region bounded by its four sides
         </TextSpanBg>
-        &nbsp;by its four sides in a two-dimensional space.&nbsp;
+        &nbsp;in a two-dimensional space.&nbsp;
       </Paragraph>
     </TextAndDiagramSlide>
   );

@@ -1,15 +1,29 @@
 import { useState } from "react";
-// import {c}
-import TextAndDiagramSlide from "components/slides/TextAndDiagramSlide";
-import { TextSpanBg, Paragraph } from "components/text";
-import Pill from "components/Pill";
-const cube_red = "assets/volume-of-cube/slide6/1.svg";
-const cube_d = "assets/volume-of-cube/slide6/2.svg";
 import { colors } from "utils/colors";
-import TransitionImage from "components/media/TransitionImage";
-import MathElement from "components/MathElement/index.js";
-import { TextLine } from "components/text";
-import EquationTable from "components/MathElement/EquationTable";
+const cube_red = "assets/volume-of-cube/slide6_a.svg";
+const cube_d = "assets/volume-of-cube/slide6_b.svg";
+import dynamic from "next/dynamic";
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
+);
+const Pill = dynamic(() => import("components/Pill"));
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const MathElement = dynamic(() => import("components/MathElement"));
+
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const Slide6 = ({ downIcon, navBar }) => {
    let EquationLatex0 = [
@@ -90,8 +104,6 @@ const Slide6 = ({ downIcon, navBar }) => {
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.AQUA}
-                  color={colors.RED}
                >
                   side length (s),
                </TextSpanBg>{" "}
@@ -103,12 +115,9 @@ const Slide6 = ({ downIcon, navBar }) => {
          <div>
             <Pill
                width="fit-content"
-               bgColor={colors.OCEAN_GREEN}
-               color={colors.BLACK}
             >
-               Volume of cube{" "}
+               Volume of a cube{" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
-               cubic units
             </Pill>
          </div>
       </TextAndDiagramSlide>
