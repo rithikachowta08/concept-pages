@@ -28,7 +28,7 @@ const SurfaceAreaOfSphere = () => {
          key={8}
          currentPageTitle={"Surface Area of Sphere"}
          nextPageTitle="Surface Area of Cube"
-         nextPageLink="/us/math/study/surface-area-of-sphere"
+         nextPageLink="/us/math/study/surface-area-of-cube"
       />,
    ];
 
