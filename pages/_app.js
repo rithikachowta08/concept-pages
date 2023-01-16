@@ -47,17 +47,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-   font-family: 'Nunito-Bold'
+   font-family: 'Nunito-Bold', 'Verdana';
   }
 
   body {
-   font-family: 'Nunito-Medium'
+   font-family: 'Nunito-Medium', 'Verdana';
   }
 
   .katex .mathdefault,
 .katex .mathnormal,
 .katex .mord {
-   font-family: "Nunito-Medium";
+   font-family: 'Nunito-Medium', 'Verdana';
 }
 `;
 
