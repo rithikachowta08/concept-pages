@@ -48,7 +48,9 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          currentPageIdx={currentPageIdx}
          bg="DARK"
          secondaryTitle="Sphere"
-         title={<div>Why is the surface area 4 &times; π &times; r&sup2;</div>}
+         title={
+            <div>Why is the surface area 4 &times; π &times; r&sup2; ?</div>
+         }
       >
          <Modal
             isOpen={isModalOpen}
