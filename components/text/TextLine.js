@@ -9,7 +9,9 @@ const Line = styled.div`
    text-align: ${(props) => props.textAlign};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    font-family: ${(props) =>
-      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
+      props.fontWeight === fontWeights.BOLD
+         ? "Nunito-Bold, sans-serif"
+         : "Nunito-Medium, sans-serif"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
 `;
 
