@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 import { colors, hexToRgbA } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
+import { fontSizes, fontWeights } from "utils/fontStyles";
 
 const StyledSpan = styled.span`
    color: ${(props) => props.color || colors.LAVENDER};
    background-color: "none";
    font-weight: ${(props) => props.fontWeight || "500"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    text-decoration: ${(props) => props.textDecoration || "none"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-left: ${(props) => props.marginLeft || 0};
