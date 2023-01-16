@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_5" data-name="Layer 5" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #a753b5;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #bb70de;
+        opacity: .25;
+      }
+
+      .cls-3 {
+        fill: #c6c6c6;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="279.96" cy="441.5" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="426.99" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="209.22" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="426.99" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="412.47" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="397.95" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="383.43" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="368.92" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="354.4" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="339.88" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="325.36" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="310.85" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="296.33" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="281.81" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="267.29" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="252.78" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="238.26" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="223.74" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="194.71" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="180.19" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="165.67" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="151.15" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="136.64" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-1" cx="279.96" cy="121.48" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="136.64" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="122.12" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="151.15" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="180.19" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="165.67" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="194.71" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="209.22" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="223.74" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="252.78" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="238.26" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="267.29" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="296.33" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="281.81" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="310.85" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="325.36" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="354.4" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="339.88" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="368.92" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="383.43" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="397.95" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="412.47" rx="125.94" ry="26.97"/>
+  <ellipse class="cls-2" cx="279.96" cy="441.5" rx="125.94" ry="26.97"/>
+  <g>
+    <path class="cls-3" d="M402.98,121.48c-1.66,0-3-1.34-3-3,0-2.77-7.07-8.84-33.58-14.01-23.04-4.49-53.71-6.97-86.36-6.97s-63.32,2.48-86.36,6.97c-26.51,5.17-33.58,11.24-33.58,14.01,0,1.66-1.34,3-3,3s-3-1.34-3-3c0-19.8,75.32-26.98,125.94-26.98s125.94,7.19,125.94,26.98c0,1.66-1.34,3-3,3Z"/>
+    <path class="cls-3" d="M280.04,469.2c-50.62,0-125.94-7.19-125.94-26.98V118.48h6c0,2.77,7.07,8.84,33.58,14.01,23.04,4.49,53.71,6.97,86.36,6.97s63.32-2.48,86.36-6.97c26.51-5.17,33.58-11.24,33.58-14.01h6V442.22c0,19.8-75.32,26.98-125.94,26.98ZM160.1,127.48V442.22c0,2.77,7.07,8.84,33.58,14.01,23.04,4.49,53.71,6.97,86.36,6.97s63.32-2.48,86.36-6.97c26.51-5.17,33.58-11.24,33.58-14.01V127.48c-18.81,13.02-77.89,17.98-119.94,17.98s-101.13-4.96-119.94-17.98Z"/>
+  </g>
+</svg>

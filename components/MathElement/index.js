@@ -5,11 +5,11 @@ import TeX from "@matejmazur/react-katex";
 
 export default function MathElement({ htmlString }) {
    if (htmlString == "" || htmlString == "undefined") {
-      return <div style={{color:"transparent"}}>'</div>;
+      return <div style={{ color: "transparent" }}>'</div>;
    } else {
       return (
          <>
-            <TeX trust={true}>{htmlString}</TeX>
+            <TeX settings={{ trust: true, strict: false }}>{htmlString}</TeX>
          </>
       );
    }
