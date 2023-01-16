@@ -35,7 +35,7 @@ const Slide10 = ({ navBar, downIcon }) => {
          />
          <Paragraph>
             Length of an arc of sector angle ={" "}
-            <MathElement htmlString={"\\dfrac{θ}{360}\\times 2\\pi r"} />
+            <MathElement htmlString={"\\dfrac{\\theta}{360}\\times 2\\pi r"} />
          </Paragraph>
       </Flex>
    );
