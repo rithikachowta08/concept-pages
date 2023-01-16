@@ -52,7 +52,6 @@ const Slide7 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title="Illustrative Example"
-         secondaryTitle="Lateral Surface Area"
          diagram={
             <TransitionImage
                images={[radius_value_red, radius_value_blue]}
