@@ -9,7 +9,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "What is the surface area of a sphere?",
             "General Formula",
             <div key={3}>
-               Why is the surface area 4 &times; π &times; r&sup2;
+               Why is the surface area 4 &times; π &times; r&sup2; ?
             </div>,
          ]}
          anchorIdxes={[2, 5, 6]}

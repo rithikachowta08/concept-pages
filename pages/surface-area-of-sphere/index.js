@@ -39,7 +39,9 @@ const SurfaceAreaOfSphere = () => {
       },
       { title: "General Formula", slides: [4] },
       {
-         title: <div>Why is the surface area 4 &times; π &times; r&sup2;</div>,
+         title: (
+            <div>Why is the surface area 4 &times; π &times; r&sup2; ?</div>
+         ),
          slides: [5, 6, 7],
       },
    ];
