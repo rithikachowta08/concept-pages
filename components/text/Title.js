@@ -22,6 +22,8 @@ const H2 = styled.h2`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
    font-weight: ${(props) =>
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
    font-size: ${(props) =>
@@ -34,6 +36,8 @@ const H3 = styled.h3`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
    font-weight: ${(props) =>
       props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    opacity: ${(props) => (props.opacity ? props.opacity : "1")};
    padding: ${(props) => props.padding};
    font-size: ${(props) =>

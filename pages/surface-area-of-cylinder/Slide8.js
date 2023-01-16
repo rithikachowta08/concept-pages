@@ -11,11 +11,11 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
             downIcon={downIcon}
             videoContent={{
                dash_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/dash/h264.mpd",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-8da287af/robhdf/INTL_Maths/230111/SEO18INTL08MAT11KT013/dash/h264.mpd",
                hls_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-f0130697/r3wasn/Maths_INTL/211208/18INTL06MAT10/18INTL06MAT10KT012_perfect/hls/h264.m3u8",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-8da287af/robhdf/INTL_Maths/230111/SEO18INTL08MAT11KT013/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792471.jpg?1671000412",
+                  "https://drive.google.com/file/d/1YGxUujGbow37QroB__cDX0nwPUmgjF0t/view?usp=share_link",
             }}
             downIconId="s5-video-down-icon"
             videoSlideId="s5-video-slide"

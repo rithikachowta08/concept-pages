@@ -4,7 +4,7 @@ import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
 
 const EquationParentDiv = styled.div`
-   font-family: Nunito;
+   font-family: "Nunito-Medium";
 `;
 
 const StyledTable = styled.table`

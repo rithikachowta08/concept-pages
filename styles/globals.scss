@@ -1,5 +1,3 @@
-@import url("styles/fonts/stylesheet.css");
-
 html,
 body {
    margin: 0;
@@ -30,10 +28,6 @@ body {
    color: white;
    background: black;
    height: 100%;
-   font-family: "Nunito", sans-serif;
-
-   --toastify-color-success: #4dcb88;
-   --toastify-color-error: #ea6560;
 }
 
 .fp-viewing-0,
@@ -119,7 +113,6 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .katex .mathdefault,
 .katex .mathnormal {
-   font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
 
@@ -133,19 +126,15 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    font-family: unset !important;
 }
 
-// .katex {
-//    font: unset !important;
-// }
-
 .katex .katex-html {
    overflow-wrap: normal;
 }
 
 .katex .mord {
    display: inline-block;
-   font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
+
 .pill-math {
    span {
       font-family: "Times New Roman", Times, serif !important;

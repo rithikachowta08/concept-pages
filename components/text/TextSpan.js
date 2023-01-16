@@ -7,6 +7,8 @@ import { colors } from "utils/colors";
 const StyledSpan = styled.span`
    color: ${(props) => props.color || colors.DARK_GREY};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
+   font-family: ${(props) =>
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    text-decoration: ${(props) => props.textDecoration || "none"};
    margin-bottom: ${(props) => props.marginBottom || 0};
