@@ -53,7 +53,7 @@ const AreaOfSquare= ({}) => {
       },
    ];
 
-   const darkBgIndices = [0,3,5,9,10];
+   const darkBgIndices = [0,3,5,7,9,10];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

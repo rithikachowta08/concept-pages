@@ -70,6 +70,7 @@ const Slide9 = ({ downIcon }) => {
 
    return (
       <TextAndDiagramSlide
+      bg="DARK"
          diagram={
             <TransitionImage
                images={[square_1,square_2]}
@@ -84,31 +85,34 @@ const Slide9 = ({ downIcon }) => {
          secondaryTitle=""
          title="Area Using Diagonal"
       >
-         <Paragraph>
-         <TextLine>The length of a <TextSpanBg
+         <Paragraph color={colors.WHITE}>
+         <TextLine>The  <TextSpanBg
                   key={0}
                   id={1}
                   onHover={onHover}
                   onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
                >
-                  Diagonal
-               </TextSpanBg> can be calculated using  the <span style={{color:'#c49225'}}>Pythagorean</span> theorem.
+                 length of a Diagonal
+               </TextSpanBg> can be calculated using  the Pythagorean theorem.
  </TextLine>
- <TextLine>
+
+ <Paragraph color={colors.WHITE}>
     <MathElement htmlString={"d^2 = s^2+ s^2"}></MathElement>
- </TextLine>
- <TextLine>
+ </Paragraph>
+ <Paragraph color={colors.WHITE}>
     <MathElement htmlString={"s^2 = \\dfrac{d^2}{2}"}></MathElement>
- </TextLine>
- <TextLine>
+ </Paragraph>
+ </Paragraph>
+ <Paragraph color={colors.WHITE}>
+ 
  Area = <MathElement htmlString={"s \\times s = s^2 = \\dfrac{d^2}{2}"}></MathElement>
- </TextLine>
- <TextLine>
+ </Paragraph>
+ <Paragraph color={colors.WHITE}>
  and,{" "}<MathElement htmlString={"s = \\dfrac{d}{\\sqrt{2}}"}></MathElement>
  (taking only the positive root)  
- </TextLine>
-         </Paragraph>
+ </Paragraph>
+
+
          
       </TextAndDiagramSlide>
    );
