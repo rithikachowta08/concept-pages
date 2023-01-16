@@ -9,7 +9,7 @@ const bullet = "assets/bullet.svg";
 const Flex = styled.div`
    display: flex;
    flex-direction: column;
-   font-family: "Nunito-Medium, sans-serif";
+   font-family: '"Nunito-Medium", sans-serif';
    color: ${(props) => (props.color ? props.color : "white")};
    gap: 40px;
    @media (min-width: 200px) and (max-width: 767px) {

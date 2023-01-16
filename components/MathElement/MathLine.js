@@ -12,8 +12,8 @@ const MathEqLine = styled.p`
    font-weight: ${(props) => props.fontWeight || 500};
    font-family: ${(props) =>
       props.fontWeight === fontWeights.BOLD
-         ? "Nunito-Bold, sans-serif"
-         : "Nunito-Medium, sans-serif"};
+         ? '"Nunito-Bold", sans-serif'
+         : '"Nunito-Medium", sans-serif'};
    margin: ${(props) => props.margin};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};

@@ -11,8 +11,8 @@ const StyledSpan = styled.span`
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    font-family: ${(props) =>
       props.fontWeight === fontWeights.BOLD
-         ? "Nunito-Bold, sans-serif"
-         : "Nunito-Medium, sans-serif"};
+         ? '"Nunito-Bold", sans-serif'
+         : '"Nunito-Medium", sans-serif'};
    text-decoration: ${(props) => props.textDecoration || "none"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-left: ${(props) => props.marginLeft || 0};
