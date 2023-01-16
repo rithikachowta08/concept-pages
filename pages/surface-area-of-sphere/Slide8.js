@@ -14,11 +14,11 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-ccd056dd/robhdk/INTL_Maths/230111/SEO18INTL08MAT11KT017/hls/h264.m3u8",
                thumbnail:
-                  "https://drive.google.com/file/d/15WHQMZ0H6dJIabJL02YtzNdT9TWsem9w/view?usp=share_link",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Spheres.png",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}
-            index={8}
+            index={7}
             downIconId="s9-video-down-icon"
             videoSlideId="s9-video-slide"
          />
