@@ -19,8 +19,8 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}
             index={7}
-            downIconId="s9-video-down-icon"
-            videoSlideId="s9-video-slide"
+            downIconId="s8-video-down-icon"
+            videoSlideId="s8-video-slide"
          />
       </div>
    );
