@@ -37,23 +37,28 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url("fonts/Nunito-Bold.ttf"); /* IE9 Compat Modes */
+    src: url("fonts/Nunito-Bold.woff2"); /* IE9 Compat Modes */
     src: local("Nunito"),
-       url("fonts/Nunito-Bold.ttf?#iefix") format("embedded-opentype"),
-       /* IE6-IE8 */ url("fonts/Nunito-Bold.ttf") format("woff2"),
-       /* Super Modern Browsers */ url("fonts/Nunito-Bold.ttf") format("woff"),
-       /* Modern Browsers */ url("fonts/Nunito-Bold.ttf") format("truetype"),
-       /* Safari, Android, iOS */ url("fonts/Nunito-Bold.ttf#Nunito") format("svg"); /* Legacy iOS */
+       url("fonts/Nunito-Bold.woff2?#iefix") format("embedded-opentype"),
+       /* IE6-IE8 */ url("fonts/Nunito-Bold.woff2") format("woff2"),
+       /* Super Modern Browsers */ url("fonts/Nunito-Bold.woff2") format("woff"),
+       /* Modern Browsers */ url("fonts/Nunito-Bold.woff2") format("truetype"),
+       /* Safari, Android, iOS */ url("fonts/Nunito-Bold.woff2#Nunito") format("svg"); /* Legacy iOS */
   }
 
+  h1 {
+   font-family: 'Nunito-Bold'
+  }
 
   body {
    font-family: 'Nunito-Medium'
   }
 
-  .katex .mathdefault, .katex .mathnormal, .katex .mord {
-   font-family: 'Nunito-Medium'
-   }
+  .katex .mathdefault,
+.katex .mathnormal,
+.katex .mord {
+   font-family: "Nunito-Medium";
+}
 `;
 
 function MyApp({ Component, pageProps }) {

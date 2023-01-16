@@ -28,9 +28,6 @@ body {
    color: white;
    background: black;
    height: 100%;
-
-   --toastify-color-success: #4dcb88;
-   --toastify-color-error: #ea6560;
 }
 
 .fp-viewing-0,
@@ -137,6 +134,7 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    display: inline-block;
    font-style: normal !important;
 }
+
 .pill-math {
    span {
       font-family: "Times New Roman", Times, serif !important;
