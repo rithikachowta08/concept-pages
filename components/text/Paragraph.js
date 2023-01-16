@@ -10,9 +10,7 @@ const Para = styled.p`
    max-width: ${(props) => props.maxWidth};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
    font-family: ${(props) =>
-      props.fontWeight === fontWeights.BOLD
-         ? '"Nunito-Bold", sans-serif'
-         : '"Nunito-Medium", sans-serif'};
+      props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    margin: ${(props) => props.margin};
    line-height: ${(props) => props.lineHeight || "150%"};
