@@ -48,7 +48,7 @@ const Slide10 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-10 }{Area}} \\: of Square"],
+            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-10 }{Area \\: of \\:Square}} "],
             type: "latex",
          },
          rhsLatex: {
@@ -110,8 +110,8 @@ const Slide10 = ({ downIcon }) => {
                   onHoverOut={onHoverOut}
                   hoverColor={colors.DARK_LAVENDER}
                >
-                  Diagonal
-               </TextSpanBg>{" "} of the square = 6ft
+                  Diagonal of the square
+               </TextSpanBg>{" "}  = 6ft
                </Paragraph>   
 
           <Paragraph>  
