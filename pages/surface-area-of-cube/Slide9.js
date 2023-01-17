@@ -13,7 +13,7 @@ const Slide9 = ({ downIcon, currentPageIdx }) => {
           hls_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-6025e0e0/robhcu/INTL_Maths/230111/SEO18INTL06MAT10KT010/hls/h264.m3u8",
           thumbnail:
-            "https://drive.google.com/file/d/1GUZLdLWsgyi7Y7iJw_UaBNfEOON7NeEY/view?usp=share_link",
+            "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Rectangular+Prism+and+Cube+Surface+Area.png",
         }}
         videoSlideId="s9-video-slide"
         downIconId="s9-down-arrow-icon"
