@@ -40,7 +40,7 @@ const Slide6 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               `Total surface area of cylinder`,
+               `Total surface area of a cylinder`,
             ],
             type: "text",
          },

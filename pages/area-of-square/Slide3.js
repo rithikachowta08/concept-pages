@@ -43,6 +43,7 @@ const Slide3 = ({ downIcon }) => {
          </Paragraph>
          <ModalImg
             src={square_3}
+            alt="Diagram of a square"
             alignSelf="center"
             width="400px"
             marginBottom="50px"
