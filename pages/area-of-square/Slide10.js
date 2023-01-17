@@ -48,7 +48,7 @@ const Slide10 = ({ downIcon }) => {
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-10 }{Area \\: of \\:Square}} "],
+            value: ["\\: \\htmlId{2}{\\htmlClass{textSpanBg slide-10 }{Area \\: of \\: the \\: Square}} "],
             type: "latex",
          },
          rhsLatex: {
