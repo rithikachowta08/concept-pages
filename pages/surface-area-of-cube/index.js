@@ -45,8 +45,12 @@ const SurfaceAreaofCone = () => {
   ];
   const navigationSections = [
     {
+      title: "What is a cube?",
+      slides: [1],
+    },
+    {
       title: "What is the surface area of a cube?",
-      slides: [1, 2, 3],
+      slides: [2, 3],
     },
     { title: "Total surface area", slides: [4, 5] },
     {
