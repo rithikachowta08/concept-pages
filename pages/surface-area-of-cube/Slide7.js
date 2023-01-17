@@ -146,29 +146,36 @@ const Slide7 = ({ downIcon }) => {
         , excluding the base and top faces.
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          Lateral surface area
-        </TextSpanBg>{" "}
-        = 4 ×{" "}
-        <ModalTriggerText
-          id={3}
-          onClick={onClick1}
-          color={colors.WHITE}
-          fontWeight={"none"}
-        >
-          Surface area of one face
-        </ModalTriggerText>
+        <Flex direction="row">
+          <Paragraph color={colors.WHITE}>
+            <TextSpanBg
+              id={1}
+              onHover={onHover}
+              onHoverOut={onHoverOut}
+              color={colors.RED}
+              hoverColor={colors.LAVENDER}
+            >
+              Lateral surface area
+            </TextSpanBg>
+          </Paragraph>
+          <Paragraph color={colors.WHITE}>=</Paragraph>
+          <Paragraph color={colors.WHITE}>
+            4 ×{" "}
+            <ModalTriggerText
+              id={3}
+              onClick={onClick1}
+              color={colors.WHITE}
+              fontWeight={"none"}
+            >
+              Surface area of one face
+            </ModalTriggerText>
+          </Paragraph>
+        </Flex>
       </Paragraph>
       <div>
         <Paragraph color={colors.WHITE}>
           <Pill bgColor={colors.GREEN} color={colors.WHITE}>
-            Lateral surface area = 4
+            Lateral surface area=4
             <MathElement htmlString={latex[mathjaxCounter++]} />
           </Pill>
         </Paragraph>
