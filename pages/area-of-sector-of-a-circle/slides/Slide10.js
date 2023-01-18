@@ -14,6 +14,7 @@ import { useState } from "react";
 import { colors } from "utils/colors";
 
 const image_1 = "assets/area-of-sector-of-a-circle/27.svg";
+const image_modal = "assets/area-of-sector-of-a-circle/27_2.svg";
 
 const Slide10 = ({ navBar, downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,12 +30,12 @@ const Slide10 = ({ navBar, downIcon }) => {
             that runs through the arc.
          </Paragraph>
          <ModalImg
-            src={image_1}
+            src={image_modal}
             alt="Diagram of circle showing length of an arc l, sector angle theta and radius r"
          />
          <Paragraph>
             Length of an arc of sector angle ={" "}
-            <MathElement htmlString={"\\dfrac{θ}{360}\\times 2\\pi r"} />
+            <MathElement htmlString={"\\dfrac{\\theta}{360}\\times 2\\pi r"} />
          </Paragraph>
       </Flex>
    );

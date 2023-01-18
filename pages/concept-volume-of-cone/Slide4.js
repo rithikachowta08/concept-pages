@@ -74,7 +74,7 @@ const Slide4 = ({ downIcon }) => {
         </TextSpanBg>
         , and&nbsp;
         <TextSpanBg
-          id={2}
+          id={3}
           onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}

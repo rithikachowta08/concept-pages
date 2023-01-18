@@ -1,34 +1,5 @@
 @font-face {
-   font-family: "Nunito";
-   font-style: normal;
-   font-weight: 200;
-   font-display: swap;
-   src: url("Nunito-ExtraLight.ttf"); /* IE9 Compat Modes */
-   src: local("Nunito"),
-      url("Nunito-ExtraLight.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-ExtraLight.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-ExtraLight.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-ExtraLight.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-ExtraLight.ttf#Nunito")
-         format("svg"); /* Legacy iOS */
-}
-
-@font-face {
-   font-family: "Nunito";
-   font-style: normal;
-   font-weight: 300;
-   font-display: swap;
-   src: url("Nunito-Light.ttf"); /* IE9 Compat Modes */
-   src: local("Nunito"),
-      url("Nunito-Light.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-Light.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-Light.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-Light.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-Light.ttf#Nunito") format("svg"); /* Legacy iOS */
-}
-
-@font-face {
-   font-family: "Nunito";
+   font-family: "Nunito-Regular";
    font-style: normal;
    font-weight: 400;
    font-display: swap;
@@ -42,7 +13,7 @@
 }
 
 @font-face {
-   font-family: "Nunito";
+   font-family: "Nunito-Medium";
    font-style: normal;
    font-weight: 500;
    font-display: swap;
@@ -56,44 +27,29 @@
 }
 
 @font-face {
-   font-family: "Nunito";
-   font-style: normal;
-   font-weight: 600;
-   font-display: swap;
-   src: url("Nunito-SemiBold.ttf"); /* IE9 Compat Modes */
-   src: local("Nunito"),
-      url("Nunito-SemiBold.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-SemiBold.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-SemiBold.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-SemiBold.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-SemiBold.ttf#Nunito") format("svg"); /* Legacy iOS */
-}
-
-@font-face {
-   font-family: "Nunito";
+   font-family: "Nunito-Bold";
    font-style: normal;
    font-weight: 700;
    font-display: swap;
-   src: url("Nunito-Bold.ttf"); /* IE9 Compat Modes */
+   src: url("Nunito-Bold.woff2"); /* IE9 Compat Modes */
    src: local("Nunito"),
-      url("Nunito-Bold.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-Bold.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-Bold.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-Bold.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-Bold.ttf#Nunito") format("svg"); /* Legacy iOS */
+      url("Nunito-Bold.woff2?#iefix") format("embedded-opentype"),
+      /* IE6-IE8 */ url("Nunito-Bold.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("Nunito-Bold.woff2") format("woff"),
+      /* Modern Browsers */ url("Nunito-Bold.woff2") format("truetype"),
+      /* Safari, Android, iOS */ url("Nunito-Bold.woff2#Nunito") format("svg"); /* Legacy iOS */
 }
 
-@font-face {
-   font-family: "Nunito";
-   font-style: normal;
-   font-weight: 800;
-   font-display: swap;
-   src: url("Nunito-ExtraBold.ttf"); /* IE9 Compat Modes */
-   src: local("Nunito"),
-      url("Nunito-ExtraBold.ttf?#iefix") format("embedded-opentype"),
-      /* IE6-IE8 */ url("Nunito-ExtraBold.ttf") format("woff2"),
-      /* Super Modern Browsers */ url("Nunito-ExtraBold.ttf") format("woff"),
-      /* Modern Browsers */ url("Nunito-ExtraBold.ttf") format("truetype"),
-      /* Safari, Android, iOS */ url("Nunito-ExtraBold.ttf#Nunito")
-         format("svg"); /* Legacy iOS */
+h1 {
+   font-family: "Nunito-Bold", sans-serif;
+}
+
+body {
+   font-family: "Nunito-Medium", sans-serif;
+}
+
+.katex .mathdefault,
+.katex .mathnormal,
+.katex .mord {
+   font-family: "Nunito-Medium", sans-serif !important;
 }

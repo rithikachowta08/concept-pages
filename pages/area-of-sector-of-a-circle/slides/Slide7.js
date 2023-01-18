@@ -20,15 +20,17 @@ const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
       >
          <Paragraph margin={"40px 0 0 0"}>
             Area of the circle when the angle is 360° ={" "}
-            <MathElement htmlString={"\\pi r^2"} />
+            <MathElement htmlString={"\\pi\\times r^2"} />
          </Paragraph>
          <Paragraph>
             Area of the region when the angle is 1° =
-            <MathElement htmlString={"\\dfrac{\\pi r^2}{360°}"} />
+            <MathElement htmlString={"\\dfrac{\\pi\\times r^2}{360°}"} />
          </Paragraph>
          <Paragraph>
-            Area of the sector when the angle is θ =
-            <MathElement htmlString={"\\dfrac{θ}{360°}\\times \\pi r^2"} />
+            Area of the sector when the angle is θ° =
+            <MathElement
+               htmlString={"\\dfrac{θ}{360°}\\times \\pi\\times r^2"}
+            />
          </Paragraph>
       </TextAndAppletSlide>
    );

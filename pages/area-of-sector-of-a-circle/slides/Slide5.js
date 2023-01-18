@@ -53,7 +53,7 @@ const Slide5 = ({ navBar, downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{θ}{360°}\\times \\pi r^2"],
+                           value: ["\\dfrac{θ}{360°}\\times \\pi\\times r^2"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -81,9 +81,9 @@ const Slide5 = ({ navBar, downIcon }) => {
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >
-                  radius
-               </TextSpanBg>{" "}
-               of the circle.
+                  radius of the circle
+               </TextSpanBg>
+               .
             </Paragraph>
          </span>
       </TextAndDiagramSlide>

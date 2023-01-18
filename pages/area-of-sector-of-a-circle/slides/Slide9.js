@@ -72,7 +72,7 @@ const Slide9 = ({ navBar, downIcon }) => {
             >
                Radius (r)
             </TextSpanBg>{" "}
-            = 4cm
+            = 4 in
          </Paragraph>
          <Paragraph>
             <TextSpanBg
@@ -96,7 +96,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{θ}{360°}\\times \\pi r^2"],
+                        value: ["\\dfrac{θ}{360°}\\times \\pi\\times r^2"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -140,7 +140,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["4.19\\ cm^2"],
+                        value: ["4.19\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {

@@ -43,7 +43,9 @@ const Slide8 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["\\dfrac{1}{3}{\\pi}r^2h"],
+        value: [
+          "\\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h",
+        ],
         type: "latex",
       },
       rhsHint: {
@@ -57,7 +59,9 @@ const Slide8 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["\\dfrac{1}{3}{\\pi} \\times 1cm \\times 1cm \\times 3cm"],
+        value: [
+          "\\dfrac{1}{3}\\ \\times\\ {\\pi} \\times 1\\ in \\times 1\\ in \\times 3\\ in",
+        ],
         type: "latex",
       },
       rhsHint: {
@@ -71,7 +75,7 @@ const Slide8 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["{\\pi}cm^3"],
+        value: ["{\\pi}\\ cu\\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -89,8 +93,10 @@ const Slide8 = ({ downIcon }) => {
   latex.push(`(cm^3)`);
   latex.push(`(m^3)`);
   latex.push(`({\\pi}r^2)`);
-  latex.push(`= \\dfrac{1}{3}`);
-  latex.push(`V = \\dfrac{1}{3}{\\pi}r^2h`);
+  latex.push(`\\dfrac{1}{3}`);
+  latex.push(
+    `V = \\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h`
+  );
 
   let mathjaxCounter = 0;
 
@@ -176,39 +182,49 @@ const Slide8 = ({ downIcon }) => {
         <MathElement htmlString={latex[mathjaxCounter++]} />
         &nbsp;and height (h).
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        &nbsp;
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          Volume
-        </TextSpanBg>
-        &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} /> × &nbsp;
-        <TextSpanBg
-          id={2}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          Base area
-        </TextSpanBg>
-        &nbsp; × &nbsp;
-        <TextSpanBg
-          id={3}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          Perpendicular height
-        </TextSpanBg>
-        &nbsp;
-      </Paragraph>
+      <div>
+        <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+          <Flex direction="row">
+            <Paragraph color={colors.WHITE}>
+              &nbsp;
+              <TextSpanBg
+                id={1}
+                onHover={onHover}
+                onHoverOut={onHoverOut}
+                color={colors.RED}
+                hoverColor={colors.LAVENDER}
+              >
+                Volume
+              </TextSpanBg>
+            </Paragraph>
+            <Paragraph color={colors.WHITE}>&nbsp;=</Paragraph>
+            <Paragraph color={colors.WHITE}>
+              &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} /> ×
+              &nbsp;
+              <TextSpanBg
+                id={2}
+                onHover={onHover}
+                onHoverOut={onHoverOut}
+                color={colors.RED}
+                hoverColor={colors.LAVENDER}
+              >
+                Base area
+              </TextSpanBg>
+              &nbsp; × &nbsp;
+              <TextSpanBg
+                id={3}
+                onHover={onHover}
+                onHoverOut={onHoverOut}
+                color={colors.RED}
+                hoverColor={colors.LAVENDER}
+              >
+                Perpendicular height
+              </TextSpanBg>
+              &nbsp;
+            </Paragraph>
+          </Flex>
+        </Paragraph>
+      </div>
       <Paragraph color={colors.WHITE}>
         <MathElement htmlString={latex[mathjaxCounter++]} />
       </Paragraph>
