@@ -16,9 +16,9 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const volumeCone_full = "assets/concept-volume-of-cone/slide2/1.svg";
-const volumeCone_bottom = "assets/concept-volume-of-cone/slide2/2.svg";
-const volumeCone_top = "assets/concept-volume-of-cone/slide2/3.svg";
+const volumeCone_full = "assets/concept-volume-of-cone/slide3/1.svg";
+const volumeCone_bottom = "assets/concept-volume-of-cone/slide3/2.svg";
+const volumeCone_top = "assets/concept-volume-of-cone/slide3/3.svg";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);

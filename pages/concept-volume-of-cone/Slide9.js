@@ -32,7 +32,7 @@ const Slide9 = ({ downIcon }) => {
       },
       rhsLatex: {
         value: [
-          "\\dfrac{1}{3} \\times \\dfrac{22}{7} \\times 9 \\times 9 \\times 14 cm^3",
+          "\\dfrac{1}{3} \\times \\dfrac{22}{7} \\times 9 \\times 9 \\times 14\\ cu\\ in",
         ],
         type: "latex",
       },
@@ -47,7 +47,7 @@ const Slide9 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["22 \\times 3 \\times 9 \\times 2 cm^3"],
+        value: ["22 \\times 3 \\times 9 \\times 2\\ cu\\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -61,7 +61,7 @@ const Slide9 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["1188 cm^3"],
+        value: ["1188\\ cu\\ in"],
         type: "latex",
       },
       rhsHint: {
@@ -81,7 +81,9 @@ const Slide9 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`= \\dfrac{1}{3}{\\pi}r^2h`);
+  latex.push(
+    `= \\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h`
+  );
   let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
@@ -110,7 +112,7 @@ const Slide9 = ({ downIcon }) => {
         >
           Radius (r)
         </TextSpanBg>
-        &nbsp;= 9 cm&nbsp;
+        &nbsp;= 9 in&nbsp;
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp}>
         <TextSpanBg
@@ -122,7 +124,7 @@ const Slide9 = ({ downIcon }) => {
         >
           Height (h)
         </TextSpanBg>
-        &nbsp;= 14 cm&nbsp;
+        &nbsp;= 14 in&nbsp;
       </Paragraph>
       <Paragraph>
         Volume of the cone &nbsp;
