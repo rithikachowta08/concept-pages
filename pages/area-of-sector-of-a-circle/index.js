@@ -32,8 +32,8 @@ const AreaOfSectorOfCircle = () => {
       <PageLastSlide
          key={12}
          currentPageTitle={"Area of a Sector of a Circle"}
-         nextPageTitle={"<not yet integrated>"}
-         nextPageLink={"/us/math/study/area-of-sector-of-a-circle"}
+         nextPageTitle={"Surface Area of a Cylinder"}
+         nextPageLink={"/us/math/study/surface-area-of-cylinder"}
       />,
    ];
    const navigationSections = [

@@ -2,36 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>https://byjus.com/us/math/study/surface-area-of-cone</loc>
-        <lastmod>2023-01-10</lastmod>
-        <changefreq>never</changefreq>
-        <priority>1.0</priority>        
-    </url>
-    
-    <url>
         <loc>https://byjus.com/us/math/study/area-of-rectangle</loc>
-        <lastmod>2023-01-10</lastmod>
+        <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
         <priority>1.0</priority>        
     </url>
     
     <url>
         <loc>https://byjus.com/us/math/study/area-of-circle</loc>
-        <lastmod>2023-01-10</lastmod>
+        <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
         <priority>1.0</priority>        
     </url>
     
     <url>
         <loc>https://byjus.com/us/math/study/surface-area-of-right-triangular-prism</loc>
-        <lastmod>2023-01-10</lastmod>
+        <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
         <priority>1.0</priority>        
     </url>
     
     <url>
         <loc>https://byjus.com/us/math/study/surface-area-of-rectangular-prism</loc>
-        <lastmod>2023-01-10</lastmod>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/surface-area-of-cone</loc>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/volume-of-cube</loc>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/area-of-a-triangle</loc>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/circumference-of-circle</loc>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/area-of-rhombus</loc>
+        <lastmod>2023-01-17</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>        
+    </url>
+    
+    <url>
+        <loc>https://byjus.com/us/math/study/length-of-arc</loc>
+        <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
         <priority>1.0</priority>        
     </url>

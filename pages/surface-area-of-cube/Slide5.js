@@ -38,7 +38,7 @@ const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   let latex = [];
   latex.push(`s^2`);
-  latex.push(`s^2`);
+  latex.push(`\\ \\times\\ s^2`);
   let mathjaxCounter = 0;
 
   const modalContent = (

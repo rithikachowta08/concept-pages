@@ -28,7 +28,7 @@ const Slide3 = ({ downIcon }) => {
   };
   return (
     <TextAndDiagramSlide
-      title="Surface Area of Cube"
+      title="What is the Surface Area of a Cube?"
       diagram={
         <TransitionImage
           images={[surfaceCube_full, surfaceCube_slides]}
@@ -43,8 +43,7 @@ const Slide3 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        The surface area of a cube is defined as the total area covered by
-        the{" "}
+        The surface area of a cube is defined as the total area covered by the{" "}
         <TextSpanBg
           id={1}
           onHover={onHover}
@@ -53,7 +52,8 @@ const Slide3 = ({ downIcon }) => {
           hoverColor={colors.LAVENDER}
         >
           six square faces
-        </TextSpanBg>{" "}of the cube. It is measured in square units.
+        </TextSpanBg>{" "}
+        of the cube. It is measured in square units.
       </Paragraph>
     </TextAndDiagramSlide>
   );

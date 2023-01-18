@@ -7,11 +7,12 @@ const Slide1 = ({ moveToSection, downIcon }) => {
     <TitleSlide
       title="Surface Area of Cube"
       contentListItems={[
+        "What is a cube?",
         "What is the surface area of a cube?",
         "Total surface area",
         "Lateral surface area",
       ]}
-      anchorIdxes={[2, 5, 7]}
+      anchorIdxes={[2, 3, 5, 7]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>
