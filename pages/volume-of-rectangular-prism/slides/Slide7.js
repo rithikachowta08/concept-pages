@@ -12,7 +12,7 @@ const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 
-const image_1 = "assets/volume-of-rectangular-prism/slide_2_a.svg";
+const image_1 = "assets/volume-of-rectangular-prism/slide_8_a.svg";
 const image_2 = "assets/volume-of-rectangular-prism/slide_8_b.svg";
 const image_3 = "assets/volume-of-rectangular-prism/slide_8_c.svg";
 const image_4 = "assets/volume-of-rectangular-prism/slide_8_d.svg";
