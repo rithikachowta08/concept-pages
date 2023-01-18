@@ -1,7 +1,9 @@
 import EquationTable from "components/MathElement/EquationTable";
 import { Paragraph, TextSpan } from "components/text";
+import useDiagramInteraction from "hooks/useDiagramInteraction";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect } from "react";
+import { addTransitionToKatex } from "utils/domutils";
 
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -10,8 +12,23 @@ const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 
+const image_1 = "assets/volume-of-rectangular-prism/slide_8_a.svg";
+const image_2 = "assets/volume-of-rectangular-prism/slide_8_b.svg";
+const image_3 = "assets/volume-of-rectangular-prism/slide_8_c.svg";
+const image_4 = "assets/volume-of-rectangular-prism/slide_8_d.svg";
+
 const Slide7 = ({ downIcon, navBar }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
+   const { activeIndex, onHoverOut, onHoverKatex } = useDiagramInteraction();
+
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   useEffect(
+      addTransitionToKatex(
+         ".textSpanBg.aosoc-slide-6",
+         onHoverKatex,
+         onHoverOut
+      ),
+      []
+   );
 
    return (
       <TextAndDiagramSlide
@@ -24,23 +41,23 @@ const Slide7 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[]}
+               images={[image_1, image_2, image_3, image_4]}
                activeIndex={activeIndex}
                altTexts={[
                   "Diagram of a rectangular prism",
-                  "Diagram of a rectangular prism with highlighted length 8 cm",
-                  "Diagram of a rectangular prism with highlighted width 5 cm",
-                  "Diagram of a rectangular prism with highlighted height 5 cm",
+                  "Diagram of a rectangular prism with highlighted length 8 in",
+                  "Diagram of a rectangular prism with highlighted width 5 in",
+                  "Diagram of a rectangular prism with highlighted height 5 in",
                ]}
             />
          }
       >
          <Paragraph>
-            <TextSpan>Length = 8 cm</TextSpan>
+            <TextSpan>Length = 8 in</TextSpan>
             <br />
-            <TextSpan>Width = 5 cm</TextSpan>
+            <TextSpan>Width = 5 in</TextSpan>
             <br />
-            <TextSpan>Height = 5 cm</TextSpan>
+            <TextSpan>Height = 5 in</TextSpan>
          </Paragraph>
          <Paragraph>
             <EquationTable
