@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { fontSizes } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -23,9 +22,8 @@ const tyre_diameter_red =
    "assets/circumference-of-circle/tyre_diameter_red.svg";
 const tyre_diameter_blue =
    "assets/circumference-of-circle/tyre_diameter_blue.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import EquationTable from "components/MathElement/EquationTable";
-// import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 
 const Slide8 = ({ downIcon }) => {
    let EquationLatex0 = [
@@ -129,7 +127,7 @@ const Slide8 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>
                   <TextSpanBg

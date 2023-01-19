@@ -25,7 +25,6 @@ const circle = "assets/diameter-and-circumference/circle.svg";
 const circle_highlighting_circumference =
    "assets/diameter-and-circumference/circumference.svg";
 const circle_modal = "assets/diameter-and-circumference/circle_pop_up.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
    const modalContent = (
@@ -77,7 +76,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             The&nbsp;
             <TextSpanBg
                onHover={() => onHover(1)}

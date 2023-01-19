@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 import { coco_applet_uri } from "utils/constants";
 const Modal = dynamic(() => import("components/layout/Modal"));

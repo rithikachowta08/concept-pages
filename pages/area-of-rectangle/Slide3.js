@@ -23,7 +23,7 @@ const Flex = dynamic(() =>
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
-import { ModalTriggerText } from "components/text";
+import { ModalTriggerText, TextLine } from "components/text";
 const rectangle_plain = "assets/area-of-rectangle/rectangle_plain.svg";
 const rectangle_shaded = "assets/area-of-rectangle/rectangle_shaded.svg";
 const unit_square = "assets/area-of-rectangle/unit_square.svg";
@@ -82,11 +82,13 @@ const Slide3 = ({ downIcon }) => {
                region enclosed
             </TextSpanBg>
             &nbsp;within its four sides.
-         </Paragraph>
-         <Paragraph>
-            It is also the number of&nbsp;
-            <ModalTriggerText onClick={onClick}>unit squares</ModalTriggerText>
-            &nbsp;that can fit into a rectangle.
+            <TextLine>
+               It is also the number of&nbsp;
+               <ModalTriggerText onClick={onClick}>
+                  unit squares
+               </ModalTriggerText>
+               &nbsp;that can fit into a rectangle.
+            </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
    );

@@ -20,7 +20,6 @@ const MultiLhsEquationContainer = dynamic(() =>
 const slide_4_a = "assets/volume-of-cylinder/slide 4_a.svg";
 const slide_4_b = "assets/volume-of-cylinder/slide 4_b.svg";
 const slide_4_c = "assets/volume-of-cylinder/slide 4_c.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide4 = ({ downIcon }) => {
    let EquationLatex = [
@@ -67,7 +66,7 @@ const Slide4 = ({ downIcon }) => {
          bg="DARK"
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             For a cylinder with a{" "}
             <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                circular base area (A)

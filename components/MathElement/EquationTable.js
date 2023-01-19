@@ -5,12 +5,14 @@ import TeX from "@matejmazur/react-katex";
 
 const EquationParentDiv = styled.div`
    font-family: "Nunito-Medium";
+   margin-left: -5px;
 `;
 
 const StyledTable = styled.table`
-   border-spacing: 0 10px;
+   border-spacing: 5px 10px;
+
    @media (min-width: 200px) and (max-width: 820px) {
-      border-spacing: 0 5px;
+      border-spacing: 5px;
    }
 `;
 const LHSLatex = styled.td`

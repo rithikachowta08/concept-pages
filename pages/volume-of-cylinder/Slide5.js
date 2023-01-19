@@ -9,7 +9,6 @@ const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
 import { TextLine } from "components/text";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    let EquationLatex = [
@@ -43,7 +42,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
             If we stack circular discs of area ‘A’ with negligible thickness one
             over the other, a cylinder is formed.
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             Here,
             <TextLine>Number of discs = Height of the cylinder.</TextLine>
          </Paragraph>

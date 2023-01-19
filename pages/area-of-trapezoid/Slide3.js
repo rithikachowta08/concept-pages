@@ -29,19 +29,13 @@ const Pill = dynamic(() => import("components/Pill"));
 
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const formula_degree_circle =
-   "assets/length-of-arc-of-a-circle/formula_degree_circle.svg";
-const formula_degree_arc =
-   "assets/length-of-arc-of-a-circle/formula_degree_arc.svg";
-const formula_degree_angle =
-   "assets/length-of-arc-of-a-circle/formula_degree_angle.svg";
-const formula_degree_radius =
-   "assets/length-of-arc-of-a-circle/formula_degree_radius.svg";
+const slide3_a = "assets/area-of-trapezoid/slide3_a.svg";
+const slide3_b = "assets/area-of-trapezoid/slide3_b.svg";
+const slide3_c = "assets/area-of-trapezoid/slide3_c.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -72,34 +66,29 @@ const Slide3 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[
-                  formula_degree_circle,
-                  formula_degree_arc,
-                  formula_degree_angle,
-                  formula_degree_radius,
+                  slide3_a,
+                  slide3_b,
+                  slide3_c,
                ]}
                altTexts={[
-                  "Diagram of a circle showing the sector",
-                  "Diagram of a circle highlighting the length of the sector",
-                  "Diagram of a circle highlighting the measure of the angle of the sector",
-                  "Diagram of a circle highlighting the radius",
+                  "Diagram of a trapezoid with given parallel bases and height h",
+                  "Diagram of a trapezoid with highlighted height",
+                  "Diagram of a trapezoid with two parallel bases highlighted",
                ]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-            The area of a trapezoid is one half of the product of its&nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-               >
+               The area of a trapezoid is one half of the product of its&nbsp;
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                   height (h)
                </TextSpanBg>
                , and the sum of its&nbsp;
                <TextSpanBg
-                  onHover={() => onHover(1)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                >
                   parallel bases a and b
@@ -107,7 +96,7 @@ const Slide3 = ({ downIcon }) => {
                .
             </TextLine>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}

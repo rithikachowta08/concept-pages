@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Icon } from "components/StyledElements";
 import { PropTypes } from "prop-types";
 import { fontSizes } from "utils/fontStyles";
 import { colors } from "utils/colors";
-const bullet = "assets/bullet.svg";
 
 const Flex = styled.div`
    display: flex;
@@ -34,12 +32,24 @@ const ListItem = styled.div`
    }
 `;
 
+const Bullet = styled.div`
+   width: 15px;
+   height: 15px;
+   background-color: ${colors.YELLOW};
+   border-radius: 50%;
+
+   @media (min-width: 200px) and (max-width: 820px) {
+      width: 10px;
+      height: 10px;
+   }
+`;
+
 const Title = ({ items, moveTo, anchorIdxes }) => {
    return (
       <Flex>
          {items.map((item, index) => (
             <ListItem onClick={() => moveTo(anchorIdxes[index])} key={index}>
-               <Icon src={bullet}></Icon>
+               <Bullet></Bullet>
                {item}
             </ListItem>
          ))}

@@ -17,7 +17,6 @@ const TextSpanBg = dynamic(() =>
 const lengthOfArcOfCircle =
    "assets/length-of-arc-of-a-circle/lengthOfArcOfCircle.svg";
 const lengthOfSector = "assets/length-of-arc-of-a-circle/lengthOfSector.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide7 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -44,12 +43,9 @@ const Slide7 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          navBar={navBar}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             The&nbsp;
-            <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}
-            >
+            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                length of the arc (l)
             </TextSpanBg>
             &nbsp;of the sector of a circle is the distance that runs through

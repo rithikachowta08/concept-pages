@@ -24,10 +24,7 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -63,20 +60,15 @@ const Slide6 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`\\large•`);
-  let mathjaxCounter = 0;
+   latex.push(`\\large•`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Facts about  π (pi)"
          diagram={
             <TransitionImage
-               images={[
-                  pi,
-               ]}
-               altTexts={[
-               "Diagram showing the symbol of pi"
-               ]}
-
+               images={[pi]}
+               altTexts={["Diagram showing the symbol of pi"]}
                activeIndex={activeIndex}
             />
          }
@@ -88,20 +80,23 @@ const Slide6 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          /> */}
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                π is irrational (not equal to the ratio of any two whole numbers), and its digits do not repeat.
+               <MathElement htmlString={latex[mathjaxCounter]} />
+               &nbsp; π is irrational (not equal to the ratio of any two whole
+               numbers), and its digits do not repeat.
             </TextLine>
             <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                An approximation for π, such as 3.14 or         is often used for calculations.
+               <MathElement htmlString={latex[mathjaxCounter]} />
+               &nbsp; An approximation for π, such as 3.14 or is often used for
+               calculations.
             </TextLine>
             <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                Pi Day is celebrated every year on 14 March. The date represents the first 3 digits
-                 of this unique number. The day was recognised in 1988 by physicist Larry Shaw.
-                  This day was also recognised as International Mathematics day by UNESCO in 2019.
+               <MathElement htmlString={latex[mathjaxCounter]} />
+               &nbsp; Pi Day is celebrated every year on 14 March. The date
+               represents the first 3 digits of this unique number. The day was
+               recognised in 1988 by physicist Larry Shaw. This day was also
+               recognised as International Mathematics day by UNESCO in 2019.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
