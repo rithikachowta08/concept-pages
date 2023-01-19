@@ -10,9 +10,9 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             title="Surface Area of a Right Triangular Prism"
             videoContent={{
                dash_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-f5cb9040/r47ghp/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT020/dash/h264.mpd",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-27366947/rom3qx/INTL_Maths/230116/SEO18INTL08MAT11KT013/dash/h264.mpd",
                hls_Url:
-                  "https://byjus-in.akamaized.net/production/mpkgr-production-f5cb9040/r47ghp/Maths_INTL/211215/B2/18INTL07MAT11/18INTL07MAT11KT020/hls/h264.m3u8",
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-27366947/rom3qx/INTL_Maths/230116/SEO18INTL08MAT11KT013/hls/h264.m3u8",
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
                // video_title: "Surface Area of a Right Triangular Prism",
