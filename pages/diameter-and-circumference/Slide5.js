@@ -108,34 +108,6 @@ const Slide5 = ({ downIcon }) => {
                            type: "text",
                         },
                      },
-                  {
-                    lhsLatex: {
-                       value: ["\\dfrac{C}{D} "],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: [" \\pi"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: ["C"],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\pi \\times D"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
                ]}
             />
             </TextLine>
