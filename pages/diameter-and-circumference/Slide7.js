@@ -28,7 +28,6 @@ const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -82,7 +81,7 @@ const Slide7 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          /> */}
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             The diameter of a circle is 6 in. Find the ratio of the
             circumference to diameter of the circle.
          </Paragraph>

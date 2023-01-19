@@ -15,7 +15,6 @@ const TextSpanBg = dynamic(() =>
 );
 const slide_3_a = "assets/volume-of-cylinder/slide 3_a.svg";
 const slide_3_b = "assets/volume-of-cylinder/slide 3_b.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -40,7 +39,7 @@ const Slide3 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             The{" "}
             <TextSpanBg
                id={1}

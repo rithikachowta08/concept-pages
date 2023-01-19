@@ -15,7 +15,6 @@ const ModalImg = dynamic(() =>
 );
 import { ModalTriggerText, TextLine } from "components/text";
 const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
-import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 
 const Slide6 = ({ downIcon, currentPageIdx }) => {
@@ -68,7 +67,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             </ModalTriggerText>{" "}
             when,
          </Paragraph>
-         <Paragraph color="white" lineHeight={lineHeightProp}>
+         <Paragraph color="white">
             <ul>
                <li>
                   the radius of the cylinder is equal to the radius of the

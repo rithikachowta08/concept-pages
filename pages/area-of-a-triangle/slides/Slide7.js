@@ -21,7 +21,7 @@ const Slide7 = ({ downIcon, currentPageIdx }) => {
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
-         <Paragraph marginBottom={"40px"}>
+         <Paragraph>
             Two identical triangles combine to form a parallelogram.
          </Paragraph>
          <Paragraph>
