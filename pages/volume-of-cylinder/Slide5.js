@@ -21,11 +21,11 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                hint: "",
             },
             {
-               eqLatex: "(\\pi \\times r^2) \\times h",
+               eqLatex: "\\pi \\times r^2 \\times h",
                hint: "",
             },
             {
-               eqLatex: "\\pi \\times r^2 \\times h",
+               eqLatex: "\\pi \\times r^2 \\times h\\ \\text{cubic units}",
                hint: "",
             },
          ],
