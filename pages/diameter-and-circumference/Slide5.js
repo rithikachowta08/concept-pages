@@ -108,8 +108,8 @@ const Slide5 = ({ downIcon }) => {
                            type: "text",
                         },
                      },
-                  ]}
-               />
+               ]}
+            />
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
