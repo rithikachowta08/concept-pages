@@ -10,7 +10,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Ratio of circumference to diameter",
             "Relation between circumference and diameter",
          ]}
-         anchorIdxes={[2, 5, 7]}
+         anchorIdxes={[2, 3, 5]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

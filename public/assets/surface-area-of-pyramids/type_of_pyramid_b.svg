@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_5" data-name="5" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .72;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #bb70de;
+      }
+
+      .cls-2 {
+        opacity: .51;
+      }
+
+      .cls-3 {
+        opacity: .57;
+      }
+
+      .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+        stroke: #a753b5;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-2" points="126.72 164.82 53.63 227.23 155.31 251.32 226.37 186.52 126.72 164.82"/>
+  <polygon class="cls-1" points="53.63 227.23 126.72 164.82 128.77 22.18 53.63 227.23"/>
+  <polygon class="cls-4" points="226.37 186.52 126.72 164.82 128.77 22.18 226.37 186.52"/>
+  <g>
+    <line class="cls-5" x1="126.72" y1="164.82" x2="226.37" y2="186.52"/>
+    <polygon class="cls-1" points="226.37 186.52 193.05 216.9 128.77 22.18 226.37 186.52"/>
+    <polyline class="cls-5" points="128.77 22.18 126.72 164.82 53.63 227.23"/>
+    <path class="cls-1" d="M128.77,22.18l26.53,229.14,37.74-34.41L128.77,22.18Z"/>
+    <polygon class="cls-5" points="155.31 251.32 128.77 22.18 226.37 186.52 155.31 251.32"/>
+    <polygon class="cls-3" points="53.63 227.23 128.77 22.18 155.31 251.32 53.63 227.23"/>
+    <polygon class="cls-6" points="53.63 227.23 128.77 22.18 155.31 251.32 53.63 227.23"/>
+  </g>
+</svg>
