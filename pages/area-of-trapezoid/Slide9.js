@@ -46,89 +46,94 @@ const Slide9 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} >
+         <Paragraph>
+            <TextLine>Step 2 (a) :</TextLine>
             <TextLine>
-            Step 2 (a) :
-            </TextLine>
-            <TextLine>
-            Area of the triangle using Heron’s formula (<MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>){" "}
+               Area of the triangle using Heron’s formula (
+               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>
+               ){" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
             </TextLine>
             <TextLine>
-            Semiperimeter (s){" "}
+               Semiperimeter (s){" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
                = 8 in
             </TextLine>
-        </Paragraph>
-        
-        <Paragraph >
+         </Paragraph>
+
+         <Paragraph>
             <TextLine>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Area \\thinspace of \\thinspace the \\thinspace trapezoid \\thinspace A\\scriptscriptstyle 1"],
-                        type: "latex",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: [
+                              "Area \\thinspace of \\thinspace the \\thinspace trapezoid \\thinspace A\\scriptscriptstyle 1",
+                           ],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\sqrt{} 8 (8 - 5)(8 - 5)(8 - 6) \\thinspace sq \\thinspace in",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["\\sqrt{} 8 (8 - 5)(8 - 5)(8 - 6) \\thinspace sq \\thinspace in"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\sqrt{} 8\\thinspace (3)\\thinspace(3)\\thinspace(2)\\thinspace sq \\thinspace in",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: [
+                              "\\sqrt{} 144 \\thinspace sq \\thinspace in",
+                           ],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                  },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: ["\\sqrt{} 8\\thinspace (3)\\thinspace(3)\\thinspace(2)\\thinspace sq \\thinspace in"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\sqrt{} 144 \\thinspace sq \\thinspace in"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["12 \\thinspace sq \\thinspace in"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-               ]}
-            />
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["12 \\thinspace sq \\thinspace in"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
-
-
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

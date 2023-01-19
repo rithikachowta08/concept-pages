@@ -29,7 +29,6 @@ const Pill = dynamic(() => import("components/Pill"));
 
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -81,13 +80,10 @@ const Slide3 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-            The area of a trapezoid is one half of the product of its&nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-               >
+               The area of a trapezoid is one half of the product of its&nbsp;
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                   height (h)
                </TextSpanBg>
                , and the sum of its&nbsp;
@@ -100,7 +96,7 @@ const Slide3 = ({ downIcon }) => {
                .
             </TextLine>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}

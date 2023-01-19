@@ -17,7 +17,7 @@ const TextSpanBg = dynamic(() =>
 );
 const radius_value_red = "assets/surface-area-of-sphere/radius_value_red.svg";
 const radius_value_blue = "assets/surface-area-of-sphere/radius_value_blue.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import MultiLhsEquationContainer from "components/MathElement/MultiLhsEquationContainer";
 import { colors } from "utils/colors";
 
@@ -70,7 +70,7 @@ const Slide7 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                {/* <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine> */}
                <TextLine>
                   For the given sphere of{" "}

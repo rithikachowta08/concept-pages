@@ -54,25 +54,24 @@ const Slide8 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} >
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            The bases of the trapezoid are 8 in and 14 in, and the length of the other non-parallel sides are 5 in.
+               The bases of the trapezoid are 8 in and 14 in, and the length of
+               the other non-parallel sides are 5 in.
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-        <Paragraph lineHeight={lineHeightProp} >
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            Step 1: Divide the trapezoid into a&nbsp;
+               Step 1: Divide the trapezoid into a&nbsp;
                <TextSpanBg
                   onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
                   hoverColor={colors.DARK_LAVENDER}
                >
-                parallelogram
+                  parallelogram
                </TextSpanBg>
-               (☐ABCF)
-               {" "}
-               and a&nbsp;
+               (☐ABCF) and a&nbsp;
                <TextSpanBg
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
@@ -82,11 +81,7 @@ const Slide8 = ({ downIcon }) => {
                </TextSpanBg>
                (ΔBDF).
             </TextLine>
-
          </Paragraph>
-
-
-         
       </TextAndDiagramSlide>
    );
 };

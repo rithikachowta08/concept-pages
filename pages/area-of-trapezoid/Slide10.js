@@ -46,80 +46,81 @@ const Slide10 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} >
+         <Paragraph>
             <TextLine>
-            Step 2 (b): Area (<MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>) of the triangle using General formula
+               Step 2 (b): Area (
+               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
+               ) of the triangle using General formula
             </TextLine>
-        </Paragraph>
-        
-        <Paragraph >
+         </Paragraph>
+
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Area \\thinspace of \\thinspace ΔBFD \\thinspace A\\scriptscriptstyle 2"],
-                        type: "latex",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: [
+                              "Area \\thinspace of \\thinspace ΔBFD \\thinspace A\\scriptscriptstyle 2",
+                           ],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times Base \\times Height"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times FD \\times BE"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times 6 \\times h"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                  },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times FD \\times BE"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times 6 \\times h"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["3 \\times h \\thinspace sq \\thinspace in"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-               ]}
-            />
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["3 \\times h \\thinspace sq \\thinspace in"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
-
-
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

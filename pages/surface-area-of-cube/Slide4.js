@@ -1,27 +1,15 @@
-import dynamic from "next/dynamic";
 import { coco_applet_uri } from "utils/constants";
-const TextAndAppletSlide = dynamic(() =>
-  import("components/slides/TextAndAppletSlide")
-);
-const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
-);
+import dynamic from "next/dynamic";
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
 const Slide4 = ({ downIcon, currentPageIdx }) => {
   return (
-    <TextAndAppletSlide
-      title="Nets of a Cube"
-      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
+    <AppletSlide
       downIcon={downIcon}
+      title="Nets of a Cube"
       currentPageIdx={currentPageIdx}
-    >
-      <Paragraph>Let’s visualize the cube using nets.</Paragraph>
-      <br />
-      <Paragraph>Step 1: Select a net from the options.</Paragraph>
-      <Paragraph>
-        Step 2: Move the slider to visualize the formation of a cube.
-      </Paragraph>
-    </TextAndAppletSlide>
+      appletSrc={`${coco_applet_uri}area_of_rhombus_v2/index.html`}
+    ></AppletSlide>
   );
 };
 

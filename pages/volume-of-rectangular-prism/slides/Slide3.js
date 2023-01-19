@@ -8,8 +8,9 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 
+const image_popup = "assets/volume-of-rectangular-prism/slide_3_popup.svg";
+
 const Slide3 = ({ downIcon, currentPageIdx }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
    const [isModalOpen, setIsModalOpen] = useState(false);
 
    const modalContent = (
@@ -17,7 +18,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
          <Paragraph>
             A unit cube is a cube whose each side is 1 unit long.
          </Paragraph>
-         <ModalImg src={""} alt="Diagram of a triangle" />
+         <ModalImg src={image_popup} alt="Diagram of a unit cube" />
       </Flex>
    );
 
