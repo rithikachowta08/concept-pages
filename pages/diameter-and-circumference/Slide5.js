@@ -108,7 +108,7 @@ const Slide5 = ({ downIcon }) => {
                        type: "text",
                     },
                     rhsLatex: {
-                       value: ["\\pi \\thinspace D"],
+                       value: ["\\pi \\times D"],
                        type: "latex",
                     },
                     rhsHint: {

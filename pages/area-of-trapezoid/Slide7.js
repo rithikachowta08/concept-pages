@@ -37,14 +37,9 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const formula_degree_circle =
-   "assets/length-of-arc-of-a-circle/formula_degree_circle.svg";
-const formula_degree_arc =
-   "assets/length-of-arc-of-a-circle/formula_degree_arc.svg";
-const formula_degree_angle =
-   "assets/length-of-arc-of-a-circle/formula_degree_angle.svg";
-const formula_degree_radius =
-   "assets/length-of-arc-of-a-circle/formula_degree_radius.svg";
+const slide7_a = "assets/area-of-trapezoid/slide7_a.svg";
+const slide7_b = "assets/area-of-trapezoid/slide7_b.svg";
+const slide7_c = "assets/area-of-trapezoid/slide7_c.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -75,16 +70,14 @@ const Slide7 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[
-                  formula_degree_circle,
-                  formula_degree_arc,
-                  formula_degree_angle,
-                  formula_degree_radius,
+                  slide7_a,
+                  slide7_b,
+                  slide7_c,
                ]}
                altTexts={[
-                  "Diagram of a circle showing the sector",
-                  "Diagram of a circle highlighting the length of the sector",
-                  "Diagram of a circle highlighting the measure of the angle of the sector",
-                  "Diagram of a circle highlighting the radius",
+                  "Diagram of a trapezoid with given sides",
+                  "Diagram of a trapezoid with parallelogram highlighted in it",
+                  "Diagram of a trapezoid with triangle highlighted in it",
                ]}
                activeIndex={activeIndex}
             />
@@ -103,7 +96,7 @@ const Slide7 = ({ downIcon }) => {
                {" "}
                and a&nbsp;
                <TextSpanBg
-                  onHover={() => onHover(1)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                >
                   triangle

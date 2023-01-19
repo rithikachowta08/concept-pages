@@ -37,14 +37,10 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
 import { ModalTriggerText } from "components/text";
-const formula_degree_circle =
-   "assets/length-of-arc-of-a-circle/formula_degree_circle.svg";
-const formula_degree_arc =
-   "assets/length-of-arc-of-a-circle/formula_degree_arc.svg";
-const formula_degree_angle =
-   "assets/length-of-arc-of-a-circle/formula_degree_angle.svg";
-const formula_degree_radius =
-   "assets/length-of-arc-of-a-circle/formula_degree_radius.svg";
+const slide6_a = "assets/area-of-trapezoid/slide6_a.svg";
+const slide6_b = "assets/area-of-trapezoid/slide6_b.svg";
+const slide6_c = "assets/area-of-trapezoid/slide6_c.svg";
+const slide6_d = "assets/area-of-trapezoid/slide6_d.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -74,16 +70,16 @@ const Slide6 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[
-                  formula_degree_circle,
-                  formula_degree_arc,
-                  formula_degree_angle,
-                  formula_degree_radius,
+                  slide6_a,
+                  slide6_b,
+                  slide6_c,
+                  slide6_d,
                ]}
                altTexts={[
-                  "Diagram of a circle showing the sector",
-                  "Diagram of a circle highlighting the length of the sector",
-                  "Diagram of a circle highlighting the measure of the angle of the sector",
-                  "Diagram of a circle highlighting the radius",
+                  "Diagram of a trapezoid of height 5 cm",
+                  "Diagram of a trapezoid with one of the base length 10 cm",
+                  "Diagram of a trapezoid with one of the base length 6 cm",
+                  "Diagram of a trapezoid with height 5 cm",
                ]}
                activeIndex={activeIndex}
             />
@@ -104,7 +100,7 @@ const Slide6 = ({ downIcon }) => {
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={() => onHover(1)}
+                  onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
                   hoverColor={colors.DARK_LAVENDER}
                >
@@ -115,7 +111,7 @@ const Slide6 = ({ downIcon }) => {
             </TextLine>
             <TextLine>
                <TextSpanBg
-                  onHover={() => onHover(1)}
+                  onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
                   hoverColor={colors.DARK_LAVENDER}
                >
