@@ -32,7 +32,6 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -91,95 +90,94 @@ const Slide11 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} >
+         <Paragraph>
             <TextLine>
-            Step 3: Equate <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}
-             and <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement> to find the height of the trapezoid.
-            </TextLine>
-            <TextLine>
-            <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}={" "}<MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
-            </TextLine>
-            <TextLine>
-            12{" "}<MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+               Step 3: Equate{" "}
+               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}
+               and{" "}
+               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>{" "}
+               to find the height of the trapezoid.
             </TextLine>
             <TextLine>
-            h{" "}={" "}4{" "}in
+               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}
+               ={" "}
+               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
             </TextLine>
-        </Paragraph>
-        
-        <Paragraph >
             <TextLine>
-            Step 4: Apply the trapezoid area formula.
+               12{" "}
+               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
             </TextLine>
-            <TextLine >
-            <TextLine >
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Area of the trapezoid "],
-                        type: "text",
-                     },
-                     rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times (a+b) \\times h"],
-                        type: "latex",
-                     },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
-                     },
-                  },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times (14+8) \\times 4"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times 22 \\times 4"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["44 sq in"],
-                       type: "text",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-               ]}
-            />
-            </TextLine>
-            </TextLine>
-        </Paragraph>
+            <TextLine>h = 4 in</TextLine>
+         </Paragraph>
 
-
-         
+         <Paragraph>
+            <TextLine>Step 4: Apply the trapezoid area formula.</TextLine>
+            <TextLine>
+               <TextLine>
+                  <EquationTable
+                     align="middle"
+                     equationLatex={[
+                        {
+                           lhsLatex: {
+                              value: ["Area of the trapezoid "],
+                              type: "text",
+                           },
+                           rhsLatex: {
+                              value: ["\\dfrac{1}{2} \\times (a+b) \\times h"],
+                              type: "latex",
+                           },
+                           rhsHint: {
+                              value: [""],
+                              type: "text",
+                           },
+                        },
+                        {
+                           lhsLatex: {
+                              value: [""],
+                              type: "latex",
+                           },
+                           rhsLatex: {
+                              value: ["\\dfrac{1}{2} \\times (14+8) \\times 4"],
+                              type: "latex",
+                           },
+                           rhsHint: {
+                              value: [""],
+                              type: "text",
+                           },
+                        },
+                        {
+                           lhsLatex: {
+                              value: [""],
+                              type: "text",
+                           },
+                           rhsLatex: {
+                              value: ["\\dfrac{1}{2} \\times 22 \\times 4"],
+                              type: "latex",
+                           },
+                           rhsHint: {
+                              value: [""],
+                              type: "text",
+                           },
+                        },
+                        {
+                           lhsLatex: {
+                              value: [""],
+                              type: "text",
+                           },
+                           rhsLatex: {
+                              value: ["44 sq in"],
+                              type: "text",
+                           },
+                           rhsHint: {
+                              value: [""],
+                              type: "text",
+                           },
+                        },
+                     ]}
+                  />
+               </TextLine>
+            </TextLine>
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

@@ -25,19 +25,14 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 
-const Pill = dynamic(() =>
-   import("components/Pill")
-);
+const Pill = dynamic(() => import("components/Pill"));
 
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const circleRelation = "assets/diameter-and-circumference/circleRelation.svg";
 
 const Slide5 = ({ downIcon }) => {
@@ -57,71 +52,66 @@ const Slide5 = ({ downIcon }) => {
                activeIndex={activeIndex}
             />
          }
-         altTexts={[
-            "Diagram of a circle showing diameter (D)"
-            ]}
+         altTexts={["Diagram of a circle showing diameter (D)"]}
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-            The ratio of circumference to diameter is equal to π (pi), i.e.,
+               The ratio of circumference to diameter is equal to π (pi), i.e.,
             </TextLine>
-            
-        </Paragraph>
+         </Paragraph>
 
-            <Paragraph >
+         <Paragraph>
             <TextLine color={colors.WHITE}>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["\\dfrac{Circumference}{Diameter} "],
-                        type: "latex",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["\\dfrac{Circumference}{Diameter} "],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [" \\pi"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: [" \\pi"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: ["\\dfrac{C}{D} "],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [" \\pi"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
+                     {
+                        lhsLatex: {
+                           value: ["C"],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["\\pi \\thinspace D"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                  },
-                  {
-                    lhsLatex: {
-                       value: ["\\dfrac{C}{D} "],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: [" \\pi"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: ["C"],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\pi \\thinspace D"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-               ]}
-            />
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
-            
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

@@ -32,7 +32,6 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -90,7 +89,7 @@ const Slide6 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
                <TextSpanBg
                   onHover={() => onHover(1)}
@@ -98,8 +97,7 @@ const Slide6 = ({ downIcon }) => {
                   hoverColor={colors.DARK_LAVENDER}
                >
                   Base (a)
-               </TextSpanBg>
-               {" "}
+               </TextSpanBg>{" "}
                = 10 in
             </TextLine>
             <TextLine>
@@ -109,8 +107,7 @@ const Slide6 = ({ downIcon }) => {
                   hoverColor={colors.DARK_LAVENDER}
                >
                   Base (b)
-               </TextSpanBg>
-               {" "}
+               </TextSpanBg>{" "}
                = 6 in
             </TextLine>
             <TextLine>
@@ -120,79 +117,76 @@ const Slide6 = ({ downIcon }) => {
                   hoverColor={colors.DARK_LAVENDER}
                >
                   Height (h)
-               </TextSpanBg>
-               {" "}
+               </TextSpanBg>{" "}
                = 5 in
             </TextLine>
          </Paragraph>
 
-         <Paragraph >
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            <EquationTable
-               align="middle"
-               equationLatex={[
-                  {
-                     lhsLatex: {
-                        value: ["Area of the trapezoid "],
-                        type: "text",
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["Area of the trapezoid "],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times h \\times (a+b)"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsLatex: {
-                        value: ["\\dfrac{1}{2} \\times h \\times (a+b)"],
-                        type: "latex",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times 5 \\times (10+6)"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                     rhsHint: {
-                        value: [""],
-                        type: "text",
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["\\dfrac{1}{2} \\times 5 \\times 16"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
                      },
-                  },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "latex",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times 5 \\times (10+6)"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["\\dfrac{1}{2} \\times 5 \\times 16"],
-                       type: "latex",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-                  {
-                    lhsLatex: {
-                       value: [""],
-                       type: "text",
-                    },
-                    rhsLatex: {
-                       value: ["40 sq in"],
-                       type: "text",
-                    },
-                    rhsHint: {
-                       value: [""],
-                       type: "text",
-                    },
-                 },
-               ]}
-            />
+                     {
+                        lhsLatex: {
+                           value: [""],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["40 sq in"],
+                           type: "text",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                  ]}
+               />
             </TextLine>
-        </Paragraph>
-
-         
+         </Paragraph>
       </TextAndDiagramSlide>
    );
 };

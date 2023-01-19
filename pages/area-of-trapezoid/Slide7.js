@@ -32,7 +32,6 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -91,43 +90,40 @@ const Slide7 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-            Step 1: Divide the trapezoid into a&nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-               >
-                parallelogram
-               </TextSpanBg>
-               {" "}
+               Step 1: Divide the trapezoid into a&nbsp;
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
+                  parallelogram
+               </TextSpanBg>{" "}
                and a&nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-               >
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                   triangle
                </TextSpanBg>
                .
             </TextLine>
 
             <TextLine>
-            Step 2: Calculate the area of the triangle using Heron's formula (<MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>)
-             and general formula (<MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>).
+               Step 2: Calculate the area of the triangle using Heron's formula
+               (
+               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>
+               ) and general formula (
+               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
+               ).
             </TextLine>
 
             <TextLine>
-            Step 3: Equate <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement> and{" "}
-            <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement> to find the height.
+               Step 3: Equate{" "}
+               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}
+               and{" "}
+               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>{" "}
+               to find the height.
             </TextLine>
 
             <TextLine>
-            Step 4: Find the area of trapezoid using the formula.
+               Step 4: Find the area of trapezoid using the formula.
             </TextLine>
          </Paragraph>
-
-
-         
       </TextAndDiagramSlide>
    );
 };

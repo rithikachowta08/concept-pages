@@ -9,7 +9,11 @@ const EquationParentDiv = styled.div`
 `;
 
 const StyledTable = styled.table`
-   border-spacing: 5px;
+   border-spacing: 5px 10px;
+
+   @media (min-width: 200px) and (max-width: 820px) {
+      border-spacing: 5px;
+   }
 `;
 const LHSLatex = styled.td`
    text-align: right;

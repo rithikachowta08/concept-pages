@@ -25,7 +25,6 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -96,7 +95,7 @@ const Slide3 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          /> */}
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             An arc can be measured using two different ways:&nbsp;
             <TextLine>
                <TextSpanBg
