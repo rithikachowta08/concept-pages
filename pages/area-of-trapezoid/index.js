@@ -38,8 +38,8 @@ const AreaOfTrapezoid = () => {
     <PageLastSlide
          key={11}
          currentPageTitle={"Area of Trapezoid"}
-         nextPageTitle="Area of a Circle"
-         nextPageLink="/study/area-of-circle"
+         nextPageTitle="Volume of a Triangular prism"
+         nextPageLink="/study/volume-of-triangular-prism"
       />,
   ];
 

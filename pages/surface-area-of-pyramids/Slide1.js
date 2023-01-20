@@ -10,7 +10,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "Lateral surface area",
             "Total surface area",
          ]}
-         anchorIdxes={[2, 3, 5]}
+         anchorIdxes={[2, 7, 9]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>
