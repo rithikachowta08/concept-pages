@@ -36,8 +36,8 @@ const RelationshipBetweenDiameterAndCircumference = () => {
     // <Slide11 key={10} />,
     // <Slide12 key={11} />,
     <PageLastSlide
-      key={14}
-      currentPageTitle={"Length of Arc of a circle"}
+      key={8}
+      currentPageTitle={"Relationship between Diameter and Circumference"}
       nextPageTitle="Area of Square"
       nextPageLink="/us/math/study/area-of-square"
     />,

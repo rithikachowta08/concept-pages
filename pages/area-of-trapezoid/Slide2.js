@@ -3,29 +3,27 @@ import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import { Flex, ModalImg } from "components/StyledElements";
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 const ModalTriggerText = dynamic(() =>
-  import("components/text").then((mod) => mod.ModalTriggerText)
+   import("components/text").then((mod) => mod.ModalTriggerText)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
+   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const MathElement = dynamic(() => 
-  import("components/MathElement")
-)
+const MathElement = dynamic(() => import("components/MathElement"));
 
-const circle = "assets/diameter-and-circumference/circle.svg";
-const circle_highlighting_circumference = "assets/diameter-and-circumference/circumference.svg";
-const circle_modal="assets/diameter-and-circumference/circle_pop_up.svg";
+const slide2_a = "assets/area-of-trapezoid/slide2_a.svg";
+const slide2_b = "assets/area-of-trapezoid/slide2_b.svg";
+const slide2_pop_up= "assets/area-of-trapezoid/slide2_pop_up.svg";
 import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
@@ -34,7 +32,7 @@ const Slide2 = ({ downIcon, navBar }) => {
        <Paragraph color={colors.WHITE}>
        A trapezoid is a quadrilateral with exactly one pair of parallel sides.
        </Paragraph>
-       <ModalImg src={circle_modal} alt="Diagram of a circle showing centre (O) and radius (r)"/>
+       <ModalImg src={slide2_pop_up} alt="Diagram of a trapezoid with given parallel bases"/>
     </Flex>
  );
   const [activeIndex, setActiveIndex] = useState(0);
@@ -56,10 +54,10 @@ const Slide2 = ({ downIcon, navBar }) => {
       title="What is the area of a trapezoid?"
       diagram={
         <TransitionImage
-          images={[circle, circle_highlighting_circumference]}
+          images={[slide2_a, slide2_b]}
           altTexts={[
-            "Diagram of a circle with diameter",
-            "Diagram of a circle with highlighted circumference"
+            "Diagram of a trapezoid with given parallel bases",
+            "Diagram of a trapezoid with region enclosed"
          ]}
           activeIndex={activeIndex}
         />
@@ -73,21 +71,21 @@ const Slide2 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-      <Paragraph lineHeight={lineHeightProp}>
-      The area of a&nbsp;
-      <ModalTriggerText onClick={onClick}>trapezoid</ModalTriggerText>&nbsp;
-      is the&nbsp;
-        <TextSpanBg
-          onHover={() => onHover(1)}
-          onHoverOut={onHoverOut}
-          hoverColor={colors.DARK_LAVENDER}
-        >
-          region enclosed
-        </TextSpanBg>
-        &nbsp;within its four sides.
-        </Paragraph>
-    </TextAndDiagramSlide>
-  );
+         <Paragraph>
+            The area of a&nbsp;
+            <ModalTriggerText onClick={onClick}>trapezoid</ModalTriggerText>
+            &nbsp;is the&nbsp;
+            <TextSpanBg
+               onHover={() => onHover(1)}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               region enclosed
+            </TextSpanBg>
+            &nbsp;within its four sides.
+         </Paragraph>
+      </TextAndDiagramSlide>
+   );
 };
 
 export default Slide2;

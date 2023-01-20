@@ -77,7 +77,7 @@ const UnitsToMeasureCapacity = () => {
       },
    ];
 
-   const darkBgIndices = [0, 5, 7, 10, 14, 17];
+   const darkBgIndices = [0, 5, 7, 10, 14, 17, 18];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
