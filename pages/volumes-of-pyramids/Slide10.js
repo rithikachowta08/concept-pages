@@ -29,10 +29,11 @@ const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Pill = dynamic(() => import("components/Pill"));
-const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
-const surfaceCube_modal = "assets/surface-area-of-cube/slide8/2.svg";
-const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
-const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
+const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide10/1.svg";
+const volumeOfPyramid_right = "assets/volumes-of-pyramids/slide10/2.svg";
+const volumeOfPyramid_left = "assets/volumes-of-pyramids/slide8/3.svg";
+const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide8/4.svg";
+const volumeOfPyramid_modal = "assets/volumes-of-pyramids/slide8/5.svg";
 
 const Slide10 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -97,7 +98,7 @@ const Slide10 = ({ downIcon }) => {
         A rectangular pyramid has a base in rectangle shape.
       </Paragraph>
       <ModalImg
-        src={surfaceCube_modal}
+        src={volumeOfPyramid_modal}
         alignSelf="center"
         width="400px"
         marginBottom="0px"
@@ -118,9 +119,15 @@ const Slide10 = ({ downIcon }) => {
       secondaryTitle="Volume Formulas of Different Types of Pyramid"
       diagram={
         <TransitionImage
-          images={[surfaceCube_line, surfaceCube_blue, surfaceCube_modal1]}
+          images={[
+            volumeOfPyramid_full,
+            volumeOfPyramid_right,
+            volumeOfPyramid_left,
+            volumeOfPyramid_height,
+          ]}
           altTexts={[
             "Diagram of a net of a cube",
+            "Diagram of a net of a cube representing the lateral surface area",
             "Diagram of a net of a cube representing the lateral surface area",
             "Diagram of a net of a cube representing the lateral surface area",
           ]}

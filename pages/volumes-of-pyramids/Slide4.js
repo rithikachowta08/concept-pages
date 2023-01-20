@@ -15,8 +15,8 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const surfaceCube_full = "assets/surface-area-of-cube/slide2/1.svg";
-const surfaceCube_slides = "assets/surface-area-of-cube/slide2/2.svg";
+const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide4/1.svg";
+const volumeOfPyramid_slides = "assets/volumes-of-pyramids/slide4/2.svg";
 
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,7 +31,7 @@ const Slide4 = ({ downIcon }) => {
       title="What is the volume of a pyramid?"
       diagram={
         <TransitionImage
-          images={[surfaceCube_full, surfaceCube_slides]}
+          images={[volumeOfPyramid_full, volumeOfPyramid_slides]}
           altTexts={[
             "Diagram of a cube",
             "Diagram of a cube highlighting the square faces",

@@ -29,10 +29,11 @@ const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Pill = dynamic(() => import("components/Pill"));
-const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
-const surfaceCube_modal = "assets/surface-area-of-cube/slide8/2.svg";
-const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
-const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
+const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide7/1.svg";
+const volumeOfPyramid_slide = "assets/volumes-of-pyramids/slide7/2.svg";
+const volumeOfPyramid_botton = "assets/volumes-of-pyramids/slide7/3.svg";
+const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide7/4.svg";
+const volumeOfPyramid_modal = "assets/volumes-of-pyramids/slide7/5.svg";
 
 const Slide7 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -99,7 +100,7 @@ const Slide7 = ({ downIcon }) => {
         A triangular pyramid has a base in the shape of a triangle.
       </Paragraph>
       <ModalImg
-        src={surfaceCube_modal}
+        src={volumeOfPyramid_modal}
         alignSelf="center"
         width="400px"
         marginBottom="0px"
@@ -131,9 +132,16 @@ const Slide7 = ({ downIcon }) => {
       bg="DARK"
       diagram={
         <TransitionImage
-          images={[surfaceCube_line, surfaceCube_blue]}
+          images={[
+            volumeOfPyramid_full,
+            volumeOfPyramid_slide,
+            volumeOfPyramid_botton,
+            volumeOfPyramid_height,
+          ]}
           altTexts={[
             "Diagram of a net of a cube",
+            "Diagram of a net of a cube representing the lateral surface area",
+            "Diagram of a net of a cube representing the lateral surface area",
             "Diagram of a net of a cube representing the lateral surface area",
           ]}
           activeIndex={activeIndex}

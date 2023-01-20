@@ -12,18 +12,14 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
-const MathElement = dynamic(() => import("components/MathElement"));
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const rhombus_full = "assets/area-of-rhombus/slide14/1.svg";
-const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
-const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
-const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
+const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide6/1.svg";
+const volumeOfPyramid_slide = "assets/volumes-of-pyramids/slide6/2.svg";
+const volumeOfPyramid_botton = "assets/volumes-of-pyramids/slide6/3.svg";
+const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide6/4.svg";
 
 const Slide6 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -101,12 +97,17 @@ const Slide6 = ({ downIcon }) => {
       title="Determine the volume of the pyramid, whose base area is 10 sq in and height is 9 in."
       diagram={
         <TransitionImage
-          images={[rhombus_full, rhombus_angles, rhombus_degree, rhombus_lines]}
+          images={[
+            volumeOfPyramid_full,
+            volumeOfPyramid_slide,
+            volumeOfPyramid_botton,
+            volumeOfPyramid_height,
+          ]}
           altTexts={[
-            "Diagram of rhombus with side length 4 in and included angle 30 degree shown",
-            "Diagram of rhombus with side length 4 in highlighted",
-            "Diagram of rhombus with included angle 30 degree highlighted",
-            "Diagram of rhombus with bounded region highlighted",
+            "Diagram of volumeOfPyramid with side length 4 in and included angle 30 degree shown",
+            "Diagram of volumeOfPyramid with side length 4 in highlighted",
+            "Diagram of volumeOfPyramid with included angle 30 degree highlighted",
+            "Diagram of volumeOfPyramid with bounded region highlighted",
           ]}
           activeIndex={activeIndex}
         />

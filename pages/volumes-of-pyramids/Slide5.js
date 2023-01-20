@@ -19,9 +19,10 @@ const Flex = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 const MathElement = dynamic(() => import("components/MathElement"));
-const surfaceCone_full = "assets/surface-area-of-cone/slide8/1.svg";
-const surfaceCone_right = "assets/surface-area-of-cone/slide8/2.svg";
-const surfaceCone_rightslide = "assets/surface-area-of-cone/slide8/3.svg";
+const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide5/1.svg";
+const volumeOfPyramid_slide = "assets/volumes-of-pyramids/slide5/2.svg";
+const volumeOfPyramid_bottom = "assets/volumes-of-pyramids/slide5/3.svg";
+const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide5/4.svg";
 
 const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,10 +42,16 @@ const Slide5 = ({ downIcon }) => {
       secondaryTitle="Volume of Pyramids"
       diagram={
         <TransitionImage
-          images={[surfaceCone_full, surfaceCone_right, surfaceCone_rightslide]}
+          images={[
+            volumeOfPyramid_full,
+            volumeOfPyramid_slide,
+            volumeOfPyramid_bottom,
+            volumeOfPyramid_height,
+          ]}
           altTexts={[
             "Diagram of a cone with radius and slant height labelled",
             "Diagram of a cone with radius highlighted",
+            "Diagram of a cone with slant height highlighted",
             "Diagram of a cone with slant height highlighted",
           ]}
           activeIndex={activeIndex}

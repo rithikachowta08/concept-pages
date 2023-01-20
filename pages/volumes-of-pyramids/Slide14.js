@@ -22,7 +22,7 @@ const Flex = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 
-const cube_unit = "assets/surface-area-of-cone/slide3/1.svg";
+const volumeOfPyramid_unit = "assets/volumes-of-pyramids/slide3/1.svg";
 const Slide14 = ({ downIcon, currentPageIdx }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalContent = (
@@ -32,7 +32,7 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
         equal to 90 degrees.
       </Paragraph>
       <ModalImg
-        src={cube_unit}
+        src={volumeOfPyramid_unit}
         alignSelf="center"
         width="400px"
         marginBottom="50px"
@@ -55,7 +55,7 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
       downIcon={downIcon}
       title="Relationship between volume of a pyramid and prism"
       bg="DARK"
-      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
+      appletSrc={`${coco_applet_uri}volumes-of-pyramids-formation-v3/index.html`}
       currentPageIdx={currentPageIdx}
     >
       <Paragraph color={colors.WHITE}>

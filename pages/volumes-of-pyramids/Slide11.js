@@ -17,9 +17,9 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
-const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
-const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
+const volumeOfPyramid_line = "assets/volumes-of-pyramids/slide8/1.svg";
+const volumeOfPyramid_blue = "assets/volumes-of-pyramids/slide8/3.svg";
+const volumeOfPyramid_modal1 = "assets/volumes-of-pyramids/slide8/4.svg";
 
 const Slide11 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -107,7 +107,11 @@ const Slide11 = ({ downIcon }) => {
       secondaryTitle="Illustrative Examples"
       diagram={
         <TransitionImage
-          images={[surfaceCube_line, surfaceCube_blue, surfaceCube_modal1]}
+          images={[
+            volumeOfPyramid_line,
+            volumeOfPyramid_blue,
+            volumeOfPyramid_modal1,
+          ]}
           altTexts={[
             "Diagram of a net of a cube",
             "Diagram of a net of a cube representing the lateral surface area",
