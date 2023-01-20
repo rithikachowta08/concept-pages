@@ -38,8 +38,8 @@ const RelationshipBetweenDiameterAndCircumference = () => {
     <PageLastSlide
       key={8}
       currentPageTitle={"Relationship between Diameter and Circumference"}
-      nextPageTitle="Area of Square"
-      nextPageLink="/us/math/study/area-of-square"
+      nextPageTitle="Volume of a Cylinder"
+      nextPageLink="/us/math/study/volume-of-cylinder"
     />,
   ];
 
