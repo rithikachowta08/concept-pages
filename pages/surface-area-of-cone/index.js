@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Script from "next/script";
 const FullPageCustomWrapper = dynamic(() =>
   import("components/full-page-wrapper/FullPageCustomWrapper").then(
     (mod) => mod.FullPageCustomWrapper
@@ -55,11 +56,17 @@ const SurfaceAreaofCone = () => {
 
   const darkBgIndices = [0, 4, 6, 8, 11, 12];
   return (
-    <FullPageCustomWrapper
-      slidesComponentList={SlideArray}
-      navigationSections={navigationSections}
-      darkBgIndices={darkBgIndices}
-    />
+    <>
+      <Script
+        src="https://geogebra.org/apps/deployggb.js"
+        strategy="beforeInteractive"
+      ></Script>
+      <FullPageCustomWrapper
+        slidesComponentList={SlideArray}
+        navigationSections={navigationSections}
+        darkBgIndices={darkBgIndices}
+      />
+    </>
   );
 };
 SurfaceAreaofCone.title =
