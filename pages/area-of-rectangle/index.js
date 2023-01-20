@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import Script from "next/script";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
       (mod) => mod.FullPageCustomWrapper
@@ -50,17 +49,11 @@ const AreaOfRectangle = () => {
 
    const darkBgIndices = [0, 3, 4, 5, 7, 9, 10];
    return (
-      <>
-         <Script
-            src="https://geogebra.org/apps/deployggb.js"
-            strategy="beforeInteractive"
-         ></Script>
-         <FullPageCustomWrapper
-            slidesComponentList={SlideArray}
-            navigationSections={navigationSections}
-            darkBgIndices={darkBgIndices}
-         />
-      </>
+      <FullPageCustomWrapper
+        slidesComponentList={SlideArray}
+        navigationSections={navigationSections}
+        darkBgIndices={darkBgIndices}
+      />
    );
 };
 
