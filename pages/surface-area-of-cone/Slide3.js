@@ -23,7 +23,7 @@ const Flex = dynamic(() =>
 const App = styled(Applet_Test)`
   min-width: 250px;
 
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
+  @media only screen and (min-width: 601px) and (max-width: 992px) and (orientation: portrait) {
     min-width: 500px;
   }
 
