@@ -19,7 +19,7 @@ const volumeCone_fill = "assets/concept-volume-of-cone/slide6/2.svg";
 const Slide6 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -41,16 +41,16 @@ const Slide6 = ({ downIcon }) => {
       title="Volume of a Cone"
     >
       <Paragraph color={colors.WHITE}>
-        The volume of a cone is the &nbsp;
+        The volume of a cone is the&nbsp;
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           hoverColor={colors.LAVENDER}
           color={colors.RED}
         >
           space occupied
-        </TextSpanBg>{" "}
+        </TextSpanBg>
         &nbsp;within the boundaries of the cone in a three-dimensional space.
       </Paragraph>
     </TextAndDiagramSlide>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextSpanBg = dynamic(() =>
@@ -112,7 +111,6 @@ const Slide8 = ({ downIcon }) => {
       <Paragraph
         marginBottom="1vh"
         fontSize="1.5rem"
-        marginBottom="0px"
         marginTop="10px"
         padding="0px 15px"
       >
@@ -139,7 +137,7 @@ const Slide8 = ({ downIcon }) => {
     setIsModalOpen(false);
   };
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -176,20 +174,20 @@ const Slide8 = ({ downIcon }) => {
         bg="LIGHT"
         color={colors.DARK_GREY}
       />
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+      <Paragraph color={colors.WHITE}>
         The volume, ‘V’, of a cone is one-third of the product of the area of
-        the base &nbsp;
+        the base&nbsp;
         <MathElement htmlString={latex[mathjaxCounter++]} />
         &nbsp;and height (h).
       </Paragraph>
       <div>
-        <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+        <Paragraph color={colors.WHITE}>
           <Flex direction="row">
             <Paragraph color={colors.WHITE}>
               &nbsp;
               <TextSpanBg
                 id={1}
-                onHover={() => onHover(1)}
+                onHover={onHover}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}
@@ -199,21 +197,21 @@ const Slide8 = ({ downIcon }) => {
             </Paragraph>
             <Paragraph color={colors.WHITE}>&nbsp;=</Paragraph>
             <Paragraph color={colors.WHITE}>
-              &nbsp; <MathElement htmlString={latex[mathjaxCounter++]} /> ×
               &nbsp;
+              <MathElement htmlString={latex[mathjaxCounter++]} /> ×&nbsp;
               <TextSpanBg
                 id={2}
-                onHover={() => onHover(2)}
+                onHover={onHover}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}
               >
                 Base area
               </TextSpanBg>
-              &nbsp; × &nbsp;
+              &nbsp;×&nbsp;
               <TextSpanBg
                 id={3}
-                onHover={() => onHover(3)}
+                onHover={onHover}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}
@@ -229,7 +227,7 @@ const Slide8 = ({ downIcon }) => {
         <MathElement htmlString={latex[mathjaxCounter++]} />
       </Paragraph>
       <Paragraph color={colors.WHITE}>
-        The area obtained is measured in &nbsp;
+        The area obtained is measured in&nbsp;
         <ModalTriggerText id={2} onClick={onClick} color={colors.WHITE}>
           cubic units
         </ModalTriggerText>

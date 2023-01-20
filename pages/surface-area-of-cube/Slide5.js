@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextSpanBg = dynamic(() =>
@@ -66,7 +65,7 @@ const Slide5 = ({ downIcon }) => {
     setIsModalOpen(false);
   };
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -100,10 +99,10 @@ const Slide5 = ({ downIcon }) => {
         The total surface area of a cube is the area covered by all its six
         faces.
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+      <Paragraph color={colors.WHITE}>
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}

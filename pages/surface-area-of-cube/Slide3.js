@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -21,7 +20,7 @@ const surfaceCube_slides = "assets/surface-area-of-cube/slide3/2.svg";
 const Slide3 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -42,11 +41,11 @@ const Slide3 = ({ downIcon }) => {
       bg="DARK"
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+      <Paragraph color={colors.WHITE}>
         The surface area of a cube is defined as the total area covered by the{" "}
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}

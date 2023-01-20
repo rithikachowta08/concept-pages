@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
@@ -75,7 +74,7 @@ const Slide9 = ({ downIcon }) => {
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -102,10 +101,10 @@ const Slide9 = ({ downIcon }) => {
       }
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp}>
+      <Paragraph>
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -114,10 +113,10 @@ const Slide9 = ({ downIcon }) => {
         </TextSpanBg>
         &nbsp;= 9 in&nbsp;
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp}>
+      <Paragraph>
         <TextSpanBg
           id={2}
-          onHover={() => onHover(2)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}

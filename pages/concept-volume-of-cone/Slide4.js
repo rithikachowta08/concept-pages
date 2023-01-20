@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -23,7 +22,7 @@ const volumeCone_rightslide = "assets/concept-volume-of-cone/slide4/4.svg";
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -51,11 +50,11 @@ const Slide4 = ({ downIcon }) => {
       }
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp}>
-        The three elements of a cone are its &nbsp;
+      <Paragraph>
+        The three elements of a cone are its&nbsp;
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -65,7 +64,7 @@ const Slide4 = ({ downIcon }) => {
         ,&nbsp;
         <TextSpanBg
           id={2}
-          onHover={() => onHover(2)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -75,7 +74,7 @@ const Slide4 = ({ downIcon }) => {
         , and&nbsp;
         <TextSpanBg
           id={3}
-          onHover={() => onHover(3)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
