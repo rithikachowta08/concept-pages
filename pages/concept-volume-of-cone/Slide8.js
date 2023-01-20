@@ -137,7 +137,7 @@ const Slide8 = ({ downIcon }) => {
     setIsModalOpen(false);
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -187,7 +187,7 @@ const Slide8 = ({ downIcon }) => {
               &nbsp;
               <TextSpanBg
                 id={1}
-                onHover={onHover}
+                onHover={() => onHover(1)}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}
@@ -201,7 +201,7 @@ const Slide8 = ({ downIcon }) => {
               <MathElement htmlString={latex[mathjaxCounter++]} /> ×&nbsp;
               <TextSpanBg
                 id={2}
-                onHover={onHover}
+                onHover={() => onHover(2)}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}
@@ -211,7 +211,7 @@ const Slide8 = ({ downIcon }) => {
               &nbsp;×&nbsp;
               <TextSpanBg
                 id={3}
-                onHover={onHover}
+                onHover={() => onHover(3)}
                 onHoverOut={onHoverOut}
                 color={colors.RED}
                 hoverColor={colors.LAVENDER}

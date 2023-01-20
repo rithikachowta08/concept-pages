@@ -22,7 +22,7 @@ const volumeCone_rightslide = "assets/concept-volume-of-cone/slide4/4.svg";
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -54,7 +54,7 @@ const Slide4 = ({ downIcon }) => {
         The three elements of a cone are its&nbsp;
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -64,7 +64,7 @@ const Slide4 = ({ downIcon }) => {
         ,&nbsp;
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -74,7 +74,7 @@ const Slide4 = ({ downIcon }) => {
         , and&nbsp;
         <TextSpanBg
           id={3}
-          onHover={onHover}
+          onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}

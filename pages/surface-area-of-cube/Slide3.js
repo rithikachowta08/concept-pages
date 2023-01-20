@@ -20,7 +20,7 @@ const surfaceCube_slides = "assets/surface-area-of-cube/slide3/2.svg";
 const Slide3 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -45,7 +45,7 @@ const Slide3 = ({ downIcon }) => {
         The surface area of a cube is defined as the total area covered by the{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}
