@@ -57,7 +57,7 @@ const MultipleDiagramSlide = ({
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
-                     <SlideTitle bg={bg} centerAlign>
+                     <SlideTitle bg={bg} marginBottom="15px" centerAlign>
                         {title}
                      </SlideTitle>
                   </div>
@@ -128,7 +128,9 @@ const MultipleDiagramSlide = ({
                            marginBottom="15px"
                            secondaryTitle={secondaryTitle}
                         />
-                        <SlideTitle bg={bg}>{title}</SlideTitle>
+                        <SlideTitle bg={bg} marginBottom="30px">
+                           {title}
+                        </SlideTitle>
                      </div>
                      {children}
                      <Flex

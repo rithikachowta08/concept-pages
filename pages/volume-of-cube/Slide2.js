@@ -1,23 +1,22 @@
 import { useState } from "react";
-const cube_red = "assets/volume-of-cube/slide2/1.svg";
-const cube_faces = "assets/volume-of-cube/slide2/2.svg";
-const cube_vertices = "assets/volume-of-cube/slide2/3.svg";
-const cube_edges = "assets/volume-of-cube/slide2/4.svg";
+const cube_red = "assets/volume-of-cube/slide2_a.svg";
+const cube_faces = "assets/volume-of-cube/slide2_b.svg";
+const cube_vertices = "assets/volume-of-cube/slide2_c.svg";
+const cube_edges = "assets/volume-of-cube/slide2_d.svg";
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
+   import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -45,36 +44,33 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
-            A cube is a three-dimensional shape that has 6{" "}
+         <Paragraph>
+            A cube is a three-dimensional shape that has{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
-               square faces
+               6 square faces
             </TextSpanBg>
-            , 8{" "}
+            ,{" "}
             <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
-               vertices
+               8 vertices
             </TextSpanBg>{" "}
-            and 12{" "}
+            and{" "}
             <TextSpanBg
                id={3}
                onHover={onHover}
                onHoverOut={onHoverOut}
-               color={colors.RED}
-               hoverColor={colors.DARK_BLUE}
+               hoverColor={colors.DARK_LAVENDER}
             >
-               edges
+               12 edges
             </TextSpanBg>{" "}
             of equal length.
          </Paragraph>

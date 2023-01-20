@@ -60,15 +60,14 @@ const Slide2 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph marginBottom="70px">
+         <Paragraph>
             The area of a{" "}
             <ModalTriggerText onClick={onClick}>triangle</ModalTriggerText> is
             the{" "}
             <TextSpanBg
-               color={colors.RED}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
-               hoverColor={colors.DARK_BLUE}
             >
                region enclosed
             </TextSpanBg>{" "}

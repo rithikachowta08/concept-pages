@@ -6,7 +6,7 @@ const TransitionImage = dynamic(() =>
 const MultipleDiagramSlide = dynamic(() =>
    import("components/slides/MultipleDiagramSlide")
 );
-import { Paragraph, TextSpanBg } from "components/text";
+import { TextLine, TextSpanBg } from "components/text";
 import { useState } from "react";
 import { colors } from "utils/colors";
 
@@ -86,36 +86,32 @@ const Slide5 = ({ downIcon }) => {
             },
          ]}
       >
-         <span>
-            <Paragraph
-               textAlign={"center"}
-               marginBottom={"40px"}
-               color={colors.BLACK}
+         <TextLine
+            textAlign={"center"}
+            marginBottom={"40px"}
+            color={colors.BLACK}
+         >
+            Let&apos;s observe the base and height of different types of
+            triangles.{" "}
+         </TextLine>
+         <TextLine textAlign={"center"} color={colors.BLACK}>
+            Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
+            <TextSpanBg
+               hoverColor={colors.DARK_LAVENDER}
+               onHover={() => setActiveIndex(1)}
+               onHoverOut={() => setActiveIndex(0)}
             >
-               Let&apos;s observe the base and height of different types of
-               triangles.{" "}
-            </Paragraph>
-            <Paragraph textAlign={"center"} color={colors.BLACK}>
-               Area = <MathElement htmlString={"\\dfrac{1}{2}\\ \\times\\ "} />
-               <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  onHover={() => setActiveIndex(1)}
-                  onHoverOut={() => setActiveIndex(0)}
-               >
-                  Base (b)
-               </TextSpanBg>
-               <MathElement htmlString={"\\ \\times\\ "} />
-               <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
-                  onHover={() => setActiveIndex(2)}
-                  onHoverOut={() => setActiveIndex(0)}
-               >
-                  Height (h)
-               </TextSpanBg>
-            </Paragraph>
-         </span>
+               Base (b)
+            </TextSpanBg>
+            <MathElement htmlString={"\\ \\times\\ "} />
+            <TextSpanBg
+               hoverColor={colors.DARK_LAVENDER}
+               onHover={() => setActiveIndex(2)}
+               onHoverOut={() => setActiveIndex(0)}
+            >
+               Height (h)
+            </TextSpanBg>
+         </TextLine>
       </MultipleDiagramSlide>
    );
 };

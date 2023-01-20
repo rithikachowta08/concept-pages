@@ -6,7 +6,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpan, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -34,37 +34,35 @@ const Slide12 = ({ downIcon, navBar }) => {
                activeIndex={activeIndex}
             />
          }
-         isLastSlide={true}
          navBar={navBar}
+         downIcon={downIcon}
       >
          <Paragraph>
             Find the area of the sector of a circle if the radius of the circle
-            is 10 units, and the length of an arc is 6 units.
+            is 10 in, and the length of an arc is 6 in.
          </Paragraph>
          <Paragraph>Given:</Paragraph>
          <Paragraph>
             <TextSpan>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
                   Radius (r)
                </TextSpanBg>{" "}
-               = 10 units
+               = 10 in
             </TextSpan>
             <br />
             <TextSpan margin={"10px 0 0 0"}>
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.DARK_BLUE}
+                  hoverColor={colors.DARK_LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >
                   Length of an arc (l)
                </TextSpanBg>{" "}
-               = 6 units
+               = 6 in
             </TextSpan>
          </Paragraph>
          <Paragraph>
@@ -92,7 +90,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{6\\times 10}{2}\\ sq\\ units"],
+                        value: ["\\dfrac{6\\times 10}{2}\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -106,7 +104,7 @@ const Slide12 = ({ downIcon, navBar }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["30\\ sq\\ units"],
+                        value: ["30\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {

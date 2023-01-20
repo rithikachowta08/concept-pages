@@ -19,7 +19,7 @@ const diameter_formula_value =
    "assets/circumference-of-circle/diameter_formula_value.svg";
 const radius = "assets/circumference-of-circle/radius.svg";
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
@@ -49,7 +49,7 @@ const Slide6 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["12 \\div 2 \\ cm"],
+            value: ["12 \\div 2 \\ in"],
             type: "latex",
          },
          rhsHint: {
@@ -63,7 +63,7 @@ const Slide6 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["6 \\ cm"],
+            value: ["6 \\ in"],
             type: "latex",
          },
          rhsHint: {
@@ -91,9 +91,9 @@ const Slide6 = ({ downIcon }) => {
             <TransitionImage
                images={[diameter_value, radius, diameter_formula_value]}
                altTexts={[
-                  "Image of a circle with diameter 12 cm",
+                  "Image of a circle with diameter 12 in",
                   "Image of a circle with radius highlighted",
-                  "Image of a circle with diameter 12 cm highlighted",
+                  "Image of a circle with diameter 12 in highlighted",
                ]}
                activeIndex={activeIndex}
             />
@@ -102,13 +102,13 @@ const Slide6 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               Find the radius of a circle of diameter 12 cm.
+               Find the radius of a circle of diameter 12 in.
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
-               <TextLine>Diameter (d) of the circle = 12 cm</TextLine>
+               <TextLine>Diameter (d) of the circle = 12 in</TextLine>
                <TextLine>Diameter = 2 &times; Radius (r)</TextLine>
                <EquationTable equationLatex={EquationLatex0}></EquationTable>
             </Paragraph>

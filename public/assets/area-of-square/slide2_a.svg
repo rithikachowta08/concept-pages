@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .3;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #a753b5;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-3 {
+        fill: #bb70de;
+      }
+    </style>
+  </defs>
+  <g>
+    <g class="cls-1">
+      <rect class="cls-3" x="94.13" y="94.14" width="371.73" height="371.71"/>
+    </g>
+    <rect class="cls-2" x="94.13" y="94.14" width="371.73" height="371.71"/>
+    <rect class="cls-2" x="94.13" y="94.14" width="50.74" height="51.34"/>
+    <rect class="cls-2" x="414.52" y="94.14" width="51.34" height="51.34"/>
+    <rect class="cls-2" x="94.13" y="414.51" width="51.34" height="51.34"/>
+    <rect class="cls-2" x="414.52" y="414.51" width="51.34" height="51.34"/>
+  </g>
+  <line class="cls-2" x1="280" y1="116.79" x2="280" y2="71.5"/>
+  <line class="cls-2" x1="488.51" y1="280" x2="443.22" y2="280"/>
+  <line class="cls-2" x1="273.4" y1="488.5" x2="273.4" y2="443.21"/>
+  <line class="cls-2" x1="116.78" y1="280" x2="71.49" y2="280"/>
+</svg>

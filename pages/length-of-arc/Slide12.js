@@ -32,7 +32,6 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -75,7 +74,7 @@ const Slide12 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
                The length of an arc where the central angle is mentioned in
                degrees is given by the following formula:
@@ -94,7 +93,7 @@ const Slide12 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{θ}{360°} \\times 2\\pi r \\thinspace units",
+                              "\\dfrac{θ}{360°} \\times 2 \\times \\pi \\times r \\thinspace units",
                            ],
                            type: "latex",
                         },
@@ -108,7 +107,7 @@ const Slide12 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
 
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine color={colors.BLACK}>
                If the central angle is given in radian,
             </TextLine>
@@ -126,7 +125,7 @@ const Slide12 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\dfrac{θ}{2\\pi} \\times 2\\pi r \\thinspace units",
+                              "\\dfrac{θ}{2\\pi} \\times 2 \\times \\pi \\times r \\thinspace units",
                            ],
                            type: "latex",
                         },

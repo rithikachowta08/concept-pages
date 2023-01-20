@@ -6,7 +6,7 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpanBg } from "components/text";
 import { useEffect, useState } from "react";
@@ -66,19 +66,17 @@ const Slide9 = ({ navBar, downIcon }) => {
          <Paragraph margin={"40px 0 0 0"}>Given:</Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(1)}
                onHoverOut={() => setActiveIndex(0)}
             >
                Radius (r)
             </TextSpanBg>{" "}
-            = 4cm
+            = 4 in
          </Paragraph>
          <Paragraph>
             <TextSpanBg
-               color={colors.RED}
-               hoverColor={colors.AQUA}
+               hoverColor={colors.DARK_LAVENDER}
                onHover={() => setActiveIndex(2)}
                onHoverOut={() => setActiveIndex(0)}
             >
@@ -93,12 +91,12 @@ const Slide9 = ({ navBar, downIcon }) => {
                   {
                      lhsLatex: {
                         value: [
-                           "\\htmlId{3}{\\htmlClass{textSpanBg soc-slide-9 darkBg}{\\text{Sector (OAPB)}}}",
+                           "\\htmlId{3}{\\htmlClass{textSpanBg soc-slide-9}{\\text{Sector (OAPB)}}}",
                         ],
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["\\dfrac{θ}{360°}\\times \\pi r^2"],
+                        value: ["\\dfrac{θ}{360°}\\times \\pi\\times r^2"],
                         type: "latex",
                      },
                      rhsHint: {
@@ -142,7 +140,7 @@ const Slide9 = ({ navBar, downIcon }) => {
                         type: "text",
                      },
                      rhsLatex: {
-                        value: ["4.19\\ cm^2"],
+                        value: ["4.19\\ sq\\ in"],
                         type: "latex",
                      },
                      rhsHint: {

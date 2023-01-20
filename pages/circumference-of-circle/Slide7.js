@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { fontSizes } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -17,7 +15,7 @@ const TextLine = dynamic(() =>
 const plain_d = "assets/circumference-of-circle/plain_d.svg";
 const circumference_value =
    "assets/circumference-of-circle/circumference_value.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
@@ -31,7 +29,7 @@ const Slide8 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["28 \\pi \\text{ units}"],
+            value: ["28 \\times \\pi \\text{ ft}"],
             type: "latex",
          },
          rhsHint: {
@@ -41,11 +39,11 @@ const Slide8 = ({ downIcon }) => {
       },
       {
          lhsLatex: {
-            value: ["\\pi d"],
+            value: ["\\pi \\times d"],
             type: "latex",
          },
          rhsLatex: {
-            value: ["28\\pi"],
+            value: ["28 \\times \\pi"],
             type: "latex",
          },
          rhsHint: {
@@ -59,7 +57,7 @@ const Slide8 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["28 \\text{ units}"],
+            value: ["28 \\text{ ft}"],
             type: "latex",
          },
          rhsHint: {
@@ -97,14 +95,14 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine fontWeight={fontWeights.BOLD}>
-               What is the diameter of a circle whose circumference is 28 &pi;
-               units?
+               What is the diameter of a circle whose circumference is (28
+               &times; &pi;) ft?
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
-               <TextLine>Circumference of a circle = &pi;d</TextLine>
+               <TextLine>Circumference of a circle = &pi; &times; d</TextLine>
                <EquationTable equationLatex={EquationLatex0}></EquationTable>
             </Paragraph>
          </div>

@@ -1,13 +1,8 @@
-@import url("styles/fonts/stylesheet.css");
-
 html,
 body {
    margin: 0;
    padding: 0;
    height: 100%;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -30,10 +25,6 @@ body {
    color: white;
    background: black;
    height: 100%;
-   font-family: "Nunito", sans-serif;
-
-   --toastify-color-success: #4dcb88;
-   --toastify-color-error: #ea6560;
 }
 
 .fp-viewing-0,
@@ -119,7 +110,6 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .katex .mathdefault,
 .katex .mathnormal {
-   font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
 
@@ -129,7 +119,8 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 }
 
 .katex {
-   font: unset !important;
+   font-size: unset !important;
+   font-family: unset !important;
 }
 
 .katex .katex-html {
@@ -138,9 +129,9 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 
 .katex .mord {
    display: inline-block;
-   font-family: "Nunito", sans-serif !important;
    font-style: normal !important;
 }
+
 .pill-math {
    span {
       font-family: "Times New Roman", Times, serif !important;

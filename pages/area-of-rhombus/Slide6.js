@@ -69,7 +69,7 @@ const Slide6 = ({ downIcon }) => {
           color={colors.RED}
         >
           height (h)
-        </TextSpanBg>{" "}
+        </TextSpanBg>
         .
       </Paragraph>
       <Pill color={colors.WHITE} bgColor={colors.GREEN}>

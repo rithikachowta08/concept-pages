@@ -7,7 +7,7 @@ const TransitionImage = dynamic(() =>
 );
 const Pill = dynamic(() => import("components/Pill"));
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/ActivitySlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 import { Paragraph, TextSpanBg } from "components/text";
 import { useState } from "react";
@@ -53,7 +53,7 @@ const Slide5 = ({ navBar, downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{θ}{360°}\\times \\pi r^2"],
+                           value: ["\\dfrac{θ}{360°}\\times \\pi\\times r^2"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -69,8 +69,7 @@ const Slide5 = ({ navBar, downIcon }) => {
             <Paragraph color={colors.WHITE}>
                Here, (θ) is the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                   onHover={() => setActiveIndex(1)}
                   onHoverOut={() => setActiveIndex(0)}
                >
@@ -78,14 +77,13 @@ const Slide5 = ({ navBar, downIcon }) => {
                </TextSpanBg>{" "}
                (in degrees) and (r) is the{" "}
                <TextSpanBg
-                  color={colors.RED}
-                  hoverColor={colors.AQUA}
+                  hoverColor={colors.LAVENDER}
                   onHover={() => setActiveIndex(2)}
                   onHoverOut={() => setActiveIndex(0)}
                >
-                  radius
-               </TextSpanBg>{" "}
-               of the circle.
+                  radius of the circle
+               </TextSpanBg>
+               .
             </Paragraph>
          </span>
       </TextAndDiagramSlide>

@@ -24,84 +24,92 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
+
+const Pill = dynamic(() => import("components/Pill"));
+
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
+
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
 );
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-// const ModalTriggerText = dynamic(() =>
-//    import("components/text").then((mod) => mod.ModalTriggerText)
-// );
-import { ModalTriggerText } from "components/text";
-const pi = "assets/diameter-and-circumference/pi.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
-import { Icon } from "components/StyledElements";
+
+const circleRelation = "assets/diameter-and-circumference/circleRelation.svg";
 
 const Slide5 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph color="white">
-            A unit square is a square with side length equal to 1 unit.
-         </Paragraph>
-         {/* <ModalImg
-            src={unit_square}
-         /> */}
-      </Flex>
-   );
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
-   const onHover = (e) => {
-      setActiveIndex(e);
-   };
-   const onHoverOut = (e) => {
-      setActiveIndex(0);
-   };
    let latex = [];
-  latex.push(`\\large•`);
-  let mathjaxCounter = 0;
+   latex.push(` \\dfrac{Circumference}{Diameter} = `);
+   latex.push(` \\dfrac{C}{D} = `);
+   latex.push(` = \\dfrac{θ}{360} \\times 2\\pi r`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
-         title="Facts about  π (pi)"
+         bg="DARK"
+         title="Relation between Circumference and Diameter "
          diagram={
             <TransitionImage
-               images={[
-                  pi,
-               ]}
-               altTexts={[
-               "Diagram showing the symbol of pi"
-               ]}
-
+               images={[circleRelation]}
                activeIndex={activeIndex}
             />
          }
+         altTexts={["Diagram of a circle showing diameter (D)"]}
          downIcon={downIcon}
       >
-         {/* <Modal
-            isOpen={isModalOpen}
-            title="Unit Square"
-            content={modalContent}
-            onDismiss={onDismiss}
-         /> */}
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                π is irrational (not equal to the ratio of any two whole numbers), and its digits do not repeat.
+               The ratio of circumference to diameter is equal to π (pi), i.e.,
             </TextLine>
-            <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                An approximation for π, such as 3.14 or         is often used for calculations.
-            </TextLine>
-            <TextLine>
-                <MathElement htmlString={latex[mathjaxCounter]} />&nbsp;
-                Pi Day is celebrated every year on 14 March. The date represents the first 3 digits
-                 of this unique number. The day was recognised in 1988 by physicist Larry Shaw.
-                  This day was also recognised as International Mathematics day by UNESCO in 2019.
+         </Paragraph>
+
+         <Paragraph>
+            <TextLine color={colors.WHITE}>
+               <EquationTable
+                  align="middle"
+                  equationLatex={[
+                     {
+                        lhsLatex: {
+                           value: ["\\dfrac{Circumference}{Diameter} "],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [" \\pi"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: ["\\dfrac{C}{D} "],
+                           type: "latex",
+                        },
+                        rhsLatex: {
+                           value: [" \\pi"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+                     {
+                        lhsLatex: {
+                           value: ["C"],
+                           type: "text",
+                        },
+                        rhsLatex: {
+                           value: ["\\pi \\thinspace D"],
+                           type: "latex",
+                        },
+                        rhsHint: {
+                           value: [""],
+                           type: "text",
+                        },
+                     },
+               ]}
+            />
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

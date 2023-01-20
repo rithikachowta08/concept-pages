@@ -25,7 +25,6 @@ const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 const MathElement = dynamic(() => import("components/MathElement"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -95,7 +94,7 @@ const Slide4 = ({ downIcon }) => {
             The arc of a circle is classified based on the degree measure of the
             arc.
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
                <TextSpanBg
                   onHover={() => onHover(1)}

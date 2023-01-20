@@ -29,7 +29,6 @@ const Pill = dynamic(() => import("components/Pill"));
 
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -62,7 +61,7 @@ const Slide8 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-   latex.push(` = \\dfrac{θ}{360} \\times 2\\pi r`);
+   latex.push(` = \\dfrac{θ}{360} \\times 2 \\times \\pi \\times r`);
    let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -87,9 +86,9 @@ const Slide8 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-               The &nbsp;
+               The&nbsp;
                <TextSpanBg
                   onHover={() => onHover(1)}
                   onHoverOut={onHoverOut}
@@ -97,32 +96,33 @@ const Slide8 = ({ downIcon }) => {
                >
                   length of the arc (l)
                </TextSpanBg>
-               &nbsp; of the sector of a circle is given by the following
+               &nbsp;of the sector of a circle is given by the following
                formula:
             </TextLine>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}
                color={colors.BLACK}
+               darkbg={false}
             >
                Length of an arc (l){" "}
                <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
                units
             </Pill>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-               Here, (θ) is the &nbsp;
+               Here, (θ) is the&nbsp;
                <TextSpanBg
                   onHover={() => onHover(2)}
                   onHoverOut={onHoverOut}
-                   
+                  hoverColor={colors.DARK_LAVENDER}
                >
                   measure of the angle
                </TextSpanBg>
-               &nbsp; (in degrees) and (r) is the &nbsp;
+               &nbsp;(in degrees) and (r) is the&nbsp;
                <TextSpanBg
                   onHover={() => onHover(3)}
                   onHoverOut={onHoverOut}
@@ -130,7 +130,7 @@ const Slide8 = ({ downIcon }) => {
                >
                   radius
                </TextSpanBg>
-               &nbsp; of the circle.
+               &nbsp;of the circle.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>
