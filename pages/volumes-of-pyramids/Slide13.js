@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -12,32 +14,19 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
-const MathElement = dynamic(() => import("components/MathElement"));
-const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
-);
+const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
+const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
+const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
 
-const rhombus_full = "assets/area-of-rhombus/slide14/1.svg";
-const rhombus_angles = "assets/area-of-rhombus/slide14/2.svg";
-const rhombus_degree = "assets/area-of-rhombus/slide14/3.svg";
-const rhombus_lines = "assets/area-of-rhombus/slide14/4.svg";
-
-const Slide6 = ({ downIcon }) => {
+const Slide13 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: [
-          `\\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Volume}}}`,
-        ],
-        type: "latex",
+        value: [`Volume of the hexagonal pyramid`],
+        type: "text",
       },
       rhsLatex: {
-        value: [
-          "\\dfrac{1}{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Area\\ of\\ the\\ base}}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Height}}}",
-        ],
+        value: ["\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h"],
         type: "latex",
       },
       rhsHint: {
@@ -47,11 +36,11 @@ const Slide6 = ({ downIcon }) => {
     },
     {
       lhsLatex: {
-        value: [""],
-        type: "text",
+        value: ["50\\sqrt{\\smash[b]{3}}"],
+        type: "latex",
       },
       rhsLatex: {
-        value: ["\\dfrac{1}{3} \\times 10\\ sq\\ in \\times 9\\ in"],
+        value: ["\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times 5^2 \\times h"],
         type: "latex",
       },
       rhsHint: {
@@ -61,12 +50,27 @@ const Slide6 = ({ downIcon }) => {
     },
     {
       lhsLatex: {
+        value: ["50\\sqrt{\\smash[b]{3}}"],
+        type: "latex",
+      },
+      rhsLatex: {
+        value: ["\\dfrac{25\\sqrt{\\smash[b]{3}}}{2} \\times h"],
+        type: "latex",
+      },
+      rhsHint: {
         value: [""],
         type: "text",
       },
+    },
+    ,
+    {
+      lhsLatex: {
+        value: [`h`],
+        type: "text",
+      },
       rhsLatex: {
-        value: ["30\\ cu\\ in"],
-        type: "latex",
+        value: ["4 ft"],
+        type: "text",
       },
       rhsHint: {
         value: [""],
@@ -81,41 +85,43 @@ const Slide6 = ({ downIcon }) => {
   const onHoverKatex = (e) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
-  const onHover = (e) => {
-    setActiveIndex(e);
-  };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`\\theta`);
-  latex.push(`= 30\\degree`);
+  latex.push(`\\sqrt{\\smash[b]{3}}`);
+  latex.push(`\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
   );
+
   return (
     <TextAndDiagramSlide
+      downIcon={downIcon}
+      title="Determine the height of the hexagonal pyramid, whose volume is 50√3 cu ft and the length of the base is 5 ft."
+      // title={
+      //   <>
+      //     Determine the height of the hexagonal pyramid, whose volume is 50
+      //     <MathElement htmlString={latex[mathjaxCounter++]} /> cu ft and the
+      //     length of the base is 5 ft.
+      //   </>
+      // }
       secondaryTitle="Illustrative Examples"
-      title="Determine the volume of the pyramid, whose base area is 10 sq in and height is 9 in."
       diagram={
         <TransitionImage
-          images={[rhombus_full, rhombus_angles, rhombus_degree, rhombus_lines]}
+          images={[surfaceCube_line, surfaceCube_blue, surfaceCube_modal1]}
           altTexts={[
-            "Diagram of rhombus with side length 4 in and included angle 30 degree shown",
-            "Diagram of rhombus with side length 4 in highlighted",
-            "Diagram of rhombus with included angle 30 degree highlighted",
-            "Diagram of rhombus with bounded region highlighted",
+            "Diagram of a net of a cube",
+            "Diagram of a net of a cube representing the lateral surface area",
+            "Diagram of a net of a cube representing the lateral surface area",
           ]}
           activeIndex={activeIndex}
         />
       }
-      downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp}>
-        The area of the base is 10 sq in, and the height of the pyramid is 9 in.
-      </Paragraph>
+      <Paragraph>We know,</Paragraph>
       <Paragraph>
         <EquationTable
           align="middle"
@@ -126,4 +132,4 @@ const Slide6 = ({ downIcon }) => {
   );
 };
 
-export default Slide6;
+export default Slide13;

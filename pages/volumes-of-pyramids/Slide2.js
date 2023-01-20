@@ -18,7 +18,6 @@ const TextSpanBg = dynamic(() =>
 const surfaceCube_full = "assets/surface-area-of-cube/slide2/1.svg";
 const surfaceCube_slides = "assets/surface-area-of-cube/slide2/2.svg";
 const surfaceCube_dots = "assets/surface-area-of-cube/slide2/3.svg";
-const surfaceCube_full_line = "assets/surface-area-of-cube/slide2/4.svg";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -30,20 +29,14 @@ const Slide2 = ({ downIcon }) => {
   };
   return (
     <TextAndDiagramSlide
-      title="What Is a Cube?"
+      title="What is a pyramid?"
       diagram={
         <TransitionImage
-          images={[
-            surfaceCube_full,
-            surfaceCube_slides,
-            surfaceCube_dots,
-            surfaceCube_full_line,
-          ]}
+          images={[surfaceCube_full, surfaceCube_slides, surfaceCube_dots]}
           altTexts={[
             "Diagram of a cube",
             "Diagram of a cube highlighting the square faces",
             "Diagram of a cube highlighting the vertices",
-            "Diagram of a cube highlighting the edges",
           ]}
           activeIndex={activeIndex}
         />
@@ -51,7 +44,7 @@ const Slide2 = ({ downIcon }) => {
       downIcon={downIcon}
     >
       <Paragraph lineHeight={lineHeightProp}>
-        A cube is a three-dimensional shape that has{" "}
+        A pyramid is a three-dimensional solid with a{" "}
         <TextSpanBg
           id={1}
           onHover={onHover}
@@ -59,9 +52,9 @@ const Slide2 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          6 square faces
-        </TextSpanBg>
-        ,{" "}
+          polygonal base
+        </TextSpanBg>{" "}
+        and{" "}
         <TextSpanBg
           id={2}
           onHover={onHover}
@@ -69,19 +62,9 @@ const Slide2 = ({ downIcon }) => {
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          8 vertices
+          triangular faces
         </TextSpanBg>
-        , and{" "}
-        <TextSpanBg
-          id={3}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.DARK_LAVENDER}
-        >
-          12 edges
-        </TextSpanBg>{" "}
-        of equal length.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );

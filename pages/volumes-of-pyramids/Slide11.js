@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 import dynamic from "next/dynamic";
-const MathElement = dynamic(() => import("components/MathElement"));
 const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -19,34 +17,19 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const ModalTriggerText = dynamic(() =>
-  import("components/text").then((mod) => mod.ModalTriggerText)
-);
-const Flex = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.Flex)
-);
-const ModalImg = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-const Pill = dynamic(() => import("components/Pill"));
 const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
-const surfaceCube_modal = "assets/surface-area-of-cube/slide8/2.svg";
 const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
 const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
 
-const Slide9 = ({ downIcon }) => {
+const Slide11 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: [
-          `\\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Volume}}}`,
-        ],
-        type: "latex",
+        value: [`Volume of the rectangular pyramid`],
+        type: "text",
       },
       rhsLatex: {
-        value: [
-          "\\dfrac{1}{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Base\\ area\\ (A)}}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Height\\ (h)}}}",
-        ],
+        value: ["\\dfrac{1}{3} \\times l \\times w \\times h"],
         type: "latex",
       },
       rhsHint: {
@@ -60,8 +43,36 @@ const Slide9 = ({ downIcon }) => {
         type: "text",
       },
       rhsLatex: {
-        value: ["\\dfrac{1}{3} \\times a^2 \\times h"],
+        value: ["\\dfrac{1}{3} \\times 4\\ ft\\times 3\\ ft \\times 8\\ ft"],
         type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["\\dfrac{1}{3} \\times 96\\ cu\\ ft"],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+    {
+      lhsLatex: {
+        value: [""],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["32 cu ft"],
+        type: "text",
       },
       rhsHint: {
         value: [""],
@@ -72,7 +83,6 @@ const Slide9 = ({ downIcon }) => {
   let latexEquationContainer = [];
   latexEquationContainer.push(EquationLatex0);
   let latexEquationCounter = 0;
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const onHoverKatex = (e) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
@@ -84,38 +94,17 @@ const Slide9 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`\\dfrac{1}{3} \\times a^2 \\times h`);
+  latex.push(`\\dfrac{1}{3} \\times l \\times w \\times h`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
   );
-
-  const modalContent = (
-    <Flex direction="column">
-      <Paragraph marginBottom="1vh" fontSize="1.5rem" color={colors.WHITE}>
-        A square pyramid has a base in the shape of a square.
-      </Paragraph>
-      <ModalImg
-        src={surfaceCube_modal}
-        alignSelf="center"
-        width="400px"
-        marginBottom="0px"
-        alt="Diagram of a cube representing lateral faces."
-      />
-    </Flex>
-  );
-  const onClick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const onDismiss = () => {
-    setIsModalOpen(false);
-  };
   return (
     <TextAndDiagramSlide
       downIcon={downIcon}
-      title="Square Pyramid"
-      secondaryTitle="Volume Formulas of Different Types of Pyramid"
+      title="Determine the volume of the given rectangular pyramid."
+      secondaryTitle="Illustrative Examples"
       diagram={
         <TransitionImage
           images={[surfaceCube_line, surfaceCube_blue, surfaceCube_modal1]}
@@ -128,21 +117,38 @@ const Slide9 = ({ downIcon }) => {
         />
       }
     >
-      <Modal
-        isOpen={isModalOpen}
-        title="Square Pyramid"
-        content={modalContent}
-        onDismiss={onDismiss}
-        bg="DARK"
-        color={colors.WHITE}
-      />
       <Paragraph>
-        Given, the side of the square base is “a”, and the height of the pyramid
-        is “h”. The volume of the{" "}
-        <ModalTriggerText id={1} onClick={onClick} fontWeight={"none"}>
-          square pyramid
-        </ModalTriggerText>{" "}
-        is:
+        The{" "}
+        <TextSpanBg
+          id={1}
+          onHover={() => onHover(1)}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.DARK_LAVENDER}
+        >
+          length
+        </TextSpanBg>{" "}
+        (l) and{" "}
+        <TextSpanBg
+          id={2}
+          onHover={() => onHover(2)}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.DARK_LAVENDER}
+        >
+          width
+        </TextSpanBg>{" "}
+        (w) of the base of the pyramid is 4 ft and 3 ft, respectively, and the{" "}
+        <TextSpanBg
+          id={3}
+          onHover={() => onHover(3)}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.DARK_LAVENDER}
+        >
+          height
+        </TextSpanBg>{" "}
+        (h) of the pyramid is 8 ft.
       </Paragraph>
       <Paragraph>
         <EquationTable
@@ -150,16 +156,8 @@ const Slide9 = ({ downIcon }) => {
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
-      <div>
-        <Paragraph>
-          <Pill darkbg={false}>
-            Volume =
-            <MathElement htmlString={latex[mathjaxCounter++]} />
-          </Pill>
-        </Paragraph>
-      </div>
     </TextAndDiagramSlide>
   );
 };
 
-export default Slide9;
+export default Slide11;

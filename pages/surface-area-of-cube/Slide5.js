@@ -28,7 +28,7 @@ const Flex = dynamic(() =>
 const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
-import Pill from "components/Pill";
+const Pill = dynamic(() => import("components/Pill"));
 const surfaceCube_line = "assets/surface-area-of-cube/slide6/1.svg";
 const surfaceCube_blue = "assets/surface-area-of-cube/slide6/2.svg";
 const surfaceCube_modal = "assets/surface-area-of-cube/slide6/3.svg";
@@ -66,7 +66,7 @@ const Slide5 = ({ downIcon }) => {
     setIsModalOpen(false);
   };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -103,7 +103,7 @@ const Slide5 = ({ downIcon }) => {
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}

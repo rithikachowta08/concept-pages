@@ -5,12 +5,12 @@ const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 const Slide1 = ({ moveToSection, downIcon }) => {
   return (
     <TitleSlide
-      title="Surface Area of Cube"
+      title="Volume of Pyramids"
       contentListItems={[
-        "What is a cube?",
-        "What is the surface area of a cube?",
-        "Total surface area",
-        "Lateral surface area",
+        "What is the volume of a pyramid?",
+        "General formula",
+        "Volume of different types of pyramids",
+        "Relationship between volume of a prism and pyramid",
       ]}
       anchorIdxes={[2, 3, 5, 7]}
       moveToSection={moveToSection}

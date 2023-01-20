@@ -1,61 +1,27 @@
-import { useState } from "react";
-import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { lineHeightProp } from "utils/fontStyles";
-const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
-);
-const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
-);
-const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
-);
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
+const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
+  ssr: false,
+});
 
-const surfaceCube_full = "assets/surface-area-of-cube/slide3/1.svg";
-const surfaceCube_slides = "assets/surface-area-of-cube/slide3/2.svg";
-
-const Slide3 = ({ downIcon }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
-  };
-  const onHoverOut = (e) => {
-    setActiveIndex(0);
-  };
+const Slide3 = ({ downIcon, currentPageIdx }) => {
   return (
-    <TextAndDiagramSlide
-      title="What is the Surface Area of a Cube?"
-      diagram={
-        <TransitionImage
-          images={[surfaceCube_full, surfaceCube_slides]}
-          altTexts={[
-            "Diagram of a cube",
-            "Diagram of a cube highlighting the square faces",
-          ]}
-          activeIndex={activeIndex}
-        />
-      }
-      bg="DARK"
-      downIcon={downIcon}
-    >
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        The surface area of a cube is defined as the total area covered by the{" "}
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          six square faces
-        </TextSpanBg>{" "}
-        of the cube. It is measured in square units.
-      </Paragraph>
-    </TextAndDiagramSlide>
+    <div style={{ height: "100%" }}>
+      <VideoSlide2
+        videoContent={{
+          dash_Url:
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-be950eb9/rom3q0/INTL_Maths/230116/SEO18INTL07MAT11KT019/dash/h264.mpd",
+          hls_Url:
+            "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-be950eb9/rom3q0/INTL_Maths/230116/SEO18INTL07MAT11KT019/hls/h264.m3u8",
+          thumbnail:
+            "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Rectangular+Prism+and+Cube+Surface+Area.png",
+        }}
+        videoSlideId="s9-video-slide"
+        downIconId="s9-down-arrow-icon"
+        downIcon={downIcon}
+        currentPageIdx={currentPageIdx}
+        index={8}
+      />
+    </div>
   );
 };
 

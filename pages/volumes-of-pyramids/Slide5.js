@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
-const MathElement = dynamic(() => import("components/MathElement"));
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
-const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
-);
-const Modal = dynamic(() => import("components/layout/Modal"));
+import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -19,112 +11,89 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const ModalTriggerText = dynamic(() =>
-  import("components/text").then((mod) => mod.ModalTriggerText)
+const TextSpanBg = dynamic(() =>
+  import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
-const ModalImg = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-import Pill from "components/Pill";
-const surfaceCube_line = "assets/surface-area-of-cube/slide6/1.svg";
-const surfaceCube_blue = "assets/surface-area-of-cube/slide6/2.svg";
-const surfaceCube_modal = "assets/surface-area-of-cube/slide6/3.svg";
+const Pill = dynamic(() => import("components/Pill"));
+const MathElement = dynamic(() => import("components/MathElement"));
+const surfaceCone_full = "assets/surface-area-of-cone/slide8/1.svg";
+const surfaceCone_right = "assets/surface-area-of-cone/slide8/2.svg";
+const surfaceCone_rightslide = "assets/surface-area-of-cone/slide8/3.svg";
 
 const Slide5 = ({ downIcon }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  let latex = [];
-  latex.push(`s^2`);
-  latex.push(`\\ \\times\\ s^2`);
-  let mathjaxCounter = 0;
-
-  const modalContent = (
-    <Flex direction="column">
-      <Paragraph marginBottom="1vh" fontSize="1.5rem">
-        Let s be the edge of the cube.
-      </Paragraph>
-      <Paragraph marginBottom="1vh" fontSize="1.5rem">
-        Area of one face = Area of a square =
-        <MathElement htmlString={latex[mathjaxCounter++]} />
-      </Paragraph>
-      <ModalImg
-        src={surfaceCube_modal}
-        alignSelf="center"
-        width="400px"
-        marginBottom="0px"
-        alt="Diagram of a cube representing the surface area of one face."
-      />
-    </Flex>
-  );
-  const onClick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const onDismiss = () => {
-    setIsModalOpen(false);
-  };
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
+  let latex = [];
+  latex.push(`\\dfrac{1}{3}`);
+  latex.push(`(\\ell)`);
+  let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
-      downIcon={downIcon}
-      title="Total Surface Area"
-      secondaryTitle="Surface Area"
-      bg="DARK"
+      title="General Formula"
+      secondaryTitle="Volume of Pyramids"
       diagram={
         <TransitionImage
-          images={[surfaceCube_line, surfaceCube_blue]}
+          images={[surfaceCone_full, surfaceCone_right, surfaceCone_rightslide]}
           altTexts={[
-            "Diagram of a net of a cube",
-            "Diagram of a net of a cube highlighting area of each face.",
+            "Diagram of a cone with radius and slant height labelled",
+            "Diagram of a cone with radius highlighted",
+            "Diagram of a cone with slant height highlighted",
           ]}
           activeIndex={activeIndex}
         />
       }
+      bg="DARK"
+      downIcon={downIcon}
     >
-      <Modal
-        isOpen={isModalOpen}
-        title="Surface Area of One Face"
-        content={modalContent}
-        onDismiss={onDismiss}
-        bg="LIGHT"
-        color={colors.DARK_GREY}
-      />
       <Paragraph color={colors.WHITE}>
-        The total surface area of a cube is the area covered by all its six
-        faces.
+        The volume of the pyramid is one-third of the product of its area of the
+        base (A) and height (h).
       </Paragraph>
       <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        <TextSpanBg
-          id={1}
-          onHover={onHover}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.LAVENDER}
-        >
-          Total surface area
-        </TextSpanBg>{" "}
-        = 6 ×{" "}
-        <ModalTriggerText id={2} onClick={onClick} color={colors.WHITE}>
-          Surface area of one face
-        </ModalTriggerText>
-      </Paragraph>
-      <div>
-        <Paragraph color={colors.WHITE}>
-          <Pill bgColor={colors.GREEN} color={colors.WHITE}>
-            Total surface area = 6
-            <MathElement htmlString={latex[mathjaxCounter++]} />
-          </Pill>
-        </Paragraph>
-      </div>
-      <Paragraph color={colors.WHITE}>
-        Here, (s) is the length of the side of the cube
+        <Flex direction="row">
+          <Paragraph color={colors.WHITE}>
+            <TextSpanBg
+              id={1}
+              onHover={() => onHover(1)}
+              onHoverOut={onHoverOut}
+              color={colors.RED}
+              hoverColor={colors.LAVENDER}
+            >
+              Volume
+            </TextSpanBg>
+          </Paragraph>
+          <Paragraph color={colors.WHITE}>=</Paragraph>
+          <Paragraph color={colors.WHITE}>
+            <MathElement htmlString={latex[mathjaxCounter++]} /> ×{" "}
+            <TextSpanBg
+              id={2}
+              onHover={() => onHover(2)}
+              onHoverOut={onHoverOut}
+              color={colors.RED}
+              hoverColor={colors.LAVENDER}
+            >
+              Base area
+            </TextSpanBg>{" "}
+            ×{" "}
+            <TextSpanBg
+              id={3}
+              onHover={() => onHover(3)}
+              onHoverOut={onHoverOut}
+              color={colors.RED}
+              hoverColor={colors.LAVENDER}
+            >
+              Height
+            </TextSpanBg>
+          </Paragraph>
+        </Flex>
       </Paragraph>
     </TextAndDiagramSlide>
   );

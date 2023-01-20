@@ -13,6 +13,12 @@ const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
+const Slide10 = dynamic(() => import("./Slide10"));
+const Slide11 = dynamic(() => import("./Slide11"));
+const Slide12 = dynamic(() => import("./Slide12"));
+const Slide13 = dynamic(() => import("./Slide13"));
+const Slide14 = dynamic(() => import("./Slide14"));
+const Slide15 = dynamic(() => import("./Slide15"));
 const PageLastSlide = dynamic(() =>
   import("../../components/slides/PageLastSlide")
 );
@@ -32,12 +38,18 @@ const SurfaceAreaofCone = () => {
     <Slide7 key={6} />,
     <Slide8 key={7} />,
     <Slide9 key={8} />,
-    <PageLastSlide
-      key={9}
-      currentPageTitle={"Surface Area of Cube"}
-      nextPageLink={"/us/math/study/units-to-measure-capacity"}
-      nextPageTitle={"Units to measure Capacity"}
-    />,
+    <Slide10 key={9} />,
+    <Slide11 key={10} />,
+    <Slide12 key={11} />,
+    <Slide13 key={12} />,
+    <Slide14 key={13} />,
+    <Slide15 key={14} />,
+    // <PageLastSlide
+    //   key={9}
+    //   currentPageTitle={"Surface Area of Cube"}
+    //   nextPageLink={"/us/math/study/units-to-measure-capacity"}
+    //   nextPageTitle={"Units to measure Capacity"}
+    // />,
     // <Slide10 key={8} />,
     // <Slide11 key={10} />,
     // <Slide12 key={11} />,
@@ -45,17 +57,17 @@ const SurfaceAreaofCone = () => {
   ];
   const navigationSections = [
     {
-      title: "What is a cube?",
+      title: "What is the volume of a pyramid?",
       slides: [1],
     },
     {
-      title: "What is the surface area of a cube?",
+      title: "General formula",
       slides: [2, 3],
     },
-    { title: "Total surface area", slides: [4, 5] },
+    { title: "Volume of different types of pyramids", slides: [4, 5] },
     {
-      title: "Lateral surface area",
-      slides: [6, 7, 8],
+      title: "Relationship between volume of a prism and pyramid",
+      slides: [6, 7, 8, 9, 10, 11, 12, 13, 14],
     },
   ];
 

@@ -34,18 +34,18 @@ const surfaceCube_modal = "assets/surface-area-of-cube/slide8/2.svg";
 const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
 const surfaceCube_modal1 = "assets/surface-area-of-cube/slide8/4.svg";
 
-const Slide7 = ({ downIcon }) => {
+const Slide12 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
         value: [
-          `\\htmlId{1}{\\htmlClass{textSpanBg slide-14 darkBg}{\\text{Volume}}}`,
+          `\\htmlId{1}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Volume}}}`,
         ],
         type: "latex",
       },
       rhsLatex: {
         value: [
-          "\\dfrac{1}{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 darkBg}{\\text{Base\\ area\\ (A)}}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-14 darkBg}{\\text{ Height\\ (h)}}}",
+          "\\dfrac{1}{3} \\times \\htmlId{2}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Base\\ area\\ (A)}}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-14 lightBg}{\\text{Height\\ (h)}}}",
         ],
         type: "latex",
       },
@@ -61,7 +61,7 @@ const Slide7 = ({ downIcon }) => {
       },
       rhsLatex: {
         value: [
-          "\\dfrac{1}{3} \\times \\dfrac{1}{2} \\times b \\times H \\times h",
+          "\\dfrac{1}{3} \\times \\dfrac{3\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h",
         ],
         type: "latex",
       },
@@ -86,7 +86,7 @@ const Slide7 = ({ downIcon }) => {
     setActiveIndex(0);
   };
   let latex = [];
-  latex.push(`\\dfrac{1}{6} \\times b \\times H \\times h`);
+  latex.push(`\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h`);
   let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
@@ -95,8 +95,8 @@ const Slide7 = ({ downIcon }) => {
 
   const modalContent = (
     <Flex direction="column">
-      <Paragraph marginBottom="1vh" fontSize="1.5rem">
-        A triangular pyramid has a base in the shape of a triangle.
+      <Paragraph marginBottom="1vh" fontSize="1.5rem" color={colors.WHITE}>
+        A hexagonal pyramid has a base in the shape of a hexagon.
       </Paragraph>
       <ModalImg
         src={surfaceCube_modal}
@@ -116,24 +116,14 @@ const Slide7 = ({ downIcon }) => {
   return (
     <TextAndDiagramSlide
       downIcon={downIcon}
-      title={
-        <ModalTriggerText
-          id={1}
-          onClick={onClick}
-          color={colors.WHITE}
-          fontWeight={"4em"}
-          fontSize={"700"}
-        >
-          Triangular Pyramid
-        </ModalTriggerText>
-      }
+      title="Hexagonal Pyramid"
       secondaryTitle="Volume Formulas of Different Types of Pyramid"
-      bg="DARK"
       diagram={
         <TransitionImage
-          images={[surfaceCube_line, surfaceCube_blue]}
+          images={[surfaceCube_line, surfaceCube_blue, surfaceCube_modal1]}
           altTexts={[
             "Diagram of a net of a cube",
+            "Diagram of a net of a cube representing the lateral surface area",
             "Diagram of a net of a cube representing the lateral surface area",
           ]}
           activeIndex={activeIndex}
@@ -142,25 +132,28 @@ const Slide7 = ({ downIcon }) => {
     >
       <Modal
         isOpen={isModalOpen}
-        title="Triangular Pyramid"
+        title="Hexagonal Pyramid"
         content={modalContent}
         onDismiss={onDismiss}
-        bg="LIGHT"
-        color={colors.DARK_GREY}
+        bg="DARK"
+        color={colors.WHITE}
       />
-      <Paragraph color={colors.WHITE}>
-        Given, the base (b) and height (H) of the triangular base, and the
-        height(h) of the pyramid, the volume of the triangular pyramid is:
+      <Paragraph>
+        Given, the side of the hexagonal base is “a”, and the height of the{" "}
+        <ModalTriggerText id={1} onClick={onClick} fontWeight={"none"}>
+          hexagonal pyramid
+        </ModalTriggerText>{" "}
+        is “h”. The formula for the volume is:
       </Paragraph>
-      <Paragraph color={colors.WHITE}>
+      <Paragraph>
         <EquationTable
           align="middle"
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
       <div>
-        <Paragraph color={colors.WHITE}>
-          <Pill>
+        <Paragraph>
+          <Pill darkbg={false}>
             Volume =
             <MathElement htmlString={latex[mathjaxCounter++]} />
           </Pill>
@@ -170,4 +163,4 @@ const Slide7 = ({ downIcon }) => {
   );
 };
 
-export default Slide7;
+export default Slide12;

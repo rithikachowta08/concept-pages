@@ -23,7 +23,7 @@ const surfaceCube_full_line = "assets/surface-area-of-cube/slide2/4.svg";
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -54,7 +54,7 @@ const Slide2 = ({ downIcon }) => {
         A cube is a three-dimensional shape that has{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -64,7 +64,7 @@ const Slide2 = ({ downIcon }) => {
         ,{" "}
         <TextSpanBg
           id={2}
-          onHover={onHover}
+          onHover={() => onHover(2)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
@@ -74,7 +74,7 @@ const Slide2 = ({ downIcon }) => {
         , and{" "}
         <TextSpanBg
           id={3}
-          onHover={onHover}
+          onHover={() => onHover(3)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
