@@ -127,8 +127,9 @@ const MultipleDiagramSlide = ({
                            bg={bg}
                            marginBottom="15px"
                            secondaryTitle={secondaryTitle}
+                           centerAlign
                         />
-                        <SlideTitle bg={bg} marginBottom="30px">
+                        <SlideTitle bg={bg} marginBottom="30px" centerAlign>
                            {title}
                         </SlideTitle>
                      </div>
