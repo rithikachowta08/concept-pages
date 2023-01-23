@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="FIGURES" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        opacity: .7;
+      }
+
+      .cls-3, .cls-4 {
+        opacity: .72;
+      }
+
+      .cls-3, .cls-2, .cls-5 {
+        fill: none;
+        stroke: #a753b5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5.94px;
+      }
+
+      .cls-4, .cls-6, .cls-7 {
+        fill: #bb70de;
+      }
+
+      .cls-8 {
+        opacity: .4;
+      }
+
+      .cls-6 {
+        opacity: .51;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-6" points="431.65 94.77 431.65 358.29 124.8 396.13 124.8 144.08 431.65 94.77"/>
+    <polygon class="cls-5" points="431.65 94.77 431.65 358.29 124.8 396.13 124.8 144.08 431.65 94.77"/>
+  </g>
+  <polygon class="cls-5" points="431.65 94.77 431.65 358.29 124.8 396.13 124.8 144.08 431.65 94.77"/>
+  <g>
+    <g class="cls-1">
+      <polygon class="cls-7" points="431.65 358.29 124.8 396.13 327.28 465.32 431.65 358.29"/>
+    </g>
+    <polyline class="cls-5" points="124.8 396.13 327.28 465.32 431.65 358.29"/>
+  </g>
+  <g>
+    <polygon class="cls-4" points="431.65 94.77 124.8 144.08 327.28 213.27 431.65 94.77"/>
+    <polygon class="cls-5" points="431.65 94.77 124.8 144.08 327.28 213.27 431.65 94.77"/>
+  </g>
+  <g>
+    <g class="cls-1">
+      <polygon class="cls-7" points="431.65 94.77 431.65 358.29 327.28 465.32 327.28 213.27 431.65 94.77"/>
+    </g>
+    <g>
+      <polygon class="cls-3" points="431.65 94.77 431.65 358.29 327.28 465.32 327.28 213.27 431.65 94.77"/>
+      <polygon class="cls-5" points="431.65 94.77 431.65 358.29 327.28 465.32 327.28 213.27 431.65 94.77"/>
+    </g>
+  </g>
+  <g>
+    <g class="cls-8">
+      <polygon class="cls-7" points="327.28 465.32 327.28 213.27 124.8 144.08 124.8 396.13 327.28 465.32"/>
+    </g>
+    <polygon class="cls-5" points="327.28 465.32 327.28 213.27 124.8 144.08 124.8 396.13 327.28 465.32"/>
+  </g>
+  <line class="cls-2" x1="431.65" y1="358.29" x2="124.8" y2="396.13"/>
+</svg>
