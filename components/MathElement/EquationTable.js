@@ -35,7 +35,7 @@ const RHSHint = styled.td`
    white-space: nowrap;
 `;
 const Span = styled.div`
-width:${(props) => props.isMobile?"min-content" : "auto"}
+   width: ${(props) => (props.isMobile ? "auto" : "auto")};
 `;
 
 const EquationTable = ({
@@ -43,7 +43,7 @@ const EquationTable = ({
    align = "top",
    lineHeight,
 }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
+   // const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    if (!eqLatex) {
       return <></>;
    }
@@ -65,7 +65,7 @@ const EquationTable = ({
                                  </TeX>
                               );
                            } else {
-                              return <Span isMobile={isMobile} key={i}>{val}</Span>;
+                              return <span key={i}>{val}</span>;
                            }
                         })}
                      </LHSLatex>
