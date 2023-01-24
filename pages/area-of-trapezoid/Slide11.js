@@ -1,4 +1,3 @@
-import { useState } from "react";
 import dynamic from "next/dynamic";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -17,29 +16,18 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-const slide11= "assets/area-of-trapezoid/slide11.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
+const slide11 = "assets/area-of-trapezoid/slide11.svg";
+import { StyledImg } from "components/StyledElements";
 
 const Slide11 = ({ downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
-   let latex = [];
-   latex.push(` = 3 \\times h`);
-   latex.push(` = \\dfrac{5 + 5 + 6}{2}`);
-   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Find the area of the trapezoid with the given dimensions."
          secondaryTitle="Illustrative Example"
          diagram={
-            <TransitionImage
-               images={[
-                  slide11
-               ]}
-               altTexts={[
-                  "Diagram of a trapezoid with given sides",
-               ]}
-               activeIndex={activeIndex}
+            <StyledImg
+               src={slide11}
+               alt={"Diagram of a trapezoid with given sides"}
             />
          }
          downIcon={downIcon}
@@ -58,8 +46,7 @@ const Slide11 = ({ downIcon }) => {
                <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
             </TextLine>
             <TextLine>
-               12{" "}
-               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>
+               12 <MathElement htmlString={` = 3 \\times h`}></MathElement>
             </TextLine>
             <TextLine>h = 4 in</TextLine>
          </Paragraph>

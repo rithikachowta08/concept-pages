@@ -1,12 +1,8 @@
 import { StyledImg } from "components/StyledElements";
 import { Paragraph } from "components/text";
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import { colors } from "utils/colors";
 
-const TransitionImage = dynamic(() =>
-   import("components/media/TransitionImage")
-);
 const MultipleDiagramSlide = dynamic(() =>
    import("components/slides/MultipleDiagramSlide")
 );
@@ -19,7 +15,7 @@ const Slide8 = ({ downIcon }) => {
       <MultipleDiagramSlide
          bg="DARK"
          title="Types of Rectangular Prisms"
-         secondaryTitle="Rectangular Prism"
+         secondaryTitle={"Rectangular Prism"}
          downIcon={downIcon}
          images={[
             {

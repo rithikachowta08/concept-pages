@@ -24,9 +24,7 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
 import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const ModalTriggerText = dynamic(() =>
@@ -55,21 +53,18 @@ const Slide8 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`);
-  let mathjaxCounter = 0;
+   latex.push(
+      `= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`
+   );
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
-         title="Lateral Surface Area"
-         secondaryTitle={"Derivation"}
+         title="Derivation"
+         secondaryTitle={"Lateral Surface Area"}
          diagram={
             <TransitionImage
-               images={[
-                  lsa_derivation,
-               ]}
-               altTexts={[
-               "Diagram of a pyramid"
-               ]}
-
+               images={[lsa_derivation]}
+               altTexts={["Diagram of a pyramid"]}
                activeIndex={activeIndex}
             />
          }
@@ -77,12 +72,13 @@ const Slide8 = ({ downIcon }) => {
       >
          <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
-            The lateral surface area of a regular pyramid is the sum of the area of the side faces of the pyramid.
+               The lateral surface area of a regular pyramid is the sum of the
+               area of the side faces of the pyramid.
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-         <Paragraph >
-         <TextLine color={colors.BLACK}>
+         <Paragraph>
+            <TextLine color={colors.BLACK}>
                <EquationTable
                   align="middle"
                   equationLatex={[
@@ -106,7 +102,9 @@ const Slide8 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} \\times a \\times l + \\dfrac{1}{2} \\times b \\times l + \\dfrac{1}{2} \\times c \\times l +\\dfrac{1}{2} \\times d \\times l "],
+                           value: [
+                              "\\dfrac{1}{2} \\times a \\times l + \\dfrac{1}{2} \\times b \\times l + \\dfrac{1}{2} \\times c \\times l +\\dfrac{1}{2} \\times d \\times l ",
+                           ],
                            type: "latex",
                         },
                         rhsHint: {
@@ -120,7 +118,9 @@ const Slide8 = ({ downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} \\times l \\times (a + b + c + d) "],
+                           value: [
+                              "\\dfrac{1}{2} \\times l \\times (a + b + c + d) ",
+                           ],
                            type: "latex",
                         },
                         rhsHint: {
@@ -138,7 +138,7 @@ const Slide8 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsHint: {
-                           value: [""],
+                           value: ["[Here, P is the perimeter of the base.]"],
                            type: "text",
                         },
                      },

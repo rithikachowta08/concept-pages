@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -11,54 +10,27 @@ const TextAndDiagramSlide = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
-// const ModalTriggerText = dynamic(() =>
-//    import("components/text").then((mod) => mod.ModalTriggerText)
-// );
-import { ModalTriggerText } from "components/text";
 const circleExample = "assets/diameter-and-circumference/circleExample.svg";
 const diameterExample = "assets/diameter-and-circumference/diameterExample.svg";
 const circumferenceExample =
    "assets/diameter-and-circumference/circumferenceExample.svg";
-// const unit_square = "assets/area-of-rectangle/unit_square.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
-import { Icon } from "components/StyledElements";
-
 const Slide7 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
    const onHover = (e) => {
       setActiveIndex(e);
    };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   let latex = [];
-   latex.push(`\\large•`);
-   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Illustrative Example"
@@ -75,12 +47,6 @@ const Slide7 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         {/* <Modal
-            isOpen={isModalOpen}
-            title="Unit Square"
-            content={modalContent}
-            onDismiss={onDismiss}
-         /> */}
          <Paragraph>
             The diameter of a circle is 6 in. Find the ratio of the
             circumference to diameter of the circle.
