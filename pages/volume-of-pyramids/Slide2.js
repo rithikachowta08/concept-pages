@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -14,73 +15,60 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const surfaceCube_full = "assets/surface-area-of-cube/slide2/1.svg";
-const surfaceCube_slides = "assets/surface-area-of-cube/slide2/2.svg";
-const surfaceCube_dots = "assets/surface-area-of-cube/slide2/3.svg";
-const surfaceCube_full_line = "assets/surface-area-of-cube/slide2/4.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide2/1.svg";
+const volumeOfPyramid_botton = "assets/volume-of-pyramids/slide2/2.svg";
+const volumeOfPyramid_shade = "assets/volume-of-pyramids/slide2/3.svg";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
   return (
     <TextAndDiagramSlide
-      title="What Is a Cube?"
+      title="What is a pyramid?"
       diagram={
         <TransitionImage
           images={[
-            surfaceCube_full,
-            surfaceCube_slides,
-            surfaceCube_dots,
-            surfaceCube_full_line,
+            volumeOfPyramid_full,
+            volumeOfPyramid_botton,
+            volumeOfPyramid_shade,
           ]}
           altTexts={[
-            "Diagram of a cube",
-            "Diagram of a cube highlighting the square faces",
-            "Diagram of a cube highlighting the vertices",
-            "Diagram of a cube highlighting the edges",
+            "Diagram of a pyramid",
+            "Diagram of a pyramid with highlighted polygonal base",
+            "Diagram of a pyramid with highlighted triangular bases",
           ]}
           activeIndex={activeIndex}
         />
       }
       downIcon={downIcon}
     >
-      <Paragraph>
-        A cube is a three-dimensional shape that has{" "}
+      <Paragraph lineHeight={lineHeightProp}>
+        A pyramid is a three-dimensional solid with a{" "}
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          6 square faces
-        </TextSpanBg>
-        ,{" "}
+          polygonal base
+        </TextSpanBg>{" "}
+        and{" "}
         <TextSpanBg
           id={2}
-          onHover={() => onHover(2)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          8 vertices
+          triangular faces
         </TextSpanBg>
-        , and{" "}
-        <TextSpanBg
-          id={3}
-          onHover={() => onHover(3)}
-          onHoverOut={onHoverOut}
-          color={colors.RED}
-          hoverColor={colors.DARK_LAVENDER}
-        >
-          12 edges
-        </TextSpanBg>{" "}
-        of equal length.
+        .
       </Paragraph>
     </TextAndDiagramSlide>
   );
