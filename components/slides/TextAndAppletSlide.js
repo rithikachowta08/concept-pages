@@ -48,6 +48,43 @@ const IFrame = styled.iframe`
    }
 `;
 
+const AppWrapper = styled.div`
+   aspect-ratio: 1/1;
+   height: 650px;
+   border-radius: 20px;
+   /* border: 1px solid #444; */
+   transition: all 0.2s;
+
+   // Mobile
+   @media only screen and (min-width: 200px) and (max-width: 600px) {
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "250px")};
+      // border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
+   }
+
+   // Large mobile + iPad mini
+   @media only screen and (min-width: 601px) and (max-width: 820px) {
+      height: ${(props) => (props.isFitToWidth ? "100vw" : "500px")};
+      // border: ${(props) => (props.isFitToWidth ? "none" : "1px solid #444")};
+   }
+
+   // Tablet
+   @media (min-width: 821px) and (max-width: 992px) {
+      max-height: 500px;
+   }
+
+   // Small height desktop
+   @media (min-height: 400px) and (max-height: 820px) and (min-width: 900px) {
+      max-height: 500px;
+      height: 100%;
+   }
+
+   // Mobile landscape mode
+   @media (min-height: 300px) and (max-height: 450px) and (max-width: 950px) {
+      height: 100%;
+      margin-bottom: 0;
+   }
+`;
+
 const LeftAlignDiv = styled.div`
    align-self: center;
    width: fit-content;
@@ -84,6 +121,7 @@ const TextAndAppletSlide = ({
    children,
    currentPageIdx,
    appletSrc,
+   AppletComponent,
 }) => {
    const ref = useRef(null);
    const [src, setSrc] = useState(null);
@@ -138,12 +176,18 @@ const TextAndAppletSlide = ({
                   flex="1"
                >
                   <IframeWrap>
-                     <IFrame
-                        src={src}
-                        isFitToWidth={isFitToWidth}
-                        allowFullScreen
-                        frameBorder="0"
-                     />
+                     {AppletComponent != null ? (
+                        <AppWrapper isFitToWidth={isFitToWidth}>
+                           <AppletComponent />
+                        </AppWrapper>
+                     ) : (
+                        <IFrame
+                           src={src}
+                           isFitToWidth={isFitToWidth}
+                           allowFullScreen
+                           frameBorder="0"
+                        />
+                     )}
                      <FullScreenIcon
                         src={isFitToWidth ? fullscreen_exit : fit_to_width}
                         onClick={toggleFitToWidth}
@@ -197,7 +241,18 @@ const TextAndAppletSlide = ({
                      {children}
                   </LeftWrap>
                   <RightWrap>
-                     <IFrame src={src} allowFullScreen frameBorder="0" />
+                     {AppletComponent != null ? (
+                        <AppWrapper isFitToWidth={isFitToWidth}>
+                           <AppletComponent />
+                        </AppWrapper>
+                     ) : (
+                        <IFrame
+                           src={src}
+                           isFitToWidth={isFitToWidth}
+                           allowFullScreen
+                           frameBorder="0"
+                        />
+                     )}
                   </RightWrap>
                </Flex>
                {downIcon
@@ -217,6 +272,7 @@ TextAndAppletSlide.propTypes = {
    secondaryTitle: PropTypes.string,
    gap: PropTypes.string,
    appletSrc: PropTypes.string.isRequired,
+   AppletComponent: PropTypes.element,
    children: PropTypes.node,
 };
 
