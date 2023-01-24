@@ -147,7 +147,7 @@ const MultipleDiagramSlide = ({
                                  mobileSize: "150px",
                                  tabletSize: "250px",
                                  smallDesktopSize: "300px",
-                                 width: "400px",
+                                 width: "350px",
                               })}
                               <TextSpan
                                  color={
