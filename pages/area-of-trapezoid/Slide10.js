@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const TransitionImage = dynamic(() =>
-   import("components/media/TransitionImage")
-);
+import { StyledImg } from "components/StyledElements";
+
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
@@ -18,30 +17,17 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-const slide10= "assets/area-of-trapezoid/slide10.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
+const slide10 = "assets/area-of-trapezoid/slide10.svg";
 
 const Slide10 = ({ downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
-
-   let latex = [];
-   latex.push(` = \\sqrt{} s (s - a)(s - b)(s - c)`);
-   latex.push(` = \\dfrac{5 + 5 + 6}{2}`);
-   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Find the area of the trapezoid with the given dimensions."
          secondaryTitle="Illustrative Example"
          diagram={
-            <TransitionImage
-               images={[
-                  slide10
-               ]}
-               altTexts={[
-                  "Diagram of a trapezoid with triangle highlighted in it",
-               ]}
-               activeIndex={activeIndex}
+            <StyledImg
+               src={slide10}
+               alt={"Diagram of a trapezoid with triangle highlighted in it"}
             />
          }
          downIcon={downIcon}

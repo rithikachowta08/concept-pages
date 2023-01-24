@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -11,24 +10,9 @@ const TextAndDiagramSlide = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-   import("components/text").then((mod) => mod.TextSpanBg)
-);
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-
-const Pill = dynamic(() => import("components/Pill"));
-
-const MathElement = dynamic(() => import("components/MathElement/index.js"));
-
 const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
@@ -100,7 +84,7 @@ const Slide5 = ({ downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: ["\\pi \\thinspace D"],
+                           value: ["\\pi\\times D"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -108,8 +92,8 @@ const Slide5 = ({ downIcon }) => {
                            type: "text",
                         },
                      },
-               ]}
-            />
+                  ]}
+               />
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

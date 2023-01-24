@@ -56,8 +56,8 @@ const VolumeOfRectangularPrism = () => {
 };
 
 VolumeOfRectangularPrism.title =
-   "Area of Circle: Definition, Formula, Examples - BYJU'S";
+   "Volume of Rectangular Prism: Definition, Formula, Examples - BYJU'S";
 VolumeOfRectangularPrism.meta =
-   "Learn about the area of circle, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities.";
+   "Gain a thorough understanding of the volume of rectangular prism with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default VolumeOfRectangularPrism;
