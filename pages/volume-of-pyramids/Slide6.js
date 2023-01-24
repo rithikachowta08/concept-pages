@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
@@ -16,10 +15,10 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide6/1.svg";
-const volumeOfPyramid_slide = "assets/volumes-of-pyramids/slide6/2.svg";
-const volumeOfPyramid_botton = "assets/volumes-of-pyramids/slide6/3.svg";
-const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide6/4.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide6/1.svg";
+const volumeOfPyramid_slide = "assets/volume-of-pyramids/slide6/2.svg";
+const volumeOfPyramid_botton = "assets/volume-of-pyramids/slide6/3.svg";
+const volumeOfPyramid_height = "assets/volume-of-pyramids/slide6/4.svg";
 
 const Slide6 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -77,16 +76,9 @@ const Slide6 = ({ downIcon }) => {
   const onHoverKatex = (e) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
-  const onHover = (e) => {
-    setActiveIndex(e);
-  };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`\\theta`);
-  latex.push(`= 30\\degree`);
-  let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
@@ -104,10 +96,10 @@ const Slide6 = ({ downIcon }) => {
             volumeOfPyramid_height,
           ]}
           altTexts={[
-            "Diagram of volumeOfPyramid with side length 4 in and included angle 30 degree shown",
-            "Diagram of volumeOfPyramid with side length 4 in highlighted",
-            "Diagram of volumeOfPyramid with included angle 30 degree highlighted",
-            "Diagram of volumeOfPyramid with bounded region highlighted",
+            "Diagram of a pyramid",
+            "Diagram of a pyramid representing its volume",
+            "Diagram of a pyramid with highlighted base area 10 in^2",
+            "Diagram of a pyramid with highlighted height 9 in.",
           ]}
           activeIndex={activeIndex}
         />

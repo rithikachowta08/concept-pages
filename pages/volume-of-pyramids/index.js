@@ -22,10 +22,6 @@ const Slide15 = dynamic(() => import("./Slide15"));
 const PageLastSlide = dynamic(() =>
   import("../../components/slides/PageLastSlide")
 );
-// const Slide10 = dynamic(() => import("./Slide10"));
-// const Slide11 = dynamic(() => import("./Slide11"));
-// const Slide12 = dynamic(() => import("./Slide12"));
-// const Slide13 = dynamic(() => import("./Slide13"));
 
 const SurfaceAreaofCone = () => {
   const SlideArray = [
@@ -44,34 +40,33 @@ const SurfaceAreaofCone = () => {
     <Slide13 key={12} />,
     <Slide14 key={13} />,
     <Slide15 key={14} />,
-    // <PageLastSlide
-    //   key={9}
-    //   currentPageTitle={"Surface Area of Cube"}
-    //   nextPageLink={"/us/math/study/units-to-measure-capacity"}
-    //   nextPageTitle={"Units to measure Capacity"}
-    // />,
-    // <Slide10 key={8} />,
-    // <Slide11 key={10} />,
-    // <Slide12 key={11} />,
-    // <Slide13 key={12} />,
+    <PageLastSlide
+      key={15}
+      currentPageTitle={"Volume of Pyramids"}
+      nextPageLink={"/us/math/study/-"}
+      nextPageTitle={"-"}
+    />,
   ];
   const navigationSections = [
     {
       title: "What is the volume of a pyramid?",
-      slides: [1],
+      slides: [1, 2, 3],
     },
     {
       title: "General formula",
-      slides: [2, 3],
+      slides: [4, 5],
     },
-    { title: "Volume of different types of pyramids", slides: [4, 5] },
+    {
+      title: "Volume of different types of pyramids",
+      slides: [6, 7, 8, 9, 10, 11, 12],
+    },
     {
       title: "Relationship between volume of a prism and pyramid",
-      slides: [6, 7, 8, 9, 10, 11, 12, 13, 14],
+      slides: [13, 14],
     },
   ];
 
-  const darkBgIndices = [0, 2, 4, 6, 8, 9];
+  const darkBgIndices = [0, 2, 4, 6, 13, 15];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
@@ -81,8 +76,8 @@ const SurfaceAreaofCone = () => {
   );
 };
 SurfaceAreaofCone.title =
-  "Surface Area of Cube: Definition, Formula, Examples - BYJU'S";
+  "Volume of Pyramids: Definition, Formula, Examples - BYJU'S";
 SurfaceAreaofCone.meta =
-  "Learn about the surface area of cube, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities.";
+  "Gain a thorough understanding of the volume of pyramids with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default SurfaceAreaofCone;

@@ -15,8 +15,8 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide4/1.svg";
-const volumeOfPyramid_slides = "assets/volumes-of-pyramids/slide4/2.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide4/1.svg";
+const volumeOfPyramid_slides = "assets/volume-of-pyramids/slide4/2.svg";
 
 const Slide4 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,8 +33,8 @@ const Slide4 = ({ downIcon }) => {
         <TransitionImage
           images={[volumeOfPyramid_full, volumeOfPyramid_slides]}
           altTexts={[
-            "Diagram of a cube",
-            "Diagram of a cube highlighting the square faces",
+            "Diagram of a pyramid",
+            "Diagram of a pyramid representing its volume.",
           ]}
           activeIndex={activeIndex}
         />

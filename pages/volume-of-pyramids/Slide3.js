@@ -15,11 +15,11 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
           thumbnail:
             "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Rectangular+Prism+and+Cube+Surface+Area.png",
         }}
-        videoSlideId="s9-video-slide"
-        downIconId="s9-down-arrow-icon"
+        videoSlideId="s3-video-slide"
+        downIconId="s3-down-arrow-icon"
         downIcon={downIcon}
         currentPageIdx={currentPageIdx}
-        index={8}
+        index={2}
       />
     </div>
   );

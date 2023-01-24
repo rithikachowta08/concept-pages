@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import { coco_applet_uri } from "utils/constants";
-const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
 );
@@ -11,41 +9,12 @@ const MathElement = dynamic(() => import("components/MathElement"));
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const ModalTriggerText = dynamic(() =>
-  import("components/text").then((mod) => mod.ModalTriggerText)
-);
-const ModalImg = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.ModalImg)
-);
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
 const Pill = dynamic(() => import("components/Pill"));
 
-const volumeOfPyramid_unit = "assets/volumes-of-pyramids/slide3/1.svg";
 const Slide14 = ({ downIcon, currentPageIdx }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalContent = (
-    <Flex direction="column">
-      <Paragraph color="white" marginBottom="1vh">
-        A right triangle is a triangle in which one of its interior angles is
-        equal to 90 degrees.
-      </Paragraph>
-      <ModalImg
-        src={volumeOfPyramid_unit}
-        alignSelf="center"
-        width="400px"
-        marginBottom="50px"
-        alt="Diagram of a right angle triangle"
-      />
-    </Flex>
-  );
-  const onClick = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const onDismiss = () => {
-    setIsModalOpen(false);
-  };
   let latex = [];
   latex.push(`\\dfrac{1}{3}`);
   latex.push(`\\dfrac{1}{3}`);
@@ -55,7 +24,7 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
       downIcon={downIcon}
       title="Relationship between volume of a pyramid and prism"
       bg="DARK"
-      appletSrc={`${coco_applet_uri}volumes-of-pyramids-formation-v3/index.html`}
+      appletSrc={`${coco_applet_uri}volume-of-pyramids-formation-v3/index.html`}
       currentPageIdx={currentPageIdx}
     >
       <Paragraph color={colors.WHITE}>

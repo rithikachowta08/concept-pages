@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 import dynamic from "next/dynamic";
 const EquationTable = dynamic(() =>
@@ -14,9 +13,7 @@ const TextAndDiagramSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const volumeOfPyramid_line = "assets/volumes-of-pyramids/slide8/1.svg";
-const volumeOfPyramid_blue = "assets/volumes-of-pyramids/slide8/3.svg";
-const volumeOfPyramid_modal1 = "assets/volumes-of-pyramids/slide8/4.svg";
+const volumeOfPyramid_line = "assets/volume-of-pyramids/slide13/1.svg";
 
 const Slide13 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -88,10 +85,10 @@ const Slide13 = ({ downIcon }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(`\\sqrt{\\smash[b]{3}}`);
-  latex.push(`\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h`);
-  let mathjaxCounter = 0;
+  // let latex = [];
+  // latex.push(`\\sqrt{\\smash[b]{3}}`);
+  // latex.push(`\\dfrac{\\sqrt{\\smash[b]{3}}}{2} \\times a^2 \\times h`);
+  // let mathjaxCounter = 0;
   useEffect(
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
@@ -111,16 +108,8 @@ const Slide13 = ({ downIcon }) => {
       secondaryTitle="Illustrative Examples"
       diagram={
         <TransitionImage
-          images={[
-            volumeOfPyramid_line,
-            volumeOfPyramid_blue,
-            volumeOfPyramid_modal1,
-          ]}
-          altTexts={[
-            "Diagram of a net of a cube",
-            "Diagram of a net of a cube representing the lateral surface area",
-            "Diagram of a net of a cube representing the lateral surface area",
-          ]}
+          images={[volumeOfPyramid_line]}
+          altTexts={["Diagram of a hexagonal pyramid with side length 5 ft"]}
           activeIndex={activeIndex}
         />
       }

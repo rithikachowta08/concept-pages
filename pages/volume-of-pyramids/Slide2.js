@@ -15,9 +15,9 @@ const TextSpanBg = dynamic(() =>
   import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide2/1.svg";
-const volumeOfPyramid_botton = "assets/volumes-of-pyramids/slide2/2.svg";
-const volumeOfPyramid_shade = "assets/volumes-of-pyramids/slide2/3.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide2/1.svg";
+const volumeOfPyramid_botton = "assets/volume-of-pyramids/slide2/2.svg";
+const volumeOfPyramid_shade = "assets/volume-of-pyramids/slide2/3.svg";
 
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,9 +38,9 @@ const Slide2 = ({ downIcon }) => {
             volumeOfPyramid_shade,
           ]}
           altTexts={[
-            "Diagram of a cube",
-            "Diagram of a cube highlighting the square faces",
-            "Diagram of a cube highlighting the vertices",
+            "Diagram of a pyramid",
+            "Diagram of a pyramid with highlighted polygonal base",
+            "Diagram of a pyramid with highlighted triangular bases",
           ]}
           activeIndex={activeIndex}
         />

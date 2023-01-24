@@ -3,9 +3,6 @@ import { colors } from "utils/colors";
 import { addTransitionToKatex } from "utils/domutils";
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
@@ -29,11 +26,11 @@ const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Pill = dynamic(() => import("components/Pill"));
-const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide10/1.svg";
-const volumeOfPyramid_right = "assets/volumes-of-pyramids/slide10/2.svg";
-const volumeOfPyramid_left = "assets/volumes-of-pyramids/slide8/3.svg";
-const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide8/4.svg";
-const volumeOfPyramid_modal = "assets/volumes-of-pyramids/slide8/5.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide10/1.svg";
+const volumeOfPyramid_right = "assets/volume-of-pyramids/slide10/2.svg";
+const volumeOfPyramid_left = "assets/volume-of-pyramids/slide10/3.svg";
+const volumeOfPyramid_height = "assets/volume-of-pyramids/slide10/4.svg";
+const volumeOfPyramid_modal = "assets/volume-of-pyramids/slide10/5.svg";
 
 const Slide10 = ({ downIcon }) => {
   let EquationLatex0 = [
@@ -78,9 +75,6 @@ const Slide10 = ({ downIcon }) => {
   const onHoverKatex = (e) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
   };
-  const onHover = (e) => {
-    setActiveIndex(e);
-  };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
@@ -102,7 +96,7 @@ const Slide10 = ({ downIcon }) => {
         alignSelf="center"
         width="400px"
         marginBottom="0px"
-        alt="Diagram of a cube representing lateral faces."
+        alt="Diagram of a rectangular pyramid with highlighted base"
       />
     </Flex>
   );
@@ -126,10 +120,10 @@ const Slide10 = ({ downIcon }) => {
             volumeOfPyramid_height,
           ]}
           altTexts={[
-            "Diagram of a net of a cube",
-            "Diagram of a net of a cube representing the lateral surface area",
-            "Diagram of a net of a cube representing the lateral surface area",
-            "Diagram of a net of a cube representing the lateral surface area",
+            "Diagram of a rectangular pyramid",
+            "Diagram of a rectangular pyramid representing its volume.",
+            "Diagram of a rectangular pyramid with highlighted base area",
+            "Diagram of a rectangular pyramid with highlighted height",
           ]}
           activeIndex={activeIndex}
         />

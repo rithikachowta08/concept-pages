@@ -17,12 +17,11 @@ const TextSpanBg = dynamic(() =>
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
-const Pill = dynamic(() => import("components/Pill"));
 const MathElement = dynamic(() => import("components/MathElement"));
-const volumeOfPyramid_full = "assets/volumes-of-pyramids/slide5/1.svg";
-const volumeOfPyramid_slide = "assets/volumes-of-pyramids/slide5/2.svg";
-const volumeOfPyramid_bottom = "assets/volumes-of-pyramids/slide5/3.svg";
-const volumeOfPyramid_height = "assets/volumes-of-pyramids/slide5/4.svg";
+const volumeOfPyramid_full = "assets/volume-of-pyramids/slide5/1.svg";
+const volumeOfPyramid_slide = "assets/volume-of-pyramids/slide5/2.svg";
+const volumeOfPyramid_bottom = "assets/volume-of-pyramids/slide5/3.svg";
+const volumeOfPyramid_height = "assets/volume-of-pyramids/slide5/4.svg";
 
 const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,10 +48,10 @@ const Slide5 = ({ downIcon }) => {
             volumeOfPyramid_height,
           ]}
           altTexts={[
-            "Diagram of a cone with radius and slant height labelled",
-            "Diagram of a cone with radius highlighted",
-            "Diagram of a cone with slant height highlighted",
-            "Diagram of a cone with slant height highlighted",
+            "Diagram of a pyramid",
+            "Diagram of a pyramid representing its volume",
+            "Diagram of a pyramid with highlighted base area",
+            "Diagram of a pyramid with highlighted height",
           ]}
           activeIndex={activeIndex}
         />

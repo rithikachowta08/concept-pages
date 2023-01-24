@@ -12,7 +12,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
         "Volume of different types of pyramids",
         "Relationship between volume of a prism and pyramid",
       ]}
-      anchorIdxes={[2, 3, 5, 7]}
+      anchorIdxes={[2, 5, 7, 14]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>
