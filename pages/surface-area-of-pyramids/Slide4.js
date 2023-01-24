@@ -33,7 +33,7 @@ import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // );
 import { ModalTriggerText } from "components/text";
 const parts_of_pyramid = "assets/surface-area-of-pyramids/parts_of_pyramid.svg";
-const parts_of_pyramid_vertex = "assets/surface-area-of-pyramids/parts_of_pyramid.svg";
+const parts_of_pyramid_vertex = "assets/surface-area-of-pyramids/parts_of_pyramid_vertex.svg";
 const parts_of_pyramid_altitude = "assets/surface-area-of-pyramids/parts_of_pyramid_altitude.svg";
 const parts_of_pyramid_slantheight = "assets/surface-area-of-pyramids/parts_of_pyramid_slantheight.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";

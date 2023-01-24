@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const EquationParentDiv = styled.div`
    font-family: "Nunito-Medium";
@@ -33,13 +34,16 @@ const RHSHint = styled.td`
    text-align: right;
    white-space: nowrap;
 `;
-const Span = styled.span``;
+const Span = styled.div`
+width:${(props) => props.isMobile?"min-content" : "auto"}
+`;
 
 const EquationTable = ({
    equationLatex: eqLatex,
    align = "top",
    lineHeight,
 }) => {
+   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    if (!eqLatex) {
       return <></>;
    }
@@ -61,7 +65,7 @@ const EquationTable = ({
                                  </TeX>
                               );
                            } else {
-                              return <Span key={i}>{val}</Span>;
+                              return <Span isMobile={isMobile} key={i}>{val}</Span>;
                            }
                         })}
                      </LHSLatex>

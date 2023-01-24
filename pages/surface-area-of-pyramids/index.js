@@ -35,21 +35,21 @@ const RelationshipBetweenDiameterAndCircumference = () => {
     <Slide10 key={9} />,
     <Slide11 key={10} />,
     // <Slide12 key={11} />,
-    // <PageLastSlide
-    //   key={4}
-    //   currentPageTitle={"Surface Area of Pyramids"}
-    //   nextPageTitle="Area of Square"
-    //   nextPageLink="/us/math/study/area-of-square"
-    // />,
+    <PageLastSlide
+      key={11}
+      currentPageTitle={"Surface Area of Pyramids"}
+      nextPageTitle="Volume of Pyramids"
+      nextPageLink="/us/math/study/volume-of-pyramids"
+    />,
   ];
 
   const navigationSections = [
-    { title: "What is the surface area of a pyramid?", slides: [1] },
-    { title: "Lateral surface area", slides: [2, 3] },
-    { title: "Relation between circumference and diameter", slides: [4, 5, 6, 7] },
+    { title: "What is the surface area of a pyramid?", slides: [1, 2, 3, 4] },
+    { title: "Lateral surface area", slides: [6, 7] },
+    { title: "Total surface area", slides: [8] },
   ];
 
-  const darkBgIndices = [0, 2, 4, 7, 8];
+  const darkBgIndices = [0, 4, 6, 8, 11];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
