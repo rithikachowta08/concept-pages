@@ -1,22 +1,25 @@
+import { PropTypes } from "prop-types";
 import dynamic from "next/dynamic";
-const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
-// const Paragraph = dynamic(() =>
-//    import("components/text").then((mod) => mod.Paragraph)
-// );
-
-const Slide5 = ({ downIcon, currentPageIdx }) => {
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
+const Slide1 = ({ moveToSection, downIcon }) => {
    return (
-      <AppletSlide
-         secondaryTitle="Area of Rectangle"
-         title="Using Unit Squares"
-         currentPageIdx={currentPageIdx}
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
+      <TitleSlide
+         title="Area of a Rectangle"
+         contentListItems={[
+            "What is the area of a rectangle?",
+            "Area by counting unit squares",
+            "General formula",
+            "Area using diagonal",
+         ]}
+         anchorIdxes={[2, 5, 6, 8]}
+         moveToSection={moveToSection}
          downIcon={downIcon}
-         bg="DARK"
-      >
-         {/* <Paragraph></Paragraph> */}
-      </AppletSlide>
+      ></TitleSlide>
    );
 };
 
-export default Slide5;
+Slide1.propTypes = {
+   moveToSection: PropTypes.any,
+};
+
+export default Slide1;
