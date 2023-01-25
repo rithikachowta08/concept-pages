@@ -26,6 +26,24 @@ const Slide9 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
+        value: [`Volume of the cone`],
+        type: "text",
+      },
+      rhsLatex: {
+        value: [
+          "\\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h",
+        ],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+  ];
+  let EquationLatex1 = [
+    {
+      lhsLatex: {
         value: [`V`],
         type: "text",
       },
@@ -71,6 +89,7 @@ const Slide9 = ({ downIcon }) => {
   ];
   let latexEquationContainer = [];
   latexEquationContainer.push(EquationLatex0);
+  latexEquationContainer.push(EquationLatex1);
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
@@ -79,11 +98,6 @@ const Slide9 = ({ downIcon }) => {
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
-  let latex = [];
-  latex.push(
-    `= \\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h`
-  );
-  let mathjaxCounter = 0;
   return (
     <TextAndDiagramSlide
       secondaryTitle="Illustrative Example"
@@ -126,8 +140,10 @@ const Slide9 = ({ downIcon }) => {
         &nbsp;= 14 in&nbsp;
       </Paragraph>
       <Paragraph>
-        Volume of the cone &nbsp;
-        <MathElement htmlString={latex[mathjaxCounter++]} />
+        <EquationTable
+          align="middle"
+          equationLatex={latexEquationContainer[latexEquationCounter++]}
+        ></EquationTable>
       </Paragraph>
       <Paragraph>
         <EquationTable

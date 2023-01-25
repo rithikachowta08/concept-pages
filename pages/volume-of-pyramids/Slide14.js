@@ -1,9 +1,14 @@
+import { useState, useEffect } from "react";
 import { lineHeightProp } from "utils/fontStyles";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { addTransitionToKatex } from "utils/domutils";
 import { coco_applet_uri } from "utils/constants";
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
+);
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
 );
 const MathElement = dynamic(() => import("components/MathElement"));
 const Paragraph = dynamic(() =>
@@ -15,6 +20,58 @@ const Flex = dynamic(() =>
 const Pill = dynamic(() => import("components/Pill"));
 
 const Slide14 = ({ downIcon, currentPageIdx }) => {
+  let EquationLatex0 = [
+    {
+      lhsLatex: {
+        value: [`Volume of a prism`],
+        type: "text",
+      },
+      rhsLatex: {
+        value: ["\\text{Base area (A)} \\times \\times{Height (h)}"],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+  ];
+  let EquationLatex1 = [
+    {
+      lhsLatex: {
+        value: [`Volume of a pyramid`],
+        type: "text",
+      },
+      rhsLatex: {
+        value: [
+          "\\dfrac{1}{3} \\times \\text{Base area (A)} \\times \\times{Height (h)}",
+        ],
+        type: "latex",
+      },
+      rhsHint: {
+        value: [""],
+        type: "text",
+      },
+    },
+  ];
+  let latexEquationContainer = [];
+  latexEquationContainer.push(EquationLatex0);
+  latexEquationContainer.push(EquationLatex1);
+  let latexEquationCounter = 0;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const onHoverKatex = (e) => {
+    setActiveIndex(Number(e.currentTarget.parentNode.id));
+  };
+  const onHover = (e) => {
+    setActiveIndex(e);
+  };
+  const onHoverOut = (e) => {
+    setActiveIndex(0);
+  };
+  useEffect(
+    addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
+    []
+  );
   let latex = [];
   latex.push(`\\dfrac{1}{3}`);
   latex.push(`\\dfrac{1}{3}`);
@@ -31,25 +88,18 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
         If the base area and height of a prism and pyramid are the same, we
         know:
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        <Flex direction="row">
-          <Paragraph color={colors.WHITE}>Volume of a prism</Paragraph>
-          <Paragraph color={colors.WHITE}>=</Paragraph>
-          <Paragraph color={colors.WHITE}>Base area (A) × Height (h)</Paragraph>
-        </Flex>
+      <Paragraph color={colors.WHITE}>
+        <EquationTable
+          align="middle"
+          equationLatex={latexEquationContainer[latexEquationCounter++]}
+        ></EquationTable>
       </Paragraph>
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        <Flex direction="row">
-          <Paragraph color={colors.WHITE}>Volume of a pyramid</Paragraph>
-          <Paragraph color={colors.WHITE}>=</Paragraph>
-          <Paragraph color={colors.WHITE}>
-            {" "}
-            <MathElement htmlString={latex[mathjaxCounter++]} /> × Base area (A)
-            × Height (h)
-          </Paragraph>
-        </Flex>
+      <Paragraph color={colors.WHITE}>
+        <EquationTable
+          align="middle"
+          equationLatex={latexEquationContainer[latexEquationCounter++]}
+        ></EquationTable>
       </Paragraph>
-
       <Paragraph color={colors.WHITE}>Hence;</Paragraph>
       <div>
         <Paragraph>

@@ -207,8 +207,8 @@ const Slide8 = ({ downIcon }) => {
                 hoverColor={colors.LAVENDER}
               >
                 Base area
-              </TextSpanBg>
-              &nbsp;×&nbsp;
+              </TextSpanBg>{" "}
+              ×{" "}
               <TextSpanBg
                 id={3}
                 onHover={() => onHover(3)}
