@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { StyledImg } from "components/StyledElements";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -31,9 +32,9 @@ const Slide5 = ({ downIcon }) => {
          bg="DARK"
          title="Relation between Circumference and Diameter "
          diagram={
-            <TransitionImage
-               images={[circleRelation]}
-               activeIndex={activeIndex}
+            <StyledImg
+               src={circleRelation}
+               alt={"Diagram of a circle showing diameter (D)"}
             />
          }
          altTexts={["Diagram of a circle showing diameter (D)"]}
@@ -44,11 +45,10 @@ const Slide5 = ({ downIcon }) => {
                The ratio of circumference to diameter is equal to π (pi), i.e.,
             </TextLine>
          </Paragraph>
-
-         <Paragraph>
-            <TextLine color={colors.WHITE}>
+         <span>
+            <Paragraph color={colors.WHITE}>
                <EquationTable
-                  align="middle"
+                  align="center"
                   equationLatex={[
                      {
                         lhsLatex: {
@@ -81,7 +81,7 @@ const Slide5 = ({ downIcon }) => {
                      {
                         lhsLatex: {
                            value: ["C"],
-                           type: "text",
+                           type: "latex",
                         },
                         rhsLatex: {
                            value: ["\\pi\\times D"],
@@ -94,8 +94,8 @@ const Slide5 = ({ downIcon }) => {
                      },
                   ]}
                />
-            </TextLine>
-         </Paragraph>
+            </Paragraph>
+         </span>
       </TextAndDiagramSlide>
    );
 };
