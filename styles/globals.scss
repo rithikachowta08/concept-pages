@@ -166,6 +166,15 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    }
 }
 
+.modalTriggerText {
+   font-weight: 700;
+   cursor: pointer;
+   color: black;
+   span {
+      text-decoration: underline;
+   }
+}
+
 /* Small mobile portrait */
 @media only screen and (min-width: 200px) and (max-width: 375px) and (max-height: 800px) {
    html {

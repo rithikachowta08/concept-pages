@@ -13,7 +13,7 @@ const MathElement = dynamic(() => import("components/MathElement"));
 const Pill = dynamic(() => import("components/Pill"));
 
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 
 const Slide4 = ({ downIcon, currentPageIdx }) => {
@@ -30,7 +30,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
       },
    ];
 
-   let EquationLatex1=[
+   let EquationLatex1 = [
       {
          lhsLatex: {
             value: ["Area of the parallelogram"],
@@ -40,10 +40,10 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
             value: ["Base(b) \\times Height(h)"],
             type: "latex",
          },
-      }
-   ]
+      },
+   ];
    let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0,EquationLatex1);
+   latexEquationContainer.push(EquationLatex0, EquationLatex1);
    let latexEquationCounter = 0;
 
    return (
@@ -55,23 +55,27 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
          currentPageIdx={currentPageIdx}
       >
          <Paragraph>
-         The area of a parallelogram will be equal to the area of a rectangle.
+            The area of a parallelogram will be equal to the area of a
+            rectangle.
          </Paragraph>
          <Paragraph>
-         <EquationTable
+            <EquationTable
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
-         
-         <div><Paragraph>
-         <TextLine>
-           Here, the length and width of the rectangle are the base and height of the parallelogram.
-           </TextLine>
-         </Paragraph>
+
+         <div>
+            <Paragraph>
+               <TextLine>
+                  Here, the length and width of the rectangle are the base and
+                  height of the parallelogram.
+               </TextLine>
+            </Paragraph>
          </div>
-         <div><Pill darkbg={false}>
-            Area of Parallelogram = <MathElement htmlString={"Base(b) \\times Height(h)"}></MathElement>
-         </Pill>
+         <div>
+            <Pill darkbg={false}>
+               Area of Parallelogram = Base(b) &times; Height(h)
+            </Pill>
          </div>
       </TextAndAppletSlide>
    );

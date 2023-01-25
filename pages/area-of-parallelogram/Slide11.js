@@ -7,13 +7,13 @@ const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -26,10 +26,10 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 
-const image_1 = "assets/area-of-pgm/slide7_a.svg";
-const image_2 = "assets/area-of-pgm/slide7_b.svg";
-const image_3 = "assets/area-of-pgm/slide7_c.svg";
-const image_4 = "assets/area-of-pgm/slide7_d.svg";
+const image_1 = "assets/area-of-pgm/slide11_a.svg";
+const image_2 = "assets/area-of-pgm/slide11_b.svg";
+const image_3 = "assets/area-of-pgm/slide11_c.svg";
+const image_4 = "assets/area-of-pgm/slide11_d.svg";
 
 const Slide11 = ({ downIcon }) => {
    let EquationLatex0 = [
@@ -39,7 +39,9 @@ const Slide11 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)"],
+            value: [
+               "\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)",
+            ],
             type: "latex",
          },
       },
@@ -59,7 +61,9 @@ const Slide11 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\dfrac{1}{2} \\times 3 \\times 4 \\times \\dfrac{\\sqrt{3}}{2}"],
+            value: [
+               "\\dfrac{1}{2} \\times 3 \\times 4 \\times \\dfrac{\\sqrt{3}}{2}",
+            ],
             type: "latex",
          },
       },
@@ -103,12 +107,12 @@ const Slide11 = ({ downIcon }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3,image_4]}
+               images={[image_1, image_2, image_3, image_4]}
                altTexts={[
                   "Diagram of a parallelogram showing two diagonals and included angle of 60 degrees",
                   "Diagram of a parallelogram with highlighted diagonal of length 3 in",
                   "Diagram of a parallelogram with highlighted diagonal of length 4 in",
-                  "Diagram of a parallelogram with highlighted angle between two diagonals"
+                  "Diagram of a parallelogram with highlighted angle between two diagonals",
                ]}
                activeIndex={activeIndex}
             />
@@ -116,36 +120,37 @@ const Slide11 = ({ downIcon }) => {
       >
          <Paragraph>
             <TextLine>
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >
-              Diagonal d<sub>1</sub>
-            </TextSpanBg> = 3 in
+               <TextSpanBg
+                  id={1}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  Diagonal d<sub>1</sub>
+               </TextSpanBg>{" "}
+               = 3 in
             </TextLine>
             <TextLine>
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-
-            >
-              Diagonal d<sub>2</sub>
-            </TextSpanBg> = 4 in
+               <TextSpanBg
+                  id={2}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  Diagonal d<sub>2</sub>
+               </TextSpanBg>{" "}
+               = 4 in
             </TextLine>
             <TextLine>
-            <TextSpanBg
-               id={3}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-
-            >
-              Included angle θ
-            </TextSpanBg> = 60<sup>o</sup>
+               <TextSpanBg
+                  id={3}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  Included angle θ
+               </TextSpanBg>{" "}
+               = 60<sup>o</sup>
             </TextLine>
          </Paragraph>
          <Paragraph>
@@ -153,7 +158,6 @@ const Slide11 = ({ downIcon }) => {
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
-         
       </TextAndDiagramSlide>
    );
 };

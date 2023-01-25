@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { colors } from "utils/colors";
 import { lineHeightProp } from "utils/fontStyles";
@@ -25,12 +25,8 @@ const TextSpanBg = dynamic(() =>
 );
 
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
-const TextLine = dynamic(() =>
-   import("components/text").then((mod) => mod.TextLine)
-);
-
 
 const Slide3 = ({ downIcon }) => {
    const onHover = (e) => {
@@ -43,37 +39,28 @@ const Slide3 = ({ downIcon }) => {
       {
          lhsLatex: {
             value: [
-               
                <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >
-            Area of parallelogram
-            </TextSpanBg>
+                  id={1}
+                  key={0}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+               >
+                  Area of parallelogram
+               </TextSpanBg>,
             ],
             type: "textspanbg",
          },
          rhsLatex: {
             value: [
-               <div>
-               <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >
-            Base
-            </TextSpanBg>
-            <span style={{color:"#fff"}}>&times;</span>
-            <TextSpanBg
-               id={3}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >
-            Perpendicular Height
-            </TextSpanBg>
-            
-            </div>
+               <div key={1}>
+                  <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
+                     Base
+                  </TextSpanBg>
+                  <span style={{ color: "#fff" }}>&times;</span>
+                  <TextSpanBg id={3} onHover={onHover} onHoverOut={onHoverOut}>
+                     Perpendicular Height
+                  </TextSpanBg>
+               </div>,
             ],
             type: "textspanbg",
          },
@@ -92,26 +79,26 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle="Area of a Parallelogram"
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3,image_4]}
+               images={[image_1, image_2, image_3, image_4]}
                altTexts={[
                   "Diagram of a parallelogram of base b and height h",
                   "Diagram of a parallelogram highlighting its area",
                   "Diagram of a parallelogram highlighting base",
-                  "Diagram of a parallelogram highlighting height"
+                  "Diagram of a parallelogram highlighting height",
                ]}
                activeIndex={activeIndex}
             />
          }
       >
          <Paragraph color={colors.WHITE}>
-         The area (A), of a parallelogram is the product of its base (b) and height (h).
+            The area (A), of a parallelogram is the product of its base (b) and
+            height (h).
          </Paragraph>
          <Paragraph color={colors.WHITE}>
             <EquationTable
                equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable>   
+            ></EquationTable>
          </Paragraph>
-
       </TextAndDiagramSlide>
    );
 };

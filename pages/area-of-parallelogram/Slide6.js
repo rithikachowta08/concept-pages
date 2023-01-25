@@ -1,5 +1,4 @@
-import { useState,useEffect } from "react";
-import { colors } from "utils/colors";
+import { useState, useEffect } from "react";
 import { addTransitionToKatex } from "utils/domutils";
 
 const image_1 = "assets/area-of-pgm/slide6_a.svg";
@@ -11,22 +10,16 @@ const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
-);
-const Pill = dynamic(() => import("components/Pill"));
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
-const MathElement = dynamic(() => import("components/MathElement"));
-
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 
 const Slide6 = ({ downIcon, navBar }) => {
@@ -34,42 +27,34 @@ const Slide6 = ({ downIcon, navBar }) => {
       {
          lhsLatex: {
             value: [
-               "\\htmlId{1}{\\htmlClass{textSpanBg slide-6 darkBg}{Area \\: of \\: the \\: parallelogram}}",
+               "\\htmlId{1}{\\htmlClass{textSpanBg slide-6}{Area \\: of \\: the \\: parallelogram}}",
             ],
             type: "latex",
          },
          rhsLatex: {
             value: [
-               "\\htmlId{2}{\\htmlClass{textSpanBg slide-6 darkBg}{Base(b)}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-6 darkBg}{Height(h)}} ",
+               "\\htmlId{2}{\\htmlClass{textSpanBg slide-6}{Base(b)}} \\times \\htmlId{3}{\\htmlClass{textSpanBg slide-6}{Height(h)}} ",
             ],
             type: "latex",
          },
       },
       {
          lhsLatex: {
-            value: [
-               "",
-            ],
+            value: [""],
             type: "latex",
          },
          rhsLatex: {
-            value: [
-               "5\\:in \\times 8\\:in",
-            ],
+            value: ["5\\:in \\times 8\\:in"],
             type: "latex",
          },
       },
       {
          lhsLatex: {
-            value: [
-               "",
-            ],
+            value: [""],
             type: "latex",
          },
          rhsLatex: {
-            value: [
-               "40\\:sq\\:in",
-            ],
+            value: ["40\\:sq\\:in"],
             type: "latex",
          },
       },
@@ -78,9 +63,6 @@ const Slide6 = ({ downIcon, navBar }) => {
    latexEquationContainer.push(EquationLatex0);
    let latexEquationCounter = 0;
    const [activeIndex, setActiveIndex] = useState(0);
-   const onHover = (e) => {
-      setActiveIndex(Number(e.target.id));
-   };
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
@@ -97,12 +79,13 @@ const Slide6 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3,image_4]}
-               altTexts={["Diagram of a parallelogram of base 5cm and height 8cm",
-               "Diagram of a parallelogram highlighting the area 40 unit square",
-               "Diagram of a parallelogram highlighting base length 5cm",
-               "Diagram of a parallelogram with highlighted height 8cm"
-         ]}
+               images={[image_1, image_2, image_3, image_4]}
+               altTexts={[
+                  "Diagram of a parallelogram of base 5cm and height 8cm",
+                  "Diagram of a parallelogram highlighting the area 40 unit square",
+                  "Diagram of a parallelogram highlighting base length 5cm",
+                  "Diagram of a parallelogram with highlighted height 8cm",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -110,12 +93,8 @@ const Slide6 = ({ downIcon, navBar }) => {
          secondaryTitle="Illustrative Example"
       >
          <Paragraph>
-            <TextLine>
-            Base(b)= 5 in
-            </TextLine>
-            <TextLine>
-            Height(h)= 8 in
-            </TextLine>
+            <TextLine>Base(b)= 5 in</TextLine>
+            <TextLine>Height(h)= 8 in</TextLine>
             <EquationTable
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>

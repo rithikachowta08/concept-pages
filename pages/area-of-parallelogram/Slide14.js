@@ -7,13 +7,13 @@ const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -36,10 +36,11 @@ const Slide14 = ({ downIcon }) => {
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\begin{vmatrix}i & j & k \\newline 3 & 2 & 0 \\newline -1 & 3 & 0 \\end{vmatrix}"],
+            value: [
+               "\\begin{vmatrix}i & j & k \\newline 3 & 2 & 0 \\newline -1 & 3 & 0 \\end{vmatrix}",
+            ],
             type: "latex",
-         }
-         ,
+         },
       },
       {
          lhsLatex: {
@@ -47,7 +48,7 @@ const Slide14 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["i (0 – 0) – j(0 – 0) + k(3 + 6)"],
+            value: ["i (0 - 0) - j(0 - 0) + k(3 + 6)"],
             type: "latex",
          },
       },
@@ -83,30 +84,25 @@ const Slide14 = ({ downIcon }) => {
             <TransitionImage
                images={[image_1]}
                altTexts={[
-                  "Diagram of a parallelogram with given sides in vector form"
+                  "Diagram of a parallelogram with given sides in vector form",
                ]}
                activeIndex={activeIndex}
             />
          }
       >
-
          <Paragraph>
             <TextLine>
-               <MathElement htmlString={"a\\: = \\: 3i + 2j"}/>
+               <MathElement htmlString={"a\\: = \\: 3i + 2j"} />
             </TextLine>
             <TextLine>
-            <MathElement htmlString={"b\\: = \\: -3i + 1j"}/>
+               <MathElement htmlString={"b\\: = \\: -3i + 1j"} />
             </TextLine>
-         <TextLine>
-         Area of the parallelogram = |a × b|
-         </TextLine>
-            <EquationTable align="middle"
+            <TextLine>Area of the parallelogram = |a × b|</TextLine>
+            <EquationTable
+               align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
-
-
-
       </TextAndDiagramSlide>
    );
 };

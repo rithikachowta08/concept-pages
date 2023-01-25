@@ -1,20 +1,23 @@
 import MathElement from "components/MathElement";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { addTransitionToKatex } from "utils/domutils";
+import {
+   addTransitionToKatex,
+   addClickTransitionToModalTriggerText,
+} from "utils/domutils";
 
 const cube_red = "assets/volume-of-cube/slide8_a.svg";
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -22,6 +25,13 @@ const TextLine = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
 const Pill = dynamic(() => import("components/Pill"));
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -32,14 +42,51 @@ const image_2 = "assets/area-of-pgm/slide10_b.svg";
 const image_3 = "assets/area-of-pgm/slide10_c.svg";
 
 const Slide10 = ({ downIcon }) => {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const modalContent = (
+      <Flex direction="column">
+         <div>
+            <Paragraph color="white">
+               Apply the sine formula in ∆ AOB.
+            </Paragraph>
+            <Paragraph color="white">
+               <MathElement
+                  htmlString={"Sin(\\theta) = \\dfrac{h}{d_{2}/2}"}
+               ></MathElement>
+            </Paragraph>
+            <Paragraph color="white">
+               <MathElement
+                  htmlString={"h = d_{2}/2 \\times Sin(\\theta)"}
+               ></MathElement>
+            </Paragraph>
+         </div>
+         <ModalImg
+            src={image_3}
+            alignSelf="center"
+            width="400px"
+            marginBottom="50px"
+            alt="Diagram of a unit cube"
+         />
+      </Flex>
+   );
+   const onClick = () => {
+      setIsModalOpen(!isModalOpen);
+   };
+   const onDismiss = () => {
+      setIsModalOpen(false);
+   };
    let EquationLatex0 = [
       {
          lhsLatex: {
-            value: ["Area \\: of \\: \\htmlId{1}{\\htmlClass{textSpanBg slide-10 darkBg}{∆AOB}}"],
+            value: [
+               "Area \\: of \\: \\htmlId{1}{\\htmlClass{textSpanBg slide-10}{∆AOB}}",
+            ],
             type: "latex",
          },
          rhsLatex: {
-            value: ["\\dfrac{1}{2} \\times Base \\times Height"],
+            value: [
+               "\\dfrac{1}{2} \\times Base \\times \\htmlClass{modalTriggerText slide-10}{\\text{Height}}",
+            ],
             type: "latex",
          },
       },
@@ -81,7 +128,9 @@ const Slide10 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["4 \\times \\dfrac{d_{1} \\times d_{2}}{8} \\times Sin(\\theta)"],
+            value: [
+               "4 \\times \\dfrac{d_{1} \\times d_{2}}{8} \\times Sin(\\theta)",
+            ],
             type: "latex",
          },
       },
@@ -101,8 +150,15 @@ const Slide10 = ({ downIcon }) => {
       addTransitionToKatex(".textSpanBg.slide-10", onHoverKatex, onHoverOut),
       []
    );
+   useEffect(
+      addClickTransitionToModalTriggerText(
+         ".modalTriggerText.slide-10",
+         onClick
+      ),
+      []
+   );
    let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0,EquationLatex1);
+   latexEquationContainer.push(EquationLatex0, EquationLatex1);
    let latexEquationCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -111,7 +167,7 @@ const Slide10 = ({ downIcon }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1,image_2]}
+               images={[image_1, image_2]}
                altTexts={[
                   "Diagram of a parallelogram showing its two diagonals and included angle between them",
                   "Diagram of a parallelogram with one of the 4 triangles highlighted",
@@ -120,7 +176,12 @@ const Slide10 = ({ downIcon }) => {
             />
          }
       >
-
+         <Modal
+            isOpen={isModalOpen}
+            title="Height"
+            content={modalContent}
+            onDismiss={onDismiss}
+         />
          <Paragraph>
             <EquationTable
                equationLatex={latexEquationContainer[latexEquationCounter++]}
@@ -128,22 +189,22 @@ const Slide10 = ({ downIcon }) => {
          </Paragraph>
          <div>
             <Paragraph>
-           
-         Diagonals of a parallelogram divide it into 4 triangles of equal area
-
-         
+               Diagonals of a parallelogram divide it into 4 triangles of equal
+               area
             </Paragraph>
             <Paragraph>
-            <EquationTable
-               equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable>
-         </Paragraph>
-         <Pill darkbg={false}
-            width="fit-content"
-         >
-            Area of a parallelogram{" "} = <MathElement htmlString={"\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)"}></MathElement>
-            
-         </Pill>
+               <EquationTable
+                  equationLatex={latexEquationContainer[latexEquationCounter++]}
+               ></EquationTable>
+            </Paragraph>
+            <Pill darkbg={false} width="fit-content">
+               Area of a parallelogram ={" "}
+               <MathElement
+                  htmlString={
+                     "\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)"
+                  }
+               ></MathElement>
+            </Pill>
          </div>
       </TextAndDiagramSlide>
    );

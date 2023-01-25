@@ -8,13 +8,13 @@ const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -47,26 +47,25 @@ const Slide8 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               <div>
-               <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >
-            Base
-            </TextSpanBg>
-            &times;
-            <TextSpanBg
-               id={3}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >
-             Height
-            </TextSpanBg>
-            
-            </div>
+               <div key={0}>
+                  <TextSpanBg
+                     id={2}
+                     onHover={onHover}
+                     onHoverOut={onHoverOut}
+                     hoverColor={colors.DARK_LAVENDER}
+                  >
+                     Base
+                  </TextSpanBg>
+                  &times;
+                  <TextSpanBg
+                     id={3}
+                     onHover={onHover}
+                     onHoverOut={onHoverOut}
+                     hoverColor={colors.DARK_LAVENDER}
+                  >
+                     Height
+                  </TextSpanBg>
+               </div>,
             ],
             type: "textspanbg",
          },
@@ -94,7 +93,6 @@ const Slide8 = ({ downIcon }) => {
    ];
    const [activeIndex, setActiveIndex] = useState(0);
 
-
    let latexEquationContainer = [];
    latexEquationContainer.push(EquationLatex0);
    let latexEquationCounter = 0;
@@ -105,32 +103,37 @@ const Slide8 = ({ downIcon }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3,image_4]}
+               images={[image_1, image_2, image_3, image_4]}
                altTexts={[
                   "Diagram of a parallelogram highlighting its two side, included angle and height h",
                   "Diagram of a parallelogram highlighting triangle formed between one of its base and height",
                   "Diagram of a parallelogram with highlighted base length",
-                  "Diagram of a parallelogram with highlighted height as b sin θ"
+                  "Diagram of a parallelogram with highlighted height as b sin θ",
                ]}
                activeIndex={activeIndex}
             />
          }
       >
          <Paragraph>
-         Apply the ‘sine’ formula in the <TextSpanBg
+            Apply the ‘sine’ formula in the{" "}
+            <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-              triangle
+               triangle
             </TextSpanBg>
          </Paragraph>
          <Paragraph>
-            <MathElement htmlString={"Sin(\\theta) = \\dfrac{h}{b}"}></MathElement>
+            <MathElement
+               htmlString={"Sin(\\theta) = \\dfrac{h}{b}"}
+            ></MathElement>
          </Paragraph>
          <Paragraph>
-            <MathElement htmlString={"h = b \\times Sin(\\theta) "}></MathElement>
+            <MathElement
+               htmlString={"h = b \\times Sin(\\theta) "}
+            ></MathElement>
          </Paragraph>
          <Paragraph>
             <EquationTable
@@ -138,12 +141,12 @@ const Slide8 = ({ downIcon }) => {
             ></EquationTable>
          </Paragraph>
          <div>
-         <Pill darkbg={false}
-            width="fit-content"
-         >
-            Area of a parallelogram{" "} = <MathElement htmlString={"a \\times b \\times Sin(\\theta)"}></MathElement>
-            
-         </Pill>
+            <Pill darkbg={false} width="fit-content">
+               Area of a parallelogram ={" "}
+               <MathElement
+                  htmlString={"a \\times b \\times Sin(\\theta)"}
+               ></MathElement>
+            </Pill>
          </div>
       </TextAndDiagramSlide>
    );

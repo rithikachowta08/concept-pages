@@ -7,14 +7,17 @@ const cube_red = "assets/volume-of-cube/slide8_a.svg";
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
+const ModalTriggerText = dynamic(() =>
+   import("components/text").then((mod) => mod.ModalTriggerText)
+);
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -26,14 +29,66 @@ const Pill = dynamic(() => import("components/Pill"));
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
 
 const image_1 = "assets/area-of-pgm/slide13_a.svg";
 const image_2 = "assets/area-of-pgm/slide13_b.svg";
-const image_3 = "assets/area-of-pgm/slide13_c.svg"
-const image_4 = "assets/area-of-pgm/slide13_d.svg"
-const image_5 = "assets/area-of-pgm/slide13_e.svg"
+const image_3 = "assets/area-of-pgm/slide13_c.svg";
+const image_4 = "assets/area-of-pgm/slide13_d.svg";
+const image_5 = "assets/area-of-pgm/slide13_e.svg";
 
 const Slide13 = ({ downIcon }) => {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [activeModalIndex, setActiveModalIndex] = useState(0);
+   const modalTitle = [
+      "Cross Product of a Vector with Itself",
+      "Cross Product of Two Vectors",
+   ];
+   const modalContent = [
+      <Flex direction="column" key={0}>
+         <Paragraph color="white">
+            We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
+         </Paragraph>
+         <Paragraph color="white">
+            Hence,<TextLine>a &times; a = |a| |a| Sin &#952;</TextLine>
+         </Paragraph>
+         <Paragraph color="white">
+            <TextLine>For &#952; = 0&deg;</TextLine>
+            <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
+            <TextLine>a &times; a = 0</TextLine>
+         </Paragraph>
+         <ModalImg
+            src={image_4}
+            alignSelf="center"
+            width="400px"
+            marginBottom="50px"
+            alt="Diagram of a unit cube"
+         />
+      </Flex>,
+      <Flex direction="column" key={1}>
+         <Paragraph color="white">a &times; b = - b &times; a</Paragraph>
+         <ModalImg
+            src={image_5}
+            alignSelf="center"
+            width="400px"
+            marginBottom="50px"
+            alt="Diagram of a unit cube"
+         />
+      </Flex>,
+   ];
+   const onClick = (e) => {
+      setActiveModalIndex(e);
+      setIsModalOpen(!isModalOpen);
+   };
+   const onDismiss = () => {
+      setIsModalOpen(false);
+   };
    let EquationLatex0 = [
       {
          lhsLatex: {
@@ -51,8 +106,16 @@ const Slide13 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["a \\times b - a \\times a + b \\times b - b\\times a"],
-            type: "latex",
+            value: [
+               <div key={1}>
+                  a &times; b -{" "}
+                  <ModalTriggerText onClick={() => onClick(0)}>
+                     a &times; a
+                  </ModalTriggerText>{" "}
+                  + b &times; b - b&times; a
+               </div>,
+            ],
+            type: "modalTriggerText",
          },
       },
       {
@@ -71,8 +134,15 @@ const Slide13 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["a \\times b + a \\times b"],
-            type: "latex",
+            value: [
+               <div key={1}>
+                  a &times; b +{" "}
+                  <ModalTriggerText onClick={() => onClick(1)}>
+                     a &times; b
+                  </ModalTriggerText>
+               </div>,
+            ],
+            type: "modalTriggerText",
          },
       },
       {
@@ -105,13 +175,14 @@ const Slide13 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\left| \\: a \\times b \\: \\right| = \\dfrac{1}{2} \\times \\left| d_{1} \\times d_{2} \\right|"],
+            value: [
+               "\\left| \\: a \\times b \\: \\right| = \\dfrac{1}{2} \\times \\left| d_{1} \\times d_{2} \\right|",
+            ],
             type: "latex",
          },
       },
    ];
    const [activeIndex, setActiveIndex] = useState(0);
-
    const onHover = (e) => {
       setActiveIndex(Number(e.target.id));
    };
@@ -119,7 +190,7 @@ const Slide13 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latexEquationContainer = [];
-   latexEquationContainer.push(EquationLatex0,EquationLatex1,EquationLatex2);
+   latexEquationContainer.push(EquationLatex0, EquationLatex1, EquationLatex2);
    let latexEquationCounter = 0;
    return (
       <TextAndDiagramSlide
@@ -128,38 +199,46 @@ const Slide13 = ({ downIcon }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3]}
+               images={[image_1, image_2, image_3]}
                altTexts={[
                   "Diagram of a parallelogram in vector form",
                   "Diagram of a parallelogram in vector form with highlighted diagonal and adjacent sides",
-                  "Diagram of a parallelogram with highlighted adjacent sides and diagonal in vector form"
+                  "Diagram of a parallelogram with highlighted adjacent sides and diagonal in vector form",
                ]}
                activeIndex={activeIndex}
             />
          }
       >
-
+         <Modal
+            isOpen={isModalOpen}
+            title={modalTitle[activeModalIndex]}
+            content={modalContent[activeModalIndex]}
+            onDismiss={onDismiss}
+         />
          <Paragraph>
             <TextLine>
-            Area of the parallelogram = <MathElement htmlString={"\\left | a \\times b \\right |"}/>
+               Area of the parallelogram ={" "}
+               <MathElement htmlString={"\\left | a \\times b \\right |"} />
             </TextLine>
             <TextLine>
-            <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >a+b = d<sub>1</sub>
-            </TextSpanBg>
+               <TextSpanBg
+                  id={1}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  a+b = d<sub>1</sub>
+               </TextSpanBg>
             </TextLine>
             <TextLine>
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            >b-a = d<sub>2</sub>
-            </TextSpanBg>
+               <TextSpanBg
+                  id={2}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  b-a = d<sub>2</sub>
+               </TextSpanBg>
             </TextLine>
             <EquationTable
                equationLatex={latexEquationContainer[latexEquationCounter++]}
@@ -171,16 +250,13 @@ const Slide13 = ({ downIcon }) => {
             ></EquationTable>
          </Paragraph>
          <div>
-         <Pill darkbg={false}
-            width="fit-content"
-         >
-           <EquationTable align="middle"
-               equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable> 
-            
-         </Pill>
+            <Pill darkbg={false} width="fit-content">
+               <EquationTable
+                  align="middle"
+                  equationLatex={latexEquationContainer[latexEquationCounter++]}
+               ></EquationTable>
+            </Pill>
          </div>
-
       </TextAndDiagramSlide>
    );
 };

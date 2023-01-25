@@ -5,16 +5,16 @@ import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
+   import("components/text").then((mod) => mod.TextSpanBg)
 );
 const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
@@ -36,7 +36,8 @@ const Slide2 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="1vh">
-         A parallelogram is a quadrilateral whose opposite sides are equal in length and parallel to each other.
+            A parallelogram is a quadrilateral whose opposite sides are equal in
+            length and parallel to each other.
          </Paragraph>
          <ModalImg
             src={image_3}
@@ -65,10 +66,10 @@ const Slide2 = ({ downIcon }) => {
          title="What is the area of a parallelogram?"
          diagram={
             <TransitionImage
-               images={[image_1,image_2]}
+               images={[image_1, image_2]}
                altTexts={[
                   "Diagram of a parallelogram",
-                  "Diagram of a parallelogram highlighting its area"
+                  "Diagram of a parallelogram highlighting its area",
                ]}
                activeIndex={activeIndex}
             />
@@ -82,20 +83,20 @@ const Slide2 = ({ downIcon }) => {
             onDismiss={onDismiss}
          />
          <Paragraph lineHeight={lineHeightProp}>
-         The area of a parallelogram is the{" "}
+            The area of a parallelogram is the{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-             region bounded
+               region bounded
             </TextSpanBg>
-            by the {" "}
+            by the{" "}
             <ModalTriggerText id={2} onClick={onClick}>
-            parallelogram
-            </ModalTriggerText>
-            {" "}in a given two-dimensional space.
+               parallelogram
+            </ModalTriggerText>{" "}
+            in a given two-dimensional space.
          </Paragraph>
       </TextAndDiagramSlide>
    );
