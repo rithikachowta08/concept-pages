@@ -1,0 +1,21 @@
+{
+   "slides": [
+      {
+         "type": "TITLE"
+      },
+      {
+         "type": "TEXT_AND_DIAGRAM"
+      },
+      {
+         "type": "MULTIPLE_DIAGRAM"
+      },
+      { "type": "TEXT_AND_APPLET" },
+      { "type": "APPLET" },
+      { "type": "VIDEO" },
+      { "type": "CONCLUSION" }
+   ],
+   "seo": {
+      "description": "",
+      "meta": ""
+   }
+}
