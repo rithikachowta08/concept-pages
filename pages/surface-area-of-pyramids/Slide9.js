@@ -26,7 +26,6 @@ const Flex = dynamic(() =>
 );
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
@@ -73,7 +72,7 @@ const Slide9 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine color={colors.WHITE}>
                The total surface area of a regular pyramid is the sum of its
                lateral surface area and its base area.

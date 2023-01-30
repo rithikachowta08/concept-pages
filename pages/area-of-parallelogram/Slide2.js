@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
@@ -82,7 +81,7 @@ const Slide2 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             The area of a parallelogram is the{" "}
             <TextSpanBg
                id={1}

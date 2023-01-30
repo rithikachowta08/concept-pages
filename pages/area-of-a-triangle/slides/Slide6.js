@@ -1,7 +1,5 @@
 import dynamic from "next/dynamic";
 
-const VideoSlide = dynamic(() => import("components/slides/VideoSlide"));
-
 const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"));
 
 // Classification of triangles

@@ -24,10 +24,7 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -65,24 +62,19 @@ const Slide6 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`\\large•`);
-  let mathjaxCounter = 0;
+   latex.push(`\\large•`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="What is the surface area of a pyramid?"
          diagram={
             <TransitionImage
-               images={[
-                  surface_area,
-                  surface_area_lsa,
-                  surface_area_tsa
-               ]}
+               images={[surface_area, surface_area_lsa, surface_area_tsa]}
                altTexts={[
-               "Diagram of a pyramid",
-               "Diagram of a pyramid with highlighted lateral surface area",
-               "Diagram of a pyramid with highlighted total surface area"
+                  "Diagram of a pyramid",
+                  "Diagram of a pyramid with highlighted lateral surface area",
+                  "Diagram of a pyramid with highlighted total surface area",
                ]}
-
                activeIndex={activeIndex}
             />
          }
@@ -94,28 +86,35 @@ const Slide6 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          /> */}
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-            The surface area of a pyramid is the area covered by its polygonal base and triangular faces.
+               The surface area of a pyramid is the area covered by its
+               polygonal base and triangular faces.
             </TextLine>
-        </Paragraph>
-        <Paragraph>
+         </Paragraph>
+         <Paragraph>
             <TextLine color={colors.BLACK}>
-            There are two types of surface areas:
+               There are two types of surface areas:
             </TextLine>
             <TextLine>
-                <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            ><MathElement htmlString={latex[mathjaxCounter]} /> Lateral surface area</TextSpanBg>
+               <TextSpanBg
+                  onHover={() => onHover(1)}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  <MathElement htmlString={latex[mathjaxCounter]} /> Lateral
+                  surface area
+               </TextSpanBg>
             </TextLine>
             <TextLine>
-                <TextSpanBg
-               onHover={() => onHover(2)}
-               onHoverOut={onHoverOut}
-               hoverColor={colors.DARK_LAVENDER}
-            ><MathElement htmlString={latex[mathjaxCounter]} /> Total surface area</TextSpanBg>
+               <TextSpanBg
+                  onHover={() => onHover(2)}
+                  onHoverOut={onHoverOut}
+                  hoverColor={colors.DARK_LAVENDER}
+               >
+                  <MathElement htmlString={latex[mathjaxCounter]} /> Total
+                  surface area
+               </TextSpanBg>
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

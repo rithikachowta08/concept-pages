@@ -1,11 +1,8 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import dynamic from "next/dynamic";
 import styled from "styled-components";
-import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
 
-import Button from "components/Button";
 import ShakaPlayerContainer from "components/media/ShakaPlayerTest/ShakaPlayerContainer";
 
 const VideoSlideWrap = styled.div`

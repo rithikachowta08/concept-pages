@@ -24,11 +24,8 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
@@ -55,34 +52,32 @@ const Slide10 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`);
-  let mathjaxCounter = 0;
+   latex.push(
+      `= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`
+   );
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Derivation"
          secondaryTitle={"Total Surface Area"}
          diagram={
             <TransitionImage
-               images={[
-                  tsa_derivation,
-               ]}
-               altTexts={[
-               "Please add the multiplication sign in the formula"
-               ]}
-
+               images={[tsa_derivation]}
+               altTexts={["Please add the multiplication sign in the formula"]}
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-            The total surface area of a regular pyramid is the sum of its lateral surface area and its base area.
+               The total surface area of a regular pyramid is the sum of its
+               lateral surface area and its base area.
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-         <Paragraph >
-         <TextLine color={colors.BLACK}>
+         <Paragraph>
+            <TextLine color={colors.BLACK}>
                <EquationTable
                   align="middle"
                   equationLatex={[

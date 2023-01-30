@@ -26,7 +26,6 @@ const Flex = dynamic(() =>
 );
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
@@ -70,7 +69,7 @@ const Slide8 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
                The lateral surface area of a regular pyramid is the sum of the
                area of the side faces of the pyramid.

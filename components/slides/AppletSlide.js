@@ -144,7 +144,6 @@ const AppletSlide = ({
    }, [bg, ref.current]);
 
    useEffect(() => {
-      console.log("src", src);
       if (currentPageIdx !== 0 && !src) {
          setSrc(appletSrc);
       }

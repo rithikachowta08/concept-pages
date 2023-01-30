@@ -1,10 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 const Image = dynamic(() => import("next/image"));
 
 import "shaka-player-react-lib/dist/bundle.css";
 import "shaka-player/dist/controls.css";
 import { getDrmData, isSafariOrIOSDevice } from "./playerFunction";
+import {
+   onPlayVideoClick,
+   onVideoEnd,
+   onVideoPause,
+   onVideoReplay,
+   onVideoStart,
+} from "utils/analytics";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 const loadScript = require("load-script");
 const { ui } = require("shaka-player/dist/shaka-player.ui.js");
@@ -192,11 +199,39 @@ const VideoPlayer = (props) => {
          "https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"
       );
    };
+
+   const onPlayButtonClick = () => {
+      if (video.currentTime === 0) {
+         onPlayVideoClick(props.videoContent.videoId);
+      }
+   };
+
    const onPause = () => {
+      onVideoPause({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
       document.getElementById(props.downIconId).style.opacity = 1;
    };
 
+   const onEnd = () => {
+      onVideoEnd({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
+   };
+
+   const onReplay = (e) => {
+      if (e.target.ariaLabel === "Replay") {
+         onVideoReplay(props.videoContent.videoId);
+      }
+   };
+
    const onPlay = () => {
+      onVideoStart({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
       if (!isFirstTimePlay) {
          setIsFirstTimePlay(true);
          document.getElementById(props.downIconId).style.opacity = 0;
@@ -215,12 +250,13 @@ const VideoPlayer = (props) => {
       }
       document.getElementById(props.downIconId).style.opacity = 0;
    };
+
    useEffect(() => {
       video = videoComponent.current;
       videoContainerRef = videoContainer.current;
       shaka.polyfill.installAll();
       player = new shaka.Player(video);
-      video.loop = true;
+      // video.loop = true;
       // video.autoPlay = true;
       let uiConfig = {};
       uiConfig = props.uiConfig;
@@ -247,12 +283,16 @@ const VideoPlayer = (props) => {
       ui.getControls();
       ui.configure(uiConfig);
       player.addEventListener("error", onErrorEvent);
-      if (props.downIconId) {
-         video.addEventListener("pause", onPause);
-         video.addEventListener("playing", onPlay);
-      }
+      video.addEventListener("pause", onPause);
+      video.addEventListener("ended", onEnd);
+      video.addEventListener("playing", onPlay);
+      document
+         .querySelector(".shaka-small-play-button")
+         .addEventListener("click", onReplay);
+      document
+         .querySelector(".shaka-play-button")
+         .addEventListener("click", onPlayButtonClick);
    }, []);
-
    return (
       <div ref={videoContainer}>
          <video
