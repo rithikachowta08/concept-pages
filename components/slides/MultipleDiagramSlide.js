@@ -71,6 +71,7 @@ const MultipleDiagramSlide = ({
                   width="100%"
                   flex="1"
                >
+                  {children}
                   <Flex
                      direction="row"
                      flexFlow={"wrap"}
@@ -99,7 +100,6 @@ const MultipleDiagramSlide = ({
                         </ImageWrap>
                      ))}
                   </Flex>
-                  {children}
                </Flex>
                {/* DownIcon */}
                {downIcon
