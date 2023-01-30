@@ -179,9 +179,11 @@ const Slide7 = ({ downIcon }) => {
           </Pill>
         </Paragraph>
       </div>
-      <Paragraph color={colors.WHITE}>
-        Here, (s) is the length of the side of the cube
-      </Paragraph>
+      <div>
+        <Paragraph color={colors.WHITE}>
+          Here, (s) is the length of the side of the cube
+        </Paragraph>
+      </div>
     </TextAndDiagramSlide>
   );
 };
