@@ -7,6 +7,7 @@ import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
 import Button from "components/Button";
 import { colors } from "utils/colors";
+import { onAppletInteraction } from "utils/analytics";
 
 const fit_to_width = "assets/fit_to_width.svg";
 const fullscreen_exit = "assets/fullscreen_exit.svg";
@@ -178,7 +179,7 @@ const TextAndAppletSlide = ({
                   <IframeWrap>
                      {AppletComponent != null ? (
                         <AppWrapper isFitToWidth={isFitToWidth}>
-                           <AppletComponent />
+                           <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
                         <IFrame

@@ -5,6 +5,7 @@ import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
+import { onAppletInteraction } from "utils/analytics";
 
 const IFrame = styled.iframe`
    aspect-ratio: 1/1;
@@ -179,6 +180,7 @@ const AppletSlide = ({
                         <AppletComponent
                            isFitToWidth={true}
                            maxWidth={"650px"}
+                           onEvent={onAppletInteraction}
                         />
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
