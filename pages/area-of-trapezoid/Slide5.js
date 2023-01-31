@@ -7,7 +7,6 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
-            title="Area of Rectangle"
             videoContent={{
                dash_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-aec8fba7/robhd4/INTL_Maths/230111/SEO18INTL07MAT11KT008/dash/h264.mpd",
@@ -15,6 +14,8 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-aec8fba7/robhd4/INTL_Maths/230111/SEO18INTL07MAT11KT008/hls/h264.m3u8",
                thumbnail:
                   "https://drive.google.com/file/d/1RNmTUmtyIXOgR1sNo-KuDyi48Iq_wUxx/view?usp=share_link",
+               title: "Area of Rectangle",
+               videoId: "397551",
                // video_title: "Area of Trapezoid",
             }}
             downIcon={downIcon}

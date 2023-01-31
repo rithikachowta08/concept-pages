@@ -8,7 +8,6 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
-            title="Length of an Arc of a Sector"
             downIcon={downIcon}
             videoContent={{
                dash_Url:
@@ -17,6 +16,8 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-a1777c53/rom3pu/INTL_Maths/230116/SEO18INTL07MAT11KT011/hls/h264.m3u8",
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803334.jpg?1671775639",
+               title: "Length of an Arc of a Sector",
+               videoId: "402833",
             }}
             downIconId="s14-video-down-icon"
             videoSlideId="s14-video-slide"

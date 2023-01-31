@@ -7,7 +7,6 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
       <div style={{ height: "100%" }}>
          <VideoSlide2
-            title="Video here"
             downIcon={downIcon}
             videoContent={{
                dash_Url:
@@ -16,6 +15,8 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-f2e63abd/robhcz/INTL_Maths/230111/SEO18INTL07MAT11KT007/hls/h264.m3u8",
                thumbnail:
                   "https://drive.google.com/file/d/1SO-s6Afki_GTs4JxpGi0VxYIE-CFm5As/view?usp=share_link",
+               title: "Video here",
+               videoId: "397550",
             }}
             downIconId="s5-video-down-icon"
             videoSlideId="s5-video-slide"

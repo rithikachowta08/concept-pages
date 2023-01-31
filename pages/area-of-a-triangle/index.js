@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
+import { SLIDE_TYPES } from "utils/constants";
 
 // import Slide1 from "./slides/Slide1";
 // import Slide2 from "./slides/Slide2";
@@ -46,26 +47,27 @@ const PageLastSlide = dynamic(() =>
 
 const AreaOfATriangle = () => {
    const SlideArray = [
-      <Slide1 key={0} />,
-      <Slide2 key={1} />,
-      <Slide4 key={3} />,
-      <Slide5 key={4} />,
-      <Slide6 key={5} />,
+      <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
+      <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide5 key={4} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide6 key={5} type={SLIDE_TYPES.VIDEO_ONLY} />,
       // <Slide7 key={6} />,
-      <Slide8 key={7} />,
-      <Slide9 key={8} />,
-      <Slide10 key={9} />,
-      <Slide11 key={10} />,
+      <Slide8 key={7} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide9 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={9} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       // <Slide12 key={11} />,
-      <Slide13 key={12} />,
-      <Slide14 key={13} />,
-      <Slide15 key={14} />,
-      <Slide16 key={15} />,
-      <Slide17 key={16} />,
-      <Slide18 key={17} />,
-      <Slide19 key={18} />,
-      <Slide20 key={19} />,
+      <Slide13 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide14 key={13} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide15 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide16 key={15} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide17 key={16} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide18 key={17} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide19 key={18} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide20 key={19} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
+         type={SLIDE_TYPES.CONCLUSION}
          key={20}
          currentPageTitle={"Area of a Triangle"}
          nextPageTitle="Circumference of circle"
