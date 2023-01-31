@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
     })(window, document, "clarity", "script", "9iu6tgy0ez");`}
          </Script>
          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-DJFMGBYN4Z"
+            src="https://www.googletagmanager.com/gtag/js?id=G-6QMNTL74XB"
             strategy="afterInteractive"
          />
          <Script id="google-analytics" strategy="afterInteractive">
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-DJFMGBYN4Z');
+            gtag('config', 'G-6QMNTL74XB');
         `}
          </Script>
          <Component {...pageProps} />
