@@ -8,6 +8,8 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
     <div style={{ height: "100%" }}>
       <VideoSlide2
         videoContent={{
+          videoId: "402840",
+          title: "Video here",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-15f96cac/rom3r3/INTL_Maths/230116/SEO18INTL08MAT11KT015/dash/h264.mpd",
           hls_Url:
