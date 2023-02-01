@@ -49,8 +49,8 @@ const UnitsToMeasureCapacity = () => {
       <PageLastSlide
          key={18}
          currentPageTitle={"Units of capacity"}
-         nextPageLink={"/us/math/study/volume-of-cube"}
-         nextPageTitle={"Volume of a Cube"}
+         nextPageLink={"/us/math/study/volume-of-rectangular-prism"}
+         nextPageTitle={"Volume of Rectangular Prism"}
       />,
    ];
    const navigationSections = [
@@ -77,7 +77,7 @@ const UnitsToMeasureCapacity = () => {
       },
    ];
 
-   const darkBgIndices = [0, 5, 7, 10, 14, 17, 18];
+   const darkBgIndices = [0, 3, 5, 7, 10, 14, 17, 18];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
