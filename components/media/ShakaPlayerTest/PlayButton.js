@@ -39,7 +39,7 @@ const FillCircle = styled.circle`
    stroke-width: 2px;
    stroke: ${colors.WHITE};
    fill: none;
-   animation: countdown 3.2s linear infinite forwards;
+   animation: countdown 5.2s linear infinite forwards;
 
    @keyframes countdown {
       from {

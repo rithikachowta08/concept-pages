@@ -7,6 +7,7 @@ import {
    SlideSecondaryTitle,
    SlideTitle,
 } from "components/slides/common";
+import { fontWeights } from "utils/fontStyles";
 const ShakaPlayerComponent = dynamic(() => import("./ShakaPlayerComponent"), {
    ssr: false,
 });
@@ -73,7 +74,7 @@ const ShakaPlayerContainer = (props) => {
    useEffect(() => {
       if (props.currentPageIdx === props.index) {
          setStartTimer(true);
-         setTimeout(startVideo, 3000);
+         setTimeout(startVideo, 5000);
       }
    }, [props.currentPageIdx, props.index]);
 
@@ -186,7 +187,11 @@ const ShakaPlayerContainer = (props) => {
                      centerAlign={isVideoEnded}
                      bg="DARK"
                   ></SlideSecondaryTitle>
-                  <SlideTitle bg="DARK" centerAlign={isVideoEnded}>
+                  <SlideTitle
+                     bg="DARK"
+                     fontWeight={fontWeights.NORMAL}
+                     centerAlign={isVideoEnded}
+                  >
                      {props.videoContent.title || "Video title here"}
                   </SlideTitle>
                   {isVideoEnded ? (
