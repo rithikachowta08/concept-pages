@@ -50,7 +50,7 @@ const UnitsToMeasureCapacity = () => {
          key={18}
          currentPageTitle={"Units of capacity"}
          nextPageLink={"/us/math/study/volume-of-rectangular-prism"}
-         nextPageTitle={"Volume of Rectangular Prism"}
+         nextPageTitle={"Volume of a Rectangular Prism"}
       />,
    ];
    const navigationSections = [
