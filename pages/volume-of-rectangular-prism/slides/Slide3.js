@@ -31,7 +31,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
 
    return (
       <TextAndAppletSlide
-         title={"Volume by Counting the Unit Cubes"}
+         title={"Volume by counting the unit cubes"}
          secondaryTitle={"Rectangular Prism"}
          bg={"DARK"}
          appletSrc={""}

@@ -21,7 +21,7 @@ const Slide2 = ({ downIcon, navBar }) => {
    return (
       <TextAndDiagramSlide
          bg="LIGHT"
-         title={"What Is a Rectangular Prism?"}
+         title={"What is a Rectangular Prism?"}
          navBar={navBar}
          downIcon={downIcon}
          diagram={
