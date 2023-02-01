@@ -10,7 +10,8 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          <VideoSlide2
             downIcon={downIcon}
             videoContent={{
-               videoId: "19152",
+               title: "Deriving surface area of cone",
+               videoId: "389952",
                dash_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-2b31591c/rnylf0/INTL_Maths/230104/SEO18INTL08MAT11KT015/dash/h264.mpd",
                hls_Url:

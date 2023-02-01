@@ -18,7 +18,6 @@ const VideoSlideWrap = styled.div`
 `;
 
 const VideoSlide = ({
-   title,
    currentPageIdx,
    index,
    downIcon,
@@ -34,15 +33,8 @@ const VideoSlide = ({
             downIconId={downIconId}
             currentPageIdx={currentPageIdx}
             index={index}
+            downIcon={downIcon}
          />
-         {/* {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>} */}
-         {/* {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>} */}
-         {downIcon
-            ? React.cloneElement(downIcon, {
-                 isVideoSlide: true,
-                 id: downIconId,
-              })
-            : null}
       </VideoSlideWrap>
    );
 };
