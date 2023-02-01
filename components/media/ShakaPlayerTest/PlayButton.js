@@ -32,11 +32,11 @@ const Svg = styled.svg`
    transform: rotateY(-180deg) rotateZ(-90deg);
 `;
 
-const Circle = styled.circle`
+const FillCircle = styled.circle`
    stroke-dasharray: 113px;
-   stroke-dashoffset: 0px;
+   stroke-dashoffset: 50px;
    stroke-linecap: round;
-   stroke-width: 1px;
+   stroke-width: 2px;
    stroke: ${colors.WHITE};
    fill: none;
    animation: countdown 3.2s linear infinite forwards;
@@ -49,6 +49,15 @@ const Circle = styled.circle`
          stroke-dashoffset: 113px;
       }
    }
+`;
+
+const Circle = styled.circle`
+   stroke-dasharray: 113px;
+   stroke-dashoffset: 0px;
+   stroke-linecap: round;
+   stroke-width: 2px;
+   stroke: rgba(255, 255, 255, 0.25);
+   fill: none;
 `;
 
 const Icon = styled.img`
@@ -64,6 +73,7 @@ const PlayButton = ({ onClick }) => {
       <Div onClick={onClick}>
          <Svg>
             <Circle r="18" cx="20" cy="20"></Circle>
+            <FillCircle r="18" cx="20" cy="20"></FillCircle>
          </Svg>
          <Icon src={play}></Icon>
       </Div>

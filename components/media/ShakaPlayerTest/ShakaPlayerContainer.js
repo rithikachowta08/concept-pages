@@ -24,9 +24,9 @@ const getVideoLength = (seconds) => {
    }
    const minutes = Math.floor(seconds / 60);
    if (minutes >= 2) {
-      return `${minutes} minutes`;
+      return `${minutes} mins`;
    }
-   return `${minutes} minute`;
+   return `${minutes} min`;
 };
 
 const VideoWrap = styled.div`
