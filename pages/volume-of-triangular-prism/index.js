@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+import { SLIDE_TYPES } from "utils/constants";
 const Slide0 = dynamic(() => import("./Slide0"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
@@ -22,20 +23,21 @@ const PageLastSlide = dynamic(() =>
 
 const VolumeOfTriangularPrism = () => {
    const SlideArray = [
-      <Slide0 key={0} />,
-      <Slide1 key={1} />,
-      <Slide2 key={2} />,
-      <Slide3 key={3} />,
-      <Slide4 key={4} />,
-      <Slide5 key={5} />,
-      <Slide6 key={6} />,
-      <Slide7 key={7} />,
-      <Slide8 key={8} />,
-      <Slide9 key={9} />,
-      <Slide10 key={10} />,
-      <Slide11 key={11} />,
+      <Slide0 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
+      <Slide1 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide2 key={2} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide3 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide4 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide5 key={5} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide6 key={6} type={SLIDE_TYPES.VIDEO_ONLY} />,
+      <Slide7 key={7} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide8 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide9 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide11 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
          key={12}
+         type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Triangular Prism"}
          nextPageLink={"/us/math/study/volume-of-cube"}
          nextPageTitle={"Volume of a Cube"}

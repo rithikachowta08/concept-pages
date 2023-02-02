@@ -7,6 +7,8 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
       <VideoSlide2
          videoContent={{
+            title: "Solved problem on volume of triangular prism",
+            duration: 32,
             dash_Url:
                "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/dash/h264.mpd",
             hls_Url:

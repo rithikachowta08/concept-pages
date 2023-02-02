@@ -16,7 +16,8 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-c8442dfb/rnylev/INTL_Maths/230104/SEO18INTL08MAT11KT005/hls/h264.m3u8",
                thumbnail: "",
                videoId: "402835",
-               title: "Surface area of pyramids",
+               duration: 239,
+               title: "Pyramid and its formation",
             }}
             downIconId="s14-video-down-icon"
             videoSlideId="s14-video-slide"

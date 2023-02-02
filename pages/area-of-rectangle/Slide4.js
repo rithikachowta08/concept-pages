@@ -9,6 +9,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
          <VideoSlide2
             videoContent={{
                title: "Area of Rectangle",
+               duration: 39,
                dash_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-94b2bffe/rnyle0/INTL_Maths/230104/SEO18INTL06MAT10KT003/dash/h264.mpd",
                hls_Url:
