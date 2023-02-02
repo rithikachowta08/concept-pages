@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic";
 const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
-  ssr: false,
+   ssr: false,
 });
 
 const Slide8 = ({ downIcon, currentPageIdx }) => {
-  return (
     <div style={{ height: "100%" }}>
       <VideoSlide2
         downIcon={downIcon}
@@ -26,5 +25,3 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
     </div>
   );
 };
-
-export default Slide8;

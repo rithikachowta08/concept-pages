@@ -14,7 +14,8 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803308.jpg?1671775283",
             videoId: "389953",
-            title: "",
+            duration: 68,
+            title: "Net of a rectangular prism",
          }}
          currentPageIdx={currentPageIdx}
          index={2}

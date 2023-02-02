@@ -14,7 +14,8 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-ccd056dd/robhdk/INTL_Maths/230111/SEO18INTL08MAT11KT017/hls/h264.m3u8",
                thumbnail:
                   "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Spheres.png",
-               title: "Spheres",
+               title: "Formula of surface area of sphere",
+               duration: 99,
                videoId: "397554",
             }}
             downIcon={downIcon}

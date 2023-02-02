@@ -15,7 +15,8 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792473.jpg?1671000874",
             videoId: "389946",
-            title: "",
+            duration: 104,
+            title: "Formula of area of the triangle",
          }}
          downIconId="s6-video-down-icon"
          videoSlideId="s6-video-slide"

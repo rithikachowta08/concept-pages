@@ -175,23 +175,20 @@ const ShakaPlayerContainer = (props) => {
          <Overlay show={isOverlayVisible}>
             {isMobile ? null : <FillerNavBar />}
             <Flex flex={1} justifyContent="center">
-               <Flex direction="column" gap="15px" width="90%">
+               <Flex direction="column" gap="15px" width="fit-content">
                   <SlideSecondaryTitle
                      secondaryTitle={
                         isVideoEnded
                            ? "Thanks for watching"
                            : `Duration: ${getVideoLength(
-                                videoRef?.duration || 0
+                                videoRef?.duration ||
+                                   props.videoContent.duration
                              )}`
                      }
                      centerAlign={isVideoEnded}
                      bg="DARK"
                   ></SlideSecondaryTitle>
-                  <SlideTitle
-                     bg="DARK"
-                     fontWeight={fontWeights.NORMAL}
-                     centerAlign={isVideoEnded}
-                  >
+                  <SlideTitle bg="DARK" fontWeight={fontWeights.NORMAL}>
                      {props.videoContent.title || "Video title here"}
                   </SlideTitle>
                   {isVideoEnded ? (

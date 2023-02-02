@@ -16,7 +16,8 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
                videoId: "389949",
-               title: "",
+               duration: 32,
+               title: "Surface area of formula of triangular prism",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}

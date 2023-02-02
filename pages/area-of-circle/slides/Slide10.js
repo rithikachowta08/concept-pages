@@ -13,7 +13,8 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803282.jpg?1671774814",
             videoId: "389948",
-            title: "",
+            duration: 331,
+            title: "Derivation of formula of area of the circle",
          }}
          downIconId="s10-video-down-icon"
          videoSlideId="s10-video-slide"

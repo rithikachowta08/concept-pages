@@ -13,7 +13,8 @@ const Slide8 = ({ currentPageIdx, downIcon }) => {
             thumbnail:
                "https://drive.google.com/file/d/1mkgMPfEDihGt9fUUEd5QNILAUCKyTyik/view?usp=share_link",
             videoId: "397552",
-            title: "",
+            duration: 166,
+            title: "Derivation of formula of area of sector of a circle",
          }}
          downIconId="s8-video-down-icon"
          videoSlideId="s8-video-slide"
