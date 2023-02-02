@@ -26,16 +26,18 @@ const VideoSlide = ({
    videoContent,
 }) => {
    return (
-      <VideoSlideWrap id={videoSlideId}>
-         <ShakaPlayerContainer
-            videoContent={videoContent}
-            videoSlideId={videoSlideId}
-            downIconId={downIconId}
-            currentPageIdx={currentPageIdx}
-            index={index}
-            downIcon={downIcon}
-         />
-      </VideoSlideWrap>
+      <div style={{ height: "100%" }}>
+         <VideoSlideWrap id={videoSlideId}>
+            <ShakaPlayerContainer
+               videoContent={videoContent}
+               videoSlideId={videoSlideId}
+               downIconId={downIconId}
+               currentPageIdx={currentPageIdx}
+               index={index}
+               downIcon={downIcon}
+            />
+         </VideoSlideWrap>
+      </div>
    );
 };
 
