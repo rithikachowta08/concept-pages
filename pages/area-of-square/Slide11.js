@@ -10,7 +10,7 @@ const Slide11 = ({ downIcon, currentPageIdx }) => {
         downIcon={downIcon}
         videoContent={{
           videoId: "397548",
-          title: "Video here",
+          title: "Derivation of formula of area of square",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-dc6d051e/robhcp/INTL_Maths/230111/SEO18INTL06MAT10KT003/dash/h264.mpd",
           hls_Url:

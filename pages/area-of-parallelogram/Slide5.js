@@ -10,7 +10,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
         downIcon={downIcon}
         videoContent={{
           videoId: "397550",
-          title: "Video here",
+          title: "Derivation of formula of area of parallelogram",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-f2e63abd/robhcz/INTL_Maths/230111/SEO18INTL07MAT11KT007/dash/h264.mpd",
           hls_Url:

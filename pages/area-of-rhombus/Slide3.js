@@ -11,7 +11,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
         downIcon={downIcon}
         videoContent={{
           videoId: "389950",
-          title: "Video here",
+          title: "Properties of rhombus",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-66a6f85f/rnylep/INTL_Maths/230104/SEO18INTL08MAT08KT006/dash/h264.mpd",
           hls_Url:

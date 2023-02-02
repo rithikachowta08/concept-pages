@@ -9,7 +9,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
       <VideoSlide2
         videoContent={{
           videoId: "402834",
-          title: "Video here",
+          title: "Pyramid and its formation",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-be950eb9/rom3q0/INTL_Maths/230116/SEO18INTL07MAT11KT019/dash/h264.mpd",
           hls_Url:

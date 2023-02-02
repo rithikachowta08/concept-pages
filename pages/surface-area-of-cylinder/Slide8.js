@@ -10,7 +10,7 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
         downIcon={downIcon}
         videoContent={{
           videoId: "397553",
-          title: "Video here",
+          title: "Derivation of formula of surface area of cylinder ",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-8da287af/robhdf/INTL_Maths/230111/SEO18INTL08MAT11KT013/dash/h264.mpd",
           hls_Url:

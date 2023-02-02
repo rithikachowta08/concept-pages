@@ -145,12 +145,14 @@ const Slide9 = ({ downIcon }) => {
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
-      <Paragraph>
-        <EquationTable
-          align="middle"
-          equationLatex={latexEquationContainer[latexEquationCounter++]}
-        ></EquationTable>
-      </Paragraph>
+      <div>
+        <Paragraph>
+          <EquationTable
+            align="middle"
+            equationLatex={latexEquationContainer[latexEquationCounter++]}
+          ></EquationTable>
+        </Paragraph>
+      </div>
     </TextAndDiagramSlide>
   );
 };

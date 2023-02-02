@@ -10,7 +10,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
         downIcon={downIcon}
         videoContent={{
           videoId: "389947",
-          title: "Video here",
+          title: "Derivation of formula of voume of cube",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-97357d8b/rnyleb/INTL_Maths/230104/SEO18INTL06MAT10KT012/dash/h264.mpd",
           hls_Url:
