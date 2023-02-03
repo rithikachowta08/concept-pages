@@ -11,7 +11,6 @@ const Slide3 = dynamic(() => import("./Slide3"));
 const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
-const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
@@ -27,12 +26,11 @@ const SurfaceAreaofCone = () => {
     <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
     <Slide5 key={4} type={SLIDE_TYPES.VIDEO_ONLY} />,
     <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide7 key={6} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide8 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide9 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide10 key={9} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+    <Slide8 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+    <Slide9 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+    <Slide10 key={8} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
     <PageLastSlide
-      key={10}
+      key={9}
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Volume of a Cone"}
       nextPageLink={"/us/math/study/the-surface-area-of-a-pyramids"}
@@ -41,10 +39,10 @@ const SurfaceAreaofCone = () => {
   ];
   const navigationSections = [
     { title: "Introduction to a cone", slides: [1, 2, 3, 4] },
-    { title: "Volume of a cone", slides: [5, 6] },
+    { title: "Volume of a cone", slides: [5] },
     {
       title: "General formula",
-      slides: [7, 8],
+      slides: [6, 7],
     },
     {
       title: "Relation between volume of cone and cylinder",
@@ -52,7 +50,7 @@ const SurfaceAreaofCone = () => {
     },
   ];
 
-  const darkBgIndices = [0, 4, 5, 7, 9, 10];
+  const darkBgIndices = [0, 4, 5, 6, 8, 9];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}

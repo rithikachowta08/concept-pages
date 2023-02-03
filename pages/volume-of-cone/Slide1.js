@@ -12,7 +12,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
         "General formula",
         "Relation between volume of cone and cylinder",
       ]}
-      anchorIdxes={[2, 6, 8, 10]}
+      anchorIdxes={[2, 6, 7, 9]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>
