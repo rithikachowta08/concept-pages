@@ -56,6 +56,7 @@ const ShakaPlayerContainer = (props) => {
    const [isVideoStarted, setIsVideoStarted] = useState(false);
    const [startTimer, setStartTimer] = useState(false);
    const [videoRef, setVideoRef] = useState(null);
+   const [isMuted, setIsMuted] = useState(true);
    var [isVideoLoaded, setIsVideoLoaded] = useState(false);
    var isEncryptedVideo = true;
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
@@ -112,6 +113,8 @@ const ShakaPlayerContainer = (props) => {
    }
 
    const onVideoEnd = () => {
+      watchVideo();
+      setIsMuted(false);
       setIsVideoEnded(true);
    };
 
@@ -131,6 +134,7 @@ const ShakaPlayerContainer = (props) => {
             }
             poster={props.videoContent["thumbnail"]}
             autoPlay={isVideoStarted}
+            muted={isMuted}
             setVideoRef={setVideoRef}
             onEnd={onVideoEnd}
             srcKey={drmConf.key_id}
