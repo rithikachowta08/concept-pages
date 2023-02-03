@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -11,24 +10,18 @@ const TextAndDiagramSlide = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
+
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
-// const ModalTriggerText = dynamic(() =>
-//    import("components/text").then((mod) => mod.ModalTriggerText)
-// );
-import { ModalTriggerText } from "components/text";
+
 const parts_of_pyramid = "assets/surface-area-of-pyramids/parts_of_pyramid.svg";
 const parts_of_pyramid_vertex =
    "assets/surface-area-of-pyramids/parts_of_pyramid_vertex.svg";
@@ -40,25 +33,8 @@ import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
 const Slide4 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph color="white">
-            A unit square is a square with side length equal to 1 unit.
-         </Paragraph>
-         {/* <ModalImg
-            src={unit_square}
-         /> */}
-      </Flex>
-   );
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+
    const onHover = (e) => {
       setActiveIndex(e);
    };
@@ -90,12 +66,6 @@ const Slide4 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         {/* <Modal
-            isOpen={isModalOpen}
-            title="Unit Square"
-            content={modalContent}
-            onDismiss={onDismiss}
-         /> */}
          <Paragraph>
             <TextLine>
                <MathElement htmlString={latex[mathjaxCounter]} />

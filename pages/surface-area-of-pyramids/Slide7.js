@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -34,10 +33,8 @@ const lsa_pop_up = "assets/surface-area-of-pyramids/lsa_pop_up.svg";
 const lsa_sh = "assets/surface-area-of-pyramids/lsa_sh.svg";
 const lsa_pob = "assets/surface-area-of-pyramids/lsa_pob.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
-import { Icon } from "components/StyledElements";
 
 const Slide7 = ({ downIcon }) => {
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="black">
@@ -105,17 +102,14 @@ const Slide7 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <Paragraph>
-            <TextLine>There are two types of surface areas:</TextLine>
-            <TextLine>
-               <Pill
-                  width="fit-content"
-                  bgColor={colors.OCEAN_GREEN}
-                  color={colors.BLACK}
-               >
-                  Lateral surface area{" "}
-                  <MathElement htmlString={latex[mathjaxCounter]}></MathElement>{" "}
-               </Pill>
-            </TextLine>
+            <Pill
+               width="fit-content"
+               bgColor={colors.OCEAN_GREEN}
+               color={colors.BLACK}
+            >
+               Lateral surface area{" "}
+               <MathElement htmlString={latex[mathjaxCounter]}></MathElement>{" "}
+            </Pill>
          </Paragraph>
 
          <Paragraph>

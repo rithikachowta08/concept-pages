@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { Flex, ModalImg } from "components/StyledElements";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
-);
-const Modal = dynamic(() => import("components/layout/Modal"));
-const ModalTriggerText = dynamic(() =>
-   import("components/text").then((mod) => mod.ModalTriggerText)
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
@@ -19,27 +14,20 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const MathElement = dynamic(() => import("components/MathElement"));
-
 const pyramid = "assets/surface-area-of-pyramids/pyramid.svg";
 const pyramid_base = "assets/surface-area-of-pyramids/pyramid_base.svg";
 const pyramid_face = "assets/surface-area-of-pyramids/pyramid_face.svg";
 
 const Slide2 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
    const onHover = (e) => {
       setActiveIndex(e);
    };
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
+
    const onHoverOut = (e) => {
       setActiveIndex(0);
    };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+
    return (
       <TextAndDiagramSlide
          title="What is a pyramid?"
