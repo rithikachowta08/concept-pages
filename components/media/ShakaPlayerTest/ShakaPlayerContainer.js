@@ -12,6 +12,7 @@ const ShakaPlayerComponent = dynamic(() => import("./ShakaPlayerComponent"), {
    ssr: false,
 });
 import { get_video_manifest, isSafariOrIOSDevice } from "./playerFunction";
+import { onPlayVideoClick, onVideoReplay } from "utils/analytics";
 import { colors } from "utils/colors";
 import Button from "components/Button";
 import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
@@ -122,6 +123,17 @@ const ShakaPlayerContainer = (props) => {
       setIsVideoStarted(true);
    };
 
+   const onPlayButtonClick = () => {
+      onPlayVideoClick(props.videoContent.videoId);
+      startVideo();
+   };
+
+   const replayVideo = () => {
+      onVideoReplay(props.videoContent.videoId);
+      setIsVideoEnded(false);
+      videoRef.play();
+   };
+
    const isOverlayVisible = !isVideoStarted || isVideoEnded;
 
    return drmConf.key_id ? (
@@ -203,15 +215,12 @@ const ShakaPlayerContainer = (props) => {
                         width="12rem"
                         height="3rem"
                         icon={replay}
-                        onClick={() => {
-                           setIsVideoEnded(false);
-                           videoRef.play();
-                        }}
+                        onClick={replayVideo}
                      >
                         Replay
                      </Button>
                   ) : (
-                     startTimer && <PlayButton onClick={startVideo} />
+                     startTimer && <PlayButton onClick={onPlayButtonClick} />
                   )}
                   {props.downIcon
                      ? React.cloneElement(props.downIcon, {

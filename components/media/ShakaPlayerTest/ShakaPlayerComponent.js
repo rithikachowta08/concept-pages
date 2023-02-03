@@ -5,13 +5,7 @@ const Image = dynamic(() => import("next/image"));
 import "shaka-player-react-lib/dist/bundle.css";
 import "shaka-player/dist/controls.css";
 import { getDrmData, isSafariOrIOSDevice } from "./playerFunction";
-import {
-   onPlayVideoClick,
-   onVideoEnd,
-   onVideoPause,
-   onVideoReplay,
-   onVideoStart,
-} from "utils/analytics";
+import { onVideoEnd, onVideoPause, onVideoStart } from "utils/analytics";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 const loadScript = require("load-script");
 const { ui } = require("shaka-player/dist/shaka-player.ui.js");
@@ -201,12 +195,6 @@ const VideoPlayer = (props) => {
       );
    };
 
-   const onPlayButtonClick = () => {
-      if (video.currentTime === 0) {
-         onPlayVideoClick(props.videoContent.videoId);
-      }
-   };
-
    const onPause = () => {
       onVideoPause({
          videoId: props.videoContent.videoId,
@@ -221,12 +209,6 @@ const VideoPlayer = (props) => {
          timestamp: video.currentTime,
       });
       props.onEnd();
-   };
-
-   const onReplay = (e) => {
-      if (e.target.ariaLabel === "Replay") {
-         onVideoReplay(props.videoContent.videoId);
-      }
    };
 
    const onPlay = () => {
@@ -277,12 +259,6 @@ const VideoPlayer = (props) => {
       video.addEventListener("pause", onPause);
       video.addEventListener("ended", onEnd);
       video.addEventListener("playing", onPlay);
-      document
-         .querySelector(".shaka-small-play-button")
-         ?.addEventListener("click", onReplay);
-      document
-         .querySelector(".shaka-play-button")
-         ?.addEventListener("click", onPlayButtonClick);
       props.setVideoRef(video);
    }, []);
 
