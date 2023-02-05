@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_1" data-name="1" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .72;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill: #bb70de;
+      }
+
+      .cls-2 {
+        opacity: .75;
+      }
+
+      .cls-3 {
+        opacity: .9;
+      }
+
+      .cls-8 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+
+      .cls-8, .cls-7 {
+        stroke: #a753b5;
+      }
+
+      .cls-4 {
+        opacity: .88;
+      }
+
+      .cls-5 {
+        opacity: .62;
+      }
+
+      .cls-6 {
+        opacity: .47;
+      }
+
+      .cls-7 {
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="283.2 35.53 411.4 368.22 470.58 457 283.2 35.53"/>
+  <polygon class="cls-4" points="283.2 35.53 220.86 348.1 411.4 368.22 283.2 35.53"/>
+  <polygon class="cls-3" points="89.42 412.02 220.86 348.1 411.4 368.22 470.58 457 338.11 524.47 147.42 503.17 89.42 412.02"/>
+  <polygon class="cls-1" points="283.2 35.53 89.42 412.02 220.86 348.1 283.2 35.53"/>
+  <polygon class="cls-8" points="89.42 412.02 147.42 503.17 338.11 524.47 470.58 457 411.4 368.22 220.86 348.1 89.42 412.02"/>
+  <polygon class="cls-2" points="283.2 35.53 147.42 503.17 89.42 412.02 283.2 35.53"/>
+  <polygon class="cls-8" points="283.2 35.53 147.42 503.17 89.42 412.02 283.2 35.53"/>
+  <polyline class="cls-8" points="411.4 368.22 283.2 35.53 220.86 348.1"/>
+  <polygon class="cls-5" points="283.2 35.53 338.11 524.47 470.58 457 283.2 35.53"/>
+  <polygon class="cls-8" points="283.2 35.53 338.11 524.47 470.58 457 283.2 35.53"/>
+  <polygon class="cls-6" points="283.2 35.53 338.11 524.47 147.42 503.17 283.2 35.53"/>
+  <polygon class="cls-8" points="283.2 35.53 338.11 524.47 147.42 503.17 283.2 35.53"/>
+  <line class="cls-7" x1="411.4" y1="368.22" x2="283.2" y2="35.53"/>
+</svg>

@@ -3,9 +3,6 @@ body {
    margin: 0;
    padding: 0;
    height: 100%;
-   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-      "Helvetica Neue", sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -75,6 +72,10 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 .shaka-play-button {
    cursor: pointer;
    padding: 30px !important;
+}
+
+.shaka-spinner {
+   display: none;
 }
 
 #__next {
@@ -166,6 +167,15 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    color: #f2a4ff;
    &:hover {
       background-color: rgba(242, 164, 255, 0.2);
+   }
+}
+
+.modalTriggerText {
+   font-weight: 700;
+   cursor: pointer;
+   color: black;
+   span {
+      text-decoration: underline;
    }
 }
 

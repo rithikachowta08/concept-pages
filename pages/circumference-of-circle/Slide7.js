@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { fontSizes } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -17,7 +15,7 @@ const TextLine = dynamic(() =>
 const plain_d = "assets/circumference-of-circle/plain_d.svg";
 const circumference_value =
    "assets/circumference-of-circle/circumference_value.svg";
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
+import { fontWeights } from "utils/fontStyles";
 import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
@@ -102,7 +100,7 @@ const Slide8 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph lineHeight={lineHeightProp}>
+            <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>Circumference of a circle = &pi; &times; d</TextLine>
                <EquationTable equationLatex={EquationLatex0}></EquationTable>

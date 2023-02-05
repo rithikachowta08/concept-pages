@@ -49,7 +49,10 @@ const NavigationBar = ({
    const onSectionClick = (e) => {
       e.stopPropagation();
       setIsExpanded(false);
-      moveTo(e.currentTarget.getAttribute("data-section-idx"));
+      moveTo(
+         Number(e.currentTarget.getAttribute("data-leaflet-idx")),
+         Number(e.currentTarget.getAttribute("data-section-idx"))
+      );
    };
    return (
       <Wrapper isExpanded={isExpanded} opacity={opacity}>

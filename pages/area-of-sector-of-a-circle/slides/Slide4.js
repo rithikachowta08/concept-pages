@@ -55,7 +55,7 @@ const Slide4 = ({ navBar, downIcon }) => {
       <Modal
         bg="LIGHT"
         color={colors.BLACK}
-        title={"Circle"}
+        title={"Arc of a circle"}
         content={modalContent}
         isOpen={isModalOpen}
         onDismiss={onModalDismiss}

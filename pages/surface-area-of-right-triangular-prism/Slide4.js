@@ -15,7 +15,9 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/hls/h264.m3u8",
                thumbnail:
                   "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
-               // video_title: "Surface Area of a Right Triangular Prism",
+               videoId: "389949",
+               duration: 32,
+               title: "Surface area of formula of triangular prism",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}

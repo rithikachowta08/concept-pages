@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -21,14 +20,14 @@ const surfaceCube_slides = "assets/surface-area-of-cube/slide3/2.svg";
 const Slide3 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(Number(e.target.id));
+    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
   };
   return (
     <TextAndDiagramSlide
-      title="Surface Area of Cube"
+      title="What is the Surface Area of a Cube?"
       diagram={
         <TransitionImage
           images={[surfaceCube_full, surfaceCube_slides]}
@@ -42,18 +41,18 @@ const Slide3 = ({ downIcon }) => {
       bg="DARK"
       downIcon={downIcon}
     >
-      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
-        The surface area of a cube is defined as the total area covered by
-        the{" "}
+      <Paragraph color={colors.WHITE}>
+        The surface area of a cube is defined as the total area covered by the{" "}
         <TextSpanBg
           id={1}
-          onHover={onHover}
+          onHover={() => onHover(1)}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}
         >
           six square faces
-        </TextSpanBg>{" "}of the cube. It is measured in square units.
+        </TextSpanBg>{" "}
+        of the cube. It is measured in square units.
       </Paragraph>
     </TextAndDiagramSlide>
   );

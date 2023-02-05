@@ -14,7 +14,7 @@ const slide3_a = "assets/units-to-measure-capacity/slide3_a.svg";
 const Slide3 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
-         title="Measurement of Capacity"
+         title="What is capacity measurement?"
          diagram={
             <StyledImg
                src={slide3_a}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -16,6 +17,7 @@ export default class MyDocument extends Document {
                   type="font/woff2"
                   crossOrigin=""
                />
+               <link rel="preload" as="image" href="assets/purple_bg.webp" />
                <link
                   rel="preload"
                   href="fonts/Nunito-Medium.ttf"
@@ -23,8 +25,13 @@ export default class MyDocument extends Document {
                   type="font/ttf"
                   crossOrigin=""
                />
+               <link
+                  rel="stylesheet"
+                  href="fonts/stylesheet.css"
+                  crossOrigin=""
+               />
+               <link rel="preload" href="fonts/stylesheet.css" crossOrigin="" />
                <link rel="preload" as="image" href="assets/white_bg.webp" />
-               <link rel="preload" as="image" href="assets/purple_bg.webp" />
                <meta name="robots" content="noindex" />
                <link
                   rel="apple-touch-icon"

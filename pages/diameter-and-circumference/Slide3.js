@@ -29,7 +29,6 @@ const Pill = dynamic(() => import("components/Pill"));
 
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -63,7 +62,7 @@ const Slide3 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          bg="DARK"
-         title="Ratio of Circumference to Diameter "
+         title="Ratio of Circumference to Diameter"
          diagram={
             <TransitionImage
                images={[circleRatio, circumferenceRatio, diameterRatio]}
@@ -77,26 +76,20 @@ const Slide3 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
-               The ratio of the &nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-               >
+               The ratio of the&nbsp;
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
                   circumference
                </TextSpanBg>
-               &nbsp; to &nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(2)}
-                  onHoverOut={onHoverOut}
-               >
+               &nbsp;to&nbsp;
+               <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
                   diameter
                </TextSpanBg>
-               &nbsp; for any circle is always a constant.
+               &nbsp;for any circle is always a constant.
             </TextLine>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <Pill
                width="fit-content"
                bgColor={colors.OCEAN_GREEN}
@@ -107,7 +100,7 @@ const Slide3 = ({ downIcon }) => {
                {/* <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "} */}
             </Pill>
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine color={colors.WHITE}>
                The decimal expansion of the ratio shown above is non-terminating
                and non-repeating in nature, and this constant value is

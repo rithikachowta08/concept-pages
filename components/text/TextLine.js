@@ -7,17 +7,26 @@ import { PropTypes } from "prop-types";
 const Line = styled.div`
    color: ${(props) => props.color || "inherit"};
    text-align: ${(props) => props.textAlign};
+   margin-bottom: ${(props) => props.marginBottom};
    font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    font-family: ${(props) =>
       props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
    font-size: ${(props) => props.fontSize || fontSizes.MEDIUM};
 `;
 
-const TextLine = ({ children, fontSize, textAlign, fontWeight, color }) => {
+const TextLine = ({
+   children,
+   fontSize,
+   textAlign,
+   marginBottom,
+   fontWeight,
+   color,
+}) => {
    return (
       <Line
          textAlign={textAlign}
          fontSize={fontSize}
+         marginBottom={marginBottom}
          fontWeight={fontWeight}
          color={color}
       >

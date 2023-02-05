@@ -19,7 +19,6 @@ const sides_shaded =
    "assets/surface-area-of-right-triangluar-prism/sides_shaded.svg";
 const all_sides_shaded =
    "assets/surface-area-of-right-triangluar-prism/all_sides_shaded.svg";
-import { lineHeightProp } from "utils/fontStyles";
 
 const Slide3 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -49,7 +48,7 @@ const Slide3 = ({ downIcon }) => {
             The surface area of a right triangular prism is the area covered by
             its faces.
          </Paragraph>
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>There are two types of surface areas:</TextLine>
             <TextLine>
                <TextSpanBg

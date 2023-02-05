@@ -2,15 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
+import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const EquationParentDiv = styled.div`
    font-family: "Nunito-Medium";
+   margin-left: -5px;
 `;
 
 const StyledTable = styled.table`
-   border-spacing: 0 10px;
+   border-spacing: 5px 10px;
+
    @media (min-width: 200px) and (max-width: 820px) {
-      border-spacing: 0 5px;
+      border-spacing: 5px;
    }
 `;
 const LHSLatex = styled.td`
@@ -31,13 +34,16 @@ const RHSHint = styled.td`
    text-align: right;
    white-space: nowrap;
 `;
-const Span = styled.span``;
+const Span = styled.div`
+   width: ${(props) => (props.isMobile ? "auto" : "auto")};
+`;
 
 const EquationTable = ({
    equationLatex: eqLatex,
    align = "top",
    lineHeight,
 }) => {
+   // const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    if (!eqLatex) {
       return <></>;
    }
@@ -59,7 +65,7 @@ const EquationTable = ({
                                  </TeX>
                               );
                            } else {
-                              return <Span key={i}>{val}</Span>;
+                              return <span key={i}>{val}</span>;
                            }
                         })}
                      </LHSLatex>
