@@ -17,7 +17,7 @@ const Slide4 = ({ currentPageIdx, downIcon }) => {
          }}
          downIconId="s4-video-down-icon"
          videoSlideId="s4-video-slide"
-         index={4}
+         index={3}
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       />

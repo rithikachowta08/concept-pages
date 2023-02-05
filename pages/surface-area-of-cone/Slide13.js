@@ -9,7 +9,9 @@ const Slide13 = ({ downIcon, currentPageIdx }) => {
       <div style={{ height: "100%" }}>
          <VideoSlide2
             videoContent={{
-               videoId: "19152",
+               videoId: "390106",
+               duration: 224,
+               title: "Derivation of formula of surface area of cone",
                dash_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-188632ba/ro0jfw/20230105_124345_SEOD18INTL08MAT11KT015/dash/h264.mpd",
                hls_Url:

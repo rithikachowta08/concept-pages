@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Flex } from "components/StyledElements";
 import dynamic from "next/dynamic";
-import {
-   FillerNavBar,
-   SlideSecondaryTitle,
-   SlideTitle,
-} from "components/slides/common";
+import { SlideSecondaryTitle, SlideTitle } from "components/slides/common";
 import { fontWeights } from "utils/fontStyles";
 const ShakaPlayerComponent = dynamic(() => import("./ShakaPlayerComponent"), {
    ssr: false,
@@ -15,7 +11,6 @@ import { get_video_manifest, isSafariOrIOSDevice } from "./playerFunction";
 import { onPlayVideoClick, onVideoReplay } from "utils/analytics";
 import { colors } from "utils/colors";
 import Button from "components/Button";
-import { DEVICE_TYPES, useDeviceType } from "hooks/useDeviceType";
 import PlayButton from "./PlayButton";
 
 const replay = "assets/replay.svg";
@@ -38,29 +33,37 @@ const VideoWrap = styled.div`
 
 const Overlay = styled.div`
    position: absolute;
-   padding: 30px;
    display: ${(props) => (props.show ? "flex" : "none")};
    align-items: center;
    color: ${colors.WHITE};
-   background: rgba(0, 0, 0, 0.66);
+   background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+   );
    opacity: ${(props) => (props.show ? 1 : 0)};
    transition: all 0.5s;
    top: 0;
-   height: 100%;
+   height: 87%;
    width: 100%;
    z-index: 1;
 `;
 
+const VIDEO_STATUS = {
+   NOT_STARTED: "NOT_STARTED",
+   STARTED: "STARTED",
+   PAUSED: "PAUSED",
+   ENDED: "ENDED",
+};
+
 const ShakaPlayerContainer = (props) => {
    var [drmConf, setDrmConfig] = useState({});
-   const [isVideoEnded, setIsVideoEnded] = useState(false);
-   const [isVideoStarted, setIsVideoStarted] = useState(false);
+   const [videoStatus, setVideoStatus] = useState(VIDEO_STATUS.NOT_STARTED);
    const [startTimer, setStartTimer] = useState(false);
    const [videoRef, setVideoRef] = useState(null);
    const [isMuted, setIsMuted] = useState(true);
    var [isVideoLoaded, setIsVideoLoaded] = useState(false);
    var isEncryptedVideo = true;
-   const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
 
    useEffect(() => {
       if (
@@ -74,6 +77,8 @@ const ShakaPlayerContainer = (props) => {
    }, [props.currentPageIdx, props.index, watchVideo, isVideoLoaded]);
 
    useEffect(() => {
+      console.log(props.currentPageIdx);
+      console.log(props.index);
       if (props.currentPageIdx === props.index) {
          setStartTimer(true);
          setTimeout(startVideo, 5000);
@@ -113,14 +118,18 @@ const ShakaPlayerContainer = (props) => {
       })();
    }
 
+   const onVideoPause = () => {
+      setVideoStatus(VIDEO_STATUS.PAUSED);
+   };
+
    const onVideoEnd = () => {
       watchVideo();
       setIsMuted(false);
-      setIsVideoEnded(true);
+      setVideoStatus(VIDEO_STATUS.ENDED);
    };
 
    const startVideo = () => {
-      setIsVideoStarted(true);
+      setVideoStatus(VIDEO_STATUS.STARTED);
    };
 
    const onPlayButtonClick = () => {
@@ -130,11 +139,15 @@ const ShakaPlayerContainer = (props) => {
 
    const replayVideo = () => {
       onVideoReplay(props.videoContent.videoId);
-      setIsVideoEnded(false);
+      setVideoStatus(VIDEO_STATUS.STARTED);
       videoRef.play();
    };
 
-   const isOverlayVisible = !isVideoStarted || isVideoEnded;
+   const isOverlayVisible = [
+      VIDEO_STATUS.NOT_STARTED,
+      VIDEO_STATUS.ENDED,
+      VIDEO_STATUS.PAUSED,
+   ].includes(videoStatus);
 
    return drmConf.key_id ? (
       <VideoWrap>
@@ -145,10 +158,11 @@ const ShakaPlayerContainer = (props) => {
                   : props.videoContent?.dash_Url
             }
             poster={props.videoContent["thumbnail"]}
-            autoPlay={isVideoStarted}
+            autoPlay={videoStatus === VIDEO_STATUS.STARTED}
             muted={isMuted}
             setVideoRef={setVideoRef}
             onEnd={onVideoEnd}
+            onPause={onVideoPause}
             srcKey={drmConf.key_id}
             uiConfig={{
                castReceiverAppId: "",
@@ -156,24 +170,28 @@ const ShakaPlayerContainer = (props) => {
                customContextMenu: true,
                contextMenuElements: ["statistics"],
                statisticsList: ["width", "height", "playTime", "bufferingTime"],
-               addBigPlayButton: isVideoStarted && !isVideoEnded,
-               controlPanelElements:
-                  isVideoStarted && !isVideoEnded
-                     ? [
-                          "play_pause",
-                          "rewind_10",
-                          "forward_10",
-                          "time_and_duration",
-                          "spacer",
-                          // "vertical_volume",
-                          "mute",
-                          "playback_rate",
-                          "quality",
-                          "fullscreen",
-                          // "overflow_menu"
-                       ]
-                     : [],
-               addSeekBar: isVideoStarted && !isVideoEnded,
+               addBigPlayButton: videoStatus === VIDEO_STATUS.STARTED,
+               controlPanelElements: [
+                  VIDEO_STATUS.STARTED,
+                  VIDEO_STATUS.PAUSED,
+               ].includes(videoStatus)
+                  ? [
+                       "play_pause",
+                       "rewind_10",
+                       "forward_10",
+                       "time_and_duration",
+                       "spacer",
+                       // "vertical_volume",
+                       "mute",
+                       "playback_rate",
+                       "quality",
+                       "fullscreen",
+                       // "overflow_menu"
+                    ]
+                  : [],
+               addSeekBar: [VIDEO_STATUS.STARTED, VIDEO_STATUS.PAUSED].includes(
+                  videoStatus
+               ),
                seekBarColors: {
                   base: "rgba(255, 255, 255, 0.3)",
                   buffered: "rgba(255, 255, 255, 0.54)",
@@ -188,26 +206,33 @@ const ShakaPlayerContainer = (props) => {
             downIconId={props.downIconId}
          />
 
-         <Overlay show={isOverlayVisible}>
-            {isMobile ? null : <FillerNavBar />}
+         <Overlay
+            show={isOverlayVisible}
+            onClick={
+               videoStatus === VIDEO_STATUS.PAUSED ? startVideo : undefined
+            }
+         >
             <Flex flex={1} justifyContent="center">
                <Flex direction="column" gap="15px" width="fit-content">
-                  <SlideSecondaryTitle
-                     secondaryTitle={
-                        isVideoEnded
-                           ? "Thanks for watching"
-                           : `Duration: ${getVideoLength(
-                                videoRef?.duration ||
-                                   props.videoContent.duration
-                             )}`
-                     }
-                     centerAlign={isVideoEnded}
-                     bg="DARK"
-                  ></SlideSecondaryTitle>
+                  {videoStatus === VIDEO_STATUS.ENDED ||
+                  videoStatus === VIDEO_STATUS.NOT_STARTED ? (
+                     <SlideSecondaryTitle
+                        secondaryTitle={
+                           videoStatus === VIDEO_STATUS.ENDED
+                              ? "Thanks for watching"
+                              : `Duration: ${getVideoLength(
+                                   videoRef?.duration ||
+                                      props.videoContent.duration
+                                )}`
+                        }
+                        centerAlign={videoStatus === VIDEO_STATUS.ENDED}
+                        bg="DARK"
+                     />
+                  ) : null}
                   <SlideTitle bg="DARK" fontWeight={fontWeights.NORMAL}>
                      {props.videoContent.title || "Video title here"}
                   </SlideTitle>
-                  {isVideoEnded ? (
+                  {videoStatus === VIDEO_STATUS.ENDED ? (
                      <Button
                         alignSelf="center"
                         bgColor="rgba(255, 255, 255, 0.25)"
@@ -219,23 +244,20 @@ const ShakaPlayerContainer = (props) => {
                      >
                         Replay
                      </Button>
-                  ) : (
-                     startTimer && <PlayButton onClick={onPlayButtonClick} />
-                  )}
-                  {props.downIcon
-                     ? React.cloneElement(props.downIcon, {
-                          isVideoSlide: true,
-                       })
-                     : null}
+                  ) : null}
+                  {videoStatus === VIDEO_STATUS.NOT_STARTED ||
+                  videoStatus === VIDEO_STATUS.PAUSED ? (
+                     <PlayButton
+                        onClick={onPlayButtonClick}
+                        startTimer={
+                           videoStatus === VIDEO_STATUS.NOT_STARTED &&
+                           startTimer
+                        }
+                     />
+                  ) : null}
                </Flex>
             </Flex>
          </Overlay>
-         {props.downIcon && !isOverlayVisible
-            ? React.cloneElement(props.downIcon, {
-                 isVideoSlide: true,
-                 id: props.downIconId,
-              })
-            : null}
       </VideoWrap>
    ) : null;
 };

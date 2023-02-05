@@ -200,7 +200,10 @@ const VideoPlayer = (props) => {
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      document.getElementById(props.downIconId).style.opacity = 1;
+      !video.seeking && props.onPause();
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 1;
+      }
    };
 
    const onEnd = () => {
@@ -216,7 +219,7 @@ const VideoPlayer = (props) => {
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      if (!isFirstTimePlay) {
+      if (!isFirstTimePlay && document.getElementById(props.downIconId)) {
          setIsFirstTimePlay(true);
 
          document.getElementById(props.downIconId).style.opacity = 0;
@@ -226,7 +229,10 @@ const VideoPlayer = (props) => {
                if (document.getElementById(props.downIconId)) {
                   document.getElementById(props.downIconId).style.opacity = 1;
                   setTimeout(() => {
-                     if (!video.paused) {
+                     if (
+                        !video.paused &&
+                        document.getElementById(props.downIconId)
+                     ) {
                         document.getElementById(
                            props.downIconId
                         ).style.opacity = 0;
@@ -235,7 +241,9 @@ const VideoPlayer = (props) => {
                }
             });
       }
-      document.getElementById(props.downIconId).style.opacity = 0;
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 0;
+      }
    };
 
    useEffect(() => {
@@ -264,6 +272,7 @@ const VideoPlayer = (props) => {
 
    useEffect(() => {
       console.log("ui config changed");
+      console.log("New config", props.uiConfig);
       uiRef?.configure(props.uiConfig);
    }, [props.uiConfig]);
 
