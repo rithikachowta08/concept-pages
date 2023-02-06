@@ -43,7 +43,7 @@ const Slide2 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of a unit cube"
+            alt="Diagram of a parallelogram"
          />
       </Flex>
    );
