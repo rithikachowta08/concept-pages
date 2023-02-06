@@ -271,8 +271,6 @@ const VideoPlayer = (props) => {
    }, []);
 
    useEffect(() => {
-      console.log("ui config changed");
-      console.log("New config", props.uiConfig);
       uiRef?.configure(props.uiConfig);
    }, [props.uiConfig]);
 

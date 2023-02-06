@@ -33,6 +33,7 @@ const VideoWrap = styled.div`
 
 const Overlay = styled.div`
    position: absolute;
+   padding: 30px;
    display: ${(props) => (props.show ? "flex" : "none")};
    align-items: center;
    color: ${colors.WHITE};
@@ -77,8 +78,6 @@ const ShakaPlayerContainer = (props) => {
    }, [props.currentPageIdx, props.index, watchVideo, isVideoLoaded]);
 
    useEffect(() => {
-      console.log(props.currentPageIdx);
-      console.log(props.index);
       if (props.currentPageIdx === props.index) {
          setStartTimer(true);
          setTimeout(startVideo, 5000);
@@ -184,7 +183,6 @@ const ShakaPlayerContainer = (props) => {
                        // "vertical_volume",
                        "mute",
                        "playback_rate",
-                       "quality",
                        "fullscreen",
                        // "overflow_menu"
                     ]
