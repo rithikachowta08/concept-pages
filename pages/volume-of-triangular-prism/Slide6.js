@@ -15,7 +15,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Practice+on+Volume+of+Prism.png",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}

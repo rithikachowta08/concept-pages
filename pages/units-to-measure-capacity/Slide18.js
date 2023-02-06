@@ -13,7 +13,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-7587de9a/rom3r9/INTL_Maths/230116/SEOINTL04MAT16KT007/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Understanding+Capacity.png",
                duration: 152,
                title: "Customary and metric units of capacity",
             }}
