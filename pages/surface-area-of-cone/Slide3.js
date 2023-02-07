@@ -50,7 +50,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
       title="Formation of a Cone"
       appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
       currentPageIdx={currentPageIdx}
-      AppletComponent={Applet02802Ge}
+      // AppletComponent={Applet02802Ge}
     >
       <Modal
         isOpen={isModalOpen}

@@ -16,6 +16,7 @@ const ModalImg = dynamic(() =>
 import { ModalTriggerText, TextLine } from "components/text";
 const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
 import { colors } from "utils/colors";
+import { Applet01101Ge } from "@byjus-us-math/content-applets/011_01_GE";
 
 const Slide6 = ({ downIcon, currentPageIdx }) => {
    const modalContent = (
@@ -42,7 +43,8 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
    };
    return (
       <TextAndAppletSlide
-         appletSrc="https://www.geogebra.org/m/p4jd88uu"
+         // appletSrc="https://www.geogebra.org/m/p4jd88uu"
+         AppletComponent={Applet01101Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          bg="DARK"
