@@ -20,11 +20,10 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
-   font-weight: ${(props) =>
-      props.fontWeight ? props.fontWeight : fontWeights.NORMAL};
+   font-weight: ${(props) => props.fontWeight || fontWeights.NORMAL};
    font-family: ${(props) =>
       props.fontWeight === fontWeights.BOLD ? "Nunito-Bold" : "Nunito-Medium"};
-   opacity: ${(props) => (props.opacity ? props.opacity : "1")};
+   opacity: ${(props) => props.opacity || "1"};
    padding: ${(props) => props.padding};
    font-size: ${(props) =>
       props.fontSize ? props.fontSize : fontSizes.MEDIUM};
@@ -32,6 +31,7 @@ const H2 = styled.h2`
    text-align: ${(props) => props.textAlign};
    margin-bottom: ${(props) => (props.marginBottom ? props.marginBottom : 0)};
 `;
+
 const H3 = styled.h3`
    color: ${(props) => (props.color ? props.color : colors.DARK_GREY)};
    font-weight: ${(props) =>

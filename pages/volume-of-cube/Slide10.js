@@ -8,24 +8,23 @@ const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
 const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+   import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-  import("components/text").then((mod) => mod.TextSpanBg)
+   import("components/text").then((mod) => mod.TextSpanBg)
 );
 const TextAndDiagramSlide = dynamic(() =>
-  import("components/slides/TextAndDiagramSlide")
+   import("components/slides/TextAndDiagramSlide")
 );
 const TransitionImage = dynamic(() =>
-  import("components/media/TransitionImage")
+   import("components/media/TransitionImage")
 );
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const Slide10 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    const onHover = (e) => {
-      console.log(e.target);
       setActiveIndex(Number(e.target.id));
    };
    const onHoverOut = (e) => {
@@ -140,7 +139,10 @@ const Slide10 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[cube_red, cube_diagonal]}
-               altTexts={["A cube whose side area is 16 square centimetres.","A cube with it's side highlighted having area of 16 square centimetres."]}
+               altTexts={[
+                  "A cube whose side area is 16 square centimetres.",
+                  "A cube with it's side highlighted having area of 16 square centimetres.",
+               ]}
                activeIndex={activeIndex}
             />
          }
@@ -159,13 +161,15 @@ const Slide10 = ({ downIcon }) => {
             ></EquationTable>
          </Paragraph>
          <Paragraph>
-            <EquationTable align="middle"
+            <EquationTable
+               align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>
 
          <Paragraph>
-            <EquationTable align="middle"
+            <EquationTable
+               align="middle"
                equationLatex={latexEquationContainer[latexEquationCounter++]}
             ></EquationTable>
          </Paragraph>

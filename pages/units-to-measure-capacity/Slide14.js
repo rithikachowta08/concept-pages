@@ -50,13 +50,13 @@ const Slide7 = ({ downIcon }) => {
                      onHoverOut={onHoverOut}
                      hoverColor={colors.DARK_LAVENDER}
                   >
-                     1 kiloliter = 1000 liters
+                     1 kiloliter = 1,000 liters
                   </TextSpanBg>
                </TextLine>
                <TextLine>Thus, 50 kiloliters = 50 x 1000 liters</TextLine>
-               <TextLine>50 kiloliters = 50000 liters</TextLine>
+               <TextLine>50 kiloliters = 50,000 liters</TextLine>
                <TextLine>
-                  Therefore, 50 kiloliters is equal to 50000 liters.
+                  Therefore, 50 kiloliters is equal to 50,000 liters.
                </TextLine>
             </Paragraph>
          </Paragraph>

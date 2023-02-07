@@ -4,6 +4,7 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
+import { SLIDE_TYPES } from "utils/constants";
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
@@ -28,29 +29,30 @@ const PageLastSlide = dynamic(() =>
 
 const UnitsToMeasureCapacity = () => {
    const SlideArray = [
-      <Slide1 key={0} />,
-      <Slide2 key={1} />,
-      <Slide3 key={2} />,
-      <Slide4 key={3} />,
-      <Slide5 key={4} />,
-      <Slide6 key={5} />,
-      <Slide7 key={6} />,
-      <Slide8 key={7} />,
-      <Slide9 key={8} />,
-      <Slide10 key={9} />,
-      <Slide11 key={10} />,
-      <Slide12 key={11} />,
-      <Slide13 key={12} />,
-      <Slide14 key={13} />,
-      <Slide15 key={14} />,
-      <Slide16 key={15} />,
-      <Slide17 key={16} />,
-      <Slide18 key={17} />,
+      <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
+      <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide4 key={3} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide8 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide9 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide12 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide13 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide14 key={13} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide15 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide16 key={15} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide17 key={16} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide18 key={17} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
          key={18}
+         type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of capacity"}
-         nextPageLink={"/us/math/study/volume-of-cube"}
-         nextPageTitle={"Volume of a Cube"}
+         nextPageLink={"/us/math/study/volume-of-rectangular-prism"}
+         nextPageTitle={"Volume of a Rectangular Prism"}
       />,
    ];
    const navigationSections = [
@@ -77,7 +79,7 @@ const UnitsToMeasureCapacity = () => {
       },
    ];
 
-   const darkBgIndices = [0, 5, 7, 10, 14, 17, 18];
+   const darkBgIndices = [0, 3, 5, 7, 10, 14, 17, 18];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -11,43 +10,22 @@ const TextAndDiagramSlide = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-const ModalTriggerText = dynamic(() =>
-   import("components/text").then((mod) => mod.ModalTriggerText)
-);
+
 const tsa = "assets/surface-area-of-pyramids/tsa.svg";
 const tsa_sh = "assets/surface-area-of-pyramids/tsa_sh.svg";
 const tsa_pob = "assets/surface-area-of-pyramids/tsa_pob.svg";
 const tsa_aob = "assets/surface-area-of-pyramids/tsa_aob.svg";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
-import { Icon } from "components/StyledElements";
-
 const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+
    const onHover = (e) => {
       setActiveIndex(e);
    };
@@ -55,8 +33,10 @@ const Slide9 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`);
-  let mathjaxCounter = 0;
+   latex.push(
+      `= \\dfrac{1}{2} \\times P \\times l \\thinspace + \\thinspace B \\thinspace square \\thinspace units`
+   );
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          bg="DARK"
@@ -64,64 +44,52 @@ const Slide9 = ({ downIcon }) => {
          secondaryTitle={"Surface Area of Pyramids"}
          diagram={
             <TransitionImage
-               images={[
-                  tsa,
-                  tsa_sh,
-                  tsa_pob,
-                  tsa_aob
-               ]}
+               images={[tsa, tsa_sh, tsa_pob, tsa_aob]}
                altTexts={[
-               "Diagram of a pyramid",
-               "Diagram of a pyramid with highlighted slant height",
-               "Diagram of a pyramid with highlighted base perimeter",
-               "Diagram of a pyramid with highlighted base area"
+                  "Diagram of a pyramid",
+                  "Diagram of a pyramid with highlighted slant height",
+                  "Diagram of a pyramid with highlighted base perimeter",
+                  "Diagram of a pyramid with highlighted base area",
                ]}
-
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine color={colors.WHITE}>
-            The total surface area of a regular pyramid is the sum of its lateral surface area and its base area.
+               The total surface area of a regular pyramid is the sum of its
+               lateral surface area and its base area.
             </TextLine>
-        </Paragraph>
-        <Paragraph>
+         </Paragraph>
+         <Paragraph>
             <TextLine>
-            <Pill
-               width="fit-content"
-               bgColor={colors.OCEAN_GREEN}
-               color={colors.BLACK}
-            >
-               Total surface area{" "}
-               <MathElement htmlString={latex[mathjaxCounter]}></MathElement>{" "}
-            </Pill>
+               <Pill
+                  width="fit-content"
+                  bgColor={colors.OCEAN_GREEN}
+                  color={colors.BLACK}
+               >
+                  Total surface area{" "}
+                  <MathElement htmlString={latex[mathjaxCounter]}></MathElement>{" "}
+               </Pill>
             </TextLine>
          </Paragraph>
 
-         <Paragraph >
-         <TextLine color={colors.WHITE}>
-            Here, (l) is the{" "}
-            <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}>
-                slant height
-                </TextSpanBg>
-                {" "}, (P) is the{" "}
-              <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}>
-                perimeter of the base
-                </TextSpanBg>
-                {" "}, and (B) is the {" "}
-                <TextSpanBg
-               onHover={() => onHover(1)}
-               onHoverOut={onHoverOut}>
-                area of the base
-                </TextSpanBg>
-                {" "}of the pyramid.
-                
+         <Paragraph>
+            <TextLine color={colors.WHITE}>
+               Here, (l) is the{" "}
+               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
+                  slant height
+               </TextSpanBg>{" "}
+               , (P) is the{" "}
+               <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
+                  perimeter of the base
+               </TextSpanBg>{" "}
+               , and (B) is the{" "}
+               <TextSpanBg onHover={() => onHover(3)} onHoverOut={onHoverOut}>
+                  area of the base
+               </TextSpanBg>{" "}
+               of the pyramid.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

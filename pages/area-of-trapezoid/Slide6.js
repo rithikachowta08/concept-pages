@@ -68,17 +68,12 @@ const Slide6 = ({ downIcon }) => {
          secondaryTitle="Illustrative Example"
          diagram={
             <TransitionImage
-               images={[
-                  slide6_a,
-                  slide6_b,
-                  slide6_c,
-                  slide6_d,
-               ]}
+               images={[slide6_a, slide6_b, slide6_c, slide6_d]}
                altTexts={[
-                  "Diagram of a trapezoid of height 5 cm",
-                  "Diagram of a trapezoid with one of the base length 10 cm",
-                  "Diagram of a trapezoid with one of the base length 6 cm",
-                  "Diagram of a trapezoid with height 5 cm",
+                  "Diagram of a trapezoid of height 5 in",
+                  "Diagram of a trapezoid with one of the base length 10 in",
+                  "Diagram of a trapezoid with one of the base length 6 in",
+                  "Diagram of a trapezoid with height 5 in",
                ]}
                activeIndex={activeIndex}
             />

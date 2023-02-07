@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
                   type="font/woff2"
                   crossOrigin=""
                />
+               <link rel="preload" as="image" href="assets/purple_bg.webp" />
                <link
                   rel="preload"
                   href="fonts/Nunito-Medium.ttf"
@@ -31,7 +32,6 @@ export default class MyDocument extends Document {
                />
                <link rel="preload" href="fonts/stylesheet.css" crossOrigin="" />
                <link rel="preload" as="image" href="assets/white_bg.webp" />
-               <link rel="preload" as="image" href="assets/purple_bg.webp" />
                <meta name="robots" content="noindex" />
                <link
                   rel="apple-touch-icon"

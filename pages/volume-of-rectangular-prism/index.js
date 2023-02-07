@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import PageLastSlide from "components/slides/PageLastSlide";
+import { SLIDE_TYPES } from "utils/constants";
 
 const Slide1 = dynamic(() => import("./slides/Slide1"));
 const Slide2 = dynamic(() => import("./slides/Slide2"));
@@ -17,18 +18,19 @@ const Slide11 = dynamic(() => import("./slides/Slide11"));
 
 const VolumeOfRectangularPrism = () => {
    const SlideArray = [
-      <Slide1 key={0} />,
-      <Slide2 key={1} />,
-      <Slide3 key={2} />,
-      <Slide4 key={3} />,
-      <Slide5 key={4} />,
-      <Slide6 key={5} />,
-      <Slide7 key={6} />,
-      <Slide8 key={7} />,
-      <Slide9 key={8} />,
-      <Slide10 key={9} />,
-      <Slide11 key={10} />,
+      <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
+      <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide4 key={3} type={SLIDE_TYPES.VIDEO_ONLY} />,
+      <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide8 key={7} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide9 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={9} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
+         type={SLIDE_TYPES.CONCLUSION}
          key={12}
          currentPageTitle={"Volume of a Rectangular Prism"}
          nextPageTitle="Relationship between Diameter and Circumference"
@@ -56,8 +58,8 @@ const VolumeOfRectangularPrism = () => {
 };
 
 VolumeOfRectangularPrism.title =
-   "Area of Circle: Definition, Formula, Examples - BYJU'S";
+   "Volume of Rectangular Prism: Definition, Formula, Examples - BYJU'S";
 VolumeOfRectangularPrism.meta =
-   "Learn about the area of circle, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities.";
+   "Gain a thorough understanding of the volume of rectangular prism with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default VolumeOfRectangularPrism;

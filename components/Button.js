@@ -1,12 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
+import { Icon } from "./StyledElements";
+import { colors } from "utils/colors";
 
-const StyledButton = styled.button`
-   border-radius: 8px;
+const BUTTON_TYPES = {
+   SOLID: "SOLID",
+   OUTLINE: "OUTLINE",
+};
+
+const Flex = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2px 6px;
+   border-radius: ${(props) =>
+      props.type === BUTTON_TYPES.OUTLINE ? "8px" : "27px"};
    height: ${(props) => props.height || "50px"};
-   border: 1px solid
-      ${(props) => props.borderColor || props.bgColor || props.color || "white"};
+   border: ${(props) =>
+      props.type === BUTTON_TYPES.OUTLINE
+         ? `1px solid
+      ${props.borderColor || props.bgColor || props.color || "white"}`
+         : "none"};
    color: ${(props) => props.color || "white"};
    min-width: 100px;
    width: ${(props) => props.width};
@@ -21,10 +36,22 @@ const StyledButton = styled.button`
    }
 `;
 
+const StyledButton = styled.button`
+   background: none;
+   border: none;
+   padding: none;
+   font-size: 1.5rem;
+   color: ${(props) => props.color || colors.WHITE};
+   font-family: "Nunito-Medium";
+   cursor: pointer;
+`;
+
 const Button = ({
    children,
    onClick,
+   icon,
    width,
+   type = BUTTON_TYPES.OUTLINE,
    position,
    bottom,
    alignSelf,
@@ -35,7 +62,9 @@ const Button = ({
    height,
 }) => {
    return (
-      <StyledButton
+      <Flex
+         gap="5px"
+         type={type}
          bgColor={bgColor}
          borderColor={borderColor}
          bottom={bottom}
@@ -43,12 +72,14 @@ const Button = ({
          position={position}
          width={width}
          height={height}
-         onClick={onClick}
          color={color}
          margin={margin}
       >
-         {children}
-      </StyledButton>
+         <StyledButton onClick={onClick} color={color}>
+            {children}
+         </StyledButton>
+         {icon ? <Icon src={icon} width="2rem"></Icon> : null}
+      </Flex>
    );
 };
 

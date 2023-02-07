@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
+import { StyledImg } from "components/StyledElements";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -20,13 +19,11 @@ const EquationTable = dynamic(() =>
    import("components/MathElement/EquationTable")
 );
 
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-const slide9= "assets/area-of-trapezoid/slide9.svg";
+const slide9 = "assets/area-of-trapezoid/slide9.svg";
 
 const Slide9 = ({ downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
    let latex = [];
-   latex.push(` = \\sqrt{} s (s - a)(s - b)(s - c)`);
+   latex.push(` = \\sqrt{s (s - a)(s - b)(s - c)}`);
    latex.push(` = \\dfrac{5 + 5 + 6}{2}`);
    let mathjaxCounter = 0;
    return (
@@ -34,14 +31,9 @@ const Slide9 = ({ downIcon }) => {
          title="Find the area of the trapezoid with the given dimensions."
          secondaryTitle="Illustrative Example"
          diagram={
-            <TransitionImage
-               images={[
-                  slide9
-               ]}
-               altTexts={[
-                  "Diagram of a trapezoid with triangle highlighted in it",
-               ]}
-               activeIndex={activeIndex}
+            <StyledImg
+               src={slide9}
+               alt={"Diagram of a trapezoid with triangle highlighted in it"}
             />
          }
          downIcon={downIcon}
@@ -74,9 +66,7 @@ const Slide9 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: [
-                              "\\sqrt{} 8 (8 - 5)(8 - 5)(8 - 6) \\thinspace sq \\thinspace in",
-                           ],
+                           value: ["\\sqrt{8(8-5)(8-5)(8-6)}sq\\ in"],
                            type: "latex",
                         },
                         rhsHint: {
@@ -91,7 +81,7 @@ const Slide9 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\sqrt{} 8\\thinspace (3)\\thinspace(3)\\thinspace(2)\\thinspace sq \\thinspace in",
+                              "\\sqrt{8\\thinspace (3)\\thinspace(3)\\thinspace(2)}\\thinspace sq \\thinspace in",
                            ],
                            type: "latex",
                         },
@@ -106,9 +96,7 @@ const Slide9 = ({ downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: [
-                              "\\sqrt{} 144 \\thinspace sq \\thinspace in",
-                           ],
+                           value: ["\\sqrt{144} \\thinspace sq \\thinspace in"],
                            type: "latex",
                         },
                         rhsHint: {

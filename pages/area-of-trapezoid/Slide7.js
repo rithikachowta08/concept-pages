@@ -68,11 +68,7 @@ const Slide7 = ({ downIcon }) => {
          secondaryTitle="Area of Trapezoid"
          diagram={
             <TransitionImage
-               images={[
-                  slide7_a,
-                  slide7_b,
-                  slide7_c,
-               ]}
+               images={[slide7_a, slide7_b, slide7_c]}
                altTexts={[
                   "Diagram of a trapezoid with given sides",
                   "Diagram of a trapezoid with parallelogram highlighted in it",
@@ -90,31 +86,18 @@ const Slide7 = ({ downIcon }) => {
                   parallelogram
                </TextSpanBg>{" "}
                and a&nbsp;
-               <TextSpanBg
-                  onHover={() => onHover(2)}
-                  onHoverOut={onHoverOut}
-               >
+               <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
                   triangle
                </TextSpanBg>
                .
             </TextLine>
 
             <TextLine>
-               Step 2: Calculate the area of the triangle using Heron's formula
-               (
-               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>
-               ) and general formula (
-               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>
-               ).
+               Step 2: Calculate the area of the triangle using Heron&lsquo;s
+               formula (A1) and general formula (A2).
             </TextLine>
 
-            <TextLine>
-               Step 3: Equate{" "}
-               <MathElement htmlString={`A\\scriptscriptstyle 1`}></MathElement>{" "}
-               and{" "}
-               <MathElement htmlString={`A\\scriptscriptstyle 2`}></MathElement>{" "}
-               to find the height.
-            </TextLine>
+            <TextLine>Step 3: Equate A1 and A2 to find the height.</TextLine>
 
             <TextLine>
                Step 4: Find the area of trapezoid using the formula.

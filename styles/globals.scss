@@ -74,6 +74,10 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    padding: 30px !important;
 }
 
+.shaka-spinner {
+   display: none;
+}
+
 #__next {
    height: 100%;
    position: relative;
@@ -163,6 +167,15 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    color: #f2a4ff;
    &:hover {
       background-color: rgba(242, 164, 255, 0.2);
+   }
+}
+
+.modalTriggerText {
+   font-weight: 700;
+   cursor: pointer;
+   color: black;
+   span {
+      text-decoration: underline;
    }
 }
 

@@ -86,11 +86,7 @@ const Slide5 = ({ downIcon }) => {
             },
          ]}
       >
-         <TextLine
-            textAlign={"center"}
-            marginBottom={"40px"}
-            color={colors.BLACK}
-         >
+         <TextLine textAlign={"center"} color={colors.BLACK}>
             Let&apos;s observe the base and height of different types of
             triangles.{" "}
          </TextLine>

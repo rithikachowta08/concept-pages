@@ -8,8 +8,6 @@ const TextAndAppletSlide = dynamic(() =>
 import { Paragraph, TextLine } from "components/text";
 import { colors } from "utils/colors";
 
-const applet = "applets/triangle.html";
-
 // General formula derivation
 const Slide4 = ({ downIcon, currentPageIdx }) => {
    let latex = [];
@@ -24,7 +22,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
          bg="DARK"
          title={"Derivation"}
          secondaryTitle={"Area of a Trapezoid"}
-         appletSrc={applet}
+         appletSrc=""
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
