@@ -17,7 +17,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
           hls_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-66a6f85f/rnylep/INTL_Maths/230104/SEO18INTL08MAT08KT006/hls/h264.m3u8",
           thumbnail:
-            "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803324.jpg?1671775460",
+            "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Special+Quadrilaterals.png",
         }}
         downIconId="s3-video-down-icon"
         videoSlideId="s3-video-slide"

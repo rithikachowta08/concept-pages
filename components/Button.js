@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { PropTypes } from "prop-types";
 import { Icon } from "./StyledElements";
 import { colors } from "utils/colors";
-import { fontSizes } from "utils/fontStyles";
 
 const BUTTON_TYPES = {
   SOLID: "SOLID",
@@ -43,6 +42,7 @@ const StyledButton = styled.button`
   padding: none;
   font-size: 1.5rem;
   color: ${(props) => props.color || colors.WHITE};
+  font-family: "Nunito-Medium";
   cursor: pointer;
 `;
 

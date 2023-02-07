@@ -15,7 +15,7 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-a1777c53/rom3pu/INTL_Maths/230116/SEO18INTL07MAT11KT011/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803334.jpg?1671775639",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Circle+and+its+Definitions.png",
                title: "Relationship between Diameter and Circumference",
                duration: 224,
                videoId: "402833",

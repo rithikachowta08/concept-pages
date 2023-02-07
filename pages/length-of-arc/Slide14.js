@@ -15,7 +15,7 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-c8442dfb/rnylev/INTL_Maths/230104/SEO18INTL08MAT11KT005/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803334.jpg?1671775639",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Perimeters+of+sector+and+segment.png",
                title: "Derivation of formula of arc length of a circle",
                duration: 239,
                videoId: "389951",

@@ -5,13 +5,7 @@ const Image = dynamic(() => import("next/image"));
 import "shaka-player-react-lib/dist/bundle.css";
 import "shaka-player/dist/controls.css";
 import { getDrmData, isSafariOrIOSDevice } from "./playerFunction";
-import {
-   onPlayVideoClick,
-   onVideoEnd,
-   onVideoPause,
-   onVideoReplay,
-   onVideoStart,
-} from "utils/analytics";
+import { onVideoEnd, onVideoPause, onVideoStart } from "utils/analytics";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 const loadScript = require("load-script");
 const { ui } = require("shaka-player/dist/shaka-player.ui.js");
@@ -201,18 +195,15 @@ const VideoPlayer = (props) => {
       );
    };
 
-   const onPlayButtonClick = () => {
-      if (video.currentTime === 0) {
-         onPlayVideoClick(props.videoContent.videoId);
-      }
-   };
-
    const onPause = () => {
       onVideoPause({
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      document.getElementById(props.downIconId).style.opacity = 1;
+      !video.seeking && props.onPause();
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 1;
+      }
    };
 
    const onEnd = () => {
@@ -223,18 +214,12 @@ const VideoPlayer = (props) => {
       props.onEnd();
    };
 
-   const onReplay = (e) => {
-      if (e.target.ariaLabel === "Replay") {
-         onVideoReplay(props.videoContent.videoId);
-      }
-   };
-
    const onPlay = () => {
       onVideoStart({
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      if (!isFirstTimePlay) {
+      if (!isFirstTimePlay && document.getElementById(props.downIconId)) {
          setIsFirstTimePlay(true);
 
          document.getElementById(props.downIconId).style.opacity = 0;
@@ -244,7 +229,10 @@ const VideoPlayer = (props) => {
                if (document.getElementById(props.downIconId)) {
                   document.getElementById(props.downIconId).style.opacity = 1;
                   setTimeout(() => {
-                     if (!video.paused) {
+                     if (
+                        !video.paused &&
+                        document.getElementById(props.downIconId)
+                     ) {
                         document.getElementById(
                            props.downIconId
                         ).style.opacity = 0;
@@ -253,7 +241,9 @@ const VideoPlayer = (props) => {
                }
             });
       }
-      document.getElementById(props.downIconId).style.opacity = 0;
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 0;
+      }
    };
 
    useEffect(() => {
@@ -277,17 +267,10 @@ const VideoPlayer = (props) => {
       video.addEventListener("pause", onPause);
       video.addEventListener("ended", onEnd);
       video.addEventListener("playing", onPlay);
-      document
-         .querySelector(".shaka-small-play-button")
-         ?.addEventListener("click", onReplay);
-      document
-         .querySelector(".shaka-play-button")
-         ?.addEventListener("click", onPlayButtonClick);
       props.setVideoRef(video);
    }, []);
 
    useEffect(() => {
-      console.log("ui config changed");
       uiRef?.configure(props.uiConfig);
    }, [props.uiConfig]);
 
@@ -305,7 +288,7 @@ const VideoPlayer = (props) => {
             width={"100%"}
             height={"100%"}
             playsInline
-            muted
+            muted={props.muted}
             ref={videoComponent}
             poster={props.poster}
             src={props.src}

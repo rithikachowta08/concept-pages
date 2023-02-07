@@ -66,9 +66,7 @@ const Slide9 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: [
-                              "\\sqrt{8 (8 - 5)(8 - 5)(8 - 6)} \\thinspace sq \\thinspace in",
-                           ],
+                           value: ["\\sqrt{8(8-5)(8-5)(8-6)}sq\\ in"],
                            type: "latex",
                         },
                         rhsHint: {
