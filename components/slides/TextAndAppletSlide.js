@@ -244,7 +244,7 @@ const TextAndAppletSlide = ({
                   <RightWrap>
                      {AppletComponent != null ? (
                         <AppWrapper isFitToWidth={isFitToWidth}>
-                           <AppletComponent />
+                           <AppletComponent onEvent={onAppletInteraction}/>
                         </AppWrapper>
                      ) : (
                         <IFrame

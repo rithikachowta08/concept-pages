@@ -177,11 +177,7 @@ const AppletSlide = ({
                      justifyContent="center"
                   >
                      {AppletComponent != null ? (
-                        <AppletComponent
-                           isFitToWidth={true}
-                           maxWidth={"650px"}
-                           onEvent={onAppletInteraction}
-                        />
+                        <AppWrapper><AppletComponent onEvent={onAppletInteraction}/></AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}
@@ -213,10 +209,7 @@ const AppletSlide = ({
                         </SlideTitle>
                      </TitleWrap>
                      {AppletComponent != null ? (
-                        <AppletComponent
-                           isFitToWidth={true}
-                           maxWidth={"650px"}
-                        />
+                        <AppWrapper><AppletComponent onEvent={onAppletInteraction}/></AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}
