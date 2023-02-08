@@ -144,6 +144,11 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
 
+   function preventScrolling(e) {
+      e.preventDefault();
+      e.stopPropagation();
+   }
+
    useEffect(() => {
       if (currentPageIdx !== 0 && !src) {
          setSrc(appletSrc);
@@ -177,7 +182,12 @@ const AppletSlide = ({
                      justifyContent="center"
                   >
                      {AppletComponent != null ? (
-                        <AppWrapper><AppletComponent onEvent={onAppletInteraction}/></AppWrapper>
+                        <AppWrapper
+                           onTouchMove={preventScrolling}
+                           onTouchMoveCapture={preventScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
+                        </AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}
@@ -196,7 +206,9 @@ const AppletSlide = ({
             >
                <ContentWrap>
                   <FillerNavBar />
-                  <TitleAndAppletWrap>
+                  <TitleAndAppletWrap
+                     onScroll={() => console.log("scrolling..")}
+                  >
                      <TitleWrap>
                         <SlideSecondaryTitle
                            bg={bg}
@@ -209,7 +221,14 @@ const AppletSlide = ({
                         </SlideTitle>
                      </TitleWrap>
                      {AppletComponent != null ? (
-                        <AppWrapper><AppletComponent onEvent={onAppletInteraction}/></AppWrapper>
+                        <AppWrapper
+                           onWheel={preventScrolling}
+                           onTouchMove={preventScrolling}
+                           onTouchStart={preventScrolling}
+                           onTouchMoveCapture={preventScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
+                        </AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}

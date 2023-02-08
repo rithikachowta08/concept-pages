@@ -1,7 +1,7 @@
 import { coco_applet_uri } from "utils/constants";
 import dynamic from "next/dynamic";
 const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
-import { Applet01003Ge } from "@byjus-us-math/content-applets/010_03_GE";
+import { Applet01002Ge } from "@byjus-us-math/content-applets/010_02_GE";
 
 const Slide8 = ({ downIcon, currentPageIdx }) => {
   return (
@@ -10,7 +10,7 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
       title="Lateral Surface Area of a  Cube"
       currentPageIdx={currentPageIdx}
       // appletSrc={`${coco_applet_uri}area_of_rhombus_v2/index.html`}
-      AppletComponent={Applet01003Ge}
+      AppletComponent={Applet01002Ge}
 
     ></AppletSlide>
   );
