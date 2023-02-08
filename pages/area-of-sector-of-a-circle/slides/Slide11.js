@@ -8,8 +8,8 @@ import { Applet01902Ge } from "@byjus-us-math/content-applets/019_02_GE";
 const Slide11 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
       <AppletSlide
-         title={"Using the Length of an  Arc"}
-         secondaryTitle={"Area of a sector of a circle"}
+         title={"Area of a sector using the length of an arc"}
+         // secondaryTitle={"Area of a sector of a circle"}
          downIcon={downIcon}
          navBar={navBar}
          currentPageIdx={currentPageIdx}
