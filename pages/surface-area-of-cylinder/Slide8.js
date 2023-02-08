@@ -27,3 +27,5 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
     </div>
   );
 };
+
+export default Slide8;

@@ -4,6 +4,7 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 import { Paragraph } from "components/text";
+import { Applet01901Ge } from "@byjus-us-math/content-applets/019_01_GE";
 
 const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
@@ -11,9 +12,10 @@ const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
          bg="LIGHT"
          secondaryTitle={"Area of a Sector of a Circle"}
          title={"Applet"}
-         appletSrc={
-            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/length-of-arc-of-circle-derivation-v3/index.html"
-         }
+         // appletSrc={
+         //    "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/length-of-arc-of-circle-derivation-v3/index.html"
+         // }
+         AppletComponent={Applet01901Ge}
          navBar={navBar}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}

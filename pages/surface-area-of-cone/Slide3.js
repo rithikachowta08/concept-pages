@@ -1,8 +1,8 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { coco_applet_uri } from "utils/constants";
-import { Applet_Test } from "@byjus-us-math/content-applets";
-import styled from "styled-components";
+import { Applet02802Ge } from "@byjus-us-math/content-applets/028_02_GE";
+
 const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
   import("components/slides/TextAndAppletSlide")
@@ -19,19 +19,6 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.Flex)
 );
-
-const App = styled(Applet_Test)`
-  min-width: 250px;
-
-  @media only screen and (min-width: 601px) and (max-width: 992px) and (orientation: portrait) {
-    min-width: 500px;
-  }
-
-  @media screen and (min-width: 993px) {
-    min-width: 500px;
-    max-width: 650px;
-  }
-`;
 
 const cube_unit = "assets/surface-area-of-cone/slide3/1.svg";
 const Slide3 = ({ downIcon, currentPageIdx }) => {
@@ -63,7 +50,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
       title="Formation of a Cone"
       appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
       currentPageIdx={currentPageIdx}
-      AppletComponent={App}
+      // AppletComponent={Applet02802Ge}
     >
       <Modal
         isOpen={isModalOpen}
