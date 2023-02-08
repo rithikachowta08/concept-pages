@@ -47,11 +47,11 @@ const IFrame = styled.iframe`
    }
 `;
 
+// border: 1px solid #444;
 const AppWrapper = styled.div`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
-   border: 1px solid #444;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
