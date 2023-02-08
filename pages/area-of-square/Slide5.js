@@ -14,6 +14,7 @@ const Slide5 = ({ downIcon }) => {
          title="Area Using Unit Squares"
          // appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/AREA_OF_RECTANGLE/v1.5/index.html"
          AppletComponent={Applet01401Ge}
+         // test
          downIcon={downIcon}
       >
          <Paragraph>
