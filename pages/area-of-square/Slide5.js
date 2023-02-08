@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { Applet01401Ge } from "@byjus-us-math/content-applets/014_01_GE";
 
 const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
+   import("components/slides/AppletSlide")
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)

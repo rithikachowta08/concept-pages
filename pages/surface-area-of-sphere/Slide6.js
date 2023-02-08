@@ -50,7 +50,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          bg="DARK"
          secondaryTitle="Sphere"
          title={
-            <div>Why is the surface area 4 &times; π &times; r&sup2; ?</div>
+            <div>Why is the surface area <br />4 &times; π &times; r&sup2; ?</div>
          }
       >
          <Modal
@@ -62,7 +62,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             color={colors.BLACK}
          />
          <Paragraph color="white" textAlign="left">
-            According to Archimedes, the surface area of a sphere is equal to
+            According to Archimedes,<br /> the surface area of a sphere =
             the{" "}
             <ModalTriggerText onClick={onClick} color={colors.WHITE}>
                curved surface area of the cylinder
@@ -72,11 +72,11 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          <Paragraph color="white">
             <ul>
                <li>
-                  the radius of the cylinder is equal to the radius of the
+                  The radius of the cylinder = The radius of the
                   sphere, and
                </li>
                <li>
-                  the height of the cylinder is equal to the diameter of the
+                  The height of the cylinder = The diameter of the
                   sphere.
                </li>
             </ul>
