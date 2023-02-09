@@ -81,7 +81,9 @@ const Slide15 = ({ downIcon }) => {
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
+      <div>
       <Paragraph>Hence, volume of the prism = 90 cu ft.</Paragraph>
+      </div>
     </TextAndDiagramSlide>
   );
 };
