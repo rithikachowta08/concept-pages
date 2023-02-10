@@ -58,18 +58,11 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
             The area of a parallelogram will be equal to the area of a
             rectangle.
          </Paragraph>
-         <Paragraph>
-            <EquationTable
-               equationLatex={latexEquationContainer[latexEquationCounter++]}
-            ></EquationTable>
-         </Paragraph>
-
+         <Paragraph>Area of a rectangle = Length &times; Width</Paragraph>
          <div>
             <Paragraph>
-               <TextLine>
-                  Here, the length and width of the rectangle are the base and
-                  height of the parallelogram.
-               </TextLine>
+               Here, the length and width of the rectangle are the base and
+               height of the parallelogram.
             </Paragraph>
          </div>
          <div>

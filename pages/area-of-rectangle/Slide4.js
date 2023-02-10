@@ -15,7 +15,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-94b2bffe/rnyle0/INTL_Maths/230104/SEO18INTL06MAT10KT003/hls/h264.m3u8",
                thumbnail:
-                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792472.jpg?1671000740",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Rectangle+and+Square+Perimeter+and+Area.png",
                videoId: "389945",
             }}
             downIcon={downIcon}

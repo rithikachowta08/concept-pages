@@ -1,4 +1,3 @@
-
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { colors } from "utils/colors";
@@ -28,7 +27,7 @@ const Flex = dynamic(() =>
 );
 
 const EquationTable = dynamic(() =>
-  import("components/MathElement/EquationTable")
+   import("components/MathElement/EquationTable")
 );
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
@@ -41,7 +40,6 @@ const ModalImg = dynamic(() =>
 const image_1 = "assets/area-of-pgm/slide9_a.svg";
 const image_2 = "assets/area-of-pgm/slide9_b.svg";
 const image_3 = "assets/area-of-pgm/slide9_c.svg";
-
 
 const Slide9 = ({ downIcon }) => {
    let EquationLatex0 = [
@@ -60,34 +58,28 @@ const Slide9 = ({ downIcon }) => {
          },
       },
    ];
-   let modalLatex=[
+   let modalLatex = [
       {
          lhsLatex: {
-            value: [
-               "Area",
-            ],
+            value: ["Area"],
             type: "latex",
          },
          rhsLatex: {
-            value: [
-               "4\\:in \\times 4\\:in",
-            ],
+            value: ["4\\:in \\times 4\\:in"],
             type: "latex",
          },
       },
       {
          lhsLatex: {
-            value: ["" ],
+            value: [""],
             type: "latex",
          },
          rhsLatex: {
-            value: [
-               "16\\:sq \\:in",
-            ],
+            value: ["16\\:sq \\:in"],
             type: "latex",
          },
-      }
-   ]
+      },
+   ];
 
    let latexEquationContainer = [];
    latexEquationContainer.push(EquationLatex0);
@@ -118,11 +110,11 @@ const Slide9 = ({ downIcon }) => {
          bg="DARK"
          diagram={
             <TransitionImage
-               images={[image_1,image_2,image_3]}
+               images={[image_1, image_2, image_3]}
                altTexts={[
-                  "Diagram of a parallelogram with two sides and included angle",
-                  "Diagram of a parallelogram highlighting its two sides and included angle",
-                  "Diagram of a parallelogram highlighting its two sides and included angle"
+                  "Diagram of a parallelogram with its two diagonals and included angle",
+                  "Diagram of a parallelogram with two diagonals highlighted",
+                  "Diagram of a parallelogram with its two diagonals and included angle",
                ]}
                activeIndex={activeIndex}
             />
@@ -132,28 +124,23 @@ const Slide9 = ({ downIcon }) => {
          title="Using Diagonals"
       >
          <Paragraph color={colors.WHITE}>
-         If the 
-         <TextSpanBg
-               id={1}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >diagonals d<sub>1</sub> and d<sub>2</sub>
-            </TextSpanBg> of a parallelogram intersect each other at an {" "}
-            <TextSpanBg
-               id={2}
-               onHover={onHover}
-               onHoverOut={onHoverOut}
-            >
-              angle <MathElement htmlString={"\\theta"}></MathElement>
+            If the
+            <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
+               diagonals d<sub>1</sub> and d<sub>2</sub>
+            </TextSpanBg>{" "}
+            of a parallelogram intersect each other at an{" "}
+            <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
+               angle <MathElement htmlString={"\\theta"}></MathElement>
             </TextSpanBg>
             then its area can be calculated as:
-
          </Paragraph>
-         <Pill
-            width="fit-content"
-         >
-            Area of a parallelogram{" "} = <MathElement htmlString={"\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)"}></MathElement>
-            
+         <Pill width="fit-content">
+            Area of a parallelogram ={" "}
+            <MathElement
+               htmlString={
+                  "\\dfrac{1}{2} \\times d_{1} \\times d_{2} \\times Sin(\\theta)"
+               }
+            ></MathElement>
          </Pill>
       </TextAndDiagramSlide>
    );

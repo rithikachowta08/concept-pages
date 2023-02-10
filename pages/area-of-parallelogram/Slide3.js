@@ -45,7 +45,7 @@ const Slide3 = ({ downIcon }) => {
                   onHover={onHover}
                   onHoverOut={onHoverOut}
                >
-                  Area of parallelogram
+                  Area of the parallelogram
                </TextSpanBg>,
             ],
             type: "textspanbg",
