@@ -44,7 +44,7 @@ export const FullPageCustomWrapper = ({
             //fullpage options
             // licenseKey={"YOUR_KEY_HERE"}
             navigationTooltips={[]}
-            css3={false}
+            css3={true}
             scrollBar={false}
             scrollingSpeed={600}
             fitToSectionDelay={900}
@@ -85,7 +85,7 @@ export const FullPageCustomWrapper = ({
                               />
                            );
                            return (
-                              <div className="section" key={idx}>
+                              <div className="section" key={idx} id="full-page-wrapper">
                                  {/* No navigation bar on title page */}
                                  {React.cloneElement(itm, {
                                     downIcon,
