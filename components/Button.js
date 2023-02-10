@@ -73,9 +73,10 @@ const Button = ({
       width={width}
       height={height}
       color={color}
+      onClick={onClick}
       margin={margin}
     >
-      <StyledButton onClick={onClick} color={color}>
+      <StyledButton  color={color}>
         {children}
       </StyledButton>
       {icon ? <Icon src={icon} width="2rem"></Icon> : null}
