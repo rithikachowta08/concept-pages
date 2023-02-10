@@ -53,7 +53,6 @@ const Overlay = styled.div`
 const VIDEO_STATUS = {
    NOT_STARTED: "NOT_STARTED",
    STARTED: "STARTED",
-   PAUSED: "PAUSED",
    ENDED: "ENDED",
 };
 
@@ -117,10 +116,6 @@ const ShakaPlayerContainer = (props) => {
       })();
    }
 
-   const onVideoPause = () => {
-      setVideoStatus(VIDEO_STATUS.PAUSED);
-   };
-
    const onVideoEnd = () => {
       watchVideo();
       setIsMuted(false);
@@ -145,7 +140,6 @@ const ShakaPlayerContainer = (props) => {
    const isOverlayVisible = [
       VIDEO_STATUS.NOT_STARTED,
       VIDEO_STATUS.ENDED,
-      VIDEO_STATUS.PAUSED,
    ].includes(videoStatus);
 
    return drmConf.key_id ? (
@@ -161,7 +155,6 @@ const ShakaPlayerContainer = (props) => {
             muted={isMuted}
             setVideoRef={setVideoRef}
             onEnd={onVideoEnd}
-            onPause={onVideoPause}
             srcKey={drmConf.key_id}
             uiConfig={{
                castReceiverAppId: "",
@@ -170,10 +163,7 @@ const ShakaPlayerContainer = (props) => {
                contextMenuElements: ["statistics"],
                statisticsList: ["width", "height", "playTime", "bufferingTime"],
                addBigPlayButton: videoStatus === VIDEO_STATUS.STARTED,
-               controlPanelElements: [
-                  VIDEO_STATUS.STARTED,
-                  VIDEO_STATUS.PAUSED,
-               ].includes(videoStatus)
+               controlPanelElements: videoStatus === VIDEO_STATUS.STARTED
                   ? [
                        "play_pause",
                        "rewind_10",
@@ -187,9 +177,8 @@ const ShakaPlayerContainer = (props) => {
                        // "overflow_menu"
                     ]
                   : [],
-               addSeekBar: [VIDEO_STATUS.STARTED, VIDEO_STATUS.PAUSED].includes(
-                  videoStatus
-               ),
+               addSeekBar: 
+                  videoStatus === VIDEO_STATUS.STARTED,
                seekBarColors: {
                   base: "rgba(255, 255, 255, 0.3)",
                   buffered: "rgba(255, 255, 255, 0.54)",
@@ -206,9 +195,6 @@ const ShakaPlayerContainer = (props) => {
 
          <Overlay
             show={isOverlayVisible}
-            onClick={
-               videoStatus === VIDEO_STATUS.PAUSED ? startVideo : undefined
-            }
          >
             <Flex flex={1} justifyContent="center">
                <Flex direction="column" gap="15px" width="fit-content">
@@ -243,8 +229,7 @@ const ShakaPlayerContainer = (props) => {
                         Replay
                      </Button>
                   ) : null}
-                  {videoStatus === VIDEO_STATUS.NOT_STARTED ||
-                  videoStatus === VIDEO_STATUS.PAUSED ? (
+                  {videoStatus === VIDEO_STATUS.NOT_STARTED ? (
                      <PlayButton
                         onClick={onPlayButtonClick}
                         startTimer={
