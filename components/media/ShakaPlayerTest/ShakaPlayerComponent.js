@@ -200,7 +200,6 @@ const VideoPlayer = (props) => {
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      !video.seeking && props.onPause();
       if (document.getElementById(props.downIconId)) {
          document.getElementById(props.downIconId).style.opacity = 1;
       }
