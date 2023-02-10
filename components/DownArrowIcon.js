@@ -9,7 +9,6 @@ const IconWrap = styled.div`
    margin: ${(props) => (props.noMargin ? "0" : "auto 0 0 0")};
    opacity: 1;
    transition: opacity 0.5s;
-   width: 100%;
    text-align: center;
 
    ${(props) =>
