@@ -7,6 +7,20 @@ body {
    -moz-osx-font-smoothing: grayscale;
 }
 
+#full-page-wrapper {
+   transform: translate3d(0, 0, 0);
+   -webkit-transform: translate3d(0, 0, 0);
+   perspective: 1000;
+   -webkit-perspective: 1000;
+   animation: redraw 1s linear infinite;
+}
+
+@keyframes redraw{
+   0% {opacity: 1;}
+   100% {opacity: .99;}
+}
+
+
 a {
    color: inherit;
    text-decoration: none;
