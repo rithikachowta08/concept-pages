@@ -13,7 +13,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             hls_Url:
                "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-108af859/rnyle5/INTL_Maths/230104/SEO18INTL06MAT10KT005/hls/h264.m3u8",
             thumbnail:
-               "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Perimeter+and+Area.png",
+               "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/792473.jpg?1671000874",
             videoId: "389946",
             duration: 104,
             title: "Formula of area of the triangle",

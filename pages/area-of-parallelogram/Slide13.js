@@ -68,7 +68,7 @@ const Slide13 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of two vectors included at an angle"
+            alt="Diagram of a unit cube"
          />
       </Flex>,
       <Flex direction="column" key={1}>
@@ -78,7 +78,7 @@ const Slide13 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram positive and negative cross product of two vectors"
+            alt="Diagram of a unit cube"
          />
       </Flex>,
    ];

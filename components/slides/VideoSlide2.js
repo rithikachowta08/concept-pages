@@ -36,12 +36,6 @@ const VideoSlide = ({
                index={index}
                downIcon={downIcon}
             />
-            {downIcon
-               ? React.cloneElement(downIcon, {
-                    isVideoSlide: true,
-                    id: downIconId,
-                 })
-               : null}
          </VideoSlideWrap>
       </div>
    );

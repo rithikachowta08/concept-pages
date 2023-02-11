@@ -65,7 +65,7 @@ const Slide10 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of a parallelogram highlighting on of the 4 triangles formed by diagonals"
+            alt="Diagram of a unit cube"
          />
       </Flex>
    );
@@ -96,9 +96,7 @@ const Slide10 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: [
-               "\\dfrac{1}{2} \\times \\dfrac{d_{1}}{2} \\times \\dfrac{d_{2}}{2} Sin(\\theta)",
-            ],
+            value: ["\\dfrac{1}{2} \\times \\dfrac{d_{1}}{d_{2}}"],
             type: "latex",
          },
       },

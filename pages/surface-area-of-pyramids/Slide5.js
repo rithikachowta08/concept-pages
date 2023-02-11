@@ -14,8 +14,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-1c5a2a9e/rom3q5/INTL_Maths/230116/SEO18INTL07MAT11KT019_1/dash/h264.mpd",
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-1c5a2a9e/rom3q5/INTL_Maths/230116/SEO18INTL07MAT11KT019_1/hls/h264.m3u8",
-               thumbnail:
-                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Prisms+and+Pyramids_02.png",
+               thumbnail: "",
                videoId: "402835",
                duration: 239,
                title: "Pyramid and its formation",

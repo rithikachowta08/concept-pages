@@ -200,9 +200,7 @@ const VideoPlayer = (props) => {
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      if (document.getElementById(props.downIconId)) {
-         document.getElementById(props.downIconId).style.opacity = 1;
-      }
+      document.getElementById(props.downIconId).style.opacity = 1;
    };
 
    const onEnd = () => {
@@ -218,7 +216,7 @@ const VideoPlayer = (props) => {
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
       });
-      if (!isFirstTimePlay && document.getElementById(props.downIconId)) {
+      if (!isFirstTimePlay) {
          setIsFirstTimePlay(true);
 
          document.getElementById(props.downIconId).style.opacity = 0;
@@ -228,10 +226,7 @@ const VideoPlayer = (props) => {
                if (document.getElementById(props.downIconId)) {
                   document.getElementById(props.downIconId).style.opacity = 1;
                   setTimeout(() => {
-                     if (
-                        !video.paused &&
-                        document.getElementById(props.downIconId)
-                     ) {
+                     if (!video.paused) {
                         document.getElementById(
                            props.downIconId
                         ).style.opacity = 0;
@@ -240,9 +235,7 @@ const VideoPlayer = (props) => {
                }
             });
       }
-      if (document.getElementById(props.downIconId)) {
-         document.getElementById(props.downIconId).style.opacity = 0;
-      }
+      document.getElementById(props.downIconId).style.opacity = 0;
    };
 
    useEffect(() => {

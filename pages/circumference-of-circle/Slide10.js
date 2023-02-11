@@ -13,7 +13,7 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
                hls_Url:
                   "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-5890c9ab/rnylkh/INTL_Maths/230104/SEO18INTL07MAT11KT011/hls/h264.m3u8",
                thumbnail:
-                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Circle+and+its+Definitions.png",
+                  "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803302.jpg?1671775176",
                title: "Derivation of formula of circumference of the circle",
                duration: 224,
                videoId: "389954",

@@ -34,13 +34,12 @@ const Svg = styled.svg`
 
 const FillCircle = styled.circle`
    stroke-dasharray: 113px;
-   stroke-dashoffset: ${(props) => (props.startTimer ? "50px" : "0px")};
+   stroke-dashoffset: 50px;
    stroke-linecap: round;
    stroke-width: 2px;
    stroke: ${colors.WHITE};
    fill: none;
-   animation: ${(props) =>
-      props.startTimer ? "countdown 5.2s linear infinite forwards" : "none"};
+   animation: countdown 5.2s linear infinite forwards;
 
    @keyframes countdown {
       from {
@@ -69,17 +68,12 @@ const Icon = styled.img`
    transform: translate(-50%, -50%);
 `;
 
-const PlayButton = ({ onClick, startTimer }) => {
+const PlayButton = ({ onClick }) => {
    return (
       <Div onClick={onClick}>
          <Svg>
             <Circle r="18" cx="20" cy="20"></Circle>
-            <FillCircle
-               startTimer={startTimer}
-               r="18"
-               cx="20"
-               cy="20"
-            ></FillCircle>
+            <FillCircle r="18" cx="20" cy="20"></FillCircle>
          </Svg>
          <Icon src={play}></Icon>
       </Div>
