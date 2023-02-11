@@ -60,7 +60,7 @@ const Slide2 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
+         <Paragraph marginBottom="70px">
             The area of a{" "}
             <ModalTriggerText onClick={onClick}>triangle</ModalTriggerText> is
             the{" "}

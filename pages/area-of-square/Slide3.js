@@ -2,7 +2,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 
 import { colors } from "utils/colors";
-import { TextLine } from "components/text";
+import { lineHeightProp } from "utils/fontStyles";
 
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
@@ -38,11 +38,11 @@ const Slide3 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
-            A unit square is a square that has a side length equal to 1 unit.
+         A unit square is a square that has a side length equal to 1 unit.
+
          </Paragraph>
          <ModalImg
             src={square_3}
-            alt="Diagram of a square"
             alignSelf="center"
             width="400px"
             marginBottom="50px"
@@ -68,7 +68,7 @@ const Slide3 = ({ downIcon }) => {
          title="What is the area of a square?"
          diagram={
             <TransitionImage
-               images={[square_1, square_2]}
+               images={[square_1,square_2]}
                altTexts={[
                   "Diagram of a square",
                   "Diagram of a square with bounded area highlighted.",
@@ -83,8 +83,8 @@ const Slide3 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
-            The area of a square is the{" "}
+         <Paragraph lineHeight={lineHeightProp}>
+         The area of a square is the{" "}
             <TextSpanBg
                id={1}
                onHover={onHover}
@@ -93,14 +93,15 @@ const Slide3 = ({ downIcon }) => {
             >
                region enclosed
             </TextSpanBg>{" "}
-            within its four sides.
-            <TextLine>
-               It is also the number of{" "}
-               <ModalTriggerText id={2} onClick={onClick}>
-                  unit squares
-               </ModalTriggerText>{" "}
-               that can fit inside a square.
-            </TextLine>
+            within its four sides. 
+            </Paragraph>
+            <Paragraph>
+            It is also the number of{" "}
+
+            <ModalTriggerText id={2} onClick={onClick}>
+            unit squares
+            </ModalTriggerText>{" "}
+            that can fit inside a square.
          </Paragraph>
       </TextAndDiagramSlide>
    );

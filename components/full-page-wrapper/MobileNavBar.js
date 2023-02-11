@@ -106,8 +106,7 @@ const MobileNavBar = ({
                   {sections.map((section, idx) => (
                      <Flex
                         // moveTo expects slide indices to start from 1
-                        data-leaflet-idx={section.slides[0] + 1}
-                        data-section-idx={idx}
+                        data-section-idx={section.slides[0] + 1}
                         onClick={onSectionClick}
                         cursor="pointer"
                         gap="10px"

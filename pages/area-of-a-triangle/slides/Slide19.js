@@ -44,7 +44,18 @@ const Slide19 = ({ downIcon }) => {
       <TextAndDiagramSlide
          title={"Two sides and the included angle"}
          // secondaryTitle={"Area of a Triangle"}
-         secondaryTitle="Area of a triangle"
+         secondaryTitle={
+            <p
+               style={{
+                  color: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  marginTop: "30px",
+               }}
+            >
+               Area of a triangle
+            </p>
+         }
          bg={"DARK"}
          diagram={
             <TransitionImage

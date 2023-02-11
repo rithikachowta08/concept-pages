@@ -4,19 +4,20 @@ const cube_faces = "assets/volume-of-cube/slide2_b.svg";
 const cube_vertices = "assets/volume-of-cube/slide2_c.svg";
 const cube_edges = "assets/volume-of-cube/slide2_d.svg";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
-   import("components/media/TransitionImage")
+  import("components/media/TransitionImage")
 );
 const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/TextAndDiagramSlide")
+  import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
+  import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
-   import("components/text").then((mod) => mod.TextSpanBg)
+  import("components/text").then((mod) => mod.TextSpanBg)
 );
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -44,7 +45,7 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             A cube is a three-dimensional shape that has{" "}
             <TextSpanBg
                id={1}
@@ -52,16 +53,16 @@ const Slide2 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               6 square faces
+             6  square faces
             </TextSpanBg>
-            ,{" "}
+            , {" "}
             <TextSpanBg
                id={2}
                onHover={onHover}
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               8 vertices
+              8 vertices
             </TextSpanBg>{" "}
             and{" "}
             <TextSpanBg
@@ -70,7 +71,7 @@ const Slide2 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               12 edges
+              12 edges
             </TextSpanBg>{" "}
             of equal length.
          </Paragraph>

@@ -9,8 +9,6 @@ const IconWrap = styled.div`
    margin: ${(props) => (props.noMargin ? "0" : "auto 0 0 0")};
    opacity: 1;
    transition: opacity 0.5s;
-   width: 100%;
-   text-align: center;
 
    ${(props) =>
       props.isVideoSlide
@@ -20,15 +18,12 @@ const IconWrap = styled.div`
       z-index: 1;
       `
          : ""}
-
    @media (min-width: 200px) and (max-width: 399px) {
       scale: 0.6;
    }
-
    @media (min-width: 400px) and (max-width: 767px) {
       scale: 0.75;
    }
-
    @media (min-height: 400px) and (max-height: 700px) and (min-width: 767px) {
       scale: 0.75;
    }

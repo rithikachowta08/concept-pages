@@ -1,9 +1,8 @@
 import dynamic from "next/dynamic";
-import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
-  import("components/full-page-wrapper/FullPageCustomWrapper").then(
-    (mod) => mod.FullPageCustomWrapper
-  )
+   import("components/full-page-wrapper/FullPageCustomWrapper").then(
+      (mod) => mod.FullPageCustomWrapper
+   )
 );
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
@@ -24,59 +23,59 @@ const Slide16 = dynamic(() => import("./Slide16"));
 const Slide17 = dynamic(() => import("./Slide17"));
 import PageLastSlide from "components/slides/PageLastSlide";
 
+
 const VolumeOfCube = ({}) => {
-  const SlideArray = [
-    <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
-    <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide4 key={3} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide5 key={4} type={SLIDE_TYPES.VIDEO_ONLY} />,
-    <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide7 key={6} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide8 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    // <Slide9 key={8} />,
-    <Slide10 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide11 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide12 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide13 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide14 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide15 key={13} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide16 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide17 key={15} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <PageLastSlide
+   const SlideArray = [
+      <Slide1 key={0} />,
+      <Slide2 key={1} />,
+      <Slide3 key={2} />,
+      <Slide4 key={3} />,
+      <Slide5 key={4} />,
+      <Slide6 key={5} />,
+      <Slide7 key={6} />,
+      <Slide8 key={7} />,
+      // <Slide9 key={8} />,
+      <Slide10 key={8} />,
+      <Slide11 key={9} />,
+      <Slide12 key={10} />,
+      <Slide13 key={11} />,
+      <Slide14 key={12} />,
+      <Slide15 key={13} />,
+      <Slide16 key={14} />,
+      <Slide17 key={15} />,
+      <PageLastSlide
       key={16}
-      type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Volume of Cube"}
       nextPageTitle="Area of Triangle"
       nextPageLink="/us/math/study/area-of-a-triangle"
     />,
-  ];
+   ];
 
-  const navigationSections = [
-    { title: "What is the volume of a cube?", slides: [1, 2, 3, 4] },
-    { title: "General Formula", slides: [5, 6, 7, 8] },
-    {
-      title: "Volume of a cube using diagonal",
-      slides: [9, 10, 11, 12, 13, 14],
-    },
-    {
-      title: "Rectangular prism vs cube",
-      slides: [15],
-    },
-  ];
+   const navigationSections = [
+      { title: "What is the volume of a cube?", slides: [ 1,2, 3, 4] },
+      { title: "General Formula", slides: [5, 6, 7, 8] },
+      {
+         title: "Volume of a cube using diagonal",
+         slides: [9, 10, 11, 12, 13, 14],
+      },
+      {
+         title: "Rectangular prism vs cube",
+         slides: [15],
+      },
+   ];
 
-  const darkBgIndices = [0, 4, 5, 9, 15, 16];
-  return (
-    <FullPageCustomWrapper
-      slidesComponentList={SlideArray}
-      navigationSections={navigationSections}
-      darkBgIndices={darkBgIndices}
-    />
-  );
+   const darkBgIndices = [0, 4, 5, 9, 15,16];
+   return (
+      <FullPageCustomWrapper
+         slidesComponentList={SlideArray}
+         navigationSections={navigationSections}
+         darkBgIndices={darkBgIndices}
+      />
+   );
 };
 
 VolumeOfCube.title = "Volume of a Cube: Definition, Formula, Examples - BYJU'S";
 VolumeOfCube.meta =
-  "Learn about the volume of a cube, including its definition, formula, and examples. Master volume of a cube concept with BYJU'S interactive activities.";
+   "Learn about the volume of a cube, including its definition, formula, and examples. Master volume of a cube concept with BYJU'S interactive activities.";
 
 export default VolumeOfCube;

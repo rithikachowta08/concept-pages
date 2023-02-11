@@ -22,16 +22,15 @@ const Slide7 = ({ downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
-         title="Units to Measure Capacity"
-         secondaryTitle="International System of Units"
+         title="Number Prefixes"
+         secondaryTitle="Units to Measure Capacity"
          diagram={
             <TransitionImage
                images={[slide13_a, slide13_b, slide13_c]}
                activeIndex={activeIndex}
                altTexts={[
-                  "Diagram that represents units to measure capacity",
-                  "Diagram that represents units to measure capacity with highlighted units that are multiples of litre.",
-                  "Diagram that represents units to measure capacity with highlighted units that are subdivisions of litre.",
+                  "Diagram that represents units to measure capacity ",
+                  "Diagram that represents metric number prefixes",
                ]}
             />
          }

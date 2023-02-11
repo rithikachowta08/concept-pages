@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextSpanBg = dynamic(() =>
@@ -27,7 +28,7 @@ const Flex = dynamic(() =>
 const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
-const Pill = dynamic(() => import("components/Pill"));
+import Pill from "components/Pill";
 const surfaceCube_line = "assets/surface-area-of-cube/slide8/1.svg";
 const surfaceCube_modal = "assets/surface-area-of-cube/slide8/2.svg";
 const surfaceCube_blue = "assets/surface-area-of-cube/slide8/3.svg";
@@ -39,7 +40,7 @@ const Slide7 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   let latex = [];
   latex.push(`s^2`);
-  latex.push(`\\ \\times\\ s^2`);
+  latex.push(`s^2`);
   let mathjaxCounter = 0;
 
   const modalContent = (
@@ -94,7 +95,7 @@ const Slide7 = ({ downIcon }) => {
     setIsModalOpen1(false);
   };
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -144,46 +145,37 @@ const Slide7 = ({ downIcon }) => {
         </ModalTriggerText>
         , excluding the base and top faces.
       </Paragraph>
-      <Paragraph color={colors.WHITE}>
-        <Flex direction="row">
-          <Paragraph color={colors.WHITE}>
-            <TextSpanBg
-              id={1}
-              onHover={() => onHover(1)}
-              onHoverOut={onHoverOut}
-              color={colors.RED}
-              hoverColor={colors.LAVENDER}
-            >
-              Lateral surface area
-            </TextSpanBg>
-          </Paragraph>
-          <Paragraph color={colors.WHITE}>=</Paragraph>
-          <Paragraph color={colors.WHITE}>
-            4 ×{" "}
-            <ModalTriggerText
-              id={3}
-              onClick={onClick1}
-              color={colors.WHITE}
-              fontWeight={"none"}
-            >
-              Surface area of one face
-            </ModalTriggerText>
-          </Paragraph>
-        </Flex>
+      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
+        <TextSpanBg
+          id={1}
+          onHover={onHover}
+          onHoverOut={onHoverOut}
+          color={colors.RED}
+          hoverColor={colors.LAVENDER}
+        >
+          Lateral surface area
+        </TextSpanBg>{" "}
+        = 4 ×{" "}
+        <ModalTriggerText
+          id={3}
+          onClick={onClick1}
+          color={colors.WHITE}
+          fontWeight={"none"}
+        >
+          Surface area of one face
+        </ModalTriggerText>
       </Paragraph>
       <div>
         <Paragraph color={colors.WHITE}>
           <Pill bgColor={colors.GREEN} color={colors.WHITE}>
-            Lateral surface area=4
+            Lateral surface area = 4
             <MathElement htmlString={latex[mathjaxCounter++]} />
           </Pill>
         </Paragraph>
       </div>
-      <div>
-        <Paragraph color={colors.WHITE}>
-          Here, (s) is the length of the side of the cube
-        </Paragraph>
-      </div>
+      <Paragraph color={colors.WHITE}>
+        Here, (s) is the length of the side of the cube
+      </Paragraph>
     </TextAndDiagramSlide>
   );
 };

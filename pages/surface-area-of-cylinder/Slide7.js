@@ -47,7 +47,7 @@ const Slide7 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\htmlId{1}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of curved surface}}} +\\htmlId{2}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of circular bases}}} "],
+            value: ["\\htmlId{1}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of curved surface}}} +\\htmlId{2}{\\htmlClass{textSpanBg slide-7 lightBg}{\\text{Area of curved surface}}} "],
             type: "latex",
          }
       },

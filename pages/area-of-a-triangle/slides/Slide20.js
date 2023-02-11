@@ -23,7 +23,18 @@ const Slide20 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
    return (
       <TextAndDiagramSlide
-         title="Derivation"
+         title={
+            <p
+               style={{
+                  color: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  marginTop: "30px",
+               }}
+            >
+               Derivation
+            </p>
+         }
          downIcon={downIcon}
          bg={"LIGHT"}
          diagram={
@@ -54,7 +65,7 @@ const Slide20 = ({ downIcon }) => {
             <br />
          </Paragraph>
          <Paragraph>
-            <TextLine marginBottom="10px">
+            <TextLine>
                <MathElement htmlString={"Sin\\ A = \\dfrac{h}{b}"} />
             </TextLine>
             <TextLine>

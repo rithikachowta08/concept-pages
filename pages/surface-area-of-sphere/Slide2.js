@@ -16,6 +16,7 @@ const TextSpanBg = dynamic(() =>
 const plain = "assets/surface-area-of-sphere/plain.svg";
 const center = "assets/surface-area-of-sphere/center.svg";
 const radius_blue = "assets/surface-area-of-sphere/radius_blue.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -41,7 +42,7 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             A sphere is a collection of points that are at a fixed distance from
             a fixed point in a three-dimensional space. The fixed point is
             called the{" "}

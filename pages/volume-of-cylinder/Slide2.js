@@ -17,6 +17,7 @@ const slide_2_a = "assets/volume-of-cylinder/slide 2_a.svg";
 const slide_2_b = "assets/volume-of-cylinder/slide 2_b.svg";
 const slide_2_c = "assets/volume-of-cylinder/slide 2_c.svg";
 const slide_2_d = "assets/volume-of-cylinder/slide 2_d.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -43,7 +44,7 @@ const Slide2 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             A cylinder is a three-dimensional shape that has two{" "}
             <TextSpanBg
                id={1}

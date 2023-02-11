@@ -1,15 +1,24 @@
-import { coco_applet_uri } from "utils/constants";
 import dynamic from "next/dynamic";
-const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
+import { coco_applet_uri } from "utils/constants";
+const TextAndAppletSlide = dynamic(() =>
+  import("components/slides/TextAndAppletSlide")
+);
+const Paragraph = dynamic(() =>
+  import("components/text").then((mod) => mod.Paragraph)
+);
 
 const Slide6 = ({ downIcon, currentPageIdx }) => {
   return (
-    <AppletSlide
+    <TextAndAppletSlide
+      title="Total Surface Area of Cube"
+      appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
       downIcon={downIcon}
-      title="Total Surface Area of a Cube"
       currentPageIdx={currentPageIdx}
-      appletSrc={`${coco_applet_uri}area_of_rhombus_v2/index.html`}
-    ></AppletSlide>
+    >
+      <Paragraph>
+        Find the total surface area of a cube with the side length of 6 units.
+      </Paragraph>
+    </TextAndAppletSlide>
   );
 };
 

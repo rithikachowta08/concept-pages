@@ -1,40 +1,15 @@
 import dynamic from "next/dynamic";
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 
-const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.StyledImg)
-);
-const TextAndDiagramSlide = dynamic(() =>
-   import("components/slides/TextAndDiagramSlide")
-);
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
-const radius_red = "assets/surface-area-of-sphere/radius_red.svg";
-import { colors } from "utils/colors";
-import Pill from "components/Pill";
-
-const Slide5 = ({ downIcon }) => {
+const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndDiagramSlide
-         diagram={
-            <StyledImg
-               src={radius_red}
-               alt="Diagram of a sphere with radius labelled"
-            />
-         }
+      <AppletSlide
+         title="Lateral Surface Area"
+         secondaryTitle="Right Triangular Prism"
+         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
          downIcon={downIcon}
-         bg="DARK"
-         secondaryTitle="Sphere"
-         title="General Formula"
-      >
-         <Pill /* color={colors.WHITE} */>
-            Surface area of a sphere = 4 &times; π &times; r&sup2;
-         </Pill>
-         <Paragraph color={colors.WHITE}>
-            The surface area of a sphere with radius r is directly proportional
-            to r&sup2;, where 4 &times; π is the constant of proportionality.
-         </Paragraph>
-      </TextAndDiagramSlide>
+         currentPageIdx={currentPageIdx}
+      ></AppletSlide>
    );
 };
 

@@ -27,6 +27,7 @@ const circle_highlighting_arc =
 const circle_highlighting_circumference =
    "assets/length-of-arc-of-a-circle/circle_highlighting_circumference.svg";
 const circle_modal = "assets/length-of-arc-of-a-circle/circle_modal.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
    const modalContent = (
@@ -83,7 +84,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             The&nbsp;
             <TextSpanBg
                onHover={() => onHover(1)}
@@ -104,7 +105,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             </TextSpanBg>
             .
          </Paragraph>
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             The symbol (<MathElement htmlString={"\\overgroup{}"} />) is used to
             represent an arc. The arc AB is represented by{" "}
             <MathElement htmlString={"\\overgroup{AB}"} />.

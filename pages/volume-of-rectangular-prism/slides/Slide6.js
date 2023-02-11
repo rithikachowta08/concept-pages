@@ -1,7 +1,7 @@
 import MathElement from "components/MathElement";
 import { Paragraph, TextSpanBg } from "components/text";
-import useDiagramInteraction from "hooks/useDiagramInteraction";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 import { colors } from "utils/colors";
 
 const TransitionImage = dynamic(() =>
@@ -11,14 +11,8 @@ const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 
-const image_1 = "assets/volume-of-rectangular-prism/slide_7_a.svg";
-const image_2 = "assets/volume-of-rectangular-prism/slide_7_b.svg";
-const image_3 = "assets/volume-of-rectangular-prism/slide_7_c.svg";
-const image_4 = "assets/volume-of-rectangular-prism/slide_7_d.svg";
-const image_5 = "assets/volume-of-rectangular-prism/slide_7_e.svg";
-
 const Slide6 = ({ downIcon, navBar }) => {
-   const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
+   const [activeIndex, setActiveIndex] = useState(0);
 
    return (
       <TextAndDiagramSlide
@@ -29,10 +23,9 @@ const Slide6 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          diagram={
             <TransitionImage
-               images={[image_1, image_2, image_3, image_4, image_5]}
+               images={[]}
                activeIndex={activeIndex}
                altTexts={[
-                  "Diagram of a rectangular prism",
                   "Diagram of a rectangular prism representing its volume",
                   "Diagram of a rectangular prism with highlighted length",
                   "Diagram of a rectangular prism with highlighted width",
@@ -47,21 +40,12 @@ const Slide6 = ({ downIcon, navBar }) => {
             inside the rectangular prism.
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
-               Volume
-            </TextSpanBg>{" "}
-            ={" "}
-            <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
-               Length (l)
-            </TextSpanBg>{" "}
+            <TextSpanBg>Volume</TextSpanBg> ={" "}
+            <TextSpanBg>Length (l)</TextSpanBg>{" "}
             <MathElement htmlString={"\\times"} />{" "}
-            <TextSpanBg onHover={() => onHover(3)} onHoverOut={onHoverOut}>
-               Width (w)
-            </TextSpanBg>{" "}
+            <TextSpanBg>Width (w)</TextSpanBg>{" "}
             <MathElement htmlString={"\\times"} />{" "}
-            <TextSpanBg onHover={() => onHover(4)} onHoverOut={onHoverOut}>
-               Height (h)
-            </TextSpanBg>
+            <TextSpanBg>Height (h)</TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
    );

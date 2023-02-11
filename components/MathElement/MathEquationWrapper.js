@@ -11,8 +11,6 @@ export function MathEquationWrapper({ children }) {
    );
 }
 
-export default MathEquationWrapper;
-
 MathEquationWrapper.propTypes = {
    htmlString: PropTypes.string,
 };

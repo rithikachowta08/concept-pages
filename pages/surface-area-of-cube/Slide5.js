@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 const MathElement = dynamic(() => import("components/MathElement"));
 const TextSpanBg = dynamic(() =>
@@ -27,7 +28,7 @@ const Flex = dynamic(() =>
 const ModalImg = dynamic(() =>
   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
-const Pill = dynamic(() => import("components/Pill"));
+import Pill from "components/Pill";
 const surfaceCube_line = "assets/surface-area-of-cube/slide6/1.svg";
 const surfaceCube_blue = "assets/surface-area-of-cube/slide6/2.svg";
 const surfaceCube_modal = "assets/surface-area-of-cube/slide6/3.svg";
@@ -37,7 +38,7 @@ const Slide5 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   let latex = [];
   latex.push(`s^2`);
-  latex.push(`\\ \\times\\ s^2`);
+  latex.push(`s^2`);
   let mathjaxCounter = 0;
 
   const modalContent = (
@@ -65,7 +66,7 @@ const Slide5 = ({ downIcon }) => {
     setIsModalOpen(false);
   };
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -99,10 +100,10 @@ const Slide5 = ({ downIcon }) => {
         The total surface area of a cube is the area covered by all its six
         faces.
       </Paragraph>
-      <Paragraph color={colors.WHITE}>
+      <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.LAVENDER}

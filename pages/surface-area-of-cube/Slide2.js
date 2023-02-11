@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { lineHeightProp } from "utils/fontStyles";
 const TransitionImage = dynamic(() =>
   import("components/media/TransitionImage")
 );
@@ -22,7 +23,7 @@ const surfaceCube_full_line = "assets/surface-area-of-cube/slide2/4.svg";
 const Slide2 = ({ downIcon }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onHover = (e) => {
-    setActiveIndex(e);
+    setActiveIndex(Number(e.target.id));
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -49,36 +50,36 @@ const Slide2 = ({ downIcon }) => {
       }
       downIcon={downIcon}
     >
-      <Paragraph>
-        A cube is a three-dimensional shape that has{" "}
+      <Paragraph lineHeight={lineHeightProp}>
+        A cube is a three-dimensional shape that has 6{" "}
         <TextSpanBg
           id={1}
-          onHover={() => onHover(1)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          6 square faces
+          square faces
         </TextSpanBg>
-        ,{" "}
+        , 8{" "}
         <TextSpanBg
           id={2}
-          onHover={() => onHover(2)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          8 vertices
+          vertices
         </TextSpanBg>
-        , and{" "}
+        , and 12{" "}
         <TextSpanBg
           id={3}
-          onHover={() => onHover(3)}
+          onHover={onHover}
           onHoverOut={onHoverOut}
           color={colors.RED}
           hoverColor={colors.DARK_LAVENDER}
         >
-          12 edges
+          edges
         </TextSpanBg>{" "}
         of equal length.
       </Paragraph>

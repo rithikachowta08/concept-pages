@@ -9,3 +9,5 @@ export const fontSizes = {
    MEDIUM: "2rem", // Paragraph content size
    LARGE: "4rem", // Primary leaflet title
 };
+
+export const lineHeightProp = 1.8;

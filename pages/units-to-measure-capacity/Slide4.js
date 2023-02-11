@@ -5,7 +5,6 @@ const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 const Slide4 = ({ downIcon, currentPageIdx }) => {
    return (
       <AppletSlide
-         bg="DARK"
          downIcon={downIcon}
          title="Explore Capacity using Non-Standard Units"
          currentPageIdx={currentPageIdx}

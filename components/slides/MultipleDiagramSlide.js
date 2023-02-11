@@ -57,7 +57,7 @@ const MultipleDiagramSlide = ({
                         secondaryTitle={secondaryTitle}
                         centerAlign
                      />
-                     <SlideTitle bg={bg} marginBottom="15px" centerAlign>
+                     <SlideTitle bg={bg} centerAlign>
                         {title}
                      </SlideTitle>
                   </div>
@@ -71,7 +71,6 @@ const MultipleDiagramSlide = ({
                   width="100%"
                   flex="1"
                >
-                  {children}
                   <Flex
                      direction="row"
                      flexFlow={"wrap"}
@@ -100,6 +99,7 @@ const MultipleDiagramSlide = ({
                         </ImageWrap>
                      ))}
                   </Flex>
+                  {children}
                </Flex>
                {/* DownIcon */}
                {downIcon
@@ -127,11 +127,8 @@ const MultipleDiagramSlide = ({
                            bg={bg}
                            marginBottom="15px"
                            secondaryTitle={secondaryTitle}
-                           centerAlign
                         />
-                        <SlideTitle bg={bg} marginBottom="30px" centerAlign>
-                           {title}
-                        </SlideTitle>
+                        <SlideTitle bg={bg}>{title}</SlideTitle>
                      </div>
                      {children}
                      <Flex
@@ -147,7 +144,7 @@ const MultipleDiagramSlide = ({
                                  mobileSize: "150px",
                                  tabletSize: "250px",
                                  smallDesktopSize: "300px",
-                                 width: "350px",
+                                 width: "400px",
                               })}
                               <TextSpan
                                  color={

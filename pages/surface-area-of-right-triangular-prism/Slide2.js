@@ -17,6 +17,7 @@ import { TextLine } from "components/text";
 const plain = "assets/surface-area-of-right-triangluar-prism/plain.svg";
 const sides = "assets/surface-area-of-right-triangluar-prism/sides.svg";
 const bases = "assets/surface-area-of-right-triangluar-prism/bases.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -43,7 +44,7 @@ const Slide2 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>A right triangular prism has:</Paragraph>
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
                <TextSpanBg
                   id={1}

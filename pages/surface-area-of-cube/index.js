@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
   import("components/full-page-wrapper/FullPageCustomWrapper").then(
     (mod) => mod.FullPageCustomWrapper
@@ -24,18 +23,17 @@ const PageLastSlide = dynamic(() =>
 
 const SurfaceAreaofCone = () => {
   const SlideArray = [
-    <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
-    <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide4 key={3} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide6 key={5} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide8 key={7} type={SLIDE_TYPES.APPLET_ONLY} />,
-    <Slide9 key={8} type={SLIDE_TYPES.VIDEO_ONLY} />,
+    <Slide1 key={0} />,
+    <Slide2 key={1} />,
+    <Slide3 key={2} />,
+    <Slide4 key={3} />,
+    <Slide5 key={4} />,
+    <Slide6 key={5} />,
+    <Slide7 key={6} />,
+    <Slide8 key={7} />,
+    <Slide9 key={8} />,
     <PageLastSlide
       key={9}
-      type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Surface Area of Cube"}
       nextPageLink={"/us/math/study/units-to-measure-capacity"}
       nextPageTitle={"Units to measure Capacity"}
@@ -47,12 +45,8 @@ const SurfaceAreaofCone = () => {
   ];
   const navigationSections = [
     {
-      title: "What is a cube?",
-      slides: [1],
-    },
-    {
       title: "What is the surface area of a cube?",
-      slides: [2, 3],
+      slides: [1, 2, 3],
     },
     { title: "Total surface area", slides: [4, 5] },
     {

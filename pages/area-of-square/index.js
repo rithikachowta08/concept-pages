@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
   import("components/full-page-wrapper/FullPageCustomWrapper").then(
     (mod) => mod.FullPageCustomWrapper
@@ -19,53 +18,53 @@ const Slide10 = dynamic(() => import("./Slide10"));
 const Slide11 = dynamic(() => import("./Slide11"));
 const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
-const AreaOfSquare = ({}) => {
-  const SlideArray = [
-    <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
-    <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
-    // <Slide6 key={5} />,
-    <Slide7 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide8 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide9 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide10 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-    <Slide11 key={9} type={SLIDE_TYPES.VIDEO_ONLY} />,
-    <PageLastSlide
+
+const AreaOfSquare= ({}) => {
+   const SlideArray = [
+      <Slide1 key={0} />,
+      <Slide2 key={1} />,
+      <Slide3 key={2} />,
+      <Slide4 key={3} />,
+      <Slide5 key={4} />,
+      // <Slide6 key={5} />,
+      <Slide7 key={5} />,
+      <Slide8 key={6} />,
+      <Slide9 key={7} />,
+      <Slide10 key={8} />,
+      <Slide11 key={9} />,
+      <PageLastSlide
       key={10}
-      type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Area of a Square"}
       nextPageTitle="Area of Sector a Circle"
       nextPageLink="/us/math/study/area-of-sector-of-a-circle"
     />,
-  ];
+   ];
 
-  const navigationSections = [
-    { title: "What is the area of a square?", slides: [1, 2] },
-    { title: "Area by counting unit squares", slides: [3, 4] },
-    {
-      title: "General formula",
-      slides: [5, 6],
-    },
-    {
-      title: "Area using diagonal",
-      slides: [7, 8, 9],
-    },
-  ];
+   const navigationSections = [
+      { title: "What is the area of a square?", slides: [1,2] },
+      { title: "Area by counting unit squares", slides: [3,4] },
+      {
+         title: "General formula",
+         slides: [5,6],
+      },
+      {
+         title: "Area using diagonal",
+         slides: [7,8,9],
+      },
+   ];
 
-  const darkBgIndices = [0, 3, 5, 7, 9, 10];
-  return (
-    <FullPageCustomWrapper
-      slidesComponentList={SlideArray}
-      navigationSections={navigationSections}
-      darkBgIndices={darkBgIndices}
-    />
-  );
+   const darkBgIndices = [0,3,5,9,10];
+   return (
+      <FullPageCustomWrapper
+         slidesComponentList={SlideArray}
+         navigationSections={navigationSections}
+         darkBgIndices={darkBgIndices}
+      />
+   );
 };
 
 AreaOfSquare.title = "Area of Square: Definition, Formula, Examples - BYJU'S";
 AreaOfSquare.meta =
-  "Gain a deep understanding of area of square with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
+   "Gain a deep understanding of area of square with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
 
 export default AreaOfSquare;

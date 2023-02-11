@@ -19,7 +19,7 @@ const diameter_formula_value =
    "assets/circumference-of-circle/diameter_formula_value.svg";
 const radius = "assets/circumference-of-circle/radius.svg";
 
-import { fontWeights } from "utils/fontStyles";
+import { lineHeightProp, fontWeights } from "utils/fontStyles";
 import EquationTable from "components/MathElement/EquationTable";
 import { addTransitionToKatex } from "utils/domutils";
 
@@ -106,7 +106,7 @@ const Slide6 = ({ downIcon }) => {
             </TextLine>
          </Paragraph>
          <div>
-            <Paragraph>
+            <Paragraph lineHeight={lineHeightProp}>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
                <TextLine>Diameter (d) of the circle = 12 in</TextLine>
                <TextLine>Diameter = 2 &times; Radius (r)</TextLine>

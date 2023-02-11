@@ -59,6 +59,7 @@ const slide9_a = "assets/units-to-measure-capacity/slide9_a.svg";
 const Slide3 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
+         secondaryTitle="Customary Measurement System"
          title="Gallon Chart"
          diagram={
             <StyledImg

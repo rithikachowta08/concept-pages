@@ -8,7 +8,7 @@ const TextAndAppletSlide = dynamic(() =>
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
-         title={"Volume by counting the unit cubes"}
+         title={"Volume by Counting the Unit Cubes"}
          secondaryTitle={"Rectangular Prism"}
          appletSrc={""}
          currentPageIdx={currentPageIdx}

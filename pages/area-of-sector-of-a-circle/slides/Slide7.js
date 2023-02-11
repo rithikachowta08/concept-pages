@@ -27,7 +27,7 @@ const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
             <MathElement htmlString={"\\dfrac{\\pi\\times r^2}{360°}"} />
          </Paragraph>
          <Paragraph>
-            Area of the sector when the angle is θ° =
+            Area of the sector when the angle is θ =
             <MathElement
                htmlString={"\\dfrac{θ}{360°}\\times \\pi\\times r^2"}
             />

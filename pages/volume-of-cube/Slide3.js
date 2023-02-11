@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { colors } from "utils/colors";
+import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const cube_red = "assets/volume-of-cube/slide3_a.svg";
@@ -82,7 +83,7 @@ const Slide3 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             The volume of a cube is the{" "}
             <TextSpanBg
                id={1}
@@ -92,7 +93,7 @@ const Slide3 = ({ downIcon }) => {
             >
                space occupied
             </TextSpanBg>{" "}
-            by it. It is also the total number of{" "}
+             by it. It is also the total number of{" "}
             <ModalTriggerText id={2} onClick={onClick}>
                unit cubes
             </ModalTriggerText>{" "}

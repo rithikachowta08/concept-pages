@@ -30,7 +30,6 @@ const Pill = ({
          position={position}
          color={darkbg ? colors.WHITE : colors.BLACK}
          width={width}
-         lineHeight="150%"
          className={math ? "pill-math" : ""}
          border={`1px solid ${colors.PILL_SOLID}`}
       >

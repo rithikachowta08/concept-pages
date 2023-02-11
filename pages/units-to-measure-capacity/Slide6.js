@@ -30,7 +30,7 @@ const Slide6 = ({ downIcon }) => {
       >
          <Paragraph color={colors.WHITE}>
             A standard unit of measurement is a quantifiable term that describes
-            the magnitude of a quantity in absolute terms.
+            the magnitude of the quantity in absolute terms.
          </Paragraph>
       </TextAndDiagramSlide>
    );

@@ -69,7 +69,7 @@ const Slide7 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "4\\:in \\times 4\\:in",
+               "4cm \\times 4cm",
             ],
             type: "latex",
          },
@@ -81,7 +81,7 @@ const Slide7 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "16\\:sq \\:in",
+               "16\\:sq \\:cm",
             ],
             type: "latex",
          },
@@ -90,7 +90,7 @@ const Slide7 = ({ downIcon }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const modalContent = (
       <Flex direction="column">
-         <Paragraph color="white">
+         <Paragraph color="white" marginBottom="1vh" fontSize="1.5rem">
          The area of a square is measured in square units (square centimeters, square inches, square feet, and so on).
          </Paragraph>
          <TextLine>Example:</TextLine>
@@ -152,15 +152,16 @@ const Slide7 = ({ downIcon }) => {
             onDismiss={onDismiss}
          />
          <Paragraph color={colors.WHITE}>
-         The area of a square is the product of the 
+         The area of a square is the product of the length of its two{" "}
          <TextSpanBg
                id={1}
                onHover={onHover}
                onHoverOut={onHoverOut}
             >
-              length of its two sides.
-            </TextSpanBg> It is measured in  <ModalTriggerText id={2} color={colors.WHITE} onClick={onClick}>
-            square units.
+              sides
+            </TextSpanBg> 
+         {" "}.It is measured in  <ModalTriggerText id={2} color={colors.WHITE} onClick={onClick}>
+            square units
             </ModalTriggerText>{" "}
          </Paragraph>
          <Pill

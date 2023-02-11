@@ -8,13 +8,11 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
       <VideoSlide2
          videoContent={{
             dash_Url:
-               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-7587de9a/rom3r9/INTL_Maths/230116/SEOINTL04MAT16KT007/dash/h264.mpd",
+               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/dash/h264.mpd",
             hls_Url:
-               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-7587de9a/rom3r9/INTL_Maths/230116/SEOINTL04MAT16KT007/hls/h264.m3u8",
+               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/hls/h264.m3u8",
             thumbnail:
                "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
-            duration: 152,
-            title: "Customary and metric units of capacity",
          }}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}

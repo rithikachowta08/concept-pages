@@ -28,7 +28,6 @@ const slide_13_a = "assets/volume-of-cylinder/slide 13_a.svg";
 const slide_13_b = "assets/volume-of-cylinder/slide 13_b.svg";
 const slide_13_c = "assets/volume-of-cylinder/slide 13_c.svg";
 const slide_13_d = "assets/volume-of-cylinder/slide 13_d.svg";
-const slide_13_pop_up = "assets/volume-of-cylinder/slide 13_pop up.svg";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
@@ -41,7 +40,7 @@ const Slide12 = ({ downIcon }) => {
             space between the inner and outer cylinders filled.
          </Paragraph>
          <ModalImg
-            src={slide_13_pop_up}
+            src={slide_13_a}
             alt="Diagram of a right circular hollow cylinder"
          />
       </Flex>

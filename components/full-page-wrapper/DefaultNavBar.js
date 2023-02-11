@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { TextSpan } from "components/text";
-import { Flex } from "components/StyledElements";
+import { Flex, Icon } from "components/StyledElements";
 import { fontSizes } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import HyperLink from "components/text/HyperLink";
+const left_caret_dark = "assets/left_caret.svg";
+const left_caret_light = "assets/left_caret_light.svg";
 
 const NavWrap = styled.div`
    background: rgba(231, 228, 248, 0.4);
@@ -158,8 +161,7 @@ const DefaultNavBar = ({
                      cursor="pointer"
                      height="14px"
                      // moveTo expects slide indices to start from 1
-                     data-leaflet-idx={section.slides[0] + 1}
-                     data-section-idx={idx}
+                     data-section-idx={section.slides[0] + 1}
                      onClick={onSectionClick}
                   >
                      <SectionIndicator

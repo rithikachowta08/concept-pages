@@ -19,18 +19,21 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 
+const MathElement = dynamic(() => import("components/MathElement"));
+
 const circle = "assets/diameter-and-circumference/circle.svg";
 const circle_highlighting_circumference =
    "assets/diameter-and-circumference/circumference.svg";
 const circle_modal = "assets/diameter-and-circumference/circle_pop_up.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide2 = ({ downIcon, navBar }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color={colors.WHITE}>
-            A circle is a path traced by a point which is always equidistant
-            from a fixed point. The fixed point is the centre (O) of the circle,
-            and the fixed distance is its radius (r).
+            A circle is a path traced by a moving point in a plane which is
+            always equidistant from a fixed point. The fixed point is the center
+            (O), and the fixed distance is the radius (r).
          </Paragraph>
          <ModalImg
             src={circle_modal}
@@ -74,7 +77,7 @@ const Slide2 = ({ downIcon, navBar }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             The&nbsp;
             <TextSpanBg
                onHover={() => onHover(1)}

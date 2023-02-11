@@ -1,85 +1,40 @@
-import { useState } from "react";
 import dynamic from "next/dynamic";
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
+
+const StyledImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.StyledImg)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-import { ModalTriggerText, TextLine } from "components/text";
-const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
+const radius_red = "assets/surface-area-of-sphere/radius_red.svg";
 import { colors } from "utils/colors";
+import Pill from "components/Pill";
 
-const Slide6 = ({ downIcon, currentPageIdx }) => {
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph>
-            The curved surface area (CSA) of a cylinder is the area covered by
-            its curved surface.
-         </Paragraph>
-         <Paragraph>
-            <TextLine>CSA = 2 &times; π &times; r &times; h </TextLine>
-         </Paragraph>
-         <ModalImg
-            src={cylinder}
-            alt="Diagram of a curved surface area of a cylinder"
-         />
-      </Flex>
-   );
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+const Slide6 = ({ downIcon }) => {
    return (
-      <TextAndAppletSlide
-         appletSrc="https://www.geogebra.org/m/p4jd88uu"
+      <TextAndDiagramSlide
+         diagram={
+            <StyledImg
+               src={radius_red}
+               alt="Diagram of a sphere with radius labelled"
+            />
+         }
          downIcon={downIcon}
-         currentPageIdx={currentPageIdx}
          bg="DARK"
          secondaryTitle="Sphere"
-         title={
-            <div>Why is the surface area 4 &times; π &times; r&sup2; ?</div>
-         }
+         title="General Formula"
       >
-         <Modal
-            isOpen={isModalOpen}
-            title="CSA of Cylinder"
-            content={modalContent}
-            onDismiss={onDismiss}
-            bg="LIGHT"
-            color={colors.BLACK}
-         />
-         <Paragraph color="white" textAlign="left">
-            According to Archimedes, the surface area of a sphere is equal to
-            the{" "}
-            <ModalTriggerText onClick={onClick} color={colors.WHITE}>
-               curved surface area of the cylinder
-            </ModalTriggerText>{" "}
-            when,
+         <Pill /* color={colors.WHITE} */>
+            Surface area of a sphere = 4 &times; π &times; r&sup2;
+         </Pill>
+         <Paragraph color={colors.WHITE}>
+            The surface area of a sphere with radius r is directly proportional
+            to r&sup2;, where 4 &times; π is the constant of proportionality.
          </Paragraph>
-         <Paragraph color="white">
-            <ul>
-               <li>
-                  the radius of the cylinder is equal to the radius of the
-                  sphere, and
-               </li>
-               <li>
-                  the height of the cylinder is equal to the diameter of the
-                  sphere.
-               </li>
-            </ul>
-         </Paragraph>
-      </TextAndAppletSlide>
+      </TextAndDiagramSlide>
    );
 };
 

@@ -7,7 +7,6 @@ import { colors } from "utils/colors";
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import { onNextPageButtonClick, onShareButtonClick } from "utils/analytics";
 
 const shareIcon = "assets/share-icon.svg";
 
@@ -63,7 +62,6 @@ const PageLastSlide = ({
    const shareClickhandler = () => {
       toast("Link has been copied to clipboard.");
       navigator.clipboard.writeText(window.location.href);
-      onShareButtonClick();
       console.log(window.location.href);
    };
    return (
@@ -87,12 +85,7 @@ const PageLastSlide = ({
                />
             </ShareIconWrapper>
          </UpperDiv>
-         <LowerDiv
-            target={"_blank"}
-            href={nextPageLink}
-            onClick={() => onNextPageButtonClick(nextPageLink)}
-            rel="noreferrer"
-         >
+         <LowerDiv target={"_blank"} href={nextPageLink} rel="noreferrer">
             <Paragraph
                textAlign={"center"}
                color={colors.WHITE}

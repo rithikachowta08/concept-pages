@@ -8,17 +8,17 @@
 
       .cls-1, .cls-2 {
         fill: none;
-        stroke: #a753b5;
+        stroke: #cd6b6b;
         stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #cd6b6b;
+        opacity: .5;
       }
 
       .cls-2 {
         stroke-width: 6px;
-      }
-
-      .cls-3 {
-        fill: #bb70de;
-        opacity: .3;
       }
     </style>
   </defs>

@@ -24,6 +24,7 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
+import { lineHeightProp, fontWeights } from "utils/fontStyles";
 // const ModalTriggerText = dynamic(() =>
 //    import("components/text").then((mod) => mod.ModalTriggerText)
 // );
@@ -82,7 +83,7 @@ const Slide6 = ({ downIcon }) => {
             The sectors of a circle are classified based on the degree measure
             of the sector.
          </Paragraph>
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             <TextLine>
                <TextSpanBg
                   onHover={() => onHover(1)}

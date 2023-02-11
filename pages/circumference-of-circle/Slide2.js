@@ -22,6 +22,7 @@ const plain = "assets/circumference-of-circle/plain.svg";
 const circumference = "assets/circumference-of-circle/circumference.svg";
 const plain_radius_light =
    "assets/circumference-of-circle/plain_radius_light.svg";
+import { lineHeightProp } from "utils/fontStyles";
 import { ModalImg } from "components/StyledElements";
 
 const Slide2 = ({ downIcon }) => {
@@ -73,7 +74,7 @@ const Slide2 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph>
+         <Paragraph lineHeight={lineHeightProp}>
             The&nbsp;
             <TextSpanBg
                onHover={onHover}

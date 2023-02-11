@@ -50,7 +50,7 @@ const Slide4 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "2 \\times \\pi \\times r \\times h \\:sq\\:units",
+               "2 \\times \\pi \\times r \\times h",
             ],
             type: "latex",
          },

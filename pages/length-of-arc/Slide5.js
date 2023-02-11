@@ -21,6 +21,7 @@ const highlighting_radii =
    "assets/length-of-arc-of-a-circle/highlighting_radii.svg";
 const highlighting_arc =
    "assets/length-of-arc-of-a-circle/highlighting_arc.svg";
+import { lineHeightProp } from "utils/fontStyles";
 
 const Slide5 = ({ downIcon, navBar }) => {
    const [activeIndex, setActiveIndex] = useState(0);
@@ -54,17 +55,26 @@ const Slide5 = ({ downIcon, navBar }) => {
          downIcon={downIcon}
          navBar={navBar}
       >
-         <Paragraph color={colors.WHITE}>
+         <Paragraph lineHeight={lineHeightProp} color={colors.WHITE}>
             A&nbsp;
-            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
+            <TextSpanBg
+               onHover={() => onHover(1)}
+               onHoverOut={onHoverOut}
+            >
                sector
             </TextSpanBg>
             &nbsp;is a portion of a circle enclosed between any&nbsp;
-            <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
+            <TextSpanBg
+               onHover={() => onHover(2)}
+               onHoverOut={onHoverOut}
+            >
                two radii
             </TextSpanBg>
             &nbsp;and the adjoining&nbsp;
-            <TextSpanBg onHover={() => onHover(3)} onHoverOut={onHoverOut}>
+            <TextSpanBg
+               onHover={() => onHover(3)}
+               onHoverOut={onHoverOut}
+            >
                arc
             </TextSpanBg>
             &nbsp;of a circle.
