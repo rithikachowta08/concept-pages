@@ -9,6 +9,7 @@ const Slide9 = ({ downIcon, currentPageIdx }) => {
       <VideoSlide2
         videoContent={{
           videoId: "397549",
+          duration: 100,
           title: "Derivation of formula of surface area of cube",
           dash_Url:
             "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-6025e0e0/robhcu/INTL_Maths/230111/SEO18INTL06MAT10KT010/dash/h264.mpd",
