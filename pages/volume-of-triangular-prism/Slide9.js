@@ -20,6 +20,9 @@ const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
 const Pill = dynamic(() => import("components/Pill"));
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const slide9_a = "assets/volume-of-triangular-prism/9_a.svg";
 const slide9_b = "assets/volume-of-triangular-prism/9_b.svg";
@@ -27,6 +30,22 @@ const slide9_c = "assets/volume-of-triangular-prism/9_c.svg";
 const slide9_d = "assets/volume-of-triangular-prism/9_d.svg";
 
 const Slide8 = ({ downIcon }) => {
+   let equationLatex=[
+      {
+         lhsLatex: {
+            value: [
+               `Area of an isoceles triangle (A)`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2}",
+            ],
+            type: "latex",
+         },
+      },
+   ]
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
@@ -72,12 +91,9 @@ const Slide8 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             We know,
-            <TextLine>
-               Area of an isoceles triangle (A) =
-               <MathEquationWrapper>
-                  {"\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2}"}
-               </MathEquationWrapper>
-            </TextLine>
+            <EquationTable align="middle"
+               equationLatex={equationLatex}
+            />
             <Paragraph>
                <TextLine>Hence,</TextLine>
                <Pill darkbg={false}>

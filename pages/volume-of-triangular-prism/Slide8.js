@@ -20,6 +20,9 @@ const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
 const Pill = dynamic(() => import("components/Pill"));
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const slide8_a = "assets/volume-of-triangular-prism/1_a.svg";
 const slide8_b = "assets/volume-of-triangular-prism/3_b.svg";
@@ -27,6 +30,22 @@ const slide8_c = "assets/volume-of-triangular-prism/8_c.svg";
 const slide8_d = "assets/volume-of-triangular-prism/8_d.svg";
 
 const Slide8 = ({ downIcon }) => {
+   let equationLatex=[
+      {
+         lhsLatex: {
+            value: [
+               `Area of an equilateral triangle (A)`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\dfrac{\\sqrt{3}}{4}\\ \\times a^2",
+            ],
+            type: "latex",
+         },
+      },
+   ]
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
@@ -72,12 +91,9 @@ const Slide8 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             We know,
-            <TextLine>
-               Area of an equilateral triangle (A) =
-               <MathEquationWrapper>
-                  {"\\dfrac{\\sqrt{3}}{4}\\ \\times a^2"}
-               </MathEquationWrapper>
-            </TextLine>
+            <EquationTable align="middle"
+               equationLatex={equationLatex}
+            />
             <Paragraph>
                <TextLine>Hence,</TextLine>
                <Pill darkbg={false}>

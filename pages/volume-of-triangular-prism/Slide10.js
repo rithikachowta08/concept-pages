@@ -20,6 +20,9 @@ const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
 const Pill = dynamic(() => import("components/Pill"));
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
 const slide10_a = "assets/volume-of-triangular-prism/10_a.svg";
 const slide10_b = "assets/volume-of-triangular-prism/10_b.svg";
@@ -27,6 +30,22 @@ const slide10_c = "assets/volume-of-triangular-prism/10_c.svg";
 const slide10_d = "assets/volume-of-triangular-prism/10_d.svg";
 
 const Slide8 = ({ downIcon }) => {
+   let equationLatex=[
+      {
+         lhsLatex: {
+            value: [
+               `Area of an scalene triangle (A)`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\sqrt{s \\times (s - a) \\times (s - b) \\times (s - c)}",
+            ],
+            type: "latex",
+         },
+      },
+   ]
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
@@ -72,12 +91,9 @@ const Slide8 = ({ downIcon }) => {
          </Paragraph>
          <Paragraph>
             We know,
-            <TextLine>
-               Area of an scalene triangle (A) =
-               <MathEquationWrapper>
-                  {"\\sqrt{s \\times (s - a) \\times (s - b) \\times (s - c)}"}
-               </MathEquationWrapper>
-            </TextLine>
+            <EquationTable align="middle"
+               equationLatex={equationLatex}
+            />
             <TextLine>
                Where, s =
                <MathEquationWrapper>{"\\dfrac{a+b+c}{2}"}</MathEquationWrapper>
