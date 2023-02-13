@@ -75,7 +75,7 @@ const Slide8 = ({ downIcon }) => {
             <TextLine>
                Area of an isoceles triangle (A) =
                <MathEquationWrapper>
-                  {"\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b}"}
+                  {"\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2}"}
                </MathEquationWrapper>
             </TextLine>
             <Paragraph>
@@ -84,7 +84,7 @@ const Slide8 = ({ downIcon }) => {
                   Volume ={" "}
                   <MathEquationWrapper>
                      {
-                        "\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b} \\times h"
+                        "\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2} \\times h"
                      }
                   </MathEquationWrapper>
                </Pill>

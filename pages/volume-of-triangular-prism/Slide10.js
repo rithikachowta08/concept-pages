@@ -83,7 +83,6 @@ const Slide8 = ({ downIcon }) => {
                <MathEquationWrapper>{"\\dfrac{a+b+c}{2}"}</MathEquationWrapper>
             </TextLine>
             <Paragraph>
-               <TextLine>Hence,</TextLine>
                <Pill darkbg={false}>
                   Volume ={" "}
                   <MathEquationWrapper>

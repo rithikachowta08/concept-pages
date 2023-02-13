@@ -31,6 +31,7 @@ const Slide2 = ({ downIcon }) => {
                images={[slide4_a, slide4_b, slide4_c, slide4_d]}
                altTexts={[
                   "Diagram of a triangular prism",
+                  "Diagram of a triangular prism representing its volume",
                   "Diagram of a triangular prism with highlighted base area",
                   "Diagram of a triangular prism with highlighted height",
                ]}

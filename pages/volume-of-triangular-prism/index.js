@@ -4,7 +4,6 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
-import { SLIDE_TYPES } from "utils/constants";
 const Slide0 = dynamic(() => import("./Slide0"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
@@ -20,6 +19,7 @@ const Slide11 = dynamic(() => import("./Slide11"));
 const PageLastSlide = dynamic(() =>
    import("../../components/slides/PageLastSlide")
 );
+import { SLIDE_TYPES } from "utils/constants";
 
 const VolumeOfTriangularPrism = () => {
    const SlideArray = [
@@ -39,8 +39,8 @@ const VolumeOfTriangularPrism = () => {
          key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Triangular Prism"}
-         nextPageLink={"/us/math/study/volume-of-cube"}
-         nextPageTitle={"Volume of a Cube"}
+         nextPageLink={"/us/math/study/area-of-parallelogram"}
+         nextPageTitle={"Area of a Parallelogram"}
       />,
    ];
    const navigationSections = [

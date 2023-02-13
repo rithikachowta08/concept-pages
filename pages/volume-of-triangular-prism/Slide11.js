@@ -2,6 +2,7 @@ import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
+import { TextSpan } from "components/text";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -55,7 +56,7 @@ const Slide11 = ({ downIcon }) => {
          </Paragraph>
          <ModalImg
             src={slide11_e}
-            alt="Diagram to represent volume occupied by an object."
+            alt="Diagram of a right triangular prism"
          />
       </Flex>
    );
@@ -90,9 +91,11 @@ const Slide11 = ({ downIcon }) => {
          {
             lhsLatex: {
                value: [
-                  <ModalTriggerText key={0} onClick={onClick}>
-                     Volume of a right triangular prism
-                  </ModalTriggerText>,
+                  <TextSpan key={0}> Volume of a&nbsp;
+                  <ModalTriggerText onClick={onClick}>
+                      right triangular prism
+                  </ModalTriggerText>
+                  </TextSpan>,
                ],
                type: "text",
             },
@@ -143,7 +146,7 @@ const Slide11 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               Base area (A)
+               Base area
             </TextSpanBg>{" "}
             ×{" "}
             <TextSpanBg
@@ -151,7 +154,7 @@ const Slide11 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               Height (h)
+               Height
             </TextSpanBg>
          </Paragraph>
          <Paragraph>
