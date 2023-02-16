@@ -39,7 +39,7 @@ const AreaOfTrapezoid = () => {
          key={11}
          currentPageTitle={"Area of Trapezoid"}
          nextPageTitle="Volume of a Triangular prism"
-         nextPageLink="/us/math/study/volume-of-triangular-prism"
+         nextPageLink="/us/math/study/concept/volume-of-triangular-prism"
       />,
    ];
 

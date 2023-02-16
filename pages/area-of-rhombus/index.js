@@ -41,7 +41,7 @@ const AreaOfRhombus = () => {
       key={13}
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Area of a Rhombus"}
-      nextPageLink={"/us/math/study/length-of-arc"}
+      nextPageLink={"/us/math/study/concept/length-of-arc"}
       nextPageTitle={"Length of Arc of a circle"}
     />,
   ];

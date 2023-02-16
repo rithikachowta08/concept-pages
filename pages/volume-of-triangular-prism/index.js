@@ -39,7 +39,7 @@ const VolumeOfTriangularPrism = () => {
          key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Triangular Prism"}
-         nextPageLink={"/us/math/study/area-of-parallelogram"}
+         nextPageLink={"/us/math/study/concept/area-of-parallelogram"}
          nextPageTitle={"Area of a Parallelogram"}
       />,
    ];

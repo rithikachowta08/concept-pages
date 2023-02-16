@@ -34,7 +34,7 @@ const CircumferenceOfCircle = () => {
          key={10}
          currentPageTitle={"Circumference of a Circle"}
          nextPageTitle="Area of a Rhombus"
-         nextPageLink="/us/math/study/area-of-rhombus"
+         nextPageLink="/us/math/study/concept/area-of-rhombus"
       />,
    ];
 

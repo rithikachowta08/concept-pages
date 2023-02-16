@@ -35,7 +35,7 @@ const AreaOfSectorOfCircle = () => {
          key={12}
          currentPageTitle={"Area of a Sector of a Circle"}
          nextPageTitle={"Surface Area of a Cylinder"}
-         nextPageLink={"/us/math/study/surface-area-of-cylinder"}
+         nextPageLink={"/us/math/study/concept/surface-area-of-cylinder"}
       />,
    ];
    const navigationSections = [

@@ -71,7 +71,7 @@ const AreaOfATriangle = () => {
          key={20}
          currentPageTitle={"Area of a Triangle"}
          nextPageTitle="Circumference of circle"
-         nextPageLink="/us/math/study/circumference-of-circle"
+         nextPageLink="/us/math/study/concept/circumference-of-circle"
       />,
    ];
 

@@ -43,7 +43,7 @@ const LengthOfArcOfACircle = () => {
          key={14}
          currentPageTitle={"Length of Arc of a circle"}
          nextPageTitle="Area of Square"
-         nextPageLink="/us/math/study/area-of-square"
+         nextPageLink="/us/math/study/concept/area-of-square"
       />,
    ];
 

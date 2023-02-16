@@ -40,7 +40,7 @@ const VolumeOfCylinder = () => {
          key={13}
          currentPageTitle={"Volume of a Cylinder"}
          nextPageTitle="Area of Trapezoid"
-         nextPageLink="/us/math/study/area-of-trapezoid"
+         nextPageLink="/us/math/study/concept/area-of-trapezoid"
       />,
    ];
 

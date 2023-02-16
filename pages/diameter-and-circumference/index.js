@@ -31,7 +31,7 @@ const RelationshipBetweenDiameterAndCircumference = () => {
          key={8}
          currentPageTitle={"Relationship between Diameter and Circumference"}
          nextPageTitle="Volume of a Cylinder"
-         nextPageLink="/us/math/study/volume-of-cylinder"
+         nextPageLink="/us/math/study/concept/volume-of-cylinder"
       />,
    ];
 

@@ -34,7 +34,7 @@ const VolumeOfRectangularPrism = () => {
          key={12}
          currentPageTitle={"Volume of a Rectangular Prism"}
          nextPageTitle="Relationship between Diameter and Circumference"
-         nextPageLink="/us/math/study/diameter-and-circumference"
+         nextPageLink="/us/math/study/concept/diameter-and-circumference"
       />,
    ];
    const navigationSections = [

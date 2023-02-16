@@ -45,7 +45,7 @@ const SurfaceAreaofCone = () => {
       key={15}
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Volume of Pyramids"}
-      nextPageLink={"/us/math/study/area-of-rectangle"}
+      nextPageLink={"/us/math/study/concept/area-of-rectangle"}
       nextPageTitle={"Area of Rectangle"}
     />,
   ];

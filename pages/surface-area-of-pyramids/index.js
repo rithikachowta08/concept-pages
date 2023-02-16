@@ -39,7 +39,7 @@ const RelationshipBetweenDiameterAndCircumference = () => {
          key={11}
          currentPageTitle={"Surface Area of Pyramids"}
          nextPageTitle="Volume of Pyramids"
-         nextPageLink="/us/math/study/volume-of-pyramids"
+         nextPageLink="/us/math/study/concept/volume-of-pyramids"
       />,
    ];
 

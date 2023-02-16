@@ -32,7 +32,7 @@ const AreaOfCircle = () => {
          key={10}
          currentPageTitle={"Area of a Circle"}
          nextPageTitle="Surface area of a Right Triangular Prism"
-         nextPageLink="/us/math/study/surface-area-of-right-triangular-prism"
+         nextPageLink="/us/math/study/concept/surface-area-of-right-triangular-prism"
       />,
    ];
    const navigationSections = [

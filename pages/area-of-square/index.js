@@ -37,7 +37,7 @@ const AreaOfSquare = ({}) => {
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Area of a Square"}
       nextPageTitle="Area of Sector a Circle"
-      nextPageLink="/us/math/study/area-of-sector-of-a-circle"
+      nextPageLink="/us/math/study/concept/area-of-sector-of-a-circle"
     />,
   ];
 

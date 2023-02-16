@@ -48,7 +48,7 @@ const VolumeOfCube = ({}) => {
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Volume of Cube"}
       nextPageTitle="Area of Triangle"
-      nextPageLink="/us/math/study/area-of-a-triangle"
+      nextPageLink="/us/math/study/concept/area-of-a-triangle"
     />,
   ];
 

@@ -35,7 +35,7 @@ const AreaOfRectangle = () => {
          key={10}
          currentPageTitle={"Area of a Rectangle"}
          nextPageTitle="Area of a Circle"
-         nextPageLink="/us/math/study/area-of-circle"
+         nextPageLink="/us/math/study/concept/area-of-circle"
       />,
       // <Slide11 key={10} />,
       // <Slide12 key={11} />,

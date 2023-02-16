@@ -51,7 +51,7 @@ const UnitsToMeasureCapacity = () => {
          key={18}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of capacity"}
-         nextPageLink={"/us/math/study/volume-of-rectangular-prism"}
+         nextPageLink={"/us/math/study/concept/volume-of-rectangular-prism"}
          nextPageTitle={"Volume of a Rectangular Prism"}
       />,
    ];

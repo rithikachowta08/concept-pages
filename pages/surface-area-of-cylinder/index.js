@@ -31,7 +31,7 @@ const SurfaceAreaOfCylinder = ({}) => {
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Surface Area of a Cylinder"}
       nextPageTitle="Surface Area of Sphere"
-      nextPageLink="/us/math/study/surface-area-of-sphere"
+      nextPageLink="/us/math/study/concept/surface-area-of-sphere"
     />,
   ];
 

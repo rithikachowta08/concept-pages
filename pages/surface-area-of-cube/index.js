@@ -37,7 +37,7 @@ const SurfaceAreaofCone = () => {
       key={9}
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Surface Area of Cube"}
-      nextPageLink={"/us/math/study/units-to-measure-capacity"}
+      nextPageLink={"/us/math/study/concept/units-to-measure-capacity"}
       nextPageTitle={"Units to measure Capacity"}
     />,
     // <Slide10 key={8} />,

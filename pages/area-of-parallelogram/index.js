@@ -43,7 +43,7 @@ const VolumeOfCube = ({}) => {
       type={SLIDE_TYPES.CONCLUSION}
       currentPageTitle={"Area of a Parallelogram"}
       nextPageTitle="Volume of Cone"
-      nextPageLink="/us/math/study/volume-of-cone"
+      nextPageLink="/us/math/study/concept/volume-of-cone"
     />,
   ];
 

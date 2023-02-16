@@ -40,7 +40,7 @@ const SurfaceAreaofCone = () => {
          key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Surface Area of a Cone"}
-         nextPageLink={"/us/math/study/volume-of-cube"}
+         nextPageLink={"/us/math/study/concept/volume-of-cube"}
          nextPageTitle={"Volume of a Cube"}
       />,
    ];
