@@ -39,7 +39,7 @@ const useAnalytics = ({ leafletCount, sectionCount }) => {
          section_count: sectionCount,
          device_type,
       };
-      window.gtag("event", EVENT_TYPES.LAND_ON_CONCEPT_PAGE, params);
+      window.gtag?.("event", EVENT_TYPES.LAND_ON_CONCEPT_PAGE, params);
    }, [leafletCount, sectionCount]);
 };
 
@@ -54,18 +54,18 @@ export const onScrollToLeaflet = ({
       leaflet_number: leafletNumber + 1,
       section_number: sectionNumber + 1,
    };
-   window.gtag("event", EVENT_TYPES.NEW_LEAFLET_SCROLL, params);
+   window.gtag?.("event", EVENT_TYPES.NEW_LEAFLET_SCROLL, params);
 };
 
 export const onSectionNameClick = (sectionNumber) => {
-   window.gtag("event", EVENT_TYPES.SECTION_TITLE_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.SECTION_TITLE_CLICK, {
       page_url: getPageUrl(),
       section_number: sectionNumber + 1,
    });
 };
 
 export const onModalTriggerTextClick = (text) => {
-   window.gtag("event", EVENT_TYPES.HELPER_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.HELPER_CLICK, {
       page_url: getPageUrl(),
       keyword_value: text,
    });
@@ -77,7 +77,7 @@ export const onNavbarSectionClick = ({
    sourceSectionNumber,
    destinationSectionNumber,
 }) => {
-   window.gtag("event", EVENT_TYPES.NAVBAR_SECTION_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.NAVBAR_SECTION_CLICK, {
       page_url: getPageUrl(),
       source_section_number: sourceSectionNumber,
       source_leaflet_number: sourceLeafletNumber,
@@ -87,13 +87,13 @@ export const onNavbarSectionClick = ({
 };
 
 export const onPlayVideoClick = (videoId) => {
-   window.gtag("event", EVENT_TYPES.VIDEO_PLAY_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.VIDEO_PLAY_CLICK, {
       page_url: getPageUrl(),
       video_id: videoId,
    });
 };
 export const onVideoStart = ({ videoId, timestamp }) => {
-   window.gtag("event", EVENT_TYPES.VIDEO_PLAY_START, {
+   window.gtag?.("event", EVENT_TYPES.VIDEO_PLAY_START, {
       page_url: getPageUrl(),
       start_timestamp: timestamp,
       video_id: videoId,
@@ -101,7 +101,7 @@ export const onVideoStart = ({ videoId, timestamp }) => {
 };
 
 export const onVideoEnd = ({ videoId, timestamp }) => {
-   window.gtag("event", EVENT_TYPES.VIDEO_PLAY_END, {
+   window.gtag?.("event", EVENT_TYPES.VIDEO_PLAY_END, {
       page_url: getPageUrl(),
       end_timestamp: timestamp,
       video_id: videoId,
@@ -109,7 +109,7 @@ export const onVideoEnd = ({ videoId, timestamp }) => {
 };
 
 export const onVideoPause = ({ videoId, timestamp }) => {
-   window.gtag("event", EVENT_TYPES.VIDEO_PAUSE, {
+   window.gtag?.("event", EVENT_TYPES.VIDEO_PAUSE, {
       page_url: getPageUrl(),
       pause_timestamp: timestamp,
       video_id: videoId,
@@ -117,27 +117,27 @@ export const onVideoPause = ({ videoId, timestamp }) => {
 };
 
 export const onVideoReplay = (videoId) => {
-   window.gtag("event", EVENT_TYPES.VIDEO_REPLAY, {
+   window.gtag?.("event", EVENT_TYPES.VIDEO_REPLAY, {
       page_url: getPageUrl(),
       video_id: videoId,
    });
 };
 
 export const onShareButtonClick = () => {
-   window.gtag("event", EVENT_TYPES.SHARE_BUTTON_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.SHARE_BUTTON_CLICK, {
       page_url: getPageUrl(),
    });
 };
 
 export const onNextPageButtonClick = (nextPageLink) => {
-   window.gtag("event", EVENT_TYPES.NEXT_PAGE_BUTTON_CLICK, {
+   window.gtag?.("event", EVENT_TYPES.NEXT_PAGE_BUTTON_CLICK, {
       page_url: getPageUrl(),
       next_page_url: nextPageLink.split("/").pop(),
    });
 };
 
 export const onAppletInteraction = (appletId, typeOfInteraction) => {
-   window.gtag("event", EVENT_TYPES.APPLET_INTERACTION, {
+   window.gtag?.("event", EVENT_TYPES.APPLET_INTERACTION, {
       page_url: getPageUrl(),
       applet_id: appletId,
       type_of_interaction: typeOfInteraction,

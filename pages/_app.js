@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
 import { ToastContainer } from "react-toastify";
+import { isLive } from "utils/constants";
 import "styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
@@ -13,7 +14,7 @@ function MyApp({ Component, pageProps }) {
                content={Component.meta || "Math concept pages"}
             />
          </Head>
-         <Script
+         {isLive && <Script
             id="ms-clarity"
             type="text/javascript"
             strategy="afterInteractive"
@@ -23,19 +24,19 @@ function MyApp({ Component, pageProps }) {
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "9iu6tgy0ez");`}
-         </Script>
-         <Script
+         </Script>}
+         {isLive && <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-6QMNTL74XB"
             strategy="afterInteractive"
-         />
-         <Script id="google-analytics" strategy="afterInteractive">
+         />}
+         {isLive && <Script id="google-analytics" strategy="afterInteractive">
             {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-6QMNTL74XB');
         `}
-         </Script>
+         </Script>}
          <Component {...pageProps} />
          <ToastContainer />
       </>
