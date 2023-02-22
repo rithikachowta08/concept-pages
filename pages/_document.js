@@ -32,7 +32,6 @@ export default class MyDocument extends Document {
                />
                <link rel="preload" href="fonts/stylesheet.css" crossOrigin="" />
                <link rel="preload" as="image" href="assets/white_bg.webp" />
-               <meta name="robots" content="noindex" />
                <link
                   rel="apple-touch-icon"
                   sizes="180x180"
