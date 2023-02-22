@@ -44,6 +44,8 @@ const Slide7 = ({ downIcon }) => {
             </TextLine>
             <Paragraph>
                <TextLine fontWeight={fontWeights.BOLD}>Solution:</TextLine>
+            </Paragraph>
+            <Paragraph>
                <TextLine>
                   <TextSpanBg
                      onHover={() => onHover(1)}
@@ -53,8 +55,14 @@ const Slide7 = ({ downIcon }) => {
                      1 kiloliter = 1,000 liters
                   </TextSpanBg>
                </TextLine>
+            </Paragraph>
+            <Paragraph>
                <TextLine>Thus, 50 kiloliters = 50 x 1000 liters</TextLine>
+            </Paragraph>
+            <Paragraph>
                <TextLine>50 kiloliters = 50,000 liters</TextLine>
+            </Paragraph>
+            <Paragraph>
                <TextLine>
                   Therefore, 50 kiloliters is equal to 50,000 liters.
                </TextLine>

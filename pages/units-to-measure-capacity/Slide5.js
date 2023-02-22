@@ -1,13 +1,12 @@
 import dynamic from "next/dynamic";
+const BulletPointItem = dynamic(() => import("components/text/BulletPoint"));
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const TextLine = dynamic(() =>
-   import("components/text").then((mod) => mod.TextLine)
-);
+
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
 );
@@ -24,18 +23,22 @@ const Slide5 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            <TextLine>
+            {/* <TextLine>
                &bull; Non-standard units are more of estimates than definite
                measurements.
-            </TextLine>
-            <TextLine>
-               &bull; It might lead to errors in unit conversions as there are
-               no absolute references.
-            </TextLine>
-            <TextLine>
-               &bull; Non-standard units do not represent the same quantity
-               across different regions.
-            </TextLine>
+            </TextLine> */}
+            <BulletPointItem>
+               Non-standard units are more of estimates than definite
+               measurements.
+            </BulletPointItem>
+            <BulletPointItem>
+               It might lead to errors in unit conversions as there are no
+               absolute references.
+            </BulletPointItem>
+            <BulletPointItem>
+               Non-standard units do not represent the same quantity across
+               different regions.
+            </BulletPointItem>
          </Paragraph>
       </TextAndDiagramSlide>
    );

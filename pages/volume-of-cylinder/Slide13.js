@@ -34,11 +34,15 @@ const Slide13 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "3.14 \\times (5^2 - 3^2) \\times 10",
+               eqLatex: "3.14 \\times ((5\\ in)^2 - (3\\ in)^2) \\times 10\\ in",
                hint: "",
             },
             {
-               eqLatex: "31.4 \\times(25 - 16)",
+               eqLatex: "3.14 \\times (5^2 - 3^2)\\ sq\\ in \\times 10\\ in",
+               hint: "",
+            },
+            {
+               eqLatex: "31.4 \\times(25 - 16)\\ sq\\ in",
                hint: "",
             },
             {

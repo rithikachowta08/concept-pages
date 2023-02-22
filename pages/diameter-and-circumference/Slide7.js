@@ -105,7 +105,7 @@ const Slide7 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{18.8}{6} "],
+                           value: ["\\dfrac{18.8\\ in}{6\\ in} "],
                            type: "latex",
                         },
                         rhsHint: {

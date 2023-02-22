@@ -1,3 +1,4 @@
+import AppletSlide from "components/slides/AppletSlide";
 import { Paragraph } from "components/text";
 import dynamic from "next/dynamic";
 
@@ -7,17 +8,17 @@ const TextAndAppletSlide = dynamic(() =>
 
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndAppletSlide
+      <AppletSlide
          title={"Volume by counting the unit cubes"}
          secondaryTitle={"Rectangular Prism"}
          appletSrc={""}
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
-         <Paragraph>
+         {/* <Paragraph>
             Use the sliders to count the number of unit cubes.
-         </Paragraph>
-      </TextAndAppletSlide>
+         </Paragraph> */}
+      </AppletSlide>
    );
 };
 

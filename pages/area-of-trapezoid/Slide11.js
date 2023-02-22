@@ -78,7 +78,7 @@ const Slide11 = ({ downIcon }) => {
                               type: "latex",
                            },
                            rhsLatex: {
-                              value: ["\\dfrac{1}{2} \\times (14+8) \\times 4"],
+                              value: ["\\dfrac{1}{2} \\times (14+8) \\times 4\\ in"],
                               type: "latex",
                            },
                            rhsHint: {
@@ -92,7 +92,7 @@ const Slide11 = ({ downIcon }) => {
                               type: "text",
                            },
                            rhsLatex: {
-                              value: ["\\dfrac{1}{2} \\times 22 \\times 4"],
+                              value: ["\\dfrac{1}{2} \\times 22 \\times 4\\ in"],
                               type: "latex",
                            },
                            rhsHint: {
