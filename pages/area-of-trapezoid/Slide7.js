@@ -91,14 +91,18 @@ const Slide7 = ({ downIcon }) => {
                </TextSpanBg>
                .
             </TextLine>
-
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
             <TextLine>
                Step 2: Calculate the area of the triangle using Heron&lsquo;s
                formula (A1) and general formula (A2).
             </TextLine>
+         </Paragraph>
 
+         <Paragraph color={colors.WHITE}>
             <TextLine>Step 3: Equate A1 and A2 to find the height.</TextLine>
-
+         </Paragraph>
+         <Paragraph>
             <TextLine>
                Step 4: Find the area of trapezoid using the formula.
             </TextLine>

@@ -14,9 +14,10 @@ const ImageWrap = styled.div`
    justify-content: flex-start;
    flex-direction: column;
    margin: 0;
+   max-width: 150px;
 
    @media (min-width: 200px) and (max-width: 820px) {
-      margin: 0 auto;
+      justify-content: center;
    }
 `;
 

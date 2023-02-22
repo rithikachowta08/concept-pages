@@ -6,6 +6,7 @@ const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 import { TextLine } from "components/text";
+import { colors } from "utils/colors";
 
 const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
@@ -18,7 +19,7 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
       >
          <Paragraph>
             <TextLine>Volume of right circular cylinder =</TextLine>
-            <TextLine>
+            <TextLine color={colors.BLACK}>
                Volume of oblique cylinder = π &times; r&sup2; &times; h
             </TextLine>
          </Paragraph>
