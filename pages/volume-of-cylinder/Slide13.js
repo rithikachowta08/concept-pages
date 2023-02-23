@@ -42,7 +42,7 @@ const Slide13 = ({ downIcon }) => {
                hint: "",
             },
             {
-               eqLatex: "31.4 \\times(25 - 16)\\ sq\\ in",
+               eqLatex: "31.4 \\times(25 - 16)\\ cu\\ in",
                hint: "",
             },
             {
