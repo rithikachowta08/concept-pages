@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { FullPageCustomWrapper } from "components/full-page-wrapper/FullPageCustomWrapper";
 import PageLastSlide from "components/slides/PageLastSlide";
 import { SLIDE_TYPES } from "utils/constants";
+import Script from "next/script";
 
 const Slide1 = dynamic(() => import("./slides/Slide1"));
 const Slide2 = dynamic(() => import("./slides/Slide2"));
@@ -49,11 +50,17 @@ const VolumeOfRectangularPrism = () => {
 
    const darkBgIndices = [0, 2, 3, 5, 7, 11];
    return (
-      <FullPageCustomWrapper
-         slidesComponentList={SlideArray}
-         navigationSections={navigationSections}
-         darkBgIndices={darkBgIndices}
-      />
+      <>
+         <Script
+            src="https://geogebra.org/apps/deployggb.js"
+            strategy="beforeInteractive"
+         ></Script>
+         <FullPageCustomWrapper
+            slidesComponentList={SlideArray}
+            navigationSections={navigationSections}
+            darkBgIndices={darkBgIndices}
+         />
+      </>
    );
 };
 

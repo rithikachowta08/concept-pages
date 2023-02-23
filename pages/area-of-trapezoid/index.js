@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
+import Script from "next/script";
 import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
@@ -52,11 +53,17 @@ const AreaOfTrapezoid = () => {
 
    const darkBgIndices = [0, 2, 3, 4, 6, 11];
    return (
-      <FullPageCustomWrapper
-         slidesComponentList={SlideArray}
-         navigationSections={navigationSections}
-         darkBgIndices={darkBgIndices}
-      />
+      <>
+         <Script
+            src="https://geogebra.org/apps/deployggb.js"
+            strategy="beforeInteractive"
+         ></Script>
+         <FullPageCustomWrapper
+            slidesComponentList={SlideArray}
+            navigationSections={navigationSections}
+            darkBgIndices={darkBgIndices}
+         />
+      </>
    );
 };
 

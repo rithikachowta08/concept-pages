@@ -4,7 +4,7 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/AppletSlide")
 );
 import { Paragraph } from "components/text";
-import { Applet01901Ge } from "@byjus-us-math/content-applets/019_01_GE";
+import { Applet01901Ge } from "@assessed/byjus-us-math-applets/019_01_GE";
 
 const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
    return (

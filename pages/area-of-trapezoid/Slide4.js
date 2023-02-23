@@ -7,6 +7,7 @@ const TextAndAppletSlide = dynamic(() =>
 
 import { Paragraph, TextLine } from "components/text";
 import { colors } from "utils/colors";
+import { Applet00901Ge } from "@assessed/byjus-us-math-applets/009_01_GE";
 
 // General formula derivation
 const Slide4 = ({ downIcon, currentPageIdx }) => {
@@ -22,7 +23,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
          bg="DARK"
          title={"Derivation"}
          secondaryTitle={"Area of a Trapezoid"}
-         appletSrc=""
+         AppletComponent={Applet00901Ge}
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >

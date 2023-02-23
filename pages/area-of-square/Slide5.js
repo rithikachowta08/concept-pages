@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Applet01401Ge } from "@byjus-us-math/content-applets/014_01_GE";
+import { Applet01401Ge } from "@assessed/byjus-us-math-applets/014_01_GE";
 
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/AppletSlide")
