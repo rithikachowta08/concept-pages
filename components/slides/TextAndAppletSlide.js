@@ -102,8 +102,8 @@ const IframeWrap = styled.div`
 
 const FullScreenIcon = styled.img`
    position: absolute;
+   right: ${(props) => props.right || "10px"};
    bottom: 15px;
-   right: 10px;
 `;
 
 const RightWrap = styled.div`
@@ -123,6 +123,7 @@ const TextAndAppletSlide = ({
    currentPageIdx,
    appletSrc,
    AppletComponent,
+   fullScreenRightOffset,
 }) => {
    const ref = useRef(null);
    const [src, setSrc] = useState(null);
@@ -191,6 +192,7 @@ const TextAndAppletSlide = ({
                      )}
                      <FullScreenIcon
                         src={isFitToWidth ? fullscreen_exit : fit_to_width}
+                        right={fullScreenRightOffset}
                         onClick={toggleFitToWidth}
                      ></FullScreenIcon>
                   </IframeWrap>
@@ -244,7 +246,7 @@ const TextAndAppletSlide = ({
                   <RightWrap>
                      {AppletComponent != null ? (
                         <AppWrapper isFitToWidth={isFitToWidth}>
-                           <AppletComponent onEvent={onAppletInteraction}/>
+                           <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
                         <IFrame

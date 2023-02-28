@@ -1,9 +1,4 @@
-import { useState } from "react";
-import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const TransitionImage = dynamic(() =>
-   import("components/media/TransitionImage")
-);
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
@@ -13,126 +8,56 @@ const TextLine = dynamic(() =>
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const TextSpanBg = dynamic(() =>
-   import("components/text").then((mod) => mod.TextSpanBg)
-);
-const EquationTable = dynamic(() =>
-   import("components/MathElement/EquationTable")
-);
-const circleExample = "assets/diameter-and-circumference/circleExample.svg";
-const diameterExample = "assets/diameter-and-circumference/diameterExample.svg";
-const circumferenceExample =
-   "assets/diameter-and-circumference/circumferenceExample.svg";
-const Slide7 = ({ downIcon }) => {
-   const [activeIndex, setActiveIndex] = useState(0);
-   const onHover = (e) => {
-      setActiveIndex(e);
-   };
-   const onHoverOut = (e) => {
-      setActiveIndex(0);
-   };
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
+const pi = "assets/diameter-and-circumference/pi.svg";
+import { StyledImg } from "components/StyledElements";
+import BulletPointItem from "components/text/BulletPoint";
+const Slide6 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
-         title="Illustrative Example"
+         title="Facts about π (pi)"
          diagram={
-            <TransitionImage
-               images={[circleExample, diameterExample, circumferenceExample]}
-               altTexts={[
-                  "Diagram of a circle showing diameter (D)",
-                  "Diagram of a circle with highlighted diameter (D)",
-                  "Diagram of a circle with highlighted circumference",
-               ]}
-               activeIndex={activeIndex}
-            />
+            <StyledImg src={pi} alt={"Diagram showing the symbol of pi"} />
          }
          downIcon={downIcon}
       >
          <Paragraph>
-            The diameter of a circle is 6 in. Find the ratio of the
-            circumference to diameter of the circle.
-         </Paragraph>
-
-         <Paragraph>Solution:</Paragraph>
-
-         <Paragraph>
+            {/* <TextLine>
+               <MathElement htmlString={`\\large•`} />
+               &nbsp; π is irrational (not equal to the ratio of any two whole
+               numbers), and its digits do not repeat.
+            </TextLine>
             <TextLine>
-               <TextSpanBg
-                  onHover={() => onHover(1)}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
-               >
-                  Diameter (D)
-               </TextSpanBg>
-               &nbsp; = 6 in
+               <MathElement htmlString={`\\large•`} />
+               &nbsp; An approximation for π, such as 3.14 or{" "}
+               <MathElement htmlString={"\\dfrac{22}{7}"} /> is often used for
+               calculations.
             </TextLine>
-         </Paragraph>
-
-         <Paragraph>
-            <TextLine color={colors.BLACK}>
-               <TextSpanBg
-                  onHover={() => onHover(2)}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
-               >
-                  Circumference
-               </TextSpanBg>
-               &nbsp; = 18.8 in
-            </TextLine>
-         </Paragraph>
-
-         <Paragraph>
-            <TextLine color={colors.BLACK}>
-               <EquationTable
-                  align="middle"
-                  equationLatex={[
-                     {
-                        lhsLatex: {
-                           value: ["Ratio"],
-                           type: "text",
-                        },
-                        rhsLatex: {
-                           value: ["\\dfrac{Circumference}{Diameter} "],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                     {
-                        lhsLatex: {
-                           value: [""],
-                           type: "latex",
-                        },
-                        rhsLatex: {
-                           value: ["\\dfrac{18.8\\ in}{6\\ in} "],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                     {
-                        lhsLatex: {
-                           value: [""],
-                           type: "text",
-                        },
-                        rhsLatex: {
-                           value: ["3.14159… ≃ π"],
-                           type: "latex",
-                        },
-                        rhsHint: {
-                           value: [""],
-                           type: "text",
-                        },
-                     },
-                  ]}
-               />
-            </TextLine>
+            <TextLine>
+               <MathElement htmlString={`\\large•`} />
+               &nbsp; Pi Day is celebrated every year on 14 March. The date
+               represents the first 3 digits of this unique number. The day was
+               recognised in 1988 by physicist Larry Shaw. This day was also
+               recognised as International Mathematics day by UNESCO in 2019.
+            </TextLine> */}
+            <BulletPointItem>
+               π is irrational (not equal to the ratio of any two whole
+               numbers), and its digits do not repeat.
+            </BulletPointItem>
+            <BulletPointItem>
+               An approximation for π, such as 3.14 or{" "}
+               <MathElement htmlString={"\\dfrac{22}{7}"} /> is often used for
+               calculations.
+            </BulletPointItem>
+            <BulletPointItem>
+               Pi Day is celebrated every year on 14 March. The date represents
+               the first 3 digits of this unique number. The day was recognised
+               in 1988 by physicist Larry Shaw. This day was also recognised as
+               International Mathematics day by UNESCO in 2019.
+            </BulletPointItem>
          </Paragraph>
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide7;
+export default Slide6;
