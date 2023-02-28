@@ -9,6 +9,7 @@ const MultiLhsEquationContainer = dynamic(() =>
    import("components/MathElement/MultiLhsEquationContainer")
 );
 import { TextLine } from "components/text";
+import { Applet00801Ge } from "@assessed/byjus-us-math-applets/008_01_GE";
 
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    let EquationLatex = [
@@ -32,7 +33,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
    ];
    return (
       <TextAndAppletSlide
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
+         AppletComponent={Applet00801Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          secondaryTitle="Volume of a Cylinder"

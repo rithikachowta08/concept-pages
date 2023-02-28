@@ -7,11 +7,12 @@ const Paragraph = dynamic(() =>
 );
 import { TextLine } from "components/text";
 import { colors } from "utils/colors";
+import { Applet00802Ge } from "@assessed/byjus-us-math-applets/008_02_GE";
 
 const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
+         AppletComponent={Applet00802Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          secondaryTitle="Volume of different types of cylinders"

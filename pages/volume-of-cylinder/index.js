@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { SLIDE_TYPES } from "utils/constants";
+import Script from "next/script";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
       (mod) => mod.FullPageCustomWrapper
@@ -58,11 +59,17 @@ const VolumeOfCylinder = () => {
 
    const darkBgIndices = [0, 3, 5, 6, 13];
    return (
-      <FullPageCustomWrapper
-         slidesComponentList={SlideArray}
-         navigationSections={navigationSections}
-         darkBgIndices={darkBgIndices}
-      />
+      <>
+         <Script
+            src="https://geogebra.org/apps/deployggb.js"
+            strategy="beforeInteractive"
+         ></Script>
+         <FullPageCustomWrapper
+            slidesComponentList={SlideArray}
+            navigationSections={navigationSections}
+            darkBgIndices={darkBgIndices}
+         />
+      </>
    );
 };
 

@@ -7,6 +7,7 @@ const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
+import { Applet00401Ge } from "@assessed/byjus-us-math-applets/004_01_GE";
 
 const image_popup = "assets/volume-of-rectangular-prism/slide_3_popup.svg";
 
@@ -34,7 +35,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
          title={"Volume by counting the unit cubes"}
          secondaryTitle={"Rectangular Prism"}
          bg={"DARK"}
-         appletSrc={""}
+         AppletComponent={Applet00401Ge}
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >

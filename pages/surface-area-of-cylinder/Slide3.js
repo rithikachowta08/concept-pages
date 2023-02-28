@@ -1,11 +1,12 @@
-
 import dynamic from "next/dynamic";
 
-const TextAndAppletSlide = dynamic(() => import("components/slides/TextAndAppletSlide"));
-const Paragraph = dynamic(() =>
-  import("components/text").then((mod) => mod.Paragraph)
+const TextAndAppletSlide = dynamic(() =>
+   import("components/slides/TextAndAppletSlide")
 );
-import { Applet00701Ge } from "@byjus-us-math/content-applets/007_01_GE";
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+import { Applet00701Ge } from "@assessed/byjus-us-math-applets/007_01_GE";
 
 const Slide3 = ({ downIcon }) => {
    return (
@@ -17,9 +18,8 @@ const Slide3 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-         The surface area of a cylinder is the total area covered by the circular bases and its curved surface. 
-
-
+            The surface area of a cylinder is the total area covered by the
+            circular bases and its curved surface.
          </Paragraph>
       </TextAndAppletSlide>
    );

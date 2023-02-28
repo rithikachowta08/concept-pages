@@ -1,8 +1,6 @@
-const AppletSlide = dynamic(() =>
-   import("components/slides/AppletSlide")
-);
-import { Paragraph } from "components/text";
+const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
 import dynamic from "next/dynamic";
+import { Applet02901Ge } from "@assessed/byjus-us-math-applets/029_01_GE";
 
 const Slide4 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
@@ -12,9 +10,7 @@ const Slide4 = ({ navBar, downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title={"Ratio of unwrapped length to the diameter of a circle"}
-         appletSrc={
-            "https://s3-whjr-prod-cocos-applet.whjr.online/SEO/length-of-arc-of-circle-v2/index.html"
-         }
+         AppletComponent={Applet02901Ge}
       >
          {/* <Paragraph>
             This applet illustrates how many diameters can be wrapped around a
