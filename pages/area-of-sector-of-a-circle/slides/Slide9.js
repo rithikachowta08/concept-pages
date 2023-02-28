@@ -60,7 +60,7 @@ const Slide9 = ({ navBar, downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            Find the area of the sector of a circle with a radius of 4 cm and an
+            Find the area of the sector of a circle with a radius of 4 in and an
             angle of 30°.
          </Paragraph>
          <Paragraph margin={"40px 0 0 0"}>Given:</Paragraph>
