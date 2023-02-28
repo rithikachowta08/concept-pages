@@ -137,6 +137,7 @@ const AppletSlide = ({
    AppletComponent,
 }) => {
    const ref = useRef(null);
+   const timer = useRef(null);
    const [src, setSrc] = useState(null);
    useEffect(() => {
       if (ref.current && bg === "DARK") {
@@ -144,9 +145,17 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
 
-   function preventScrolling(e) {
+   function onWheel(e) {
       e.preventDefault();
       e.stopPropagation();
+   }
+
+   function disableScrolling(e) {
+      fullpage_api.setAllowScrolling(false);
+   }
+
+   function enableScrolling(e) {
+      fullpage_api.setAllowScrolling(true);
    }
 
    useEffect(() => {
@@ -183,8 +192,9 @@ const AppletSlide = ({
                   >
                      {AppletComponent != null ? (
                         <AppWrapper
-                           onTouchMove={preventScrolling}
-                           onTouchMoveCapture={preventScrolling}
+                           onTouchMove={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
                         >
                            <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
@@ -222,10 +232,11 @@ const AppletSlide = ({
                      </TitleWrap>
                      {AppletComponent != null ? (
                         <AppWrapper
-                           onWheel={preventScrolling}
-                           onTouchMove={preventScrolling}
-                           onTouchStart={preventScrolling}
-                           onTouchMoveCapture={preventScrolling}
+                           onWheel={onWheel}
+                           onTouchMove={disableScrolling}
+                           onTouchStart={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
                         >
                            <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
