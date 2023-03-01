@@ -42,11 +42,11 @@ const RelationshipBetweenDiameterAndCircumference = () => {
       { title: "Ratio of circumference to diameter", slides: [2, 3] },
       {
          title: "Relation between circumference and diameter",
-         slides: [4, 5, 6, 7],
+         slides: [4, 5, 6, 7, 8],
       },
    ];
 
-   const darkBgIndices = [0, 2, 4, 7, 8];
+   const darkBgIndices = [0, 2, 4, 8, 9];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

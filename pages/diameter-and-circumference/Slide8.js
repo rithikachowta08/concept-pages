@@ -163,7 +163,7 @@ const Slide8 = ({ downIcon }) => {
                >
                   Diameter (D)
                </TextSpanBg>
-               &nbsp; = 6 in
+               &nbsp;= 6 in
             </TextLine>
          </Paragraph>
 
@@ -176,7 +176,7 @@ const Slide8 = ({ downIcon }) => {
                >
                   Circumference
                </TextSpanBg>
-               &nbsp; = 18.8 in
+               &nbsp;= 18.8 in
             </TextLine>
          </Paragraph>
 
