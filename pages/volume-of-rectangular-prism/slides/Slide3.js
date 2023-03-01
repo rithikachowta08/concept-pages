@@ -37,6 +37,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
          bg={"DARK"}
          AppletComponent={Applet00401Ge}
          currentPageIdx={currentPageIdx}
+         fullScreenRightOffset="30px"
          downIcon={downIcon}
       >
          <Modal

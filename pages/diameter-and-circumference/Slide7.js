@@ -17,4 +17,4 @@ const Slide7 = ({ navBar, downIcon, currentPageIdx }) => {
    );
 };
 
-export default Slide7;
+export default Slide6;
