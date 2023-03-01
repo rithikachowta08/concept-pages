@@ -26,7 +26,7 @@ const RelationshipBetweenDiameterAndCircumference = () => {
       <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide6 key={5} type={SLIDE_TYPES.APPLET_ONLY} />,
       <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide8 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide8 key={7} type={SLIDE_TYPES.APPLET_ONLY} />,
       <Slide9 key={8} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
          type={SLIDE_TYPES.CONCLUSION}
