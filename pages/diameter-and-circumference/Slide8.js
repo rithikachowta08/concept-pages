@@ -235,4 +235,4 @@ const Slide8 = ({ downIcon }) => {
    );
 };
 
-export default Slide7;
+export default Slide8;
