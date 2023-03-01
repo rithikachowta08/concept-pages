@@ -39,14 +39,14 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
          secondaryTitle="Volume of a Cylinder"
          title="Derivation"
       >
-         <Paragraph>
+         {/* <Paragraph>
             If we stack circular discs of area ‘A’ with negligible thickness one
             over the other, a cylinder is formed.
          </Paragraph>
          <Paragraph>
             Here,
             <TextLine>Number of discs = Height of the cylinder.</TextLine>
-         </Paragraph>
+         </Paragraph> */}
          <div>
             <Paragraph>
                The volume of a cylinder is the product of the base area (A) and

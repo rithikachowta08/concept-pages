@@ -15,7 +15,6 @@ const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
-const Slide9 = dynamic(() => import("./Slide9"));
 const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 
 const RelationshipBetweenDiameterAndCircumference = () => {
@@ -31,7 +30,6 @@ const RelationshipBetweenDiameterAndCircumference = () => {
       <Slide9 key={8} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
          type={SLIDE_TYPES.CONCLUSION}
-         key={9}
          key={9}
          currentPageTitle={"Relationship between Diameter and Circumference"}
          nextPageTitle="Volume of a Cylinder"
