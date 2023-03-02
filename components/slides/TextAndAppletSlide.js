@@ -141,6 +141,20 @@ const TextAndAppletSlide = ({
          setSrc(appletSrc);
       }
    }, [currentPageIdx, appletSrc, src]);
+
+   function onWheel(e) {
+      e.preventDefault();
+      e.stopPropagation();
+   }
+
+   function disableScrolling(e) {
+      fullpage_api.setAllowScrolling(false);
+   }
+
+   function enableScrolling(e) {
+      fullpage_api.setAllowScrolling(true);
+   }
+
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
@@ -179,7 +193,12 @@ const TextAndAppletSlide = ({
                >
                   <IframeWrap>
                      {AppletComponent != null ? (
-                        <AppWrapper isFitToWidth={isFitToWidth}>
+                        <AppWrapper
+                           isFitToWidth={isFitToWidth}
+                           onTouchMove={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
                            <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
@@ -245,7 +264,14 @@ const TextAndAppletSlide = ({
                   </LeftWrap>
                   <RightWrap>
                      {AppletComponent != null ? (
-                        <AppWrapper isFitToWidth={isFitToWidth}>
+                        <AppWrapper
+                           isFitToWidth={isFitToWidth}
+                           onWheel={onWheel}
+                           onTouchMove={disableScrolling}
+                           onTouchStart={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
                            <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
