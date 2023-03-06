@@ -24,23 +24,23 @@ const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
 
-const slide8_a = "assets/volume-of-triangular-prism/1_a.svg";
-const slide8_b = "assets/volume-of-triangular-prism/3_b.svg";
-const slide8_c = "assets/volume-of-triangular-prism/8_c.svg";
-const slide8_d = "assets/volume-of-triangular-prism/8_d.svg";
+const slide9_a = "assets/volume-of-triangular-prism/9_a.svg";
+const slide9_b = "assets/volume-of-triangular-prism/9_b.svg";
+const slide9_c = "assets/volume-of-triangular-prism/9_c.svg";
+const slide9_d = "assets/volume-of-triangular-prism/9_d.svg";
 
 const Slide8 = ({ downIcon }) => {
    let equationLatex=[
       {
          lhsLatex: {
             value: [
-               `Area of an equilateral triangle (A)`,
+               `Area of an isoceles triangle (A)`,
             ],
             type: "text",
          },
          rhsLatex: {
             value: [
-               "\\dfrac{\\sqrt{3}}{4}\\ \\times a^2",
+               "\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2}",
             ],
             type: "latex",
          },
@@ -49,15 +49,15 @@ const Slide8 = ({ downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    return (
       <TextAndDiagramSlide
-         title="Volume of an Equilateral Triangular Prism"
+         title="Volume of an Isoceles Triangular Prism"
          diagram={
             <TransitionImage
-               images={[slide8_a, slide8_b, slide8_c, slide8_d]}
+               images={[slide9_a, slide9_b, slide9_c, slide9_d]}
                altTexts={[
-                  "Diagram of a equilateral triangular prism",
-                  "Diagram of a equilateral triangular prism representing its volume.",
-                  "Diagram of a equilateral triangular prism with highlighted base area",
-                  "Diagram of a equilateral triangular prism with highlighted height",
+                  "Diagram of a isoceles triangular prism",
+                  "Diagram of a isoceles triangular prism representing its volume.",
+                  "Diagram of a isoceles triangular prism with highlighted base area",
+                  "Diagram of a isoceles triangular prism with highlighted height",
                ]}
                activeIndex={activeIndex}
             />
@@ -99,7 +99,9 @@ const Slide8 = ({ downIcon }) => {
                <Pill darkbg={false}>
                   Volume ={" "}
                   <MathEquationWrapper>
-                     {"\\dfrac{\\sqrt{3}}{4} \\times a^2 \\times h"}
+                     {
+                        "\\dfrac{1}{4} \\times b \\times \\sqrt{4a^2 - b^2} \\times h"
+                     }
                   </MathEquationWrapper>
                </Pill>
             </Paragraph>
