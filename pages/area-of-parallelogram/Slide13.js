@@ -52,16 +52,18 @@ const Slide13 = ({ downIcon }) => {
    ];
    const modalContent = [
       <Flex direction="column" key={0}>
-         <Paragraph color="white">
-            We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
-         </Paragraph>
-         <Paragraph color="white">
-            Hence,<TextLine>a &times; a = |a| |a| Sin &#952;</TextLine>
-         </Paragraph>
-         <Paragraph color="white">
-            <TextLine>For &#952; = 0&deg;</TextLine>
-            <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
-            <TextLine>a &times; a = 0</TextLine>
+         <Paragraph padding="0 0 0 4rem">
+            <Paragraph color="white">
+               We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
+            </Paragraph>
+            <Paragraph color="white">
+               Hence,<TextLine>a &times; a = |a| |a| Sin &#952;</TextLine>
+            </Paragraph>
+            <Paragraph color="white">
+               <TextLine>For &#952; = 0&deg;</TextLine>
+               <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
+               <TextLine>a &times; a = 0</TextLine>
+            </Paragraph>
          </Paragraph>
          <ModalImg
             src={image_4}
