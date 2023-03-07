@@ -14,7 +14,7 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const slide4_a = "assets/volume-of-triangular-prism/1_a.svg";
+const slide4_a = "assets/volume-of-triangular-prism/4_a.svg";
 const slide4_b = "assets/volume-of-triangular-prism/4_b.svg";
 const slide4_c = "assets/volume-of-triangular-prism/4_c.svg";
 const slide4_d = "assets/volume-of-triangular-prism/4_d.svg";
