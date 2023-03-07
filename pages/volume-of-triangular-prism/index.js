@@ -15,7 +15,6 @@ const Slide7 = dynamic(() => import("./Slide7"));
 const Slide8 = dynamic(() => import("./Slide8"));
 const Slide9 = dynamic(() => import("./Slide9"));
 const Slide10 = dynamic(() => import("./Slide10"));
-const Slide11 = dynamic(() => import("./Slide11"));
 const PageLastSlide = dynamic(() =>
    import("../../components/slides/PageLastSlide")
 );
@@ -25,18 +24,17 @@ const VolumeOfTriangularPrism = () => {
    const SlideArray = [
       <Slide0 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
       <Slide1 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide2 key={2} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide2 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide3 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide4 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide5 key={5} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
-      <Slide6 key={6} type={SLIDE_TYPES.VIDEO_ONLY} />,
-      <Slide7 key={7} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide4 key={4} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide5 key={5} type={SLIDE_TYPES.VIDEO_ONLY} />,
+      <Slide6 key={6} type={SLIDE_TYPES.MULTIPLE_DIAGRAM} />,
+      <Slide7 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide8 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide9 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide10 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide11 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
-         key={12}
+         key={11}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Triangular Prism"}
          nextPageLink={"/us/math/study/concept/area-of-parallelogram"}
@@ -46,16 +44,16 @@ const VolumeOfTriangularPrism = () => {
    const navigationSections = [
       {
          title: "What is the volume of a triangular prism?",
-         slides: [1, 2, 3],
+         slides: [1, 2],
       },
-      { title: "General formula", slides: [4, 5, 6] },
+      { title: "General formula", slides: [3, 4, 5] },
       {
          title: "Volume of different types of triangular prisms",
-         slides: [7, 8, 9, 10, 11, 12],
+         slides: [6, 7, 8, 9, 10, 11],
       },
    ];
 
-   const darkBgIndices = [0, 4, 6, 7, 12];
+   const darkBgIndices = [0, 3, 5, 6, 11];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

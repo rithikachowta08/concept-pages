@@ -164,7 +164,9 @@ const Slide11 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} \\times 16 \\times 8 + 16"],
+                           value: [
+                              "\\dfrac{1}{2} \\times 16 \\:in \\times 8 \\:in + 16 \\:sq \\:in",
+                           ],
                            type: "latex",
                         },
                         rhsHint: {
@@ -178,7 +180,7 @@ const Slide11 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["64 + 16 = 80 sq in"],
+                           value: ["64 sq in + 16 sq in = 80 sq in"],
                            type: "text",
                         },
                         rhsHint: {

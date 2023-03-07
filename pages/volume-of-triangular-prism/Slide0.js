@@ -10,7 +10,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "General formula",
             "Volume of different types of triangular prisms",
          ]}
-         anchorIdxes={[2, 5, 8]}
+         anchorIdxes={[2, 4, 7]}
          moveToSection={moveToSection}
          downIcon={downIcon}
       ></TitleSlide>

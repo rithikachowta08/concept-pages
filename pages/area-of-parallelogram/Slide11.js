@@ -51,18 +51,8 @@ const Slide11 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\dfrac{1}{2} \\times 3 \\times 4 \\times Sin\\: 60^o"],
-            type: "latex",
-         },
-      },
-      {
-         lhsLatex: {
-            value: [""],
-            type: "text",
-         },
-         rhsLatex: {
             value: [
-               "\\dfrac{1}{2} \\times 3 \\times 4 \\times \\dfrac{\\sqrt{3}}{2}",
+               "\\dfrac{1}{2} \\times 3 \\:in \\times 4 \\:in \\times Sin\\: 60^o",
             ],
             type: "latex",
          },
@@ -73,7 +63,21 @@ const Slide11 = ({ downIcon }) => {
             type: "text",
          },
          rhsLatex: {
-            value: ["\\dfrac{1}{2} \\times \\dfrac{12 \\times \\sqrt{3}}{2}"],
+            value: [
+               "\\dfrac{1}{2} \\times 3 \\:in \\times 4 \\:in \\times \\dfrac{\\sqrt{3}}{2}",
+            ],
+            type: "latex",
+         },
+      },
+      {
+         lhsLatex: {
+            value: [""],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\dfrac{1}{2} \\times \\dfrac{12 \\times \\sqrt{3}}{2} \\:sq\\:in",
+            ],
             type: "latex",
          },
       },

@@ -7,13 +7,14 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 const Pill = dynamic(() => import("components/Pill"));
+import { Applet01701Ge } from "@assessed/byjus-us-math-applets/017_01_GE";
 
 const Slide4 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          title="Derivation"
          secondaryTitle="Area of a Parallelogram"
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Volumes-of-cube-using-unit-cubes-v2/index.html"
+         AppletComponent={Applet01701Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
       >
