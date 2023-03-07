@@ -1,11 +1,11 @@
 import AppletSlide from "components/slides/AppletSlide";
-import { Applet02501Ge } from "@assessed/byjus-us-math-applets/025_01_GE";
+import { Applet02502Ge } from "@assessed/byjus-us-math-applets/025_02_GE";
 
 const Slide8 = ({ downIcon }) => {
    return (
       <AppletSlide
          title={"Derivation"}
-         AppletComponent={Applet02501Ge}
+         AppletComponent={Applet02502Ge}
          downIcon={downIcon}
       />
    );

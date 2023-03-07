@@ -32,7 +32,7 @@ const VolumeOfTriangularPrism = () => {
       <Slide7 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide8 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide9 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide9 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
          key={11}
          type={SLIDE_TYPES.CONCLUSION}

@@ -52,7 +52,7 @@ const Slide13 = ({ downIcon }) => {
    ];
    const modalContent = [
       <Flex direction="column" key={0}>
-         <Paragraph padding="0 0 0 4rem">
+         <div style={{ padding: "0 0 0 4rem" }}>
             <Paragraph color="white">
                We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
             </Paragraph>
@@ -64,7 +64,7 @@ const Slide13 = ({ downIcon }) => {
                <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
                <TextLine>a &times; a = 0</TextLine>
             </Paragraph>
-         </Paragraph>
+         </div>
          <ModalImg
             src={image_4}
             alignSelf="center"
