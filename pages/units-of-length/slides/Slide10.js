@@ -20,8 +20,8 @@ const ModalImg = dynamic(() =>
 const Modal = dynamic(() => import("components/layout/Modal"));
 import useModal from "hooks/useModal";
 
-const image_1 = "assets/units-of-length/slide 17.svg";
-const image_2 = "assets/units-of-length/slide 18.svg";
+const image_1 = "assets/units-of-length/17.svg";
+const image_2 = "assets/units-of-length/18.svg";
 
 const Slide10 = ({ downIcon }) => {
    const { isModalOpen, onClick, onDismiss } = useModal();

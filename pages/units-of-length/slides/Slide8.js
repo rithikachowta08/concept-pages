@@ -14,8 +14,8 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const image_1 = "assets/units-of-length/slide 12.svg";
-const image_2 = "assets/units-of-length/slide 13.svg";
+const image_1 = "assets/units-of-length/12.svg";
+const image_2 = "assets/units-of-length/13.svg";
 
 const Slide8 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
