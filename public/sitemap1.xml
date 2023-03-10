@@ -106,4 +106,73 @@
         <priority>1.0</priority>
     </url>
 
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/units-to-measure-capacity</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/diameter-and-circumference</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-rectangular-prism</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-cylinder</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-trapezoid</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-triangular-prism</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-parallelogram</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-cone</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-pyramids</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-pyramids</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>
