@@ -260,7 +260,6 @@ const AppletSlide = ({
 AppletSlide.propTypes = {
    title: PropTypes.string,
    bg: PropTypes.string,
-   appletSrc: PropTypes.string.isRequired,
    AppletComponent: PropTypes.element,
 };
 
