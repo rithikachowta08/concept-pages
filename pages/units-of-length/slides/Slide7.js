@@ -14,10 +14,10 @@ const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
 
-const image_1 = "assets/units-of-length/slide 8.svg";
-const image_2 = "assets/units-of-length/slide 9.svg";
-const image_3 = "assets/units-of-length/slide 10.svg";
-const image_4 = "assets/units-of-length/slide 11.svg";
+const image_1 = "assets/units-of-length/8.svg";
+const image_2 = "assets/units-of-length/9.svg";
+const image_3 = "assets/units-of-length/10.svg";
+const image_4 = "assets/units-of-length/11.svg";
 
 const Slide7 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);

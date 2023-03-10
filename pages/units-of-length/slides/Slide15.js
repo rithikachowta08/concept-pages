@@ -7,7 +7,7 @@ const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 
-const image_1 = "assets/units-of-length/slide 27.svg";
+const image_1 = "assets/units-of-length/27.svg";
 
 const Slide15 = ({ downIcon }) => {
    return (

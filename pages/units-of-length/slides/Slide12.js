@@ -15,9 +15,9 @@ const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
 
-const image_1 = "assets/units-of-length/slide 21.svg";
-const image_2 = "assets/units-of-length/slide 22.svg";
-const image_3 = "assets/units-of-length/slide 23.svg";
+const image_1 = "assets/units-of-length/21.svg";
+const image_2 = "assets/units-of-length/22.svg";
+const image_3 = "assets/units-of-length/23.svg";
 
 const Slide12 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
