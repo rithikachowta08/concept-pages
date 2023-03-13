@@ -14,7 +14,7 @@ import { colors } from "utils/colors";
 const image_1 = "assets/units-of-weight/slide10/1.svg";
 const image_2 = "assets/units-of-weight/slide10/2.svg";
 
-const Slide9 = ({ navBar, downIcon }) => {
+const Slide10 = ({ navBar, downIcon }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onModalDismiss = () => {
@@ -24,7 +24,10 @@ const Slide9 = ({ navBar, downIcon }) => {
   const modalContent = (
     <Flex direction="column">
       <Paragraph>
-      The SI system is a decimal-based system because it is based on the multiples of ten. Any measurement given in one metric unit (for example, kilogram) can be converted to another metric unit (for example, gram) simply by moving the decimal place.
+        The SI system is a decimal-based system because it is based on the
+        multiples of ten. Any measurement given in one metric unit (for example,
+        kilogram) can be converted to another metric unit (for example, gram)
+        simply by moving the decimal place.
       </Paragraph>
       <ModalImg
         src={image_2}
@@ -40,9 +43,7 @@ const Slide9 = ({ navBar, downIcon }) => {
       diagram={
         <TransitionImage
           images={[image_1]}
-          altTexts={[
-            "Diagram that represents International system of units"
-          ]}
+          altTexts={["Diagram that represents International system of units"]}
         />
       }
       navBar={navBar}
@@ -57,7 +58,7 @@ const Slide9 = ({ navBar, downIcon }) => {
         onDismiss={onModalDismiss}
       />
       <Paragraph color={colors.WHITE}>
-      The International System of Units or the SI system is a{" "}
+        The International System of Units or the SI system is a{" "}
         <ModalTriggerText
           color={colors.WHITE}
           onClick={() => setIsModalOpen(true)}
@@ -70,4 +71,4 @@ const Slide9 = ({ navBar, downIcon }) => {
   );
 };
 
-export default Slide9;
+export default Slide10;

@@ -14,7 +14,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
         "International system of units",
         "Imperial system of units",
       ]}
-      anchorIdxes={[2, 5, 7, 14]}
+      anchorIdxes={[2, 3, 5, 8, 10, 14, 16]}
       moveToSection={moveToSection}
       downIcon={downIcon}
     ></TitleSlide>

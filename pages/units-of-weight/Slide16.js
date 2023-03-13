@@ -3,7 +3,7 @@ const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
   ssr: false,
 });
 
-const Slide15 = ({ downIcon, currentPageIdx }) => {
+const Slide16 = ({ downIcon, currentPageIdx }) => {
   return (
     <div style={{ height: "100%" }}>
       <VideoSlide2
@@ -27,4 +27,4 @@ const Slide15 = ({ downIcon, currentPageIdx }) => {
   );
 };
 
-export default Slide15;
+export default Slide16;

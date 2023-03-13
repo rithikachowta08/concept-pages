@@ -52,31 +52,31 @@ const SurfaceAreaofCone = () => {
   const navigationSections = [
     {
       title: "What is weight measurement?",
-      slides: [1, 2, 3],
+      slides: [1],
     },
     {
       title: "Explore weight using non-standard units",
-      slides: [4, 5],
+      slides: [2, 3],
     },
     {
       title: "Standard units",
-      slides: [6, 7],
+      slides: [4, 5, 6],
     },
     {
       title: "Customary measurement system",
-      slides: [8,9],
+      slides: [7, 8],
     },
     {
       title: "International system of units",
-      slides: [10,11],
+      slides: [9, 10, 11, 12],
     },
     {
       title: "Imperial system of units",
-      slides: [12,13,14],
+      slides: [13, 14, 15],
     },
   ];
 
-  const darkBgIndices = [0, 2, 4, 6, 13, 15];
+  const darkBgIndices = [0, 2, 4, 7, 9, 13, 15];
   return (
     <FullPageCustomWrapper
       slidesComponentList={SlideArray}
