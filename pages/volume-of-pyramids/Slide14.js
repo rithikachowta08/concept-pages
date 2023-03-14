@@ -1,33 +1,29 @@
 import { useState, useEffect } from "react";
-import { lineHeightProp } from "utils/fontStyles";
-import { colors } from "utils/colors";
-import dynamic from "next/dynamic";
 import { addTransitionToKatex } from "utils/domutils";
-import { coco_applet_uri } from "utils/constants";
-const TextAndAppletSlide = dynamic(() =>
-  import("components/slides/TextAndAppletSlide")
-);
+import dynamic from "next/dynamic";
 const EquationTable = dynamic(() =>
   import("components/MathElement/EquationTable")
 );
-const MathElement = dynamic(() => import("components/MathElement"));
+const TransitionImage = dynamic(() =>
+  import("components/media/TransitionImage")
+);
+const TextAndDiagramSlide = dynamic(() =>
+  import("components/slides/TextAndDiagramSlide")
+);
 const Paragraph = dynamic(() =>
   import("components/text").then((mod) => mod.Paragraph)
 );
-const Flex = dynamic(() =>
-  import("components/StyledElements").then((mod) => mod.Flex)
-);
-const Pill = dynamic(() => import("components/Pill"));
+const volumeOfPyramid = "assets/volume-of-pyramids/slide15/1.svg";
 
-const Slide14 = ({ downIcon, currentPageIdx }) => {
+const Slide15 = ({ downIcon }) => {
   let EquationLatex0 = [
     {
       lhsLatex: {
-        value: [`Volume of a prism`],
+        value: [`Volume of the pyramid`],
         type: "text",
       },
       rhsLatex: {
-        value: ["\\text{Base area (A)} \\times \\times{Height (h)}"],
+        value: ["\\dfrac{1}{3} \\times \\text{Volume of the prism}"],
         type: "latex",
       },
       rhsHint: {
@@ -35,17 +31,13 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
         type: "text",
       },
     },
-  ];
-  let EquationLatex1 = [
     {
       lhsLatex: {
-        value: [`Volume of a pyramid`],
+        value: ["30"],
         type: "text",
       },
       rhsLatex: {
-        value: [
-          "\\dfrac{1}{3} \\times \\text{Base area (A)} \\times \\times{Height (h)}",
-        ],
+        value: ["\\dfrac{1}{3} \\times \\text{Volume of the prism}"],
         type: "latex",
       },
       rhsHint: {
@@ -56,14 +48,10 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
   ];
   let latexEquationContainer = [];
   latexEquationContainer.push(EquationLatex0);
-  latexEquationContainer.push(EquationLatex1);
   let latexEquationCounter = 0;
   const [activeIndex, setActiveIndex] = useState(0);
   const onHoverKatex = (e) => {
     setActiveIndex(Number(e.currentTarget.parentNode.id));
-  };
-  const onHover = (e) => {
-    setActiveIndex(e);
   };
   const onHoverOut = (e) => {
     setActiveIndex(0);
@@ -72,46 +60,32 @@ const Slide14 = ({ downIcon, currentPageIdx }) => {
     addTransitionToKatex(".textSpanBg.slide-14", onHoverKatex, onHoverOut),
     []
   );
-  let latex = [];
-  latex.push(`\\dfrac{1}{3}`);
-  latex.push(`\\dfrac{1}{3}`);
-  let mathjaxCounter = 0;
+
   return (
-    <TextAndAppletSlide
+    <TextAndDiagramSlide
       downIcon={downIcon}
-      title="Relationship between volume of a pyramid and prism"
-      bg="DARK"
-      appletSrc={`${coco_applet_uri}volume-of-pyramids-formation-v3/index.html`}
-      currentPageIdx={currentPageIdx}
+      title="Determine the volume of a triangular prism, if the volume of the triangular pyramid is 30 cu ft."
+      secondaryTitle="Illustrative Examples"
+      diagram={
+        <TransitionImage
+          images={[volumeOfPyramid]}
+          altTexts={["Diagram of a triangular pyramid and prism"]}
+          activeIndex={activeIndex}
+        />
+      }
     >
-      <Paragraph color={colors.WHITE}>
-        If the base area and height of a prism and pyramid are the same, we
-        know:
-      </Paragraph>
-      <Paragraph color={colors.WHITE}>
+      <Paragraph>We know,</Paragraph>
+      <Paragraph>
         <EquationTable
           align="middle"
           equationLatex={latexEquationContainer[latexEquationCounter++]}
         ></EquationTable>
       </Paragraph>
-      <Paragraph color={colors.WHITE}>
-        <EquationTable
-          align="middle"
-          equationLatex={latexEquationContainer[latexEquationCounter++]}
-        ></EquationTable>
-      </Paragraph>
-      <Paragraph color={colors.WHITE}>Hence;</Paragraph>
       <div>
-        <Paragraph>
-          <Pill>
-            Volume of a pyramid =
-            <MathElement htmlString={latex[mathjaxCounter++]} /> × Volume of a
-            prism
-          </Pill>
-        </Paragraph>
+      <Paragraph>Hence, volume of the prism = 90 cu ft.</Paragraph>
       </div>
-    </TextAndAppletSlide>
+    </TextAndDiagramSlide>
   );
 };
 
-export default Slide14;
+export default Slide15;

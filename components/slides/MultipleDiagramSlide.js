@@ -16,7 +16,8 @@ const ImageWrap = styled.div`
    margin: 0;
 
    @media (min-width: 200px) and (max-width: 820px) {
-      margin: 0 auto;
+      justify-content: center;
+      max-width: 150px;
    }
 `;
 
@@ -71,6 +72,7 @@ const MultipleDiagramSlide = ({
                   width="100%"
                   flex="1"
                >
+                  {children}
                   <Flex
                      direction="row"
                      flexFlow={"wrap"}
@@ -99,7 +101,6 @@ const MultipleDiagramSlide = ({
                         </ImageWrap>
                      ))}
                   </Flex>
-                  {children}
                </Flex>
                {/* DownIcon */}
                {downIcon

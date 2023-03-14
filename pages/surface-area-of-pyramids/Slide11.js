@@ -24,11 +24,8 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-const MathElement = dynamic(() =>
-   import("components/MathElement/index.js")
-);
+const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
@@ -38,8 +35,10 @@ const EquationTable = dynamic(() =>
 const example_pyramid = "assets/surface-area-of-pyramids/example_pyramid.svg";
 const example_sh = "assets/surface-area-of-pyramids/example_sh.svg";
 const example_sl = "assets/surface-area-of-pyramids/example_sl.svg";
-const example_perimeter = "assets/surface-area-of-pyramids/example_perimeter.svg";
-const example_base_area = "assets/surface-area-of-pyramids/example_base_area.svg";
+const example_perimeter =
+   "assets/surface-area-of-pyramids/example_perimeter.svg";
+const example_base_area =
+   "assets/surface-area-of-pyramids/example_base_area.svg";
 import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 import { Icon } from "components/StyledElements";
 
@@ -59,9 +58,9 @@ const Slide11 = ({ downIcon }) => {
       setActiveIndex(0);
    };
    let latex = [];
-  latex.push(`= 4 \\times 4`);
-  latex.push(`= 4^2`);
-  let mathjaxCounter = 0;
+   latex.push(`= 4 \\times 4`);
+   latex.push(`= 4^2`);
+   let mathjaxCounter = 0;
    return (
       <TextAndDiagramSlide
          title="Illustrative Example"
@@ -73,35 +72,32 @@ const Slide11 = ({ downIcon }) => {
                   example_sh,
                   example_sl,
                   example_perimeter,
-                  example_base_area
+                  example_base_area,
                ]}
                altTexts={[
-               "Diagram of a pyramid with slant height 8 cm and side length 4 cm",
-               "Diagram of a pyramid with highlighted slant height 8 cm",
-               "Diagram of a pyramid with highlighted side length 4 cm",
-               "Diagram of a pyramid with highlighted base perimeter",
-               "Diagram of a pyramid with highlighted base area"
+                  "Diagram of a pyramid with slant height 8 cm and side length 4 cm",
+                  "Diagram of a pyramid with highlighted slant height 8 cm",
+                  "Diagram of a pyramid with highlighted side length 4 cm",
+                  "Diagram of a pyramid with highlighted base perimeter",
+                  "Diagram of a pyramid with highlighted base area",
                ]}
-
                activeIndex={activeIndex}
             />
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine>
-            Determine the surface area of a square pyramid whose each side has a length of 4 in and whose slant height is 8 in.
+               Determine the surface area of a square pyramid whose each side
+               has a length of 4 in and whose slant height is 8 in.
             </TextLine>
-        </Paragraph>
+         </Paragraph>
 
-        <Paragraph>
-        <TextLine color={colors.BLACK}>
-               Solution:
-            </TextLine>
-        </Paragraph>
+         <Paragraph>
+            <TextLine color={colors.BLACK}>Solution:</TextLine>
+         </Paragraph>
 
-         <Paragraph >
-            
+         <Paragraph>
             <TextLine color={colors.BLACK}>
                <TextSpanBg
                   onHover={() => onHover(1)}
@@ -130,7 +126,8 @@ const Slide11 = ({ downIcon }) => {
                >
                   Perimeter (P)
                </TextSpanBg>
-               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}= 16 in
+               <MathElement htmlString={latex[mathjaxCounter++]}></MathElement>{" "}
+               = 16 in
             </TextLine>
             <TextLine color={colors.BLACK}>
                <TextSpanBg
@@ -140,9 +137,10 @@ const Slide11 = ({ downIcon }) => {
                >
                   Base area (B)
                </TextSpanBg>
-               <MathElement htmlString={latex[mathjaxCounter]}></MathElement>{" "}= 16 sq in
+               <MathElement htmlString={latex[mathjaxCounter]}></MathElement> =
+               16 sq in
             </TextLine>
-         <TextLine color={colors.BLACK}>
+            <TextLine color={colors.BLACK}>
                <EquationTable
                   align="middle"
                   equationLatex={[
@@ -166,7 +164,9 @@ const Slide11 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} \\times 16 \\times 8 + 16"],
+                           value: [
+                              "\\dfrac{1}{2} \\times 16 \\:in \\times 8 \\:in + 16 \\:sq \\:in",
+                           ],
                            type: "latex",
                         },
                         rhsHint: {
@@ -180,7 +180,7 @@ const Slide11 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["64 + 16 = 80 sq in"],
+                           value: ["64 sq in + 16 sq in = 80 sq in"],
                            type: "text",
                         },
                         rhsHint: {

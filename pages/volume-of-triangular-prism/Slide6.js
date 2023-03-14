@@ -1,26 +1,93 @@
 import dynamic from "next/dynamic";
-const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
-   ssr: false,
-});
+const TransitionImage = dynamic(() =>
+   import("components/media/TransitionImage")
+);
+const MultipleDiagramSlide = dynamic(() =>
+   import("components/slides/MultipleDiagramSlide")
+);
+const Paragraph = dynamic(() =>
+   import("components/text").then((mod) => mod.Paragraph)
+);
+const TextSpanBg = dynamic(() =>
+   import("components/text").then((mod) => mod.TextSpanBg)
+);
 
-const Slide6 = ({ downIcon, currentPageIdx }) => {
+import { colors } from "utils/colors";
+import useDiagramInteraction from "hooks/useDiagramInteraction";
+
+const slide7_a = "assets/volume-of-triangular-prism/7_a.svg";
+const slide7_b = "assets/volume-of-triangular-prism/7_b.svg";
+const slide7_c = "assets/volume-of-triangular-prism/7_c.svg";
+const slide7_d = "assets/volume-of-triangular-prism/7_d.svg";
+const slide7_e = "assets/volume-of-triangular-prism/7_e.svg";
+const slide7_f = "assets/volume-of-triangular-prism/7_f.svg";
+
+// General Formula base and height slide
+const Slide5 = ({ downIcon }) => {
+   const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
+
    return (
-      <VideoSlide2
-         videoContent={{
-            dash_Url:
-               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/dash/h264.mpd",
-            hls_Url:
-               "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/hls/h264.m3u8",
-            thumbnail:
-               "https://df0b18phdhzpx.cloudfront.net/video_thumbnails/production/original/803314.jpg?1671775378",
-         }}
+      <MultipleDiagramSlide
+         bg="DARK"
+         title="Types of Triangular Prisms"
+         secondaryTitle="Volume of a Triangular Prism"
          downIcon={downIcon}
-         currentPageIdx={currentPageIdx}
-         index={5}
-         downIconId="s5-video-down-icon"
-         videoSlideId="s5-video-slide"
-      />
+         images={[
+            {
+               diagram: (
+                  <TransitionImage
+                     images={[slide7_a, slide7_b]}
+                     activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a equilateral triangular prism",
+                        "Diagram of a equilateral triangular prism with highlighted base area",
+                     ]}
+                  />
+               ),
+               caption: "Equilateral triangular prism",
+            },
+            {
+               diagram: (
+                  <TransitionImage
+                     images={[slide7_c, slide7_d]}
+                     activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a isoceles triangular prism",
+                        "Diagram of a isosceles triangular prism with highlighted base area",
+                     ]}
+                  />
+               ),
+               caption: "Isoceles triangular prism",
+            },
+            {
+               diagram: (
+                  <TransitionImage
+                     images={[slide7_e, slide7_f]}
+                     activeIndex={activeIndex}
+                     altTexts={[
+                        "Diagram of a scalene triangular prism",
+                        "Diagram of a scalene triangular prism with highlighted base area",
+                     ]}
+                  />
+               ),
+               caption: "Scalene triangular prism",
+            },
+         ]}
+      >
+         <Paragraph color={colors.WHITE}>
+            Depending on the type of{" "}
+            <TextSpanBg
+               color={colors.LAVENDER}
+               onHoverOut={onHoverOut}
+               onHover={() => {
+                  onHover(1);
+               }}
+            >
+               base triangle
+            </TextSpanBg>
+         </Paragraph>
+      </MultipleDiagramSlide>
    );
 };
 
-export default Slide6;
+export default Slide5;

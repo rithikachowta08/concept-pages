@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { coco_applet_uri } from "utils/constants";
 import dynamic from "next/dynamic";
 const Modal = dynamic(() => import("components/layout/Modal"));
 const TextAndAppletSlide = dynamic(() =>
@@ -17,7 +16,7 @@ const ModalImg = dynamic(() =>
 const Flex = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.Flex)
 );
-
+import { Applet02001Ge } from "@assessed/byjus-us-math-applets/020_01_GE";
 const cone_unit = "assets/concept-volume-of-cone/slide2/1.svg";
 const Slide2 = ({ downIcon, currentPageIdx }) => {
    const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,8 +43,9 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
    };
    return (
       <TextAndAppletSlide
-         title="Total Surface Area of Cube"
-         appletSrc={`${coco_applet_uri}surface-area-of-cone-formation-v3/index.html`}
+         title="Formation of a Cone"
+         secondaryTitle="Introduction to a Cone"
+         AppletComponent={Applet02001Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
       >

@@ -122,7 +122,7 @@ const Slide8 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               triangle
+               triangle.
             </TextSpanBg>
          </Paragraph>
          <Paragraph>

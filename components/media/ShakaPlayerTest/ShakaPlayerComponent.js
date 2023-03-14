@@ -5,6 +5,7 @@ const Image = dynamic(() => import("next/image"));
 import "shaka-player-react-lib/dist/bundle.css";
 import "shaka-player/dist/controls.css";
 import { getDrmData, isSafariOrIOSDevice } from "./playerFunction";
+import { onVideoEnd, onVideoPause, onVideoStart } from "utils/analytics";
 const shaka = require("shaka-player/dist/shaka-player.ui.js");
 const loadScript = require("load-script");
 const { ui } = require("shaka-player/dist/shaka-player.ui.js");
@@ -20,6 +21,7 @@ var player,
 
 const VideoPlayer = (props) => {
    const [isFirstTimePlay, setIsFirstTimePlay] = useState(false);
+   const [uiRef, setUiRef] = useState(null);
    const videoComponent = useRef();
    const videoContainer = useRef();
    const fairplayDrmCert = new Uint8Array([
@@ -192,51 +194,64 @@ const VideoPlayer = (props) => {
          "https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-dash/2.9.2/videojs-dash.min.js"
       );
    };
+
    const onPause = () => {
-      document.getElementById(props.downIconId).style.opacity = 1;
+      onVideoPause({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 1;
+      }
+   };
+
+   const onEnd = () => {
+      onVideoEnd({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
+      props.onEnd();
    };
 
    const onPlay = () => {
-      if (!isFirstTimePlay) {
+      onVideoStart({
+         videoId: props.videoContent.videoId,
+         timestamp: video.currentTime,
+      });
+      if (!isFirstTimePlay && document.getElementById(props.downIconId)) {
          setIsFirstTimePlay(true);
+
          document.getElementById(props.downIconId).style.opacity = 0;
          document
             .getElementById(props.videoSlideId)
             .addEventListener("mousemove", () => {
-               document.getElementById(props.downIconId).style.opacity = 1;
-               setTimeout(() => {
-                  if (!video.paused) {
-                     document.getElementById(
-                        props.downIconId
-                     ).style.opacity = 0;
-                  }
-               }, 3500);
+               if (document.getElementById(props.downIconId)) {
+                  document.getElementById(props.downIconId).style.opacity = 1;
+                  setTimeout(() => {
+                     if (
+                        !video.paused &&
+                        document.getElementById(props.downIconId)
+                     ) {
+                        document.getElementById(
+                           props.downIconId
+                        ).style.opacity = 0;
+                     }
+                  }, 3500);
+               }
             });
       }
-      document.getElementById(props.downIconId).style.opacity = 0;
+      if (document.getElementById(props.downIconId)) {
+         document.getElementById(props.downIconId).style.opacity = 0;
+      }
    };
+
    useEffect(() => {
       video = videoComponent.current;
       videoContainerRef = videoContainer.current;
       shaka.polyfill.installAll();
       player = new shaka.Player(video);
-      video.loop = true;
-      // video.autoPlay = true;
       let uiConfig = {};
       uiConfig = props.uiConfig;
-      uiConfig.controlPanelElements = [
-         "play_pause",
-         "rewind_10",
-         "forward_10",
-         "time_and_duration",
-         "spacer",
-         // "vertical_volume",
-         "mute",
-         "playback_rate",
-         "quality",
-         "fullscreen",
-         // "overflow_menu",
-      ];
 
       const ui = new shaka.ui.Overlay(
          player,
@@ -246,12 +261,23 @@ const VideoPlayer = (props) => {
       );
       ui.getControls();
       ui.configure(uiConfig);
+      setUiRef(ui);
       player.addEventListener("error", onErrorEvent);
-      if (props.downIconId) {
-         video.addEventListener("pause", onPause);
-         video.addEventListener("playing", onPlay);
-      }
+      video.addEventListener("pause", onPause);
+      video.addEventListener("ended", onEnd);
+      video.addEventListener("playing", onPlay);
+      props.setVideoRef(video);
    }, []);
+
+   useEffect(() => {
+      uiRef?.configure(props.uiConfig);
+   }, [props.uiConfig]);
+
+   useEffect(() => {
+      if (props.autoPlay) {
+         video.play();
+      }
+   }, [props.autoPlay]);
 
    return (
       <div ref={videoContainer}>
@@ -261,7 +287,7 @@ const VideoPlayer = (props) => {
             width={"100%"}
             height={"100%"}
             playsInline
-            // autoPlay={true}
+            muted={props.muted}
             ref={videoComponent}
             poster={props.poster}
             src={props.src}

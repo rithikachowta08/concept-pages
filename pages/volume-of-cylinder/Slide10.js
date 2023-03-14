@@ -6,11 +6,13 @@ const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 import { TextLine } from "components/text";
+import { colors } from "utils/colors";
+import { Applet00802Ge } from "@assessed/byjus-us-math-applets/008_02_GE";
 
 const Slide10 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
-         appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/Lateral-surface-area_v8/index.html"
+         AppletComponent={Applet00802Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          secondaryTitle="Volume of different types of cylinders"
@@ -18,7 +20,7 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
       >
          <Paragraph>
             <TextLine>Volume of right circular cylinder =</TextLine>
-            <TextLine>
+            <TextLine color={colors.BLACK}>
                Volume of oblique cylinder = π &times; r&sup2; &times; h
             </TextLine>
          </Paragraph>

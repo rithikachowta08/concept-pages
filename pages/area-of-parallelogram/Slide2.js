@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { colors } from "utils/colors";
-import { lineHeightProp } from "utils/fontStyles";
 import dynamic from "next/dynamic";
 
 const TransitionImage = dynamic(() =>
@@ -44,7 +43,7 @@ const Slide2 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of a unit cube"
+            alt="Diagram of a parallelogram"
          />
       </Flex>
    );
@@ -82,7 +81,7 @@ const Slide2 = ({ downIcon }) => {
             content={modalContent}
             onDismiss={onDismiss}
          />
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             The area of a parallelogram is the{" "}
             <TextSpanBg
                id={1}

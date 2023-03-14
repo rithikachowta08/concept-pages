@@ -80,28 +80,26 @@ const Slide7 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph color={colors.WHITE}>
-            <TextLine>
-               Step 1: Divide the trapezoid into a&nbsp;
-               <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
-                  parallelogram
-               </TextSpanBg>{" "}
-               and a&nbsp;
-               <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
-                  triangle
-               </TextSpanBg>
-               .
-            </TextLine>
+            Step 1: Divide the trapezoid into a&nbsp;
+            <TextSpanBg onHover={() => onHover(1)} onHoverOut={onHoverOut}>
+               parallelogram
+            </TextSpanBg>{" "}
+            and a&nbsp;
+            <TextSpanBg onHover={() => onHover(2)} onHoverOut={onHoverOut}>
+               triangle
+            </TextSpanBg>
+            .
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
+            Step 2: Calculate the area of the triangle using Heron&lsquo;s
+            formula (A1) and general formula (A2).
+         </Paragraph>
 
-            <TextLine>
-               Step 2: Calculate the area of the triangle using Heron&lsquo;s
-               formula (A1) and general formula (A2).
-            </TextLine>
-
-            <TextLine>Step 3: Equate A1 and A2 to find the height.</TextLine>
-
-            <TextLine>
-               Step 4: Find the area of trapezoid using the formula.
-            </TextLine>
+         <Paragraph color={colors.WHITE}>
+            Step 3: Equate A1 and A2 to find the height.
+         </Paragraph>
+         <Paragraph color={colors.WHITE}>
+            Step 4: Find the area of trapezoid using the formula.
          </Paragraph>
       </TextAndDiagramSlide>
    );

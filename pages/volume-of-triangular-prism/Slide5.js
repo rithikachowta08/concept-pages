@@ -1,27 +1,30 @@
-import { coco_applet_uri } from "utils/constants";
 import dynamic from "next/dynamic";
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
-const Pill = dynamic(() => import("components/text").then((mod) => mod.Pill));
+const VideoSlide2 = dynamic(() => import("components/slides/VideoSlide2"), {
+   ssr: false,
+});
 
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-
-const Slide4 = ({ downIcon, currentPageIdx }) => {
+const Slide6 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndAppletSlide
-         downIcon={downIcon}
-         secondaryTitle="Volume of Triangular Prism"
-         title="Visualization of the formula"
-         currentPageIdx={currentPageIdx}
-         appletSrc={`${coco_applet_uri}surface-area-of-cone-derivation-v4/index.html`}
-      >
-         <Paragraph>Move the slider upward.</Paragraph>
-         <Pill darkbg={false}>Volume = Base area (A) × Height (h)</Pill>
-      </TextAndAppletSlide>
+      <div style={{ height: "100%" }}>
+         <VideoSlide2
+            videoContent={{
+               title: "Solved problem on volume of triangular prism",
+               duration: 32,
+               dash_Url:
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/dash/h264.mpd",
+               hls_Url:
+                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-9dd66f08/rnylek/INTL_Maths/230104/SEO18INTL07MAT11KT020/hls/h264.m3u8",
+               thumbnail:
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Practice+on+Volume+of+Prism.png",
+            }}
+            downIcon={downIcon}
+            currentPageIdx={currentPageIdx}
+            index={5}
+            downIconId="s5-video-down-icon"
+            videoSlideId="s5-video-slide"
+         />
+      </div>
    );
 };
 
-export default Slide4;
+export default Slide6;

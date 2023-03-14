@@ -1,11 +1,8 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import dynamic from "next/dynamic";
 import styled from "styled-components";
-import { TextSpan } from "components/text";
 import { colors } from "utils/colors";
 
-import Button from "components/Button";
 import ShakaPlayerContainer from "components/media/ShakaPlayerTest/ShakaPlayerContainer";
 
 const VideoSlideWrap = styled.div`
@@ -21,7 +18,6 @@ const VideoSlideWrap = styled.div`
 `;
 
 const VideoSlide = ({
-   title,
    currentPageIdx,
    index,
    downIcon,
@@ -30,23 +26,24 @@ const VideoSlide = ({
    videoContent,
 }) => {
    return (
-      <VideoSlideWrap id={videoSlideId}>
-         <ShakaPlayerContainer
-            videoContent={videoContent}
-            videoSlideId={videoSlideId}
-            downIconId={downIconId}
-            currentPageIdx={currentPageIdx}
-            index={index}
-         />
-         {/* {/* {title && <TextSpan color={colors.WHITE}>{title}</TextSpan>} */}
-         {/* {isMobile && <Button onClick={toggleFullScreen}>Rotate screen</Button>} */}
-         {downIcon
-            ? React.cloneElement(downIcon, {
-                 isVideoSlide: true,
-                 id: downIconId,
-              })
-            : null}
-      </VideoSlideWrap>
+      <div style={{ height: "100%" }}>
+         <VideoSlideWrap id={videoSlideId}>
+            <ShakaPlayerContainer
+               videoContent={videoContent}
+               videoSlideId={videoSlideId}
+               downIconId={downIconId}
+               currentPageIdx={currentPageIdx}
+               index={index}
+               downIcon={downIcon}
+            />
+            {downIcon
+               ? React.cloneElement(downIcon, {
+                    isVideoSlide: true,
+                    id: downIconId,
+                 })
+               : null}
+         </VideoSlideWrap>
+      </div>
    );
 };
 

@@ -1,9 +1,14 @@
+import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import useDiagramInteraction from "hooks/useDiagramInteraction";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
-const MultipleDiagramSlide = dynamic(() =>
-   import("components/slides/MultipleDiagramSlide")
+const TextAndDiagramSlide = dynamic(() =>
+   import("components/slides/TextAndDiagramSlide")
+);
+const MathEquationWrapper = dynamic(() =>
+   import("components/MathElement/MathEquationWrapper")
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
@@ -11,83 +16,96 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
+);
+const Pill = dynamic(() => import("components/Pill"));
+const EquationTable = dynamic(() =>
+  import("components/MathElement/EquationTable")
+);
 
-import { colors } from "utils/colors";
-import useDiagramInteraction from "hooks/useDiagramInteraction";
+const slide8_a = "assets/volume-of-triangular-prism/1_a.svg";
+const slide8_b = "assets/volume-of-triangular-prism/3_b.svg";
+const slide8_c = "assets/volume-of-triangular-prism/8_c.svg";
+const slide8_d = "assets/volume-of-triangular-prism/8_d.svg";
 
-const slide7_a = "assets/volume-of-triangular-prism/7_a.svg";
-const slide7_b = "assets/volume-of-triangular-prism/7_b.svg";
-const slide7_c = "assets/volume-of-triangular-prism/7_c.svg";
-const slide7_d = "assets/volume-of-triangular-prism/7_d.svg";
-const slide7_e = "assets/volume-of-triangular-prism/7_e.svg";
-const slide7_f = "assets/volume-of-triangular-prism/7_f.svg";
-
-// General Formula base and height slide
-const Slide5 = ({ downIcon }) => {
+const Slide8 = ({ downIcon }) => {
+   let equationLatex=[
+      {
+         lhsLatex: {
+            value: [
+               `Area of an equilateral triangle (A)`,
+            ],
+            type: "text",
+         },
+         rhsLatex: {
+            value: [
+               "\\dfrac{\\sqrt{3}}{4}\\ \\times a^2",
+            ],
+            type: "latex",
+         },
+      },
+   ]
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
-
    return (
-      <MultipleDiagramSlide
-         bg="DARK"
-         title="Types of Triangular Prisms"
-         secondaryTitle="Volume of a Triangular Prism"
+      <TextAndDiagramSlide
+         title="Volume of an Equilateral Triangular Prism"
+         diagram={
+            <TransitionImage
+               images={[slide8_a, slide8_b, slide8_c, slide8_d]}
+               altTexts={[
+                  "Diagram of a equilateral triangular prism",
+                  "Diagram of a equilateral triangular prism representing its volume.",
+                  "Diagram of a equilateral triangular prism with highlighted base area",
+                  "Diagram of a equilateral triangular prism with highlighted height",
+               ]}
+               activeIndex={activeIndex}
+            />
+         }
          downIcon={downIcon}
-         images={[
-            {
-               diagram: (
-                  <TransitionImage
-                     images={[slide7_a, slide7_b]}
-                     activeIndex={activeIndex}
-                     altTexts={[
-                        "Diagram of a equilateral triangular prism",
-                        "Diagram of a equilateral triangular prism with highlighted base area",
-                     ]}
-                  />
-               ),
-               caption: "Equilateral triangular prism",
-            },
-            {
-               diagram: (
-                  <TransitionImage
-                     images={[slide7_c, slide7_d]}
-                     activeIndex={activeIndex}
-                     altTexts={[
-                        "Diagram of a isoceles triangular prism",
-                        "Diagram of a isosceles triangular prism with highlighted base area",
-                     ]}
-                  />
-               ),
-               caption: "Isoceles triangular prism",
-            },
-            {
-               diagram: (
-                  <TransitionImage
-                     images={[slide7_e, slide7_f]}
-                     activeIndex={activeIndex}
-                     altTexts={[
-                        "Diagram of a scalene triangular prism",
-                        "Diagram of a scalene triangular prism with highlighted base area",
-                     ]}
-                  />
-               ),
-               caption: "Scalene triangular prism",
-            },
-         ]}
       >
-         <Paragraph color={colors.WHITE}>
-            Depending on the type of{" "}
+         <Paragraph>
             <TextSpanBg
-               color={colors.LAVENDER}
+               onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
-               onHover={() => {
-                  onHover(1);
-               }}
+               hoverColor={colors.DARK_LAVENDER}
             >
-               base triangle
+               Volume
+            </TextSpanBg>{" "}
+            ={" "}
+            <TextSpanBg
+               onHover={() => onHover(2)}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               Base area (A)
+            </TextSpanBg>{" "}
+            ×{" "}
+            <TextSpanBg
+               onHover={() => onHover(3)}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               Height (h)
             </TextSpanBg>
          </Paragraph>
-      </MultipleDiagramSlide>
+         <Paragraph>
+            We know,
+            <EquationTable align="middle"
+               equationLatex={equationLatex}
+            />
+            <Paragraph>
+               <TextLine>Hence,</TextLine>
+               <Pill darkbg={false}>
+                  Volume ={" "}
+                  <MathEquationWrapper>
+                     {"\\dfrac{\\sqrt{3}}{4} \\times a^2 \\times h"}
+                  </MathEquationWrapper>
+               </Pill>
+            </Paragraph>
+         </Paragraph>
+      </TextAndDiagramSlide>
    );
 };
 
-export default Slide5;
+export default Slide8;

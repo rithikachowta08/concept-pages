@@ -1,14 +1,19 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
+import useModal from "hooks/useModal";
+import { TextSpan } from "components/text";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
+);
+const MathEquationWrapper = dynamic(() =>
+   import("components/MathElement/MathEquationWrapper")
 );
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
-const MathEquationWrapper = dynamic(() =>
-   import("components/MathElement/MathEquationWrapper")
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
@@ -19,26 +24,108 @@ const TextSpanBg = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Pill = dynamic(() => import("components/Pill"));
+const ModalTriggerText = dynamic(() =>
+   import("components/text").then((mod) => mod.ModalTriggerText)
+);
+const ModalImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.ModalImg)
+);
+const Flex = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.Flex)
+);
+const Modal = dynamic(() => import("components/layout/Modal"));
+const slide11_a = "assets/volume-of-triangular-prism/11_a.svg";
+const slide11_b = "assets/volume-of-triangular-prism/11_b.svg";
+const slide11_c = "assets/volume-of-triangular-prism/11_c.svg";
+const slide11_d = "assets/volume-of-triangular-prism/11_d.svg";
+const slide11_e = "assets/volume-of-triangular-prism/11_e.svg";
 
-const slide10_a = "assets/volume-of-triangular-prism/10_a.svg";
-const slide10_b = "assets/volume-of-triangular-prism/10_b.svg";
-const slide10_c = "assets/volume-of-triangular-prism/10_c.svg";
-const slide10_d = "assets/volume-of-triangular-prism/10_d.svg";
-
-const Slide8 = ({ downIcon }) => {
+const Slide11 = ({ downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
+   const { isModalOpen, onClick, onDismiss } = useModal();
+   const modalContent = (
+      <Flex direction="column">
+         <Paragraph color="white" marginBottom="1vh">
+            <TextLine>
+               Base area ={" "}
+               <MathEquationWrapper>
+                  {"\\dfrac{1}{2} \\times Base \\times Height"}
+               </MathEquationWrapper>
+            </TextLine>
+            <TextLine>Volume = Base area × Height of the prism</TextLine>
+         </Paragraph>
+         <ModalImg
+            src={slide11_e}
+            alt="Diagram of a right triangular prism"
+         />
+      </Flex>
+   );
+   const equationLatex = [
+      [
+         {
+            lhsLatex: {
+               value: ["Base area"],
+               type: "text",
+            },
+            rhsLatex: {
+               value: ["\\dfrac{1}{2} \\times b \\times h"],
+               type: "latex",
+            },
+         },
+         {
+            lhsLatex: { value: [] },
+            rhsLatex: {
+               value: ["\\dfrac{1}{2} \\times 4\\ in \\times 3\\ in"],
+               type: "latex",
+            },
+         },
+         {
+            lhsLatex: { value: [] },
+            rhsLatex: {
+               value: ["6\\ sq\\ in"],
+               type: "latex",
+            },
+         },
+      ],
+      [
+         {
+            lhsLatex: {
+               value: [
+                  <TextSpan key={0}> Volume of a&nbsp;
+                  <ModalTriggerText onClick={onClick}>
+                      right triangular prism
+                  </ModalTriggerText>
+                  </TextSpan>,
+               ],
+               type: "text",
+            },
+            rhsLatex: {
+               value: ["6\\ sq\\ in \\times 8\\ in"],
+               type: "latex",
+            },
+         },
+         {
+            lhsLatex: { value: [] },
+            rhsLatex: {
+               value: ["48\\ cu\\ in"],
+               type: "latex",
+            },
+         },
+      ],
+   ];
+   let latexCounter = 0;
    return (
       <TextAndDiagramSlide
-         title="Volume of an Scalene Triangular Prism"
+         secondaryTitle="Illustrative Example"
+         title="Find the volume of a right triangular prism with the given dimensions."
          diagram={
             <TransitionImage
-               images={[slide10_a, slide10_b, slide10_c, slide10_d]}
+               images={[slide11_a, slide11_b, slide11_c, slide11_d]}
                altTexts={[
-                  "Diagram of a scalene triangular prism",
+                  "Diagram of a scalene triangular prism with height 8 in",
                   "Diagram of a scalene triangular prism representing its volume.",
                   "Diagram of a scalene triangular prism with highlighted base area",
-                  "Diagram of a scalene triangular prism with highlighted height",
+                  "Diagram of a scalene triangular prism with highlighted height 8 in.",
                ]}
                activeIndex={activeIndex}
             />
@@ -59,7 +146,7 @@ const Slide8 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               Base area (A)
+               Base area
             </TextSpanBg>{" "}
             ×{" "}
             <TextSpanBg
@@ -67,35 +154,21 @@ const Slide8 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               Height (h)
+               Height
             </TextSpanBg>
          </Paragraph>
          <Paragraph>
-            We know,
-            <TextLine>
-               Area of an scalene triangle (A) =
-               <MathEquationWrapper>
-                  {"\\sqrt{s \\times (s - a) \\times (s - b) \\times (s - c)}"}
-               </MathEquationWrapper>
-            </TextLine>
-            <TextLine>
-               Where, s =
-               <MathEquationWrapper>{"\\dfrac{a+b+c}{2}"}</MathEquationWrapper>
-            </TextLine>
-            <Paragraph>
-               <TextLine>Hence,</TextLine>
-               <Pill darkbg={false}>
-                  Volume ={" "}
-                  <MathEquationWrapper>
-                     {
-                        "\\sqrt{s \\times (s - a) \\times (s - b) \\times (s - c)} \\times h"
-                     }
-                  </MathEquationWrapper>
-               </Pill>
-            </Paragraph>
+            <EquationTable equationLatex={equationLatex[latexCounter++]} />
+            <EquationTable equationLatex={equationLatex[latexCounter++]} />
          </Paragraph>
+         <Modal
+            isOpen={isModalOpen}
+            title="Right Triangular Prism"
+            content={modalContent}
+            onDismiss={onDismiss}
+         />
       </TextAndDiagramSlide>
    );
 };
 
-export default Slide8;
+export default Slide11;

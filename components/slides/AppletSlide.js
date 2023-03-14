@@ -5,6 +5,7 @@ import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
 import MobileComponent from "components/layout/MobileComponent";
 import DesktopComponent from "components/layout/DesktopComponent";
+import { onAppletInteraction } from "utils/analytics";
 
 const IFrame = styled.iframe`
    aspect-ratio: 1/1;
@@ -46,11 +47,11 @@ const IFrame = styled.iframe`
    }
 `;
 
+// border: 1px solid #444;
 const AppWrapper = styled.div`
    aspect-ratio: 1/1;
    height: 650px;
    border-radius: 20px;
-   border: 1px solid #444;
 
    // Mobile
    @media (min-width: 200px) and (max-width: 500px) and (min-height: 500px) {
@@ -136,6 +137,7 @@ const AppletSlide = ({
    AppletComponent,
 }) => {
    const ref = useRef(null);
+   const timer = useRef(null);
    const [src, setSrc] = useState(null);
    useEffect(() => {
       if (ref.current && bg === "DARK") {
@@ -143,8 +145,20 @@ const AppletSlide = ({
       }
    }, [bg, ref.current]);
 
+   function onWheel(e) {
+      e.preventDefault();
+      e.stopPropagation();
+   }
+
+   function disableScrolling(e) {
+      fullpage_api.setAllowScrolling(false);
+   }
+
+   function enableScrolling(e) {
+      fullpage_api.setAllowScrolling(true);
+   }
+
    useEffect(() => {
-      console.log("src", src);
       if (currentPageIdx !== 0 && !src) {
          setSrc(appletSrc);
       }
@@ -177,10 +191,13 @@ const AppletSlide = ({
                      justifyContent="center"
                   >
                      {AppletComponent != null ? (
-                        <AppletComponent
-                           isFitToWidth={true}
-                           maxWidth={"650px"}
-                        />
+                        <AppWrapper
+                           onTouchMove={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
+                        </AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}
@@ -199,7 +216,9 @@ const AppletSlide = ({
             >
                <ContentWrap>
                   <FillerNavBar />
-                  <TitleAndAppletWrap>
+                  <TitleAndAppletWrap
+                     onScroll={() => console.log("scrolling..")}
+                  >
                      <TitleWrap>
                         <SlideSecondaryTitle
                            bg={bg}
@@ -212,10 +231,15 @@ const AppletSlide = ({
                         </SlideTitle>
                      </TitleWrap>
                      {AppletComponent != null ? (
-                        <AppletComponent
-                           isFitToWidth={true}
-                           maxWidth={"650px"}
-                        />
+                        <AppWrapper
+                           onWheel={onWheel}
+                           onTouchMove={disableScrolling}
+                           onTouchStart={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
+                        </AppWrapper>
                      ) : (
                         <IFrame src={src} allowFullScreen frameBorder="0" />
                      )}
@@ -236,7 +260,6 @@ const AppletSlide = ({
 AppletSlide.propTypes = {
    title: PropTypes.string,
    bg: PropTypes.string,
-   appletSrc: PropTypes.string.isRequired,
    AppletComponent: PropTypes.element,
 };
 

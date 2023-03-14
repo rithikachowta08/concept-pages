@@ -89,9 +89,9 @@ const Slide8 = ({ downIcon }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   let latex = [];
-  latex.push(`(cm^3)`);
-  latex.push(`(m^3)`);
-  latex.push(`({\\pi}r^2)`);
+  latex.push(`(cu\\ cm)`);
+  latex.push(`(cu\\ m)`);
+  latex.push(`({\\pi} \\times r^2)`);
   latex.push(`\\dfrac{1}{3}`);
   latex.push(
     `V = \\dfrac{1}{3}\\ \\times\\ {\\pi}\\ \\times\\ r^2\\ \\times\\ h`
@@ -223,9 +223,11 @@ const Slide8 = ({ downIcon }) => {
           </Flex>
         </Paragraph>
       </div>
-      <Paragraph color={colors.WHITE}>
-        <MathElement htmlString={latex[mathjaxCounter++]} />
-      </Paragraph>
+      <div>
+        <Paragraph color={colors.WHITE} margin={"0px 0px 0px 12px"}>
+          <MathElement htmlString={latex[mathjaxCounter++]} />
+        </Paragraph>
+      </div>
       <Paragraph color={colors.WHITE}>
         The area obtained is measured in&nbsp;
         <ModalTriggerText id={2} onClick={onClick} color={colors.WHITE}>

@@ -37,7 +37,7 @@ const Slide14 = ({ downIcon }) => {
          },
          rhsLatex: {
             value: [
-               "\\begin{vmatrix}i & j & k \\newline 3 & 2 & 0 \\newline -1 & 3 & 0 \\end{vmatrix}",
+               "\\begin{vmatrix}i & j & k \\newline 3 & 2 & 0 \\newline -3 & 1 & 0 \\end{vmatrix}",
             ],
             type: "latex",
          },

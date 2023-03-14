@@ -81,7 +81,7 @@ const Slide10 = ({ downIcon }) => {
                            type: "text",
                         },
                         rhsLatex: {
-                           value: ["\\dfrac{1}{2} \\times 6 \\times h"],
+                           value: ["\\dfrac{1}{2} \\times 6\\ in \\times h\\ in"],
                            type: "latex",
                         },
                         rhsHint: {

@@ -52,23 +52,25 @@ const Slide13 = ({ downIcon }) => {
    ];
    const modalContent = [
       <Flex direction="column" key={0}>
-         <Paragraph color="white">
-            We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
-         </Paragraph>
-         <Paragraph color="white">
-            Hence,<TextLine>a &times; a = |a| |a| Sin &#952;</TextLine>
-         </Paragraph>
-         <Paragraph color="white">
-            <TextLine>For &#952; = 0&deg;</TextLine>
-            <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
-            <TextLine>a &times; a = 0</TextLine>
-         </Paragraph>
+         <div style={{ padding: "0 0 0 4rem" }}>
+            <Paragraph color="white">
+               We know :<TextLine>a &times; b = |a| |b| Sin &#952;</TextLine>
+            </Paragraph>
+            <Paragraph color="white">
+               Hence,<TextLine>a &times; a = |a| |a| Sin &#952;</TextLine>
+            </Paragraph>
+            <Paragraph color="white">
+               <TextLine>For &#952; = 0&deg;</TextLine>
+               <TextLine>a &times; a = |a| |a| Sin 0</TextLine>
+               <TextLine>a &times; a = 0</TextLine>
+            </Paragraph>
+         </div>
          <ModalImg
             src={image_4}
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of a unit cube"
+            alt="Diagram of two vectors included at an angle"
          />
       </Flex>,
       <Flex direction="column" key={1}>
@@ -78,7 +80,7 @@ const Slide13 = ({ downIcon }) => {
             alignSelf="center"
             width="400px"
             marginBottom="50px"
-            alt="Diagram of a unit cube"
+            alt="Diagram positive and negative cross product of two vectors"
          />
       </Flex>,
    ];

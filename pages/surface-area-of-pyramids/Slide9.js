@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-const bullet = "assets/bullet.svg";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -11,38 +10,22 @@ const TextAndDiagramSlide = dynamic(() =>
 const TextLine = dynamic(() =>
    import("components/text").then((mod) => mod.TextLine)
 );
-const Modal = dynamic(() => import("components/layout/Modal"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
 const MathElement = dynamic(() => import("components/MathElement/index.js"));
 const Pill = dynamic(() => import("components/Pill"));
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
-const ModalTriggerText = dynamic(() =>
-   import("components/text").then((mod) => mod.ModalTriggerText)
-);
+
 const tsa = "assets/surface-area-of-pyramids/tsa.svg";
 const tsa_sh = "assets/surface-area-of-pyramids/tsa_sh.svg";
 const tsa_pob = "assets/surface-area-of-pyramids/tsa_pob.svg";
 const tsa_aob = "assets/surface-area-of-pyramids/tsa_aob.svg";
 const Slide9 = ({ downIcon }) => {
    const [activeIndex, setActiveIndex] = useState(0);
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+
    const onHover = (e) => {
       setActiveIndex(e);
    };
@@ -73,7 +56,7 @@ const Slide9 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
-         <Paragraph lineHeight={lineHeightProp}>
+         <Paragraph>
             <TextLine color={colors.WHITE}>
                The total surface area of a regular pyramid is the sum of its
                lateral surface area and its base area.

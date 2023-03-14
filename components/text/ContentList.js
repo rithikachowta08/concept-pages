@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { PropTypes } from "prop-types";
 import { fontSizes } from "utils/fontStyles";
 import { colors } from "utils/colors";
+import { onSectionNameClick } from "utils/analytics";
 
 const Flex = styled.div`
    display: flex;
@@ -48,7 +49,13 @@ const Title = ({ items, moveTo, anchorIdxes }) => {
    return (
       <Flex>
          {items.map((item, index) => (
-            <ListItem onClick={() => moveTo(anchorIdxes[index])} key={index}>
+            <ListItem
+               onClick={() => {
+                  moveTo(anchorIdxes[index]);
+                  onSectionNameClick(index);
+               }}
+               key={index}
+            >
                <Bullet></Bullet>
                {item}
             </ListItem>

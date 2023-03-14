@@ -16,6 +16,7 @@ const ModalImg = dynamic(() =>
 import { ModalTriggerText, TextLine } from "components/text";
 const cylinder = "assets/surface-area-of-sphere/cylinder.svg";
 import { colors } from "utils/colors";
+import { Applet01101Ge } from "@assessed/byjus-us-math-applets/011_01_GE";
 
 const Slide6 = ({ downIcon, currentPageIdx }) => {
    const modalContent = (
@@ -42,13 +43,16 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
    };
    return (
       <TextAndAppletSlide
-         appletSrc="https://www.geogebra.org/m/p4jd88uu"
+         // appletSrc="https://www.geogebra.org/m/p4jd88uu"
+         AppletComponent={Applet01101Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          bg="DARK"
          secondaryTitle="Sphere"
          title={
-            <div>Why is the surface area 4 &times; π &times; r&sup2; ?</div>
+            <div>
+               Why is the surface area <br />4 &times; π &times; r&sup2; ?
+            </div>
          }
       >
          <Modal
@@ -60,8 +64,8 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
             color={colors.BLACK}
          />
          <Paragraph color="white" textAlign="left">
-            According to Archimedes, the surface area of a sphere is equal to
-            the{" "}
+            According to Archimedes,
+            <br /> the surface area of a sphere = the{" "}
             <ModalTriggerText onClick={onClick} color={colors.WHITE}>
                curved surface area of the cylinder
             </ModalTriggerText>{" "}
@@ -70,13 +74,9 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          <Paragraph color="white">
             <ul>
                <li>
-                  the radius of the cylinder is equal to the radius of the
-                  sphere, and
+                  The radius of the cylinder = The radius of the sphere, and
                </li>
-               <li>
-                  the height of the cylinder is equal to the diameter of the
-                  sphere.
-               </li>
+               <li>The height of the cylinder = The diameter of the sphere.</li>
             </ul>
          </Paragraph>
       </TextAndAppletSlide>

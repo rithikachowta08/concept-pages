@@ -17,7 +17,6 @@ const Paragraph = dynamic(() =>
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
-import { lineHeightProp, fontWeights } from "utils/fontStyles";
 const slide8_a = "assets/area-of-trapezoid/slide8_a.svg";
 const slide8_b = "assets/area-of-trapezoid/slide8_b.svg";
 const slide8_c = "assets/area-of-trapezoid/slide8_c.svg";
@@ -39,11 +38,7 @@ const Slide8 = ({ downIcon }) => {
          secondaryTitle="Illustrative Example"
          diagram={
             <TransitionImage
-               images={[
-                  slide8_a,
-                  slide8_b,
-                  slide8_c,
-               ]}
+               images={[slide8_a, slide8_b, slide8_c]}
                altTexts={[
                   "Diagram of a trapezoid with given side lengths",
                   "Diagram of a trapezoid with parallelogram highlighted in it",

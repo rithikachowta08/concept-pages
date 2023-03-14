@@ -1,74 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/area-of-rectangle</loc>
+        <loc>https://byjus.com/us/math/study/concept/area-of-rectangle</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/area-of-circle</loc>
+        <loc>https://byjus.com/us/math/study/concept/area-of-circle</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/surface-area-of-right-triangular-prism</loc>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-right-triangular-prism</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/surface-area-of-rectangular-prism</loc>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-rectangular-prism</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/surface-area-of-cone</loc>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-cone</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/volume-of-cube</loc>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-cube</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/area-of-a-triangle</loc>
+        <loc>https://byjus.com/us/math/study/concept/area-of-a-triangle</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/circumference-of-circle</loc>
+        <loc>https://byjus.com/us/math/study/concept/circumference-of-circle</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/area-of-rhombus</loc>
+        <loc>https://byjus.com/us/math/study/concept/area-of-rhombus</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
     <url>
-        <loc>https://byjus.com/us/math/study/length-of-arc</loc>
+        <loc>https://byjus.com/us/math/study/concept/length-of-arc</loc>
         <lastmod>2023-01-17</lastmod>
         <changefreq>never</changefreq>
-        <priority>1.0</priority>        
+        <priority>1.0</priority>
     </url>
-    
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-square</loc>
+        <lastmod>2023-02-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-sector-of-a-circle</loc>
+        <lastmod>2023-02-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-cylinder</loc>
+        <lastmod>2023-02-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-sphere</loc>
+        <lastmod>2023-02-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-cube</loc>
+        <lastmod>2023-02-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/units-to-measure-capacity</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/diameter-and-circumference</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-rectangular-prism</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-cylinder</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-trapezoid</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-triangular-prism</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/area-of-parallelogram</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-cone</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/surface-area-of-pyramids</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-pyramids</loc>
+        <lastmod>2023-03-10</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
 </urlset>

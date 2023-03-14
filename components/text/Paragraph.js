@@ -16,7 +16,7 @@ const Para = styled.p`
    line-height: ${(props) => props.lineHeight || "150%"};
    margin-bottom: ${(props) => props.marginBottom || 0};
    margin-right: ${(props) => props.marginRight || 0};
-   margin-block-start: 1rem;
+   margin-block-start: ${(props) => props.marginTop || "2rem"};
    padding: ${(props) => props.padding || 0};
 
    @media (min-width: 200px) and (max-width: 820px) {

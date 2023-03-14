@@ -7,6 +7,7 @@ import DesktopComponent from "components/layout/DesktopComponent";
 import { SlideSecondaryTitle, SlideTitle, FillerNavBar } from "./common";
 import Button from "components/Button";
 import { colors } from "utils/colors";
+import { onAppletInteraction } from "utils/analytics";
 
 const fit_to_width = "assets/fit_to_width.svg";
 const fullscreen_exit = "assets/fullscreen_exit.svg";
@@ -101,8 +102,8 @@ const IframeWrap = styled.div`
 
 const FullScreenIcon = styled.img`
    position: absolute;
+   right: ${(props) => props.right || "10px"};
    bottom: 15px;
-   right: 10px;
 `;
 
 const RightWrap = styled.div`
@@ -122,6 +123,7 @@ const TextAndAppletSlide = ({
    currentPageIdx,
    appletSrc,
    AppletComponent,
+   fullScreenRightOffset,
 }) => {
    const ref = useRef(null);
    const [src, setSrc] = useState(null);
@@ -139,6 +141,20 @@ const TextAndAppletSlide = ({
          setSrc(appletSrc);
       }
    }, [currentPageIdx, appletSrc, src]);
+
+   function onWheel(e) {
+      e.preventDefault();
+      e.stopPropagation();
+   }
+
+   function disableScrolling(e) {
+      fullpage_api.setAllowScrolling(false);
+   }
+
+   function enableScrolling(e) {
+      fullpage_api.setAllowScrolling(true);
+   }
+
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
@@ -177,8 +193,13 @@ const TextAndAppletSlide = ({
                >
                   <IframeWrap>
                      {AppletComponent != null ? (
-                        <AppWrapper isFitToWidth={isFitToWidth}>
-                           <AppletComponent />
+                        <AppWrapper
+                           isFitToWidth={isFitToWidth}
+                           onTouchMove={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
                         <IFrame
@@ -190,6 +211,7 @@ const TextAndAppletSlide = ({
                      )}
                      <FullScreenIcon
                         src={isFitToWidth ? fullscreen_exit : fit_to_width}
+                        right={fullScreenRightOffset}
                         onClick={toggleFitToWidth}
                      ></FullScreenIcon>
                   </IframeWrap>
@@ -242,8 +264,15 @@ const TextAndAppletSlide = ({
                   </LeftWrap>
                   <RightWrap>
                      {AppletComponent != null ? (
-                        <AppWrapper isFitToWidth={isFitToWidth}>
-                           <AppletComponent />
+                        <AppWrapper
+                           isFitToWidth={isFitToWidth}
+                           onWheel={onWheel}
+                           onTouchMove={disableScrolling}
+                           onTouchStart={disableScrolling}
+                           onTouchMoveCapture={disableScrolling}
+                           onTouchEnd={enableScrolling}
+                        >
+                           <AppletComponent onEvent={onAppletInteraction} />
                         </AppWrapper>
                      ) : (
                         <IFrame
@@ -271,7 +300,6 @@ TextAndAppletSlide.propTypes = {
    bg: PropTypes.string,
    secondaryTitle: PropTypes.string,
    gap: PropTypes.string,
-   appletSrc: PropTypes.string.isRequired,
    AppletComponent: PropTypes.element,
    children: PropTypes.node,
 };

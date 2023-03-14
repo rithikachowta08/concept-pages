@@ -1,5 +1,7 @@
+import AppletSlide from "components/slides/AppletSlide";
 import { Paragraph } from "components/text";
 import dynamic from "next/dynamic";
+import { Applet00402Ge } from "@assessed/byjus-us-math-applets/004_02_GE";
 
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
@@ -7,17 +9,17 @@ const TextAndAppletSlide = dynamic(() =>
 
 const Slide5 = ({ downIcon, currentPageIdx }) => {
    return (
-      <TextAndAppletSlide
-         title={"Volume by Counting the Unit Cubes"}
+      <AppletSlide
+         title={"Volume by counting the unit cubes"}
          secondaryTitle={"Rectangular Prism"}
-         appletSrc={""}
+         AppletComponent={Applet00402Ge}
          currentPageIdx={currentPageIdx}
          downIcon={downIcon}
       >
-         <Paragraph>
+         {/* <Paragraph>
             Use the sliders to count the number of unit cubes.
-         </Paragraph>
-      </TextAndAppletSlide>
+         </Paragraph> */}
+      </AppletSlide>
    );
 };
 

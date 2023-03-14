@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
       (mod) => mod.FullPageCustomWrapper
@@ -16,19 +17,20 @@ const Slide8 = dynamic(() => import("./Slide8"));
 
 const SurfaceAreaOfSphere = () => {
    const SlideArray = [
-      <Slide1 key={0} />,
-      <Slide2 key={1} />,
-      <Slide3 key={2} />,
-      <Slide4 key={3} />,
-      <Slide5 key={4} />,
-      <Slide6 key={5} />,
-      <Slide7 key={6} />,
-      <Slide8 key={7} />,
+      <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
+      <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
+      <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide8 key={7} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
+         type={SLIDE_TYPES.CONCLUSION}
          key={8}
          currentPageTitle={"Surface Area of Sphere"}
          nextPageTitle="Surface Area of Cube"
-         nextPageLink="/us/math/study/surface-area-of-cube"
+         nextPageLink="/us/math/study/concept/surface-area-of-cube"
       />,
    ];
 
