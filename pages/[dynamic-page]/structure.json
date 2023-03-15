@@ -1,0 +1,52 @@
+{
+   "title": "Area of a Circle",
+   "slides": [
+      {
+         "type": "TITLE",
+         "sections": [
+            "What is the area of a circle?",
+            "General Formula",
+            "Area of a circle using the diameter",
+            "Area of a circle using the circumference"
+         ]
+      },
+      {
+         "type": "TEXT_AND_DIAGRAM",
+         "title": "What is the area of a circle?",
+         "body": [
+            {
+               "type": "text",
+               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane"
+            }
+         ],
+         "modal": {
+            "title": "What is a circle?",
+            "body": [
+               {
+                  "type": "text",
+                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
+               }
+            ]
+         },
+         "transitionImages": [],
+         "transitionImageAltTexts": [],
+         "textParams": {
+            "DiagramInteraction_1": "region occupied",
+            "ModalTrigger_1": "circle"
+         }
+      }
+   ],
+   "navSections": [
+      { "title": "What is the area of a circle?", "slides": [1] },
+      { "title": "General Formula", "slides": [2, 3, 4] },
+      { "title": "Area of a circle using the diameter", "slides": [5, 6] },
+      {
+         "title": "Area of a circle using the circumference",
+         "slides": [7, 8, 9]
+      }
+   ],
+   "seo": {
+      "title": "Area of Circle: Definition, Formula, Examples - BYJU'S",
+      "meta": "Learn about the area of circle, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities."
+   }
+}

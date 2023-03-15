@@ -1,0 +1,13 @@
+[
+   {
+      "type": "MULTIPLE_DIAGRAM"
+   },
+   { "type": "TEXT_AND_APPLET" },
+   { "type": "APPLET" },
+   { "type": "VIDEO" },
+   {
+      "type": "CONCLUSION",
+      "next_page_title": "Surface area of a Right Triangular Prism",
+      "next_page_url": "/us/math/study/concept/surface-area-of-right-triangular-prism"
+   }
+]
