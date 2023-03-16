@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 11.35;
+        stroke-miterlimit: 10;
+        stroke-width: 4.73px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #f1a3ff;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+        stroke-width: 5.68px;
+      }
+
+      .cls-3 {
+        fill: #ba70dd;
+        opacity: .3;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-3" points="36.05 289.84 231.06 289.84 362.07 157.75 362.07 289.84 523.95 289.84 411.55 402.25 160.28 402.25 36.05 289.84"/>
+  <polygon class="cls-2" points="36.05 289.84 231.06 289.84 362.07 157.75 362.07 289.84 523.95 289.84 411.55 402.25 160.28 402.25 36.05 289.84"/>
+  <line class="cls-1" x1="362.07" y1="289.84" x2="231.06" y2="289.84"/>
+</svg>

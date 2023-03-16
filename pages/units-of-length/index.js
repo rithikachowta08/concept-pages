@@ -30,25 +30,25 @@ const UnitsOfLength = () => {
       <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
       <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide3 key={2} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide4 key={3} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide5 key={4} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide6 key={5} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide7 key={6} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide8 key={7} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide9 key={8} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide10 key={9} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide11 key={10} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide12 key={11} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide13 key={12} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide14 key={13} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide15 key={14} type={SLIDE_TYPES.APPLET_ONLY} />,
-      <Slide16 key={15} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide8 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide9 key={8} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide10 key={9} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide12 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide13 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide14 key={13} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide15 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide16 key={15} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
          key={16}
          type={SLIDE_TYPES.CONCLUSION}
-         currentPageTitle={"Units of capacity"}
-         nextPageLink={"/us/math/study/concept/volume-of-rectangular-prism"}
-         nextPageTitle={"Volume of a Rectangular Prism"}
+         currentPageTitle={"Units of Length"}
+         nextPageLink={"-"}
+         nextPageTitle={"-"}
       />,
    ];
    const navigationSections = [
@@ -84,5 +84,9 @@ const UnitsOfLength = () => {
       />
    );
 };
+
+UnitsOfLength.title = "Units of Length: Definition, Formula, Examples - BYJU'S";
+UnitsOfLength.meta =
+   "Discover the concept of units of length, including its definition, formula, and examples. Enhance your understanding with BYJU'S interactive activities and examples.";
 
 export default UnitsOfLength;
