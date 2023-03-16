@@ -80,6 +80,6 @@ const UnitsOfTime = () => {
 };
 UnitsOfTime.title = "Units of time: Definition, Formula, Examples - BYJU'S";
 UnitsOfTime.meta =
-   "Gain a deep understanding of units to measure capacity with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master.";
+   "Gain a thorough understanding of the units of time with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default UnitsOfTime;

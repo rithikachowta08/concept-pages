@@ -9,13 +9,14 @@ const Slide12 = ({ downIcon, currentPageIdx }) => {
          <VideoSlide2
             videoContent={{
                dash_Url:
-                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-7587de9a/rom3r9/INTL_Maths/230116/SEOINTL04MAT16KT007/dash/h264.mpd",
+                  "https://k10-streaming.tllms.com/mpkgr-production-23dc5087/rr2zj3/Maths_INTL/230306/SEOINTL05MAT12KT010/dash/h264.mpd",
                hls_Url:
-                  "https://s3.ap-south-1.amazonaws.com/byjus-media-delivery/videos/mpkgr-production-7587de9a/rom3r9/INTL_Maths/230116/SEOINTL04MAT16KT007/hls/h264.m3u8",
+                  "https://k10-streaming.tllms.com/mpkgr-production-23dc5087/rr2zj3/Maths_INTL/230306/SEOINTL05MAT12KT010/hls/h264.m3u8",
                thumbnail:
-                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Understanding+Capacity.png",
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/onversion+of+units+of+time_01.png",
                duration: 129,
-               title: "Conversion of units of time",
+               videoId: "444530",
+               title: "Relationship between Units of Time",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}
