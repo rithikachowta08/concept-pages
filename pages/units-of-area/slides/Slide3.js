@@ -45,7 +45,7 @@ const Slide2 = ({ downIcon }) => {
       >
          <Modal
             isOpen={isModalOpen}
-            title="Square Units"
+            title="Unit Square"
             content={modalContent}
             onDismiss={onDismiss}
             bg="LIGHT"

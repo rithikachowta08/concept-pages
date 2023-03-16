@@ -122,7 +122,7 @@ const Slide2 = ({ downIcon }) => {
                space covered
             </TextSpanBg>{" "}
             on a surface by a two-dimensional shape. It is measured in{" "}
-            <ModalTriggerText onClick={onClick}>square units.</ModalTriggerText>
+            <ModalTriggerText onClick={onClick}>square units</ModalTriggerText>.
          </Paragraph>
       </TextAndDiagramSlide>
    );
