@@ -78,7 +78,7 @@ const UnitsOfWeight = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 4, 7, 9, 13, 15];
+   const darkBgIndices = [4, 7, 9, 13, 16];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
