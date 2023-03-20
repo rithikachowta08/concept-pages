@@ -52,7 +52,7 @@ const Slide2 = ({ downIcon }) => {
             One square unit is equal to the area of square that has a side
             length equal to 1 unit.
          </Paragraph>
-         <ModalImg src={image_3} alt="Image of unit square" />
+         <ModalImg src={image_3} alt="Image of unit square" scale={0.8} />
          <Paragraph color={colors.WHITE}>
             <EquationTable
                align="middle"

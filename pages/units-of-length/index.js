@@ -47,8 +47,8 @@ const UnitsOfLength = () => {
          key={16}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of Length"}
-         nextPageLink={"-"}
-         nextPageTitle={"-"}
+         nextPageLink={"/us/math/study/concept/units-of-area"}
+         nextPageTitle={"Units of Area"}
       />,
    ];
    const navigationSections = [
