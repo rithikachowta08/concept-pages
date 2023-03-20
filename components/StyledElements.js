@@ -185,33 +185,34 @@ export const StyledImg = styled.img`
          props.smallDesktopSize || props.tabletSize || "450px"};
    }
 `;
+
 export const ModalImg = styled.img`
    align-self: ${(props) => props.alignSelf || "center"};
-   width: 350px;
-   height: 350px;
+   width: ${(props) => (props.scale ? props.scale * 350 : 350)}px;
+   height: ${(props) => (props.scale ? props.scale * 350 : 350)}px;
    @media only screen and (min-width: 200px) and (max-width: 399px) {
-      width: 200px;
-      height: 200px;
+      width: ${(props) => (props.scale ? props.scale * 200 : 200)}px;
+      height: ${(props) => (props.scale ? props.scale * 200 : 200)}px;
    }
    @media only screen and (min-width: 400px) and (max-width: 767px) {
-      width: 250px;
-      height: 250px;
+      width: ${(props) => (props.scale ? props.scale * 250 : 250)}px;
+      height: ${(props) => (props.scale ? props.scale * 250 : 250)}px;
    }
    @media only screen and (min-width: 768px) and (max-width: 992px) {
-      width: 300px;
-      height: 300px;
+      width: ${(props) => (props.scale ? props.scale * 300 : 300)}px;
+      height: ${(props) => (props.scale ? props.scale * 300 : 300)}px;
    }
    @media only screen and (max-height: 399px) and (min-width: 768px) {
-      width: 200px;
-      height: 200px;
+      width: ${(props) => (props.scale ? props.scale * 200 : 200)}px;
+      height: ${(props) => (props.scale ? props.scale * 200 : 200)}px;
    }
    @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
-      width: 250px;
-      height: 250px;
+      width: ${(props) => (props.scale ? props.scale * 250 : 250)}px;
+      height: ${(props) => (props.scale ? props.scale * 250 : 250)}px;
    }
    @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 768px) {
-      width: 300px;
-      height: 300px;
+      width: ${(props) => (props.scale ? props.scale * 300 : 300)}px;
+      height: ${(props) => (props.scale ? props.scale * 300 : 300)}px;
    }
 `;
 
