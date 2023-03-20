@@ -47,46 +47,44 @@ const Slide6 = ({ downIcon }) => {
          }
          downIcon={downIcon}
       >
+         <Paragraph>Solution:</Paragraph>
          <Paragraph>
-            <TextLine>Solution:</TextLine>
-            <TextLine>
-               Step 1: Number of{" "}
-               <TextSpanBg
-                  id={1}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
-               >
-                  complete unit squares
-               </TextSpanBg>{" "}
-               = 14
-            </TextLine>
-            <TextLine>
-               Step 2: Number of{" "}
-               <TextSpanBg
-                  id={2}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
-               >
-                  partial/half unit squares
-               </TextSpanBg>{" "}
-               = 4
-            </TextLine>
-            <TextLine>
-               Step 3:{" "}
-               <TextSpanBg
-                  id={3}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  hoverColor={colors.DARK_LAVENDER}
-               >
-                  Area of a composite shape
-               </TextSpanBg>{" "}
-               <div>= 14 + (4 ÷ 2)</div>
-               <div>= 14 + 2</div>
-               <div>= 16 sq units</div>
-            </TextLine>
+            Step 1: Number of{" "}
+            <TextSpanBg
+               id={1}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               complete unit squares
+            </TextSpanBg>{" "}
+            = 14
+         </Paragraph>
+         <Paragraph>
+            Step 2: Number of{" "}
+            <TextSpanBg
+               id={2}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               partial/half unit squares
+            </TextSpanBg>{" "}
+            = 4
+         </Paragraph>
+         <Paragraph>
+            Step 3:{" "}
+            <TextSpanBg
+               id={3}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               hoverColor={colors.DARK_LAVENDER}
+            >
+               Area of a composite shape
+            </TextSpanBg>{" "}
+            <div>= 14 + (4 ÷ 2)</div>
+            <div>= 14 + 2</div>
+            <div>= 16 sq units</div>
          </Paragraph>
       </TextAndDiagramSlide>
    );

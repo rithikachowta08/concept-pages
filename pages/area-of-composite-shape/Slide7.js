@@ -135,24 +135,24 @@ const Slide7 = ({ downIcon }) => {
             color={colors.BLACK}
          />
          <Paragraph color="white">
-            <TextLine>
-               Step 1: Break this composite shape into two basic figures,
-               triangle and trapezoid.
-            </TextLine>
-            <TextLine>
-               Step 2: Calculate the{" "}
-               <ModalTriggerText color="white" onClick={() => onClick(0)}>
-                  area of the triangle
-               </ModalTriggerText>{" "}
-               and the{" "}
-               <ModalTriggerText color="white" onClick={() => onClick(1)}>
-                  area of trapezoid
-               </ModalTriggerText>{" "}
-               individually.
-            </TextLine>
-            <TextLine>
-               Step 3: Add the area of individual shapes to get the total area.
-            </TextLine>
+            Step 1: Break this composite shape into two basic figures, triangle
+            and trapezoid.
+         </Paragraph>
+         <Paragraph color="white">
+            Step 2: Calculate the{" "}
+            <ModalTriggerText color="white" onClick={() => onClick(0)}>
+               area of the triangle
+            </ModalTriggerText>{" "}
+            and the{" "}
+            <ModalTriggerText color="white" onClick={() => onClick(1)}>
+               area of trapezoid
+            </ModalTriggerText>{" "}
+            individually.
+         </Paragraph>
+         <Paragraph color="white">
+            Step 3: Add the area of individual shapes to get the total area.
+         </Paragraph>
+         <Paragraph color="white">
             <Pill>
                <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                   Total area

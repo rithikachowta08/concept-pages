@@ -38,8 +38,8 @@ const AreaOfCompositeShape = () => {
          type={SLIDE_TYPES.CONCLUSION}
          key={12}
          currentPageTitle={"Area of a Composite Shape"}
-         nextPageTitle="Area of Trapezoid"
-         nextPageLink="/us/math/study/concept/area-of-trapezoid"
+         nextPageTitle="Units of Length"
+         nextPageLink="/us/math/study/concept/units-of-length"
       />,
    ];
 

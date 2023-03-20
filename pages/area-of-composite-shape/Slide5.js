@@ -48,29 +48,27 @@ const Slide5 = ({ downIcon }) => {
          bg="DARK"
       >
          <Paragraph color="white">
-            <TextLine>
-               Let&apos;s follow the steps to calculate the area of the given
-               composite shape by counting unit squares.
-            </TextLine>
-            <TextLine>
-               Step 1: Count the number of{" "}
-               <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
-                  complete unit squares
-               </TextSpanBg>
-            </TextLine>
-            <TextLine>
-               Step 2: Count the number of{" "}
-               <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
-                  partial/half unit squares
-               </TextSpanBg>
-            </TextLine>
-            <TextLine>
-               Step 3: Add the number of complete unit squares and half the
-               number of partial unit squares to find the{" "}
-               <TextSpanBg id={3} onHover={onHover} onHoverOut={onHoverOut}>
-                  area of a given composite shape
-               </TextSpanBg>
-            </TextLine>
+            Let&apos;s follow the steps to calculate the area of the given
+            composite shape by counting unit squares.
+         </Paragraph>
+         <Paragraph color="white">
+            Step 1: Count the number of{" "}
+            <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
+               complete unit squares
+            </TextSpanBg>
+         </Paragraph>
+         <Paragraph color="white">
+            Step 2: Count the number of{" "}
+            <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
+               partial/half unit squares
+            </TextSpanBg>
+         </Paragraph>
+         <Paragraph color="white">
+            Step 3: Add the number of complete unit squares and half the number
+            of partial unit squares to find the{" "}
+            <TextSpanBg id={3} onHover={onHover} onHoverOut={onHoverOut}>
+               area of a given composite shape
+            </TextSpanBg>
          </Paragraph>
       </TextAndDiagramSlide>
    );
