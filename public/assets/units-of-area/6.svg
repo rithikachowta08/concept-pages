@@ -7,8 +7,8 @@
       }
 
       .cls-2 {
-        stroke-linejoin: round;
-        stroke-width: 5px;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
       }
 
       .cls-2, .cls-3 {
@@ -17,8 +17,8 @@
       }
 
       .cls-3 {
-        stroke-miterlimit: 10;
-        stroke-width: 4px;
+        stroke-linejoin: round;
+        stroke-width: 5px;
       }
 
       .cls-4 {
@@ -29,15 +29,15 @@
   </defs>
   <g>
     <rect class="cls-4" x="146.74" y="144.85" width="216.09" height="218.03"/>
-    <rect class="cls-2" x="146.74" y="144.85" width="216.09" height="218.03"/>
+    <rect class="cls-3" x="146.74" y="144.85" width="216.09" height="218.03"/>
     <g>
-      <line class="cls-3" x1="377.61" y1="156.17" x2="377.61" y2="349.65"/>
+      <line class="cls-2" x1="377.61" y1="156.17" x2="377.61" y2="349.65"/>
       <polygon class="cls-1" points="367.84 159.03 377.61 142.11 387.38 159.03 367.84 159.03"/>
       <polygon class="cls-1" points="367.84 346.79 377.61 363.72 387.38 346.79 367.84 346.79"/>
     </g>
   </g>
   <g>
-    <line class="cls-3" x1="350.86" y1="378.82" x2="157.39" y2="378.82"/>
+    <line class="cls-2" x1="350.86" y1="378.82" x2="157.39" y2="378.82"/>
     <polygon class="cls-1" points="348 369.05 364.93 378.82 348 388.6 348 369.05"/>
     <polygon class="cls-1" points="160.24 369.05 143.32 378.82 160.24 388.6 160.24 369.05"/>
   </g>

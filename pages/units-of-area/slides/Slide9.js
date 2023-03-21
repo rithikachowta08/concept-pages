@@ -80,7 +80,7 @@ const Slide9 = ({ downIcon }) => {
                         },
                         rhsLatex: {
                            value: [
-                              "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6}{10^6\\ square\\ inches}}",
+                              "\\htmlId{1}{\\htmlClass{textSpanBg aoc-slide-6}{10^6\\ square\\ meter}}",
                            ],
                            type: "latex",
                         },
@@ -95,7 +95,7 @@ const Slide9 = ({ downIcon }) => {
                            type: "latex",
                         },
                         rhsLatex: {
-                           value: ["10,00,000\\ square\\ inches"],
+                           value: ["10,00,000\\ square\\ meter"],
                            type: "latex",
                         },
                         rhsHint: {

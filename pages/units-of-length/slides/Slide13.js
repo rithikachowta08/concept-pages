@@ -34,7 +34,6 @@ const Slide13 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Illustrative Example"}
-         secondaryTitle={"International System of Units"}
          diagram={
             <TransitionImage
                images={[image_1, image_2]}

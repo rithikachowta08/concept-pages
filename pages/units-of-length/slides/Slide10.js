@@ -47,7 +47,6 @@ const Slide10 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"International System of Units"}
-         secondaryTitle={"Customary Measurement System"}
          diagram={
             <StyledImg
                src={image_1}
@@ -70,7 +69,7 @@ const Slide10 = ({ downIcon }) => {
             <ModalTriggerText onClick={onClick} color={colors.WHITE}>
                decimal-based system
             </ModalTriggerText>{" "}
-            of measurement and has universal acceptance. with a .
+            of measurement and has universal acceptance.
          </Paragraph>
       </TextAndDiagramSlide>
    );

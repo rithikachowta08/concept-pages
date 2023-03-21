@@ -11,7 +11,7 @@ const image_1 = "assets/units-of-length/1.svg";
 const Slide2 = ({ downIcon, activeIndex }) => {
    return (
       <TextAndDiagramSlide
-         title={"What is Length Measurement"}
+         title={"What is Length Measurement?"}
          diagram={<StyledImg src={image_1} alt={"Image of measuring tape"} />}
          downIcon={downIcon}
       >

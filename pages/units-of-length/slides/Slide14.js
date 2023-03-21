@@ -14,7 +14,6 @@ const Slide14 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Imperial System"}
-         secondaryTitle={"International System of Units"}
          diagram={
             <StyledImg
                src={image_1}
