@@ -19,7 +19,7 @@ const Slide6 = ({ downIcon }) => {
          diagram={
             <TransitionImage
                images={[unitsOfWeight_full]}
-               altTexts={["Image of a danger symbol."]}
+               altTexts={["Image of a tick mark"]}
             />
          }
          downIcon={downIcon}

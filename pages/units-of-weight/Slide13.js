@@ -52,7 +52,7 @@ const Slide13 = ({ downIcon }) => {
                onHoverOut={onHoverOut}
                hoverColor={colors.DARK_LAVENDER}
             >
-               1 kilogram = 103 grams = 1000 grams
+               1 kilogram = 10<sup>3</sup> grams = 1000 grams
             </TextSpanBg>
          </Paragraph>
          <Paragraph>Thus, 50 kilograms = 50 x 1000 grams</Paragraph>

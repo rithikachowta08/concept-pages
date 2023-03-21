@@ -40,8 +40,8 @@ const UnitsOfTime = () => {
          key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of time"}
-         nextPageLink={"/us/math/study/concept/volume-of-rectangular-prism"}
-         nextPageTitle={"Volume of a Rectangular Prism"}
+         nextPageLink={"/us/math/study/concept/area-of-rectangle"}
+         nextPageTitle={"Area of a Rectangle"}
       />,
    ];
    const navigationSections = [
@@ -63,7 +63,7 @@ const UnitsOfTime = () => {
       },
    ];
 
-   const darkBgIndices = [0, 4, 9, 11, 12, 13];
+   const darkBgIndices = [0, 2, 4, 9, 11, 12, 13];
    return (
       <>
          <Script

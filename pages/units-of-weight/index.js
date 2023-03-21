@@ -42,13 +42,13 @@ const UnitsOfWeight = () => {
       <Slide13 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide14 key={13} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
       <Slide15 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide15 key={14} type={SLIDE_TYPES.VIDEO_ONLY} />,
+      <Slide16 key={15} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <PageLastSlide
          key={15}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of Weight"}
-         nextPageLink={"/us/math/study/concept/area-of-rectangle"}
-         nextPageTitle={"Area of Rectangle"}
+         nextPageLink={"/us/math/study/concept/area-of-composite-shape"}
+         nextPageTitle={"Area of a Composite Shape"}
       />,
    ];
    const navigationSections = [
@@ -78,7 +78,7 @@ const UnitsOfWeight = () => {
       },
    ];
 
-   const darkBgIndices = [4, 7, 9, 13, 16];
+   const darkBgIndices = [0, 4, 7, 9, 13, 15, 16];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

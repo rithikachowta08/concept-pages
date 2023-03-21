@@ -16,7 +16,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
       <TextAndDiagramSlide
          downIcon={downIcon}
          secondaryTitle="Units of Time"
-         title="What is a Hour?"
+         title="What is an Hour?"
          currentPageIdx={currentPageIdx}
          diagram={
             <StyledImg
