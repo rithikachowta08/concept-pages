@@ -51,11 +51,11 @@ const UnitsOfArea = () => {
       { title: "How do we measure area?", slides: [2, 3] },
       {
          title: "Customary measurement system",
-         slides: [5, 6],
+         slides: [4, 5, 6],
       },
       {
          title: "International system of units",
-         slides: [7, 8, 9, 10, 11],
+         slides: [7, 8, 9, 10, 11, 12],
       },
    ];
 
