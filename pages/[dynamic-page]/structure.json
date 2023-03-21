@@ -3,6 +3,7 @@
    "slides": [
       {
          "type": "TITLE",
+         "theme": "DARK",
          "sections": [
             "What is the area of a circle?",
             "General Formula",
@@ -13,10 +14,15 @@
       {
          "type": "TEXT_AND_DIAGRAM",
          "title": "What is the area of a circle?",
+         "theme": "LIGHT",
          "body": [
             {
                "type": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane"
+               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
+               "textParams": {
+                  "DiagramInteraction_1": "region occupied",
+                  "ModalTrigger_1": "circle"
+               }
             }
          ],
          "modal": {
@@ -25,15 +31,46 @@
                {
                   "type": "text",
                   "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
+               },
+               {
+                  "type": "image",
+                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
+                  "alt": "modal alt"
                }
             ]
          },
-         "transitionImages": [],
-         "transitionImageAltTexts": [],
-         "textParams": {
-            "DiagramInteraction_1": "region occupied",
-            "ModalTrigger_1": "circle"
-         }
+         "transitionImages": [
+            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
+            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg"
+         ],
+         "transitionImageAltTexts": ["test alt text", "test alt text shaded"]
+      },
+      {
+         "type": "TEXT_AND_DIAGRAM",
+         "theme": "DARK",
+         "title": "General Formula",
+         "secondaryTitle": "Area of a circle",
+         "body": [
+            {
+               "type": "text",
+               "content": "The area of a circle is equal to the product of pi %Math_1% or 3.14)\n and the square of the radius(r)",
+               "textParams": {
+                  "Math_1": "(\\pi = \\dfrac{22}{7}"
+               }
+            },
+            {
+               "type": "pill",
+               "content": "Area of a circle = %Math_1%",
+               "textParams": {
+                  "Math_1": "\\pi \\times r^2"
+               }
+            }
+         ],
+         "transitionImages": [
+            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
+            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg"
+         ],
+         "transitionImageAltTexts": ["test alt text", "test alt text shaded"]
       }
    ],
    "navSections": [

@@ -16,7 +16,12 @@ export default function Home() {
       <Slide key={idx} data={slide} json={json} />
    ));
 
-   const darkBgIndices = [0, 3, 5, 6, 13];
+   let darkBgIndices = [];
+   json.slides.forEach((slide, idx) => {
+      if (slide.theme === "DARK") {
+         darkBgIndices.push(idx);
+      }
+   });
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}
@@ -28,15 +33,9 @@ export default function Home() {
 
 /* Common elements:
 Multiline paragrpahs
-Paragraphs/textlines with math elements
-Modal 
+Paragraphs/textlines with inline math elements 
 Pill
-BulletList/NumberedList
-ModalTriggerText - DONE
-TextSpanBg - DONE
 Textspanbg with math 
 ModalTriggerText with Math
 EquationTable 
-Title - DONE
-SecondaryTitle - DONE
 */

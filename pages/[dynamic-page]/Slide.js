@@ -1,10 +1,11 @@
 import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
+import { colors } from "utils/colors";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
-const TextParamComponent = dynamic(() => import("./TextParamComponent"));
+const BodyComponent = dynamic(() => import("./BodyComponent"));
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
@@ -19,12 +20,6 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
-);
-const Flex = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.Flex)
-);
-const ModalImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
@@ -49,6 +44,7 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
          component: AppletSlide,
          props: {
             title: data.title,
+            bg: data.theme,
             secondaryTitle: data.secondaryTitle,
             downIcon,
          },
@@ -57,6 +53,7 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
          component: TextAndAppletSlide,
          props: {
             title: data.title,
+            bg: data.theme,
             secondaryTitle: data.secondaryTitle,
             downIcon,
          },
@@ -72,6 +69,7 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
          component: TextAndDiagramSlide,
          props: {
             title: data.title,
+            bg: data.theme,
             diagram: (
                <TransitionImage
                   images={data.transitionImages}
@@ -85,6 +83,7 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
       },
       MULTIPLE_DIAGRAM: {
          component: MultipleDiagramSlide,
+         bg: data.theme,
          props: {
             title: data.title,
             secondaryTitle: data.secondaryTitle,
@@ -93,45 +92,44 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
       },
    };
 
+   let modal;
+   if (data.modal) {
+      const modalBody = data.modal.body.map((item, idx) => (
+         <BodyComponent key={idx} item={item} theme={data.theme} isModal />
+      ));
+      modal = (
+         <Modal
+            isOpen={isModalOpen}
+            bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
+            color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
+            title={data.modal.title}
+            content={modalBody}
+            onDismiss={onDismiss}
+         />
+      );
+   }
+
    let children = [];
 
    if (data.body) {
-      data.body.forEach((bodyElem) => {
-         const modifiedContent = bodyElem.content.split(/(%.*?% )/g);
+      data.body.forEach((item, idx) =>
          children.push(
-            <Paragraph>
-               {modifiedContent.map((child, idx) => {
-                  const str = child.trim();
-                  const isTextParam = str.startsWith("%") && str.endsWith("%");
-                  return isTextParam ? (
-                     <TextParamComponent
-                        type={str.substring(1, str.length - 1)}
-                        index={idx}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        values={data.textParams}
-                     ></TextParamComponent>
-                  ) : (
-                     str
-                  );
-               })}
-            </Paragraph>
-         );
-      });
+            <BodyComponent
+               key={idx}
+               item={item}
+               theme={data.theme}
+               onHover={onHover}
+               onHoverOut={onHoverOut}
+               onClick={onClick}
+            />
+         )
+      );
    }
 
    const SlideComponent = SLIDE_MAPPER[data.type];
    return (
       <SlideComponent.component {...SlideComponent.props}>
-         {data.modal && (
-            <Modal
-               isOpen={isModalOpen}
-               title={data.modal.title}
-               content={<div>{data.modal.content}</div>}
-               onDismiss={onDismiss}
-            />
-         )}
+         {modal}
          {children}
       </SlideComponent.component>
    );
