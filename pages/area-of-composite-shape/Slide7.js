@@ -73,10 +73,7 @@ const Slide7 = ({ downIcon }) => {
                equationLatex={EquationLatex[0]}
             ></MultiLhsEquationContainer>
          </Paragraph>
-         <ModalImg
-            src={slide_7_pop_1}
-            alt="Diagram of two vectors included at an angle"
-         />
+         <ModalImg src={slide_7_pop_1} alt="Diagram of a triangle" />
       </Flex>,
       <Flex direction="column" key={1}>
          <Paragraph>
@@ -88,10 +85,7 @@ const Slide7 = ({ downIcon }) => {
                equationLatex={EquationLatex[1]}
             ></MultiLhsEquationContainer>
          </Paragraph>
-         <ModalImg
-            src={slide_7_pop_2}
-            alt="Diagram positive and negative cross product of two vectors"
-         />
+         <ModalImg src={slide_7_pop_2} alt="Diagram of a trapezoid" />
       </Flex>,
    ];
    const onClick = (e) => {
@@ -115,10 +109,10 @@ const Slide7 = ({ downIcon }) => {
             <TransitionImage
                images={[slide_7_a, slide_7_b, slide_7_c, slide_7_d]}
                altTexts={[
-                  "Diagram of a composite shape consisting of rectangle and triangle.",
-                  "Diagram of a composite shape consisting of rectangle and triangle highlighting the complete squares in a grid.",
-                  "Diagram of a composite shape consisting of rectangle and triangle highlighting the partial squares in a grid.",
-                  "Diagram of a composite shape consisting of rectangle and triangle highlighting its area in a grid.",
+                  "Diagram of a composite shape consisting of triangle and trapezoid.",
+                  "Diagram of a composite shape consisting of triangle and trapezoid highlighting its area.",
+                  "Diagram of a composite shape consisting of triangle and trapezoid highlighting its triangle.",
+                  "Diagram of a composite shape consisting of triangle and trapezoid highlighting its trapezoid.",
                ]}
                activeIndex={activeIndex}
             />
