@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Applet04001Ge } from "@assessed/byjus-us-math-applets/040_01_GE";
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
@@ -11,6 +12,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
    return (
       <TextAndAppletSlide
          downIcon={downIcon}
+         AppletComponent={Applet04001Ge}
          secondaryTitle="How do we measure Time?"
          title="Properties of Instruments"
          currentPageIdx={currentPageIdx}

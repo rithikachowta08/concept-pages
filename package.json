@@ -9,7 +9,7 @@
       "lint": "next lint"
    },
    "dependencies": {
-      "@assessed/byjus-us-math-applets": "1.0.11",
+      "@assessed/byjus-us-math-applets": "1.0.12",
       "@fullpage/react-fullpage": "^0.1.31",
       "@matejmazur/react-katex": "^3.1.3",
       "@testing-library/jest-dom": "^5.16.5",
