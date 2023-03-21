@@ -1,10 +1,14 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+const Pill = dynamic(() => import("components/Pill"));
 const TextParamComponent = dynamic(() => import("./TextParamComponent"));
 const BulletPointItem = dynamic(() => import("components/text/BulletPoint"));
 const NumberedList = dynamic(() => import("components/text/NumberedList"));
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
+);
+const TextLine = dynamic(() =>
+   import("components/text").then((mod) => mod.TextLine)
 );
 const StyledImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.StyledImg)
@@ -31,33 +35,38 @@ const BodyComponent = ({
    onHoverOut,
 }) => {
    if (item.type === COMPONENT_TYPES.TEXT) {
-      const modifiedContent = item.content.split(/(%.*?% )/g);
+      const lines = item.content.split("\n");
+      const textLines = [];
       let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
       if (isModal) {
          color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
       }
-      return (
-         <Paragraph color={color}>
-            {modifiedContent.map((child, idx) => {
-               const str = child.trim();
-               const isTextParam = str.startsWith("%") && str.endsWith("%");
-               return isTextParam ? (
-                  <TextParamComponent
-                     type={str.substring(1, str.length - 1)}
-                     idx={idx}
-                     key={idx}
-                     theme={theme}
-                     onHover={onHover}
-                     onHoverOut={onHoverOut}
-                     onClick={onClick}
-                     values={item.textParams}
-                  />
-               ) : (
-                  str
-               );
-            })}
-         </Paragraph>
-      );
+      lines.forEach((line, idx) => {
+         const modifiedContent = line.split(/(%.*?%)/g);
+         textLines.push(
+            <TextLine key={idx}>
+               {modifiedContent.map((child, idx) => {
+                  const str = child.trim();
+                  const isTextParam = str.startsWith("%") && str.endsWith("%");
+                  return isTextParam ? (
+                     <TextParamComponent
+                        type={str.substring(1, str.length - 1)}
+                        idx={idx}
+                        key={idx}
+                        theme={theme}
+                        onHover={onHover}
+                        onHoverOut={onHoverOut}
+                        onClick={onClick}
+                        values={item.textParams}
+                     />
+                  ) : (
+                     str
+                  );
+               })}
+            </TextLine>
+         );
+      });
+      return <Paragraph color={color}>{textLines}</Paragraph>;
    }
    if (item.type === COMPONENT_TYPES.BULLETED_LIST) {
       return item.content.map((bulletPoint, idx) => (
@@ -74,6 +83,33 @@ const BodyComponent = ({
          <ModalImg src={item.url} alt={item.alt} />
       ) : (
          <StyledImg src={item.url} alt={item.alt} />
+      );
+   }
+   if (item.type === COMPONENT_TYPES.PILL) {
+      const modifiedContent = item.content.split(/(%.*?%)/g);
+      return (
+         <div>
+            <Pill>
+               {modifiedContent.map((child, idx) => {
+                  const str = child.trim();
+                  const isTextParam = str.startsWith("%") && str.endsWith("%");
+                  return isTextParam ? (
+                     <TextParamComponent
+                        type={str.substring(1, str.length - 1)}
+                        idx={idx}
+                        key={idx}
+                        theme={theme}
+                        onHover={onHover}
+                        onHoverOut={onHoverOut}
+                        onClick={onClick}
+                        values={item.textParams}
+                     />
+                  ) : (
+                     str
+                  );
+               })}
+            </Pill>
+         </div>
       );
    }
 };

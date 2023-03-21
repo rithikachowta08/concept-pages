@@ -32,9 +32,6 @@ export default function Home() {
 }
 
 /* Common elements:
-Multiline paragrpahs
-Paragraphs/textlines with inline math elements 
-Pill
 Textspanbg with math 
 ModalTriggerText with Math
 EquationTable 

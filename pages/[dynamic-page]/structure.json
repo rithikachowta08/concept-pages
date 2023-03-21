@@ -53,7 +53,7 @@
          "body": [
             {
                "type": "text",
-               "content": "The area of a circle is equal to the product of pi %Math_1% or 3.14)\n and the square of the radius(r)",
+               "content": "The area of a circle is equal to the product of pi %Math_1% or 3.14) and the \n square of the radius(r)",
                "textParams": {
                   "Math_1": "(\\pi = \\dfrac{22}{7}"
                }
