@@ -79,8 +79,7 @@ const AreaOfCompositeShape = () => {
    );
 };
 
-AreaOfCompositeShape.title =
-   "Area of Composite shapes: Definition, Formula, Examples - BYJU'S";
+AreaOfCompositeShape.title = "Area of Composite shapes - BYJU'S";
 
 AreaOfCompositeShape.meta =
    "Learn about the area of composite shapes, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities.";

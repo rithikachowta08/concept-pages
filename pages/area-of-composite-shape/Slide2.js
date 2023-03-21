@@ -25,7 +25,7 @@ const ModalTriggerText = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 const slide_2_a = "assets/area-of-composite-shape/3.svg";
-const slide_2_b = "assets/area-of-composite-shape/4.svg";
+const slide_2_b = "assets/area-of-composite-shape/5.svg";
 const slide_2_c = "assets/area-of-composite-shape/6.svg";
 const slide_2_d = "assets/area-of-composite-shape/7.svg";
 const slide_2_pop_up = "assets/area-of-composite-shape/4_pop up.svg";

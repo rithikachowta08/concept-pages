@@ -2,77 +2,77 @@
 <svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
   <defs>
     <style>
-      .cls-1 {
-        opacity: .05;
-      }
-
       .cls-1, .cls-2 {
-        fill: #333;
+        stroke: #b4b3b3;
       }
 
-      .cls-2 {
-        opacity: .1;
+      .cls-1, .cls-2, .cls-3 {
+        stroke-linecap: round;
       }
 
-      .cls-3 {
-        stroke: #c5c5c5;
-      }
-
-      .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
         fill: none;
       }
 
-      .cls-3, .cls-4, .cls-6, .cls-7 {
+      .cls-1, .cls-3, .cls-4, .cls-5 {
         stroke-linejoin: round;
         stroke-width: 4.5px;
       }
 
-      .cls-4, .cls-7 {
-        stroke: #a653b4;
-      }
-
-      .cls-5 {
+      .cls-2 {
         stroke-dasharray: 0 0 0 4.21;
         stroke-miterlimit: 10;
         stroke-width: 2.81px;
       }
 
-      .cls-5, .cls-6 {
-        stroke: #b4b3b3;
+      .cls-3, .cls-5 {
+        stroke: #a653b4;
       }
 
-      .cls-5, .cls-6, .cls-7 {
-        stroke-linecap: round;
+      .cls-4 {
+        stroke: #c5c5c5;
+      }
+
+      .cls-6 {
+        opacity: .05;
+      }
+
+      .cls-6, .cls-7 {
+        fill: #333;
+      }
+
+      .cls-7 {
+        opacity: .1;
       }
     </style>
   </defs>
   <g>
-    <rect class="cls-2" x="8.24" y="115.81" width="543.51" height="328.38"/>
+    <rect class="cls-7" x="8.24" y="115.81" width="543.51" height="328.38"/>
     <g>
-      <line class="cls-5" x1="8.34" y1="389.46" x2="551.76" y2="389.46"/>
-      <line class="cls-5" x1="8.34" y1="334.73" x2="551.76" y2="334.73"/>
-      <line class="cls-5" x1="8.34" y1="280" x2="551.76" y2="280"/>
-      <line class="cls-5" x1="8.34" y1="225.27" x2="551.76" y2="225.27"/>
-      <line class="cls-5" x1="8.34" y1="170.54" x2="551.76" y2="170.54"/>
-      <line class="cls-5" x1="113.57" y1="444.19" x2="113.57" y2="115.81"/>
-      <line class="cls-5" x1="58.87" y1="444.19" x2="58.87" y2="115.81"/>
-      <line class="cls-5" x1="168.3" y1="444.19" x2="168.3" y2="115.81"/>
-      <line class="cls-5" x1="223.04" y1="444.19" x2="223.04" y2="115.81"/>
-      <line class="cls-5" x1="277.77" y1="444.19" x2="277.77" y2="115.81"/>
-      <line class="cls-5" x1="332.5" y1="444.19" x2="332.5" y2="115.81"/>
-      <line class="cls-5" x1="387.4" y1="444.19" x2="387.4" y2="115.81"/>
-      <line class="cls-5" x1="442.13" y1="444.19" x2="442.13" y2="115.81"/>
-      <line class="cls-5" x1="497.03" y1="444.19" x2="497.03" y2="115.81"/>
+      <line class="cls-2" x1="8.34" y1="389.46" x2="551.76" y2="389.46"/>
+      <line class="cls-2" x1="8.34" y1="334.73" x2="551.76" y2="334.73"/>
+      <line class="cls-2" x1="8.34" y1="280" x2="551.76" y2="280"/>
+      <line class="cls-2" x1="8.34" y1="225.27" x2="551.76" y2="225.27"/>
+      <line class="cls-2" x1="8.34" y1="170.54" x2="551.76" y2="170.54"/>
+      <line class="cls-2" x1="113.57" y1="444.19" x2="113.57" y2="115.81"/>
+      <line class="cls-2" x1="58.87" y1="444.19" x2="58.87" y2="115.81"/>
+      <line class="cls-2" x1="168.3" y1="444.19" x2="168.3" y2="115.81"/>
+      <line class="cls-2" x1="223.04" y1="444.19" x2="223.04" y2="115.81"/>
+      <line class="cls-2" x1="277.77" y1="444.19" x2="277.77" y2="115.81"/>
+      <line class="cls-2" x1="332.5" y1="444.19" x2="332.5" y2="115.81"/>
+      <line class="cls-2" x1="387.4" y1="444.19" x2="387.4" y2="115.81"/>
+      <line class="cls-2" x1="442.13" y1="444.19" x2="442.13" y2="115.81"/>
+      <line class="cls-2" x1="497.03" y1="444.19" x2="497.03" y2="115.81"/>
     </g>
-    <rect class="cls-6" x="8.24" y="115.81" width="543.51" height="328.38"/>
+    <rect class="cls-1" x="8.24" y="115.81" width="543.51" height="328.38"/>
   </g>
   <g>
-    <rect class="cls-1" x="58.8" y="225.27" width="383.28" height="109.46"/>
-    <rect class="cls-3" x="58.8" y="225.27" width="383.28" height="109.46"/>
-    <polyline class="cls-4" points="387.34 334.73 387.34 389.42 496.98 280 387.34 170.51 387.34 224.7"/>
+    <rect class="cls-6" x="58.8" y="225.27" width="383.28" height="109.46"/>
+    <rect class="cls-4" x="58.8" y="225.27" width="383.28" height="109.46"/>
+    <polyline class="cls-5" points="387.34 334.73 387.34 389.42 496.98 280 387.34 170.51 387.34 224.7"/>
   </g>
-  <line class="cls-7" x1="387.34" y1="225.27" x2="442.08" y2="225.27"/>
-  <line class="cls-7" x1="442.16" y1="334.33" x2="442.16" y2="225.27"/>
-  <line class="cls-7" x1="387.34" y1="334.73" x2="442.08" y2="334.73"/>
-  <line class="cls-7" x1="442.74" y1="280" x2="497.49" y2="280"/>
+  <line class="cls-3" x1="387.34" y1="225.27" x2="442.08" y2="225.27"/>
+  <line class="cls-3" x1="442.16" y1="334.33" x2="442.16" y2="225.27"/>
+  <line class="cls-3" x1="387.34" y1="334.73" x2="442.08" y2="334.73"/>
+  <line class="cls-3" x1="442.74" y1="280" x2="497.49" y2="280"/>
 </svg>

@@ -56,12 +56,14 @@ const Slide5 = ({ downIcon }) => {
             <TextSpanBg id={1} onHover={onHover} onHoverOut={onHoverOut}>
                complete unit squares
             </TextSpanBg>
+            .
          </Paragraph>
          <Paragraph color="white">
             Step 2: Count the number of{" "}
             <TextSpanBg id={2} onHover={onHover} onHoverOut={onHoverOut}>
                partial/half unit squares
             </TextSpanBg>
+            .
          </Paragraph>
          <Paragraph color="white">
             Step 3: Add the number of complete unit squares and half the number
@@ -69,6 +71,7 @@ const Slide5 = ({ downIcon }) => {
             <TextSpanBg id={3} onHover={onHover} onHoverOut={onHoverOut}>
                area of a given composite shape
             </TextSpanBg>
+            .
          </Paragraph>
       </TextAndDiagramSlide>
    );
