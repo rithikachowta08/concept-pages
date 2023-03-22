@@ -23,7 +23,7 @@ const Paragraph = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const Slide = ({ data, json, moveToSection, downIcon }) => {
+const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
@@ -128,7 +128,7 @@ const Slide = ({ data, json, moveToSection, downIcon }) => {
 
    const SlideComponent = SLIDE_MAPPER[data.type];
    return (
-      <SlideComponent.component {...SlideComponent.props}>
+      <SlideComponent.component {...SlideComponent.props} isPreview={isPreview}>
          {modal}
          {children}
       </SlideComponent.component>
