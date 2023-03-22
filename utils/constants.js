@@ -19,8 +19,7 @@ export const SLIDE_TYPES = {
 };
 
 // PRODUCTION
-export const isLive = true;
+// export const isLive = true;
 
 // STAGING AND DEV
-// export const isLive = false;
-
+export const isLive = false;
