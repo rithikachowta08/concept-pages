@@ -36,7 +36,7 @@ const UnitsOfArea = () => {
       <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide12 key={11} type={SLIDE_TYPES.APPLET_ONLY} />,
       <PageLastSlide
-         key={16}
+         key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of Area"}
          nextPageLink={"/us/math/study/concept/units-of-time"}
@@ -55,7 +55,7 @@ const UnitsOfArea = () => {
       },
       {
          title: "International system of units",
-         slides: [7, 8, 9, 10, 11, 12],
+         slides: [7, 8, 9, 10, 11],
       },
    ];
 

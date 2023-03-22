@@ -59,7 +59,7 @@ const UnitsOfTime = () => {
       },
       {
          title: "Relationship between units of time",
-         slides: [9, 10, 11, 12],
+         slides: [9, 10, 11],
       },
    ];
 

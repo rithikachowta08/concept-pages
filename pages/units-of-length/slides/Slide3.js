@@ -9,6 +9,7 @@ const Slide3 = ({ downIcon, currentPageIdx }) => {
          title="Explore Length using Non-standard Units"
          currentPageIdx={currentPageIdx}
          AppletComponent={Applet03801Ge}
+         titleFontSize={"3rem"}
       ></AppletSlide>
    );
 };
