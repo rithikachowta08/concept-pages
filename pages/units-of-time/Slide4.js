@@ -13,6 +13,7 @@ const Slide4 = ({ downIcon, currentPageIdx }) => {
       <TextAndAppletSlide
          downIcon={downIcon}
          AppletComponent={Applet04001Ge}
+         fullScreenRightOffset="40px"
          secondaryTitle="How do we measure Time?"
          title="Properties of Instruments"
          currentPageIdx={currentPageIdx}
