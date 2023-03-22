@@ -8,11 +8,12 @@ export const SlideSecondaryTitle = ({
    marginBottom,
    bg,
    secondaryTitle,
+   fontSize,
 }) =>
    secondaryTitle ? (
       <Title
          opacity={0.5}
-         fontSize={fontSizes.MEDIUM}
+         fontSize={fontSize || fontSizes.MEDIUM}
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
          textAlign={centerAlign ? "center" : "left"}
          marginBottom={marginBottom}
@@ -27,12 +28,13 @@ export const SlideTitle = ({
    bg,
    marginBottom,
    fontWeight,
+   fontSize,
    centerAlign,
 }) => {
    return (
       <Title
          color={bg === "LIGHT" ? colors.BLACK : colors.WHITE}
-         fontSize={fontSizes.LARGE}
+         fontSize={fontSize || fontSizes.LARGE}
          fontWeight={fontWeight || fontWeights.BOLD}
          textAlign={centerAlign ? "center" : "left"}
          marginBottom={marginBottom}

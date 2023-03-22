@@ -300,7 +300,6 @@ TextAndAppletSlide.propTypes = {
    bg: PropTypes.string,
    secondaryTitle: PropTypes.string,
    gap: PropTypes.string,
-   appletSrc: PropTypes.string.isRequired,
    AppletComponent: PropTypes.element,
    children: PropTypes.node,
 };
