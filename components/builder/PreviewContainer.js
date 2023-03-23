@@ -3,12 +3,8 @@ import dynamic from "next/dynamic";
 import { colors } from "utils/colors";
 import styled from "styled-components";
 const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
-const Slide = dynamic(() => import("../[dynamic-page]/Slide.js"), {
-   ssr: false,
-});
-const ErrorBoundary = dynamic(() => import("./ErrorBoundary.js"), {
-   ssr: false,
-});
+const Slide = dynamic(() => import("../dynamic-page/Slide.js"));
+const ErrorBoundary = dynamic(() => import("./ErrorBoundary.js"));
 
 const Div = styled.div`
    width: 100%;
@@ -40,7 +36,7 @@ const PreviewContainer = ({ json }) => {
       <Div>
          {json.slides.map((slide, idx) => (
             <SlideWrap key={idx}>
-               <ErrorBoundary>
+               <ErrorBoundary data={slide}>
                   <Slide data={slide} json={json} isPreview />
                </ErrorBoundary>
             </SlideWrap>
@@ -49,7 +45,7 @@ const PreviewContainer = ({ json }) => {
    ) : (
       <EmptyPreview>
          <Title color={colors.BLACK} level={3}>
-            Nothing to preview
+            Add slides to preview
          </Title>
       </EmptyPreview>
    );

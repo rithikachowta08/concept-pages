@@ -68,12 +68,14 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
          props: {
             title: data.title,
             bg: data.theme,
-            diagram: (
+            diagram: data.transitionImages ? (
                <TransitionImage
                   images={data.transitionImages.map((image) => image.url)}
                   altTexts={data.transitionImages.map((image) => image.altText)}
                   activeIndex={activeIndex}
                />
+            ) : (
+               <></>
             ),
             secondaryTitle: data.secondaryTitle,
             downIcon,

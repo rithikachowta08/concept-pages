@@ -2,7 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.PureComponent {
    constructor(props) {
       super(props);
       this.state = { hasError: false };
@@ -10,19 +10,23 @@ class ErrorBoundary extends React.Component {
 
    static getDerivedStateFromError(error) {
       // Update state so the next render will show the fallback UI.
-      console.log("caught error");
       return { hasError: true };
    }
 
-   componentDidCatch(error, errorInfo) {
-      // You can also log the error to an error reporting service
-      console.log("caught error");
+   componentDidUpdate(prevProps) {
+      if (JSON.stringify(prevProps.data) !== JSON.stringify(this.props.data)) {
+         this.setState({ hasError: false });
+      }
    }
 
    render() {
       if (this.state.hasError) {
          // You can render any custom fallback UI
-         return <Title level={3}>Invalid slide data</Title>;
+         return (
+            <Title level={3}>
+               Invalid slide data, please fill necessary fields
+            </Title>
+         );
       }
 
       return this.props.children;

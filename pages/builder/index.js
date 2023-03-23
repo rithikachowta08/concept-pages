@@ -2,13 +2,11 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { Flex } from "components/StyledElements";
 import { colors } from "utils/colors";
-import jsonData from "../[dynamic-page]/structure.json";
-const PreviewContainer = dynamic(() => import("./PreviewContainer"), {
-   ssr: false,
-});
-const Editor = dynamic(() => import("./Editor"), {
-   ssr: false,
-});
+// import jsonData from "components/dynamic-page/structure.json";
+const PreviewContainer = dynamic(() =>
+   import("../../components/builder/PreviewContainer")
+);
+const Editor = dynamic(() => import("../../components/builder/Editor"));
 
 const Builder = () => {
    const [json, setJson] = useState({

@@ -22,6 +22,7 @@ const schema = {
                template: {
                   type: "string",
                   title: "Template",
+                  default: SLIDE_TYPES.TEXT_AND_DIAGRAM,
                   enum: Object.values(SLIDE_TYPES),
                },
                theme: {
@@ -116,9 +117,10 @@ const Editor = ({ setJson, json }) => {
             schema={schema}
             validator={validator}
             formData={json}
+            autoComplete={"off"}
             className="builder-editor"
             // onSubmit={() => console.log("clicked submit")}
-            onSubmit={onChange}
+            onChange={onChange}
             // onError={() => console.log("uh oh")}
          />
       </Flex>
