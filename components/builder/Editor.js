@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/mui";
 import { SLIDE_TYPES } from "utils/constants";
+import { COMPONENT_TYPES } from "components/dynamic-page/BodyComponent";
 import { Flex } from "components/StyledElements";
 
 const schema = {
@@ -23,11 +24,19 @@ const schema = {
                   type: "string",
                   title: "Template",
                   default: SLIDE_TYPES.TEXT_AND_DIAGRAM,
-                  enum: Object.values(SLIDE_TYPES),
+                  enum: [
+                     SLIDE_TYPES.TEXT_AND_DIAGRAM,
+                     SLIDE_TYPES.TEXT_AND_APPLET,
+                     SLIDE_TYPES.APPLET_ONLY,
+                     SLIDE_TYPES.VIDEO_ONLY,
+                     SLIDE_TYPES.MULTIPLE_DIAGRAM,
+                     SLIDE_TYPES.CONCLUSION,
+                  ],
                },
                theme: {
                   type: "string",
                   title: "Theme",
+                  default: "LIGHT",
                   enum: ["LIGHT", "DARK"],
                },
                title: {
@@ -37,6 +46,42 @@ const schema = {
                secondaryTitle: {
                   type: "string",
                   title: "Secondary Title",
+               },
+               body: {
+                  type: "array",
+                  title: "Body",
+                  items: {
+                     type: "object",
+                     properties: {
+                        componentType: {
+                           type: "string",
+                           title: "Component type",
+                           default: COMPONENT_TYPES.TEXT,
+                           enum: Object.values(COMPONENT_TYPES),
+                        },
+                        textContent: {
+                           type: "string",
+                           title: "content",
+                        },
+                        textParams: {
+                           type: "array",
+                           title: "Text Parameters",
+                           items: {
+                              type: "object",
+                              properties: {
+                                 id: {
+                                    title: "ID",
+                                    type: "string",
+                                 },
+                                 value: {
+                                    title: "Value",
+                                    type: "string",
+                                 },
+                              },
+                           },
+                        },
+                     },
+                  },
                },
                transitionImages: {
                   type: "array",
@@ -106,9 +151,22 @@ const schema = {
    },
 };
 
+const uiSchema = {
+   slides: {
+      items: {
+         body: {
+            items: {
+               textContent: {
+                  "ui:widget": "textarea",
+               },
+            },
+         },
+      },
+   },
+};
+
 const Editor = ({ setJson, json }) => {
    const onChange = (data) => {
-      console.log(data.formData);
       setJson(data.formData);
    };
    return (
@@ -116,6 +174,7 @@ const Editor = ({ setJson, json }) => {
          <Form
             schema={schema}
             validator={validator}
+            uiSchema={uiSchema}
             formData={json}
             autoComplete={"off"}
             className="builder-editor"

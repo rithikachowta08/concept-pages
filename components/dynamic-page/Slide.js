@@ -26,18 +26,6 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
    const { isModalOpen, onClick, onDismiss } = useModal();
 
    const SLIDE_MAPPER = {
-      // [SLIDE_TYPES.TITLE_SLIDE]: {
-      //    component: TitleSlide,
-      //    props: {
-      //       title: json.title,
-      //       anchorIdxes: json.navSections.map(
-      //          (navSection) => navSection.slides[0] + 1
-      //       ),
-      //       contentListItems: data.sections,
-      //       moveToSection,
-      //       downIcon,
-      //    },
-      // },
       [SLIDE_TYPES.APPLET_ONLY]: {
          component: AppletSlide,
          props: {

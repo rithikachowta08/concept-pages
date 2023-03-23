@@ -8,14 +8,49 @@ const FullPageCustomWrapper = dynamic(() =>
 );
 const Slide = dynamic(() => import("../../components/dynamic-page/Slide"));
 const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
+const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
+
+function range(start, end) {
+   return Array(end - start + 1)
+      .fill()
+      .map((_, idx) => start + idx);
+}
+
+const TitleSlideComponent = ({
+   title,
+   anchorIdxes,
+   sections,
+   moveToSection,
+   downIcon,
+}) => {
+   return (
+      <TitleSlide
+         title={title}
+         anchorIdxes={anchorIdxes}
+         contentListItems={sections}
+         moveToSection={moveToSection}
+         downIcon={downIcon}
+      />
+   );
+};
 
 const Page = ({ json }) => {
    const router = useRouter();
-   console.log("Path", router.asPath);
    if (json.slides) {
-      const SlideArray = json.slides.map((slide, idx) => (
-         <Slide key={idx} data={slide} json={json} />
-      ));
+      const SlideArray = [
+         <TitleSlideComponent
+            key={0}
+            type={SLIDE_TYPES.TITLE_SLIDE}
+            anchorIdxes={json.navSections.map(
+               (item) => item.firstSlideIndex + 2
+            )}
+            sections={json.navSections.map((item) => item.name)}
+            title={json.title}
+         ></TitleSlideComponent>,
+      ];
+      json.slides.forEach((slide, idx) => {
+         SlideArray.push(<Slide key={idx + 1} data={slide} json={json} />);
+      });
 
       SlideArray.push(
          <PageLastSlide
@@ -33,10 +68,20 @@ const Page = ({ json }) => {
             darkBgIndices.push(idx);
          }
       });
+      const navSections = json.navSections.map((section, idx) => ({
+         title: section.name,
+         slides: range(
+            section.firstSlideIndex + 1,
+            idx === json.navSections.length - 1
+               ? json.slides.length
+               : json.navSections[idx + 1].firstSlideIndex
+         ),
+      }));
+      console.log("navSections", navSections);
       return (
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
-            navigationSections={json.navSections}
+            navigationSections={navSections}
             darkBgIndices={darkBgIndices}
          />
       );

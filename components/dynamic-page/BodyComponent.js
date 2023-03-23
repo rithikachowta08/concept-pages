@@ -17,7 +17,7 @@ const ModalImg = dynamic(() =>
    import("components/StyledElements").then((mod) => mod.ModalImg)
 );
 
-const COMPONENT_TYPES = {
+export const COMPONENT_TYPES = {
    TEXT: "text",
    IMAGE: "image",
    PILL: "pill",
@@ -34,8 +34,8 @@ const BodyComponent = ({
    onHover,
    onHoverOut,
 }) => {
-   if (item.type === COMPONENT_TYPES.TEXT) {
-      const lines = item.content.split("\n");
+   if (item.componentType === COMPONENT_TYPES.TEXT && item.textContent) {
+      const lines = item.textContent.split("\n");
       const textLines = [];
       let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
       if (isModal) {
@@ -48,16 +48,20 @@ const BodyComponent = ({
                {modifiedContent.map((child, idx) => {
                   const str = child.trim();
                   const isTextParam = str.startsWith("%") && str.endsWith("%");
+                  const id = str.substring(1, str.length - 1);
                   return isTextParam ? (
                      <TextParamComponent
-                        type={str.substring(1, str.length - 1)}
+                        type={id}
                         idx={idx}
                         key={idx}
                         theme={theme}
                         onHover={onHover}
                         onHoverOut={onHoverOut}
                         onClick={onClick}
-                        values={item.textParams}
+                        value={
+                           item.textParams?.find((param) => param.id === id)
+                              ?.value || id
+                        }
                      />
                   ) : (
                      str
@@ -68,24 +72,24 @@ const BodyComponent = ({
       });
       return <Paragraph color={color}>{textLines}</Paragraph>;
    }
-   if (item.type === COMPONENT_TYPES.BULLETED_LIST) {
+   if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
       return item.content.map((bulletPoint, idx) => (
          <Paragraph key={idx}>
             <BulletPointItem>{bulletPoint}</BulletPointItem>
          </Paragraph>
       ));
    }
-   if (item.type === COMPONENT_TYPES.NUMBERED_LIST) {
+   if (item.componentType === COMPONENT_TYPES.NUMBERED_LIST) {
       return <NumberedList items={item.content} />;
    }
-   if (item.type === COMPONENT_TYPES.IMAGE) {
+   if (item.componentType === COMPONENT_TYPES.IMAGE) {
       return isModal ? (
          <ModalImg src={item.url} alt={item.alt} />
       ) : (
          <StyledImg src={item.url} alt={item.alt} />
       );
    }
-   if (item.type === COMPONENT_TYPES.PILL) {
+   if (item.componentType === COMPONENT_TYPES.PILL) {
       const modifiedContent = item.content.split(/(%.*?%)/g);
       return (
          <div>
@@ -93,16 +97,20 @@ const BodyComponent = ({
                {modifiedContent.map((child, idx) => {
                   const str = child.trim();
                   const isTextParam = str.startsWith("%") && str.endsWith("%");
+                  const id = str.substring(1, str.length - 1);
                   return isTextParam ? (
                      <TextParamComponent
-                        type={str.substring(1, str.length - 1)}
+                        type={id}
                         idx={idx}
                         key={idx}
                         theme={theme}
                         onHover={onHover}
                         onHoverOut={onHoverOut}
                         onClick={onClick}
-                        values={item.textParams}
+                        value={
+                           item.textParams?.find((param) => param.id === id) ||
+                           id
+                        }
                      />
                   ) : (
                      str
@@ -112,6 +120,7 @@ const BodyComponent = ({
          </div>
       );
    }
+   return null;
 };
 
 export default BodyComponent;

@@ -9,20 +9,21 @@ const ModalTriggerText = dynamic(() =>
 const MathElement = dynamic(() => import("components/MathElement"));
 
 const PARAM_TYPES = {
-   MODAL_TRIGGER: "ModalTrigger",
-   DIAGRAM_INTERACTION: "DiagramInteraction",
-   MATH: "Math",
+   MODAL_TRIGGER: "mt",
+   DIAGRAM_INTERACTION: "di",
+   MATH: "ma",
 };
 
 const TextParamComponent = ({
    type,
-   values,
+   value,
    theme,
    idx,
    onHover,
    onHoverOut,
    onClick,
 }) => {
+   console.log("value", value);
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
          <>
@@ -34,7 +35,7 @@ const TextParamComponent = ({
                   theme === "LIGHT" ? colors.DARK_LAVENDER : colors.LAVENDER
                }
             >
-               {values[type]}
+               {value}
             </TextSpanBg>
             &nbsp;
          </>
@@ -48,7 +49,7 @@ const TextParamComponent = ({
                color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
                onClick={onClick}
             >
-               {values[type]}
+               {value}
             </ModalTriggerText>
             &nbsp;
          </>
@@ -58,7 +59,7 @@ const TextParamComponent = ({
       return (
          <>
             &nbsp;
-            <MathElement htmlString={values[type]} />
+            <MathElement htmlString={value} />
             &nbsp;
          </>
       );

@@ -10,12 +10,12 @@ export const tllms_mediaPackager_clientKey = "r3Pl5x1gT9k2zSPYHenK4ejGnnqoWcsv";
 
 export const SLIDE_TYPES = {
    TITLE_SLIDE: "title",
-   TEXT_AND_DIAGRAM: "text_with_one_diagram",
-   MULTIPLE_DIAGRAM: "text_with_multiple_diagram",
-   TEXT_AND_APPLET: "applet_with_text",
-   APPLET_ONLY: "applet_only",
-   VIDEO_ONLY: "video_only",
-   CONCLUSION: "conclusion",
+   TEXT_AND_DIAGRAM: "TEXT_AND_DIAGRAM",
+   MULTIPLE_DIAGRAM: "TEXT_WITH_MULTIPLE_DIAGRAM",
+   TEXT_AND_APPLET: "TEXT_AND_APPLET",
+   APPLET_ONLY: "APPLET",
+   VIDEO_ONLY: "VIDEO",
+   CONCLUSION: "CONCLUSION",
 };
 
 // PRODUCTION
