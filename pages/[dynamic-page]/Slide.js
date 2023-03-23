@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
+import { SLIDE_TYPES } from "utils/constants";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -18,9 +19,6 @@ const VideoSlide = dynamic(() => import("components/slides/VideoSlide2"));
 const MultipleDiagramSlide = dynamic(() =>
    import("components/slides/MultipleDiagramSlide")
 );
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
 const Modal = dynamic(() => import("components/layout/Modal"));
 
 const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
@@ -28,19 +26,19 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
    const { isModalOpen, onClick, onDismiss } = useModal();
 
    const SLIDE_MAPPER = {
-      TITLE: {
-         component: TitleSlide,
-         props: {
-            title: json.title,
-            anchorIdxes: json.navSections.map(
-               (navSection) => navSection.slides[0] + 1
-            ),
-            contentListItems: data.sections,
-            moveToSection,
-            downIcon,
-         },
-      },
-      APPLET: {
+      // [SLIDE_TYPES.TITLE_SLIDE]: {
+      //    component: TitleSlide,
+      //    props: {
+      //       title: json.title,
+      //       anchorIdxes: json.navSections.map(
+      //          (navSection) => navSection.slides[0] + 1
+      //       ),
+      //       contentListItems: data.sections,
+      //       moveToSection,
+      //       downIcon,
+      //    },
+      // },
+      [SLIDE_TYPES.APPLET_ONLY]: {
          component: AppletSlide,
          props: {
             title: data.title,
@@ -49,7 +47,7 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
             downIcon,
          },
       },
-      TEXT_AND_APPLET: {
+      [SLIDE_TYPES.TEXT_AND_APPLET]: {
          component: TextAndAppletSlide,
          props: {
             title: data.title,
@@ -58,22 +56,22 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
             downIcon,
          },
       },
-      VIDEO: {
+      [SLIDE_TYPES.VIDEO_ONLY]: {
          component: VideoSlide,
          props: {
             title: data.title,
             downIcon,
          },
       },
-      TEXT_AND_DIAGRAM: {
+      [SLIDE_TYPES.TEXT_AND_DIAGRAM]: {
          component: TextAndDiagramSlide,
          props: {
             title: data.title,
             bg: data.theme,
             diagram: (
                <TransitionImage
-                  images={data.transitionImages}
-                  altTexts={data.transitionImageAltTexts}
+                  images={data.transitionImages.map((image) => image.url)}
+                  altTexts={data.transitionImages.map((image) => image.altText)}
                   activeIndex={activeIndex}
                />
             ),
@@ -81,7 +79,7 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
             downIcon,
          },
       },
-      MULTIPLE_DIAGRAM: {
+      [SLIDE_TYPES.MULTIPLE_DIAGRAM]: {
          component: MultipleDiagramSlide,
          bg: data.theme,
          props: {
@@ -126,7 +124,7 @@ const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
       );
    }
 
-   const SlideComponent = SLIDE_MAPPER[data.type];
+   const SlideComponent = SLIDE_MAPPER[data.template];
    return (
       <SlideComponent.component {...SlideComponent.props} isPreview={isPreview}>
          {modal}

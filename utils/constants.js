@@ -9,7 +9,7 @@ export const tllms_mediaPackager_clientId = "YYFfsOxGO1qsAueSwNw4kWvG";
 export const tllms_mediaPackager_clientKey = "r3Pl5x1gT9k2zSPYHenK4ejGnnqoWcsv";
 
 export const SLIDE_TYPES = {
-   TITLE_SLIDE: "section_page",
+   TITLE_SLIDE: "title",
    TEXT_AND_DIAGRAM: "text_with_one_diagram",
    MULTIPLE_DIAGRAM: "text_with_multiple_diagram",
    TEXT_AND_APPLET: "applet_with_text",
@@ -23,4 +23,3 @@ export const SLIDE_TYPES = {
 
 // STAGING AND DEV
 export const isLive = false;
-

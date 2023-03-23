@@ -1,8 +1,9 @@
 {
    "title": "Area of a Circle",
+   "url": "/area-of-circle",
    "slides": [
       {
-         "type": "TITLE",
+         "type": "title",
          "theme": "DARK",
          "sections": [
             "What is the area of a circle?",
@@ -12,7 +13,7 @@
          ]
       },
       {
-         "type": "TEXT_AND_DIAGRAM",
+         "type": "text_with_one_diagram",
          "title": "What is the area of a circle?",
          "theme": "LIGHT",
          "body": [
@@ -46,7 +47,7 @@
          "transitionImageAltTexts": ["test alt text", "test alt text shaded"]
       },
       {
-         "type": "TEXT_AND_DIAGRAM",
+         "type": "text_with_one_diagram",
          "theme": "DARK",
          "title": "General Formula",
          "secondaryTitle": "Area of a circle",
@@ -67,10 +68,15 @@
             }
          ],
          "transitionImages": [
-            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-            "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg"
-         ],
-         "transitionImageAltTexts": ["test alt text", "test alt text shaded"]
+            {
+               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
+               "altText": "test alt text"
+            },
+            {
+               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
+               "altText": "test alt text shaded"
+            }
+         ]
       }
    ],
    "navSections": [
