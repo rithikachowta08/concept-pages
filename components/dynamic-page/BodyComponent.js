@@ -18,12 +18,12 @@ const ModalImg = dynamic(() =>
 );
 
 export const COMPONENT_TYPES = {
-   TEXT: "text",
-   IMAGE: "image",
-   PILL: "pill",
-   EQUATION_TABLE: "equation_table",
-   BULLETED_LIST: "bulleted_list",
-   NUMBERED_LIST: "numbered_list",
+   TEXT: "TEXT",
+   IMAGE: "IMAGE",
+   PILL: "PILL",
+   EQUATION_TABLE: "EQUATION_TABLE",
+   BULLETED_LIST: "BULLETED_LIST",
+   NUMBERED_LIST: "NUMBERED_LIST",
 };
 
 const BodyComponent = ({
@@ -95,7 +95,7 @@ const BodyComponent = ({
          const modifiedContent = item.content.split(/(%.*?%)/g);
          return (
             <div>
-               <Pill>
+               <Pill darkbg={theme === "LIGHT" ? false : true}>
                   {modifiedContent.map((child, idx) => {
                      const str = child.trim();
                      const isTextParam =
@@ -111,9 +111,8 @@ const BodyComponent = ({
                            onHoverOut={onHoverOut}
                            onClick={onClick}
                            value={
-                              item.textParams?.find(
-                                 (param) => param.id === id
-                              ) || id
+                              item.textParams?.find((param) => param.id === id)
+                                 ?.value || id
                            }
                         />
                      ) : (
