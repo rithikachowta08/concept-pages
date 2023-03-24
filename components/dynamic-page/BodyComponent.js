@@ -34,91 +34,96 @@ const BodyComponent = ({
    onHover,
    onHoverOut,
 }) => {
-   if (item.componentType === COMPONENT_TYPES.TEXT && item.textContent) {
-      const lines = item.textContent.split("\n");
-      const textLines = [];
-      let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
-      if (isModal) {
-         color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
+   if (item.content) {
+      if (item.componentType === COMPONENT_TYPES.TEXT) {
+         const lines = item.textContent.split("\n");
+         const textLines = [];
+         let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
+         if (isModal) {
+            color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
+         }
+         lines.forEach((line, idx) => {
+            const modifiedContent = line.split(/(%.*?%)/g);
+            textLines.push(
+               <TextLine key={idx}>
+                  {modifiedContent.map((child, idx) => {
+                     const str = child.trim();
+                     const isTextParam =
+                        str.startsWith("%") && str.endsWith("%");
+                     const id = str.substring(1, str.length - 1);
+                     return isTextParam ? (
+                        <TextParamComponent
+                           type={id}
+                           idx={idx}
+                           key={idx}
+                           theme={theme}
+                           onHover={onHover}
+                           onHoverOut={onHoverOut}
+                           onClick={onClick}
+                           value={
+                              item.textParams?.find((param) => param.id === id)
+                                 ?.value || id
+                           }
+                        />
+                     ) : (
+                        str
+                     );
+                  })}
+               </TextLine>
+            );
+         });
+         return <Paragraph color={color}>{textLines}</Paragraph>;
       }
-      lines.forEach((line, idx) => {
-         const modifiedContent = line.split(/(%.*?%)/g);
-         textLines.push(
-            <TextLine key={idx}>
-               {modifiedContent.map((child, idx) => {
-                  const str = child.trim();
-                  const isTextParam = str.startsWith("%") && str.endsWith("%");
-                  const id = str.substring(1, str.length - 1);
-                  return isTextParam ? (
-                     <TextParamComponent
-                        type={id}
-                        idx={idx}
-                        key={idx}
-                        theme={theme}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        value={
-                           item.textParams?.find((param) => param.id === id)
-                              ?.value || id
-                        }
-                     />
-                  ) : (
-                     str
-                  );
-               })}
-            </TextLine>
+      if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
+         return item.content.map((bulletPoint, idx) => (
+            <Paragraph key={idx}>
+               <BulletPointItem>{bulletPoint}</BulletPointItem>
+            </Paragraph>
+         ));
+      }
+      if (item.componentType === COMPONENT_TYPES.NUMBERED_LIST) {
+         return <NumberedList items={item.content} />;
+      }
+      if (item.componentType === COMPONENT_TYPES.IMAGE) {
+         return isModal ? (
+            <ModalImg src={item.url} alt={item.alt} />
+         ) : (
+            <StyledImg src={item.url} alt={item.alt} />
          );
-      });
-      return <Paragraph color={color}>{textLines}</Paragraph>;
-   }
-   if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
-      return item.content.map((bulletPoint, idx) => (
-         <Paragraph key={idx}>
-            <BulletPointItem>{bulletPoint}</BulletPointItem>
-         </Paragraph>
-      ));
-   }
-   if (item.componentType === COMPONENT_TYPES.NUMBERED_LIST) {
-      return <NumberedList items={item.content} />;
-   }
-   if (item.componentType === COMPONENT_TYPES.IMAGE) {
-      return isModal ? (
-         <ModalImg src={item.url} alt={item.alt} />
-      ) : (
-         <StyledImg src={item.url} alt={item.alt} />
-      );
-   }
-   if (item.componentType === COMPONENT_TYPES.PILL) {
-      const modifiedContent = item.content.split(/(%.*?%)/g);
-      return (
-         <div>
-            <Pill>
-               {modifiedContent.map((child, idx) => {
-                  const str = child.trim();
-                  const isTextParam = str.startsWith("%") && str.endsWith("%");
-                  const id = str.substring(1, str.length - 1);
-                  return isTextParam ? (
-                     <TextParamComponent
-                        type={id}
-                        idx={idx}
-                        key={idx}
-                        theme={theme}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        value={
-                           item.textParams?.find((param) => param.id === id) ||
-                           id
-                        }
-                     />
-                  ) : (
-                     str
-                  );
-               })}
-            </Pill>
-         </div>
-      );
+      }
+      if (item.componentType === COMPONENT_TYPES.PILL) {
+         const modifiedContent = item.content.split(/(%.*?%)/g);
+         return (
+            <div>
+               <Pill>
+                  {modifiedContent.map((child, idx) => {
+                     const str = child.trim();
+                     const isTextParam =
+                        str.startsWith("%") && str.endsWith("%");
+                     const id = str.substring(1, str.length - 1);
+                     return isTextParam ? (
+                        <TextParamComponent
+                           type={id}
+                           idx={idx}
+                           key={idx}
+                           theme={theme}
+                           onHover={onHover}
+                           onHoverOut={onHoverOut}
+                           onClick={onClick}
+                           value={
+                              item.textParams?.find(
+                                 (param) => param.id === id
+                              ) || id
+                           }
+                        />
+                     ) : (
+                        str
+                     );
+                  })}
+               </Pill>
+            </div>
+         );
+      }
    }
    return null;
 };

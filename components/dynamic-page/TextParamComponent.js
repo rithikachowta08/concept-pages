@@ -23,7 +23,6 @@ const TextParamComponent = ({
    onHoverOut,
    onClick,
 }) => {
-   console.log("value", value);
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
          <>

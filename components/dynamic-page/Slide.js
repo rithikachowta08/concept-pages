@@ -10,7 +10,6 @@ const BodyComponent = dynamic(() => import("./BodyComponent"));
 const TextAndDiagramSlide = dynamic(() =>
    import("components/slides/TextAndDiagramSlide")
 );
-const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
@@ -21,7 +20,7 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const Slide = ({ data, isPreview, json, moveToSection, downIcon }) => {
+const Slide = ({ data, isPreview, downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 

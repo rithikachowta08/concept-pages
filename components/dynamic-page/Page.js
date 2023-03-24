@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
@@ -35,7 +34,6 @@ const TitleSlideComponent = ({
 };
 
 const Page = ({ json }) => {
-   const router = useRouter();
    if (json.slides) {
       const SlideArray = [
          <TitleSlideComponent
@@ -77,7 +75,6 @@ const Page = ({ json }) => {
                : json.navSections[idx + 1].firstSlideIndex
          ),
       }));
-      console.log("navSections", navSections);
       return (
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
