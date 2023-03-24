@@ -36,7 +36,7 @@ const BodyComponent = ({
 }) => {
    if (item.content) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
-         const lines = item.textContent.split("\n");
+         const lines = item.content.split("\n");
          const textLines = [];
          let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
          if (isModal) {
@@ -86,9 +86,9 @@ const BodyComponent = ({
       }
       if (item.componentType === COMPONENT_TYPES.IMAGE) {
          return isModal ? (
-            <ModalImg src={item.url} alt={item.alt} />
+            <ModalImg src={item.content} alt={item.alt} />
          ) : (
-            <StyledImg src={item.url} alt={item.alt} />
+            <StyledImg src={item.content} alt={item.alt} />
          );
       }
       if (item.componentType === COMPONENT_TYPES.PILL) {

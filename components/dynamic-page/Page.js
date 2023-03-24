@@ -44,10 +44,12 @@ const Page = ({ json }) => {
             )}
             sections={json.navSections.map((item) => item.name)}
             title={json.title}
-         ></TitleSlideComponent>,
+         />,
       ];
       json.slides.forEach((slide, idx) => {
-         SlideArray.push(<Slide key={idx + 1} data={slide} json={json} />);
+         SlideArray.push(
+            <Slide key={idx + 1} idx={idx} data={slide} json={json} />
+         );
       });
 
       SlideArray.push(

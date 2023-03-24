@@ -69,8 +69,8 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
    };
    useEffect(() => {
       if (isOpen) {
-         global.fullpage_api.setAllowScrolling(false);
-         global.fullpage_api.setKeyboardScrolling(false);
+         global.fullpage_api?.setAllowScrolling(false);
+         global.fullpage_api?.setKeyboardScrolling(false);
       } else {
          global.fullpage_api?.setAllowScrolling(true);
          global.fullpage_api?.setKeyboardScrolling(true);
@@ -126,7 +126,9 @@ const ModalPortal = ({ ...props }) => {
    const ref = useRef(null);
    const [mounted, setMounted] = useState(false);
    useEffect(() => {
-      ref.current = document.querySelector("#modal-container");
+      ref.current = document.getElementById(
+         props.modalContainerId || "modal-container"
+      );
       setMounted(true);
    }, []);
    return mounted && ref.current

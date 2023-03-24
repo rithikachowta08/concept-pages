@@ -20,7 +20,7 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const Slide = ({ data, isPreview, downIcon }) => {
+const Slide = ({ data, idx, isPreview, downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
@@ -81,12 +81,13 @@ const Slide = ({ data, isPreview, downIcon }) => {
 
    let modal;
    if (data.modal) {
-      const modalBody = data.modal.body.map((item, idx) => (
+      const modalBody = data.modal.body?.map((item, idx) => (
          <BodyComponent key={idx} item={item} theme={data.theme} isModal />
       ));
       modal = (
          <Modal
             isOpen={isModalOpen}
+            modalContainerId={`slide-${idx}`}
             bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
             color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
             title={data.modal.title}
@@ -115,7 +116,11 @@ const Slide = ({ data, isPreview, downIcon }) => {
 
    const SlideComponent = SLIDE_MAPPER[data.template];
    return (
-      <SlideComponent.component {...SlideComponent.props} isPreview={isPreview}>
+      <SlideComponent.component
+         id={`slide-${idx}`}
+         {...SlideComponent.props}
+         isPreview={isPreview}
+      >
          {modal}
          {children}
       </SlideComponent.component>

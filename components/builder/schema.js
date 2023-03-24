@@ -59,7 +59,7 @@ export const NAV_PROPERTIES = {
 
 const CONTENT_BODY = {
    type: "array",
-   title: "Body",
+   title: "Content",
    items: {
       type: "object",
       properties: {
@@ -94,7 +94,17 @@ const CONTENT_BODY = {
    },
 };
 
-const MODAL_PROPERTIES = {};
+const MODAL_PROPERTIES = {
+   type: "object",
+   title: "Modal",
+   properties: {
+      title: {
+         type: "string",
+         title: "Title",
+      },
+      body: CONTENT_BODY,
+   },
+};
 
 const SLIDE_DEPENDENCIES = {
    template: {
@@ -122,6 +132,7 @@ const SLIDE_DEPENDENCIES = {
                      },
                   },
                },
+               modal: MODAL_PROPERTIES,
             },
             required: ["transitionImages"],
          },
@@ -135,6 +146,7 @@ const SLIDE_DEPENDENCIES = {
                   type: "string",
                   title: "Applet ID",
                },
+               modal: MODAL_PROPERTIES,
             },
             required: ["appletId"],
          },
@@ -199,7 +211,6 @@ export const SLIDE_PROPERTIES = {
                type: "string",
                title: "Secondary Title",
             },
-            modal: MODAL_PROPERTIES,
          },
          dependencies: SLIDE_DEPENDENCIES,
       },
