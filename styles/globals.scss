@@ -15,11 +15,14 @@ body {
    animation: redraw 1s linear infinite;
 }
 
-@keyframes redraw{
-   0% {opacity: 1;}
-   100% {opacity: .99;}
+@keyframes redraw {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0.99;
+   }
 }
-
 
 a {
    color: inherit;
@@ -240,4 +243,11 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    html {
       font-size: 8px;
    }
+}
+
+#lottie-overlay {
+   position: absolute;
+   width: 650px;
+   height: 650px;
+   z-index: 2;
 }

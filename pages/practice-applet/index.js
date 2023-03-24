@@ -40,6 +40,7 @@ const UnitsOfTime = () => {
             id="practice-app"
             src="https://ggb-assets.s3.eu-west-1.amazonaws.com/algebra-practice/algebra-practice.umd.js"
          ></Script>
+         <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></Script>
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
             navigationSections={navigationSections}
