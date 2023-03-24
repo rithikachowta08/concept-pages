@@ -9,20 +9,18 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
       if (currentPageIdx === 1) {
          setTimeout(() => {
             document.getElementById("lottie-overlay").style.height = "0px";
-         }, 2000);
+         }, 4500);
       }
    }, [currentPageIdx]);
    return (
       <PracticeSlide title="Solve the problem" downIcon={downIcon}>
-         {currentPageIdx === 1 && (
-            <lottie-player
-               id="lottie-overlay"
-               src={overlay}
-               speed="1"
-               loop
-               autoplay
-            ></lottie-player>
-         )}
+         <lottie-player
+            id="lottie-overlay"
+            src={overlay}
+            speed="1"
+            loop
+            autoplay
+         ></lottie-player>
          <algebra-practice
             latex="2x+1=5"
             hints="on"
