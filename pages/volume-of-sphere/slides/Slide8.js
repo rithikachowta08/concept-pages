@@ -12,7 +12,8 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                   "https://k10-streaming.tllms.com/mpkgr-production-689eca7b/rr90mt/Maths_INTL/230309/SEO18INTL08MAT11KT017/dash/h264.mpd",
                hls_Url:
                   "https://k10-streaming.tllms.com/mpkgr-production-689eca7b/rr90mt/Maths_INTL/230309/SEO18INTL08MAT11KT017/hls/h264.m3u8",
-               thumbnail: "",
+               thumbnail:
+                  "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Spheres.png",
                title: "Spheres",
                duration: 28,
                videoId: "21528",
