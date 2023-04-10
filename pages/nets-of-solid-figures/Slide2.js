@@ -16,7 +16,7 @@ const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-import { Applet00801Ge } from "@assessed/byjus-us-math-applets/008_01_GE";
+import { Applet04501Ge } from "@assessed/byjus-us-math-applets/045_01_GE";
 import { colors } from "utils/colors";
 const slide_2_pop_1 = "assets/nets-of-solid-figures/5.svg";
 const slide_2_pop_2 = "assets/nets-of-solid-figures/4.svg";
@@ -55,7 +55,7 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
    };
    return (
       <TextAndAppletSlide
-         AppletComponent={Applet00801Ge}
+         AppletComponent={Applet04501Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="What is net of a solid?"

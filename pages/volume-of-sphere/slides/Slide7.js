@@ -6,12 +6,9 @@ import { Applet04101Ge } from "@assessed/byjus-us-math-applets/041_01_GE";
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
-const StyledImg = dynamic(() =>
-   import("components/StyledElements").then((mod) => mod.StyledImg)
-);
 const MathElement = dynamic(() => import("components/MathElement"));
 
-const Slide7 = ({ downIcon, activeIndex }) => {
+const Slide7 = ({ downIcon }) => {
    return (
       <TextAndAppletSlide
          title={

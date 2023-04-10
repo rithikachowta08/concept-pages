@@ -16,7 +16,7 @@ const ModalTriggerText = dynamic(() =>
    import("components/text").then((mod) => mod.ModalTriggerText)
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-import { Applet00801Ge } from "@assessed/byjus-us-math-applets/008_01_GE";
+// import { Applet04505Ge } from "@assessed/byjus-us-math-applets/045_05_GE";
 import { colors } from "utils/colors";
 const slide_7_pop = "assets/nets-of-solid-figures/15.svg";
 
@@ -34,7 +34,7 @@ const Slide7 = ({ downIcon, currentPageIdx }) => {
    const { isModalOpen, onClick, onDismiss } = useModal();
    return (
       <TextAndAppletSlide
-         AppletComponent={Applet00801Ge}
+         // AppletComponent={Applet04505Ge}
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="Nets of a Triangular Prism"
