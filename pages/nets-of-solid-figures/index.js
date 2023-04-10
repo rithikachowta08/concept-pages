@@ -36,8 +36,8 @@ const NetsOfSolidFigures = () => {
          type={SLIDE_TYPES.CONCLUSION}
          key={11}
          currentPageTitle={"Nets of Solid Figures"}
-         nextPageTitle="Units of Length"
-         nextPageLink="/us/math/study/concept/units-of-length"
+         nextPageTitle="Coordinate plane and quadrants"
+         nextPageLink="/us/math/study/concept/coordinate-plane-and-quadrants"
       />,
    ];
 
