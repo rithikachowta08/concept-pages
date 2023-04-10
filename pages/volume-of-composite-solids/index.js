@@ -22,7 +22,7 @@ const VolumeOfCompositeSolids = () => {
       <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide5 key={4} type={SLIDE_TYPES.APPLET_ONLY} />,
       <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide7 key={6} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
          key={8}
          type={SLIDE_TYPES.CONCLUSION}

@@ -5,12 +5,14 @@ const TextAndAppletSlide = dynamic(() =>
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
+import { Applet04401Ge } from "@assessed/byjus-us-math-applets/044_01_GE";
+
 const Slide3 = ({ downIcon }) => {
    return (
       <TextAndAppletSlide
          title={"Movement Along X-axis"}
          secondaryTitle={"What Is a Coordinate Plane?"}
-         appletSrc={""}
+         AppletComponent={Applet04401Ge}
          downIcon={downIcon}
       >
          <Paragraph>Consider a bee moving on a coordinate plane.</Paragraph>
