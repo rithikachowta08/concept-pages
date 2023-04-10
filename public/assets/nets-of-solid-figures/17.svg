@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .5;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #8080a8;
+      }
+
+      .cls-6 {
+        stroke: #655c9b;
+        stroke-width: 6px;
+      }
+
+      .cls-6, .cls-7 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2, .cls-8 {
+        opacity: .3;
+      }
+
+      .cls-8 {
+        fill: #b970dc;
+      }
+
+      .cls-3 {
+        opacity: .6;
+      }
+
+      .cls-7 {
+        stroke: #f0a2ff;
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        opacity: .31;
+      }
+
+      .cls-5 {
+        opacity: .1;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-8" points="52.07 479.19 315.72 421.85 507.93 486.91 262.4 548.42 52.07 479.19"/>
+  <polygon class="cls-7" points="52.07 479.19 315.72 421.85 507.93 486.91 262.4 548.42 52.07 479.19"/>
+  <g>
+    <polygon class="cls-4" points="52.07 389.19 315.72 331.85 507.93 396.91 262.4 458.42 52.07 389.19"/>
+    <polygon class="cls-1" points="285.95 37.58 52.07 389.19 315.72 331.85 285.95 37.58"/>
+    <polygon class="cls-3" points="285.95 37.58 315.72 331.85 507.93 396.91 285.95 37.58"/>
+    <line class="cls-6" x1="315.72" y1="331.85" x2="285.95" y2="37.58"/>
+    <polyline class="cls-6" points="52.07 389.19 315.72 331.7 507.93 396.91"/>
+    <line class="cls-6" x1="52.07" y1="389.19" x2="262.4" y2="458.42"/>
+    <polygon class="cls-5" points="285.95 37.58 262.4 458.42 507.93 396.91 285.95 37.58"/>
+    <polygon class="cls-2" points="52.07 389.19 285.95 37.58 262.4 458.42 52.07 389.19"/>
+    <polyline class="cls-6" points="285.95 37.58 262.4 458.42 507.93 396.91"/>
+    <polyline class="cls-6" points="507.93 396.91 285.95 37.58 52.07 389.19 262.4 458.42"/>
+  </g>
+</svg>

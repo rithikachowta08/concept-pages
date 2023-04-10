@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-5, .cls-6, .cls-9, .cls-10 {
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-3, .cls-5, .cls-6, .cls-9 {
+        fill: none;
+      }
+
+      .cls-1, .cls-6 {
+        stroke: #655c9b;
+      }
+
+      .cls-2 {
+        fill: #bc84e1;
+      }
+
+      .cls-2, .cls-3, .cls-5, .cls-9 {
+        stroke: #f2a4ff;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0 5.02 2.01;
+      }
+
+      .cls-4 {
+        fill: #bb70de;
+        opacity: .9;
+      }
+
+      .cls-4, .cls-7, .cls-8 {
+        stroke-width: 4px;
+      }
+
+      .cls-4, .cls-7, .cls-8, .cls-10 {
+        stroke: #f0a2ff;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 0 0 5.11 2.04;
+      }
+
+      .cls-6 {
+        stroke-linecap: round;
+      }
+
+      .cls-11 {
+        fill: #fff;
+        opacity: .1;
+      }
+
+      .cls-7 {
+        fill: #a466c4;
+        opacity: .75;
+      }
+
+      .cls-8 {
+        fill: #9c60bf;
+        opacity: .6;
+      }
+
+      .cls-10 {
+        fill: #b374dd;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-11" points="36.42 347.23 98.08 396.01 230.76 363.23 316.62 414.35 437.1 379.18 345.3 334.16 444.66 309.55 535.15 287.13 451.44 257.28 268.23 297.28 203.88 266.43 101.59 286.11 159.1 320.65 36.42 347.23"/>
+  <polygon class="cls-1" points="36.42 347.23 98.08 396.01 230.76 363.23 316.62 414.35 437.1 379.18 345.3 334.16 444.66 309.55 535.15 287.13 451.44 257.28 268.23 297.28 203.88 266.43 101.59 286.11 159.1 320.65 36.42 347.23"/>
+  <polygon class="cls-2" points="158.96 321.09 268.23 297.28 344.71 334.35 228.42 362.5 158.96 321.09"/>
+  <polygon class="cls-7" points="155.74 192.6 158.96 321.09 228.42 362.5 228.42 222.35 155.74 192.6"/>
+  <polygon class="cls-10" points="268.71 297.28 268.71 175.62 348.23 201.76 344.71 334.35 268.71 297.28"/>
+  <polygon class="cls-4" points="268.71 175.62 348.23 201.76 228.42 222.35 155.74 192.6 268.71 175.62"/>
+  <line class="cls-6" x1="364.91" y1="276.17" x2="444.66" y2="309.55"/>
+  <polygon class="cls-8" points="228.42 222.35 348.23 201.76 344.71 334.35 228.42 362.5 228.42 222.35"/>
+  <g>
+    <line class="cls-9" x1="159.21" y1="321.09" x2="161.65" y2="320.55"/>
+    <polyline class="cls-3" points="163.61 320.13 268.48 297.28 341.81 332.83"/>
+    <line class="cls-9" x1="342.71" y1="333.26" x2="344.96" y2="334.35"/>
+  </g>
+  <g>
+    <line class="cls-9" x1="269.59" y1="175.79" x2="269.57" y2="178.29"/>
+    <line class="cls-5" x1="269.56" y1="180.33" x2="268.74" y2="293.76"/>
+    <line class="cls-9" x1="268.73" y1="294.78" x2="268.71" y2="297.28"/>
+  </g>
+</svg>
