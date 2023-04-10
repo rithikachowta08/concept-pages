@@ -24,7 +24,7 @@ const VolumeOfCompositeSolids = () => {
       <Slide6 key={5} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide7 key={6} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
-         key={8}
+         key={7}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Composite Solids"}
          nextPageLink={
