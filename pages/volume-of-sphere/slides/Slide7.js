@@ -1,10 +1,12 @@
 import dynamic from "next/dynamic";
-import { Applet04101Ge } from "@assessed/byjus-us-math-applets/041_01_GE";
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
+);
+const StyledImg = dynamic(() =>
+   import("components/StyledElements").then((mod) => mod.StyledImg)
 );
 const MathElement = dynamic(() => import("components/MathElement"));
 
@@ -20,7 +22,7 @@ const Slide7 = ({ downIcon, activeIndex }) => {
             </span>
          }
          secondaryTitle={"General Formula"}
-         AppletComponent={Applet04101Ge}
+         diagram={<StyledImg src="" alt="" />}
          downIcon={downIcon}
       >
          <Paragraph>
