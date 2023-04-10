@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import useModal from "hooks/useModal";
+import { Applet04201Ge } from "@assessed/byjus-us-math-applets/042_01_GE";
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
@@ -38,6 +39,7 @@ const Slide2 = ({ downIcon }) => {
       <TextAndAppletSlide
          title="What are composite solids?"
          downIcon={downIcon}
+         AppletComponent={Applet04201Ge}
       >
          <Paragraph>
             A composite solid is a solid formed by combining two or more{" "}
