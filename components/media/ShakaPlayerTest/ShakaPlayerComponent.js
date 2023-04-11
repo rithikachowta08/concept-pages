@@ -214,6 +214,9 @@ const VideoPlayer = (props) => {
    };
 
    const onPlay = () => {
+      console.log("Played");
+      props.onPlay();
+
       onVideoStart({
          videoId: props.videoContent.videoId,
          timestamp: video.currentTime,
