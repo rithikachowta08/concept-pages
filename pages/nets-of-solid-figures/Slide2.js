@@ -59,6 +59,7 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="What is net of a solid?"
+         fullScreenRightOffset="20px"
       >
          <Modal
             isOpen={isModalOpen}

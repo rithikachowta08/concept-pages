@@ -37,6 +37,7 @@ const Slide5 = ({ downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="Net of a Cube"
+         fullScreenRightOffset="20px"
       >
          <Modal
             isOpen={isModalOpen}

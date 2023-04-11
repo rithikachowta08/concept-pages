@@ -37,6 +37,7 @@ const Slide6 = ({ downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="Nets of a Rectangular Prism"
+         fullScreenRightOffset="20px"
       >
          <Modal
             isOpen={isModalOpen}

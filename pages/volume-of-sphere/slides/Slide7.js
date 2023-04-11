@@ -22,6 +22,7 @@ const Slide7 = ({ downIcon }) => {
          secondaryTitle={"General Formula"}
          AppletComponent={Applet04101Ge}
          downIcon={downIcon}
+         fullScreenRightOffset="30px"
       >
          <Paragraph>
             The volume of a cone is{" "}

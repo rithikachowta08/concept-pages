@@ -40,6 +40,7 @@ const Slide2 = ({ downIcon }) => {
          title="What are composite solids?"
          downIcon={downIcon}
          AppletComponent={Applet04201Ge}
+         fullScreenRightOffset="30px"
       >
          <Paragraph>
             A composite solid is a solid formed by combining two or more{" "}

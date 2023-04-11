@@ -37,6 +37,7 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          currentPageIdx={currentPageIdx}
          title="Nets of a Square Pyramid"
+         fullScreenRightOffset="20px"
       >
          <Modal
             isOpen={isModalOpen}

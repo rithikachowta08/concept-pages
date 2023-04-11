@@ -13,6 +13,7 @@ const Slide3 = ({ downIcon }) => {
          secondaryTitle={"What Is a Coordinate Plane?"}
          AppletComponent={Applet04401Ge}
          downIcon={downIcon}
+         fullScreenRightOffset="20px"
       >
          <Paragraph>Consider a bee moving on a coordinate plane.</Paragraph>
          <Paragraph>

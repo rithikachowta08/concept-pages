@@ -15,6 +15,7 @@ const Slide5 = ({ downIcon }) => {
          secondaryTitle={"What Is a Coordinate Plane?"}
          AppletComponent={Applet04401Ge}
          downIcon={downIcon}
+         fullScreenRightOffset="20px"
       >
          <Paragraph>
             When the bee moves across the coordinate plane starting from the
