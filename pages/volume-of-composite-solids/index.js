@@ -59,8 +59,7 @@ const VolumeOfCompositeSolids = () => {
       </>
    );
 };
-VolumeOfCompositeSolids.title =
-   "Volume of Composite Solids: Definition, Formula, Examples - BYJU'S";
+VolumeOfCompositeSolids.title = "Volume of Composite Solids - BYJU'S";
 VolumeOfCompositeSolids.meta =
    "Discover the concept of volume of composite solids, including its definition, formula, and examples. Enhance your understanding with BYJU'S interactive activities and examples.";
 

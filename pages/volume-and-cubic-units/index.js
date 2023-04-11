@@ -63,8 +63,7 @@ const VolumeAndCubicUnits = () => {
       </>
    );
 };
-VolumeAndCubicUnits.title =
-   "Volume And Cubic Units: Definition, Formula, Examples - BYJU'S";
+VolumeAndCubicUnits.title = "Volume And Cubic Units - BYJU'S";
 VolumeAndCubicUnits.meta =
    "Gain a deep understanding of volume and cubic units with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
 
