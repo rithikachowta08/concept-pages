@@ -61,16 +61,16 @@ const Slide2 = ({ downIcon }) => {
             it can accommodate without any gaps or overlaps.
          </Paragraph>
          <Paragraph color={colors.WHITE}>
-            For example, this solid is packed with 12 unit cubes, so its volume
-            is{" "}
+            For example, this solid is packed with{" "}
             <TextSpanBg
                onHover={() => onHover(1)}
                onHoverOut={onHoverOut}
                color={colors.RED}
                hoverColor={colors.LAVENDER}
             >
-               12 unit cubes.
-            </TextSpanBg>{" "}
+               12 unit cubes
+            </TextSpanBg>
+            , so its volume is 12 unit cubes.
          </Paragraph>{" "}
          <Modal
             isOpen={isModalOpen}

@@ -40,15 +40,15 @@ const VolumeAndCubicUnits = () => {
       },
       {
          title: "Volume by counting unit cubes",
-         slides: [2, 3, 4, 5],
+         slides: [2, 3, 4],
       },
       {
          title: "Volume in cubic units",
-         slides: [6, 7],
+         slides: [5, 6],
       },
       {
          title: "Limitations of volume measurement using unit cubes",
-         slides: [8],
+         slides: [7, 8],
       },
    ];
 

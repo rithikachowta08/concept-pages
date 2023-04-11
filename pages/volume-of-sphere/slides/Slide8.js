@@ -15,14 +15,14 @@ const Slide8 = ({ downIcon, currentPageIdx }) => {
                thumbnail:
                   "https://search-mathstatic.byjusweb.com/assets/video-thumbnails/Spheres.png",
                title: "Spheres",
-               duration: 28,
+               duration: 189,
                videoId: "21528",
             }}
             downIcon={downIcon}
             currentPageIdx={currentPageIdx}
-            index={8}
-            downIconId="s6-video-down-icon"
-            videoSlideId="s6-video-slide"
+            index={7}
+            downIconId="s8-video-down-icon"
+            videoSlideId="s8-video-slide"
          />
       </div>
    );

@@ -20,7 +20,12 @@ const Slide6 = ({ downIcon }) => {
       <TextAndDiagramSlide
          title={"Illustrative Example"}
          secondaryTitle={"Volume of a Sphere"}
-         diagram={<StyledImg src={image_1} alt="" />}
+         diagram={
+            <StyledImg
+               src={image_1}
+               alt="Image of inflated and deflated football"
+            />
+         }
          downIcon={downIcon}
       >
          <Paragraph fontWeight={fontWeights.BOLD}>

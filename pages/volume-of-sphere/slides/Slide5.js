@@ -22,7 +22,7 @@ const Slide5 = ({ downIcon }) => {
          diagram={
             <StyledImg
                src={image_1}
-               alt="Image of inflated and deflated football"
+               alt="Diagram of a sphere with radius labelled"
             />
          }
          downIcon={downIcon}

@@ -114,7 +114,7 @@ const Slide2 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["l \\times w \\times h \\ cubic units"],
+                        value: ["l \\times w \\times h \\ cubic \\ units"],
                         type: "latex",
                      },
                      rhsHint: {

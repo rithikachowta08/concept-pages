@@ -60,8 +60,9 @@ const Slide2 = ({ downIcon }) => {
                images={[i2, i3, i4, i5]}
                altTexts={[
                   "Diagram of a composite solid made up of two non-overlapping rectangular prism.",
-                  "Diagram of a composite solid made up of cube and rectangular prism",
-                  "Diagram of a composite solid made up of cube and rectangular prism representing its volume using unit cubes.",
+                  "Diagram of a composite solid made up of two non-overlapping rectangular prism highlighting its volume.",
+                  "Diagram of a composite solid made up of two non-overlapping rectangular prism highlighting the volume of one rectangular prism.",
+                  "Diagram of a composite solid made up of two non-overlapping rectangular prism highlighting the volume of one rectangular prism.",
                ]}
             ></TransitionImage>
          }

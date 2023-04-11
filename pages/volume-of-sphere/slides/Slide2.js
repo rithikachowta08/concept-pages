@@ -38,7 +38,6 @@ const Slide2 = ({ downIcon }) => {
             A geometrical space where the position of any object is determined
             by three dimensions.
          </Paragraph>
-         <Paragraph color={colors.WHITE}>Example:</Paragraph>
          <ModalImg
             src={image_4}
             alt="Diagram of a point in three dimensional space"

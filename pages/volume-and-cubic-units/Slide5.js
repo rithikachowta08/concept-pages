@@ -38,7 +38,7 @@ const Slide8 = ({ downIcon }) => {
                   <TransitionImage
                      images={[i1, i3]}
                      activeIndex={activeIndex1}
-                     alt={["cubic centimeter", "cubic centimeter"]}
+                     altTexts={["cubic centimeter", "cubic centimeter"]}
                   />
                ),
             },
@@ -47,7 +47,7 @@ const Slide8 = ({ downIcon }) => {
                   <TransitionImage
                      images={[i2, i4]}
                      activeIndex={activeIndex2}
-                     alt={["cubic inch", "cubic inch"]}
+                     altTexts={["cubic inch", "cubic inch"]}
                   />
                ),
             },
