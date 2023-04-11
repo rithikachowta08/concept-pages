@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 5px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #f0a2ff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 4px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #f0a2ff;
+      }
+
+      .cls-5 {
+        fill: #b970dc;
+      }
+
+      .cls-6 {
+        opacity: .3;
+      }
+
+      .cls-4 {
+        font-family: Nunito-Medium, Nunito;
+        font-size: 32px;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g class="cls-6">
+    <rect class="cls-5" x="127.62" y="128.76" width="242.49" height="242.05"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="127.62" y="128.76" width="242.05" height="242.05"/>
+    <g>
+      <line class="cls-2" x1="389.63" y1="138.97" x2="389.63" y2="358.24"/>
+      <polygon class="cls-3" points="379.86 141.83 389.63 124.91 399.4 141.83 379.86 141.83"/>
+      <polygon class="cls-3" points="379.86 355.38 389.63 372.31 399.4 355.38 379.86 355.38"/>
+    </g>
+    <g>
+      <line class="cls-2" x1="356.04" y1="391.27" x2="141.68" y2="391.27"/>
+      <polygon class="cls-3" points="353.18 381.5 370.11 391.27 353.18 401.04 353.18 381.5"/>
+      <polygon class="cls-3" points="144.54 381.5 127.62 391.27 144.54 401.04 144.54 381.5"/>
+    </g>
+    <text class="cls-4" transform="translate(198.03 426.26)"><tspan x="0" y="0">Length</tspan></text>
+    <text class="cls-4" transform="translate(423.55 294.94) rotate(-90)"><tspan x="0" y="0">Width</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 0 7.97 5.97;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke: #f2a4ff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        stroke: #f0a2ff;
+        stroke-linejoin: round;
+        stroke-width: 5px;
+      }
+
+      .cls-5 {
+        opacity: .65;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: #b970dc;
+      }
+
+      .cls-6 {
+        opacity: .9;
+      }
+
+      .cls-7 {
+        opacity: .75;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 0 0 8.85 6.63;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-6" points="212.29 218.86 433.37 218.86 348.49 271.06 126.05 271.06 212.29 218.86"/>
+  <polygon class="cls-2" points="212.29 218.86 433.37 218.86 348.49 271.06 126.05 271.06 212.29 218.86"/>
+  <polygon class="cls-7" points="348.49 271.06 433.37 218.86 433.37 293.2 349.8 345.59 348.49 271.06"/>
+  <polygon class="cls-2" points="348.49 271.06 433.37 218.86 433.37 293.2 349.8 345.59 348.49 271.06"/>
+  <polygon class="cls-5" points="349.8 345.59 126.05 345.98 126.05 271.06 348.49 271.06 349.8 345.59"/>
+  <polygon class="cls-2" points="349.8 345.59 126.05 345.98 126.05 271.06 348.49 271.06 349.8 345.59"/>
+  <g>
+    <line class="cls-3" x1="126.83" y1="344.42" x2="130.27" y2="342.39"/>
+    <polyline class="cls-1" points="135.42 339.35 210.73 294.83 426.96 294.83"/>
+    <line class="cls-3" x1="429.95" y1="294.83" x2="433.95" y2="294.83"/>
+  </g>
+  <g>
+    <line class="cls-3" x1="210.24" y1="218.28" x2="210.27" y2="222.28"/>
+    <line class="cls-4" x1="210.31" y1="228.91" x2="210.69" y2="287.51"/>
+    <line class="cls-3" x1="210.71" y1="290.83" x2="210.73" y2="294.83"/>
+  </g>
+</svg>

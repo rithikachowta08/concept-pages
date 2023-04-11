@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .9;
+      }
+
+      .cls-2 {
+        opacity: .7;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #ba70dd;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #f1a3ff;
+        stroke-linejoin: round;
+        stroke-width: 3.13px;
+      }
+
+      .cls-4 {
+        opacity: .5;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <polygon class="cls-3" points="82.85 197.23 477.51 197.23 444.23 230.31 49.59 230.31 82.85 197.23"/>
+    <polygon class="cls-5" points="82.85 197.23 477.51 197.23 444.23 230.31 49.59 230.31 82.85 197.23"/>
+    <polygon class="cls-2" points="444.23 230.31 477.51 197.23 477.51 328.66 444.23 361.77 444.23 230.31"/>
+    <polygon class="cls-5" points="444.23 230.31 477.51 197.23 477.51 328.66 444.23 361.77 444.23 230.31"/>
+    <polygon class="cls-4" points="444.23 361.77 49.58 361.77 49.59 230.31 444.23 230.31 444.23 361.77"/>
+    <polygon class="cls-5" points="444.23 361.77 49.58 361.77 49.59 230.31 444.23 230.31 444.23 361.77"/>
+  </g>
+</svg>

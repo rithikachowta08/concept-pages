@@ -17,7 +17,7 @@ const ModalTriggerText = ({
    };
    return (
       <TextSpan
-         color={color || colors.BLACK}
+         color={color || "inherit"}
          fontWeight={fontWeight || fontWeights.BOLD}
          textDecoration="underline"
          cursor="pointer"

@@ -210,4 +210,41 @@
         <priority>1.0</priority>
     </url>
 
+     <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-and-cubic-units</loc>
+        <lastmod>2023-04-11</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+     <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-composite-solids</loc>
+        <lastmod>2023-04-11</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+     <url>
+        <loc>https://byjus.com/us/math/study/concept/volume-of-sphere</loc>
+        <lastmod>2023-04-11</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+     <url>
+        <loc>https://byjus.com/us/math/study/concept/nets-of-solid-figures</loc>
+        <lastmod>2023-04-11</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+     <url>
+        <loc>https://byjus.com/us/math/study/concept/coordinate-plane-and-coordinates</loc>
+        <lastmod>2023-04-11</lastmod>
+        <changefreq>never</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+  
+
 </urlset>

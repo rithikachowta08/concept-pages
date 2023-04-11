@@ -27,7 +27,7 @@ const MultipleDiagramSlide = ({
    isLastSlide,
    children,
    images,
-   bg,
+   bg = "LIGHT",
    downIcon,
 }) => {
    const ref = useRef(null);

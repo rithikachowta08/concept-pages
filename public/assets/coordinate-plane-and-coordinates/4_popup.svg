@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Raleway-Medium, Raleway;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #f2a4ff;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #f2a4ff;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(59.42 113.24)"><tspan class="cls-7" x="0" y="0">V</tspan><tspan class="cls-9" x="18.36" y="0">ertica</tspan><tspan class="cls-4" x="97.68" y="0">l</tspan><tspan x="105.36" y="0" xml:space="preserve"> line</tspan></text>
+  <text class="cls-1" transform="translate(259.5 500.03)"><tspan class="cls-11" x="0" y="0">H</tspan><tspan class="cls-6" x="21.96" y="0">ori</tspan><tspan class="cls-10" x="57.72" y="0">z</tspan><tspan class="cls-6" x="72.21" y="0">o</tspan><tspan class="cls-8" x="90.18" y="0">n</tspan><tspan class="cls-9" x="107.73" y="0">ta</tspan><tspan class="cls-5" x="134.91" y="0">l</tspan><tspan x="142.59" y="0" xml:space="preserve"> line</tspan></text>
+  <g>
+    <line class="cls-3" x1="48.95" y1="55.2" x2="48.95" y2="551.33"/>
+    <polygon class="cls-2" points="34.63 66.8 37.2 69.18 48.94 56.54 60.7 69.18 63.26 66.8 48.94 51.4 34.63 66.8"/>
+    <polygon class="cls-2" points="34.63 539.73 37.2 537.35 48.94 549.99 60.7 537.35 63.26 539.73 48.94 555.13 34.63 539.73"/>
+  </g>
+  <rect class="cls-3" x="48.95" y="469.22" width="40.37" height="40.37"/>
+  <g>
+    <line class="cls-3" x1="7.65" y1="509.58" x2="503.33" y2="509.58"/>
+    <polygon class="cls-2" points="19.24 523.9 21.63 521.34 8.99 509.59 21.63 497.84 19.24 495.27 3.85 509.59 19.24 523.9"/>
+    <polygon class="cls-2" points="491.73 523.9 489.35 521.34 501.99 509.59 489.35 497.84 491.73 495.27 507.13 509.59 491.73 523.9"/>
+  </g>
+</svg>

@@ -1,11 +1,26 @@
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 const PracticeSlide = dynamic(() => import("components/slides/PracticeSlide"));
 
-const s2_a = "assets/units-of-time/2_a.svg";
+const overlay = "assets/pencil.json";
 
-const Slide2 = ({ downIcon }) => {
+const Slide2 = ({ downIcon, currentPageIdx }) => {
+   useEffect(() => {
+      if (currentPageIdx === 1) {
+         setTimeout(() => {
+            document.getElementById("lottie-overlay").style.height = "0px";
+         }, 4500);
+      }
+   }, [currentPageIdx]);
    return (
       <PracticeSlide title="Solve the problem" downIcon={downIcon}>
+         <lottie-player
+            id="lottie-overlay"
+            src={overlay}
+            speed="1"
+            loop
+            autoplay
+         ></lottie-player>
          <algebra-practice
             latex="2x+1=5"
             hints="on"
