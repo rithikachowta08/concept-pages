@@ -1,9 +1,6 @@
 import json from "components/dynamic-page/structure.json";
 import dynamic from "next/dynamic";
-// TEMP FIX
-const Page = dynamic(() => import("components/dynamic-page/Page"), {
-   ssr: false,
-});
+const Page = dynamic(() => import("components/dynamic-page/Page"));
 
 const DynamicPage = () => {
    return <Page json={json}></Page>;
