@@ -33,7 +33,7 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
          </Paragraph>
          <ModalImg
             src={slide_2_pop_1}
-            alt="Image of a three-dimensional square"
+            alt="Image of a three dimensional cube"
          />
       </Flex>,
       <Flex direction="column" key={1}>

@@ -36,9 +36,9 @@ const Slide11 = ({ downIcon }) => {
             <TransitionImage
                images={[slide_3_a, slide_3_b, slide_3_c]}
                altTexts={[
-                  "Image of a rectangular prism",
-                  "Image of a rectangular prism highlighting flat faces",
-                  "Image of a rectangular prism highlighting identical ends",
+                  "Image of a cube with its net",
+                  "Image of a cube with its net highlighting net",
+                  "Image of a cube with its net highlighting net",
                ]}
                activeIndex={activeIndex}
             />

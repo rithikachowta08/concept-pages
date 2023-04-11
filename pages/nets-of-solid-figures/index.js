@@ -36,14 +36,14 @@ const NetsOfSolidFigures = () => {
          type={SLIDE_TYPES.CONCLUSION}
          key={11}
          currentPageTitle={"Nets of Solid Figures"}
-         nextPageTitle="Coordinate plane and quadrants"
-         nextPageLink="/us/math/study/concept/coordinate-plane-and-quadrants"
+         nextPageTitle="Volume and Cubic Units"
+         nextPageLink="/us/math/study/concept/volume-and-cubic-units"
       />,
    ];
 
    const navigationSections = [
       {
-         title: "What is net of a solid? ",
+         title: "What is net of a solid?",
          slides: [1],
       },
       { title: "Net of a prism", slides: [2, 3, 4, 5, 6] },
@@ -52,7 +52,7 @@ const NetsOfSolidFigures = () => {
          slides: [7, 8, 9],
       },
       {
-         title: "Properties of a net",
+         title: "Properties of a net of a solid",
          slides: [10],
       },
    ];

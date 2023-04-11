@@ -9,7 +9,7 @@ const Slide1 = ({ moveToSection, downIcon }) => {
             "What is net of a solid? ",
             "Net of a prism",
             "Net of a pyramid",
-            "Properties of a net",
+            "Properties of a net of a solid",
          ]}
          anchorIdxes={[2, 3, 8, 11]}
          moveToSection={moveToSection}
