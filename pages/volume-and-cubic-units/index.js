@@ -67,4 +67,12 @@ VolumeAndCubicUnits.title = "Volume And Cubic Units - BYJU'S";
 VolumeAndCubicUnits.meta =
    "Gain a deep understanding of volume and cubic units with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master it.";
 
+// Hide page
+export function getStaticProps() {
+   return {
+      // returns the default 404 page with a status code of 404
+      notFound: true,
+   };
+}
+
 export default VolumeAndCubicUnits;

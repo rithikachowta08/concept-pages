@@ -78,4 +78,11 @@ NetsOfSolidFigures.title = "Nets of solid figures - BYJU'S";
 NetsOfSolidFigures.meta =
    "Gain a thorough understanding of the nets of solid figures with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
+// Hide page
+export function getStaticProps() {
+   return {
+      // returns the default 404 page with a status code of 404
+      notFound: true,
+   };
+}
 export default NetsOfSolidFigures;
