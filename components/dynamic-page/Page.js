@@ -10,6 +10,8 @@ const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 function range(start, end) {
+   console.log("start", start);
+   console.log("end", end);
    return Array(end - start + 1)
       .fill()
       .map((_, idx) => start + idx);
@@ -40,7 +42,7 @@ const Page = ({ json }) => {
             key={0}
             type={SLIDE_TYPES.TITLE_SLIDE}
             anchorIdxes={json.navSections.map(
-               (item) => item.firstSlideIndex + 2
+               (item) => item.startingSlideIndex + 1
             )}
             sections={json.navSections.map((item) => item.name)}
             title={json.title}
@@ -71,10 +73,10 @@ const Page = ({ json }) => {
       const navSections = json.navSections.map((section, idx) => ({
          title: section.name,
          slides: range(
-            section.firstSlideIndex + 1,
+            section.startingSlideIndex,
             idx === json.navSections.length - 1
                ? json.slides.length
-               : json.navSections[idx + 1].firstSlideIndex
+               : json.navSections[idx + 1].startingSlideIndex
          ),
       }));
       return (

@@ -1,326 +1,55 @@
 {
-   "title": "Area of a Circle",
-   "url": "area-of-circle",
+   "title": "New concept page",
    "slides": [
       {
          "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
          "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "section": "What is circle",
+         "title": "What is circle 1"
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "theme": "DARK",
-         "title": "General Formula",
-         "secondaryTitle": "Area of a circle",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of a circle is equal to the product of pi %Math_1% or 3.14) and the \n square of the radius(r)",
-               "textParams": {
-                  "Math_1": "(\\pi = \\dfrac{22}{7}"
-               }
-            },
-            {
-               "componentType": "pill",
-               "content": "Area of a circle = %Math_1%",
-               "textParams": {
-                  "Math_1": "\\pi \\times r^2"
-               }
-            }
-         ],
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "theme": "LIGHT",
+         "section": "What is circle",
+         "title": "What is circle 2"
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
          "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "section": "What is circle",
+         "title": "What is circle 3"
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
          "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "section": "Area",
+         "title": "Area 1"
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
          "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "section": "Area",
+         "title": "Area 2"
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
          "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
-      },
-      {
-         "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
-         "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
-      },
-      {
-         "template": "TEXT_AND_DIAGRAM",
-         "title": "What is the area of a circle?",
-         "theme": "LIGHT",
-         "body": [
-            {
-               "componentType": "text",
-               "content": "The area of the circle is the %DiagramInteraction_1% by the %ModalTrigger_1% in a plane",
-               "textParams": {
-                  "DiagramInteraction_1": "region occupied",
-                  "ModalTrigger_1": "circle"
-               }
-            }
-         ],
-         "modal": {
-            "title": "What is a circle?",
-            "body": [
-               {
-                  "componentType": "text",
-                  "content": "A circle is a path traced by a moving point, which is always equidistant from a fixed point. The fixed point is the center \"O\" and the fixed distance is the radius \"r\"."
-               },
-               {
-                  "componentType": "image",
-                  "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_modal.svg",
-                  "alt": "modal alt"
-               }
-            ]
-         },
-         "transitionImages": [
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2.svg",
-               "altText": "test alt text"
-            },
-            {
-               "url": "https://search-mathstatic.byjusweb.com/assets/images/area-of-circle/slide_2_shaded.svg",
-               "altText": "test alt text shaded"
-            }
-         ]
+         "section": "Example",
+         "title": "Example 1"
       }
    ],
    "navSections": [
-      { "name": "What is the area of a circle?", "firstSlideIndex": 1 },
-      { "name": "General Formula", "firstSlideIndex": 2 },
-      { "name": "Area of a circle using the diameter", "firstSlideIndex": 5 },
       {
-         "name": "Area of a circle using the circumference",
-         "firstSlideIndex": 7
+         "name": "What is circle",
+         "startingSlideIndex": 1
+      },
+      {
+         "name": "Area",
+         "startingSlideIndex": 4
+      },
+      {
+         "name": "Example",
+         "startingSlideIndex": 6
       }
-   ],
-   "seo": {
-      "title": "Area of Circle: Definition, Formula, Examples - BYJU'S",
-      "meta": "Learn about the area of circle, including its definition, formula, and examples. Master this important concept with BYJU'S interactive activities."
-   },
-   "nextPageTitle": "Area of square",
-   "nextPageUrl": "area-of-square"
+   ]
 }

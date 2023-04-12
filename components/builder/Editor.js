@@ -27,19 +27,24 @@ const StyledButton = styled.button`
 `;
 
 const Editor = ({
+   tabIndex,
+   setTabIndex,
    setPageDetails,
    setSlides,
    addNewSlide,
    pageDetails,
    slides,
+   onSubmit,
 }) => {
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
    };
-   console.log("slides", slides);
    return (
       <Flex flex="1" style={{ overflow: "scroll" }}>
-         <Tabs>
+         <Tabs
+            selectedIndex={tabIndex}
+            onSelect={(index) => setTabIndex(index)}
+         >
             <TabList>
                <Tab>Page Details</Tab>
                {slides.map((slide, idx) => (
@@ -53,30 +58,25 @@ const Editor = ({
                   formData={pageDetails}
                   autoComplete={"off"}
                   className="page-details-form"
-                  // onSubmit={() => console.log("clicked submit")}
                   onChange={onPageDetailsFormChange}
-
-                  // onError={() => console.log("uh oh")}
-               ></Form>
-               <ButtonContainer>
-                  <StyledButton onClick={addNewSlide}>
-                     Add new slide
-                  </StyledButton>
-               </ButtonContainer>
+               >
+                  <ButtonContainer>
+                     <StyledButton onClick={addNewSlide}>
+                        Add new slide
+                     </StyledButton>
+                  </ButtonContainer>
+               </Form>
             </TabPanel>
             {slides.map((slide, idx) => (
                <TabPanel key={idx}>
                   <Form
-                     schema={{
-                        title: `Slide ${idx + 1}`,
-                        ...SLIDE_SCHEMA,
-                     }}
+                     schema={SLIDE_SCHEMA}
                      validator={validator}
                      uiSchema={SLIDE_UI_SCHEMA}
                      formData={slide}
                      autoComplete={"off"}
                      className="slide-form"
-                     onSubmit={() => console.log("clicked submit")}
+                     onSubmit={onSubmit}
                      onChange={(data) => setSlides(idx, data.formData)}
                      // onError={() => console.log("uh oh")}
                   >

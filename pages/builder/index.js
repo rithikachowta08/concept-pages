@@ -11,6 +11,7 @@ const Editor = dynamic(() => import("../../components/builder/Editor"));
 const Builder = () => {
    const [pageDetails, setPageDetails] = useState({});
    const [slides, setSlides] = useState([]);
+   const [tabIndex, setTabIndex] = useState(0);
 
    const onSlidesChange = (idx, data) => {
       const tempSlides = [...slides];
@@ -20,6 +21,24 @@ const Builder = () => {
 
    const addNewSlide = () => {
       setSlides([...slides, { template: "TEXT_AND_DIAGRAM" }]);
+      setTabIndex(tabIndex + 1);
+   };
+
+   const onSubmit = () => {
+      const sections = Array.from(
+         new Set(slides.map((slide) => slide.section))
+      );
+      const navSections = sections.map((section) => ({
+         name: section,
+         startingSlideIndex:
+            slides.findIndex((slide) => slide.section === section) + 1,
+      }));
+      const fullJSON = {
+         ...pageDetails,
+         slides,
+         navSections,
+      };
+      console.log("fullJSON", fullJSON);
    };
 
    return (
@@ -39,6 +58,9 @@ const Builder = () => {
             addNewSlide={addNewSlide}
             setPageDetails={setPageDetails}
             setSlides={onSlidesChange}
+            onSubmit={onSubmit}
+            tabIndex={tabIndex}
+            setTabIndex={setTabIndex}
          />
       </Flex>
    );

@@ -31,32 +31,6 @@ export const SEO_PROPERTIES = {
    },
 };
 
-export const NAV_PROPERTIES = {
-   navigation: {
-      title: "Navigation",
-      type: "object",
-      properties: {
-         sections: {
-            type: "array",
-            title: "Page Sections",
-            items: {
-               type: "object",
-               properties: {
-                  name: {
-                     type: "string",
-                     title: "Name",
-                  },
-                  firstSlideIndex: {
-                     type: "string",
-                     title: "Starting Slide Number",
-                  },
-               },
-            },
-         },
-      },
-   },
-};
-
 const CONTENT_BODY = {
    type: "array",
    title: "Content",
@@ -138,7 +112,6 @@ const SLIDE_DEPENDENCIES = {
                   title: "Comments",
                },
             },
-            required: ["transitionImages"],
          },
          {
             properties: {
@@ -156,7 +129,6 @@ const SLIDE_DEPENDENCIES = {
                   title: "Comments",
                },
             },
-            required: ["appletId"],
          },
          {
             properties: {
@@ -201,7 +173,6 @@ export const SLIDE_SCHEMA = {
             SLIDE_TYPES.APPLET_ONLY,
             SLIDE_TYPES.VIDEO_ONLY,
             SLIDE_TYPES.MULTIPLE_DIAGRAM,
-            SLIDE_TYPES.CONCLUSION,
          ],
       },
       theme: {
@@ -209,6 +180,10 @@ export const SLIDE_SCHEMA = {
          title: "Theme",
          default: "LIGHT",
          enum: ["LIGHT", "DARK"],
+      },
+      section: {
+         type: "string",
+         title: "Section Name",
       },
       title: {
          type: "string",
@@ -223,12 +198,10 @@ export const SLIDE_SCHEMA = {
 };
 
 export const PAGE_DETAILS_SCHEMA = {
-   title: "Concept Page Builder",
    type: "object",
    required: ["title"],
    properties: {
       ...BASIC_PROPERTIES,
-      ...NAV_PROPERTIES,
       ...SEO_PROPERTIES,
    },
 };
