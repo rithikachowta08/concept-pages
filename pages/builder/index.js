@@ -9,15 +9,19 @@ const PreviewContainer = dynamic(() =>
 const Editor = dynamic(() => import("../../components/builder/Editor"));
 
 const Builder = () => {
-   const [json, setJson] = useState({
-      title: "",
-      url: "",
-      slides: [],
-      seo: {
-         title: "",
-         meta: "",
-      },
-   });
+   const [pageDetails, setPageDetails] = useState({});
+   const [slides, setSlides] = useState([]);
+
+   const onSlidesChange = (idx, data) => {
+      const tempSlides = [...slides];
+      tempSlides[idx] = data;
+      setSlides(tempSlides);
+   };
+
+   const addNewSlide = () => {
+      setSlides([...slides, { template: "TEXT_AND_DIAGRAM" }]);
+   };
+
    return (
       <Flex
          bgColor={colors.WHITE}
@@ -25,8 +29,17 @@ const Builder = () => {
          height="100%"
          width="100%"
       >
-         <PreviewContainer json={json} />
-         <Editor json={json} setJson={setJson} />
+         <PreviewContainer
+            json={{ ...pageDetails, slides }}
+            addNewSlide={addNewSlide}
+         />
+         <Editor
+            slides={slides}
+            pageDetails={pageDetails}
+            addNewSlide={addNewSlide}
+            setPageDetails={setPageDetails}
+            setSlides={onSlidesChange}
+         />
       </Flex>
    );
 };

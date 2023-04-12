@@ -1,58 +1,96 @@
 import React from "react";
-import dynamic from "next/dynamic";
+import styled from "styled-components";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/mui";
 import { Flex } from "components/StyledElements";
-import {
-   BASIC_PROPERTIES,
-   SEO_PROPERTIES,
-   NAV_PROPERTIES,
-   SLIDE_PROPERTIES,
-} from "./schema";
+import { SLIDE_SCHEMA, SLIDE_UI_SCHEMA, PAGE_DETAILS_SCHEMA } from "./schema";
 
-const schema = {
-   title: "Concept Page Builder",
-   type: "object",
-   required: ["title"],
-   properties: {
-      ...BASIC_PROPERTIES,
-      ...SLIDE_PROPERTIES,
-      ...NAV_PROPERTIES,
-      ...SEO_PROPERTIES,
-   },
-};
+const ButtonContainer = styled.div`
+   display: flex;
+   gap: 10px;
+   justify-content: flex-start;
+`;
+const StyledButton = styled.button`
+   background-color: #1976d2;
+   color: white;
+   padding: 10px 16px;
+   border-radius: 4px;
+   text-transform: uppercase;
+   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+   border: none;
+   width: fit-content;
+   align-self: center;
+   cursor: pointer;
+`;
 
-const uiSchema = {
-   slides: {
-      items: {
-         body: {
-            items: {
-               content: {
-                  "ui:widget": "textarea",
-               },
-            },
-         },
-      },
-   },
-};
-
-const Editor = ({ setJson, json }) => {
-   const onChange = (data) => {
-      setJson(data.formData);
+const Editor = ({
+   setPageDetails,
+   setSlides,
+   addNewSlide,
+   pageDetails,
+   slides,
+}) => {
+   const onPageDetailsFormChange = (data) => {
+      setPageDetails(data.formData);
    };
+   console.log("slides", slides);
    return (
       <Flex flex="1" style={{ overflow: "scroll" }}>
-         <Form
-            schema={schema}
-            validator={validator}
-            uiSchema={uiSchema}
-            formData={json}
-            autoComplete={"off"}
-            className="builder-editor"
-            // onSubmit={() => console.log("clicked submit")}
-            onChange={onChange}
-            // onError={() => console.log("uh oh")}
-         />
+         <Tabs>
+            <TabList>
+               <Tab>Page Details</Tab>
+               {slides.map((slide, idx) => (
+                  <Tab key={idx}>Slide {idx + 1}</Tab>
+               ))}
+            </TabList>
+            <TabPanel>
+               <Form
+                  schema={PAGE_DETAILS_SCHEMA}
+                  validator={validator}
+                  formData={pageDetails}
+                  autoComplete={"off"}
+                  className="page-details-form"
+                  // onSubmit={() => console.log("clicked submit")}
+                  onChange={onPageDetailsFormChange}
+
+                  // onError={() => console.log("uh oh")}
+               ></Form>
+               <ButtonContainer>
+                  <StyledButton onClick={addNewSlide}>
+                     Add new slide
+                  </StyledButton>
+               </ButtonContainer>
+            </TabPanel>
+            {slides.map((slide, idx) => (
+               <TabPanel key={idx}>
+                  <Form
+                     schema={{
+                        title: `Slide ${idx + 1}`,
+                        ...SLIDE_SCHEMA,
+                     }}
+                     validator={validator}
+                     uiSchema={SLIDE_UI_SCHEMA}
+                     formData={slide}
+                     autoComplete={"off"}
+                     className="slide-form"
+                     onSubmit={() => console.log("clicked submit")}
+                     onChange={(data) => setSlides(idx, data.formData)}
+                     // onError={() => console.log("uh oh")}
+                  >
+                     <ButtonContainer>
+                        <StyledButton type="submit">Create page</StyledButton>
+                        <StyledButton>Preview</StyledButton>
+                        <StyledButton onClick={addNewSlide}>
+                           Add new slide
+                        </StyledButton>
+                     </ButtonContainer>
+                  </Form>
+               </TabPanel>
+            ))}
+         </Tabs>
       </Flex>
    );
 };

@@ -11,6 +11,9 @@ const Div = styled.div`
    height: 100%;
    border: 1px solid black;
    overflow: scroll;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
    flex: 1;
 `;
 
@@ -18,7 +21,9 @@ const EmptyPreview = styled.div`
    width: 100%;
    height: 100%;
    display: flex;
+   flex-direction: column;
    align-items: center;
+   gap: 20px;
    justify-content: center;
    border: 1px solid black;
    overflow: scroll;
@@ -29,9 +34,24 @@ const SlideWrap = styled.div`
    height: 50%;
    zoom: 0.6;
    transform: scale(0.9);
+   min-height: 800px;
 `;
 
-const PreviewContainer = ({ json }) => {
+const AddNewSlideButton = styled.button`
+   background-color: #1976d2;
+   color: white;
+   padding: 10px 16px;
+   border-radius: 4px;
+   text-transform: uppercase;
+   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+   border: none;
+   width: fit-content;
+   align-self: center;
+   cursor: pointer;
+`;
+
+const PreviewContainer = ({ json, addNewSlide }) => {
    return json && json.slides.length ? (
       <Div>
          {json.slides.map((slide, idx) => (
@@ -41,12 +61,18 @@ const PreviewContainer = ({ json }) => {
                </ErrorBoundary>
             </SlideWrap>
          ))}
+         <AddNewSlideButton onClick={addNewSlide}>
+            Add new slide
+         </AddNewSlideButton>
       </Div>
    ) : (
       <EmptyPreview>
          <Title color={colors.BLACK} level={3}>
             Add slides to preview
          </Title>
+         <AddNewSlideButton onClick={addNewSlide}>
+            Add new slide
+         </AddNewSlideButton>
       </EmptyPreview>
    );
 };

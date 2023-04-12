@@ -133,6 +133,10 @@ const SLIDE_DEPENDENCIES = {
                   },
                },
                modal: MODAL_PROPERTIES,
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
             },
             required: ["transitionImages"],
          },
@@ -147,6 +151,10 @@ const SLIDE_DEPENDENCIES = {
                   title: "Applet ID",
                },
                modal: MODAL_PROPERTIES,
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
             },
             required: ["appletId"],
          },
@@ -171,48 +179,69 @@ const SLIDE_DEPENDENCIES = {
                   type: "number",
                   title: "Video duration (s)",
                },
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
             },
          },
       ],
    },
 };
 
-export const SLIDE_PROPERTIES = {
-   slides: {
-      type: "array",
-      title: "Slides",
-      items: {
-         type: "object",
-         properties: {
-            template: {
-               type: "string",
-               title: "Template",
-               default: SLIDE_TYPES.TEXT_AND_DIAGRAM,
-               enum: [
-                  SLIDE_TYPES.TEXT_AND_DIAGRAM,
-                  SLIDE_TYPES.TEXT_AND_APPLET,
-                  SLIDE_TYPES.APPLET_ONLY,
-                  SLIDE_TYPES.VIDEO_ONLY,
-                  SLIDE_TYPES.MULTIPLE_DIAGRAM,
-                  SLIDE_TYPES.CONCLUSION,
-               ],
-            },
-            theme: {
-               type: "string",
-               title: "Theme",
-               default: "LIGHT",
-               enum: ["LIGHT", "DARK"],
-            },
-            title: {
-               type: "string",
-               title: "Title",
-            },
-            secondaryTitle: {
-               type: "string",
-               title: "Secondary Title",
-            },
-         },
-         dependencies: SLIDE_DEPENDENCIES,
+export const SLIDE_SCHEMA = {
+   properties: {
+      template: {
+         type: "string",
+         title: "Template",
+         default: SLIDE_TYPES.TEXT_AND_DIAGRAM,
+         enum: [
+            SLIDE_TYPES.TEXT_AND_DIAGRAM,
+            SLIDE_TYPES.TEXT_AND_APPLET,
+            SLIDE_TYPES.APPLET_ONLY,
+            SLIDE_TYPES.VIDEO_ONLY,
+            SLIDE_TYPES.MULTIPLE_DIAGRAM,
+            SLIDE_TYPES.CONCLUSION,
+         ],
       },
+      theme: {
+         type: "string",
+         title: "Theme",
+         default: "LIGHT",
+         enum: ["LIGHT", "DARK"],
+      },
+      title: {
+         type: "string",
+         title: "Title",
+      },
+      secondaryTitle: {
+         type: "string",
+         title: "Secondary Title",
+      },
+   },
+   dependencies: SLIDE_DEPENDENCIES,
+};
+
+export const PAGE_DETAILS_SCHEMA = {
+   title: "Concept Page Builder",
+   type: "object",
+   required: ["title"],
+   properties: {
+      ...BASIC_PROPERTIES,
+      ...NAV_PROPERTIES,
+      ...SEO_PROPERTIES,
+   },
+};
+
+export const SLIDE_UI_SCHEMA = {
+   body: {
+      items: {
+         content: {
+            "ui:widget": "textarea",
+         },
+      },
+   },
+   comments: {
+      "ui:widget": "textarea",
    },
 };
