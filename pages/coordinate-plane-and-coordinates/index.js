@@ -73,4 +73,12 @@ CoordinatePlaneAndCoordinates.title =
 CoordinatePlaneAndCoordinates.meta =
    "Gain a thorough understanding of the coordinate plane and coordinates with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
+// Hide page
+export function getStaticProps() {
+   return {
+      // returns the default 404 page with a status code of 404
+      notFound: true,
+   };
+}
+
 export default CoordinatePlaneAndCoordinates;
