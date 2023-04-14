@@ -18,6 +18,40 @@ const StyledButton = styled.button`
    cursor: pointer;
 `;
 
+function oauth2SignIn() {
+   // Google's OAuth 2.0 endpoint for requesting an access token
+   var oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+
+   // Create element to open OAuth 2.0 endpoint in new window.
+   var form = document.createElement("form");
+   form.setAttribute("method", "GET"); // Send as a GET request.
+   form.setAttribute("action", oauth2Endpoint);
+
+   // Parameters to pass to OAuth 2.0 endpoint.
+   var params = {
+      client_id:
+         "1011414005032-htd2md81a41al0sr0rv2sdtdc22vslf8.apps.googleusercontent.com",
+      redirect_uri: "http://localhost:3000",
+      scope: "https://www.googleapis.com/auth/drive.metadata.readonly",
+      state: "try_sample_request",
+      include_granted_scopes: "true",
+      response_type: "token",
+   };
+
+   // Add form parameters as hidden input values.
+   for (var p in params) {
+      var input = document.createElement("input");
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", p);
+      input.setAttribute("value", params[p]);
+      form.appendChild(input);
+   }
+
+   // Add form to page and submit it to open the OAuth 2.0 endpoint.
+   document.body.appendChild(form);
+   form.submit();
+}
+
 const ImageUploader = ({ value, onChange }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
@@ -27,7 +61,7 @@ const ImageUploader = ({ value, onChange }) => {
             "1011414005032-htd2md81a41al0sr0rv2sdtdc22vslf8.apps.googleusercontent.com",
          developerKey: "AIzaSyAyJRTmrs5h3wga4dGNzbDKXmXt-bQehwc",
          viewId: "FOLDERS",
-         token: "ya29.a0Ael9sCMaDbFTXRdHMQAU_SEa1mR90UtCbvAPkJfHkwPqSTeUBPAFHEzm10YqO4cMt8-vge83F7ibuS6NyfOqau5W_WyWk5GmG2RGTKPMerILxr28MZBadRCNBpquOLl5IrHsyG27IY6ig14Hrr1boTAQbSU0aCgYKATMSARASFQF4udJhoz9Lb7-PyEQJY3t4dGkT4Q0163",
+         //  token: "ya29.a0Ael9sCMaDbFTXRdHMQAU_SEa1mR90UtCbvAPkJfHkwPqSTeUBPAFHEzm10YqO4cMt8-vge83F7ibuS6NyfOqau5W_WyWk5GmG2RGTKPMerILxr28MZBadRCNBpquOLl5IrHsyG27IY6ig14Hrr1boTAQbSU0aCgYKATMSARASFQF4udJhoz9Lb7-PyEQJY3t4dGkT4Q0163",
          showUploadFolders: true,
          showUploadView: true,
          supportDrives: true,
@@ -37,6 +71,7 @@ const ImageUploader = ({ value, onChange }) => {
                console.log("User clicked cancel/close button");
             }
             if (data.action === "picked") {
+               oauth2SignIn();
                const accessToken =
                   "ya29.a0Ael9sCMaDbFTXRdHMQAU_SEa1mR90UtCbvAPkJfHkwPqSTeUBPAFHEzm10YqO4cMt8-vge83F7ibuS6NyfOqau5W_WyWk5GmG2RGTKPMerILxr28MZBadRCNBpquOLl5IrHsyG27IY6ig14Hrr1boTAQbSU0aCgYKATMSARASFQF4udJhoz9Lb7-PyEQJY3t4dGkT4Q0163";
                const fileId = data.docs[0].id;
@@ -62,36 +97,7 @@ const ImageUploader = ({ value, onChange }) => {
                      }
                   })
                   .then(function (blob) {
-                     const s3 = new AWS.S3({
-                        accessKeyId: "AKIAQDOZYTR7KX4OBHMZ",
-                        secretAccessKey:
-                           "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",
-                        region: "us-east-1",
-                        s3Url: "https://static-autosolver-website.s3.amazonaws.com",
-                     });
-
-                     const fileName = `image-${uuidv4()}`;
-                     const file = new File([blob], fileName);
-
-                     const params = {
-                        Bucket: "static-autosolver-website",
-                        Key: fileName,
-                        Body: file,
-                        ContentType: data.docs[0].mimeType,
-                     };
-
-                     s3.upload(params, (err, data) => {
-                        if (err) {
-                           console.log("Error uploading file: ", err);
-                        } else {
-                           console.log(
-                              "File uploaded successfully. Data: ",
-                              data
-                           );
-                           setImageUrl(data.Location);
-                           onChange(data.Location);
-                        }
-                     });
+                     // Upload to s3
                   });
             }
          },
