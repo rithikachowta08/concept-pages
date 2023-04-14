@@ -74,7 +74,7 @@ const StyledButton = styled.button`
 const ImageUploader = ({ value, onChange }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
-   const file = new File(["foo"], "foo.txt", {
+   const file = new File(["foo"], "foo-new.txt", {
       type: "text/plain",
    });
    uploadFileToS3(bucketName, "new-file", file);
