@@ -1,5 +1,6 @@
 import { SLIDE_TYPES } from "utils/constants";
 import { COMPONENT_TYPES } from "components/dynamic-page/BodyComponent";
+import ImageUploader from "./ImageUploader";
 
 export const BASIC_PROPERTIES = {
    title: { type: "string", title: "Title", default: "New concept page" },
@@ -206,11 +207,22 @@ export const PAGE_DETAILS_SCHEMA = {
    },
 };
 
+export const widgets = {
+   DriveToS3ImageUploader: ImageUploader,
+};
+
 export const SLIDE_UI_SCHEMA = {
    body: {
       items: {
          content: {
             "ui:widget": "textarea",
+         },
+      },
+   },
+   transitionImages: {
+      items: {
+         url: {
+            "ui:widget": ImageUploader,
          },
       },
    },

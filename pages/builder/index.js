@@ -19,6 +19,10 @@ const Builder = () => {
       setSlides(tempSlides);
    };
 
+   const selectSlideForm = (e) => {
+      setTabIndex(Number(e.currentTarget.id) + 1);
+   };
+
    const addNewSlide = () => {
       setSlides([...slides, { template: "TEXT_AND_DIAGRAM" }]);
       setTabIndex(tabIndex + 1);
@@ -50,7 +54,9 @@ const Builder = () => {
       >
          <PreviewContainer
             json={{ ...pageDetails, slides }}
+            tabIndex={tabIndex}
             addNewSlide={addNewSlide}
+            onPreviewClick={selectSlideForm}
          />
          <Editor
             slides={slides}

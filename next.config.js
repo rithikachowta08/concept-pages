@@ -13,20 +13,21 @@ const nextConfig = {
          "*.s3-us-west-2.amazonaws.com",
          "cdn1.byjus.com",
          "search-app.byjusweb.com",
+         "static-autosolver-website.s3.amazonaws.com",
          "search-static-stg.byjusweb.com",
          "df0b18phdhzpx.cloudfront.net",
       ],
    },
    async redirects() {
-    return [
-      {
-        source: '/us/math/study/:slug',
-        destination: '/us/math/study/concept/:slug', 
-        permanent: true,
-        basePath: false
-      },
-    ]
-  },
+      return [
+         {
+            source: "/us/math/study/:slug",
+            destination: "/us/math/study/concept/:slug",
+            permanent: true,
+            basePath: false,
+         },
+      ];
+   },
 };
 
 module.exports = nextConfig;

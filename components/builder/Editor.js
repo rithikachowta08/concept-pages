@@ -1,11 +1,17 @@
 import React from "react";
+import { colors } from "utils/colors";
 import styled from "styled-components";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/mui";
 import { Flex } from "components/StyledElements";
-import { SLIDE_SCHEMA, SLIDE_UI_SCHEMA, PAGE_DETAILS_SCHEMA } from "./schema";
+import {
+   SLIDE_SCHEMA,
+   SLIDE_UI_SCHEMA,
+   PAGE_DETAILS_SCHEMA,
+   widgets,
+} from "./schema";
 
 const ButtonContainer = styled.div`
    display: flex;
@@ -13,7 +19,7 @@ const ButtonContainer = styled.div`
    justify-content: flex-start;
 `;
 const StyledButton = styled.button`
-   background-color: #1976d2;
+   background-color: ${colors.DARK_LAVENDER};
    color: white;
    padding: 10px 16px;
    border-radius: 4px;
@@ -45,16 +51,26 @@ const Editor = ({
             selectedIndex={tabIndex}
             onSelect={(index) => setTabIndex(index)}
          >
-            <TabList>
+            <TabList
+               style={{
+                  position: "sticky",
+                  top: 0,
+                  backgroundColor: colors.DARK_LAVENDER,
+                  color: colors.WHITE,
+                  zIndex: 2,
+               }}
+            >
                <Tab>Page Details</Tab>
                {slides.map((slide, idx) => (
                   <Tab key={idx}>Slide {idx + 1}</Tab>
                ))}
+               <Tab onClick={addNewSlide}>+ Add slide</Tab>
             </TabList>
             <TabPanel>
                <Form
                   schema={PAGE_DETAILS_SCHEMA}
                   validator={validator}
+                  widgets={widgets}
                   formData={pageDetails}
                   autoComplete={"off"}
                   className="page-details-form"
@@ -62,7 +78,7 @@ const Editor = ({
                >
                   <ButtonContainer>
                      <StyledButton onClick={addNewSlide}>
-                        Add new slide
+                        Add slide
                      </StyledButton>
                   </ButtonContainer>
                </Form>
@@ -84,7 +100,7 @@ const Editor = ({
                         <StyledButton type="submit">Create page</StyledButton>
                         <StyledButton>Preview</StyledButton>
                         <StyledButton onClick={addNewSlide}>
-                           Add new slide
+                           Add slide
                         </StyledButton>
                      </ButtonContainer>
                   </Form>

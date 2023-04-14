@@ -20,6 +20,7 @@
       "@testing-library/jest-dom": "^5.16.5",
       "@testing-library/user-event": "^13.5.0",
       "@zeit/next-css": "^1.0.1",
+      "aws-sdk": "^2.1357.0",
       "axios": "^1.2.0",
       "cookies-next": "^2.1.1",
       "i": "^0.3.7",
@@ -31,6 +32,7 @@
       "prop-types": "^15.8.1",
       "react": "17.0.2",
       "react-dom": "17.0.2",
+      "react-google-drive-picker": "^1.2.1",
       "react-katex": "^3.0.1",
       "react-scripts": "5.0.1",
       "react-tabs": "^4.3.0",
@@ -39,7 +41,8 @@
       "shaka-player-react": "^1.1.2",
       "shaka-player-react-lib": "^1.0.1",
       "shaka-player-ui-controls": "^1.0.8",
-      "styled-components": "^5.3.6"
+      "styled-components": "^5.3.6",
+      "uuid": "^9.0.0"
    },
    "devDependencies": {
       "eslint": "^8.25.0",

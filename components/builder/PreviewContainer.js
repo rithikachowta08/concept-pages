@@ -35,10 +35,11 @@ const SlideWrap = styled.div`
    zoom: 0.6;
    transform: scale(0.9);
    min-height: 800px;
+   border: ${(props) => (props.isSelected ? `3px solid #1976d2` : "none")};
 `;
 
 const AddNewSlideButton = styled.button`
-   background-color: #1976d2;
+   background-color: ${colors.DARK_LAVENDER};
    color: white;
    padding: 10px 16px;
    border-radius: 4px;
@@ -51,19 +52,22 @@ const AddNewSlideButton = styled.button`
    cursor: pointer;
 `;
 
-const PreviewContainer = ({ json, addNewSlide }) => {
+const PreviewContainer = ({ json, tabIndex, addNewSlide, onPreviewClick }) => {
    return json && json.slides.length ? (
       <Div>
          {json.slides.map((slide, idx) => (
-            <SlideWrap key={idx}>
+            <SlideWrap
+               key={idx}
+               id={idx}
+               isSelected={tabIndex - 1 === idx}
+               onClick={onPreviewClick}
+            >
                <ErrorBoundary data={slide}>
                   <Slide data={slide} json={json} isPreview />
                </ErrorBoundary>
             </SlideWrap>
          ))}
-         <AddNewSlideButton onClick={addNewSlide}>
-            Add new slide
-         </AddNewSlideButton>
+         <AddNewSlideButton onClick={addNewSlide}>Add slide</AddNewSlideButton>
       </Div>
    ) : (
       <EmptyPreview>
