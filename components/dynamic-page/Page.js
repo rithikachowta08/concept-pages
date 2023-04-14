@@ -10,8 +10,6 @@ const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
 function range(start, end) {
-   console.log("start", start);
-   console.log("end", end);
    return Array(end - start + 1)
       .fill()
       .map((_, idx) => start + idx);

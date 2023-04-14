@@ -37,6 +37,10 @@ const StyledButton = styled.button`
 const ImageUploader = ({ value, onChange }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
+   const file = new File(["foo"], "foo.txt", {
+      type: "text/plain",
+   });
+   uploadFile(file);
    const handleOpenPicker = () => {
       openPicker({
          clientId:
