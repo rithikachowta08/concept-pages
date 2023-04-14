@@ -3,6 +3,7 @@ import { colors } from "utils/colors";
 import styled from "styled-components";
 import Image from "next/image";
 import useDrivePicker from "react-google-drive-picker";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { v4 as uuidv4 } from "uuid";
 
 const bucketName = "byju-prd-qna-search-math-ui-store-us-east-1";
@@ -23,7 +24,7 @@ const uploadFileREST = (file) => {
    });
 };
 
-async function uploadFileToS3(bucketName, objectKey, filePath) {
+async function uploadFileToS3(bucketName, objectKey, file) {
    const s3Client = new S3Client({
       region: "us-east-1", // replace with your desired region
       credentials: {
@@ -37,12 +38,10 @@ async function uploadFileToS3(bucketName, objectKey, filePath) {
       },
    });
 
-   const fileStream = fs.createReadStream(filePath);
-
    const uploadParams = {
       Bucket: bucketName,
       Key: objectKey,
-      Body: fileStream,
+      Body: file,
       ACL: "public-read", // Replace with your desired ACL
       ContentType: "application/octet-stream", // Replace with your desired content type
    };

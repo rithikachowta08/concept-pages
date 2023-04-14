@@ -10,6 +10,7 @@
    },
    "dependencies": {
       "@assessed/byjus-us-math-applets": "1.0.11",
+      "@aws-sdk/client-s3": "^3.312.0",
       "@fullpage/react-fullpage": "^0.1.31",
       "@matejmazur/react-katex": "^3.1.3",
       "@rjsf/core": "^5.3.1",
