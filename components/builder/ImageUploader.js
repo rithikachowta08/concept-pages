@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 const bucketName = "byju-prd-qna-search-math-ui-store-us-east-1";
 const region = "us-east-1";
 
-const uploadFile = (file) => {
+const uploadFileREST = (file) => {
    const url = `https://${bucketName}.s3.${region}.amazonaws.com/`;
    const formData = new FormData();
    formData.append("key", file.name);
@@ -22,6 +22,43 @@ const uploadFile = (file) => {
       body: formData,
    });
 };
+
+async function uploadFileToS3(bucketName, objectKey, filePath) {
+   const s3Client = new S3Client({
+      region: "us-east-1", // replace with your desired region
+      credentials: {
+         // use the default credential provider that looks for an instance profile
+         async getPromise() {
+            return await new Promise((resolve, reject) => {
+               // the AWS SDK will automatically use the instance profile to authenticate your requests
+               resolve();
+            });
+         },
+      },
+   });
+
+   const fileStream = fs.createReadStream(filePath);
+
+   const uploadParams = {
+      Bucket: bucketName,
+      Key: objectKey,
+      Body: fileStream,
+      ACL: "public-read", // Replace with your desired ACL
+      ContentType: "application/octet-stream", // Replace with your desired content type
+   };
+
+   const command = new PutObjectCommand(uploadParams);
+
+   try {
+      const response = await s3Client.send(command);
+      console.log("Successfully uploaded file to S3", response);
+   } catch (error) {
+      console.error("Error uploading file to S3", error);
+   }
+
+   // the rest of the code is the same as in the previous examples
+}
+
 const StyledButton = styled.button`
    background-color: ${colors.WHITE};
    color: ${colors.DARK_LAVENDER};
@@ -40,7 +77,7 @@ const ImageUploader = ({ value, onChange }) => {
    const file = new File(["foo"], "foo.txt", {
       type: "text/plain",
    });
-   uploadFile(file);
+   uploadFileToS3(bucketName, "new-file", file);
    const handleOpenPicker = () => {
       openPicker({
          clientId:
