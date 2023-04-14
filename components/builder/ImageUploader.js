@@ -9,41 +9,15 @@ import { v4 as uuidv4 } from "uuid";
 const bucketName = "byju-prd-qna-search-math-ui-store-us-east-1";
 const region = "us-east-1";
 
-const uploadFileREST = (file) => {
-   const url = `https://${bucketName}.s3.${region}.amazonaws.com/`;
-   const formData = new FormData();
-   formData.append("key", file.name);
-   formData.append("Content-Type", file.type);
-   formData.append("acl", "public-read-write");
-   formData.append("bucket", bucketName);
-   formData.append("file", file);
-
-   return fetch(url, {
-      method: "POST",
-      body: formData,
-   });
-};
-
 async function uploadFileToS3(bucketName, objectKey, file) {
    const s3Client = new S3Client({
-      region: "us-east-1", // replace with your desired region
-      credentials: {
-         // use the default credential provider that looks for an instance profile
-         async getPromise() {
-            return await new Promise((resolve, reject) => {
-               // the AWS SDK will automatically use the instance profile to authenticate your requests
-               resolve();
-            });
-         },
-      },
+      region,
    });
 
    const uploadParams = {
       Bucket: bucketName,
       Key: objectKey,
       Body: file,
-      ACL: "public-read", // Replace with your desired ACL
-      ContentType: "application/octet-stream", // Replace with your desired content type
    };
 
    const command = new PutObjectCommand(uploadParams);
@@ -54,8 +28,6 @@ async function uploadFileToS3(bucketName, objectKey, file) {
    } catch (error) {
       console.error("Error uploading file to S3", error);
    }
-
-   // the rest of the code is the same as in the previous examples
 }
 
 const StyledButton = styled.button`
