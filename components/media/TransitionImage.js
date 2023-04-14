@@ -9,31 +9,31 @@ const Img = styled.img`
    width: ${(props) => props.width || "550px"};
    height: ${(props) => props.width || "550px"};
 
-   @media only screen and (min-width: 200px) and (max-width: 399px) {
+   @media (min-width: 200px) and (max-width: 399px) {
       width: ${(props) => props.smallMobileSize || "175px"};
       height: ${(props) => props.smallMobileSize || "175px"};
    }
-   @media only screen and (min-width: 400px) and (max-width: 767px) {
+   @media (min-width: 400px) and (max-width: 767px) {
       width: ${(props) => props.mobileSize || "250px"};
       height: ${(props) => props.mobileSize || "250px"};
    }
-   @media only screen and (min-width: 768px) and (max-width: 992px) {
+   @media (min-width: 768px) and (max-width: 992px) {
       width: ${(props) => props.tabletSize || "350px"};
       height: ${(props) => props.tabletSize || "350px"};
    }
-   @media only screen and (min-width: 993px) and (max-width: 1442px) {
+   @media (min-width: 993px) and (max-width: 1442px) {
       width: ${(props) => props.smallDesktopSize || "350px"};
       height: ${(props) => props.smallDesktopSize || "350px"};
    }
-   @media only screen and (max-height: 399px) and (min-width: 768px) {
+   @media (max-height: 399px) and (min-width: 768px) {
       width: ${(props) => props.mobileSize || "200px"};
       height: ${(props) => props.mobileSize || "200px"};
    }
-   @media only screen and (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
+   @media (min-height: 400px) and (max-height: 600px) and (min-width: 768px) {
       width: ${(props) => props.tabletSize || props.mobileSize || "350px"};
       height: ${(props) => props.tabletSize || props.mobileSize || "350px"};
    }
-   @media only screen and (min-height: 600px) and (max-height: 800px) and (min-width: 900px) {
+   @media (min-height: 600px) and (max-height: 800px) and (min-width: 900px) {
       width: ${(props) =>
          props.smallDesktopSize || props.tabletSize || "450px"};
       height: ${(props) =>

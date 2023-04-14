@@ -245,6 +245,12 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    }
 }
 
+.page-details-form,
+.slide-form {
+   width: 100%;
+   padding: 20px;
+}
+
 #lottie-overlay {
    position: absolute;
    width: 650px;

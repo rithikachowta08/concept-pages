@@ -18,6 +18,7 @@ const TitleSlide = ({
    moveToSection,
    title,
    downIcon,
+   isPreview,
    contentListItems,
    anchorIdxes,
 }) => {
@@ -28,7 +29,7 @@ const TitleSlide = ({
       }
    }, []);
    return (
-      <TitleSlideWrap ref={ref} bg={"DARK"}>
+      <TitleSlideWrap ref={ref} bg={"DARK"} hideFiller={isPreview}>
          <Flex>
             <Title marginBottom="5%">{title}</Title>
             <ContentList

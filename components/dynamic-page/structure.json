@@ -1,0 +1,55 @@
+{
+   "title": "New concept page",
+   "slides": [
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "What is circle",
+         "title": "What is circle 1"
+      },
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "What is circle",
+         "title": "What is circle 2"
+      },
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "What is circle",
+         "title": "What is circle 3"
+      },
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "Area",
+         "title": "Area 1"
+      },
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "Area",
+         "title": "Area 2"
+      },
+      {
+         "template": "TEXT_AND_DIAGRAM",
+         "theme": "LIGHT",
+         "section": "Example",
+         "title": "Example 1"
+      }
+   ],
+   "navSections": [
+      {
+         "name": "What is circle",
+         "startingSlideIndex": 1
+      },
+      {
+         "name": "Area",
+         "startingSlideIndex": 4
+      },
+      {
+         "name": "Example",
+         "startingSlideIndex": 6
+      }
+   ]
+}
