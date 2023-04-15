@@ -116,6 +116,7 @@ const RightWrap = styled.div`
 const TextAndAppletSlide = ({
    title,
    bg = "LIGHT",
+   colorTheme = "BUBBLEGUM",
    isLastSlide,
    downIcon,
    secondaryTitle,
@@ -160,6 +161,7 @@ const TextAndAppletSlide = ({
          <MobileComponent>
             <SlideWrap
                bg={bg}
+               colorTheme={colorTheme}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
@@ -237,6 +239,7 @@ const TextAndAppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
+               colorTheme={colorTheme}
                padding={"20px 30px"}
                isLastSlide={isLastSlide}
                hideFillerForLandscapeMode

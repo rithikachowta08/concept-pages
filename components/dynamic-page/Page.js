@@ -38,6 +38,7 @@ const Page = ({ json }) => {
       const SlideArray = [
          <TitleSlideComponent
             key={0}
+            colorTheme={json.colorTheme}
             type={SLIDE_TYPES.TITLE_SLIDE}
             anchorIdxes={json.navSections.map(
                (item) => item.startingSlideIndex + 1
@@ -48,12 +49,18 @@ const Page = ({ json }) => {
       ];
       json.slides.forEach((slide, idx) => {
          SlideArray.push(
-            <Slide key={idx + 1} idx={idx} data={slide} json={json} />
+            <Slide
+               key={idx + 1}
+               idx={idx}
+               data={slide}
+               colorTheme={json.colorTheme}
+            />
          );
       });
 
       SlideArray.push(
          <PageLastSlide
+            colorTheme={json.colorTheme}
             type={SLIDE_TYPES.CONCLUSION}
             key={json.slides.length}
             currentPageTitle={json.title}

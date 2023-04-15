@@ -132,6 +132,7 @@ const AppletSlide = ({
    downIcon,
    isLastSlide,
    bg = "LIGHT",
+   colorTheme = "BUBBLEGUM",
    currentPageIdx,
    appletSrc,
    AppletComponent,
@@ -166,7 +167,12 @@ const AppletSlide = ({
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <MobileComponent>
-            <SlideWrap bg={bg} padding="0 0 10px 0" isLastSlide={isLastSlide}>
+            <SlideWrap
+               bg={bg}
+               colorTheme={colorTheme}
+               padding="0 0 10px 0"
+               isLastSlide={isLastSlide}
+            >
                <ContentWrap>
                   <FillerNavBar
                      mobileNavBarHeight={global.mobileNavBarHeight}
@@ -209,6 +215,7 @@ const AppletSlide = ({
          <DesktopComponent>
             <SlideWrap
                bg={bg}
+               colorTheme={colorTheme}
                padding="0 30px"
                isLastSlide={isLastSlide}
                hideFiller

@@ -20,7 +20,7 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const Slide = ({ data, idx, isPreview, downIcon }) => {
+const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
@@ -106,6 +106,7 @@ const Slide = ({ data, idx, isPreview, downIcon }) => {
                key={idx}
                item={item}
                theme={data.theme}
+               colorTheme={colorTheme}
                onHover={onHover}
                onHoverOut={onHoverOut}
                onClick={onClick}
@@ -119,6 +120,7 @@ const Slide = ({ data, idx, isPreview, downIcon }) => {
       <SlideComponent.component
          id={`slide-${idx}`}
          {...SlideComponent.props}
+         colorTheme={colorTheme}
          isPreview={isPreview}
       >
          {modal}

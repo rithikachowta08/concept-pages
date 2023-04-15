@@ -1,5 +1,6 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { colorSchemes } from "./colorScheme";
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
@@ -18,11 +19,13 @@ const TextParamComponent = ({
    type,
    value,
    theme,
+   colorTheme,
    idx,
    onHover,
    onHoverOut,
    onClick,
 }) => {
+   console.log(colorTheme);
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
          <>
@@ -31,7 +34,9 @@ const TextParamComponent = ({
                onHover={() => onHover(idx)}
                onHoverOut={onHoverOut}
                hoverColor={
-                  theme === "LIGHT" ? colors.DARK_LAVENDER : colors.LAVENDER
+                  theme === "LIGHT"
+                     ? colorSchemes[colorTheme].DARK
+                     : colorSchemes[colorTheme].LIGHT
                }
             >
                {value}

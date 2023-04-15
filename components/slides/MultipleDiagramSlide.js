@@ -27,7 +27,8 @@ const MultipleDiagramSlide = ({
    isLastSlide,
    children,
    images,
-   bg,
+   bg = "LIGHT",
+   colorTheme = "BUBBLEGUM",
    downIcon,
 }) => {
    const ref = useRef(null);
@@ -41,6 +42,7 @@ const MultipleDiagramSlide = ({
          <MobileComponent>
             <SlideWrap
                bg={bg}
+               colorTheme={colorTheme}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
@@ -109,7 +111,12 @@ const MultipleDiagramSlide = ({
             </SlideWrap>
          </MobileComponent>
          <DesktopComponent>
-            <SlideWrap bg={bg} isLastSlide={isLastSlide} padding={"20px 30px"}>
+            <SlideWrap
+               bg={bg}
+               colorTheme={colorTheme}
+               isLastSlide={isLastSlide}
+               padding={"20px 30px"}
+            >
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"

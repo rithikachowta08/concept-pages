@@ -20,6 +20,7 @@ const TitleSlide = ({
    downIcon,
    isPreview,
    contentListItems,
+   colorTheme = "BUBBLEGUM",
    anchorIdxes,
 }) => {
    const ref = useRef(null);
@@ -29,7 +30,12 @@ const TitleSlide = ({
       }
    }, []);
    return (
-      <TitleSlideWrap ref={ref} bg={"DARK"} hideFiller={isPreview}>
+      <TitleSlideWrap
+         ref={ref}
+         bg={"DARK"}
+         colorTheme={colorTheme}
+         hideFiller={isPreview}
+      >
          <Flex>
             <Title marginBottom="5%">{title}</Title>
             <ContentList

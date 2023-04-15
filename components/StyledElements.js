@@ -3,18 +3,56 @@ const lightBg = "assets/white_bg.webp";
 const darkBg = "assets/purple_bg.webp";
 
 const bgToImageMap = {
-   LIGHT: lightBg,
-   DARK: darkBg,
+   BUBBLEGUM: {
+      LIGHT: lightBg,
+      DARK: darkBg,
+   },
+   LUXURY: {
+      LIGHT: lightBg,
+      DARK: darkBg,
+   },
+   ICE: {
+      LIGHT: lightBg,
+      DARK: darkBg,
+   },
+   FOREST: {
+      LIGHT: lightBg,
+      DARK: darkBg,
+   },
+   CHALKBOARD: {
+      LIGHT: lightBg,
+      DARK: darkBg,
+   },
 };
 
 const bgToBgColorMap = {
-   LIGHT: "#FCFCFC",
-   DARK: "#3E3283",
+   BUBBLEGUM: {
+      LIGHT: "#FCFCFC",
+      DARK: "#3E3283",
+   },
+   LUXURY: {
+      LIGHT: "#FCFCFC",
+      DARK: "#2c2c2c",
+   },
+   ICE: {
+      LIGHT: "#FCFCFC",
+      DARK: "#003049",
+   },
+   FOREST: {
+      LIGHT: "#FCFCFC",
+      DARK: "#255661",
+   },
+   CHALKBOARD: {
+      LIGHT: "#FCFCFC",
+      DARK: "#13402A",
+   },
 };
 
 export const SlideWrap = styled.div`
-   background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => bgToBgColorMap[props.bg] || props.bgColor};
+   background: ${(props) => bgToImageMap[props.colorTheme][props.bg]};
+   background-color: ${(props) => {
+      return bgToBgColorMap[props.colorTheme][props.bg] || props.bgColor;
+   }};
    height: 100%;
    width: 100%;
    padding: ${(props) => props.padding};
@@ -72,8 +110,9 @@ export const SlideWrap = styled.div`
 `;
 
 export const TitleSlideWrap = styled.div`
-   background: url(${(props) => (props.bg ? bgToImageMap[props.bg] : "none")});
-   background-color: ${(props) => bgToBgColorMap[props.bg]};
+   background: url(${(props) =>
+      props.bg ? bgToImageMap[props.colorTheme][props.bg] : "none"});
+   background-color: ${(props) => bgToBgColorMap[props.colorTheme][props.bg]};
    padding-bottom: 5vh;
    height: 100%;
    width: 100%;

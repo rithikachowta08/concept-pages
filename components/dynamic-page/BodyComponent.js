@@ -29,6 +29,7 @@ export const COMPONENT_TYPES = {
 const BodyComponent = ({
    item,
    theme,
+   colorTheme,
    isModal,
    onClick,
    onHover,
@@ -57,6 +58,7 @@ const BodyComponent = ({
                            idx={idx}
                            key={idx}
                            theme={theme}
+                           colorTheme={colorTheme}
                            onHover={onHover}
                            onHoverOut={onHoverOut}
                            onClick={onClick}

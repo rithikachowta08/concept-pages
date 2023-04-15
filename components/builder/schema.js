@@ -5,6 +5,12 @@ import ImageUploader from "./ImageUploader";
 export const BASIC_PROPERTIES = {
    title: { type: "string", title: "Title", default: "New concept page" },
    url: { type: "string", title: "URL" },
+   colorTheme: {
+      type: "string",
+      title: "Primary Color",
+      default: "LAVENDER",
+      enum: ["LAVENDER", "GREEN", "TEAL", "BLUE", "GREY"],
+   },
    nextPageTitle: {
       type: "string",
       title: "Next Page Title",

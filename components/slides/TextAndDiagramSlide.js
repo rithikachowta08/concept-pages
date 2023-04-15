@@ -14,6 +14,7 @@ import DesktopComponent from "components/layout/DesktopComponent";
 const TextAndDiagramSlide = ({
    title,
    bg = "LIGHT",
+   colorTheme = "BUBBLEGUM",
    isPreview,
    secondaryTitle,
    children,
@@ -26,10 +27,16 @@ const TextAndDiagramSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
+   console.log("Colorhteme", colorTheme);
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"} hideFiller={isPreview}>
+            <SlideWrap
+               bg={bg}
+               colorTheme={colorTheme}
+               padding={"20px 30px"}
+               hideFiller={isPreview}
+            >
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
@@ -58,6 +65,7 @@ const TextAndDiagramSlide = ({
          <MobileComponent>
             <SlideWrap
                bg={bg}
+               colorTheme={colorTheme}
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"

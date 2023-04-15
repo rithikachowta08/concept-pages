@@ -1,5 +1,6 @@
 {
    "title": "New concept page",
+   "colorTheme": "CHALKBOARD",
    "slides": [
       {
          "template": "TEXT_AND_DIAGRAM",
@@ -15,9 +16,21 @@
       },
       {
          "template": "TEXT_AND_DIAGRAM",
-         "theme": "LIGHT",
+         "theme": "DARK",
          "section": "What is circle",
-         "title": "What is circle 3"
+         "title": "What is circle 3",
+         "body": [
+            {
+               "componentType": "TEXT",
+               "textParams": [
+                  {
+                     "id": "di_1",
+                     "value": "Something"
+                  }
+               ],
+               "content": "Hello there %di_1%"
+            }
+         ]
       },
       {
          "template": "TEXT_AND_DIAGRAM",

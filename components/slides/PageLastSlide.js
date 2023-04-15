@@ -57,6 +57,7 @@ const NextPageTitle = styled.p`
 const PageLastSlide = ({
    currentPageTitle,
    bg = "DARK",
+   colorTheme = "BUBBLEGUM",
    nextPageTitle,
    nextPageLink,
 }) => {
@@ -67,7 +68,7 @@ const PageLastSlide = ({
       console.log(window.location.href);
    };
    return (
-      <SlideWrap bg={bg} isLastSlide={true}>
+      <SlideWrap bg={bg} colorTheme={colorTheme} isLastSlide={true}>
          <FillerNavBar />
          <UpperDiv>
             <SlideTitle centerAlign={true}>Congratulations!</SlideTitle>
