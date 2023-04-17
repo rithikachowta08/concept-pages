@@ -14,7 +14,7 @@ import DesktopComponent from "components/layout/DesktopComponent";
 const TextAndDiagramSlide = ({
    title,
    bg = "LIGHT",
-   isPreview,
+   isLastSlide,
    secondaryTitle,
    children,
    downIcon,
@@ -29,7 +29,7 @@ const TextAndDiagramSlide = ({
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <DesktopComponent>
-            <SlideWrap bg={bg} padding={"20px 30px"} hideFiller={isPreview}>
+            <SlideWrap bg={bg} padding={"20px 30px"} isLastSlide={isLastSlide}>
                <Flex
                   alignItems="center"
                   justifyContent="flex-start"
@@ -61,7 +61,7 @@ const TextAndDiagramSlide = ({
                padding="0 0 10px 0"
                gap="10px"
                justifyContent="space-between"
-               hideFiller={isPreview}
+               isLastSlide={isLastSlide}
             >
                {/* Navbar and title */}
                <Flex direction="column" gap="2vh">

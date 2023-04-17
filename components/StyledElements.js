@@ -85,16 +85,13 @@ export const TitleSlideWrap = styled.div`
    background-repeat: no-repeat;
    align-items: ${(props) => props.alignItems};
 
-   ${(props) =>
-      props.hideFiller
-         ? ``
-         : `&::before {
+   &::before {
       content: "D";
       margin: 1px 1px auto 1px;
       visibility: hidden;
       padding: 5px;
       background: #ddd;
-   }`}
+   }
 `;
 
 export const LeftWrap = styled.div`
