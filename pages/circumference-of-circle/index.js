@@ -9,7 +9,6 @@ const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
 const Slide3 = dynamic(() => import("./Slide3"));
-// const Slide4 = dynamic(() => import("./Slide4"));
 const Slide5 = dynamic(() => import("./Slide5"));
 const Slide6 = dynamic(() => import("./Slide6"));
 const Slide7 = dynamic(() => import("./Slide7"));
