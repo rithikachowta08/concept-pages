@@ -63,7 +63,12 @@ const PreviewContainer = ({ json, tabIndex, addNewSlide, onPreviewClick }) => {
                onClick={onPreviewClick}
             >
                <ErrorBoundary data={slide}>
-                  <Slide data={slide} json={json} isPreview />
+                  <Slide
+                     data={slide}
+                     json={json}
+                     colorTheme={json.colorTheme}
+                     isPreview
+                  />
                </ErrorBoundary>
             </SlideWrap>
          ))}

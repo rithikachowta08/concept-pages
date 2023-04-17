@@ -7,9 +7,9 @@ export const BASIC_PROPERTIES = {
    url: { type: "string", title: "URL" },
    colorTheme: {
       type: "string",
-      title: "Primary Color",
-      default: "LAVENDER",
-      enum: ["LAVENDER", "GREEN", "TEAL", "BLUE", "GREY"],
+      title: "Color scheme",
+      default: "BUBBLEGUM",
+      enum: ["BUBBLEGUM", "CHALKBOARD", "ICE", "FOREST", "LUXURY"],
    },
    nextPageTitle: {
       type: "string",

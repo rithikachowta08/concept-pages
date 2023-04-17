@@ -24,7 +24,7 @@ const bgToImageMap = {
    },
    CHALKBOARD: {
       LIGHT: lightBg,
-      DARK: darkBg,
+      DARK: forest,
    },
 };
 
@@ -52,7 +52,7 @@ const bgToBgColorMap = {
 };
 
 export const SlideWrap = styled.div`
-   background: ${(props) => bgToImageMap[props.colorTheme][props.bg]};
+   background: url(${(props) => bgToImageMap[props.colorTheme][props.bg]});
    background-color: ${(props) => {
       return bgToBgColorMap[props.colorTheme][props.bg] || props.bgColor;
    }};
