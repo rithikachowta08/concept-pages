@@ -27,7 +27,6 @@ const TextAndDiagramSlide = ({
          ref.current.parentNode.classList.add("dark");
       }
    }, [bg, ref.current]);
-   console.log("Colorhteme", colorTheme);
    return (
       <div style={{ height: "100%", width: "100%" }} ref={ref}>
          <DesktopComponent>
