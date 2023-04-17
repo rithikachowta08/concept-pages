@@ -143,6 +143,7 @@ const AppletSlide = ({
    useEffect(() => {
       if (ref.current && bg === "DARK") {
          ref.current.parentNode.classList.add("dark");
+         ref.current.parentNode.classList.add(colorTheme);
       }
    }, [bg, ref.current]);
 

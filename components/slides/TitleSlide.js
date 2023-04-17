@@ -27,6 +27,7 @@ const TitleSlide = ({
    useEffect(() => {
       if (ref.current) {
          ref.current.parentNode.classList.add("dark");
+         ref.current.parentNode.classList.add(colorTheme);
       }
    }, []);
    return (

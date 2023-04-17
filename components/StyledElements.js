@@ -1,6 +1,9 @@
 import styled from "styled-components";
 const lightBg = "assets/white_bg.webp";
 const darkBg = "assets/purple_bg.webp";
+const luxury = "assets/luxury.webp";
+const ice = "assets/ice.webp";
+const forest = "assets/forest.webp";
 
 const bgToImageMap = {
    BUBBLEGUM: {
@@ -9,15 +12,15 @@ const bgToImageMap = {
    },
    LUXURY: {
       LIGHT: lightBg,
-      DARK: darkBg,
+      DARK: luxury,
    },
    ICE: {
       LIGHT: lightBg,
-      DARK: darkBg,
+      DARK: ice,
    },
    FOREST: {
       LIGHT: lightBg,
-      DARK: darkBg,
+      DARK: forest,
    },
    CHALKBOARD: {
       LIGHT: lightBg,

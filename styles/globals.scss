@@ -121,7 +121,18 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    background: url(../public/assets/white_bg.webp);
 
    &.dark {
-      background: url(../public/assets/purple_bg.webp);
+      &.BUBBLEGUM {
+         background: url(../public/assets/purple_bg.webp);
+      }
+      &.ICE {
+         background: url(../public/assets/ice.webp);
+      }
+      &.FOREST {
+         background: url(../public/assets/forest.webp);
+      }
+      &.LUXURY {
+         background: url(../public/assets/luxury.webp);
+      }
    }
 }
 
