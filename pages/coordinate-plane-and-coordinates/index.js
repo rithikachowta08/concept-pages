@@ -26,7 +26,7 @@ const CoordinatePlaneAndCoordinates = () => {
       <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
       <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
-      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
       <Slide5 key={5} type={SLIDE_TYPES.TEXT_AND_APPLET} />,
       <Slide6 key={6} type={SLIDE_TYPES.VIDEO_ONLY} />,
       <Slide7 key={7} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,

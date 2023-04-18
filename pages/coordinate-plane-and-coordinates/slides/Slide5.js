@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { Applet04401Ge } from "@assessed/byjus-us-math-applets/044_01_GE";
+import { Applet4404Ge } from "@assessed/byjus-us-math-applets/44_04_GE";
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
@@ -13,7 +13,7 @@ const Slide5 = ({ downIcon }) => {
       <TextAndAppletSlide
          title={"Movement on a Coordinate Plane"}
          secondaryTitle={"What Is a Coordinate Plane?"}
-         AppletComponent={Applet04401Ge}
+         AppletComponent={Applet4404Ge}
          downIcon={downIcon}
          fullScreenRightOffset="20px"
       >

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Applet4403Ge } from "@assessed/byjus-us-math-applets/44_03_GE";
 const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
@@ -11,8 +12,9 @@ const Slide4 = ({ downIcon }) => {
       <TextAndAppletSlide
          title={"Movement Along Y-axis"}
          secondaryTitle={"What Is a Coordinate Plane?"}
-         appletSrc={""}
+         AppletComponent={Applet4403Ge}
          downIcon={downIcon}
+         fullScreenRightOffset="20px"
       >
          <Paragraph>
             Further, if the bee moves along the y-axis, then its location is
