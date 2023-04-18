@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/mui";
-import { Flex } from "components/StyledElements";
+import { Flex, Icon } from "components/StyledElements";
 import {
    SLIDE_SCHEMA,
    SLIDE_UI_SCHEMA,
@@ -39,6 +39,7 @@ const Editor = ({
    setPageDetails,
    setSlides,
    addNewSlide,
+   deleteSlide,
    pageDetails,
    slides,
    onSubmit,
@@ -63,7 +64,19 @@ const Editor = ({
             >
                <Tab>Page Details</Tab>
                {slides.map((slide, idx) => (
-                  <Tab key={idx}>Slide {idx + 1}</Tab>
+                  <Tab key={idx}>
+                     <Flex gap="5px" alignItems="center">
+                        Slide {idx + 1}
+                        <Icon
+                           width="13px"
+                           padding="3px"
+                           borderRadius="50%"
+                           background={"#aaa"}
+                           src={"assets/cross_icon.svg"}
+                           onClick={() => deleteSlide(idx)}
+                        />
+                     </Flex>
+                  </Tab>
                ))}
                <Tab onClick={addNewSlide}>+ Add slide</Tab>
             </TabList>
@@ -101,7 +114,6 @@ const Editor = ({
                         <StyledButton type="submit" id="submit-btn">
                            Create page
                         </StyledButton>
-
                         <StyledButton>
                            <Link
                               href={{
@@ -119,7 +131,6 @@ const Editor = ({
                               <a target="_blank">Preview</a>
                            </Link>
                         </StyledButton>
-
                         <StyledButton onClick={addNewSlide}>
                            Add slide
                         </StyledButton>

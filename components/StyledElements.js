@@ -266,6 +266,9 @@ export const Icon = styled.img`
    cursor: pointer;
    margin-right: ${(props) => props.marginRight};
    align-self: ${(props) => props.alignSelf};
+   background: ${(props) => props.background};
+   padding: ${(props) => props.padding};
+   border-radius: ${(props) => props.borderRadius};
 
    @media (min-width: 200px) and (max-width: 820px) {
       width: ${(props) => props.width || "10px"};

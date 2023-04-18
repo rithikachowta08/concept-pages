@@ -203,12 +203,13 @@ export const SLIDE_SCHEMA = {
          title: "Secondary Title",
       },
    },
+   required: ["template", "title", "section", "transitionImages"],
    dependencies: SLIDE_DEPENDENCIES,
 };
 
 export const PAGE_DETAILS_SCHEMA = {
    type: "object",
-   required: ["title"],
+   required: ["pageId", "title", "url"],
    properties: {
       ...BASIC_PROPERTIES,
       ...SEO_PROPERTIES,

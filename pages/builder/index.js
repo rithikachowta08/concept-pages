@@ -28,6 +28,13 @@ const Builder = () => {
       setTabIndex(tabIndex + 1);
    };
 
+   const deleteSlide = (idx) => {
+      const tempSlides = [...slides];
+      tempSlides.splice(idx, 1);
+      setSlides(tempSlides);
+      setTabIndex(idx - 1);
+   };
+
    const onSubmit = (e) => {
       const fullJSON = {
          ...pageDetails,
@@ -60,6 +67,7 @@ const Builder = () => {
          />
          <Editor
             slides={slides}
+            deleteSlide={deleteSlide}
             pageDetails={pageDetails}
             addNewSlide={addNewSlide}
             setPageDetails={setPageDetails}

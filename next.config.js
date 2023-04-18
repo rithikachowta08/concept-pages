@@ -6,6 +6,7 @@ const nextConfig = {
       path: "/us/math/study/concept/_next/image/",
       domains: [
          "search-static.byjusweb.com",
+         "search-mathstatic.byjusweb.com",
          "static.tllms.com",
          "s3.ap-south-1.amazonaws.com",
          "s3-us-west-2.amazonaws.com",

@@ -1,7 +1,25 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 const Page = dynamic(() => import("components/dynamic-page/Page"));
+const spinner = "assets/spinner.gif";
+
+const Spinner = styled.img`
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+`;
+
+const Text = styled.div`
+   color: black;
+   position: absolute;
+   font-size: 3rem;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+`;
 
 const DynamicPage = () => {
    const router = useRouter();
@@ -35,10 +53,16 @@ const DynamicPage = () => {
    if (isPreview && router.query.data) {
       return <Page json={JSON.parse(router.query.data)}></Page>;
    }
-   if (error || !json) {
-      return <div>Something went wrong!</div>;
+   if (error || (!loading && !json)) {
+      return <Text>Something went wrong!</Text>;
    }
-   return loading ? <div>Loading...</div> : <Page json={json}></Page>;
+   return loading ? (
+      <div>
+         <Spinner src={spinner} alt="Loading" height={100} width={100} />
+      </div>
+   ) : (
+      <Page json={json}></Page>
+   );
 };
 
 export default DynamicPage;
