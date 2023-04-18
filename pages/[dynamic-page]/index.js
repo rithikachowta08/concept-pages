@@ -12,7 +12,7 @@ const DynamicPage = () => {
    useEffect(() => {
       if (router.query.page_id) {
          fetch(
-            `http://127.0.0.1:8000/api/page?page_id=${router.query.page_id}`,
+            `https://math-api-stg.byjusweb.com/api/page?page_id=${router.query.page_id}`,
             {
                method: "GET",
                headers: {

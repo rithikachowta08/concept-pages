@@ -65,7 +65,7 @@ const ImageUploader = ({ value, onChange }) => {
             if (data.action === "picked") {
                // TODO: Need to fetch accessToken from API
                const accessToken =
-                  "ya29.a0Ael9sCMaDbFTXRdHMQAU_SEa1mR90UtCbvAPkJfHkwPqSTeUBPAFHEzm10YqO4cMt8-vge83F7ibuS6NyfOqau5W_WyWk5GmG2RGTKPMerILxr28MZBadRCNBpquOLl5IrHsyG27IY6ig14Hrr1boTAQbSU0aCgYKATMSARASFQF4udJhoz9Lb7-PyEQJY3t4dGkT4Q0163";
+                  "ya29.a0Ael9sCOTbHlAt9--r3KijDqQRBZg05Bz-3ZmzF-4diGqBAWYPxOVcTLPPBeXRMwsumPqAXv9of0LO8eZgrIRxC85WoUAlhMKy2X_nQciHUKeUOrl-H2zyW5AbvZhFXVG_GygERLluwspoJ_0ayTGluEeRGwJaCgYKAYESARASFQF4udJhLhDkHYzRyYh9tNiBBeR8Ow0163";
                const fileId = data.docs[0].id;
                console.log(data);
                // Download the actual file through Google Drive API
@@ -91,12 +91,28 @@ const ImageUploader = ({ value, onChange }) => {
                   })
                   .then(function (blob) {
                      // Upload the downloaded file to S3 bucket
-                     // TODO: Fix AWS Credentials error here
                      const fileName = `image-${uuidv4()}`;
-                     uploadFileToS3(blob, fileName);
+                     const formData = new FormData();
+                     formData.append("file", blob, fileName);
+                     fetch(
+                        "https://math-api-stg.byjusweb.com/api/upload-image",
+                        {
+                           method: "POST",
+                           body: formData,
+                        }
+                     )
+                        .then((res) => res.json())
+                        .then((res) => console.log(res))
+                        .catch((err) => console.error(err));
                      // setImageUrl(file name from AWS)
                      // onChange(file name from AWS)
-                  });
+                  })
+                  .catch((err) =>
+                     console.error(
+                        "Error in downloading Google Drive File:",
+                        err
+                     )
+                  );
             }
          },
       });

@@ -98,7 +98,9 @@ const Editor = ({
                      // onError={() => console.log("uh oh")}
                   >
                      <ButtonContainer>
-                        <StyledButton type="submit">Create page</StyledButton>
+                        <StyledButton type="submit" id="submit-btn">
+                           Create page
+                        </StyledButton>
 
                         <StyledButton>
                            <Link
