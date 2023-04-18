@@ -65,7 +65,7 @@ const ImageUploader = ({ value, onChange }) => {
             if (data.action === "picked") {
                // TODO: Need to fetch accessToken from API
                const accessToken =
-                  "ya29.a0Ael9sCOTbHlAt9--r3KijDqQRBZg05Bz-3ZmzF-4diGqBAWYPxOVcTLPPBeXRMwsumPqAXv9of0LO8eZgrIRxC85WoUAlhMKy2X_nQciHUKeUOrl-H2zyW5AbvZhFXVG_GygERLluwspoJ_0ayTGluEeRGwJaCgYKAYESARASFQF4udJhLhDkHYzRyYh9tNiBBeR8Ow0163";
+                  "ya29.a0Ael9sCMtVOEaA7_Zqn_9eIKBAzO41Hw7en8U4bi0xIjtaS90ya5wsyJCy2q-gAkMhuhSIYd4XqRqd8ALwZHAnv9h1ALRP1jdqShK6WlxyShjqZfaYBO9iHoqhq1wBOefobZDhLtZhwcry27vsF_IwGuwirGsaCgYKAY8SARASFQF4udJhwuPXlet8p1cN8BCdynZy4g0163";
                const fileId = data.docs[0].id;
                console.log(data);
                // Download the actual file through Google Drive API

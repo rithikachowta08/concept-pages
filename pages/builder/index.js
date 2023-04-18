@@ -29,22 +29,20 @@ const Builder = () => {
    };
 
    const onSubmit = (e) => {
-      // if (e.target.id === "submit-btn") {
-      //    const fullJSON = {
-      //       ...pageDetails,
-      //       slides,
-      //    };
-      //    fetch("https://math-api-stg.byjusweb.com/api/page", {
-      //       method: "POST",
-      //       headers: {
-      //          "Content-Type": "application/json",
-      //       },
-      //       body: JSON.stringify(fullJSON),
-      //    })
-      //       .then((res) => res.json())
-      //       .then((res) => console.log(res))
-      //       .catch((err) => console.error(err));
-      // }
+      const fullJSON = {
+         ...pageDetails,
+         slides,
+      };
+      fetch("https://math-api-stg.byjusweb.com/api/page", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(fullJSON),
+      })
+         .then((res) => res.json())
+         .then((res) => console.log(res))
+         .catch((err) => console.error(err));
    };
 
    return (
