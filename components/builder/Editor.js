@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { colors } from "utils/colors";
 import styled from "styled-components";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -98,7 +99,25 @@ const Editor = ({
                   >
                      <ButtonContainer>
                         <StyledButton type="submit">Create page</StyledButton>
-                        <StyledButton>Preview</StyledButton>
+
+                        <StyledButton>
+                           <Link
+                              href={{
+                                 pathname: `/${pageDetails.url}`,
+                                 query: {
+                                    preview: "true",
+                                    data: JSON.stringify({
+                                       ...pageDetails,
+                                       slides,
+                                    }),
+                                 },
+                              }}
+                              legacyBehavior
+                           >
+                              <a target="_blank">Preview</a>
+                           </Link>
+                        </StyledButton>
+
                         <StyledButton onClick={addNewSlide}>
                            Add slide
                         </StyledButton>

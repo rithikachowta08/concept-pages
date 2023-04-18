@@ -29,20 +29,20 @@ const Builder = () => {
    };
 
    const onSubmit = () => {
-      const sections = Array.from(
-         new Set(slides.map((slide) => slide.section))
-      );
-      const navSections = sections.map((section) => ({
-         name: section,
-         startingSlideIndex:
-            slides.findIndex((slide) => slide.section === section) + 1,
-      }));
       const fullJSON = {
          ...pageDetails,
          slides,
-         navSections,
       };
-      console.log("fullJSON", fullJSON);
+      fetch("http://127.0.0.1:8000/api/page", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(fullJSON),
+      })
+         .then((res) => res.json())
+         .then((res) => console.log(res))
+         .catch((err) => console.error(err));
    };
 
    return (

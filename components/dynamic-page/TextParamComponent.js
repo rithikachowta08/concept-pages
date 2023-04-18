@@ -25,7 +25,6 @@ const TextParamComponent = ({
    onHoverOut,
    onClick,
 }) => {
-   console.log(colorTheme);
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
          <>

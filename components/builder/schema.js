@@ -3,6 +3,7 @@ import { COMPONENT_TYPES } from "components/dynamic-page/BodyComponent";
 import ImageUploader from "./ImageUploader";
 
 export const BASIC_PROPERTIES = {
+   pageId: { type: "string", title: "Page ID" },
    title: { type: "string", title: "Title", default: "New concept page" },
    url: { type: "string", title: "URL" },
    colorTheme: {
@@ -19,6 +20,7 @@ export const BASIC_PROPERTIES = {
       type: "string",
       title: "Next Page Link",
    },
+   required: ["pageId", "title", "url"],
 };
 
 export const SEO_PROPERTIES = {

@@ -17,6 +17,7 @@ function range(start, end) {
 
 const TitleSlideComponent = ({
    title,
+   colorTheme,
    anchorIdxes,
    sections,
    moveToSection,
@@ -25,6 +26,7 @@ const TitleSlideComponent = ({
    return (
       <TitleSlide
          title={title}
+         colorTheme={colorTheme}
          anchorIdxes={anchorIdxes}
          contentListItems={sections}
          moveToSection={moveToSection}
@@ -35,15 +37,21 @@ const TitleSlideComponent = ({
 
 const Page = ({ json }) => {
    if (json.slides) {
+      const sections = Array.from(
+         new Set(json.slides.map((slide) => slide.section))
+      );
+      const navSections = sections.map((section) => ({
+         name: section,
+         startingSlideIndex:
+            json.slides.findIndex((slide) => slide.section === section) + 1,
+      }));
       const SlideArray = [
          <TitleSlideComponent
             key={0}
             colorTheme={json.colorTheme}
             type={SLIDE_TYPES.TITLE_SLIDE}
-            anchorIdxes={json.navSections.map(
-               (item) => item.startingSlideIndex + 1
-            )}
-            sections={json.navSections.map((item) => item.name)}
+            anchorIdxes={navSections.map((item) => item.startingSlideIndex + 1)}
+            sections={navSections.map((item) => item.name)}
             title={json.title}
          />,
       ];
@@ -59,35 +67,45 @@ const Page = ({ json }) => {
       });
 
       SlideArray.push(
-         <PageLastSlide
-            colorTheme={json.colorTheme}
-            type={SLIDE_TYPES.CONCLUSION}
-            key={json.slides.length}
-            currentPageTitle={json.title}
-            nextPageTitle={json.nextPageTitle}
-            nextPageLink={json.nextPageUrl}
-         />
+         // TODO: Fix this
+         <div style={{ height: "100%", width: "100%", position: "absolute" }}>
+            <PageLastSlide
+               colorTheme={json.colorTheme}
+               type={SLIDE_TYPES.CONCLUSION}
+               key={json.slides.length}
+               currentPageTitle={json.title}
+               nextPageTitle={json.nextPageTitle}
+               nextPageLink={json.nextPageUrl}
+            />
+         </div>
       );
 
+      /* Dark BG indexing logic */
       let darkBgIndices = [];
-      json.slides.forEach((slide, idx) => {
-         if (slide.theme === "DARK") {
+      SlideArray.forEach((slide, idx) => {
+         if (
+            idx === SlideArray.length - 1 ||
+            json.slides[idx - 1]?.theme === "DARK"
+         ) {
             darkBgIndices.push(idx);
          }
       });
-      const navSections = json.navSections.map((section, idx) => ({
+
+      /* Nav sections logic */
+      const navInfo = navSections.map((section, idx) => ({
          title: section.name,
          slides: range(
             section.startingSlideIndex,
-            idx === json.navSections.length - 1
+            idx === navSections.length - 1
                ? json.slides.length
-               : json.navSections[idx + 1].startingSlideIndex
+               : navSections[idx + 1].startingSlideIndex
          ),
       }));
+
       return (
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
-            navigationSections={navSections}
+            navigationSections={navInfo}
             darkBgIndices={darkBgIndices}
          />
       );

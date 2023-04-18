@@ -117,15 +117,18 @@ const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
 
    const SlideComponent = SLIDE_MAPPER[data.template];
    return (
-      <SlideComponent.component
-         id={`slide-${idx}`}
-         {...SlideComponent.props}
-         colorTheme={colorTheme}
-         isPreview={isPreview}
-      >
-         {modal}
-         {children}
-      </SlideComponent.component>
+      // TODO: Fix this
+      <div style={{ height: "100%", width: "100%", position: "absolute" }}>
+         <SlideComponent.component
+            id={`slide-${idx}`}
+            {...SlideComponent.props}
+            colorTheme={colorTheme}
+            isPreview={isPreview}
+         >
+            {modal}
+            {children}
+         </SlideComponent.component>
+      </div>
    );
 };
 

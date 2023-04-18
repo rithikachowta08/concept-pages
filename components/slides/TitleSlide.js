@@ -31,22 +31,24 @@ const TitleSlide = ({
       }
    }, []);
    return (
-      <TitleSlideWrap
-         ref={ref}
-         bg={"DARK"}
-         colorTheme={colorTheme}
-         hideFiller={isPreview}
-      >
-         <Flex>
-            <Title marginBottom="5%">{title}</Title>
-            <ContentList
-               items={contentListItems}
-               moveTo={moveToSection}
-               anchorIdxes={anchorIdxes}
-            />
-         </Flex>
-         {downIcon}
-      </TitleSlideWrap>
+      <div style={{ height: "100%", width: "100%", position: "absolute" }}>
+         <TitleSlideWrap
+            ref={ref}
+            bg={"DARK"}
+            colorTheme={colorTheme}
+            hideFiller={isPreview}
+         >
+            <Flex>
+               <Title marginBottom="5%">{title}</Title>
+               <ContentList
+                  items={contentListItems}
+                  moveTo={moveToSection}
+                  anchorIdxes={anchorIdxes}
+               />
+            </Flex>
+            {downIcon}
+         </TitleSlideWrap>
+      </div>
    );
 };
 

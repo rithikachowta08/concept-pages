@@ -6,18 +6,17 @@ import useDrivePicker from "react-google-drive-picker";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { v4 as uuidv4 } from "uuid";
 
-const bucketName = "byju-prd-qna-search-math-ui-store-us-east-1";
-const region = "us-east-1";
-
-async function uploadFileToS3(bucketName, objectKey, file) {
+const uploadFileToS3 = async (fileBlob, fileName) => {
+   const bucketName = "byju-prd-qna-search-math-ui-store-us-east-1";
+   const region = "us-east-1";
    const s3Client = new S3Client({
       region,
    });
 
    const uploadParams = {
       Bucket: bucketName,
-      Key: objectKey,
-      Body: file,
+      Key: fileName,
+      Body: fileBlob,
    };
 
    const command = new PutObjectCommand(uploadParams);
@@ -28,7 +27,7 @@ async function uploadFileToS3(bucketName, objectKey, file) {
    } catch (error) {
       console.error("Error uploading file to S3", error);
    }
-}
+};
 
 const StyledButton = styled.button`
    background-color: ${colors.WHITE};
@@ -45,12 +44,11 @@ const StyledButton = styled.button`
 const ImageUploader = ({ value, onChange }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
-   const file = new File(["foo"], "foo-new.txt", {
-      type: "text/plain",
-   });
-   uploadFileToS3(bucketName, "new-file", file);
+   // uploadFileToS3("Hello S3", "new-file");
    const handleOpenPicker = () => {
+      // Open Google Drive Picker to support upload from System or Drive
       openPicker({
+         // TODO: Need to fetch these from ENV
          clientId:
             "1011414005032-htd2md81a41al0sr0rv2sdtdc22vslf8.apps.googleusercontent.com",
          developerKey: "AIzaSyAyJRTmrs5h3wga4dGNzbDKXmXt-bQehwc",
@@ -65,10 +63,12 @@ const ImageUploader = ({ value, onChange }) => {
                console.log("User clicked cancel/close button");
             }
             if (data.action === "picked") {
+               // TODO: Need to fetch accessToken from API
                const accessToken =
                   "ya29.a0Ael9sCMaDbFTXRdHMQAU_SEa1mR90UtCbvAPkJfHkwPqSTeUBPAFHEzm10YqO4cMt8-vge83F7ibuS6NyfOqau5W_WyWk5GmG2RGTKPMerILxr28MZBadRCNBpquOLl5IrHsyG27IY6ig14Hrr1boTAQbSU0aCgYKATMSARASFQF4udJhoz9Lb7-PyEQJY3t4dGkT4Q0163";
                const fileId = data.docs[0].id;
                console.log(data);
+               // Download the actual file through Google Drive API
                fetch(
                   "https://www.googleapis.com/drive/v3/files/" +
                      fileId +
@@ -90,10 +90,12 @@ const ImageUploader = ({ value, onChange }) => {
                      }
                   })
                   .then(function (blob) {
-                     // Upload to s3
+                     // Upload the downloaded file to S3 bucket
+                     // TODO: Fix AWS Credentials error here
                      const fileName = `image-${uuidv4()}`;
-                     const file = new File([blob], fileName);
-                     uploadFile(file);
+                     uploadFileToS3(blob, fileName);
+                     // setImageUrl(file name from AWS)
+                     // onChange(file name from AWS)
                   });
             }
          },
