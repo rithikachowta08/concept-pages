@@ -68,10 +68,10 @@ const Editor = ({
                      <Flex gap="5px" alignItems="center">
                         Slide {idx + 1}
                         <Icon
-                           width="13px"
+                           width={tabIndex - 1 === idx ? "13px" : "15px"}
                            padding="3px"
                            borderRadius="50%"
-                           background={"#aaa"}
+                           background={tabIndex - 1 === idx ? "#aaa" : "none"}
                            src={"assets/cross_icon.svg"}
                            onClick={() => deleteSlide(idx)}
                         />

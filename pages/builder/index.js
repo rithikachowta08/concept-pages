@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Script from "next/script";
 import dynamic from "next/dynamic";
 import { Flex } from "components/StyledElements";
 import { colors } from "utils/colors";
@@ -53,30 +54,36 @@ const Builder = () => {
    };
 
    return (
-      <Flex
-         bgColor={colors.WHITE}
-         color={colors.BLACK}
-         height="100%"
-         width="100%"
-      >
-         <PreviewContainer
-            json={{ ...pageDetails, slides }}
-            tabIndex={tabIndex}
-            addNewSlide={addNewSlide}
-            onPreviewClick={selectSlideForm}
-         />
-         <Editor
-            slides={slides}
-            deleteSlide={deleteSlide}
-            pageDetails={pageDetails}
-            addNewSlide={addNewSlide}
-            setPageDetails={setPageDetails}
-            setSlides={onSlidesChange}
-            onSubmit={onSubmit}
-            tabIndex={tabIndex}
-            setTabIndex={setTabIndex}
-         />
-      </Flex>
+      <>
+         <Script
+            src="https://accounts.google.com/gsi/client"
+            strategy="lazyOnLoad"
+         ></Script>
+         <Flex
+            bgColor={colors.WHITE}
+            color={colors.BLACK}
+            height="100%"
+            width="100%"
+         >
+            <PreviewContainer
+               json={{ ...pageDetails, slides }}
+               tabIndex={tabIndex}
+               addNewSlide={addNewSlide}
+               onPreviewClick={selectSlideForm}
+            />
+            <Editor
+               slides={slides}
+               deleteSlide={deleteSlide}
+               pageDetails={pageDetails}
+               addNewSlide={addNewSlide}
+               setPageDetails={setPageDetails}
+               setSlides={onSlidesChange}
+               onSubmit={onSubmit}
+               tabIndex={tabIndex}
+               setTabIndex={setTabIndex}
+            />
+         </Flex>
+      </>
    );
 };
 
