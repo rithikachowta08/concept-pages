@@ -22,6 +22,7 @@ const ButtonContainer = styled.div`
 const StyledButton = styled.button`
    background-color: ${colors.DARK_LAVENDER};
    color: white;
+   height: 36px;
    padding: 10px 16px;
    border-radius: 4px;
    text-transform: uppercase;
@@ -31,6 +32,32 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
+
+   &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+   }
+`;
+
+const LoadingSpinner = styled.div`
+   height: 16px;
+   aspect-ratio: 1/1;
+   border-radius: 50%;
+   margin-right: 8px;
+   border-right: 2px solid rgba(255, 255, 255, 0.6);
+   border-top: 2px solid transparent;
+   border-left: 2px solid transparent;
+   border-bottom: 2px solid transparent;
+   animation: rotate--spinner 1.6s infinite;
+
+   @keyframes rotate--spinner {
+      from {
+         transform: rotate(0);
+      }
+      to {
+         transform: rotate(360deg);
+      }
+   }
 `;
 
 const Editor = ({
@@ -43,6 +70,7 @@ const Editor = ({
    pageDetails,
    slides,
    onSubmit,
+   isCreatePageLoading,
 }) => {
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
@@ -111,8 +139,19 @@ const Editor = ({
                      // onError={() => console.log("uh oh")}
                   >
                      <ButtonContainer>
-                        <StyledButton type="submit" id="submit-btn">
-                           Create page
+                        <StyledButton
+                           type="submit"
+                           id="submit-btn"
+                           disabled={isCreatePageLoading}
+                        >
+                           {isCreatePageLoading ? (
+                              <Flex>
+                                 <LoadingSpinner />
+                                 Creating...
+                              </Flex>
+                           ) : (
+                              "Create page"
+                           )}
                         </StyledButton>
                         <StyledButton>
                            <Link
