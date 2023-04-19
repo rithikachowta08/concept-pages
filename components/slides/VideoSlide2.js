@@ -26,7 +26,6 @@ const VideoSlide = ({
    isPreview,
    videoContent,
 }) => {
-   console.log("videoContent", videoContent);
    return (
       <div style={{ height: "100%" }}>
          <VideoSlideWrap id={videoSlideId}>

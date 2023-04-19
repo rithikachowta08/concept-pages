@@ -53,7 +53,7 @@ const Builder = () => {
          ...pageDetails,
          slides,
       };
-
+      console.log("in on submit");
       console.log(fullJSON);
       setIsCreatePageLoading(true);
       setShowToast(true);

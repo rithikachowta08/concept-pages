@@ -75,7 +75,7 @@ const Page = ({ json }) => {
                key={json.slides.length}
                currentPageTitle={json.title}
                nextPageTitle={json.nextPageTitle}
-               nextPageLink={json.nextPageUrl}
+               nextPageLink={`/us/math/study/concept/${json.nextPageUrl}`}
             />
          </div>
       );

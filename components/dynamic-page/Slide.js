@@ -112,6 +112,7 @@ const Slide = ({
    };
 
    let modal;
+   console.log(data.modal);
    if (data.modal) {
       const modalBody = data.modal.body?.map((item, idx) => (
          <BodyComponent key={idx} item={item} theme={data.theme} isModal />
@@ -119,7 +120,7 @@ const Slide = ({
       modal = (
          <Modal
             isOpen={isModalOpen}
-            modalContainerId={`slide-${idx}`}
+            modalContainerId={isPreview && `slide-${idx}`}
             bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
             color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
             title={data.modal.title}
@@ -150,9 +151,11 @@ const Slide = ({
    const SlideComponent = SLIDE_MAPPER[data.template];
    return (
       // TODO: Fix this
-      <div style={{ height: "100%", width: "100%", position: "absolute" }}>
+      <div
+         style={{ height: "100%", width: "100%", position: "absolute" }}
+         id={`slide-${idx}`}
+      >
          <SlideComponent.component
-            id={`slide-${idx}`}
             {...SlideComponent.props}
             colorTheme={colorTheme}
             isPreview={isPreview}

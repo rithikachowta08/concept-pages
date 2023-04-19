@@ -146,8 +146,6 @@ const ShakaPlayerContainer = (props) => {
       VIDEO_STATUS.ENDED,
    ].includes(videoStatus);
 
-   console.log(drmConf);
-   console.log(drmConf.key_id);
    return drmConf.key_id ? (
       <VideoWrap>
          <ShakaPlayerComponent

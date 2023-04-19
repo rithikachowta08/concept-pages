@@ -40,6 +40,110 @@ export const SEO_PROPERTIES = {
    },
 };
 
+const CONTENT_BODY_DEPENDENCIES = {
+   componentType: {
+      oneOf: [
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.TEXT],
+               },
+               content: {
+                  type: "string",
+                  title: "content",
+               },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
+            },
+         },
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.IMAGE],
+               },
+               url: {
+                  type: "string",
+                  title: "image",
+               },
+            },
+         },
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.PILL],
+               },
+               content: {
+                  type: "string",
+                  title: "content",
+               },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
+            },
+         },
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.BULLETED_LIST],
+               },
+               bulletPoints: {
+                  type: "array",
+                  title: "Bullet Points",
+                  items: {
+                     type: "string",
+                     title: "Text",
+                  },
+               },
+            },
+         },
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.NUMBERED_LIST],
+               },
+               numberedPoints: {
+                  type: "array",
+                  title: "Numbered Points",
+                  items: {
+                     type: "string",
+                     title: "Text",
+                  },
+               },
+            },
+         },
+      ],
+   },
+};
+
 const CONTENT_BODY = {
    type: "array",
    title: "Content",
@@ -52,28 +156,8 @@ const CONTENT_BODY = {
             default: COMPONENT_TYPES.TEXT,
             enum: Object.values(COMPONENT_TYPES),
          },
-         content: {
-            type: "string",
-            title: "content",
-         },
-         textParams: {
-            type: "array",
-            title: "Text Parameters",
-            items: {
-               type: "object",
-               properties: {
-                  id: {
-                     title: "ID",
-                     type: "string",
-                  },
-                  value: {
-                     title: "Value",
-                     type: "string",
-                  },
-               },
-            },
-         },
       },
+      dependencies: CONTENT_BODY_DEPENDENCIES,
    },
 };
 
@@ -96,6 +180,10 @@ const SLIDE_DEPENDENCIES = {
             properties: {
                template: {
                   enum: [SLIDE_TYPES.TEXT_AND_DIAGRAM],
+               },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
                },
                body: CONTENT_BODY,
                transitionImages: {
@@ -268,7 +356,7 @@ export const SLIDE_SCHEMA = {
          title: "Title",
       },
    },
-   required: ["template", "title", "section", "transitionImages"],
+   required: ["template", "title", "section"],
    dependencies: SLIDE_DEPENDENCIES,
 };
 
@@ -290,6 +378,9 @@ export const SLIDE_UI_SCHEMA = {
       items: {
          content: {
             "ui:widget": "textarea",
+         },
+         url: {
+            "ui:widget": ImageUploader,
          },
       },
    },

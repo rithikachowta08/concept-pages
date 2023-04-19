@@ -66,6 +66,7 @@ const PreviewContainer = ({ json, tabIndex, addNewSlide, onPreviewClick }) => {
                   <Slide
                      data={slide}
                      json={json}
+                     idx={idx}
                      colorTheme={json.colorTheme}
                      isPreview
                   />

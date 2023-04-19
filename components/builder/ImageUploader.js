@@ -22,7 +22,12 @@ const StyledButton = styled.button`
    cursor: pointer;
 `;
 
-const ImageUploader = ({ value, onChange }) => {
+const FieldName = styled.div`
+   margin-bottom: 10px;
+   color: ${colors.DARK_GREY};
+`;
+
+const ImageUploader = ({ value, onChange, name }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
    const handleOpenPicker = () => {
@@ -94,10 +99,15 @@ const ImageUploader = ({ value, onChange }) => {
          client.requestAccessToken();
       }
    };
-   return imageUrl ? (
-      <Image src={imageUrl} width={100} height={100} alt="alt"></Image>
-   ) : (
-      <StyledButton onClick={handleOpenPicker}>Upload</StyledButton>
+   return (
+      <div>
+         {name === "thumbnail" && <FieldName>Thumbnail</FieldName>}
+         {imageUrl ? (
+            <Image src={imageUrl} width={100} height={100} alt="alt"></Image>
+         ) : (
+            <StyledButton onClick={handleOpenPicker}>Upload</StyledButton>
+         )}
+      </div>
    );
 };
 
