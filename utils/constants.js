@@ -26,6 +26,17 @@ export const SLIDE_TYPES = {
    CONCLUSION: "CONCLUSION",
 };
 
+export const TOAST_COMMON_CONFIG = {
+   position: "top-right",
+   autoClose: false,
+   hideProgressBar: true,
+   closeOnClick: false,
+   pauseOnHover: true,
+   draggable: false,
+   progress: undefined,
+   theme: "colored",
+};
+
 // PRODUCTION
 // export const isLive = true;
 
