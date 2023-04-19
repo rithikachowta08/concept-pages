@@ -84,25 +84,27 @@ const MultipleDiagramSlide = ({
                      alignItems="center"
                      alignSelf="flex-start"
                   >
-                     {images.map((image, idx) => (
-                        <ImageWrap key={idx}>
-                           {React.cloneElement(image.diagram, {
-                              smallMobileSize: "130px",
-                              mobileSize: "150px",
-                              tabletSize: "250px",
-                           })}
-                           <Paragraph
-                              color={
-                                 bg === "LIGHT" ? colors.BLACK : colors.WHITE
-                              }
-                              fontWeight={400}
-                              textAlign="center"
-                              fontSize={fontSizes.MEDIUM}
-                           >
-                              {image.caption}
-                           </Paragraph>
-                        </ImageWrap>
-                     ))}
+                     {images.map((image, idx) =>
+                        image.diagram ? (
+                           <ImageWrap key={idx}>
+                              {React.cloneElement(image.diagram, {
+                                 smallMobileSize: "130px",
+                                 mobileSize: "150px",
+                                 tabletSize: "250px",
+                              })}
+                              <Paragraph
+                                 color={
+                                    bg === "LIGHT" ? colors.BLACK : colors.WHITE
+                                 }
+                                 fontWeight={400}
+                                 textAlign="center"
+                                 fontSize={fontSizes.MEDIUM}
+                              >
+                                 {image.caption}
+                              </Paragraph>
+                           </ImageWrap>
+                        ) : null
+                     )}
                   </Flex>
                </Flex>
                {/* DownIcon */}
@@ -150,24 +152,28 @@ const MultipleDiagramSlide = ({
                         alignItems="center"
                         alignSelf="flex-start"
                      >
-                        {images.map((image, idx) => (
-                           <ImageWrap key={idx}>
-                              {React.cloneElement(image.diagram, {
-                                 mobileSize: "150px",
-                                 tabletSize: "250px",
-                                 smallDesktopSize: "300px",
-                                 width: "350px",
-                              })}
-                              <TextSpan
-                                 color={
-                                    bg === "LIGHT" ? colors.BLACK : colors.WHITE
-                                 }
-                                 textAlign="center"
-                              >
-                                 {image.caption}
-                              </TextSpan>
-                           </ImageWrap>
-                        ))}
+                        {images.map((image, idx) =>
+                           image.diagram ? (
+                              <ImageWrap key={idx}>
+                                 {React.cloneElement(image.diagram, {
+                                    mobileSize: "150px",
+                                    tabletSize: "250px",
+                                    smallDesktopSize: "300px",
+                                    width: "350px",
+                                 })}
+                                 <TextSpan
+                                    color={
+                                       bg === "LIGHT"
+                                          ? colors.BLACK
+                                          : colors.WHITE
+                                    }
+                                    textAlign="center"
+                                 >
+                                    {image.caption}
+                                 </TextSpan>
+                              </ImageWrap>
+                           ) : null
+                        )}
                      </Flex>
                   </Flex>
                </Flex>

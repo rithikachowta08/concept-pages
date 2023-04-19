@@ -20,7 +20,14 @@ const MultipleDiagramSlide = dynamic(() =>
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
 
-const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
+const Slide = ({
+   data,
+   colorTheme,
+   idx,
+   isPreview,
+   downIcon,
+   currentPageIdx,
+}) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
@@ -32,6 +39,7 @@ const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
             bg: data.theme,
             secondaryTitle: data.secondaryTitle,
             downIcon,
+            currentPageIdx,
          },
       },
       [SLIDE_TYPES.TEXT_AND_APPLET]: {
@@ -41,13 +49,26 @@ const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
             bg: data.theme,
             secondaryTitle: data.secondaryTitle,
             downIcon,
+            currentPageIdx,
          },
       },
       [SLIDE_TYPES.VIDEO_ONLY]: {
          component: VideoSlide,
          props: {
-            title: data.title,
+            videoContent: {
+               dash_Url: data.dashUrl,
+               hls_Url: data.hlsUrl,
+               thumbnail: data.thumbnail,
+               videoId: data.videoId,
+               duration: data.duration,
+               title: data.title,
+            },
+            index: idx,
+            currentPageIdx,
             downIcon,
+            forcePlay: isPreview,
+            downIconId: `s${idx}-video-down-icon`,
+            videoSlideId: `s${idx}-video-slide`,
          },
       },
       [SLIDE_TYPES.TEXT_AND_DIAGRAM]: {
@@ -70,10 +91,21 @@ const Slide = ({ data, colorTheme, idx, isPreview, downIcon }) => {
       },
       [SLIDE_TYPES.MULTIPLE_DIAGRAM]: {
          component: MultipleDiagramSlide,
-         bg: data.theme,
          props: {
             title: data.title,
             secondaryTitle: data.secondaryTitle,
+            bg: data.theme,
+            images:
+               data.images?.map((image) => ({
+                  diagram: (
+                     <TransitionImage
+                        images={[image.diagram]}
+                        altTexts={[image.altText]}
+                        activeIndex={activeIndex}
+                     />
+                  ),
+                  caption: image.caption,
+               })) || [],
             downIcon,
          },
       },

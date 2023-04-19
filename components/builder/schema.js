@@ -101,6 +101,10 @@ const SLIDE_DEPENDENCIES = {
                transitionImages: {
                   type: "array",
                   title: "Images",
+                  secondaryTitle: {
+                     type: "string",
+                     title: "Secondary Title",
+                  },
                   items: {
                      type: "object",
                      properties: {
@@ -127,10 +131,71 @@ const SLIDE_DEPENDENCIES = {
                template: {
                   enum: [SLIDE_TYPES.TEXT_AND_APPLET],
                },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
+               },
                body: CONTENT_BODY,
                appletId: {
                   type: "string",
                   title: "Applet ID",
+               },
+               modal: MODAL_PROPERTIES,
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
+            },
+         },
+         {
+            properties: {
+               template: {
+                  enum: [SLIDE_TYPES.APPLET_ONLY],
+               },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
+               },
+               appletId: {
+                  type: "string",
+                  title: "Applet ID",
+               },
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
+            },
+         },
+         {
+            properties: {
+               template: {
+                  enum: [SLIDE_TYPES.MULTIPLE_DIAGRAM],
+               },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
+               },
+               body: CONTENT_BODY,
+               images: {
+                  type: "array",
+                  title: "Images",
+                  items: {
+                     type: "object",
+                     properties: {
+                        diagram: {
+                           type: "string",
+                           title: "Image URL",
+                        },
+                        altText: {
+                           type: "string",
+                           title: "Alt Text",
+                        },
+                        caption: {
+                           type: "string",
+                           title: "Caption",
+                        },
+                     },
+                  },
                },
                modal: MODAL_PROPERTIES,
                comments: {
@@ -152,9 +217,13 @@ const SLIDE_DEPENDENCIES = {
                   type: "string",
                   title: "Dash URL",
                },
-               title: {
+               videoId: {
                   type: "string",
-                  title: "Video title",
+                  title: "Video ID",
+               },
+               thumbnail: {
+                  type: "string",
+                  title: "Thumbnail",
                },
                duration: {
                   type: "number",
@@ -198,10 +267,6 @@ export const SLIDE_SCHEMA = {
          type: "string",
          title: "Title",
       },
-      secondaryTitle: {
-         type: "string",
-         title: "Secondary Title",
-      },
    },
    required: ["template", "title", "section", "transitionImages"],
    dependencies: SLIDE_DEPENDENCIES,
@@ -234,6 +299,16 @@ export const SLIDE_UI_SCHEMA = {
             "ui:widget": ImageUploader,
          },
       },
+   },
+   images: {
+      items: {
+         diagram: {
+            "ui:widget": ImageUploader,
+         },
+      },
+   },
+   thumbnail: {
+      "ui:widget": ImageUploader,
    },
    comments: {
       "ui:widget": "textarea",

@@ -23,8 +23,10 @@ const VideoSlide = ({
    downIcon,
    videoSlideId,
    downIconId,
+   isPreview,
    videoContent,
 }) => {
+   console.log("videoContent", videoContent);
    return (
       <div style={{ height: "100%" }}>
          <VideoSlideWrap id={videoSlideId}>
@@ -35,6 +37,7 @@ const VideoSlide = ({
                currentPageIdx={currentPageIdx}
                index={index}
                downIcon={downIcon}
+               forcePlay={isPreview}
             />
             {downIcon
                ? React.cloneElement(downIcon, {
