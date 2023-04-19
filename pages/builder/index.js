@@ -53,7 +53,6 @@ const Builder = () => {
          ...pageDetails,
          slides,
       };
-      console.log("in on submit");
       console.log(fullJSON);
       setIsCreatePageLoading(true);
       setShowToast(true);
@@ -87,7 +86,7 @@ const Builder = () => {
                throw new Error(res.status.message);
             }
 
-            const newPageUrl = `/us/math/study/concept/${fullJSON.url}?page_id=${fullJSON.pageId}`;
+            const newPageUrl = `/us/math/study/concept/${fullJSON.url}`;
             toast(
                <p>
                   Page created successfully.{" "}

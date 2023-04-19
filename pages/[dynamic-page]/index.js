@@ -28,9 +28,9 @@ const DynamicPage = () => {
    const [loading, setLoading] = useState(!isPreview);
    const [error, setError] = useState(false);
    useEffect(() => {
-      if (router.query.page_id) {
+      if (router.query["dynamic-page"]) {
          fetch(
-            `https://math-api-stg.byjusweb.com/api/page?page_id=${router.query.page_id}`,
+            `https://math-api-stg.byjusweb.com/api/page?page_url=${router.query["dynamic-page"]}`,
             {
                method: "GET",
                headers: {
@@ -49,7 +49,7 @@ const DynamicPage = () => {
                setError(true);
             });
       }
-   }, [router.query.page_id]);
+   }, [router]);
    if (isPreview && router.query.data) {
       return <Page json={JSON.parse(router.query.data)}></Page>;
    }

@@ -20,6 +20,8 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
+   opacity: ${(props) => (props.uploading ? 0.5 : 1)};
+   pointer-events: ${(props) => (props.uploading ? "none" : "unset")};
 `;
 
 const FieldName = styled.div`
@@ -30,6 +32,7 @@ const FieldName = styled.div`
 const ImageUploader = ({ value, onChange, name }) => {
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState(value);
+   const [uploading, setUploading] = useState(false);
    const handleOpenPicker = () => {
       // Open Google Drive Picker to support upload from System or Drive
       if (window.google) {
@@ -49,6 +52,7 @@ const ImageUploader = ({ value, onChange, name }) => {
                   viewMimeTypes: "image/png,image/jpeg,image/jpg",
                   callbackFunction: (data) => {
                      if (data.action === "picked") {
+                        setUploading(true);
                         const fileId = data.docs[0].id;
                         // Download the actual file through Google Drive API
                         fetch(
@@ -77,6 +81,7 @@ const ImageUploader = ({ value, onChange, name }) => {
                               )
                                  .then((res) => res.json())
                                  .then(() => {
+                                    setUploading(false);
                                     setImageUrl(
                                        `https://search-mathstatic.byjusweb.com/${fileName}`
                                     );
@@ -85,12 +90,13 @@ const ImageUploader = ({ value, onChange, name }) => {
                                     );
                                  });
                            })
-                           .catch((err) =>
+                           .catch((err) => {
                               console.error(
                                  "Error in uploading Google Drive File:",
                                  err
-                              )
-                           );
+                              );
+                              setUploading(false);
+                           });
                      }
                   },
                });
@@ -105,7 +111,9 @@ const ImageUploader = ({ value, onChange, name }) => {
          {imageUrl ? (
             <Image src={imageUrl} width={100} height={100} alt="alt"></Image>
          ) : (
-            <StyledButton onClick={handleOpenPicker}>Upload</StyledButton>
+            <StyledButton onClick={handleOpenPicker} uploading={uploading}>
+               {uploading ? "Uploading..." : "Upload"}
+            </StyledButton>
          )}
       </div>
    );
