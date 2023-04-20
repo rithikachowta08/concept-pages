@@ -85,6 +85,7 @@ const Page = ({ json }) => {
       SlideArray.forEach((slide, idx) => {
          console.log(json.slides[idx - 1]?.theme);
          if (
+            idx === 0 ||
             idx === SlideArray.length - 1 ||
             json.slides[idx - 1]?.template === SLIDE_TYPES.VIDEO_ONLY ||
             json.slides[idx - 1]?.theme === "DARK"
