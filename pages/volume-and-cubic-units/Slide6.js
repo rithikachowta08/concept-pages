@@ -20,7 +20,7 @@ const EquationTable = dynamic(() =>
 const i1 = "assets/volume-and-cubic-units/s11.svg";
 const i2 = "assets/volume-and-cubic-units/11_a.svg";
 const i3 = "assets/volume-and-cubic-units/11_b.svg";
-const i4 = "assets/volume-and-cubic-units/11_c.svg";
+const i4 = "assets/volume-and-cubic-units/24.svg";
 
 const Slide2 = ({ downIcon }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
