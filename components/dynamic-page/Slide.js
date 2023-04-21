@@ -19,7 +19,6 @@ const MultipleDiagramSlide = dynamic(() =>
    import("components/slides/MultipleDiagramSlide")
 );
 const Modal = dynamic(() => import("components/layout/Modal"));
-
 const Slide = ({
    data,
    colorTheme,
@@ -30,7 +29,13 @@ const Slide = ({
 }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
-
+   const dynamicImportApplet = data.appletId
+      ? dynamic(() =>
+           import("@assessed/byjus-us-math-applets").then((mod) => {
+              return mod[data.appletId];
+           })
+        )
+      : null;
    const SLIDE_MAPPER = {
       [SLIDE_TYPES.APPLET_ONLY]: {
          component: AppletSlide,
@@ -38,6 +43,7 @@ const Slide = ({
             title: data.title,
             bg: data.theme,
             secondaryTitle: data.secondaryTitle,
+            AppletComponent: dynamicImportApplet,
             downIcon,
             currentPageIdx,
          },
@@ -47,6 +53,7 @@ const Slide = ({
          props: {
             title: data.title,
             bg: data.theme,
+            AppletComponent: dynamicImportApplet,
             secondaryTitle: data.secondaryTitle,
             downIcon,
             currentPageIdx,
@@ -112,7 +119,6 @@ const Slide = ({
    };
 
    let modal;
-   console.log(data.modal);
    if (data.modal) {
       const modalBody = data.modal.body?.map((item, idx) => (
          <BodyComponent key={idx} item={item} theme={data.theme} isModal />

@@ -13,6 +13,7 @@ const PARAM_TYPES = {
    MODAL_TRIGGER: "mt",
    DIAGRAM_INTERACTION: "di",
    MATH: "ma",
+   MATH_WITH_DIAGRAM_INTERACTION: "di_ma",
 };
 
 const TextParamComponent = ({
@@ -25,6 +26,25 @@ const TextParamComponent = ({
    onHoverOut,
    onClick,
 }) => {
+   if (type.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)) {
+      return (
+         <>
+            &nbsp;
+            <TextSpanBg
+               onHover={() => onHover(idx)}
+               onHoverOut={onHoverOut}
+               hoverColor={
+                  theme === "LIGHT"
+                     ? colorSchemes[colorTheme].DARK
+                     : colorSchemes[colorTheme].LIGHT
+               }
+            >
+               <MathElement htmlString={value} />
+            </TextSpanBg>
+            &nbsp;
+         </>
+      );
+   }
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
          <>
