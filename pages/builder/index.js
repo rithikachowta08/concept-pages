@@ -19,12 +19,103 @@ const LinkText = styled.a`
    cursor: pointer;
 `;
 
+const Error = styled.div`
+   color: ${colors.RED};
+   display: ${(props) => (props.show ? "block" : "none")};
+`;
+
+const StyledInput = styled.input`
+   background: ${colors.WHITE};
+   color: ${(props) => (props.error ? colors.RED : colors.BLACK)};
+   border: 1px solid ${(props) => (props.error ? colors.RED : "#aaa")};
+   border-radius: 4px;
+   box-shadow: none;
+   box-sizing: content-box;
+   margin: 0;
+   padding: 16.5px 14px;
+
+   &:focus,
+   &:active {
+      outline: none;
+   }
+`;
+
+const StyledButton = styled.button`
+   background-color: ${colors.DARK_LAVENDER};
+   color: white;
+   height: 36px;
+   padding: 10px 16px;
+   border-radius: 4px;
+   text-transform: uppercase;
+   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+   border: none;
+   width: fit-content;
+   align-self: center;
+   cursor: pointer;
+
+   &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+   }
+`;
+
 const Builder = () => {
+   const [showEditorView, setShowEditorView] = useState(false);
+   const [pageId, setPageId] = useState(null);
+   const [loading, setLoading] = useState(false);
+   const [error, setError] = useState(false);
    const [pageDetails, setPageDetails] = useState({});
    const [slides, setSlides] = useState([]);
    const [tabIndex, setTabIndex] = useState(0);
    const [isCreatePageLoading, setIsCreatePageLoading] = useState(false);
    const [showToast, setShowToast] = useState(false);
+
+   const onInputChange = (e) => {
+      if (error) {
+         setError(false);
+      }
+      setPageId(e.target.value);
+   };
+
+   function onKeyPress(event) {
+      if (event.key === "Enter" && pageId) {
+         // Submit form
+         onEditPage();
+      }
+   }
+
+   const onCreateNewPage = () => {
+      setShowEditorView(true);
+   };
+
+   const onEditPage = () => {
+      setLoading(true);
+      fetch(`https://math-api-stg.byjusweb.com/api/page?page_id=${pageId}`, {
+         method: "GET",
+         headers: {
+            "Content-Type": "application/json",
+         },
+      })
+         .then((res) => res.json())
+         .then((res) => {
+            setLoading(false);
+            if (!res.data) {
+               setError("Page not found");
+            } else {
+               setSlides(res.data.slides);
+               const pageDetails = { ...res.data };
+               delete pageDetails.slides;
+               setPageDetails(pageDetails);
+               setShowEditorView(true);
+            }
+         })
+         .catch((err) => {
+            console.error(err);
+            setLoading(false);
+            setError("Page not found");
+         });
+   };
 
    const onSlidesChange = (idx, data) => {
       const tempSlides = [...slides];
@@ -48,12 +139,11 @@ const Builder = () => {
       setTabIndex(idx - 1);
    };
 
-   const onSubmit = (e) => {
+   const onSubmit = () => {
       const fullJSON = {
          ...pageDetails,
          slides,
       };
-      console.log(fullJSON);
       setIsCreatePageLoading(true);
       setShowToast(true);
       /*  Replicating delay in the response */
@@ -114,31 +204,64 @@ const Builder = () => {
             src="https://accounts.google.com/gsi/client"
             strategy="lazyOnLoad"
          ></Script>
-         <Flex
-            bgColor={colors.WHITE}
-            color={colors.BLACK}
-            height="100%"
-            width="100%"
-         >
-            <PreviewContainer
-               json={{ ...pageDetails, slides }}
-               tabIndex={tabIndex}
-               addNewSlide={addNewSlide}
-               onPreviewClick={selectSlideForm}
-            />
-            <Editor
-               slides={slides}
-               deleteSlide={deleteSlide}
-               pageDetails={pageDetails}
-               addNewSlide={addNewSlide}
-               setPageDetails={setPageDetails}
-               setSlides={onSlidesChange}
-               onSubmit={onSubmit}
-               tabIndex={tabIndex}
-               setTabIndex={setTabIndex}
-               isCreatePageLoading={isCreatePageLoading}
-            />
-         </Flex>
+         {showEditorView ? (
+            <Flex
+               bgColor={colors.WHITE}
+               color={colors.BLACK}
+               height="100%"
+               width="100%"
+            >
+               <PreviewContainer
+                  json={{ ...pageDetails, slides }}
+                  tabIndex={tabIndex}
+                  addNewSlide={addNewSlide}
+                  onPreviewClick={selectSlideForm}
+               />
+               <Editor
+                  slides={slides}
+                  deleteSlide={deleteSlide}
+                  pageDetails={pageDetails}
+                  addNewSlide={addNewSlide}
+                  setPageDetails={setPageDetails}
+                  setSlides={onSlidesChange}
+                  onSubmit={onSubmit}
+                  tabIndex={tabIndex}
+                  setTabIndex={setTabIndex}
+                  isCreatePageLoading={isCreatePageLoading}
+               />
+            </Flex>
+         ) : (
+            <Flex
+               direction="column"
+               bgColor={colors.WHITE}
+               color={colors.BLACK}
+               justifyContent="center"
+               alignItems="center"
+               gap="10px"
+               height="100%"
+               width="100%"
+            >
+               <StyledButton onClick={onCreateNewPage}>
+                  Create new page
+               </StyledButton>
+               <Flex gap="10px" justifyContent="center" alignItems="center">
+                  <StyledInput
+                     placeholder="Page ID"
+                     value={pageId}
+                     error={error}
+                     onChange={onInputChange}
+                     onKeyUp={onKeyPress}
+                  ></StyledInput>
+                  <StyledButton
+                     onClick={onEditPage}
+                     disabled={!pageId || loading}
+                  >
+                     {loading ? "Fetching page..." : "Edit existing page"}
+                  </StyledButton>
+               </Flex>
+               <Error show={error}>{error}</Error>
+            </Flex>
+         )}
       </>
    );
 };

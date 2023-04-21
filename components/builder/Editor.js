@@ -72,6 +72,8 @@ const Editor = ({
    onSubmit,
    isCreatePageLoading,
 }) => {
+   const pageDetailsformRef = React.createRef();
+   const slideFormRef = React.createRef();
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
    };
@@ -108,8 +110,9 @@ const Editor = ({
                ))}
                <Tab onClick={addNewSlide}>+ Add slide</Tab>
             </TabList>
-            <TabPanel>
+            <TabPanel forceRender>
                <Form
+                  ref={pageDetailsformRef}
                   schema={PAGE_DETAILS_SCHEMA}
                   validator={validator}
                   widgets={widgets}
@@ -126,33 +129,43 @@ const Editor = ({
                </Form>
             </TabPanel>
             {slides.map((slide, idx) => (
-               <TabPanel key={idx}>
+               <TabPanel key={idx} forceRender>
                   <Form
+                     ref={slideFormRef}
                      schema={SLIDE_SCHEMA}
                      validator={validator}
                      uiSchema={SLIDE_UI_SCHEMA}
                      formData={slide}
                      autoComplete={"off"}
                      className="slide-form"
-                     onSubmit={onSubmit}
                      onChange={(data) => setSlides(idx, data.formData)}
-                     // onError={() => console.log("uh oh")}
                   >
                      <ButtonContainer>
-                        <StyledButton
-                           type="submit"
-                           id="submit-btn"
-                           disabled={isCreatePageLoading}
-                        >
-                           {isCreatePageLoading ? (
-                              <Flex>
-                                 <LoadingSpinner />
-                                 Creating...
-                              </Flex>
-                           ) : (
-                              "Create page"
-                           )}
-                        </StyledButton>
+                        {idx === slides.length - 1 && (
+                           <StyledButton
+                              type="submit"
+                              id="submit-btn"
+                              onClick={() => {
+                                 if (
+                                    slideFormRef.current?.validateForm() &&
+                                    pageDetailsformRef.current.validateForm()
+                                 ) {
+                                    onSubmit();
+                                 }
+                              }}
+                              disabled={isCreatePageLoading}
+                           >
+                              {isCreatePageLoading ? (
+                                 <Flex>
+                                    <LoadingSpinner />
+                                    Creating...
+                                 </Flex>
+                              ) : (
+                                 "Create page"
+                              )}
+                           </StyledButton>
+                        )}
+
                         <StyledButton>
                            <Link
                               href={{
