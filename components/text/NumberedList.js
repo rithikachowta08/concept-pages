@@ -1,12 +1,12 @@
-import Paragraph from "./Paragraph";
+import TextLine from "./TextLine";
 import TextSpan from "./TextSpan";
 
-const NumberedList = ({ items }) => {
+const NumberedList = ({ items, color }) => {
    return items.map((item, idx) => (
-      <Paragraph key={idx}>
-         <TextSpan>{idx + 1}&#41;</TextSpan>
+      <TextLine color={color} key={idx}>
+         <TextSpan color="inherit">{idx + 1}&#41;</TextSpan>
          &nbsp;{item}
-      </Paragraph>
+      </TextLine>
    ));
 };
 

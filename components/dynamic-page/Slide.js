@@ -137,9 +137,10 @@ const Slide = ({
    }
 
    let children = [];
+   let textParamCount = 0;
 
    if (data.body) {
-      data.body.forEach((item, idx) =>
+      data.body.forEach((item, idx) => {
          children.push(
             <BodyComponent
                key={idx}
@@ -149,9 +150,11 @@ const Slide = ({
                onHover={onHover}
                onHoverOut={onHoverOut}
                onClick={onClick}
+               textParamCount={textParamCount}
             />
-         )
-      );
+         );
+         textParamCount += item.textParams?.length;
+      });
    }
 
    const SlideComponent = SLIDE_MAPPER[data.template];

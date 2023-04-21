@@ -26,7 +26,12 @@ export const COMPONENT_TYPES = {
    NUMBERED_LIST: "NUMBERED_LIST",
 };
 
-const TextToTextParamComponent = ({ modifiedContent, textParams, ...rest }) => {
+const TextToTextParamComponent = ({
+   modifiedContent,
+   textParamCount,
+   textParams,
+   ...rest
+}) => {
    return modifiedContent.map((child, idx) => {
       const str = child.trim();
       const isTextParam = str.startsWith("%") && str.endsWith("%");
@@ -35,7 +40,11 @@ const TextToTextParamComponent = ({ modifiedContent, textParams, ...rest }) => {
          <TextParamComponent
             {...rest}
             type={id}
-            idx={idx}
+            idx={
+               textParamCount +
+               textParams?.findIndex((param) => param.id === id) +
+               1
+            }
             key={idx}
             value={textParams?.find((param) => param.id === id)?.value || id}
          />
@@ -48,20 +57,22 @@ const TextToTextParamComponent = ({ modifiedContent, textParams, ...rest }) => {
 const BodyComponent = ({
    item,
    theme,
+   textParamCount,
    colorTheme,
    isModal,
    onClick,
    onHover,
    onHoverOut,
 }) => {
+   let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
+   if (isModal) {
+      color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
+   }
+   console.log(color);
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
          const lines = item.content.split("\n");
          const textLines = [];
-         let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
-         if (isModal) {
-            color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
-         }
          lines.forEach((line, idx) => {
             const modifiedContent = line.split(/(%.*?%)/g);
             textLines.push(
@@ -74,6 +85,7 @@ const BodyComponent = ({
                      onHoverOut={onHoverOut}
                      onClick={onClick}
                      textParams={item.textParams}
+                     textParamCount={textParamCount}
                   />
                </TextLine>
             );
@@ -82,13 +94,13 @@ const BodyComponent = ({
       }
       if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
          return (
-            item.bulletPoints
-               ?.filter((point) => Boolean(point))
-               .map((bulletPoint, idx) => {
-                  const modifiedBulletPoint = bulletPoint.split(/(%.*?%)/g);
-                  return (
-                     <Paragraph key={idx}>
-                        <BulletPointItem>
+            <Paragraph>
+               {item.bulletPoints
+                  ?.filter((point) => Boolean(point))
+                  .map((bulletPoint, idx) => {
+                     const modifiedBulletPoint = bulletPoint.split(/(%.*?%)/g);
+                     return bulletPoint ? (
+                        <BulletPointItem key={idx} color={color}>
                            <TextToTextParamComponent
                               modifiedContent={modifiedBulletPoint}
                               theme={theme}
@@ -97,15 +109,15 @@ const BodyComponent = ({
                               onHoverOut={onHoverOut}
                               onClick={onClick}
                               textParams={item.textParams}
+                              textParamCount={textParamCount}
                            />
                         </BulletPointItem>
-                     </Paragraph>
-                  );
-               }) || null
+                     ) : null;
+                  })}
+            </Paragraph>
          );
       }
       if (item.componentType === COMPONENT_TYPES.NUMBERED_LIST) {
-         console.log(item.numberedPoints);
          const numberedListItems = item.numberedPoints
             ?.filter((point) => Boolean(point))
             .map((numberedPoint, idx) => {
@@ -120,12 +132,13 @@ const BodyComponent = ({
                      onHoverOut={onHoverOut}
                      onClick={onClick}
                      textParams={item.textParams}
+                     textParamCount={textParamCount}
                   />
                );
             });
 
          return numberedListItems ? (
-            <NumberedList items={numberedListItems} />
+            <NumberedList color={color} items={numberedListItems} />
          ) : null;
       }
       if (item.componentType === COMPONENT_TYPES.IMAGE) {
@@ -148,6 +161,7 @@ const BodyComponent = ({
                      onHoverOut={onHoverOut}
                      onClick={onClick}
                      textParams={item.textParams}
+                     textParamCount={textParamCount}
                   />
                </Pill>
             </div>
