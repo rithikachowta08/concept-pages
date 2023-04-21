@@ -24,7 +24,7 @@ const Slide10 = ({ downIcon, currentPageIdx }) => {
    const modalContent = (
       <Flex direction="column" key={0}>
          <Paragraph color={colors.WHITE}>
-            A square pyramid consists of a square-shaped base and 3 triangular
+            A square pyramid consists of a square-shaped base and 4 triangular
             faces.
          </Paragraph>
          <ModalImg src={slide_5_pop} alt="Image of a square pyramid" />

@@ -50,7 +50,6 @@ const Slide7 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"What Are Coordinates?"}
-         secondaryTitle={"General Formula"}
          diagram={
             <TransitionImage
                images={[image_1, image_2, image_3, image_4, image_5]}

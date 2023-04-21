@@ -38,7 +38,7 @@ const CoordinatePlaneAndCoordinates = () => {
       <PageLastSlide
          key={13}
          type={SLIDE_TYPES.CONCLUSION}
-         currentPageTitle={"Volume of Sphere"}
+         currentPageTitle={"Coordinate Plane and Coordinates"}
          nextPageLink={"nets-of-solid-figures"}
          nextPageTitle={"Nets of solid figures"}
       />,

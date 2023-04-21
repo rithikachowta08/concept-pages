@@ -36,7 +36,7 @@ const Slide2 = ({ downIcon }) => {
    const modalContent = (
       <Flex direction="column">
          <Paragraph color={colors.WHITE}>
-            Two lines that intersect each other at right angles (90o) are called
+            Two lines that intersect each other at right angles (90°) are called
             perpendicular lines.
          </Paragraph>
          <ModalImg src={image_5} alt="Image of perpendicular lines" />

@@ -132,7 +132,7 @@ const Slide2 = ({ downIcon }) => {
                         type: "latex",
                      },
                      rhsLatex: {
-                        value: ["60 \\ in \\times 10 \\ in \\times 20 \\ in"],
+                        value: ["30 \\ in \\times 10 \\ in \\times 20 \\ in"],
                         type: "latex",
                      },
                      rhsHint: {
