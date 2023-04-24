@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { Flex } from "components/StyledElements";
 import { colors } from "utils/colors";
 import { toast } from "react-toastify";
-// import jsonData from "components/dynamic-page/structure.json";
 import "react-toastify/dist/ReactToastify.min.css";
 import styled from "styled-components";
 import { TOAST_COMMON_CONFIG } from "utils/constants";
@@ -61,15 +61,42 @@ const StyledButton = styled.button`
 `;
 
 const Builder = () => {
-   const [showEditorView, setShowEditorView] = useState(false);
-   const [pageId, setPageId] = useState(null);
+   const router = useRouter();
+   const isEditing =
+      router.query.pageId &&
+      router.query.pageId !== "NEW" &&
+      router.query.pageId !== "IMPORT";
+   const [showEditorView, setShowEditorView] = useState(
+      Boolean(router.query.pageId)
+   );
    const [loading, setLoading] = useState(false);
+   const [pageId, setPageId] = useState(null);
    const [error, setError] = useState(false);
    const [pageDetails, setPageDetails] = useState({});
    const [slides, setSlides] = useState([]);
    const [tabIndex, setTabIndex] = useState(0);
    const [isCreatePageLoading, setIsCreatePageLoading] = useState(false);
-   const [showToast, setShowToast] = useState(false);
+   const [isSaveDraftLoading, setIsSaveDraftLoading] = useState(false);
+
+   useEffect(() => {
+      if (router.query.pageId) {
+         if (
+            router.query.pageId !== "NEW" &&
+            router.query.pageId !== "IMPORT"
+         ) {
+            onEditPage();
+         }
+         if (router.query.pageId === "IMPORT") {
+            setPageDetails(
+               JSON.parse(localStorage.getItem("pageDetails")) || {}
+            );
+            setSlides(JSON.parse(localStorage.getItem("slides")) || []);
+         }
+         setShowEditorView(true);
+      } else {
+         setShowEditorView(false);
+      }
+   }, [router.query.pageId]);
 
    const onInputChange = (e) => {
       if (error) {
@@ -80,13 +107,15 @@ const Builder = () => {
 
    function onKeyPress(event) {
       if (event.key === "Enter" && pageId) {
-         // Submit form
          onEditPage();
       }
    }
 
    const onCreateNewPage = () => {
-      setShowEditorView(true);
+      router.query.pageId = "NEW";
+      router.push(router);
+      setSlides([]);
+      setPageDetails({});
    };
 
    const onFileInputChange = (e) => {
@@ -104,17 +133,30 @@ const Builder = () => {
    };
 
    const onClickImport = () => {
-      setShowEditorView(true);
+      router.query.pageId = "IMPORT";
+      localStorage.setItem("pageDetails", JSON.stringify(pageDetails));
+      localStorage.setItem("slides", JSON.stringify(slides));
+      router.push(router);
    };
 
+   const onBackClick = () => {
+      setPageId(null);
+      delete router.query.pageId;
+      router.push(router);
+   };
    const onEditPage = () => {
       setLoading(true);
-      fetch(`https://math-api-stg.byjusweb.com/api/page?page_id=${pageId}`, {
-         method: "GET",
-         headers: {
-            "Content-Type": "application/json",
-         },
-      })
+      fetch(
+         `https://math-api-stg.byjusweb.com/api/page?page_id=${
+            pageId || router.query.pageId
+         }`,
+         {
+            method: "GET",
+            headers: {
+               "Content-Type": "application/json",
+            },
+         }
+      )
          .then((res) => res.json())
          .then((res) => {
             setLoading(false);
@@ -125,7 +167,11 @@ const Builder = () => {
                const pageDetails = { ...res.data };
                delete pageDetails.slides;
                setPageDetails(pageDetails);
-               setShowEditorView(true);
+               if (!router.query.pageId) {
+                  router.query.pageId = pageId;
+                  router.push(router);
+                  setShowEditorView(true);
+               }
             }
          })
          .catch((err) => {
@@ -133,12 +179,6 @@ const Builder = () => {
             setLoading(false);
             setError("Page not found");
          });
-   };
-
-   const onSlidesChange = (idx, data) => {
-      const tempSlides = [...slides];
-      tempSlides[idx] = data;
-      setSlides(tempSlides);
    };
 
    const selectSlideForm = (e) => {
@@ -157,13 +197,16 @@ const Builder = () => {
       setTabIndex(idx - 1);
    };
 
-   const onSubmit = () => {
+   const onSubmit = (isDraft) => {
       const fullJSON = {
          ...pageDetails,
          slides,
       };
-      setIsCreatePageLoading(true);
-      setShowToast(true);
+      if (isDraft) {
+         setIsSaveDraftLoading(true);
+      } else {
+         setIsCreatePageLoading(true);
+      }
       /*  Replicating delay in the response */
       // setTimeout(() => {
       //    setIsCreatePageLoading(false);
@@ -180,11 +223,11 @@ const Builder = () => {
       // }, 3000);
 
       fetch("https://math-api-stg.byjusweb.com/api/page", {
-         method: "POST",
+         method: isEditing ? "PUT" : "POST",
          headers: {
             "Content-Type": "application/json",
          },
-         body: JSON.stringify(fullJSON),
+         body: JSON.stringify({ ...fullJSON, isDraft }),
       })
          .then((res) => res.json())
          .then((res) => {
@@ -194,17 +237,34 @@ const Builder = () => {
                throw new Error(res.status.message);
             }
 
-            const newPageUrl = `/us/math/study/concept/${fullJSON.url}`;
-            toast(
-               <p>
-                  Page created successfully.{" "}
-                  <LinkText href={newPageUrl} target="_blank">
-                     Link
-                  </LinkText>
-               </p>,
-               { ...TOAST_COMMON_CONFIG, type: toast.TYPE.SUCCESS }
-            );
-            setIsCreatePageLoading(false);
+            if (!isDraft) {
+               const newPageUrl = `/us/math/study/concept/${fullJSON.url}`;
+               toast(
+                  <p>
+                     Page {isEditing ? "updated" : "created"} successfully.{" "}
+                     <LinkText href={newPageUrl} target="_blank">
+                        Link
+                     </LinkText>
+                  </p>,
+                  { ...TOAST_COMMON_CONFIG, type: toast.TYPE.SUCCESS }
+               );
+               setIsCreatePageLoading(false);
+            } else {
+               toast(<p>Page drafted successfully.</p>, {
+                  ...TOAST_COMMON_CONFIG,
+                  type: toast.TYPE.SUCCESS,
+               });
+               setIsSaveDraftLoading(false);
+            }
+            if (
+               router.query.pageId === "NEW" ||
+               router.query.pageId === "IMPORT"
+            ) {
+               // Update new pageId to url
+               router.query.pageId = fullJSON.pageId;
+               router.push(router);
+               setShowEditorView(true);
+            }
          })
          .catch((err) => {
             console.error(err);
@@ -213,6 +273,7 @@ const Builder = () => {
                type: toast.TYPE.ERROR,
             });
             setIsCreatePageLoading(false);
+            setIsSaveDraftLoading(false);
          });
    };
 
@@ -234,6 +295,7 @@ const Builder = () => {
                   tabIndex={tabIndex}
                   addNewSlide={addNewSlide}
                   onPreviewClick={selectSlideForm}
+                  onBackClick={onBackClick}
                />
                <Editor
                   slides={slides}
@@ -241,11 +303,12 @@ const Builder = () => {
                   pageDetails={pageDetails}
                   addNewSlide={addNewSlide}
                   setPageDetails={setPageDetails}
-                  setSlides={onSlidesChange}
+                  setSlides={setSlides}
                   onSubmit={onSubmit}
                   tabIndex={tabIndex}
                   setTabIndex={setTabIndex}
                   isCreatePageLoading={isCreatePageLoading}
+                  isSaveDraftLoading={isSaveDraftLoading}
                />
             </Flex>
          ) : (
@@ -263,8 +326,20 @@ const Builder = () => {
                   Create new page
                </StyledButton>
                <Flex alignItems="center">
-                  <input type="file" onChange={onFileInputChange}></input>
-                  <StyledButton onClick={onClickImport}>
+                  <input
+                     type="file"
+                     id="import-file"
+                     onChange={onFileInputChange}
+                  ></input>
+                  <StyledButton
+                     disabled={
+                        !(
+                           typeof document !== "undefined" &&
+                           document.getElementById("import-file")?.value
+                        )
+                     }
+                     onClick={onClickImport}
+                  >
                      Import from JSON
                   </StyledButton>
                </Flex>

@@ -41,7 +41,11 @@ const DynamicPage = () => {
             .then((res) => res.json())
             .then((res) => {
                setLoading(false);
-               setJson(res.data);
+               if (res.data.isDraft) {
+                  setError(true);
+               } else {
+                  setJson(res.data);
+               }
             })
             .catch((err) => {
                console.error(err);

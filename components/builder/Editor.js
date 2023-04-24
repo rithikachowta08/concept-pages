@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { colors } from "utils/colors";
 import styled from "styled-components";
@@ -71,11 +72,23 @@ const Editor = ({
    slides,
    onSubmit,
    isCreatePageLoading,
+   isSaveDraftLoading,
 }) => {
+   const router = useRouter();
+   const isEditing =
+      router.query.pageId &&
+      router.query.pageId !== "NEW" &&
+      router.query.pageId !== "IMPORT";
    const pageDetailsformRef = React.createRef();
    const slideFormRef = React.createRef();
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
+   };
+
+   const onSlidesChange = (idx, data) => {
+      const tempSlides = [...slides];
+      tempSlides[idx] = data;
+      setSlides(tempSlides);
    };
 
    function downloadTextFile(text, name) {
@@ -156,13 +169,12 @@ const Editor = ({
                      formData={slide}
                      autoComplete={"off"}
                      className="slide-form"
-                     onChange={(data) => setSlides(idx, data.formData)}
+                     onChange={(data) => onSlidesChange(idx, data.formData)}
                   >
                      <ButtonContainer>
                         {idx === slides.length - 1 && (
                            <StyledButton
                               type="submit"
-                              id="submit-btn"
                               onClick={() => {
                                  if (
                                     slideFormRef.current?.validateForm() &&
@@ -176,10 +188,35 @@ const Editor = ({
                               {isCreatePageLoading ? (
                                  <Flex>
                                     <LoadingSpinner />
-                                    Creating...
+                                    {isEditing ? "Updating..." : "Creating..."}
                                  </Flex>
+                              ) : isEditing ? (
+                                 "Update page"
                               ) : (
                                  "Create page"
+                              )}
+                           </StyledButton>
+                        )}
+                        {idx === slides.length - 1 && (
+                           <StyledButton
+                              type="submit"
+                              onClick={() => {
+                                 if (
+                                    slideFormRef.current?.validateForm() &&
+                                    pageDetailsformRef.current.validateForm()
+                                 ) {
+                                    onSubmit(true);
+                                 }
+                              }}
+                              disabled={isSaveDraftLoading}
+                           >
+                              {isSaveDraftLoading ? (
+                                 <Flex>
+                                    <LoadingSpinner />
+                                    Saving...
+                                 </Flex>
+                              ) : (
+                                 "Save as draft"
                               )}
                            </StyledButton>
                         )}
