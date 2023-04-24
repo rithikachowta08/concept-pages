@@ -4,6 +4,9 @@ const Pill = dynamic(() => import("components/Pill"));
 const TextParamComponent = dynamic(() => import("./TextParamComponent"));
 const BulletPointItem = dynamic(() => import("components/text/BulletPoint"));
 const NumberedList = dynamic(() => import("components/text/NumberedList"));
+const EquationTable = dynamic(() =>
+   import("components/MathElement/EquationTable")
+);
 const Paragraph = dynamic(() =>
    import("components/text").then((mod) => mod.Paragraph)
 );
@@ -49,7 +52,7 @@ const TextToTextParamComponent = ({
             value={textParams?.find((param) => param.id === id)?.value || id}
          />
       ) : (
-         str
+         replaceSupSubScripts(str)
       );
    });
 };
@@ -68,7 +71,6 @@ const BodyComponent = ({
    if (isModal) {
       color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
    }
-   console.log(color);
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
          const lines = item.content.split("\n");
@@ -93,9 +95,10 @@ const BodyComponent = ({
          return <Paragraph color={color}>{textLines}</Paragraph>;
       }
       if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
+         const lines = item.content.split("\n");
          return (
             <Paragraph>
-               {item.bulletPoints
+               {lines
                   ?.filter((point) => Boolean(point))
                   .map((bulletPoint, idx) => {
                      const modifiedBulletPoint = bulletPoint.split(/(%.*?%)/g);
@@ -118,7 +121,8 @@ const BodyComponent = ({
          );
       }
       if (item.componentType === COMPONENT_TYPES.NUMBERED_LIST) {
-         const numberedListItems = item.numberedPoints
+         const lines = item.content.split("\n");
+         const numberedListItems = lines
             ?.filter((point) => Boolean(point))
             .map((numberedPoint, idx) => {
                const modifiedBulletPoint = numberedPoint.split(/(%.*?%)/g);
@@ -165,6 +169,56 @@ const BodyComponent = ({
                   />
                </Pill>
             </div>
+         );
+      }
+      if (item.componentType === COMPONENT_TYPES.EQUATION_TABLE) {
+         const lines = item.content.split("\n");
+         const equationLines = lines.map((line) => {
+            const [lhs, rhs] = line.split("=").map((text) => text.trim());
+            const modifiedLhs = lhs.split(/(%.*?%)/g);
+            const lhsComponent = (
+               <TextToTextParamComponent
+                  modifiedContent={modifiedLhs}
+                  theme={theme}
+                  colorTheme={colorTheme}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  onClick={onClick}
+                  textParams={item.textParams}
+                  textParamCount={textParamCount}
+               />
+            );
+            const modifiedRhs = rhs.split(/(%.*?%)/g);
+            const rhsComponent = (
+               <TextToTextParamComponent
+                  modifiedContent={modifiedRhs}
+                  theme={theme}
+                  colorTheme={colorTheme}
+                  onHover={onHover}
+                  onHoverOut={onHoverOut}
+                  onClick={onClick}
+                  textParams={item.textParams}
+                  textParamCount={textParamCount}
+               />
+            );
+            return {
+               lhsLatex: {
+                  value: lhs.startsWith("\\") ? [lhs] : [lhsComponent],
+                  type: lhs.startsWith("\\") ? "latex" : "text",
+               },
+               rhsLatex: {
+                  value: rhs.startsWith("\\") ? [rhs] : [rhsComponent],
+                  type: rhs.startsWith("\\") ? "latex" : "text",
+               },
+            };
+         });
+         return (
+            <Paragraph color={color}>
+               <EquationTable
+                  align="middle"
+                  equationLatex={equationLines}
+               ></EquationTable>
+            </Paragraph>
          );
       }
    }

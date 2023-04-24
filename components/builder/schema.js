@@ -115,13 +115,9 @@ const CONTENT_BODY_DEPENDENCIES = {
                componentType: {
                   enum: [COMPONENT_TYPES.BULLETED_LIST],
                },
-               bulletPoints: {
-                  type: "array",
-                  title: "Bullet Points",
-                  items: {
-                     type: "string",
-                     title: "Text",
-                  },
+               content: {
+                  type: "string",
+                  title: "Text",
                },
             },
          },
@@ -130,12 +126,36 @@ const CONTENT_BODY_DEPENDENCIES = {
                componentType: {
                   enum: [COMPONENT_TYPES.NUMBERED_LIST],
                },
-               numberedPoints: {
+               content: {
+                  type: "string",
+                  title: "Text",
+               },
+            },
+         },
+         {
+            properties: {
+               componentType: {
+                  enum: [COMPONENT_TYPES.EQUATION_TABLE],
+               },
+               content: {
+                  type: "string",
+                  title: "Text",
+               },
+               textParams: {
                   type: "array",
-                  title: "Numbered Points",
+                  title: "Text Parameters",
                   items: {
-                     type: "string",
-                     title: "Text",
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
                   },
                },
             },

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import "katex/dist/katex.min.css";
 import TeX from "@matejmazur/react-katex";
-import { useDeviceType, DEVICE_TYPES } from "hooks/useDeviceType";
 
 const EquationParentDiv = styled.div`
    font-family: "Nunito-Medium";
