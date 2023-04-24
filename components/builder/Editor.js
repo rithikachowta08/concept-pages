@@ -77,6 +77,24 @@ const Editor = ({
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
    };
+
+   function downloadTextFile(text, name) {
+      const a = document.createElement("a");
+      const type = name.split(".").pop();
+      a.href = URL.createObjectURL(
+         new Blob([text], { type: `text/${type === "txt" ? "plain" : type}` })
+      );
+      a.download = name;
+      a.click();
+   }
+
+   const onClickExport = () => {
+      downloadTextFile(
+         JSON.stringify({ ...pageDetails, slides }),
+         "export.json"
+      );
+   };
+
    return (
       <Flex flex="1" style={{ overflow: "scroll" }}>
          <Tabs
@@ -182,6 +200,9 @@ const Editor = ({
                            >
                               <a target="_blank">Preview</a>
                            </Link>
+                        </StyledButton>
+                        <StyledButton onClick={onClickExport}>
+                           Export as JSON
                         </StyledButton>
                         <StyledButton onClick={addNewSlide}>
                            Add slide

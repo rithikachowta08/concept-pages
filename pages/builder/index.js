@@ -89,6 +89,24 @@ const Builder = () => {
       setShowEditorView(true);
    };
 
+   const onFileInputChange = (e) => {
+      const fileReader = new FileReader();
+      const populateState = (content) => {
+         const json = { ...JSON.parse(content) };
+         setSlides(json.slides);
+         delete json.slides;
+         setPageDetails(json);
+      };
+      fileReader.onload = (evt) => {
+         populateState(evt.target.result);
+      };
+      fileReader.readAsText(e.target.files[0]);
+   };
+
+   const onClickImport = () => {
+      setShowEditorView(true);
+   };
+
    const onEditPage = () => {
       setLoading(true);
       fetch(`https://math-api-stg.byjusweb.com/api/page?page_id=${pageId}`, {
@@ -244,6 +262,12 @@ const Builder = () => {
                <StyledButton onClick={onCreateNewPage}>
                   Create new page
                </StyledButton>
+               <Flex alignItems="center">
+                  <input type="file" onChange={onFileInputChange}></input>
+                  <StyledButton onClick={onClickImport}>
+                     Import from JSON
+                  </StyledButton>
+               </Flex>
                <Flex gap="10px" justifyContent="center" alignItems="center">
                   <StyledInput
                      placeholder="Page ID"
