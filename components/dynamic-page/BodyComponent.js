@@ -35,6 +35,9 @@ const TextToTextParamComponent = ({
    textParams,
    ...rest
 }) => {
+   if (!modifiedContent) {
+      return null;
+   }
    return modifiedContent.map((child, idx) => {
       const str = child.trim();
       const isTextParam = str.startsWith("%") && str.endsWith("%");
@@ -52,7 +55,7 @@ const TextToTextParamComponent = ({
             value={textParams?.find((param) => param.id === id)?.value || id}
          />
       ) : (
-         replaceSupSubScripts(str)
+         str
       );
    });
 };
@@ -173,44 +176,48 @@ const BodyComponent = ({
       }
       if (item.componentType === COMPONENT_TYPES.EQUATION_TABLE) {
          const lines = item.content.split("\n");
-         const equationLines = lines.map((line) => {
+         const nonEmptyLines = lines.filter((line) => Boolean(line.trim()));
+         const equationLines = [];
+         nonEmptyLines.forEach((line) => {
             const [lhs, rhs] = line.split("=").map((text) => text.trim());
-            const modifiedLhs = lhs.split(/(%.*?%)/g);
-            const lhsComponent = (
-               <TextToTextParamComponent
-                  modifiedContent={modifiedLhs}
-                  theme={theme}
-                  colorTheme={colorTheme}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  onClick={onClick}
-                  textParams={item.textParams}
-                  textParamCount={textParamCount}
-               />
-            );
-            const modifiedRhs = rhs.split(/(%.*?%)/g);
-            const rhsComponent = (
-               <TextToTextParamComponent
-                  modifiedContent={modifiedRhs}
-                  theme={theme}
-                  colorTheme={colorTheme}
-                  onHover={onHover}
-                  onHoverOut={onHoverOut}
-                  onClick={onClick}
-                  textParams={item.textParams}
-                  textParamCount={textParamCount}
-               />
-            );
-            return {
-               lhsLatex: {
-                  value: lhs.startsWith("\\") ? [lhs] : [lhsComponent],
-                  type: lhs.startsWith("\\") ? "latex" : "text",
-               },
-               rhsLatex: {
-                  value: rhs.startsWith("\\") ? [rhs] : [rhsComponent],
-                  type: rhs.startsWith("\\") ? "latex" : "text",
-               },
-            };
+            if (lhs || rhs) {
+               const modifiedLhs = lhs?.split(/(%.*?%)/g);
+               const lhsComponent = (
+                  <TextToTextParamComponent
+                     modifiedContent={modifiedLhs}
+                     theme={theme}
+                     colorTheme={colorTheme}
+                     onHover={onHover}
+                     onHoverOut={onHoverOut}
+                     onClick={onClick}
+                     textParams={item.textParams}
+                     textParamCount={textParamCount}
+                  />
+               );
+               const modifiedRhs = rhs?.split(/(%.*?%)/g);
+               const rhsComponent = (
+                  <TextToTextParamComponent
+                     modifiedContent={modifiedRhs}
+                     theme={theme}
+                     colorTheme={colorTheme}
+                     onHover={onHover}
+                     onHoverOut={onHoverOut}
+                     onClick={onClick}
+                     textParams={item.textParams}
+                     textParamCount={textParamCount}
+                  />
+               );
+               equationLines.push({
+                  lhsLatex: {
+                     value: lhs?.startsWith("\\") ? [lhs] : [lhsComponent],
+                     type: lhs?.startsWith("\\") ? "latex" : "text",
+                  },
+                  rhsLatex: {
+                     value: rhs?.startsWith("\\") ? [rhs] : [rhsComponent],
+                     type: rhs?.startsWith("\\") ? "latex" : "text",
+                  },
+               });
+            }
          });
          return (
             <Paragraph color={color}>
