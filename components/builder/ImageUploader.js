@@ -48,6 +48,7 @@ const ImageUploader = ({ value, onChange, name }) => {
             if (data.action === "picked") {
                setUploading(true);
                const fileId = data.docs[0].id;
+               console.log("fileInfo", data.docs[0]);
                // Download the actual file through Google Drive API
                fetch(
                   "https://www.googleapis.com/drive/v3/files/" +

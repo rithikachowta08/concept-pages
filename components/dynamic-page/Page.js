@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Head from "next/head";
 import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
@@ -106,11 +107,20 @@ const Page = ({ json }) => {
       }));
 
       return (
-         <FullPageCustomWrapper
-            slidesComponentList={SlideArray}
-            navigationSections={navInfo}
-            darkBgIndices={darkBgIndices}
-         />
+         <>
+            <Head>
+               <title>{json.seo.title || "Byju's US Math"}</title>
+               <meta
+                  name="description"
+                  content={json.seo.meta || "Math concept pages"}
+               />
+            </Head>
+            <FullPageCustomWrapper
+               slidesComponentList={SlideArray}
+               navigationSections={navInfo}
+               darkBgIndices={darkBgIndices}
+            />
+         </>
       );
    }
 };

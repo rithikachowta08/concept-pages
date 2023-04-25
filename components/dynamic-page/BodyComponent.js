@@ -42,18 +42,23 @@ const TextToTextParamComponent = ({
       const str = child.trim();
       const isTextParam = str.startsWith("%") && str.endsWith("%");
       const id = str.substring(1, str.length - 1);
+      const isSpaceNeededAfter = !modifiedContent[idx + 1]?.match(/^[.,:!?]/);
       return isTextParam ? (
-         <TextParamComponent
-            {...rest}
-            type={id}
-            idx={
-               textParamCount +
-               textParams?.findIndex((param) => param.id === id) +
-               1
-            }
-            key={idx}
-            value={textParams?.find((param) => param.id === id)?.value || id}
-         />
+         <>
+            &nbsp;
+            <TextParamComponent
+               {...rest}
+               type={id}
+               idx={
+                  textParamCount +
+                  textParams?.findIndex((param) => param.id === id) +
+                  1
+               }
+               key={idx}
+               value={textParams?.find((param) => param.id === id)?.value || id}
+            />
+            {isSpaceNeededAfter && " "}
+         </>
       ) : (
          str
       );

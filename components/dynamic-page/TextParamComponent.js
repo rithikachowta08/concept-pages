@@ -47,21 +47,17 @@ const TextParamComponent = ({
    }
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
       return (
-         <>
-            &nbsp;
-            <TextSpanBg
-               onHover={() => onHover(idx)}
-               onHoverOut={onHoverOut}
-               hoverColor={
-                  theme === "LIGHT"
-                     ? colorSchemes[colorTheme].DARK
-                     : colorSchemes[colorTheme].LIGHT
-               }
-            >
-               {value}
-            </TextSpanBg>
-            &nbsp;
-         </>
+         <TextSpanBg
+            onHover={() => onHover(idx)}
+            onHoverOut={onHoverOut}
+            hoverColor={
+               theme === "LIGHT"
+                  ? colorSchemes[colorTheme].DARK
+                  : colorSchemes[colorTheme].LIGHT
+            }
+         >
+            {value}
+         </TextSpanBg>
       );
    }
    if (type.includes(PARAM_TYPES.MODAL_TRIGGER)) {
