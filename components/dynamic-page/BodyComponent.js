@@ -76,26 +76,35 @@ const BodyComponent = ({
    }
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
-         const lines = item.content.split("\n");
-         const textLines = [];
-         lines.forEach((line, idx) => {
-            const modifiedContent = line.split(/(%.*?%)/g);
-            textLines.push(
-               <TextLine key={idx}>
-                  <TextToTextParamComponent
-                     modifiedContent={modifiedContent}
-                     theme={theme}
-                     colorTheme={colorTheme}
-                     onHover={onHover}
-                     onHoverOut={onHoverOut}
-                     onClick={onClick}
-                     textParams={item.textParams}
-                     textParamCount={textParamCount}
-                  />
-               </TextLine>
+         const paragraphsContent = item.content.split("\n\n");
+         const paragraphs = [];
+         paragraphsContent.forEach((para, paraIdx) => {
+            const lines = para.split("\n");
+            const textLines = [];
+            lines.forEach((line, idx) => {
+               const modifiedContent = line.split(/(%.*?%)/g);
+               textLines.push(
+                  <TextLine key={idx}>
+                     <TextToTextParamComponent
+                        modifiedContent={modifiedContent}
+                        theme={theme}
+                        colorTheme={colorTheme}
+                        onHover={onHover}
+                        onHoverOut={onHoverOut}
+                        onClick={onClick}
+                        textParams={item.textParams}
+                        textParamCount={textParamCount}
+                     />
+                  </TextLine>
+               );
+            });
+            paragraphs.push(
+               <Paragraph key={paraIdx} color={color}>
+                  {textLines}
+               </Paragraph>
             );
          });
-         return <Paragraph color={color}>{textLines}</Paragraph>;
+         return paragraphs;
       }
       if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
          const lines = item.content.split("\n");
@@ -145,7 +154,9 @@ const BodyComponent = ({
             });
 
          return numberedListItems ? (
-            <NumberedList color={color} items={numberedListItems} />
+            <Paragraph>
+               <NumberedList color={color} items={numberedListItems} />
+            </Paragraph>
          ) : null;
       }
       if (item.componentType === COMPONENT_TYPES.IMAGE) {
