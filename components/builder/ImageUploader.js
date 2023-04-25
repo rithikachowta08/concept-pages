@@ -53,7 +53,7 @@ const ImageUploader = ({ value, onChange, name }) => {
                fetch(
                   "https://www.googleapis.com/drive/v3/files/" +
                      fileId +
-                     "?alt=media",
+                     "?alt=media&supportsAllDrives=true",
                   {
                      headers: {
                         Authorization: "Bearer " + access_token,
