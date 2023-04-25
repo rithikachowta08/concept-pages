@@ -1,6 +1,7 @@
-import { SLIDE_TYPES } from "utils/constants";
+import { SLATE_CONTENT_TYPES, SLIDE_TYPES } from "utils/constants";
 import { COMPONENT_TYPES } from "components/dynamic-page/BodyComponent";
 import ImageUploader from "./ImageUploader";
+import SlateTextEditor from "./customTextEditor/SlateTextEditor";
 
 export const BASIC_PROPERTIES = {
    pageId: { type: "string", title: "Page ID" },
@@ -95,23 +96,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "content",
                },
-               textParams: {
-                  type: "array",
-                  title: "Text Parameters",
-                  items: {
-                     type: "object",
-                     properties: {
-                        id: {
-                           title: "ID",
-                           type: "string",
-                        },
-                        value: {
-                           title: "Value",
-                           type: "string",
-                        },
-                     },
-                  },
-               },
+               // textParams: {
+               //    type: "array",
+               //    title: "Text Parameters",
+               //    items: {
+               //       type: "object",
+               //       properties: {
+               //          id: {
+               //             title: "ID",
+               //             type: "string",
+               //          },
+               //          value: {
+               //             title: "Value",
+               //             type: "string",
+               //          },
+               //       },
+               //    },
+               // },
             },
          },
          {
@@ -145,23 +146,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "Text",
                },
-               textParams: {
-                  type: "array",
-                  title: "Text Parameters",
-                  items: {
-                     type: "object",
-                     properties: {
-                        id: {
-                           title: "ID",
-                           type: "string",
-                        },
-                        value: {
-                           title: "Value",
-                           type: "string",
-                        },
-                     },
-                  },
-               },
+               // textParams: {
+               //    type: "array",
+               //    title: "Text Parameters",
+               //    items: {
+               //       type: "object",
+               //       properties: {
+               //          id: {
+               //             title: "ID",
+               //             type: "string",
+               //          },
+               //          value: {
+               //             title: "Value",
+               //             type: "string",
+               //          },
+               //       },
+               //    },
+               // },
             },
          },
       ],
@@ -395,13 +396,23 @@ export const PAGE_DETAILS_SCHEMA = {
 
 export const widgets = {
    DriveToS3ImageUploader: ImageUploader,
+   SlateTextEditor: SlateTextEditor,
 };
 
 export const SLIDE_UI_SCHEMA = {
    body: {
       items: {
          content: {
-            "ui:widget": "textarea",
+            "ui:widget": (props) => (
+               <SlateTextEditor
+                  onValueChange={props.onChange}
+                  allowedInputs={[
+                     SLATE_CONTENT_TYPES.IMAGE_LINK,
+                     SLATE_CONTENT_TYPES.MODAL_TRIGGER,
+                     SLATE_CONTENT_TYPES.MATH_EXPRESSION,
+                  ]}
+               />
+            ),
          },
          url: {
             "ui:widget": ImageUploader,

@@ -42,10 +42,13 @@
       "react-scripts": "5.0.1",
       "react-tabs": "^4.3.0",
       "react-toastify": "^9.1.1",
+      "reactjs-popup": "^2.0.5",
       "shaka-player": "^3.2.1",
       "shaka-player-react": "^1.1.2",
       "shaka-player-react-lib": "^1.0.1",
       "shaka-player-ui-controls": "^1.0.8",
+      "slate": "^0.94.0",
+      "slate-react": "^0.94.0",
       "styled-components": "^5.3.6",
       "uuid": "^9.0.0"
    },
