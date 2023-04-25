@@ -37,6 +37,13 @@ export const TOAST_COMMON_CONFIG = {
    theme: "colored",
 };
 
+export const SLATE_CONTENT_TYPES = {
+   PARAGRAPH: "paragraph",
+   IMAGE_LINK: "imageLink",
+   MODAL_TRIGGER: "modalTrigger",
+   MATH_EXPRESSION: "mathExpression",
+};
+
 // PRODUCTION
 // export const isLive = true;
 
