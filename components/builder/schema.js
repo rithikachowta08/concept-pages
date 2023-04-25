@@ -80,6 +80,10 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "image",
                },
+               alt: {
+                  type: "string",
+                  title: "Alt Text",
+               },
             },
          },
          {

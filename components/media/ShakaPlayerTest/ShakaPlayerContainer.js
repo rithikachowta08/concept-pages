@@ -207,8 +207,8 @@ const ShakaPlayerContainer = (props) => {
                            videoStatus === VIDEO_STATUS.ENDED
                               ? "Thanks for watching"
                               : `Duration: ${getVideoLength(
-                                   videoRef?.duration ||
-                                      props.videoContent.duration
+                                   props.videoContent.duration ||
+                                      videoRef?.duration
                                 )}`
                         }
                         centerAlign={videoStatus === VIDEO_STATUS.ENDED}
