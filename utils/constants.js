@@ -11,7 +11,7 @@ export const tllms_mediaPackager_clientKey = "r3Pl5x1gT9k2zSPYHenK4ejGnnqoWcsv";
 export const GOOGLE_API_KEY = "AIzaSyAyJRTmrs5h3wga4dGNzbDKXmXt-bQehwc";
 export const GOOGLE_CLIENT_ID =
    "1011414005032-htd2md81a41al0sr0rv2sdtdc22vslf8.apps.googleusercontent.com";
-export const GOOGLE_SCOPE = "https://www.googleapis.com/auth/drive.file";
+export const GOOGLE_SCOPE = "https://www.googleapis.com/auth/drive";
 export const GOOGLE_DISCOVERY_DOCS = [
    "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest",
 ];

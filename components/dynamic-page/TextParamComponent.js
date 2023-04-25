@@ -28,21 +28,17 @@ const TextParamComponent = ({
 }) => {
    if (type.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)) {
       return (
-         <>
-            &nbsp;
-            <TextSpanBg
-               onHover={() => onHover(idx)}
-               onHoverOut={onHoverOut}
-               hoverColor={
-                  theme === "LIGHT"
-                     ? colorSchemes[colorTheme].DARK
-                     : colorSchemes[colorTheme].LIGHT
-               }
-            >
-               <MathElement htmlString={value} />
-            </TextSpanBg>
-            &nbsp;
-         </>
+         <TextSpanBg
+            onHover={() => onHover(idx)}
+            onHoverOut={onHoverOut}
+            hoverColor={
+               theme === "LIGHT"
+                  ? colorSchemes[colorTheme].DARK
+                  : colorSchemes[colorTheme].LIGHT
+            }
+         >
+            <MathElement htmlString={value} />
+         </TextSpanBg>
       );
    }
    if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
@@ -62,26 +58,16 @@ const TextParamComponent = ({
    }
    if (type.includes(PARAM_TYPES.MODAL_TRIGGER)) {
       return (
-         <>
-            &nbsp;
-            <ModalTriggerText
-               color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
-               onClick={onClick}
-            >
-               {value}
-            </ModalTriggerText>
-            &nbsp;
-         </>
+         <ModalTriggerText
+            color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
+            onClick={onClick}
+         >
+            {value}
+         </ModalTriggerText>
       );
    }
    if (type.includes(PARAM_TYPES.MATH)) {
-      return (
-         <>
-            &nbsp;
-            <MathElement htmlString={value} />
-            &nbsp;
-         </>
-      );
+      return <MathElement htmlString={value} />;
    }
    return null;
 };
