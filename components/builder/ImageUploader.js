@@ -48,7 +48,6 @@ const ImageUploader = ({ value, onChange, name }) => {
             if (data.action === "picked") {
                setUploading(true);
                const fileId = data.docs[0].id;
-               console.log("fileInfo", data.docs[0]);
                // Download the actual file through Google Drive API
                fetch(
                   "https://www.googleapis.com/drive/v3/files/" +
@@ -66,6 +65,7 @@ const ImageUploader = ({ value, onChange, name }) => {
                      const fileName = `image-${uuidv4()}`;
                      const formData = new FormData();
                      formData.append("file", blob, fileName);
+                     formData.append("mimeType", data.docs[0].mimeType);
                      fetch(
                         "http://math-api-stg.byjusweb.com/api/upload-image",
                         {

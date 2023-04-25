@@ -404,6 +404,18 @@ export const SLIDE_UI_SCHEMA = {
          },
       },
    },
+   modal: {
+      body: {
+         items: {
+            content: {
+               "ui:widget": "textarea",
+            },
+            url: {
+               "ui:widget": ImageUploader,
+            },
+         },
+      },
+   },
    transitionImages: {
       items: {
          url: {
