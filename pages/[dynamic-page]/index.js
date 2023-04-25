@@ -54,8 +54,12 @@ const DynamicPage = () => {
             });
       }
    }, [router]);
-   if (isPreview && router.query.data) {
-      return <Page json={JSON.parse(router.query.data)}></Page>;
+   if (isPreview) {
+      const json = {
+         ...JSON.parse(localStorage.getItem("pageDetails")),
+         slides: JSON.parse(localStorage.getItem("slides")),
+      };
+      return <Page json={json}></Page>;
    }
    if (error || (!loading && !json)) {
       return <Text>Something went wrong!</Text>;

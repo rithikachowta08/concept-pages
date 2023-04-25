@@ -83,12 +83,14 @@ const Editor = ({
    const slideFormRef = React.createRef();
    const onPageDetailsFormChange = (data) => {
       setPageDetails(data.formData);
+      localStorage.setItem("pageDetails", JSON.stringify(data.formData));
    };
 
    const onSlidesChange = (idx, data) => {
       const tempSlides = [...slides];
       tempSlides[idx] = data;
       setSlides(tempSlides);
+      localStorage.setItem("slides", JSON.stringify(tempSlides));
    };
 
    function downloadTextFile(text, name) {
@@ -227,10 +229,6 @@ const Editor = ({
                                  pathname: `/${pageDetails.url}`,
                                  query: {
                                     preview: "true",
-                                    data: JSON.stringify({
-                                       ...pageDetails,
-                                       slides,
-                                    }),
                                  },
                               }}
                               legacyBehavior

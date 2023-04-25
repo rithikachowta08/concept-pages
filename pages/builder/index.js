@@ -85,6 +85,7 @@ const Builder = () => {
             router.query.pageId !== "IMPORT"
          ) {
             onEditPage();
+            return;
          }
          if (router.query.pageId === "IMPORT") {
             setPageDetails(
@@ -144,6 +145,7 @@ const Builder = () => {
       delete router.query.pageId;
       router.push(router);
    };
+
    const onEditPage = () => {
       setLoading(true);
       fetch(
@@ -164,14 +166,16 @@ const Builder = () => {
                setError("Page not found");
             } else {
                setSlides(res.data.slides);
+               localStorage.setItem("slides", JSON.stringify(res.data.slides));
                const pageDetails = { ...res.data };
                delete pageDetails.slides;
                setPageDetails(pageDetails);
+               localStorage.setItem("pageDetails", JSON.stringify(pageDetails));
                if (!router.query.pageId) {
                   router.query.pageId = pageId;
                   router.push(router);
-                  setShowEditorView(true);
                }
+               setShowEditorView(true);
             }
          })
          .catch((err) => {
