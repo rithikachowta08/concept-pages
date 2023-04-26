@@ -127,10 +127,14 @@ const VideoPlayer = (props) => {
          .then((r) => r.json())
          .then((res) => {
             var drmUrls = res;
+            console.log(drmUrls);
             let drmConfig = {
                servers: {
                   "com.widevine.alpha": drmUrls
-                     ? drmUrls?.widevine_license_url
+                     ? drmUrls?.widevine_license_url.replace(
+                          "drm",
+                          "drm-preprod"
+                       )
                      : "",
                },
             };
@@ -138,7 +142,10 @@ const VideoPlayer = (props) => {
                drmConfig = {
                   servers: {
                      "com.apple.fps.1_0": drmUrls
-                        ? drmUrls?.fairplay_license_url
+                        ? drmUrls.fairplay_license_url.replace(
+                             "drm",
+                             "drm-preprod"
+                          )
                         : "",
                   },
                   advanced: {
