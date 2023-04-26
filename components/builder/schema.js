@@ -123,6 +123,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "Text",
                },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
             },
          },
          {
@@ -133,6 +150,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                content: {
                   type: "string",
                   title: "Text",
+               },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
                },
             },
          },

@@ -60,6 +60,33 @@ const StyledButton = styled.button`
    }
 `;
 
+const Branding = styled.div`
+   background-color: ${colors.DARK_LAVENDER};
+   color: ${colors.WHITE};
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 10rem;
+   flex: 1;
+`;
+
+const TextContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+   align-items: flex-start;
+`;
+
+const Subtext = styled.div`
+   font-size: 5rem;
+`;
+
+const CreatePageSection = styled.div`
+   border-bottom: 1px solid #aaa;
+   width: 90%;
+   padding-bottom: 20px;
+`;
+
 const Builder = () => {
    const router = useRouter();
    const isEditing =
@@ -287,84 +314,112 @@ const Builder = () => {
             src="https://accounts.google.com/gsi/client"
             strategy="lazyOnLoad"
          ></Script>
-         {showEditorView ? (
-            <Flex
-               bgColor={colors.WHITE}
-               color={colors.BLACK}
-               height="100%"
-               width="100%"
-            >
-               <PreviewContainer
-                  json={{ ...pageDetails, slides }}
-                  tabIndex={tabIndex}
-                  addNewSlide={addNewSlide}
-                  onPreviewClick={selectSlideForm}
-                  onBackClick={onBackClick}
-               />
-               <Editor
-                  slides={slides}
-                  deleteSlide={deleteSlide}
-                  pageDetails={pageDetails}
-                  addNewSlide={addNewSlide}
-                  setPageDetails={setPageDetails}
-                  setSlides={setSlides}
-                  onSubmit={onSubmit}
-                  tabIndex={tabIndex}
-                  setTabIndex={setTabIndex}
-                  isCreatePageLoading={isCreatePageLoading}
-                  isSaveDraftLoading={isSaveDraftLoading}
-               />
-            </Flex>
-         ) : (
-            <Flex
-               direction="column"
-               bgColor={colors.WHITE}
-               color={colors.BLACK}
-               justifyContent="center"
-               alignItems="center"
-               gap="10px"
-               height="100%"
-               width="100%"
-            >
-               <StyledButton onClick={onCreateNewPage}>
-                  Create new page
-               </StyledButton>
-               <Flex alignItems="center">
-                  <input
-                     type="file"
-                     id="import-file"
-                     onChange={onFileInputChange}
-                  ></input>
-                  <StyledButton
-                     disabled={
-                        !(
-                           typeof document !== "undefined" &&
-                           document.getElementById("import-file")?.value
-                        )
-                     }
-                     onClick={onClickImport}
+         <Flex
+            bgColor={colors.WHITE}
+            color={colors.BLACK}
+            height="100%"
+            width="100%"
+         >
+            {showEditorView ? (
+               <>
+                  <PreviewContainer
+                     json={{ ...pageDetails, slides }}
+                     tabIndex={tabIndex}
+                     addNewSlide={addNewSlide}
+                     onPreviewClick={selectSlideForm}
+                     onBackClick={onBackClick}
+                  />
+                  <Editor
+                     slides={slides}
+                     deleteSlide={deleteSlide}
+                     pageDetails={pageDetails}
+                     addNewSlide={addNewSlide}
+                     setPageDetails={setPageDetails}
+                     setSlides={setSlides}
+                     onSubmit={onSubmit}
+                     tabIndex={tabIndex}
+                     setTabIndex={setTabIndex}
+                     isCreatePageLoading={isCreatePageLoading}
+                     isSaveDraftLoading={isSaveDraftLoading}
+                  />
+               </>
+            ) : (
+               <>
+                  <Branding>
+                     <TextContainer>
+                        <div>WebCraft</div>
+                        <Subtext>Concept Page Builder</Subtext>
+                     </TextContainer>
+                  </Branding>
+                  <Flex
+                     direction="column"
+                     bgColor={colors.WHITE}
+                     color={colors.BLACK}
+                     justifyContent="center"
+                     alignItems="center"
+                     height="100%"
+                     width="100%"
+                     flex={1}
                   >
-                     Import from JSON
-                  </StyledButton>
-               </Flex>
-               <Flex gap="10px" justifyContent="center" alignItems="center">
-                  <StyledInput
-                     placeholder="Page ID"
-                     value={pageId}
-                     error={error}
-                     onChange={onInputChange}
-                     onKeyUp={onKeyPress}
-                  ></StyledInput>
-                  <StyledButton
-                     onClick={onEditPage}
-                     disabled={!pageId || loading}
-                  >
-                     {loading ? "Fetching page..." : "Edit existing page"}
-                  </StyledButton>
-               </Flex>
-               <Error show={error}>{error}</Error>
-            </Flex>
-         )}
+                     <Flex
+                        direction="column"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        gap="20px"
+                        flex={1}
+                     >
+                        <CreatePageSection>
+                           <StyledButton onClick={onCreateNewPage}>
+                              Create new page
+                           </StyledButton>
+                        </CreatePageSection>
+                        <Flex alignItems="center" gap="10px">
+                           <input
+                              type="file"
+                              id="import-file"
+                              style={{ width: "170px" }}
+                              onChange={onFileInputChange}
+                           ></input>
+                           <StyledButton
+                              disabled={
+                                 !(
+                                    typeof document !== "undefined" &&
+                                    document.getElementById("import-file")
+                                       ?.value
+                                 )
+                              }
+                              onClick={onClickImport}
+                           >
+                              Import from JSON
+                           </StyledButton>
+                        </Flex>
+                        <Flex
+                           gap="10px"
+                           justifyContent="center"
+                           alignItems="center"
+                        >
+                           <StyledInput
+                              placeholder="Page ID"
+                              value={pageId}
+                              error={error}
+                              onChange={onInputChange}
+                              onKeyUp={onKeyPress}
+                           ></StyledInput>
+                           <StyledButton
+                              onClick={onEditPage}
+                              disabled={!pageId || loading}
+                           >
+                              {loading
+                                 ? "Fetching page..."
+                                 : "Edit existing page"}
+                           </StyledButton>
+                        </Flex>
+                        <Error show={error}>{error}</Error>
+                     </Flex>
+                  </Flex>
+               </>
+            )}
+         </Flex>
       </>
    );
 };
