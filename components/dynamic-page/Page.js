@@ -109,10 +109,10 @@ const Page = ({ json }) => {
       return (
          <>
             <Head>
-               <title>{json.seo.title || "Byju's US Math"}</title>
+               <title>{json.seo?.title || "Byju's US Math"}</title>
                <meta
                   name="description"
-                  content={json.seo.meta || "Math concept pages"}
+                  content={json.seo?.meta || "Math concept pages"}
                />
             </Head>
             <FullPageCustomWrapper
