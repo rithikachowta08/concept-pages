@@ -20,8 +20,6 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
-   opacity: ${(props) => (props.uploading ? 0.5 : 1)};
-   pointer-events: ${(props) => (props.uploading ? "none" : "unset")};
 `;
 
 const FieldName = styled.div`
@@ -127,7 +125,7 @@ const ImageUploader = ({ value, onChange, name }) => {
          {imageUrl ? (
             <Image src={imageUrl} width={100} height={100} alt="alt"></Image>
          ) : (
-            <StyledButton onClick={handleOpenPicker} uploading={uploading}>
+            <StyledButton onClick={handleOpenPicker} disabled={uploading}>
                {uploading ? "Uploading..." : "Upload"}
             </StyledButton>
          )}
