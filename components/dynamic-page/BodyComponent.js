@@ -83,26 +83,51 @@ const BodyComponent = ({
    }
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
-         return (
-            <Paragraph color={color}>
-               {item.content.map((content, idx) => {
-                  return (
-                     <TextParamComponent
-                        key={`${content.type}_${idx}`}
-                        idx={idx}
-                        type={content.type}
-                        value={content.children[0].text}
-                        color={color}
-                        onClick={onClick}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        theme={theme}
-                        colorTheme={colorTheme}
-                     />
-                  );
-               })}
+         const paragraphs = item.content.reduce((currentParas, elem, idx) => {
+            if (idx === 0) {
+               return [[[elem]]];
+            }
+            if (elem.children[0].text === "") {
+               if (item.content[idx + 1]?.children[0].text === "") {
+                  // Create new paragraph
+                  return [...currentParas, [[]]];
+               }
+               // Create new line in previous paragraph
+               const tempCurrentParas = [...currentParas];
+               tempCurrentParas[tempCurrentParas.length - 1]?.push([]);
+               return tempCurrentParas;
+            }
+            // Add new elem to last line of last paragraph
+            const tempCurrentParas = [...currentParas];
+            const lastPara = tempCurrentParas[tempCurrentParas.length - 1];
+            lastPara?.[lastPara.length - 1]?.push(elem);
+            return tempCurrentParas;
+         }, []);
+         console.log("paragraphs", paragraphs);
+         return paragraphs.map((paragraph, idx) => (
+            <Paragraph color={color} key={`para_${idx}`}>
+               {paragraph.map((line, idx) => (
+                  <TextLine key={`line_${idx}`}>
+                     {line.map((lineItem, idx) => {
+                        return (
+                           <TextParamComponent
+                              key={`${lineItem.type}_${idx}`}
+                              idx={idx}
+                              type={lineItem.type}
+                              value={lineItem.children[0].text}
+                              color={color}
+                              onClick={onClick}
+                              onHover={onHover}
+                              onHoverOut={onHoverOut}
+                              theme={theme}
+                              colorTheme={colorTheme}
+                           />
+                        );
+                     })}
+                  </TextLine>
+               ))}
             </Paragraph>
-         );
+         ));
          //  old content
          // const paragraphsContent = item.content.split("\n\n");
          // const paragraphs = [];

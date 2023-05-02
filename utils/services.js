@@ -45,7 +45,7 @@ const uploadImage = (
                   const formData = new FormData();
                   formData.append("file", blob, fileName);
                   formData.append("mimeType", data.docs[0].mimeType);
-                  fetch("http://math-api-stg.byjusweb.com/api/upload-image", {
+                  fetch("https://math-api-stg.byjusweb.com/api/upload-image", {
                      method: "POST",
                      body: formData,
                   })
