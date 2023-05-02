@@ -149,35 +149,35 @@ const Slide = ({
       },
    };
 
-   let modal;
+   let modals = [];
    console.log("data body", data);
 
    if (data.body && data.body[0] && data.body[0].content) {
       const modalData = data.body[0].content.filter(
          (content) => content.type === SLATE_CONTENT_TYPES.MODAL_TRIGGER
-      )[0];
+      );
 
       console.log("data body content", modalData);
 
-      if (modalData) {
+      modalData.forEach((singleModalData) => {
          let modalContentBody = [
             <BodyComponent
                key={idx}
                item={{
                   componentType: COMPONENT_TYPES.TEXT,
-                  content: modalData.modalContent.body,
+                  content: singleModalData.modalContent.body,
                }}
                theme={data.theme}
                isModal
             />,
          ];
-         if (modalData.modalContent.image) {
+         if (singleModalData.modalContent.image) {
             modalContentBody.push(
                <BodyComponent
                   key={idx}
                   item={{
                      componentType: COMPONENT_TYPES.IMAGE,
-                     content: modalData.modalContent.image,
+                     content: singleModalData.modalContent.image,
                   }}
                   theme={data.theme}
                   isModal
@@ -185,18 +185,18 @@ const Slide = ({
             );
          }
 
-         modal = (
+         modals.push(
             <Modal
                isOpen={isModalOpen}
                modalContainerId={isPreview && `slide-${idx}`}
                bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
                color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
-               title={modalData.modalTitle}
+               title={singleModalData.modalTitle}
                content={modalContentBody}
                onDismiss={onDismiss}
             />
          );
-      }
+      });
 
       // if (modal.length) {
       //    const modalBody = modal.modalContent?.map((item, idx) => (
@@ -249,7 +249,7 @@ const Slide = ({
             colorTheme={colorTheme}
             isPreview={isPreview}
          >
-            {modal}
+            {modals}
             {children}
          </SlideComponent.component>
       </div>
