@@ -5,9 +5,12 @@ import { Flex } from "components/StyledElements";
 import { colors } from "utils/colors";
 import SlateTextEditor from "./SlateTextEditor";
 import { SLATE_CONTENT_TYPES } from "utils/constants";
+import { ImageContainer } from "./ImageLinkPopup";
+import { googleDriveUploader } from "utils/services";
+import useDrivePicker from "react-google-drive-picker/dist";
 
 const Wrapper = styled.div`
-   width: 400px;
+   width: 600px;
    background-color: white;
    padding: 16px;
    border-radius: 16px;
@@ -22,7 +25,6 @@ const Input = styled.input`
    border-radius: 4px;
    padding: 16px;
    outline: none;
-   margin-bottom: 8px;
    font-family: inherit;
 `;
 
@@ -46,6 +48,8 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
+   opacity: ${(props) => (props.loading ? 0.5 : 1)};
+   pointer-events: ${(props) => (props.loading ? "none" : "unset")};
 
    &:disabled {
       opacity: 0.4;
@@ -53,21 +57,50 @@ const StyledButton = styled.button`
    }
 `;
 
-const ModalPopup = ({ value, onCancel, onSubmit }) => {
-   const [title, setTitle] = useState(value.modalTitle || "");
-   const [content, setContent] = useState(value.modalContent || "");
+const ModalPopup = ({ data, onCancel, onSubmit }) => {
+   const [title, setTitle] = useState(data.modalTitle || "");
+   const [content, setContent] = useState(
+      data.modalContent.body
+         ? JSON.parse(JSON.stringify(data.modalContent.body))
+         : ""
+   );
+   const [openPicker] = useDrivePicker();
+   const [altTextValue, setAltTextValue] = useState(
+      data.modalContent.image?.altText || ""
+   );
+   const [imageUrl, setImageUrl] = useState(data.modalContent.image?.url || "");
+   const [uploading, setUploading] = useState(false);
 
    const submitHandler = () => {
-      onSubmit({ ...value, modalTitle: title, modalContent: content });
+      const modalData = {
+         modalTitle: title,
+         modalContent: {
+            body: content,
+         },
+      };
+
+      if (imageUrl) {
+         modalData.modalContent.image = {
+            url: imageUrl,
+            altText: altTextValue,
+         };
+      }
+      console.log(modalData);
+      onSubmit(modalData);
+   };
+
+   const imageDeleteHandler = () => {
+      setImageUrl("");
+      setAltTextValue("");
    };
 
    return (
       <Wrapper>
-         <Flex direction="column">
+         <Flex direction="column" marginBottom="8px">
             <Label>Title</Label>
             <Input value={title} onChange={(e) => setTitle(e.target.value)} />
          </Flex>
-         <Flex direction="column">
+         <Flex direction="column" marginBottom="8px">
             <Label>Content</Label>
             <SlateTextEditor
                onValueChange={(value) => {
@@ -77,6 +110,45 @@ const ModalPopup = ({ value, onCancel, onSubmit }) => {
                allowedInputs={[SLATE_CONTENT_TYPES.MATH_EXPRESSION]}
             />
          </Flex>
+         <Flex direction="column" marginBottom="8px">
+            <Label>Image</Label>
+            {imageUrl && !uploading && (
+               <ImageContainer
+                  imageUrl={imageUrl}
+                  altText={altTextValue}
+                  onDelete={imageDeleteHandler}
+               />
+            )}
+            <StyledButton
+               onClick={() =>
+                  googleDriveUploader(
+                     openPicker,
+                     setUploading,
+                     setImageUrl,
+                     (value) => {
+                        console.log("drive returned on change", value);
+                        setImageUrl(value);
+                     }
+                  )
+               }
+               loading={uploading}
+            >
+               {uploading
+                  ? "Uploading..."
+                  : imageUrl
+                  ? "Change image"
+                  : "Upload image"}
+            </StyledButton>
+         </Flex>
+         {imageUrl && (
+            <Flex direction="column" marginBottom="8px">
+               <Label>Image alt text</Label>
+               <Input
+                  value={altTextValue}
+                  onChange={(e) => setAltTextValue(e.target.value)}
+               />
+            </Flex>
+         )}
          <Flex justifyContent="end" marginTop={"8px"}>
             <StyledButton onClick={onCancel}>Close</StyledButton>
             <StyledButton onClick={submitHandler}>Submit</StyledButton>
@@ -86,9 +158,9 @@ const ModalPopup = ({ value, onCancel, onSubmit }) => {
 };
 
 ModalPopup.propTypes = {
-   value: PropTypes.shape({
+   data: PropTypes.shape({
       modalTitle: PropTypes.string,
-      modalContent: PropTypes.string,
+      modalContent: PropTypes.any,
    }),
    onCancel: PropTypes.func,
    onSubmit: PropTypes.func,

@@ -5,6 +5,7 @@ import {
    createEditor,
    Element as SlateElement,
    Transforms,
+   Range,
 } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 import styled from "styled-components";
@@ -22,20 +23,13 @@ import ModalPopup from "./ModalPopup";
 import useDrivePicker from "react-google-drive-picker/dist";
 import { googleDriveUploader } from "utils/services";
 
-const TextEditorWrapper = styled.div`
-   position: relative;
-   border: 1px solid #bbb;
-   border-radius: 4px;
-   padding: 16px;
-`;
-
-const insertImageLink = (editor, value) => {
+const insertImageLink = (editor, imageLinkNode) => {
    if (editor.selection) {
-      wrapImageLinkButton(editor, value);
+      wrapImageLinkButton(editor, imageLinkNode);
    }
 };
 
-const wrapImageLinkButton = (editor, value) => {
+const wrapImageLinkButton = (editor, imageLinkNode) => {
    const { selection } = editor;
 
    const [match] = Editor.nodes(editor, {
@@ -45,13 +39,15 @@ const wrapImageLinkButton = (editor, value) => {
          n.type === SLATE_CONTENT_TYPES.MATH_EXPRESSION,
    });
 
-   const imageLinkNode = {
+   const newImageLinkNode = {
       type: "imageLink",
-      url: value,
+      url: imageLinkNode.url,
+      altText: imageLinkNode.altText,
       children: match ? match[0] : [{ text: selection }],
    };
 
-   Transforms.wrapNodes(editor, imageLinkNode, { split: true });
+   Transforms.wrapNodes(editor, newImageLinkNode, { split: true });
+   Transforms.unwrapNodes(editor, newImageLinkNode);
 };
 
 const wrapModalTriggerHandler = (editor, modalData) => {
@@ -93,13 +89,13 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
    const [linkElementToEdit, setLinkElementToEdit] = useState({});
    const [modalElementToEdit, setModalElementToEdit] = useState({
       modalTitle: "",
-      modalContent: "",
+      modalContent: { body: null, image: { url: null, altText: null } },
    });
    const [openPicker, authResponse] = useDrivePicker();
    const [imageUrl, setImageUrl] = useState("");
    const [uploading, setUploading] = useState(false);
 
-   const INITIAL_VALUE = [
+   const INITIAL_VALUE = initialValue || [
       {
          type: "paragraph",
          children: [{ text: initialValue || "" }],
@@ -133,39 +129,7 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
                   element={props.element}
                   onClickHandler={(imageLinkNode) => {
                      setLinkElementToEdit(imageLinkNode);
-
-                     const newNode = {
-                        type: imageLinkNode.children
-                           ? imageLinkNode.children[0].type
-                           : SLATE_CONTENT_TYPES.PARAGRAPH,
-                        children: imageLinkNode.children,
-                        url: undefined,
-                     };
-                     editNode(
-                        editor,
-                        imageLinkNode,
-                        newNode
-                        //    {
-                        //    type: imageLinkNode.children[0].type
-                        //       ? imageLinkNode.children[0].type
-                        //       : SLATE_CONTENT_TYPES.PARAGRAPH,
-                        //    children: [
-                        //       { text: linkElementToEdit.children[0].text },
-                        //    ],
-                        //    url: undefined,
-                        // }
-                     );
-                     // setIsImagePopupOpen(true);
-
-                     // googleDriveUploader(
-                     //    openPicker,
-                     //    setUploading,
-                     //    setImageUrl,
-                     //    (value) => {
-                     //       console.log("drive returned on change", value);
-                     //       imagePopupSubmitHandler({ url: value });
-                     //    }
-                     // );
+                     setIsImagePopupOpen(true);
                   }}
                />
             );
@@ -202,11 +166,11 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
    };
 
    const addImageClickhandler = () => {
-      // setIsImagePopupOpen(true);
-      googleDriveUploader(openPicker, setUploading, setImageUrl, (value) => {
-         console.log("drive returned on change", value);
-         imagePopupSubmitHandler(value);
-      });
+      setIsImagePopupOpen(true);
+      // googleDriveUploader(openPicker, setUploading, setImageUrl, (value) => {
+      //    console.log("drive returned on change", value);
+      //    imagePopupSubmitHandler(value);
+      // });
 
       // imagePopupSubmitHandler("some random url");
       setShowContextMenu(false);
@@ -227,7 +191,8 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
       setLinkElementToEdit({});
    };
 
-   const imagePopupSubmitHandler = (value) => {
+   const imagePopupSubmitHandler = (imageLinkNode) => {
+      console.log("on submit", imageLinkNode);
       setIsImagePopupOpen(false);
       const [imageLink] = Editor.nodes(editor, {
          match: (n) =>
@@ -236,41 +201,70 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
             n.type === "imageLink",
       });
       if (imageLink) {
-         if (value.length === 0) {
-            editNode(editor, value, {
+         if (imageLinkNode.url.length === 0) {
+            editNode(editor, imageLinkNode, {
                type: SLATE_CONTENT_TYPES.PARAGRAPH,
                children: [{ text: linkElementToEdit.children[0].text }],
                url: undefined,
+               altText: undefined,
             });
          } else {
             editNode(editor, linkElementToEdit, {
                ...linkElementToEdit,
-               url: value,
+               url: imageLinkNode.url,
+               altText: imageLinkNode.altText,
             });
          }
       } else {
-         insertImageLink(editor, value);
+         insertImageLink(editor, imageLinkNode);
       }
       setLinkElementToEdit({});
    };
 
    const modalPopupCancelHandler = () => {
       setIsModalPopupOpen(false);
-      setModalElementToEdit({});
    };
 
-   const modalPopupSubmitHandler = (value) => {
-      if (value.modalTitle.length === 0 && value.modalContent.length === 0) {
-         editNode(editor, value, {
-            type: SLATE_CONTENT_TYPES.PARAGRAPH,
-            modalTitle: undefined,
-            modalContent: undefined,
-         });
-      } else {
-         wrapModalTriggerHandler(editor, value);
-      }
+   const modalPopupSubmitHandler = (modalNode) => {
       setIsModalPopupOpen(false);
-      setModalElementToEdit({});
+      console.log(modalNode);
+      const [modalTriggerEl] = Editor.nodes(editor, {
+         match: (n) =>
+            !Editor.isEditor(n) &&
+            SlateElement.isElement(n) &&
+            n.type === SLATE_CONTENT_TYPES.MODAL_TRIGGER,
+      });
+
+      if (modalTriggerEl) {
+         // if this node already exists
+
+         if (
+            modalNode.modalTitle.length === 0 &&
+            modalNode.modalContent.body[0].children[0].text.length === 0
+         ) {
+            // converting node type to "paragraph"
+            editNode(editor, modalNode, {
+               type: SLATE_CONTENT_TYPES.PARAGRAPH,
+               modalTitle: undefined,
+               modalContent: undefined,
+               children: [
+                  { text: modalNode.modalContent.body[0].children[0].text },
+               ],
+            });
+         } else {
+            // editing contents of the node
+            editNode(editor, modalNode, {
+               modalTitle: modalNode.modalTitle,
+               modalContent: modalNode.modalContent,
+               children: [
+                  { text: modalNode.modalContent.body[0].children[0].text },
+               ],
+            });
+         }
+      } else {
+         // else add a new node
+         wrapModalTriggerHandler(editor, modalNode);
+      }
    };
 
    const flattenSlateData = (data, initialValue = "") => {
@@ -319,7 +313,41 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
       console.log(value);
       const flattenData = flattenSlateData(value);
       // console.log(flattenData);
-      onValueChange(flattenData);
+      onValueChange(value);
+   };
+
+   const onKeyDown = (event) => {
+      const { selection } = editor;
+
+      // Default left/right behavior is unit:'character'.
+      // This fails to distinguish between two cursor positions, such as
+      // <inline>foo<cursor/></inline> vs <inline>foo</inline><cursor/>.
+      // Here we modify the behavior to unit:'offset'.
+      // This lets the user step into and out of the inline without stepping over characters.
+      // You may wish to customize this further to only use unit:'offset' in specific cases.
+
+      // console.log(event);
+      // if (event.key === "Enter") {
+      //    Transforms.insertNodes(editor, {
+      //       type: "nextLine",
+      //       children: [{ text: "" }],
+      //    });
+      //    event.preventDefault();
+      //    return;
+      // }
+      // if (selection && Range.isCollapsed(selection)) {
+      //    const { nativeEvent } = event;
+      //    if (isKeyHotkey("left", nativeEvent)) {
+      //       event.preventDefault();
+      //       Transforms.move(editor, { unit: "offset", reverse: true });
+      //       return;
+      //    }
+      //    if (isKeyHotkey("right", nativeEvent)) {
+      //       event.preventDefault();
+      //       Transforms.move(editor, { unit: "offset" });
+      //       return;
+      //    }
+      // }
    };
 
    return (
@@ -328,62 +356,63 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
          value={INITIAL_VALUE}
          onChange={onSlateContentChange}
       >
-         <TextEditorWrapper>
-            {showContextMenu && (
-               <CustomContextMenu
-                  xPos={points.x}
-                  yPos={points.y}
-                  options={(() => {
-                     const t = [];
-                     for (const el of CONTENT_TYPE_LIST) {
-                        const ind = allowedInputs.findIndex(
-                           (aI) => aI === el.type
-                        );
-                        if (ind !== -1) {
-                           t.push(el);
-                        }
+         {showContextMenu && (
+            <CustomContextMenu
+               xPos={points.x}
+               yPos={points.y}
+               options={(() => {
+                  // TODO: simplify this IIFE logic
+                  const t = [];
+                  for (const el of CONTENT_TYPE_LIST) {
+                     const ind = allowedInputs.findIndex(
+                        (aI) => aI === el.type
+                     );
+                     if (ind !== -1) {
+                        t.push(el);
                      }
-                     return t;
-                  })()}
-                  onClose={() => setShowContextMenu(false)}
-               />
-            )}
-            <Popup
-               modal
-               closeOnDocumentClick={false}
-               lockScroll
-               open={isImagePopupOpen}
-            >
-               <ImageLinkPopup
-                  open={isImagePopupOpen}
-                  onCancel={imagePopupCancelHandler}
-                  onSubmit={imagePopupSubmitHandler}
-                  value={linkElementToEdit}
-               />
-            </Popup>
-            <Popup
-               modal
-               closeOnDocumentClick={false}
-               lockScroll
-               open={isModalPopupOpen}
-            >
-               <ModalPopup
-                  open={isModalPopupOpen}
-                  onCancel={modalPopupCancelHandler}
-                  onSubmit={modalPopupSubmitHandler}
-                  value={modalElementToEdit}
-               />
-            </Popup>
-            <Editable
-               placeholder="content"
-               renderElement={renderElement}
-               onContextMenu={(e) => {
-                  e.preventDefault();
-                  setPoints({ x: e.pageX, y: e.pageY });
-                  setShowContextMenu(true);
-               }}
+                  }
+                  return t;
+               })()}
+               onClose={() => setShowContextMenu(false)}
             />
-         </TextEditorWrapper>
+         )}
+         <Popup
+            modal
+            closeOnDocumentClick={false}
+            lockScroll
+            open={isImagePopupOpen}
+         >
+            <ImageLinkPopup
+               open={isImagePopupOpen}
+               onCancel={imagePopupCancelHandler}
+               onSubmit={imagePopupSubmitHandler}
+               value={linkElementToEdit}
+            />
+         </Popup>
+         <Popup
+            modal
+            closeOnDocumentClick={false}
+            lockScroll
+            open={isModalPopupOpen}
+         >
+            <ModalPopup
+               open={isModalPopupOpen}
+               onCancel={modalPopupCancelHandler}
+               onSubmit={modalPopupSubmitHandler}
+               data={modalElementToEdit}
+            />
+         </Popup>
+         <Editable
+            className="slate-editor"
+            placeholder="content"
+            renderElement={renderElement}
+            onKeyDown={onKeyDown}
+            onContextMenu={(e) => {
+               e.preventDefault();
+               setPoints({ x: e.pageX, y: e.pageY });
+               setShowContextMenu(true);
+            }}
+         />
       </Slate>
    );
 };

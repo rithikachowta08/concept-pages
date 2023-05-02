@@ -53,23 +53,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "content",
                },
-               textParams: {
-                  type: "array",
-                  title: "Text Parameters",
-                  items: {
-                     type: "object",
-                     properties: {
-                        id: {
-                           title: "ID",
-                           type: "string",
-                        },
-                        value: {
-                           title: "Value",
-                           type: "string",
-                        },
-                     },
-                  },
-               },
+               // textParams: {
+               //    type: "array",
+               //    title: "Text Parameters",
+               //    items: {
+               //       type: "object",
+               //       properties: {
+               //          id: {
+               //             title: "ID",
+               //             type: "string",
+               //          },
+               //          value: {
+               //             title: "Value",
+               //             type: "string",
+               //          },
+               //       },
+               //    },
+               // },
             },
          },
          {
@@ -211,28 +211,42 @@ const SLIDE_DEPENDENCIES = {
                   title: "Secondary Title",
                },
                body: CONTENT_BODY,
-               transitionImages: {
-                  type: "array",
-                  title: "Images",
-                  secondaryTitle: {
-                     type: "string",
-                     title: "Secondary Title",
-                  },
-                  items: {
-                     type: "object",
-                     properties: {
-                        url: {
-                           type: "string",
-                           title: "Image URL",
-                        },
-                        altText: {
-                           type: "string",
-                           title: "Alt Text",
-                        },
+               defaultImage: {
+                  type: "object",
+                  title: "Default image",
+                  properties: {
+                     url: {
+                        type: "string",
+                        title: "Image URL",
+                     },
+                     altText: {
+                        type: "string",
+                        title: "Alt Text",
                      },
                   },
                },
-               modal: MODAL_PROPERTIES,
+               // transitionImages: {
+               //    type: "array",
+               //    title: "Image",
+               //    secondaryTitle: {
+               //       type: "string",
+               //       title: "Secondary Title",
+               //    },
+               //    items: {
+               //       type: "object",
+               //       properties: {
+               //          url: {
+               //             type: "string",
+               //             title: "Image URL",
+               //          },
+               //          altText: {
+               //             type: "string",
+               //             title: "Alt Text",
+               //          },
+               //       },
+               //    },
+               // },
+               // modal: MODAL_PROPERTIES,
                comments: {
                   type: "string",
                   title: "Comments",
@@ -253,7 +267,7 @@ const SLIDE_DEPENDENCIES = {
                   type: "string",
                   title: "Applet ID",
                },
-               modal: MODAL_PROPERTIES,
+               // modal: MODAL_PROPERTIES,
                comments: {
                   type: "string",
                   title: "Comments",
@@ -431,12 +445,12 @@ export const SLIDE_UI_SCHEMA = {
          },
       },
    },
-   transitionImages: {
-      items: {
-         url: {
-            "ui:widget": ImageUploader,
-         },
+   defaultImage: {
+      // items: {
+      url: {
+         "ui:widget": ImageUploader,
       },
+      // },
    },
    images: {
       items: {

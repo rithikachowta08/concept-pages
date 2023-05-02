@@ -1,5 +1,7 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
+import { SLATE_CONTENT_TYPES } from "utils/constants";
 const Pill = dynamic(() => import("components/Pill"));
 const TextParamComponent = dynamic(() => import("./TextParamComponent"));
 const BulletPointItem = dynamic(() => import("components/text/BulletPoint"));
@@ -81,35 +83,56 @@ const BodyComponent = ({
    }
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       if (item.componentType === COMPONENT_TYPES.TEXT) {
-         const paragraphsContent = item.content.split("\n\n");
-         const paragraphs = [];
-         paragraphsContent.forEach((para, paraIdx) => {
-            const lines = para.split("\n");
-            const textLines = [];
-            lines.forEach((line, idx) => {
-               const modifiedContent = line.split(/(%.*?%)/g);
-               textLines.push(
-                  <TextLine key={idx}>
-                     <TextToTextParamComponent
-                        modifiedContent={modifiedContent}
-                        theme={theme}
-                        colorTheme={colorTheme}
+         return (
+            <Paragraph color={color}>
+               {item.content.map((content, idx) => {
+                  return (
+                     <TextParamComponent
+                        key={`${content.type}_${idx}`}
+                        idx={idx}
+                        type={content.type}
+                        value={content.children[0].text}
+                        color={color}
+                        onClick={onClick}
                         onHover={onHover}
                         onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        textParams={item.textParams}
-                        textParamCount={textParamCount}
+                        theme={theme}
+                        colorTheme={colorTheme}
                      />
-                  </TextLine>
-               );
-            });
-            paragraphs.push(
-               <Paragraph key={paraIdx} color={color}>
-                  {textLines}
-               </Paragraph>
-            );
-         });
-         return paragraphs;
+                  );
+               })}
+            </Paragraph>
+         );
+         //  old content
+         // const paragraphsContent = item.content.split("\n\n");
+         // const paragraphs = [];
+         // paragraphsContent.forEach((para, paraIdx) => {
+         //    const lines = para.split("\n");
+         //    const textLines = [];
+         //    lines.forEach((line, idx) => {
+         //       const modifiedContent = line.split(/(%.*?%)/g);
+         //       textLines.push(
+         //          <TextLine key={idx}>
+         //             <TextToTextParamComponent
+         //                modifiedContent={modifiedContent}
+         //                theme={theme}
+         //                colorTheme={colorTheme}
+         //                onHover={onHover}
+         //                onHoverOut={onHoverOut}
+         //                onClick={onClick}
+         //                textParams={item.textParams}
+         //                textParamCount={textParamCount}
+         //             />
+         //          </TextLine>
+         //       );
+         //    });
+         //    paragraphs.push(
+         //       <Paragraph key={paraIdx} color={color}>
+         //          {textLines}
+         //       </Paragraph>
+         //    );
+         // });
+         // return paragraphs;
       }
       if (item.componentType === COMPONENT_TYPES.BULLETED_LIST) {
          const lines = item.content.split("\n");
@@ -157,7 +180,6 @@ const BodyComponent = ({
                   />
                );
             });
-
          return numberedListItems ? (
             <Paragraph>
                <NumberedList color={color} items={numberedListItems} />
@@ -166,7 +188,7 @@ const BodyComponent = ({
       }
       if (item.componentType === COMPONENT_TYPES.IMAGE) {
          return isModal ? (
-            <ModalImg src={item.url} alt={item.alt} />
+            <ModalImg src={item.content.url} alt={item.content.altText} />
          ) : (
             <StyledImg src={item.url} alt={item.alt} />
          );

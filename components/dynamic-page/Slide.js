@@ -2,7 +2,9 @@ import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
-import { SLIDE_TYPES } from "utils/constants";
+import { SLATE_CONTENT_TYPES, SLIDE_TYPES } from "utils/constants";
+import { useCallback, useEffect } from "react";
+import { COMPONENT_TYPES } from "./BodyComponent";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -29,6 +31,32 @@ const Slide = ({
 }) => {
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
+
+   useEffect(() => {
+      console.log("in bodyComponent.js data", activeIndex);
+   }, [activeIndex]);
+
+   const getAllImages = () => {
+      const allImages = [{ ...data.defaultImage, idx: 0 }];
+
+      if (!data.body?.[0]?.content) {
+         return allImages;
+      }
+
+      data.body?.[0]?.content
+         ?.filter((content) => content.type === SLATE_CONTENT_TYPES.IMAGE_LINK)
+         ?.map((imageLink, i) =>
+            allImages.push({
+               url: imageLink.url,
+               altText: imageLink.altText,
+               idx: i,
+            })
+         );
+
+      console.log(allImages);
+      return allImages;
+   };
+
    const dynamicImportApplet = data.appletId
       ? dynamic(() =>
            import("@assessed/byjus-us-math-applets").then((mod) => {
@@ -83,10 +111,13 @@ const Slide = ({
          props: {
             title: data.title,
             bg: data.theme,
-            diagram: data.transitionImages ? (
+            diagram: data.defaultImage ? (
+               // <></>
                <TransitionImage
-                  images={data.transitionImages.map((image) => image.url)}
-                  altTexts={data.transitionImages.map((image) => image.altText)}
+                  // images={data.transitionImages.map((image) => image.url)}
+                  // altTexts={data.transitionImages.map((image) => image.altText)}
+                  images={getAllImages().map((image) => image.url)}
+                  altTexts={getAllImages().map((image) => image.altText)}
                   activeIndex={activeIndex}
                />
             ) : (
@@ -119,21 +150,70 @@ const Slide = ({
    };
 
    let modal;
-   if (data.modal) {
-      const modalBody = data.modal.body?.map((item, idx) => (
-         <BodyComponent key={idx} item={item} theme={data.theme} isModal />
-      ));
-      modal = (
-         <Modal
-            isOpen={isModalOpen}
-            modalContainerId={isPreview && `slide-${idx}`}
-            bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
-            color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
-            title={data.modal.title}
-            content={modalBody}
-            onDismiss={onDismiss}
-         />
-      );
+   console.log("data body", data);
+
+   if (data.body && data.body[0] && data.body[0].content) {
+      const modalData = data.body[0].content.filter(
+         (content) => content.type === SLATE_CONTENT_TYPES.MODAL_TRIGGER
+      )[0];
+
+      console.log("data body content", modalData);
+
+      if (modalData) {
+         let modalContentBody = [
+            <BodyComponent
+               key={idx}
+               item={{
+                  componentType: COMPONENT_TYPES.TEXT,
+                  content: modalData.modalContent.body,
+               }}
+               theme={data.theme}
+               isModal
+            />,
+         ];
+         if (modalData.modalContent.image) {
+            modalContentBody.push(
+               <BodyComponent
+                  key={idx}
+                  item={{
+                     componentType: COMPONENT_TYPES.IMAGE,
+                     content: modalData.modalContent.image,
+                  }}
+                  theme={data.theme}
+                  isModal
+               />
+            );
+         }
+
+         modal = (
+            <Modal
+               isOpen={isModalOpen}
+               modalContainerId={isPreview && `slide-${idx}`}
+               bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
+               color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
+               title={modalData.modalTitle}
+               content={modalContentBody}
+               onDismiss={onDismiss}
+            />
+         );
+      }
+
+      // if (modal.length) {
+      //    const modalBody = modal.modalContent?.map((item, idx) => (
+      //       <BodyComponent key={idx} item={item} theme={data.theme} isModal />
+      //    ));
+      //    modal = (
+      //       <Modal
+      //          isOpen={isModalOpen}
+      //          modalContainerId={isPreview && `slide-${idx}`}
+      //          bg={data.theme === "LIGHT" ? "DARK" : "LIGHT"}
+      //          color={data.theme === "LIGHT" ? colors.WHITE : colors.BLACK}
+      //          title={modal.modalTitle}
+      //          content={modalBody}
+      //          onDismiss={onDismiss}
+      //       />
+      //    );
+      // }
    }
 
    let children = [];

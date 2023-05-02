@@ -1,29 +1,40 @@
 import { Flex } from "components/StyledElements";
 import { useState } from "react";
+import useDrivePicker from "react-google-drive-picker/dist";
 import styled from "styled-components";
 import { colors } from "utils/colors";
+import { googleDriveUploader } from "utils/services";
+import Image from "next/image";
 
 const Wrapper = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   width: 400px;
-   height: 200px;
-   border: 1px solid black;
+   width: 600px;
+   min-height: 200px;
    background-color: white;
    padding: 16px;
    border-radius: 16px;
    box-shadow: 0 0 10px grey;
 `;
 
+const Label = styled.label`
+   font-size: 16px;
+   margin-top: 4px;
+   margin-bottom: 8px;
+   color: black;
+`;
+
 const Input = styled.input`
    background-color: white;
    color: black;
    border: 1px solid grey;
-   border-radius: 4px;
+   border-radius: 8px;
    padding: 4px;
    height: 36px;
    outline: none;
+   margin-bottom: 8px;
+   font-family: inherit;
 `;
 
 const StyledButton = styled.button`
@@ -40,6 +51,8 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
+   opacity: ${(props) => (props.loading ? 0.5 : 1)};
+   pointer-events: ${(props) => (props.loading ? "none" : "unset")};
 
    &:disabled {
       opacity: 0.4;
@@ -47,20 +60,87 @@ const StyledButton = styled.button`
    }
 `;
 
+const ImageWrapper = styled.div`
+   position: relative;
+   padding: 8px;
+   height: 300px;
+   width: auto;
+   box-shadow: 0 0 12px 2px #bbb;
+   border-radius: 8px;
+   margin-bottom: 20px;
+`;
+
+const CrossIcon = styled.img`
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   width: 20px;
+   aspect-ratio: 1/1;
+   z-index: 10;
+   fill: black;
+   cursor: pointer;
+`;
+
+export const ImageContainer = ({ imageUrl, altText, onDelete }) => {
+   return (
+      <ImageWrapper>
+         <CrossIcon src="assets/cancel_icon.svg" onClick={onDelete} />
+         <Image
+            src={imageUrl}
+            alt={altText}
+            objectFit={"contain"}
+            layout="fill"
+         />
+      </ImageWrapper>
+   );
+};
+
 const ImageLinkPopup = ({ onCancel, onSubmit, value }) => {
-   const [inputValue, setInputValue] = useState(value.url || "");
+   const [openPicker] = useDrivePicker();
+   const [altTextValue, setAltTextValue] = useState(value.altText || "");
+   const [imageUrl, setImageUrl] = useState(value.url || "");
+   const [uploading, setUploading] = useState(false);
 
    const submitHandler = () => {
-      onSubmit({ ...value, url: inputValue });
+      onSubmit({ ...value, url: imageUrl, altText: altTextValue });
    };
 
    return (
       <Wrapper>
          <Flex direction="column">
-            <label>Enter Image link: </label>
+            {imageUrl && !uploading && (
+               <ImageContainer
+                  imageUrl={imageUrl}
+                  altText={altTextValue}
+                  onDelete={() => setImageUrl("")}
+               />
+            )}
+            <StyledButton
+               onClick={() =>
+                  googleDriveUploader(
+                     openPicker,
+                     setUploading,
+                     setImageUrl,
+                     (value) => {
+                        console.log("drive returned on change", value);
+                        setImageUrl(value);
+                     }
+                  )
+               }
+               loading={uploading}
+            >
+               {uploading
+                  ? "Uploading..."
+                  : imageUrl
+                  ? "Change image"
+                  : "Upload image"}
+            </StyledButton>
+         </Flex>
+         <Flex direction="column">
+            <Label>Enter alt text for the image: </Label>
             <Input
-               value={inputValue}
-               onChange={({ target }) => setInputValue(target.value)}
+               value={altTextValue}
+               onChange={({ target }) => setAltTextValue(target.value)}
             />
          </Flex>
          <Flex justifyContent="end">
@@ -73,6 +153,7 @@ const ImageLinkPopup = ({ onCancel, onSubmit, value }) => {
             <StyledButton
                className="border-[1px] mr-4 border-black"
                onClick={submitHandler}
+               loading={uploading}
             >
                Submit
             </StyledButton>

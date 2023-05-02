@@ -2,7 +2,6 @@ import { useSelected } from "slate-react";
 import styled from "styled-components";
 
 const ImageInteractionWrapper = styled.span`
-   background-color: #a753b520;
    color: #a753b5;
    border-radius: 12px;
    padding: 4px;
@@ -11,6 +10,10 @@ const ImageInteractionWrapper = styled.span`
 
    &::selection {
       background-color: #a753b505 !important;
+   }
+
+   &:hover {
+      background-color: #a753b520;
    }
 `;
 

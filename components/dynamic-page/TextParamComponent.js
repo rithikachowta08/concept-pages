@@ -1,6 +1,8 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
 import { colorSchemes } from "./colorScheme";
+import { SLATE_CONTENT_TYPES } from "utils/constants";
+import { TextSpan } from "components/text";
 const TextSpanBg = dynamic(() =>
    import("components/text").then((mod) => mod.TextSpanBg)
 );
@@ -20,56 +22,84 @@ const TextParamComponent = ({
    type,
    value,
    theme,
+   color,
    colorTheme,
    idx,
    onHover,
    onHoverOut,
    onClick,
 }) => {
-   if (type.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)) {
-      return (
-         <TextSpanBg
-            onHover={() => onHover(idx)}
-            onHoverOut={onHoverOut}
-            hoverColor={
-               theme === "LIGHT"
-                  ? colorSchemes[colorTheme].DARK
-                  : colorSchemes[colorTheme].LIGHT
-            }
-         >
-            <MathElement htmlString={value} />
-         </TextSpanBg>
-      );
+   switch (type) {
+      case SLATE_CONTENT_TYPES.PARAGRAPH:
+         return <TextSpan color={color}>{value}</TextSpan>;
+
+      case SLATE_CONTENT_TYPES.IMAGE_LINK:
+         return (
+            <TextSpanBg
+               hoverColor={
+                  theme === "LIGHT"
+                     ? colorSchemes[colorTheme].DARK
+                     : colorSchemes[colorTheme].LIGHT
+               }
+               onHover={() => onHover(idx)}
+               onHoverOut={onHoverOut}
+            >
+               {value}
+            </TextSpanBg>
+         );
+
+      case SLATE_CONTENT_TYPES.MODAL_TRIGGER:
+         return <ModalTriggerText onClick={onClick}>{value}</ModalTriggerText>;
+
+      case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
+         return <MathElement htmlString={value} />;
    }
-   if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
-      return (
-         <TextSpanBg
-            onHover={() => onHover(idx)}
-            onHoverOut={onHoverOut}
-            hoverColor={
-               theme === "LIGHT"
-                  ? colorSchemes[colorTheme].DARK
-                  : colorSchemes[colorTheme].LIGHT
-            }
-         >
-            {value}
-         </TextSpanBg>
-      );
-   }
-   if (type.includes(PARAM_TYPES.MODAL_TRIGGER)) {
-      return (
-         <ModalTriggerText
-            color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
-            onClick={onClick}
-         >
-            {value}
-         </ModalTriggerText>
-      );
-   }
-   if (type.includes(PARAM_TYPES.MATH)) {
-      return <MathElement htmlString={value} />;
-   }
-   return null;
+
+   // old content
+   // if (type.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)) {
+   //    return (
+   //       <TextSpanBg
+   //          onHover={() => onHover(idx)}
+   //          onHoverOut={onHoverOut}
+   //          hoverColor={
+   //             theme === "LIGHT"
+   //                ? colorSchemes[colorTheme].DARK
+   //                : colorSchemes[colorTheme].LIGHT
+   //          }
+   //       >
+   //          <MathElement htmlString={value} />
+   //       </TextSpanBg>
+   //    );
+   // }
+   // if (type.includes(PARAM_TYPES.DIAGRAM_INTERACTION)) {
+   //    return (
+   //       <TextSpanBg
+   //          onHover={() => onHover(idx)}
+   //          onHoverOut={onHoverOut}
+   //          hoverColor={
+   //             theme === "LIGHT"
+   //                ? colorSchemes[colorTheme].DARK
+   //                : colorSchemes[colorTheme].LIGHT
+   //          }
+   //       >
+   //          {value}
+   //       </TextSpanBg>
+   //    );
+   // }
+   // if (type.includes(PARAM_TYPES.MODAL_TRIGGER)) {
+   //    return (
+   //       <ModalTriggerText
+   //          color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
+   //          onClick={onClick}
+   //       >
+   //          {value}
+   //       </ModalTriggerText>
+   //    );
+   // }
+   // if (type.includes(PARAM_TYPES.MATH)) {
+   //    return <MathElement htmlString={value} />;
+   // }
+   // return null;
 };
 
 export default TextParamComponent;
