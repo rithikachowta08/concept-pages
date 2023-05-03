@@ -220,14 +220,17 @@ const CONTENT_BODY = {
 };
 
 const MODAL_PROPERTIES = {
-   type: "object",
-   title: "Modal",
-   properties: {
-      title: {
-         type: "string",
-         title: "Title",
+   type: "array",
+   title: "Modals",
+   items: {
+      type: "object",
+      properties: {
+         title: {
+            type: "string",
+            title: "Title",
+         },
+         body: CONTENT_BODY,
       },
-      body: CONTENT_BODY,
    },
 };
 

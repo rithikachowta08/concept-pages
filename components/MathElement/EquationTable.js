@@ -69,7 +69,7 @@ const EquationTable = ({
                         })}
                      </LHSLatex>
                      <EqualsTo align={align} lineHeight={lineHeight}>
-                        <TeX>{"="}</TeX>
+                        {latex.symbol || "="}
                      </EqualsTo>
                      <RHSLatex align={align} lineHeight={lineHeight}>
                         {latex.rhsLatex.value.map((val, i) => {

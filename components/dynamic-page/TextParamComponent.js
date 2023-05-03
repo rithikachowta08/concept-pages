@@ -9,7 +9,7 @@ const ModalTriggerText = dynamic(() =>
 );
 const MathElement = dynamic(() => import("components/MathElement"));
 
-const PARAM_TYPES = {
+export const PARAM_TYPES = {
    MODAL_TRIGGER: "mt",
    DIAGRAM_INTERACTION: "di",
    MATH: "ma",
@@ -60,7 +60,7 @@ const TextParamComponent = ({
       return (
          <ModalTriggerText
             color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
-            onClick={onClick}
+            onClick={() => onClick(idx)}
          >
             {value}
          </ModalTriggerText>

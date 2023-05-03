@@ -60,10 +60,18 @@ const ModalBody = styled.div`
    }
 `;
 
-const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
+const Modal = ({
+   onDismiss,
+   content,
+   title,
+   isOpen,
+   bg,
+   currentModalIdx = 0,
+   color,
+}) => {
    const isMobile = useDeviceType() === DEVICE_TYPES.MOBILE;
    const onClick = (e) => {
-      if (e.target.id === "overlay") {
+      if (e.target.id.includes("overlay")) {
          onDismiss();
       }
    };
@@ -77,7 +85,11 @@ const Modal = ({ onDismiss, content, title, isOpen, bg, color }) => {
       }
    }, [isOpen]);
    return (
-      <Overlay isOpen={isOpen} id="overlay" onClick={onClick}>
+      <Overlay
+         isOpen={isOpen}
+         id={`overlay${currentModalIdx}`}
+         onClick={onClick}
+      >
          <ModalBody isOpen={isOpen} bg={bg} color={color}>
             <Flex
                justifyContent="space-between"
