@@ -446,13 +446,15 @@ export const SLIDE_UI_SCHEMA = {
       },
    },
    modal: {
-      body: {
-         items: {
-            content: {
-               "ui:widget": "textarea",
-            },
-            url: {
-               "ui:widget": ImageUploader,
+      items: {
+         body: {
+            items: {
+               content: {
+                  "ui:widget": "textarea",
+               },
+               url: {
+                  "ui:widget": ImageUploader,
+               },
             },
          },
       },
