@@ -10,6 +10,11 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
          setTimeout(() => {
             document.getElementById("lottie-overlay").style.height = "0px";
          }, 4500);
+         if (document.getElementById("practice-element")) {
+            document
+               .getElementById("practice-element")
+               .addEventListener("solved", () => console.log("solved"));
+         }
       }
    }, [currentPageIdx]);
    return (
@@ -25,6 +30,7 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
             latex="2x+1=5"
             hints="on"
             drag-eq="fast"
+            id="practice-element"
             style={{
                height: "inherit",
                width: "inherit",
