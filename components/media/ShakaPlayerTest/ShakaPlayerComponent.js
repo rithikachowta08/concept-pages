@@ -179,7 +179,8 @@ const VideoPlayer = (props) => {
                .load(props.src)
                .then(() => {})
                .catch(onError);
-         });
+         })
+         .catch((err) => console.error(err));
 
       return () => {};
    }, []);
