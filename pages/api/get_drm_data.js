@@ -28,7 +28,7 @@ export default async function getDrmData(req, res) {
       const resultData = await result.json();
       console.log("resultData", resultData);
       res.json(resultData);
-   } catch {
-      console.log("Errored out");
+   } catch (err) {
+      res.json({ msg: "Errored out", error: err });
    }
 }
