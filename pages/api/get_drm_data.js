@@ -6,6 +6,7 @@ import {
 
 export default async function getDrmData(req, res) {
    try {
+      console.log("starting");
       const jwt = require("jsonwebtoken");
       var tllms_mediaPackager_token = jwt.sign(
          {
@@ -25,7 +26,9 @@ export default async function getDrmData(req, res) {
          }
       );
       console.log("result", result);
+      console.log("cp1");
       const resultData = await result.json();
+      console.log("cp2");
       console.log("resultData", resultData);
       res.json(resultData);
    } catch (err) {
