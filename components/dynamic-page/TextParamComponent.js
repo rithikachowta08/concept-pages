@@ -30,7 +30,7 @@ const TextParamComponent = ({
    onClick,
 }) => {
    switch (type) {
-      case SLATE_CONTENT_TYPES.PARAGRAPH:
+      case SLATE_CONTENT_TYPES.TEXT_LINE:
          return <TextSpan color={color}>{value}</TextSpan>;
 
       case SLATE_CONTENT_TYPES.IMAGE_LINK:
@@ -41,7 +41,9 @@ const TextParamComponent = ({
                      ? colorSchemes[colorTheme].DARK
                      : colorSchemes[colorTheme].LIGHT
                }
-               onHover={() => onHover(idx)}
+               onHover={() => {
+                  onHover(idx);
+               }}
                onHoverOut={onHoverOut}
             >
                {value}
@@ -53,6 +55,27 @@ const TextParamComponent = ({
 
       case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
          return <MathElement htmlString={value} />;
+
+      case SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH:
+         return (
+            <TextSpanBg
+               hoverColor={
+                  theme === "LIGHT"
+                     ? colorSchemes[colorTheme].DARK
+                     : colorSchemes[colorTheme].LIGHT
+               }
+               onHover={() => {
+                  console.log("hovered");
+                  onHover(idx);
+               }}
+               onHoverOut={onHoverOut}
+            >
+               <MathElement htmlString={value} />;
+            </TextSpanBg>
+         );
+
+      default:
+         return null;
    }
 
    // old content

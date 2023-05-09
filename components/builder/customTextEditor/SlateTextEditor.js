@@ -1,35 +1,27 @@
 // Import React dependencies.
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
    Editor,
    createEditor,
    Element as SlateElement,
    Transforms,
-   Range,
+   Element,
 } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
-import styled from "styled-components";
+import Popup from "reactjs-popup";
 import {
    DefaultElementText,
    ImageInteractionText,
    MathExpressionText,
    ModalTriggerText,
+   NextParaText,
 } from "./TextInteractionComponents";
 import CustomContextMenu from "./CustomContextMenu";
-import Popup from "reactjs-popup";
 import ImageLinkPopup from "./ImageLinkPopup";
-import { SLATE_CONTENT_TYPES } from "utils/constants";
 import ModalPopup from "./ModalPopup";
-import useDrivePicker from "react-google-drive-picker/dist";
-import { googleDriveUploader } from "utils/services";
+import { SLATE_CONTENT_TYPES } from "utils/constants";
 
-const insertImageLink = (editor, imageLinkNode) => {
-   if (editor.selection) {
-      wrapImageLinkButton(editor, imageLinkNode);
-   }
-};
-
-const wrapImageLinkButton = (editor, imageLinkNode) => {
+const wrapImageLink = (editor, imageLinkNode) => {
    const { selection } = editor;
 
    const [match] = Editor.nodes(editor, {
@@ -40,48 +32,67 @@ const wrapImageLinkButton = (editor, imageLinkNode) => {
    });
 
    const newImageLinkNode = {
-      type: "imageLink",
+      type: SLATE_CONTENT_TYPES.IMAGE_LINK,
       url: imageLinkNode.url,
       altText: imageLinkNode.altText,
       children: match ? match[0] : [{ text: selection }],
    };
 
    Transforms.wrapNodes(editor, newImageLinkNode, { split: true });
-   Transforms.unwrapNodes(editor, newImageLinkNode);
 };
 
-const wrapModalTriggerHandler = (editor, modalData) => {
+const wrapModalTrigger = (editor, modalData) => {
    const { selection } = editor;
    const modalTriggerNode = {
-      type: "modalTrigger",
+      type: SLATE_CONTENT_TYPES.MODAL_TRIGGER,
       modalTitle: modalData.modalTitle,
       modalContent: modalData.modalContent,
       children: [{ text: selection }],
    };
 
    Transforms.wrapNodes(editor, modalTriggerNode, { split: true });
-   Transforms.unwrapNodes(editor, modalTriggerNode);
 };
 
 const wrapMathExpression = (editor) => {
    const { selection } = editor;
-   const modalTriggerNode = {
-      type: "mathExpression",
+   const mathExNode = {
+      type: SLATE_CONTENT_TYPES.MATH_EXPRESSION,
       children: [{ text: selection }],
    };
-
-   Transforms.wrapNodes(editor, modalTriggerNode, { split: true });
-   Transforms.unwrapNodes(editor, modalTriggerNode);
+   Transforms.wrapNodes(editor, mathExNode, { split: true });
 };
 
 const editNode = (editor, from, to) => {
    Transforms.setNodes(editor, to, {
-      mode: from,
+      match: (n) => n === from,
    });
 };
 
+const unwrapNode = (editor, nodeType, imageLinkNode) => {
+   Transforms.unwrapNodes(editor, {
+      match: (n) =>
+         !Editor.isEditor(n) &&
+         SlateElement.isElement(n) &&
+         n.type === nodeType &&
+         n === imageLinkNode,
+   });
+};
+
+const customNormalize = (editor) => {
+   const { isInline } = editor;
+
+   editor.isInline = (element) =>
+      [
+         SLATE_CONTENT_TYPES.IMAGE_LINK,
+         SLATE_CONTENT_TYPES.MATH_EXPRESSION,
+         SLATE_CONTENT_TYPES.MODAL_TRIGGER,
+      ].includes(element.type) || isInline(element);
+
+   return editor;
+};
+
 const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
-   const [editor] = useState(() => withReact(createEditor()));
+   const [editor] = useState(() => withReact(customNormalize(createEditor())));
    const [points, setPoints] = useState({ x: 0, y: 0 });
    const [showContextMenu, setShowContextMenu] = useState(false);
    const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
@@ -91,13 +102,10 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
       modalTitle: "",
       modalContent: { body: null, image: { url: null, altText: null } },
    });
-   const [openPicker, authResponse] = useDrivePicker();
-   const [imageUrl, setImageUrl] = useState("");
-   const [uploading, setUploading] = useState(false);
 
    const INITIAL_VALUE = initialValue || [
       {
-         type: "paragraph",
+         type: SLATE_CONTENT_TYPES.TEXT_LINE,
          children: [{ text: initialValue || "" }],
       },
    ];
@@ -141,7 +149,7 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
                   editor={editor}
                   element={props.element}
                   onClickHandler={(modalData) => {
-                     console.log(modalData);
+                     console.log("modal data", modalData);
                      setModalElementToEdit(modalData);
                      setIsModalPopupOpen(true);
                   }}
@@ -160,6 +168,9 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
                />
             );
 
+         case SLATE_CONTENT_TYPES.LINE_BREAK:
+            return <span {...props}></span>;
+
          default:
             return <DefaultElementText {...props} />;
       }
@@ -167,12 +178,6 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
 
    const addImageClickhandler = () => {
       setIsImagePopupOpen(true);
-      // googleDriveUploader(openPicker, setUploading, setImageUrl, (value) => {
-      //    console.log("drive returned on change", value);
-      //    imagePopupSubmitHandler(value);
-      // });
-
-      // imagePopupSubmitHandler("some random url");
       setShowContextMenu(false);
    };
 
@@ -198,16 +203,15 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
          match: (n) =>
             !Editor.isEditor(n) &&
             SlateElement.isElement(n) &&
-            n.type === "imageLink",
+            n.type === SLATE_CONTENT_TYPES.IMAGE_LINK,
       });
       if (imageLink) {
          if (imageLinkNode.url.length === 0) {
-            editNode(editor, imageLinkNode, {
-               type: SLATE_CONTENT_TYPES.PARAGRAPH,
-               children: [{ text: linkElementToEdit.children[0].text }],
-               url: undefined,
-               altText: undefined,
-            });
+            unwrapNode(
+               editor,
+               SLATE_CONTENT_TYPES.IMAGE_LINK,
+               linkElementToEdit
+            );
          } else {
             editNode(editor, linkElementToEdit, {
                ...linkElementToEdit,
@@ -216,7 +220,7 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
             });
          }
       } else {
-         insertImageLink(editor, imageLinkNode);
+         wrapImageLink(editor, imageLinkNode);
       }
       setLinkElementToEdit({});
    };
@@ -243,111 +247,85 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
             modalNode.modalContent.body[0].children[0].text.length === 0
          ) {
             // converting node type to "paragraph"
-            editNode(editor, modalNode, {
-               type: SLATE_CONTENT_TYPES.PARAGRAPH,
-               modalTitle: undefined,
-               modalContent: undefined,
-               children: [
-                  { text: modalNode.modalContent.body[0].children[0].text },
-               ],
-            });
+            unwrapNode(
+               editor,
+               SLATE_CONTENT_TYPES.MODAL_TRIGGER,
+               modalElementToEdit
+            );
          } else {
             // editing contents of the node
-            editNode(editor, modalNode, {
+            editNode(editor, modalElementToEdit, {
+               ...modalNode,
                modalTitle: modalNode.modalTitle,
                modalContent: modalNode.modalContent,
-               children: [
-                  { text: modalNode.modalContent.body[0].children[0].text },
-               ],
             });
          }
       } else {
          // else add a new node
-         wrapModalTriggerHandler(editor, modalNode);
+         wrapModalTrigger(editor, modalNode);
       }
-   };
-
-   const flattenSlateData = (data, initialValue = "") => {
-      let value = initialValue;
-
-      for (const el of data) {
-         if (el.children) {
-            let param;
-            switch (el.type) {
-               case SLATE_CONTENT_TYPES.IMAGE_LINK:
-                  param = `%di_${el.text}`;
-
-               case SLATE_CONTENT_TYPES.MODAL_TRIGGER:
-                  param = `%mt_${el.text}`;
-
-               case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
-                  param = `%ma_${el.text}`;
-
-               default:
-                  param = el.text;
-            }
-
-            value += flattenSlateData(el.children, param);
-         } else {
-            // switch (el.type) {
-            //    case SLATE_CONTENT_TYPES.IMAGE_LINK:
-            //       return `%di_${el.text}`;
-
-            //    case SLATE_CONTENT_TYPES.MODAL_TRIGGER:
-            //       return `%mt_${el.text}`;
-
-            //    case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
-            //       return `%ma_${el.text}`;
-
-            //    default:
-            //       return el.text;
-            // }
-            value += el.text;
-         }
-      }
-
-      return value;
    };
 
    const onSlateContentChange = (value) => {
       console.log(value);
-      const flattenData = flattenSlateData(value);
-      // console.log(flattenData);
+
+      // const normalizedSlateData = normalizedData(value);
+      // onValueChange(normalizedSlateData);
       onValueChange(value);
    };
 
    const onKeyDown = (event) => {
-      const { selection } = editor;
+      const [nextLineNode] = Editor.nodes(editor, {
+         match: (n) =>
+            !Editor.isEditor(n) &&
+            SlateElement.isElement(n) &&
+            n.type === SLATE_CONTENT_TYPES.LINE_BREAK,
+      });
 
-      // Default left/right behavior is unit:'character'.
-      // This fails to distinguish between two cursor positions, such as
-      // <inline>foo<cursor/></inline> vs <inline>foo</inline><cursor/>.
-      // Here we modify the behavior to unit:'offset'.
-      // This lets the user step into and out of the inline without stepping over characters.
-      // You may wish to customize this further to only use unit:'offset' in specific cases.
+      // const { insertBreak } = editor;
+
+      // editor.insertBreak = () => {
+      //    const { selection } = editor;
+      //    if (selection) {
+      //       Transforms.insertNodes(editor, {
+      //          type: SLATE_CONTENT_TYPES.PARAGRAPH,
+      //          children: [{ text: "" }],
+      //       });
+      //       return;
+      //    }
+      //    insertBreak();
+      // };
 
       // console.log(event);
-      // if (event.key === "Enter") {
-      //    Transforms.insertNodes(editor, {
-      //       type: "nextLine",
-      //       children: [{ text: "" }],
-      //    });
-      //    event.preventDefault();
-      //    return;
-      // }
-      // if (selection && Range.isCollapsed(selection)) {
-      //    const { nativeEvent } = event;
-      //    if (isKeyHotkey("left", nativeEvent)) {
-      //       event.preventDefault();
-      //       Transforms.move(editor, { unit: "offset", reverse: true });
-      //       return;
-      //    }
-      //    if (isKeyHotkey("right", nativeEvent)) {
-      //       event.preventDefault();
-      //       Transforms.move(editor, { unit: "offset" });
-      //       return;
-      //    }
-      // }
+      if (event.key === "Enter") {
+         // If current cursor is on nextline node
+         // if (nextLineNode) {
+         //    Transforms.insertText(editor, "\n");
+         // } else {
+         // Transforms.insertNodes(editor, {
+         //    type: SLATE_CONTENT_TYPES.PARAGRAPH,
+         //    // Normal behaviour
+         //    children: [{ text: "" }],
+         // });
+         // }
+         // if (nextLineNode) {
+         //    console.log(nextLineNode[0]);
+         //    Transforms.insertText(editor, "\n");
+         // } else {
+         //    Transforms.insertNodes(editor, {
+         //       type: SLATE_CONTENT_TYPES.LINE_BREAK,
+         //       // Normal behaviour
+         //       children: [{ text: "" }],
+         //    });
+         // }
+         // Transforms.insertNodes(editor, {
+         //    type: SLATE_CONTENT_TYPES.PARAGRAPH,
+         //    children: [{ text: "" }],
+         // });
+         // event.preventDefault();
+         // event.stopPropagation();
+      } else if (event.key === "Backspace") {
+      }
    };
 
    return (
@@ -404,7 +382,7 @@ const SlateTextEditor = ({ initialValue, onValueChange, allowedInputs }) => {
          </Popup>
          <Editable
             className="slate-editor"
-            placeholder="content"
+            // placeholder="content"
             renderElement={renderElement}
             onKeyDown={onKeyDown}
             onContextMenu={(e) => {

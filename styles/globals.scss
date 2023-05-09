@@ -209,7 +209,7 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
 }
 
 .slate-editor {
-   min-height: 100px;
+   // min-height: 100px;
    padding: 16px;
    border: 1px solid #bbb;
    border-radius: 4px;
@@ -218,6 +218,10 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
       border: 1px solid black;
    }
 }
+
+// span[data-slate-zero-width="n"] {
+//    display: none;
+// }
 
 /* Small mobile portrait */
 @media only screen and (min-width: 200px) and (max-width: 375px) and (max-height: 800px) {

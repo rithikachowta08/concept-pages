@@ -60,9 +60,7 @@ const StyledButton = styled.button`
 const ModalPopup = ({ data, onCancel, onSubmit }) => {
    const [title, setTitle] = useState(data.modalTitle || "");
    const [content, setContent] = useState(
-      data.modalContent.body
-         ? JSON.parse(JSON.stringify(data.modalContent.body))
-         : ""
+      data.modalContent.body ? data.modalContent.body : "" // ? JSON.parse(JSON.stringify(data.modalContent.body))
    );
    const [openPicker] = useDrivePicker();
    const [altTextValue, setAltTextValue] = useState(
@@ -106,7 +104,7 @@ const ModalPopup = ({ data, onCancel, onSubmit }) => {
                onValueChange={(value) => {
                   setContent(value);
                }}
-               initialValue={content}
+               initialValue={structuredClone(content)}
                allowedInputs={[SLATE_CONTENT_TYPES.MATH_EXPRESSION]}
             />
          </Flex>

@@ -3,8 +3,9 @@ import useDiagramInteraction from "hooks/useDiagramInteraction";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
 import { SLATE_CONTENT_TYPES, SLIDE_TYPES } from "utils/constants";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { COMPONENT_TYPES } from "./BodyComponent";
+import { normalizeSlateData } from "utils/services";
 const TransitionImage = dynamic(() =>
    import("components/media/TransitionImage")
 );
@@ -32,10 +33,6 @@ const Slide = ({
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
-   useEffect(() => {
-      console.log("in bodyComponent.js data", activeIndex);
-   }, [activeIndex]);
-
    const getAllImages = () => {
       const allImages = [{ ...data.defaultImage, idx: 0 }];
 
@@ -43,17 +40,18 @@ const Slide = ({
          return allImages;
       }
 
-      data.body?.[0]?.content
-         ?.filter((content) => content.type === SLATE_CONTENT_TYPES.IMAGE_LINK)
-         ?.map((imageLink, i) =>
-            allImages.push({
-               url: imageLink.url,
-               altText: imageLink.altText,
-               idx: i,
-            })
-         );
+      const normalizedData = normalizeSlateData(data.body[0].content);
 
-      console.log(allImages);
+      normalizedData.forEach((para) => {
+         para.forEach((line) => {
+            const imageData = line.filter(
+               (inlineEl) =>
+                  inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK ||
+                  inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH
+            );
+            allImages.push(...imageData);
+         });
+      });
       return allImages;
    };
 
@@ -150,14 +148,18 @@ const Slide = ({
    };
 
    let modals = [];
-   console.log("data body", data);
 
    if (data.body && data.body[0] && data.body[0].content) {
-      const modalData = data.body[0].content.filter(
-         (content) => content.type === SLATE_CONTENT_TYPES.MODAL_TRIGGER
-      );
+      let modalData = [];
 
-      console.log("data body content", modalData);
+      for (const line of data.body[0].content) {
+         const newModalData = line.children.filter(
+            (inlineEl) => inlineEl.type === SLATE_CONTENT_TYPES.MODAL_TRIGGER
+         )[0];
+         if (newModalData) {
+            modalData.push(newModalData);
+         }
+      }
 
       modalData.forEach((singleModalData) => {
          let modalContentBody = [

@@ -38,10 +38,13 @@ export const TOAST_COMMON_CONFIG = {
 };
 
 export const SLATE_CONTENT_TYPES = {
-   PARAGRAPH: "paragraph",
-   IMAGE_LINK: "imageLink",
-   MODAL_TRIGGER: "modalTrigger",
-   MATH_EXPRESSION: "mathExpression",
+   PARAGRAPH: "PARA",
+   IMAGE_LINK: "IMAGE_LI",
+   IMAGE_LINK_WITH_MATH: "IMAGE_LI_WITH_MATH_EX",
+   MODAL_TRIGGER: "MODAL_TR",
+   MATH_EXPRESSION: "MATH_EX",
+   LINE_BREAK: "LINE_BR",
+   TEXT_LINE: "TEXT_LI",
 };
 
 // PRODUCTION

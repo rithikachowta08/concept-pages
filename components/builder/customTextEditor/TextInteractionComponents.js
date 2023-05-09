@@ -35,14 +35,27 @@ const MathInteractionWrapper = styled.span`
    }
 `;
 
-const DefaultText = styled.span`
+const DefaultText = styled.p`
+   margin: 0;
    &::selection {
       background-color: #a753b505 !important;
    }
 `;
 
+const InlineChromiumBugfix = () => (
+   <span contentEditable={false} style={{ fontSize: 0 }}>
+      {String.fromCodePoint(160) /* Non-breaking space */}
+   </span>
+);
+
 export const DefaultElementText = (props) => {
-   return <DefaultText {...props.attributes}>{props.children}</DefaultText>;
+   return (
+      <DefaultText {...props.attributes}>
+         {/* <InlineChromiumBugfix /> */}
+         {props.children}
+         {/* <InlineChromiumBugfix /> */}
+      </DefaultText>
+   );
 };
 
 export const ImageInteractionText = ({
@@ -59,7 +72,9 @@ export const ImageInteractionText = ({
          data-playwright-selected={selected}
          onClick={() => onClickHandler(element)}
       >
+         <InlineChromiumBugfix />
          {children}
+         <InlineChromiumBugfix />
       </ImageInteractionWrapper>
    );
 };
@@ -78,7 +93,9 @@ export const MathExpressionText = ({
          data-playwright-selected={selected}
          onClick={() => onClickHandler(element)}
       >
+         <InlineChromiumBugfix />
          {children}
+         <InlineChromiumBugfix />
       </MathInteractionWrapper>
    );
 };
@@ -97,7 +114,9 @@ export const ModalTriggerText = ({
          data-playwright-selected={selected}
          onClick={() => onClickHandler(element)}
       >
+         <InlineChromiumBugfix />
          {children}
+         <InlineChromiumBugfix />
       </ModalInteractionWrapper>
    );
 };

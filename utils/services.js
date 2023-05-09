@@ -2,6 +2,7 @@ import {
    GOOGLE_API_KEY,
    GOOGLE_CLIENT_ID,
    GOOGLE_SCOPE,
+   SLATE_CONTENT_TYPES,
 } from "utils/constants";
 import { v4 as uuidv4 } from "uuid";
 
@@ -117,4 +118,87 @@ export const googleDriveUploader = (
          onChange
       );
    }
+};
+
+export const normalizeSlateData = (slateData) => {
+   const paragraphs = [];
+   let line = [];
+   for (const data of slateData) {
+      if (data.children[0].text === "") {
+         paragraphs.push(line);
+         line = [];
+         continue;
+      }
+      const lineContent = [];
+      for (const lineData of data.children) {
+         let newInlineData = {};
+         if (!lineData.children) {
+            newInlineData = {
+               type: SLATE_CONTENT_TYPES.TEXT_LINE,
+               text: lineData.text,
+            };
+         } else {
+            if (lineData.type === SLATE_CONTENT_TYPES.MATH_EXPRESSION) {
+               const imageNode = lineData.children.filter(
+                  (node) => node.type === SLATE_CONTENT_TYPES.IMAGE_LINK
+               )[0];
+               newInlineData = imageNode
+                  ? {
+                       type: SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH,
+                       text: imageNode.children[0].text,
+                       url: imageNode.url,
+                    }
+                  : {
+                       type: SLATE_CONTENT_TYPES.MATH_EXPRESSION,
+                       text: lineData.children[0].text,
+                    };
+            } else if (lineData.type === SLATE_CONTENT_TYPES.IMAGE_LINK) {
+               newInlineData = {
+                  type: lineData.type,
+                  text: lineData.children[0].text,
+                  url: lineData.url,
+               };
+            } else {
+               newInlineData = {
+                  type: lineData.type,
+                  text: lineData.children[0].text,
+               };
+            }
+         }
+         lineContent.push(newInlineData);
+      }
+      line.push(lineContent);
+   }
+   paragraphs.push(line);
+   // console.log("normalized slate data", paragraphs);
+   return paragraphs;
+};
+
+export const addImageIndicesToNormalizedSlateData = (slateData) => {
+   // console.log("adding image indices to", slateData);
+   let copiedData = structuredClone(slateData);
+   let indxCounter = 1;
+   copiedData = copiedData.map((para) => {
+      const newPara = para.map((line) => {
+         const newLine = line.map((inlineEl) => {
+            if (
+               [
+                  SLATE_CONTENT_TYPES.IMAGE_LINK,
+                  SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH,
+               ].includes(inlineEl.type)
+            ) {
+               return {
+                  ...inlineEl,
+                  idx: indxCounter++,
+               };
+            } else {
+               return inlineEl;
+            }
+         });
+         return newLine;
+      });
+      return newPara;
+   });
+   // console.log("data with image indices", copiedData);
+   return copiedData;
 };
