@@ -8,17 +8,11 @@ const FullPageCustomWrapper = dynamic(() =>
 import { SLIDE_TYPES } from "utils/constants";
 const Slide1 = dynamic(() => import("./Slide1"));
 const Slide2 = dynamic(() => import("./Slide2"));
-const Slide3 = dynamic(() => import("./Slide3"));
-const Slide4 = dynamic(() => import("./Slide4"));
-const Slide5 = dynamic(() => import("./Slide5"));
 
 const UnitsOfTime = () => {
    const SlideArray = [
       <Slide1 key={0} type={SLIDE_TYPES.TITLE_SLIDE} />,
       <Slide2 key={1} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide3 key={2} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide4 key={3} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide5 key={4} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
    ];
    const navigationSections = [
       {
