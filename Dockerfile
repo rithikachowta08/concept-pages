@@ -1,5 +1,5 @@
 # base image
-FROM node:16-alpine
+FROM node:14-alpine
 
 # create & set working directory
 RUN mkdir -p /usr/src

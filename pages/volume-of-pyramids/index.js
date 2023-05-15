@@ -19,6 +19,7 @@ const Slide11 = dynamic(() => import("./Slide11"));
 const Slide12 = dynamic(() => import("./Slide12"));
 const Slide13 = dynamic(() => import("./Slide13"));
 const Slide14 = dynamic(() => import("./Slide14"));
+const Slide15 = dynamic(() => import("./Slide15"));
 const PageLastSlide = dynamic(() =>
    import("../../components/slides/PageLastSlide")
 );
@@ -38,9 +39,10 @@ const SurfaceAreaofCone = () => {
       <Slide11 key={10} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide12 key={11} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <Slide13 key={12} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
-      <Slide14 key={13} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
+      <Slide14 key={13} type={SLIDE_TYPES.APPLET_ONLY} />,
+      <Slide15 key={14} type={SLIDE_TYPES.TEXT_AND_DIAGRAM} />,
       <PageLastSlide
-         key={14}
+         key={15}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Volume of Pyramids"}
          nextPageLink={"/us/math/study/concept/area-of-rectangle"}
@@ -62,7 +64,7 @@ const SurfaceAreaofCone = () => {
       },
    ];
 
-   const darkBgIndices = [0, 2, 4, 6, 14];
+   const darkBgIndices = [0, 2, 4, 6, 13, 15];
    return (
       <FullPageCustomWrapper
          slidesComponentList={SlideArray}

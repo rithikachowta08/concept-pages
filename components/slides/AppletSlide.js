@@ -136,6 +136,8 @@ const AppletSlide = ({
    currentPageIdx,
    appletSrc,
    AppletComponent,
+   titleFontSize,
+   secondaryTitleFontSize,
 }) => {
    const ref = useRef(null);
    const timer = useRef(null);
@@ -183,9 +185,10 @@ const AppletSlide = ({
                         bg={bg}
                         marginBottom="10px"
                         secondaryTitle={secondaryTitle}
+                        fontSize={secondaryTitleFontSize}
                         centerAlign
                      />
-                     <SlideTitle bg={bg} centerAlign>
+                     <SlideTitle bg={bg} fontSize={titleFontSize} centerAlign>
                         {title}
                      </SlideTitle>
                   </div>

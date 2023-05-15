@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Design" xmlns="http://www.w3.org/2000/svg" width="560" height="560" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-5 {
+        stroke: #8783af;
+      }
+
+      .cls-1, .cls-4 {
+        stroke-linejoin: round;
+        stroke-width: 5.68px;
+      }
+
+      .cls-6 {
+        fill: #fff;
+        opacity: .1;
+      }
+
+      .cls-7 {
+        opacity: .4;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 12;
+        stroke-width: 5px;
+      }
+
+      .cls-2, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        stroke: #f2a4ff;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 0 11.35;
+        stroke-width: 4.73px;
+      }
+
+      .cls-9 {
+        fill: #f2a4ff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-3" points="-614.58 270.42 -614.58 151.04 -138.57 151.04 -138.57 435.21 -338.82 435.21 -614.58 270.42"/>
+    </clipPath>
+  </defs>
+  <g>
+    <polygon class="cls-6" points="42.46 256.04 42.46 136.66 518.46 136.66 518.46 420.83 318.21 420.83 42.46 256.04"/>
+    <g>
+      <polygon class="cls-1" points="42.46 256.04 42.46 136.66 518.46 136.66 518.46 420.83 318.21 420.83 42.46 256.04"/>
+      <line class="cls-2" x1="318.21" y1="256.37" x2="318.21" y2="421.18"/>
+      <line class="cls-5" x1="42.46" y1="256.02" x2="518.46" y2="256.02"/>
+    </g>
+    <line class="cls-5" x1="42.46" y1="256.02" x2="518.46" y2="256.02"/>
+    <polygon class="cls-4" points="42.46 256.04 42.46 136.66 518.46 136.66 518.46 420.83 318.21 420.83 42.46 256.04"/>
+  </g>
+  <g class="cls-8">
+    <g class="cls-7">
+      <polygon class="cls-9" points="-267.84 508.52 -270.67 508.52 .22 237.63 1.25 239.42 -267.84 508.52"/>
+    </g>
+  </g>
+</svg>

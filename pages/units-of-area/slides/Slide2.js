@@ -52,7 +52,7 @@ const Slide2 = ({ downIcon }) => {
             One square unit is equal to the area of square that has a side
             length equal to 1 unit.
          </Paragraph>
-         <ModalImg src={image_3} alt="Image of unit square" />
+         <ModalImg src={image_3} alt="Image of unit square" scale={0.8} />
          <Paragraph color={colors.WHITE}>
             <EquationTable
                align="middle"
@@ -122,7 +122,7 @@ const Slide2 = ({ downIcon }) => {
                space covered
             </TextSpanBg>{" "}
             on a surface by a two-dimensional shape. It is measured in{" "}
-            <ModalTriggerText onClick={onClick}>square units.</ModalTriggerText>
+            <ModalTriggerText onClick={onClick}>square units</ModalTriggerText>.
          </Paragraph>
       </TextAndDiagramSlide>
    );

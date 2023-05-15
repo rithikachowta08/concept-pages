@@ -48,8 +48,8 @@ const Slide7 = ({ downIcon }) => {
          downIcon={downIcon}
       >
          <Paragraph>
-            A standard unit of measurement is a quantifiable term that describes
-            the magnitude of the quantity in absolute terms.
+            The standard systems used to measure length across the globe are as
+            follows:
          </Paragraph>
          <Paragraph>
             <TextSpanBg

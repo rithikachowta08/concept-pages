@@ -85,7 +85,7 @@ const UnitsToMeasureCapacity = () => {
       <>
          <Script
             src="https://geogebra.org/apps/deployggb.js"
-            strategy="beforeInteractive"
+            strategy="lazyOnload"
          ></Script>
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
