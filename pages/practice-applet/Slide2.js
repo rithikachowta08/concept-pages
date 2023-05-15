@@ -19,7 +19,7 @@ const PracticeContainer = styled.div`
 `;
 
 const Slide2 = ({ downIcon, currentPageIdx }) => {
-   const inputs = ["2x+1=5", "3x+4y-5x+7y", "4x(3x-2x)", "3(4x+2y)+4(3x-6x)"];
+   const inputs = ["3x+4y-5x+7y", "4x(3x-2x)", "3(4x+2y)+4(3x-6x)", "2x+1=5"];
    const [curInputIndex, setCurInputIndex] = useState(0);
    const curInputIndexRef = useRef(curInputIndex);
    const onSolved = () => {
@@ -41,14 +41,12 @@ const Slide2 = ({ downIcon, currentPageIdx }) => {
             document.getElementById("lottie-overlay").style.height = "0px";
          }, 4500);
          if (document.querySelectorAll(".practice-element")) {
-            console.log(document.querySelectorAll(".practice-element"));
             document
                .querySelectorAll(".practice-element")
                .forEach((elem) => elem.addEventListener("solved", onSolved));
          }
       }
    }, [currentPageIdx]);
-   console.log("curInputIndex", curInputIndex);
    return (
       <PracticeSlide title="Solve the problem" downIcon={downIcon}>
          <lottie-player
