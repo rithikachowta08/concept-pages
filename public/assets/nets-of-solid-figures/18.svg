@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: .5;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #8080a8;
+      }
+
+      .cls-4 {
+        stroke: #655c9b;
+        stroke-width: 6px;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-6 {
+        fill: #b970dc;
+        opacity: .3;
+      }
+
+      .cls-7 {
+        fill: #655c9b;
+      }
+
+      .cls-2 {
+        opacity: .6;
+      }
+
+      .cls-5 {
+        stroke: #f0a2ff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        opacity: .31;
+      }
+
+      .cls-8 {
+        fill: #52488f;
+      }
+
+      .cls-9 {
+        fill: #d776e2;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-9" points="315.95 16.58 345.72 310.85 537.93 375.91 315.95 16.58"/>
+  <polygon class="cls-9" points="267.95 16.58 34.07 368.19 297.72 310.85 267.95 16.58"/>
+  <polygon class="cls-5" points="315.95 16.58 345.72 310.85 537.93 375.91 315.95 16.58"/>
+  <polygon class="cls-5" points="267.95 16.58 34.07 368.19 297.72 310.85 267.95 16.58"/>
+  <g>
+    <polygon class="cls-3" points="52.07 389.19 315.72 331.85 507.93 396.91 262.4 458.42 52.07 389.19"/>
+    <polygon class="cls-1" points="285.95 37.58 52.07 389.19 315.72 331.85 285.95 37.58"/>
+    <polygon class="cls-2" points="285.95 37.58 315.72 331.85 507.93 396.91 285.95 37.58"/>
+    <line class="cls-4" x1="315.72" y1="331.85" x2="285.95" y2="37.58"/>
+    <polyline class="cls-4" points="52.07 389.19 315.72 331.7 507.93 396.91"/>
+    <line class="cls-4" x1="52.07" y1="389.19" x2="262.4" y2="458.42"/>
+    <polygon class="cls-8" points="285.95 37.58 262.4 458.42 507.93 396.91 285.95 37.58"/>
+    <polygon class="cls-7" points="52.07 389.19 285.95 37.58 262.4 458.42 52.07 389.19"/>
+    <g>
+      <polygon class="cls-6" points="33.07 441.19 266.95 89.58 243.4 510.42 33.07 441.19"/>
+      <polygon class="cls-5" points="33.07 441.19 266.95 89.58 243.4 510.42 33.07 441.19"/>
+    </g>
+    <polyline class="cls-4" points="285.95 37.58 262.4 458.42 507.93 396.91"/>
+    <polyline class="cls-4" points="507.93 396.91 285.95 37.58 52.07 389.19 262.4 458.42"/>
+  </g>
+  <g>
+    <polygon class="cls-6" points="299.95 93.58 276.4 514.42 521.93 452.91 299.95 93.58"/>
+    <polygon class="cls-5" points="299.95 93.58 276.4 514.42 521.93 452.91 299.95 93.58"/>
+  </g>
+</svg>

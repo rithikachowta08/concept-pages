@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import useDiagramInteraction from "hooks/useDiagramInteraction";
+import useModals from "hooks/useModals";
 import useModal from "hooks/useModal";
 import { colors } from "utils/colors";
 import { SLATE_CONTENT_TYPES, SLIDE_TYPES } from "utils/constants";
@@ -17,6 +18,7 @@ const TextAndAppletSlide = dynamic(() =>
    import("components/slides/TextAndAppletSlide")
 );
 const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
+const PracticeSlide = dynamic(() => import("components/slides/PracticeSlide"));
 const VideoSlide = dynamic(() => import("components/slides/VideoSlide2"));
 const MultipleDiagramSlide = dynamic(() =>
    import("components/slides/MultipleDiagramSlide")
@@ -140,6 +142,19 @@ const Slide = ({
             bg: data.theme,
             secondaryTitle: data.secondaryTitle,
             AppletComponent: dynamicImportApplet,
+            downIcon,
+            currentPageIdx,
+         },
+      },
+      [SLIDE_TYPES.GRASPABLE_APPLET]: {
+         component: PracticeSlide,
+         props: {
+            title: data.title,
+            bg: data.theme,
+            secondaryTitle: data.secondaryTitle,
+            equations: data.equations,
+            index: idx + 1,
+            isPreview,
             downIcon,
             currentPageIdx,
          },
@@ -299,6 +314,7 @@ const Slide = ({
 
    let children = [];
    let textParamCount = 0;
+   let modalCount = 0;
 
    // if (data.body) {
    //    data.body.forEach((item, idx) => {
@@ -330,6 +346,7 @@ const Slide = ({
                onHoverOut={onHoverOut}
                onClick={onClick}
                textParamCount={textParamCount}
+               modalCount={modalCount}
             />
          );
          // textParamCount += item.textParams?.length;

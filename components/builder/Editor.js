@@ -110,6 +110,9 @@ const Editor = ({
       );
    };
 
+   const tabListHeight =
+      typeof document !== undefined &&
+      document.querySelector(".react-tabs__tab-list")?.clientHeight;
    return (
       <Flex flex="1" style={{ overflow: "scroll" }}>
          <Tabs
@@ -118,7 +121,7 @@ const Editor = ({
          >
             <TabList
                style={{
-                  position: "sticky",
+                  position: "fixed",
                   top: 0,
                   backgroundColor: colors.DARK_LAVENDER,
                   color: colors.WHITE,
@@ -143,7 +146,12 @@ const Editor = ({
                ))}
                <Tab onClick={addNewSlide}>+ Add slide</Tab>
             </TabList>
-            <TabPanel forceRender>
+            <TabPanel
+               style={{
+                  paddingTop: tabListHeight ? `${tabListHeight}px` : "50px",
+               }}
+               forceRender
+            >
                <Form
                   ref={pageDetailsformRef}
                   schema={PAGE_DETAILS_SCHEMA}
@@ -155,6 +163,22 @@ const Editor = ({
                   onChange={onPageDetailsFormChange}
                >
                   <ButtonContainer>
+                     <StyledButton>
+                        <Link
+                           href={{
+                              pathname: `/${pageDetails.url}`,
+                              query: {
+                                 preview: "true",
+                              },
+                           }}
+                           legacyBehavior
+                        >
+                           <a target="_blank">Preview</a>
+                        </Link>
+                     </StyledButton>
+                     <StyledButton onClick={onClickExport}>
+                        Export as JSON
+                     </StyledButton>
                      <StyledButton onClick={addNewSlide}>
                         Add slide
                      </StyledButton>
@@ -162,7 +186,13 @@ const Editor = ({
                </Form>
             </TabPanel>
             {slides.map((slide, idx) => (
-               <TabPanel key={idx} forceRender>
+               <TabPanel
+                  key={idx}
+                  style={{
+                     paddingTop: tabListHeight ? `${tabListHeight}px` : "50px",
+                  }}
+                  forceRender
+               >
                   <Form
                      ref={slideFormRef}
                      schema={SLIDE_SCHEMA}

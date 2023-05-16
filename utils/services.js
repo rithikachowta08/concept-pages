@@ -27,7 +27,6 @@ const uploadImage = (
          if (data.action === "picked") {
             setUploading(true);
             const fileId = data.docs[0].id;
-            console.log("fileId", data);
             // Download the actual file through Google Drive API
             fetch(
                "https://www.googleapis.com/drive/v3/files/" +
@@ -59,13 +58,6 @@ const uploadImage = (
                         onChange(
                            `https://search-mathstatic.byjusweb.com/${fileName}`
                         );
-                     })
-                     .catch((err) => {
-                        console.error(
-                           "Error in uploading Google Drive File:",
-                           err
-                        );
-                        setUploading(false);
                      });
                })
                .catch((err) => {

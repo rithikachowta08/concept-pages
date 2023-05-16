@@ -11,7 +11,7 @@ const ModalTriggerText = dynamic(() =>
 );
 const MathElement = dynamic(() => import("components/MathElement"));
 
-const PARAM_TYPES = {
+export const PARAM_TYPES = {
    MODAL_TRIGGER: "mt",
    DIAGRAM_INTERACTION: "di",
    MATH: "ma",
@@ -51,7 +51,14 @@ const TextParamComponent = ({
          );
 
       case SLATE_CONTENT_TYPES.MODAL_TRIGGER:
-         return <ModalTriggerText onClick={onClick}>{value}</ModalTriggerText>;
+         return (
+            <ModalTriggerText
+               color={theme === "LIGHT" ? colors.BLACK : colors.WHITE}
+               onClick={onClick}
+            >
+               {value}
+            </ModalTriggerText>
+         );
 
       case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
          return <MathElement htmlString={value} />;

@@ -41,28 +41,49 @@ const TextToTextParamComponent = ({
    modifiedContent,
    textParamCount,
    textParams,
+   modalCount,
    ...rest
 }) => {
    if (!modifiedContent) {
       return null;
    }
-   return modifiedContent.map((child, idx) => {
+   return modifiedContent.map((child, contentIdx) => {
       const str = child.trim();
       const isTextParam = str.startsWith("%") && str.endsWith("%");
       const id = str.substring(1, str.length - 1);
-      const isSpaceNeededAfter = !modifiedContent[idx + 1]?.match(/^[.,:!?]/);
+      const isSpaceNeededAfter =
+         !modifiedContent[contentIdx + 1]?.match(/^[.,:!?]/);
+      let idx = 0;
+      if (
+         id.includes(PARAM_TYPES.DIAGRAM_INTERACTION) ||
+         id.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)
+      ) {
+         const filteredTextParams = textParams?.filter(
+            (param) =>
+               param.id?.includes(PARAM_TYPES.DIAGRAM_INTERACTION) ||
+               param.id?.includes(PARAM_TYPES.MATH_WITH_DIAGRAM_INTERACTION)
+         );
+         idx =
+            textParamCount +
+            filteredTextParams?.findIndex((param) => param.id === id) +
+            1;
+      }
+      if (id.includes(PARAM_TYPES.MODAL_TRIGGER)) {
+         const filteredTextParams = textParams?.filter((param) =>
+            param.id?.includes(PARAM_TYPES.MODAL_TRIGGER)
+         );
+         idx =
+            modalCount +
+            filteredTextParams?.findIndex((param) => param.id === id);
+      }
       return isTextParam ? (
          <>
             &nbsp;
             <TextParamComponent
                {...rest}
                type={id}
-               idx={
-                  textParamCount +
-                  textParams?.findIndex((param) => param.id === id) +
-                  1
-               }
-               key={idx}
+               key={`param_${contentIdx}`}
+               idx={idx}
                value={textParams?.find((param) => param.id === id)?.value || id}
             />
             {isSpaceNeededAfter && " "}
@@ -77,6 +98,7 @@ const BodyComponent = ({
    item,
    theme,
    textParamCount,
+   modalCount,
    colorTheme,
    isModal,
    onClick,

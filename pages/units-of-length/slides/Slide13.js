@@ -34,7 +34,6 @@ const Slide13 = ({ downIcon }) => {
    return (
       <TextAndDiagramSlide
          title={"Illustrative Example"}
-         secondaryTitle={"International System of Units"}
          diagram={
             <TransitionImage
                images={[image_1, image_2]}
@@ -65,7 +64,7 @@ const Slide13 = ({ downIcon }) => {
             <TextLine>Thus, 22 decameters = 22 x 10 meters.</TextLine>
             <TextLine>22 decameters = 220 meters</TextLine>
             <TextLine>
-               Therefore, 22 decameters is equal to 220 meters..
+               Therefore, 22 decameters is equal to 220 meters.
             </TextLine>
          </Paragraph>
       </TextAndDiagramSlide>

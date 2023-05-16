@@ -1,5 +1,4 @@
 import { Flex } from "components/StyledElements";
-import Paragraph from "./Paragraph";
 import TextLine from "./TextLine";
 import TextSpan from "./TextSpan";
 

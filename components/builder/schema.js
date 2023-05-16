@@ -124,6 +124,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "Text",
                },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
             },
          },
          {
@@ -134,6 +151,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                content: {
                   type: "string",
                   title: "Text",
+               },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
                },
             },
          },
@@ -187,14 +221,17 @@ const CONTENT_BODY = {
 };
 
 const MODAL_PROPERTIES = {
-   type: "object",
-   title: "Modal",
-   properties: {
-      title: {
-         type: "string",
-         title: "Title",
+   type: "array",
+   title: "Modals",
+   items: {
+      type: "object",
+      properties: {
+         title: {
+            type: "string",
+            title: "Title",
+         },
+         body: CONTENT_BODY,
       },
-      body: CONTENT_BODY,
    },
 };
 
@@ -296,6 +333,29 @@ const SLIDE_DEPENDENCIES = {
          {
             properties: {
                template: {
+                  enum: [SLIDE_TYPES.GRASPABLE_APPLET],
+               },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
+               },
+               equations: {
+                  type: "array",
+                  title: "Equations",
+                  items: {
+                     type: "string",
+                     title: "Algebraic Equation",
+                  },
+               },
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
+            },
+         },
+         {
+            properties: {
+               template: {
                   enum: [SLIDE_TYPES.MULTIPLE_DIAGRAM],
                },
                secondaryTitle: {
@@ -378,6 +438,7 @@ export const SLIDE_SCHEMA = {
             SLIDE_TYPES.APPLET_ONLY,
             SLIDE_TYPES.VIDEO_ONLY,
             SLIDE_TYPES.MULTIPLE_DIAGRAM,
+            SLIDE_TYPES.GRASPABLE_APPLET,
          ],
       },
       theme: {
@@ -434,13 +495,15 @@ export const SLIDE_UI_SCHEMA = {
       },
    },
    modal: {
-      body: {
-         items: {
-            content: {
-               "ui:widget": "textarea",
-            },
-            url: {
-               "ui:widget": ImageUploader,
+      items: {
+         body: {
+            items: {
+               content: {
+                  "ui:widget": "textarea",
+               },
+               url: {
+                  "ui:widget": ImageUploader,
+               },
             },
          },
       },

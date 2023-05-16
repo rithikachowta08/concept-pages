@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 const AppletSlide = dynamic(() => import("components/slides/AppletSlide"));
-import { Paragraph } from "components/text";
-// import { Applet01902Ge } from "@assessed/byjus-us-math-applets/019_02_GE";
+import { Applet3901Ge } from "@assessed/byjus-us-math-applets/39_01_GE";
+import { fontSizes } from "utils/fontStyles";
 
 const Slide12 = ({ navBar, downIcon, currentPageIdx }) => {
    return (
@@ -11,8 +11,9 @@ const Slide12 = ({ navBar, downIcon, currentPageIdx }) => {
          downIcon={downIcon}
          navBar={navBar}
          currentPageIdx={currentPageIdx}
-         // appletSrc="https://s3-whjr-prod-cocos-applet.whjr.online/SEO/length-of-arc-of-circle-v2/index.html"
-         AppletComponent={null}
+         AppletComponent={Applet3901Ge}
+         titleFontSize={"2rem"}
+         secondaryTitleFontSize={"1.5rem"}
       ></AppletSlide>
    );
 };

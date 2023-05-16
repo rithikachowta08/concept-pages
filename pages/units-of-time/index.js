@@ -40,8 +40,8 @@ const UnitsOfTime = () => {
          key={12}
          type={SLIDE_TYPES.CONCLUSION}
          currentPageTitle={"Units of time"}
-         nextPageLink={"/us/math/study/concept/volume-of-rectangular-prism"}
-         nextPageTitle={"Volume of a Rectangular Prism"}
+         nextPageLink={"/us/math/study/concept/area-of-rectangle"}
+         nextPageTitle={"Area of a Rectangle"}
       />,
    ];
    const navigationSections = [
@@ -59,16 +59,16 @@ const UnitsOfTime = () => {
       },
       {
          title: "Relationship between units of time",
-         slides: [9, 10, 11, 12],
+         slides: [9, 10, 11],
       },
    ];
 
-   const darkBgIndices = [0, 4, 9, 11, 12, 13];
+   const darkBgIndices = [0, 2, 4, 9, 11, 12, 13];
    return (
       <>
          <Script
             src="https://geogebra.org/apps/deployggb.js"
-            strategy="beforeInteractive"
+            strategy="lazyOnload"
          ></Script>
          <FullPageCustomWrapper
             slidesComponentList={SlideArray}
@@ -80,6 +80,6 @@ const UnitsOfTime = () => {
 };
 UnitsOfTime.title = "Units of time: Definition, Formula, Examples - BYJU'S";
 UnitsOfTime.meta =
-   "Gain a deep understanding of units to measure capacity with BYJU'S. Explore the definition, formula, and examples of this concept and use our interactive activities to master.";
+   "Gain a thorough understanding of the units of time with BYJU'S, including its definition, formula, and examples. Enhance your skills with interactive activities.";
 
 export default UnitsOfTime;

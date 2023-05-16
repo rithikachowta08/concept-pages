@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import Script from "next/script";
 import { SLIDE_TYPES } from "utils/constants";
 const FullPageCustomWrapper = dynamic(() =>
    import("components/full-page-wrapper/FullPageCustomWrapper").then(
@@ -84,7 +85,6 @@ const Page = ({ json }) => {
       /* Dark BG indexing logic */
       let darkBgIndices = [];
       SlideArray.forEach((slide, idx) => {
-         console.log(json.slides[idx - 1]?.theme);
          if (
             idx === 0 ||
             idx === SlideArray.length - 1 ||
@@ -109,12 +109,17 @@ const Page = ({ json }) => {
       return (
          <>
             <Head>
-               <title>{json.seo.title || "Byju's US Math"}</title>
+               <title>{json.seo?.title || "Byju's US Math"}</title>
                <meta
                   name="description"
-                  content={json.seo.meta || "Math concept pages"}
+                  content={json.seo?.meta || "Math concept pages"}
                />
             </Head>
+            <Script
+               id="practice-app"
+               src="https://ggb-assets.s3.eu-west-1.amazonaws.com/algebra-practice/algebra-practice.umd.js"
+            ></Script>
+            <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></Script>
             <FullPageCustomWrapper
                slidesComponentList={SlideArray}
                navigationSections={navInfo}

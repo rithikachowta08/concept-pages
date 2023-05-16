@@ -28,7 +28,7 @@ const DynamicPage = () => {
    const [loading, setLoading] = useState(!isPreview);
    const [error, setError] = useState(false);
    useEffect(() => {
-      if (router.query["dynamic-page"]) {
+      if (router.query["dynamic-page"] && !isPreview) {
          fetch(
             `https://math-api-stg.byjusweb.com/api/page?page_url=${router.query["dynamic-page"]}`,
             {
@@ -41,7 +41,7 @@ const DynamicPage = () => {
             .then((res) => res.json())
             .then((res) => {
                setLoading(false);
-               if (res.data.isDraft) {
+               if (res.data?.isDraft) {
                   setError(true);
                } else {
                   setJson(res.data);
@@ -53,7 +53,7 @@ const DynamicPage = () => {
                setError(true);
             });
       }
-   }, [router]);
+   }, [router, isPreview]);
    if (isPreview) {
       const json = {
          ...JSON.parse(localStorage.getItem("pageDetails")),

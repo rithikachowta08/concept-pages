@@ -15,8 +15,6 @@ const StyledButton = styled.button`
    width: fit-content;
    align-self: center;
    cursor: pointer;
-   opacity: ${(props) => (props.uploading ? 0.5 : 1)};
-   pointer-events: ${(props) => (props.uploading ? "none" : "unset")};
 `;
 
 const FieldName = styled.div`
@@ -44,7 +42,7 @@ const ImageUploader = ({ value, onChange, name }) => {
                      onChange
                   )
                }
-               uploading={uploading}
+               disabled={uploading}
             >
                {uploading ? "Uploading..." : "Upload"}
             </StyledButton>

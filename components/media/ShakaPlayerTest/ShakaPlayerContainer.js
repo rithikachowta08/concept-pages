@@ -135,6 +135,11 @@ const ShakaPlayerContainer = (props) => {
       startVideo();
    };
 
+   const onPlay = () => {
+      videoStatus === VIDEO_STATUS.ENDED &&
+         setVideoStatus(VIDEO_STATUS.STARTED);
+   };
+
    const replayVideo = () => {
       onVideoReplay(props.videoContent.videoId);
       setVideoStatus(VIDEO_STATUS.STARTED);
@@ -159,6 +164,7 @@ const ShakaPlayerContainer = (props) => {
             muted={isMuted}
             setVideoRef={setVideoRef}
             onEnd={onVideoEnd}
+            onPlay={onPlay}
             srcKey={drmConf.key_id}
             uiConfig={{
                castReceiverAppId: "",

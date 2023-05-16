@@ -277,3 +277,11 @@ body:not(.fp-viewing-0, .fp-viewing-3, .fp-viewing-8, .fp-viewing-9)
    width: 100%;
    padding: 20px;
 }
+
+#lottie-overlay-desktop,
+#lottie-overlay-mobile {
+   position: absolute;
+   width: 650px;
+   height: 650px;
+   z-index: 2;
+}

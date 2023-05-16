@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { SlideWrap, Flex } from "components/StyledElements";
 import { FillerNavBar, SlideSecondaryTitle, SlideTitle } from "./common";
@@ -84,16 +84,75 @@ const TitleWrap = styled.div`
    }
 `;
 
+const overlay = "assets/pencil.json";
+const PracticeElementWrap = styled.div`
+   display: ${(props) => (props.isVisible ? "block" : "none")};
+   grid-row-start: 1;
+   grid-column-start: 1;
+   width: 100%;
+   border: 1px solid silver;
+   border-radius: 4px;
+`;
+
+const PracticeContainer = styled.div`
+   display: grid;
+   grid-template-columns: 1fr;
+   justify-items: center;
+   height: 100%;
+`;
+
 const PracticeSlide = ({
    title,
    secondaryTitle,
    downIcon,
    isLastSlide,
+   equations = [],
    bg = "LIGHT",
+   isPreview,
    colorTheme = "BUBBLEGUM",
-   children,
+   index,
+   currentPageIdx,
 }) => {
+   const filteredEquations = equations.filter((equation) => Boolean(equation));
    const ref = useRef(null);
+   const [curInputIndex, setCurInputIndex] = useState(0);
+   const curInputIndexRef = useRef(curInputIndex);
+   const onSolved = () => {
+      if (curInputIndexRef.current !== filteredEquations.length - 1) {
+         setTimeout(() => {
+            curInputIndexRef.current = curInputIndexRef.current + 1;
+            setCurInputIndex(curInputIndexRef.current);
+         }, 2000);
+      } else {
+         setTimeout(() => {
+            curInputIndexRef.current = 0;
+            setCurInputIndex(0);
+         }, 2000);
+      }
+   };
+   useEffect(() => {
+      let timer;
+      if (filteredEquations.length && currentPageIdx === index) {
+         timer = setTimeout(() => {
+            if (document.getElementById("lottie-overlay-desktop")) {
+               document.getElementById("lottie-overlay-desktop").style.height =
+                  "0px";
+            }
+            if (document.getElementById("lottie-overlay-mobile")) {
+               document.getElementById("lottie-overlay-mobile").style.height =
+                  "0px";
+            }
+         }, 4500);
+         if (document.querySelectorAll(".practice-element")) {
+            document
+               .querySelectorAll(".practice-element")
+               .forEach((elem) => elem.addEventListener("solved", onSolved));
+         }
+      }
+      return () => {
+         clearTimeout(timer);
+      };
+   }, [currentPageIdx, index, filteredEquations.length]);
    useEffect(() => {
       if (ref.current && bg === "DARK") {
          ref.current.parentNode.classList.add("dark");
@@ -133,7 +192,38 @@ const PracticeSlide = ({
                      alignItems="center"
                      justifyContent="center"
                   >
-                     <AppWrapper>{children}</AppWrapper>
+                     <AppWrapper>
+                        {!isPreview && (
+                           <lottie-player
+                              id="lottie-overlay-mobile"
+                              src={overlay}
+                              speed="1"
+                              autoplay
+                           ></lottie-player>
+                        )}
+                        {filteredEquations.length && (
+                           <PracticeContainer>
+                              {filteredEquations.map((input, idx) => (
+                                 <PracticeElementWrap
+                                    key={`practice-element-${idx}`}
+                                    isVisible={idx === curInputIndex}
+                                 >
+                                    <algebra-practice
+                                       class={`practice-element`}
+                                       latex={input}
+                                       hints="on"
+                                       drag-eq="fast"
+                                       // style={{
+                                       //    height: "600px",
+                                       //    width: "600px",
+                                       //    border: "1px solid silver",
+                                       // }}
+                                    ></algebra-practice>
+                                 </PracticeElementWrap>
+                              ))}
+                           </PracticeContainer>
+                        )}
+                     </AppWrapper>
                   </Flex>
                </ContentWrap>
                {downIcon}
@@ -164,7 +254,38 @@ const PracticeSlide = ({
                            {title}
                         </SlideTitle>
                      </TitleWrap>
-                     <AppWrapper>{children}</AppWrapper>
+                     <AppWrapper>
+                        {!isPreview && (
+                           <lottie-player
+                              id="lottie-overlay-desktop"
+                              src={overlay}
+                              speed="1"
+                              autoplay
+                           ></lottie-player>
+                        )}
+                        {filteredEquations.length && (
+                           <PracticeContainer>
+                              {filteredEquations.map((input, idx) => (
+                                 <PracticeElementWrap
+                                    key={`practice-element-${idx}`}
+                                    isVisible={idx === curInputIndex}
+                                 >
+                                    <algebra-practice
+                                       class={`practice-element`}
+                                       latex={input}
+                                       hints="on"
+                                       drag-eq="fast"
+                                       // style={{
+                                       // height: "600px",
+                                       // width: "600px",
+                                       //    border: "1px solid silver",
+                                       // }}
+                                    ></algebra-practice>
+                                 </PracticeElementWrap>
+                              ))}
+                           </PracticeContainer>
+                        )}
+                     </AppWrapper>
                      {downIcon
                         ? React.cloneElement(downIcon, {
                              noMargin: true,
