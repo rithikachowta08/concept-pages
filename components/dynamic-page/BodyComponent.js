@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { SLATE_CONTENT_TYPES } from "utils/constants";
 import {
    addImageIndicesToNormalizedSlateData,
+   getLhsRhsFromSlateText,
+   getTextFromSlateDataLine,
    normalizeSlateData,
 } from "utils/services";
 const Pill = dynamic(() => import("components/Pill"));
@@ -82,6 +84,7 @@ const BodyComponent = ({
    onHoverOut,
 }) => {
    console.log("in body component", item);
+   console.log("in body component", item);
    let color = theme === "LIGHT" ? colors.BLACK : colors.WHITE;
    if (isModal) {
       color = theme === "LIGHT" ? colors.WHITE : colors.BLACK;
@@ -89,9 +92,11 @@ const BodyComponent = ({
    if (item.content || item.numberedPoints || item.bulletPoints || item.url) {
       switch (item.componentType) {
          case COMPONENT_TYPES.TEXT: {
-            const paragraphs = addImageIndicesToNormalizedSlateData(
-               normalizeSlateData(item.content)
-            );
+            // const paragraphs = addImageIndicesToNormalizedSlateData(
+            //    normalizeSlateData(item.content)
+            // );
+            const paragraphs = normalizeSlateData(item.content);
+
             console.log("normalized data", paragraphs);
             // const paragraphs = item.content.reduce(
             //    (currentParas, elem, idx) => {
@@ -117,8 +122,6 @@ const BodyComponent = ({
             //    },
             //    []
             // );
-
-            console.log("normalized slate data", paragraphs);
             return paragraphs.map((paragraph, idx) => (
                <Paragraph color={color} key={`para_${idx}`}>
                   {paragraph?.map((line, idx) => (
@@ -300,56 +303,71 @@ const BodyComponent = ({
          }
 
          case COMPONENT_TYPES.EQUATION_TABLE: {
-            const lines = item.content.split("\n");
-            const nonEmptyLines = lines.filter((line) => Boolean(line.trim()));
+            const paragraphs = normalizeSlateData(item.content);
+
             const equationLines = [];
-            nonEmptyLines.forEach((line) => {
-               const [lhs, rhs] = line.split("=").map((text) => text.trim());
-               if (lhs || rhs) {
-                  const modifiedLhs = lhs?.split(/(%.*?%)/g);
-                  const lhsComponent = (
-                     <TextToTextParamComponent
-                        modifiedContent={modifiedLhs}
-                        theme={theme}
-                        colorTheme={colorTheme}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        textParams={item.textParams}
-                        textParamCount={textParamCount}
-                     />
+            for (const lines of paragraphs) {
+               lines.forEach((line) => {
+                  const lineText = getTextFromSlateDataLine(line);
+                  const delimiter = lineText.match(/[=≠<>≥≤]+/)?.[0] || "=";
+                  const [lhsText, rhsText] = lineText
+                     .split(delimiter)
+                     .map((text) => text.trim());
+
+                  const [lhsNodes, rhsNodes] = getLhsRhsFromSlateText(
+                     line,
+                     delimiter
                   );
-                  const modifiedRhs = rhs?.split(/(%.*?%)/g);
-                  const rhsComponent = (
-                     <TextToTextParamComponent
-                        modifiedContent={modifiedRhs}
-                        theme={theme}
-                        colorTheme={colorTheme}
-                        onHover={onHover}
-                        onHoverOut={onHoverOut}
-                        onClick={onClick}
-                        textParams={item.textParams}
-                        textParamCount={textParamCount}
-                     />
-                  );
+
                   equationLines.push({
                      lhsLatex: {
-                        value: lhs?.startsWith("\\") ? [lhs] : [lhsComponent],
-                        type: lhs?.startsWith("\\") ? "latex" : "text",
+                        value: lhsText?.startsWith("\\")
+                           ? [lhsText]
+                           : lhsNodes.map((inlineEl, i) => (
+                                <TextParamComponent
+                                   key={`${inlineEl.type}_${i}`}
+                                   idx={inlineEl.idx}
+                                   type={inlineEl.type}
+                                   value={inlineEl.text}
+                                   color={color}
+                                   onClick={onClick}
+                                   onHover={onHover}
+                                   onHoverOut={onHoverOut}
+                                   theme={theme}
+                                   colorTheme={colorTheme}
+                                />
+                             )),
+                        type: lhsText?.startsWith("\\") ? "latex" : "text",
+                        // type: "text",
                      },
                      rhsLatex: {
-                        value: rhs?.startsWith("\\") ? [rhs] : [rhsComponent],
-                        type: rhs?.startsWith("\\") ? "latex" : "text",
+                        value: rhsText?.startsWith("\\")
+                           ? [rhsText]
+                           : rhsNodes.map((inlineEl, i) => (
+                                <TextParamComponent
+                                   key={`${inlineEl.type}_${i}`}
+                                   idx={inlineEl.idx}
+                                   type={inlineEl.type}
+                                   value={inlineEl.text}
+                                   color={color}
+                                   onClick={onClick}
+                                   onHover={onHover}
+                                   onHoverOut={onHoverOut}
+                                   theme={theme}
+                                   colorTheme={colorTheme}
+                                />
+                             )),
+                        type: rhsText?.startsWith("\\") ? "latex" : "text",
+                        // type: "text",
                      },
+                     symbol: delimiter,
                   });
-               }
-            });
+               });
+            }
+
             return (
-               <Paragraph color={color}>
-                  <EquationTable
-                     align="middle"
-                     equationLatex={equationLines}
-                  ></EquationTable>
+               <Paragraph>
+                  <EquationTable align="middle" equationLatex={equationLines} />
                </Paragraph>
             );
          }

@@ -35,6 +35,7 @@ const RHSHint = styled.td`
 `;
 const Span = styled.div`
    width: ${(props) => (props.isMobile ? "auto" : "auto")};
+   display: inline;
 `;
 
 const EquationTable = ({
@@ -69,7 +70,7 @@ const EquationTable = ({
                         })}
                      </LHSLatex>
                      <EqualsTo align={align} lineHeight={lineHeight}>
-                        <TeX>{"="}</TeX>
+                        {latex.symbol || "="}
                      </EqualsTo>
                      <RHSLatex align={align} lineHeight={lineHeight}>
                         {latex.rhsLatex.value.map((val, i) => {
@@ -83,7 +84,11 @@ const EquationTable = ({
                                  </TeX>
                               );
                            } else {
-                              return <Span key={i}>{val}</Span>;
+                              return (
+                                 <Span id={i} key={i}>
+                                    {val}
+                                 </Span>
+                              );
                            }
                         })}
                      </RHSLatex>

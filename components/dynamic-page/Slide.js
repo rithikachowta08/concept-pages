@@ -30,31 +30,101 @@ const Slide = ({
    downIcon,
    currentPageIdx,
 }) => {
+   const [slideBody, setSlideBody] = useState(data.body);
+   const [transitionImages, setTransitionImages] = useState([]);
    const { activeIndex, onHover, onHoverOut } = useDiagramInteraction();
    const { isModalOpen, onClick, onDismiss } = useModal();
 
-   const getAllImages = () => {
-      const allImages = [{ ...data.defaultImage, idx: 0 }];
+   useEffect(() => {
+      const newBody = addIndicesToTranImages(data.body);
+      setSlideBody(newBody);
+      const allImages = getAllTransitionImages({ ...data, body: newBody });
+      setTransitionImages(allImages);
+      console.log("setting body and images", newBody, allImages);
+   }, [data]);
 
-      if (!data.body?.[0]?.content) {
-         return allImages;
-      }
+   const addIndicesToTranImages = (dataBody) => {
+      if (!dataBody) return;
 
-      const normalizedData = normalizeSlateData(data.body[0].content);
+      // const newBody = structuredClone(dataBody);
+      // console.log("adding indices", dataBody);
+      let imageIdx = 1;
+      const newBody = dataBody.map((body) => {
+         if (!body.content) return body;
 
-      normalizedData.forEach((para) => {
-         para.forEach((line) => {
-            const imageData = line.filter(
-               (inlineEl) =>
-                  inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK ||
-                  inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH
-            );
-            allImages.push(...imageData);
-         });
+         return {
+            ...body,
+            content: body.content.map((line) => {
+               return {
+                  ...line,
+                  children: line.children.map((inline) => {
+                     switch (inline.type) {
+                        case SLATE_CONTENT_TYPES.IMAGE_LINK:
+                           return { ...inline, idx: imageIdx++ };
+
+                        case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
+                           return {
+                              ...inline,
+                              children: inline.children.map((inner) => ({
+                                 ...inner,
+                                 idx:
+                                    inner.type ===
+                                    SLATE_CONTENT_TYPES.IMAGE_LINK
+                                       ? imageIdx++
+                                       : undefined,
+                              })),
+                           };
+
+                        default:
+                           return inline;
+                     }
+                  }),
+               };
+            }),
+         };
       });
-      return allImages;
+      console.log("added indices", newBody);
+      return newBody;
    };
 
+   const getAllTransitionImages = (newData) => {
+      const allImages = [{ ...newData.defaultImage, idx: 0 }];
+
+      if (!newData.body) {
+         return allImages;
+      }
+      console.log("new body", newData);
+
+      for (const body of newData.body) {
+         if (!body.content) return;
+
+         body.content.forEach((line) => {
+            // const imageData = line.children.filter(
+            //    (inlineEl) =>
+            //       inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK ||
+            //       inlineEl.type === SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH
+            // );
+
+            for (const inline of line.children) {
+               switch (inline.type) {
+                  case SLATE_CONTENT_TYPES.IMAGE_LINK:
+                     allImages.push(inline);
+
+                  case SLATE_CONTENT_TYPES.MATH_EXPRESSION:
+                     inline.children.forEach((inner) => {
+                        if (inner.type === SLATE_CONTENT_TYPES.IMAGE_LINK) {
+                           allImages.push(inner);
+                        }
+                     });
+               }
+            }
+
+            // allImages.push(...imageData);
+         });
+      }
+      console.log("all images", allImages);
+      return allImages;
+   };
    const dynamicImportApplet = data.appletId
       ? dynamic(() =>
            import("@assessed/byjus-us-math-applets").then((mod) => {
@@ -111,11 +181,20 @@ const Slide = ({
             bg: data.theme,
             diagram: data.defaultImage ? (
                // <></>
+
                <TransitionImage
                   // images={data.transitionImages.map((image) => image.url)}
                   // altTexts={data.transitionImages.map((image) => image.altText)}
-                  images={getAllImages().map((image) => image.url)}
-                  altTexts={getAllImages().map((image) => image.altText)}
+                  images={
+                     transitionImages
+                        ? transitionImages.map((image) => image.url)
+                        : []
+                  }
+                  altTexts={
+                     transitionImages
+                        ? transitionImages.map((image) => image.altText)
+                        : []
+                  }
                   activeIndex={activeIndex}
                />
             ) : (
@@ -221,8 +300,26 @@ const Slide = ({
    let children = [];
    let textParamCount = 0;
 
-   if (data.body) {
-      data.body.forEach((item, idx) => {
+   // if (data.body) {
+   //    data.body.forEach((item, idx) => {
+   //       children.push(
+   //          <BodyComponent
+   //             key={idx}
+   //             item={item}
+   //             theme={data.theme}
+   //             colorTheme={colorTheme}
+   //             onHover={onHover}
+   //             onHoverOut={onHoverOut}
+   //             onClick={onClick}
+   //             textParamCount={textParamCount}
+   //          />
+   //       );
+   //       textParamCount += item.textParams?.length;
+   //    });
+   // }
+
+   if (slideBody?.length) {
+      slideBody.forEach((item, idx) => {
          children.push(
             <BodyComponent
                key={idx}
@@ -235,7 +332,7 @@ const Slide = ({
                textParamCount={textParamCount}
             />
          );
-         textParamCount += item.textParams?.length;
+         // textParamCount += item.textParams?.length;
       });
    }
 

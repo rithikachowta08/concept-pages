@@ -120,7 +120,26 @@ export const googleDriveUploader = (
    }
 };
 
+/* Normalized data is the intermediary data format made to communicate b/w slate and preview container
+
+sample = [
+   --paragraph--
+   [
+      --a line in the paragraph--
+      [
+         --an inline slate node within the line--
+         {
+            type: any of SLATE_CONTENT_TYPES,
+            text: string,
+            ...some metadata relevant to content type. e.g. url for image type
+         }
+      ]
+   ]
+]
+*/
+
 export const normalizeSlateData = (slateData) => {
+   if (!slateData) return;
    const paragraphs = [];
    let line = [];
    for (const data of slateData) {
@@ -147,6 +166,8 @@ export const normalizeSlateData = (slateData) => {
                        type: SLATE_CONTENT_TYPES.IMAGE_LINK_WITH_MATH,
                        text: imageNode.children[0].text,
                        url: imageNode.url,
+                       altText: imageNode.altText,
+                       idx: imageNode.idx,
                     }
                   : {
                        type: SLATE_CONTENT_TYPES.MATH_EXPRESSION,
@@ -157,6 +178,8 @@ export const normalizeSlateData = (slateData) => {
                   type: lineData.type,
                   text: lineData.children[0].text,
                   url: lineData.url,
+                  altText: lineData.altText,
+                  idx: lineData.idx,
                };
             } else {
                newInlineData = {
@@ -201,4 +224,48 @@ export const addImageIndicesToNormalizedSlateData = (slateData) => {
    });
    // console.log("data with image indices", copiedData);
    return copiedData;
+};
+
+export const getTextFromSlateDataLine = (line) => {
+   if (!line) return previousStr;
+
+   let textString = "";
+   for (const data of line) {
+      if (data.text) {
+         textString += data.text;
+      }
+   }
+   return textString;
+};
+
+export const getLhsRhsFromSlateText = (normalizedSlateLineData, delimiter) => {
+   const lhsNodesArr = [];
+   const rhsNodesArr = [];
+
+   let i = 0;
+   while (i < normalizedSlateLineData.length) {
+      const inlineItem = normalizedSlateLineData[i];
+      if (inlineItem.text.length === 0) continue;
+
+      if (inlineItem.text.includes(delimiter)) {
+         const [lhsText, rhsText] = inlineItem.text.split(delimiter);
+         lhsNodesArr.push({
+            ...inlineItem,
+            text: lhsText,
+         });
+         rhsNodesArr.push({
+            ...inlineItem,
+            text: rhsText,
+         });
+         i++;
+         break;
+      }
+      lhsNodesArr.push(inlineItem);
+      i++;
+   }
+   while (i < normalizedSlateLineData.length) {
+      rhsNodesArr.push(normalizedSlateLineData[i]);
+      i++;
+   }
+   return [lhsNodesArr, rhsNodesArr];
 };
