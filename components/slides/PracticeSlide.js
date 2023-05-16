@@ -106,7 +106,7 @@ const PracticeSlide = ({
    secondaryTitle,
    downIcon,
    isLastSlide,
-   equations,
+   equations = [],
    bg = "LIGHT",
    isPreview,
    colorTheme = "BUBBLEGUM",
