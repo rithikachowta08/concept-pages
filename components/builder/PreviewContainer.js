@@ -5,7 +5,8 @@ import { colors } from "utils/colors";
 import styled from "styled-components";
 import { Flex } from "components/StyledElements";
 const Title = dynamic(() => import("components/text").then((mod) => mod.Title));
-const Slide = dynamic(() => import("../dynamic-page/Slide.js"));
+const Slide_v2 = dynamic(() => import("../dynamic-page/v2/Slide.js"));
+const Slide_v1 = dynamic(() => import("../dynamic-page/v1/Slide.js"));
 const ErrorBoundary = dynamic(() => import("./ErrorBoundary.js"));
 
 const Div = styled.div`
@@ -61,6 +62,7 @@ const PreviewContainer = ({
    onBackClick,
    onPreviewClick,
 }) => {
+   console.log(json.version);
    return json && json.slides.length ? (
       <>
          <Script
@@ -76,13 +78,23 @@ const PreviewContainer = ({
                   onClick={onPreviewClick}
                >
                   <ErrorBoundary data={slide}>
-                     <Slide
-                        data={slide}
-                        json={json}
-                        idx={idx}
-                        colorTheme={json.colorTheme}
-                        isPreview
-                     />
+                     {json.version === 2 ? (
+                        <Slide_v2
+                           data={slide}
+                           json={json}
+                           idx={idx}
+                           colorTheme={json.colorTheme}
+                           isPreview
+                        />
+                     ) : (
+                        <Slide_v1
+                           data={slide}
+                           json={json}
+                           idx={idx}
+                           colorTheme={json.colorTheme}
+                           isPreview
+                        />
+                     )}
                   </ErrorBoundary>
                </SlideWrap>
             ))}

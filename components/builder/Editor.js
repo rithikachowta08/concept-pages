@@ -13,7 +13,13 @@ import {
    SLIDE_UI_SCHEMA,
    PAGE_DETAILS_SCHEMA,
    widgets,
-} from "./schema";
+} from "./schema_v2";
+import {
+   SLIDE_SCHEMA as SLIDE_SCHEMA_V1,
+   SLIDE_UI_SCHEMA as SLIDE_UI_SCHEMA_V1,
+   PAGE_DETAILS_SCHEMA as PAGE_DETAILS_SCHEMA_V1,
+   widgets as widgets_V1,
+} from "./schema_v1";
 
 const ButtonContainer = styled.div`
    display: flex;
@@ -79,11 +85,15 @@ const Editor = ({
       router.query.pageId &&
       router.query.pageId !== "NEW" &&
       router.query.pageId !== "IMPORT";
+   const isV2 = Boolean(router.query.v2);
    const pageDetailsformRef = React.createRef();
    const slideFormRef = React.createRef();
    const onPageDetailsFormChange = (data) => {
-      setPageDetails(data.formData);
-      localStorage.setItem("pageDetails", JSON.stringify(data.formData));
+      setPageDetails({ ...data.formData, version: isV2 ? 2 : 1 });
+      localStorage.setItem(
+         "pageDetails",
+         JSON.stringify({ ...data.formData, version: isV2 ? 2 : 1 })
+      );
    };
 
    const onSlidesChange = (idx, data) => {
@@ -154,9 +164,9 @@ const Editor = ({
             >
                <Form
                   ref={pageDetailsformRef}
-                  schema={PAGE_DETAILS_SCHEMA}
+                  schema={isV2 ? PAGE_DETAILS_SCHEMA : PAGE_DETAILS_SCHEMA_V1}
                   validator={validator}
-                  widgets={widgets}
+                  widgets={isV2 ? widgets : widgets_V1}
                   formData={pageDetails}
                   autoComplete={"off"}
                   className="page-details-form"
@@ -195,9 +205,9 @@ const Editor = ({
                >
                   <Form
                      ref={slideFormRef}
-                     schema={SLIDE_SCHEMA}
+                     schema={isV2 ? SLIDE_SCHEMA : SLIDE_SCHEMA_V1}
                      validator={validator}
-                     uiSchema={SLIDE_UI_SCHEMA}
+                     uiSchema={isV2 ? SLIDE_UI_SCHEMA : SLIDE_UI_SCHEMA_V1}
                      formData={slide}
                      autoComplete={"off"}
                      className="slide-form"

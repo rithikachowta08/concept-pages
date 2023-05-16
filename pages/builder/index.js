@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import styled from "styled-components";
 import { TOAST_COMMON_CONFIG } from "utils/constants";
+import { Checkbox } from "@mui/material";
 const PreviewContainer = dynamic(() =>
    import("../../components/builder/PreviewContainer")
 );
@@ -82,6 +83,9 @@ const Subtext = styled.div`
 `;
 
 const CreatePageSection = styled.div`
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
    border-bottom: 1px solid #aaa;
    width: 90%;
    padding-bottom: 20px;
@@ -93,13 +97,16 @@ const Builder = () => {
       router.query.pageId &&
       router.query.pageId !== "NEW" &&
       router.query.pageId !== "IMPORT";
+   const isV2 = Boolean(router.query.v2);
    const [showEditorView, setShowEditorView] = useState(
       Boolean(router.query.pageId)
    );
    const [loading, setLoading] = useState(false);
    const [pageId, setPageId] = useState(null);
    const [error, setError] = useState(false);
-   const [pageDetails, setPageDetails] = useState({});
+   const [pageDetails, setPageDetails] = useState({
+      version: isV2 ? 2 : 1,
+   });
    const [slides, setSlides] = useState([]);
    const [tabIndex, setTabIndex] = useState(0);
    const [isCreatePageLoading, setIsCreatePageLoading] = useState(false);
@@ -125,6 +132,16 @@ const Builder = () => {
          setShowEditorView(false);
       }
    }, [router.query.pageId]);
+
+   const onCheckboxChange = (e) => {
+      if (e.target.checked) {
+         router.query.v2 = "true";
+         router.push(router);
+      } else {
+         delete router.query.v2;
+         router.push(router);
+      }
+   };
 
    const onInputChange = (e) => {
       if (error) {
@@ -369,6 +386,13 @@ const Builder = () => {
                         flex={1}
                      >
                         <CreatePageSection>
+                           <Flex alignItems="center" alignSelf="center">
+                              <Checkbox
+                                 checked={isV2}
+                                 onChange={onCheckboxChange}
+                              ></Checkbox>
+                              <div>Use Editor 2.0</div>
+                           </Flex>
                            <StyledButton onClick={onCreateNewPage}>
                               Create new page
                            </StyledButton>

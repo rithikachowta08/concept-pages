@@ -1,6 +1,6 @@
 import { colors } from "utils/colors";
 import dynamic from "next/dynamic";
-import { colorSchemes } from "./colorScheme";
+import { colorSchemes } from "../colorScheme";
 import { SLATE_CONTENT_TYPES } from "utils/constants";
 import { TextSpan } from "components/text";
 const TextSpanBg = dynamic(() =>

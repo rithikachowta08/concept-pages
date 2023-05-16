@@ -7,7 +7,8 @@ const FullPageCustomWrapper = dynamic(() =>
       (mod) => mod.FullPageCustomWrapper
    )
 );
-const Slide = dynamic(() => import("../../components/dynamic-page/Slide"));
+const Slide_v2 = dynamic(() => import("./v2/Slide"));
+const Slide_v1 = dynamic(() => import("./v1/Slide"));
 const PageLastSlide = dynamic(() => import("components/slides/PageLastSlide"));
 const TitleSlide = dynamic(() => import("components/slides/TitleSlide"));
 
@@ -58,14 +59,26 @@ const Page = ({ json }) => {
          />,
       ];
       json.slides.forEach((slide, idx) => {
-         SlideArray.push(
-            <Slide
-               key={idx + 1}
-               idx={idx}
-               data={slide}
-               colorTheme={json.colorTheme}
-            />
-         );
+         console.log("version", json.version);
+         if (json.version === 2) {
+            SlideArray.push(
+               <Slide_v2
+                  key={idx + 1}
+                  idx={idx}
+                  data={slide}
+                  colorTheme={json.colorTheme}
+               />
+            );
+         } else {
+            SlideArray.push(
+               <Slide_v1
+                  key={idx + 1}
+                  idx={idx}
+                  data={slide}
+                  colorTheme={json.colorTheme}
+               />
+            );
+         }
       });
 
       SlideArray.push(

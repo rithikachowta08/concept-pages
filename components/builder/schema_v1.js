@@ -1,7 +1,6 @@
-import { SLATE_CONTENT_TYPES, SLIDE_TYPES } from "utils/constants";
-import { COMPONENT_TYPES } from "components/dynamic-page/BodyComponent";
+import { SLIDE_TYPES } from "utils/constants";
+import { COMPONENT_TYPES } from "components/dynamic-page/v2/BodyComponent";
 import ImageUploader from "./ImageUploader";
-import SlateTextEditor from "./customTextEditor/SlateTextEditor";
 
 export const BASIC_PROPERTIES = {
    pageId: { type: "string", title: "Page ID" },
@@ -53,23 +52,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "content",
                },
-               // textParams: {
-               //    type: "array",
-               //    title: "Text Parameters",
-               //    items: {
-               //       type: "object",
-               //       properties: {
-               //          id: {
-               //             title: "ID",
-               //             type: "string",
-               //          },
-               //          value: {
-               //             title: "Value",
-               //             type: "string",
-               //          },
-               //       },
-               //    },
-               // },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
             },
          },
          {
@@ -96,23 +95,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "content",
                },
-               // textParams: {
-               //    type: "array",
-               //    title: "Text Parameters",
-               //    items: {
-               //       type: "object",
-               //       properties: {
-               //          id: {
-               //             title: "ID",
-               //             type: "string",
-               //          },
-               //          value: {
-               //             title: "Value",
-               //             type: "string",
-               //          },
-               //       },
-               //    },
-               // },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
             },
          },
          {
@@ -180,23 +179,23 @@ const CONTENT_BODY_DEPENDENCIES = {
                   type: "string",
                   title: "Text",
                },
-               // textParams: {
-               //    type: "array",
-               //    title: "Text Parameters",
-               //    items: {
-               //       type: "object",
-               //       properties: {
-               //          id: {
-               //             title: "ID",
-               //             type: "string",
-               //          },
-               //          value: {
-               //             title: "Value",
-               //             type: "string",
-               //          },
-               //       },
-               //    },
-               // },
+               textParams: {
+                  type: "array",
+                  title: "Text Parameters",
+                  items: {
+                     type: "object",
+                     properties: {
+                        id: {
+                           title: "ID",
+                           type: "string",
+                        },
+                        value: {
+                           title: "Value",
+                           type: "string",
+                        },
+                     },
+                  },
+               },
             },
          },
       ],
@@ -248,42 +247,28 @@ const SLIDE_DEPENDENCIES = {
                   title: "Secondary Title",
                },
                body: CONTENT_BODY,
-               defaultImage: {
-                  type: "object",
-                  title: "Default image",
-                  properties: {
-                     url: {
-                        type: "string",
-                        title: "Image URL",
-                     },
-                     altText: {
-                        type: "string",
-                        title: "Alt Text",
+               transitionImages: {
+                  type: "array",
+                  title: "Images",
+                  secondaryTitle: {
+                     type: "string",
+                     title: "Secondary Title",
+                  },
+                  items: {
+                     type: "object",
+                     properties: {
+                        url: {
+                           type: "string",
+                           title: "Image URL",
+                        },
+                        altText: {
+                           type: "string",
+                           title: "Alt Text",
+                        },
                      },
                   },
                },
-               // transitionImages: {
-               //    type: "array",
-               //    title: "Image",
-               //    secondaryTitle: {
-               //       type: "string",
-               //       title: "Secondary Title",
-               //    },
-               //    items: {
-               //       type: "object",
-               //       properties: {
-               //          url: {
-               //             type: "string",
-               //             title: "Image URL",
-               //          },
-               //          altText: {
-               //             type: "string",
-               //             title: "Alt Text",
-               //          },
-               //       },
-               //    },
-               // },
-               // modal: MODAL_PROPERTIES,
+               modal: MODAL_PROPERTIES,
                comments: {
                   type: "string",
                   title: "Comments",
@@ -304,7 +289,7 @@ const SLIDE_DEPENDENCIES = {
                   type: "string",
                   title: "Applet ID",
                },
-               // modal: MODAL_PROPERTIES,
+               modal: MODAL_PROPERTIES,
                comments: {
                   type: "string",
                   title: "Comments",
@@ -471,23 +456,13 @@ export const PAGE_DETAILS_SCHEMA = {
 
 export const widgets = {
    DriveToS3ImageUploader: ImageUploader,
-   SlateTextEditor: SlateTextEditor,
 };
 
 export const SLIDE_UI_SCHEMA = {
    body: {
       items: {
          content: {
-            "ui:widget": (props) => (
-               <SlateTextEditor
-                  onValueChange={props.onChange}
-                  allowedInputs={[
-                     SLATE_CONTENT_TYPES.IMAGE_LINK,
-                     SLATE_CONTENT_TYPES.MODAL_TRIGGER,
-                     SLATE_CONTENT_TYPES.MATH_EXPRESSION,
-                  ]}
-               />
-            ),
+            "ui:widget": "textarea",
          },
          url: {
             "ui:widget": ImageUploader,
@@ -508,12 +483,12 @@ export const SLIDE_UI_SCHEMA = {
          },
       },
    },
-   defaultImage: {
-      // items: {
-      url: {
-         "ui:widget": ImageUploader,
+   transitionImages: {
+      items: {
+         url: {
+            "ui:widget": ImageUploader,
+         },
       },
-      // },
    },
    images: {
       items: {
