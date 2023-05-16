@@ -106,7 +106,7 @@ const PracticeSlide = ({
    secondaryTitle,
    downIcon,
    isLastSlide,
-   equations = ["3x+4y-5x+7y", "4x(3x-2x)", "3(4x+2y)+4(3x-6x)", "2x+1=5"],
+   equations,
    bg = "LIGHT",
    isPreview,
    colorTheme = "BUBBLEGUM",
