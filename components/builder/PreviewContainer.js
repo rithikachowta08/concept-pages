@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 import dynamic from "next/dynamic";
 import { colors } from "utils/colors";
 import styled from "styled-components";
@@ -61,30 +62,36 @@ const PreviewContainer = ({
    onPreviewClick,
 }) => {
    return json && json.slides.length ? (
-      <Div>
-         {json.slides.map((slide, idx) => (
-            <SlideWrap
-               key={idx}
-               id={idx}
-               isSelected={tabIndex - 1 === idx}
-               onClick={onPreviewClick}
-            >
-               <ErrorBoundary data={slide}>
-                  <Slide
-                     data={slide}
-                     json={json}
-                     idx={idx}
-                     colorTheme={json.colorTheme}
-                     isPreview
-                  />
-               </ErrorBoundary>
-            </SlideWrap>
-         ))}
-         <Flex gap="10px" alignSelf="center">
-            <StyledButton onClick={addNewSlide}>Add slide</StyledButton>
-            <StyledButton onClick={onBackClick}>Back</StyledButton>
-         </Flex>
-      </Div>
+      <>
+         <Script
+            id="practice-app"
+            src="https://ggb-assets.s3.eu-west-1.amazonaws.com/algebra-practice/algebra-practice.umd.js"
+         ></Script>
+         <Div>
+            {json.slides.map((slide, idx) => (
+               <SlideWrap
+                  key={idx}
+                  id={idx}
+                  isSelected={tabIndex - 1 === idx}
+                  onClick={onPreviewClick}
+               >
+                  <ErrorBoundary data={slide}>
+                     <Slide
+                        data={slide}
+                        json={json}
+                        idx={idx}
+                        colorTheme={json.colorTheme}
+                        isPreview
+                     />
+                  </ErrorBoundary>
+               </SlideWrap>
+            ))}
+            <Flex gap="10px" alignSelf="center">
+               <StyledButton onClick={addNewSlide}>Add slide</StyledButton>
+               <StyledButton onClick={onBackClick}>Back</StyledButton>
+            </Flex>
+         </Div>
+      </>
    ) : (
       <EmptyPreview>
          <Title color={colors.BLACK} level={3}>

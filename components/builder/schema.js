@@ -318,6 +318,29 @@ const SLIDE_DEPENDENCIES = {
          {
             properties: {
                template: {
+                  enum: [SLIDE_TYPES.GRASPABLE_APPLET],
+               },
+               secondaryTitle: {
+                  type: "string",
+                  title: "Secondary Title",
+               },
+               equations: {
+                  type: "array",
+                  title: "Equations",
+                  items: {
+                     type: "string",
+                     title: "Algebraic Equation",
+                  },
+               },
+               comments: {
+                  type: "string",
+                  title: "Comments",
+               },
+            },
+         },
+         {
+            properties: {
+               template: {
                   enum: [SLIDE_TYPES.MULTIPLE_DIAGRAM],
                },
                secondaryTitle: {
@@ -400,6 +423,7 @@ export const SLIDE_SCHEMA = {
             SLIDE_TYPES.APPLET_ONLY,
             SLIDE_TYPES.VIDEO_ONLY,
             SLIDE_TYPES.MULTIPLE_DIAGRAM,
+            SLIDE_TYPES.GRASPABLE_APPLET,
          ],
       },
       theme: {
