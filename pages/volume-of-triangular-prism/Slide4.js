@@ -1,29 +1,12 @@
 import dynamic from "next/dynamic";
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
+const Paragraph = dynamic(() => import("components/text").then((mod) => mod.Paragraph));
 const Pill = dynamic(() => import("components/Pill"));
 
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-import { Applet01201Ge } from "@assessed/byjus-us-math-applets/012_01_GE";
+const TextAndAppletSlide = dynamic(() => import("components/slides/TextAndAppletSlide"));
+// import { Applet01201Ge } from "@assessed/byjus-us-math-applets/012_01_GE";
 
 const Slide4 = ({ downIcon, currentPageIdx }) => {
-   return (
-      <TextAndAppletSlide
-         downIcon={downIcon}
-         secondaryTitle="Volume of Triangular Prism"
-         title="Visualization of the formula"
-         currentPageIdx={currentPageIdx}
-         AppletComponent={Applet01201Ge}
-      >
-         <Paragraph>
-            Move the slider upward.
-            <Pill darkbg={false}>Volume = Base area (A) × Height (h)</Pill>
-         </Paragraph>
-      </TextAndAppletSlide>
-   );
+  return null;
 };
 
 export default Slide4;

@@ -4,59 +4,29 @@ import { colors } from "utils/colors";
 import { useState } from "react";
 import { Flex, ModalImg } from "components/StyledElements";
 const Modal = dynamic(() => import("components/layout/Modal"));
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-import { Applet00401Ge } from "@assessed/byjus-us-math-applets/004_01_GE";
+const TextAndAppletSlide = dynamic(() => import("components/slides/TextAndAppletSlide"));
+// import { Applet00401Ge } from "@assessed/byjus-us-math-applets/004_01_GE";
 
 const image_popup = "assets/volume-of-rectangular-prism/slide_3_popup.svg";
 
 const Slide3 = ({ downIcon, currentPageIdx }) => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-   const modalContent = (
-      <Flex direction="column">
-         <Paragraph>
-            A unit cube is a cube whose each side is 1 unit long.
-         </Paragraph>
-         <ModalImg src={image_popup} alt="Diagram of a unit cube" />
-      </Flex>
-   );
+  const modalContent = (
+    <Flex direction="column">
+      <Paragraph>A unit cube is a cube whose each side is 1 unit long.</Paragraph>
+      <ModalImg src={image_popup} alt="Diagram of a unit cube" />
+    </Flex>
+  );
 
-   const onClick = () => {
-      setIsModalOpen(!isModalOpen);
-   };
-   const onDismiss = () => {
-      setIsModalOpen(false);
-   };
+  const onClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+  const onDismiss = () => {
+    setIsModalOpen(false);
+  };
 
-   return (
-      <TextAndAppletSlide
-         title={"Volume by counting the unit cubes"}
-         secondaryTitle={"Rectangular Prism"}
-         bg={"DARK"}
-         AppletComponent={Applet00401Ge}
-         currentPageIdx={currentPageIdx}
-         fullScreenRightOffset="30px"
-         downIcon={downIcon}
-      >
-         <Modal
-            bg="LIGHT"
-            color={colors.BLACK}
-            isOpen={isModalOpen}
-            title="Unit Cube"
-            content={modalContent}
-            onDismiss={onDismiss}
-         />
-         <Paragraph color={colors.WHITE}>
-            The volume of a rectangular prism is the total number of{" "}
-            <ModalTriggerText color={colors.WHITE} onClick={onClick}>
-               unit cubes
-            </ModalTriggerText>{" "}
-            that can fit inside it.
-         </Paragraph>
-      </TextAndAppletSlide>
-   );
+  return null;
 };
 
 export default Slide3;

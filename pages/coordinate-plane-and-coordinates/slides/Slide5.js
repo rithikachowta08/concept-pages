@@ -1,30 +1,11 @@
 import dynamic from "next/dynamic";
-import { Applet4404Ge } from "@assessed/byjus-us-math-applets/44_04_GE";
-const TextAndAppletSlide = dynamic(() =>
-   import("components/slides/TextAndAppletSlide")
-);
-const Paragraph = dynamic(() =>
-   import("components/text").then((mod) => mod.Paragraph)
-);
+// import { Applet4404Ge } from "@assessed/byjus-us-math-applets/44_04_GE";
+const TextAndAppletSlide = dynamic(() => import("components/slides/TextAndAppletSlide"));
+const Paragraph = dynamic(() => import("components/text").then((mod) => mod.Paragraph));
 const image_1 = "";
 
 const Slide5 = ({ downIcon }) => {
-   return (
-      <TextAndAppletSlide
-         title={"Movement on a Coordinate Plane"}
-         secondaryTitle={"What Is a Coordinate Plane?"}
-         AppletComponent={Applet4404Ge}
-         downIcon={downIcon}
-         fullScreenRightOffset="20px"
-      >
-         <Paragraph>
-            When the bee moves across the coordinate plane starting from the
-            origin, its location is determined by its perpendicular distance
-            from both x and y axes. This location on the coordinate plane is
-            represented by the coordinates.
-         </Paragraph>
-      </TextAndAppletSlide>
-   );
+  return null;
 };
 
 export default Slide5;
